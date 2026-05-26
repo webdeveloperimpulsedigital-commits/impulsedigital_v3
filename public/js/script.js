@@ -1,4 +1,5 @@
 (() => {
+const init = () => {
 // Simple seeded PRNG to ensure the background looks the same on every refresh
 let currentSeed = 42; // Fixed seed for consistent background
 function customRandom() {
@@ -320,20 +321,24 @@ window.addEventListener('resize', () => {
     const splitTexts = document.querySelectorAll('.split-text');
     splitTexts.forEach(text => {
         const split = new SplitType(text, { types: 'lines, words' });
-        split.lines.forEach(line => {
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('line-wrapper');
-            line.parentNode.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
-        });
-        const splitStart = document.body.classList.contains('service-page') ? 'top 68%' : 'top 95%';
-        gsap.fromTo(split.words,
-            { yPercent: 120, opacity: 0 },
-            {
-                scrollTrigger: { trigger: text, start: splitStart, toggleActions: 'play none none reverse' },
-                yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
-            }
-        );
+        if (split.lines) {
+            split.lines.forEach(line => {
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('line-wrapper');
+                line.parentNode.insertBefore(wrapper, line);
+                wrapper.appendChild(line);
+            });
+        }
+        if (split.words && split.words.length) {
+            const splitStart = document.body.classList.contains('service-page') ? 'top 68%' : 'top 95%';
+            gsap.fromTo(split.words,
+                { yPercent: 120, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: text, start: splitStart, toggleActions: 'play none none reverse' },
+                    yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
+                }
+            );
+        }
     });
 
     window.initHomeDOMAnimations = () => {
@@ -677,4 +682,16 @@ window.addEventListener('resize', () => {
             }
         });
     }
+};
+
+if (window.THREE) {
+    init();
+} else {
+    const interval = setInterval(() => {
+        if (window.THREE) {
+            clearInterval(interval);
+            init();
+        }
+    }, 50);
+}
 })();

@@ -116,6 +116,7 @@ a {
 .glass-panel {
     background-color: rgba(2, 0, 24, 0.4);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -727,6 +728,7 @@ nav.scrolled {
     border-radius: 30px;
     padding: 3.5rem;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: relative;
     height: 100%;
     min-height: 550px;
@@ -2761,6 +2763,7 @@ button,
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px 56px 8px 56px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     overflow: hidden;
     transition: border-color 0.4s, transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
@@ -2939,6 +2942,7 @@ button,
     text-transform: uppercase;
     color: var(--soft-grey);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     pointer-events: auto;
     transition: all 0.3s ease;
     white-space: normal;
@@ -3528,6 +3532,7 @@ button,
     text-transform: uppercase;
     color: var(--soft-grey);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     text-align: center;
     max-width: 220px;
     line-height: 1.4;
@@ -4562,6 +4567,7 @@ button,
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;

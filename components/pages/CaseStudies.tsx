@@ -380,7 +380,7 @@ const CaseStudies: React.FC = () => {
     const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
     // Lazy proxy — reads window.ScrollTrigger at call-time
     const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    if (gsap && ScrollTrigger && containerRef.current) {
+    if ((window as any).gsap && (window as any).ScrollTrigger && containerRef.current) {
         // Background color inversion & particle fade
         const triggerEl = document.querySelector('.work-list-section');
         if (triggerEl) {

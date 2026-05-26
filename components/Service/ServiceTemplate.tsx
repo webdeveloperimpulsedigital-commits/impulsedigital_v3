@@ -678,13 +678,15 @@ export const ServiceTemplate: React.FC<{ data: any }> = ({ data }) => {
               wrapper.appendChild(line);
             });
           }
-          gsap.fromTo(split.words,
-            { yPercent: 120, opacity: 0 },
-            {
-              scrollTrigger: { trigger: text, start: 'top 75%', toggleActions: 'play none none reverse' },
-              yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
-            }
-          );
+          if (split.words && split.words.length) {
+            gsap.fromTo(split.words,
+              { yPercent: 120, opacity: 0 },
+              {
+                scrollTrigger: { trigger: text, start: 'top 75%', toggleActions: 'play none none reverse' },
+                yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
+              }
+            );
+          }
         });
         ScrollTrigger.refresh();
       }, 100);

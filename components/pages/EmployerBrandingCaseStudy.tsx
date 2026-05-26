@@ -20,71 +20,78 @@ const EmployerBrandingCaseStudy: React.FC = () => {
       actions: Array.from(document.querySelectorAll('.svc-hero-cta-row .btn')),
     });
 
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    const SplitType = (window as any).SplitType;
-    if ((window as any).gsap && (window as any).ScrollTrigger) {
-      // Background transition
-      const warpStart = document.querySelector('#warp-start');
-      if (warpStart) {
-        gsap.to(document.body, {
-          backgroundColor: '#000000',
-          scrollTrigger: { trigger: warpStart, start: 'top bottom', end: 'top top', scrub: true },
-        });
-      }
-      // Split text
-      if (SplitType) {
-        document.querySelectorAll('.split-text').forEach((text: Element) => {
-          const split = new SplitType(text, { types: 'lines, words' });
-          split.lines?.forEach((line: HTMLElement) => {
-            const w = document.createElement('div');
-            w.classList.add('line-wrapper');
-            line.parentNode?.insertBefore(w, line);
-            w.appendChild(line);
+    const { gsap, ScrollTrigger, SplitType } = window as any;
+    let ctx: any;
+
+    if (gsap && ScrollTrigger) {
+      ctx = gsap.context(() => {
+        // Background transition
+        const warpStart = document.querySelector('#warp-start');
+        if (warpStart) {
+          gsap.to(document.body, {
+            backgroundColor: '#000000',
+            scrollTrigger: { trigger: warpStart, start: 'top bottom', end: 'top top', scrub: true },
           });
-          gsap.fromTo(split.words, { yPercent: 100, opacity: 0 }, {
-            scrollTrigger: { trigger: text, start: 'top 85%' },
-            yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power3.out',
+        }
+        // Split text
+        if (SplitType) {
+          document.querySelectorAll('.split-text').forEach((text: Element) => {
+            const split = new SplitType(text, { types: 'lines, words' });
+            if (split.lines) {
+              split.lines.forEach((line: HTMLElement) => {
+                const w = document.createElement('div');
+                w.classList.add('line-wrapper');
+                line.parentNode?.insertBefore(w, line);
+                w.appendChild(line);
+              });
+            }
+            if (split.words && split.words.length) {
+              gsap.fromTo(split.words, { yPercent: 100, opacity: 0 }, {
+                scrollTrigger: { trigger: text, start: 'top 85%' },
+                yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power3.out',
+              });
+            }
+          });
+        }
+        // Stat counters
+        document.querySelectorAll('[data-stat-target]').forEach((el: Element, i: number) => {
+          const target = parseFloat((el as HTMLElement).getAttribute('data-stat-target') || '0');
+          const suffix = (el as HTMLElement).getAttribute('data-stat-suffix') || '';
+          const state = { value: 0 };
+          ScrollTrigger.create({
+            trigger: '.svc-stats', start: 'top 80%', once: true,
+            onEnter: () => gsap.to(state, {
+              value: target, duration: 2, delay: i * 0.1, ease: 'power4.out',
+              onUpdate: () => { el.textContent = Math.round(state.value) + suffix; },
+            }),
           });
         });
-      }
-      // Stat counters
-      document.querySelectorAll('[data-stat-target]').forEach((el: Element, i: number) => {
-        const target = parseFloat((el as HTMLElement).getAttribute('data-stat-target') || '0');
-        const suffix = (el as HTMLElement).getAttribute('data-stat-suffix') || '';
-        const state = { value: 0 };
-        ScrollTrigger.create({
-          trigger: '.svc-stats', start: 'top 80%', once: true,
-          onEnter: () => gsap.to(state, {
-            value: target, duration: 2, delay: i * 0.1, ease: 'power4.out',
-            onUpdate: () => { el.textContent = Math.round(state.value) + suffix; },
-          }),
-        });
+        // CTA path
+        const ctaPath = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
+        if (ctaPath) {
+          const len = ctaPath.getTotalLength();
+          gsap.set(ctaPath, { strokeDasharray: len, strokeDashoffset: len });
+          ScrollTrigger.create({
+            trigger: '.svc-final-cta', start: 'top 60%', once: true,
+            onEnter: () => gsap.to(ctaPath, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
+          });
+        }
       });
-      // CTA path
-      const ctaPath = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
-      if (ctaPath) {
-        const len = ctaPath.getTotalLength();
-        gsap.set(ctaPath, { strokeDasharray: len, strokeDashoffset: len });
-        ScrollTrigger.create({
-          trigger: '.svc-final-cta', start: 'top 60%', once: true,
-          onEnter: () => gsap.to(ctaPath, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
-        });
-      }
-      ScrollTrigger.refresh();
+      
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
     }
 
     return () => {
       stopHeroReveal();
       document.body.classList.remove('service-page', 'employer-page');
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-      if ((window as any).gsap) gsap.to(document.body, { backgroundColor: '', duration: 0 });
-      if (ScrollTrigger) ScrollTrigger.getAll().forEach((t: any) => t.kill());
+      if (gsap) {
+        gsap.to(document.body, { backgroundColor: '', duration: 0 });
+      }
+      if (ctx) {
+        ctx.revert();
+      }
     };
   }, []);
 

@@ -15,6 +15,7 @@ const ABGKBCCaseStudy: React.FC = () => {
   const base = "/";
   return (
     <main id="main-content">
+      <link rel="preload" href={`${base}case studies/Written Content/ABG x KBC/ABG x KBC Title.webp`} as="image" fetchPriority="high" />
       
       <section className="cs-hero">
         <div className="cs-hero-header">

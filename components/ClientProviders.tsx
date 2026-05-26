@@ -42,32 +42,36 @@ export default function ClientProviders() {
         document.querySelectorAll('.split-text:not(.split-done)').forEach((text: any) => {
           text.classList.add('split-done');
           const split = new SplitType(text, { types: 'lines, words' });
-          split.lines?.forEach((line: any) => {
-            const wrapper = document.createElement('div');
-            wrapper.classList.add('line-wrapper');
-            line.parentNode?.insertBefore(wrapper, line);
-            wrapper.appendChild(line);
-          });
+          if (split.lines) {
+            split.lines.forEach((line: any) => {
+              const wrapper = document.createElement('div');
+              wrapper.classList.add('line-wrapper');
+              line.parentNode?.insertBefore(wrapper, line);
+              wrapper.appendChild(line);
+            });
+          }
 
-          const splitStart = document.body.classList.contains('service-page')
-            ? 'top 68%'
-            : 'top 95%';
-          gsap.fromTo(
-            split.words,
-            { yPercent: 120, opacity: 0 },
-            {
-              scrollTrigger: {
-                trigger: text,
-                start: splitStart,
-                toggleActions: 'play none none reverse',
-              },
-              yPercent: 0,
-              opacity: 1,
-              duration: 0.8,
-              stagger: 0.015,
-              ease: 'power4.out',
-            }
-          );
+          if (split.words && split.words.length) {
+            const splitStart = document.body.classList.contains('service-page')
+              ? 'top 68%'
+              : 'top 95%';
+            gsap.fromTo(
+              split.words,
+              { yPercent: 120, opacity: 0 },
+              {
+                scrollTrigger: {
+                  trigger: text,
+                  start: splitStart,
+                  toggleActions: 'play none none reverse',
+                },
+                yPercent: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.015,
+                ease: 'power4.out',
+              }
+            );
+          }
         });
         ScrollTrigger.refresh();
       }

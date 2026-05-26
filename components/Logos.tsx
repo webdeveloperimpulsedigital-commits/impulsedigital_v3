@@ -60,20 +60,24 @@ const Logos: React.FC<LogosProps> = ({ title }) => {
         if (text && SplitType) {
           if (!text.classList.contains('split-done')) {
             const split = new SplitType(text, { types: 'lines, words' });
-            split.lines?.forEach((line: any) => {
-              const wrapper = document.createElement('div');
-              wrapper.classList.add('line-wrapper');
-              line.parentNode?.insertBefore(wrapper, line);
-              wrapper.appendChild(line);
-            });
+            if (split.lines) {
+              split.lines.forEach((line: any) => {
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('line-wrapper');
+                line.parentNode?.insertBefore(wrapper, line);
+                wrapper.appendChild(line);
+              });
+            }
             text.classList.add('split-done');
-            gsap.fromTo(split.words,
-              { yPercent: 120, opacity: 0 },
-              {
-                scrollTrigger: { trigger: text, start: 'top 85%', toggleActions: 'play none none reverse' },
-                yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
-              }
-            );
+            if (split.words && split.words.length) {
+              gsap.fromTo(split.words,
+                { yPercent: 120, opacity: 0 },
+                {
+                  scrollTrigger: { trigger: text, start: 'top 85%', toggleActions: 'play none none reverse' },
+                  yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power4.out'
+                }
+              );
+            }
           }
         }
 

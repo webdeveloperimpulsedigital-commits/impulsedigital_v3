@@ -491,25 +491,29 @@ const Careers: React.FC = () => {
       if (!SplitType || !gsap || !ScrollTrigger) return;
       if (el.closest('.car-positions')) return;
       const split = new SplitType(el, { types: 'lines, words' });
-      split.lines.forEach((line: any) => {
-        const w = document.createElement('div');
-        w.classList.add('line-wrapper');
-        line.parentNode.insertBefore(w, line);
-        w.appendChild(line);
-      });
-      gsap.set(split.words, { yPercent: 110, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          gsap.to(split.words, {
-            yPercent: 0, opacity: 1,
-            duration: 1.0, stagger: 0.05,
-            ease: 'power4.out'
-          });
-        }
-      });
+      if (split.lines) {
+        split.lines.forEach((line: any) => {
+          const w = document.createElement('div');
+          w.classList.add('line-wrapper');
+          line.parentNode.insertBefore(w, line);
+          w.appendChild(line);
+        });
+      }
+      if (split.words && split.words.length) {
+        gsap.set(split.words, { yPercent: 110, opacity: 0 });
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 80%',
+          once: true,
+          onEnter: () => {
+            gsap.to(split.words, {
+              yPercent: 0, opacity: 1,
+              duration: 1.0, stagger: 0.05,
+              ease: 'power4.out'
+            });
+          }
+        });
+      }
     });
 
 

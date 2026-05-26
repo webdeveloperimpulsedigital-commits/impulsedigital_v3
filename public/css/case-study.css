@@ -57,11 +57,13 @@
   position: relative;
   z-index: 10;
   height: calc(1100px + 100vh);
+  height: calc(1100px + 100dvh);
 }
 
 .cs-feature-image {
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   border-radius: 0;
   overflow: hidden;
   position: sticky;
@@ -69,6 +71,7 @@
   background: #111;
   will-change: clip-path, transform;
   clip-path: polygon(25% 25%, 75% 25%, 75% 75%, 25% 75%);
+  -webkit-clip-path: polygon(25% 25%, 75% 25%, 75% 75%, 25% 75%);
 }
 
 .cs-feature-image img {
@@ -99,6 +102,7 @@
     height: auto;
     aspect-ratio: 16 / 9;
     clip-path: none;
+    -webkit-clip-path: none;
     border-radius: 6px;
   }
   .cs-result-item {
@@ -122,6 +126,7 @@
   }
   .cs-feature-image {
     clip-path: none !important;
+    -webkit-clip-path: none !important;
     height: auto;
     aspect-ratio: 16 / 9;
     position: relative;

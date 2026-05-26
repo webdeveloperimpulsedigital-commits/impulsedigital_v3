@@ -17,6 +17,7 @@ const ABGBrutIndiaCaseStudy: React.FC = () => {
 
   return (
     <main id="main-content">
+      <link rel="preload" href={`${base}case studies/Written Content/ABG x Brut India/ABG Brut India Title.webp`} as="image" fetchPriority="high" />
       
 
       <section className="cs-hero">

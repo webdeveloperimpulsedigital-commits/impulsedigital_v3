@@ -537,6 +537,7 @@
     linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.016)),
     rgba(2,0,24,0.64);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 24px 70px rgba(0,0,0,0.24);
   overflow: hidden;
@@ -761,6 +762,7 @@
   overflow: hidden;
   background: rgba(2,0,24,0.5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .ab-clarity-pane { padding: 4rem 3rem; position: relative; }
 .ab-clarity-pane + .ab-clarity-pane { border-left: 1px solid rgba(255,255,255,0.08); }
@@ -1164,6 +1166,7 @@
   border-radius: 24px;
   background: rgba(2,0,24,0.5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.08);
   transition: border-color 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
