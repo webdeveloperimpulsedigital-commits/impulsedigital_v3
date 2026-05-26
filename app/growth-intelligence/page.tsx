@@ -1,0 +1,32 @@
+import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/siteUrl';
+import GrowthIntelligence from '@/components/pages/GrowthIntelligence';
+
+export const metadata: Metadata = {
+  title: 'Growth Intelligence Services | Impulse Digital',
+  description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
+  keywords: 'growth intelligence, data-driven marketing, brand intelligence',
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: `${SITE_URL}/growth-intelligence/`,
+  },
+  openGraph: {
+    title: 'Growth Intelligence Services | Impulse Digital',
+    description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
+    url: `${SITE_URL}/growth-intelligence/`,
+    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    type: 'website',
+    siteName: 'Impulse Digital',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Growth Intelligence Services | Impulse Digital',
+    description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
+    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    site: '@impulsedigi',
+  },
+};
+
+export default function GrowthIntelligencePage() {
+  return <GrowthIntelligence />;
+}

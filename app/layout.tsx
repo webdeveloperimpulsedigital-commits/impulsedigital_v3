@@ -1,0 +1,196 @@
+import type { Metadata } from 'next';
+import Script from 'next/script';
+import { SITE_URL } from '@/lib/siteUrl';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Background from '@/components/Background';
+import ClientProviders from '@/components/ClientProviders';
+import './globals.css';
+
+export const metadata: Metadata = {
+  // Default metadata — overridden by each page's own metadata export
+  title: {
+    default: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+    template: '%s | Impulse Digital',
+  },
+  description:
+    'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
+  keywords: ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
+  robots: { index: true, follow: true },
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: 'website',
+    siteName: 'Impulse Digital',
+    title: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+    description:
+      'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
+    url: SITE_URL,
+    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@impulsedigi',
+  },
+  metadataBase: new URL(SITE_URL),
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/ImpulseDigital_Logo.svg" />
+
+        {/* Font preloads */}
+        <link
+          rel="preload"
+          href="/fonts/Satoshi-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Satoshi-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* Preconnect for Google Fonts (if any inline usage) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* External CSS */}
+        <link rel="stylesheet" href="/css/styles.css?v=5" />
+        <link rel="stylesheet" href="/css/about.css" />
+
+        {/* FontAwesome — preload for performance, applied via Script after page loads */}
+        <link
+          rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          as="style"
+          media="print"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          media="print"
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          />
+        </noscript>
+
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4TW43X3');`,
+          }}
+        />
+      </head>
+      <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M4TW43X3"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
+        {/* Client-side providers: scroll restoration, route animation */}
+        <ClientProviders />
+
+        {/* 3D Background, cursor, noise overlay */}
+        <Background />
+
+        {/* Navigation */}
+        <Navbar />
+
+        {/* Page content */}
+        {children}
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Vanilla-tilt */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* Lenis smooth scroll */}
+        <Script
+          src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* GSAP core */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* GSAP ScrollTrigger — after GSAP loads */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* SplitType */}
+        <Script
+          src="https://unpkg.com/split-type"
+          strategy="beforeInteractive"
+        />
+
+        {/* Three.js — loaded after interactive to not block LCP */}
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+          strategy="afterInteractive"
+        />
+
+        {/* WebGL Canvas Particles & Animations script */}
+        <Script
+          src="/js/script.js?v=59"
+          strategy="afterInteractive"
+        />
+
+        {/* Zoho SalesIQ */}
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.in/widget?wc=siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364"
+          strategy="lazyOnload"
+        />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EFFQ2YYFN8');`,
+          }}
+        />
+        {/* FontAwesome — switch from print to all media after load */}
+        <Script
+          id="fa-media-switch"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach(function(l){l.media='all';});`,
+          }}
+        />
+      </body>
+    </html>
+  );
+}

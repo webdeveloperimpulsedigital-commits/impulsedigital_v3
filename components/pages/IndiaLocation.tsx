@@ -1,0 +1,108 @@
+// @ts-nocheck
+'use client';
+
+import React, { useEffect } from 'react';
+import ServiceHero from '@/components/Service/ServiceHero';
+import CaseStudies from '@/components/CaseStudies';
+import Logos from '@/components/Logos';
+import BrandFilm from '@/components/BrandFilm';
+import Services from '@/components/Services';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
+
+const locationFaqs = [
+  {
+    "question": "What is a digital marketing agency?",
+    "answer": "A digital marketing agency helps businesses grow online using services like performance ads, SEO, social, content, automation and analytics tailored to goals and budgets."
+  },
+  {
+    "question": "What are the benefits of hiring a digital marketing agency to leverage your business?",
+    "answer": "You get senior expertise, speed of execution, cross-channel strategy, creative at scale, and measurable performance without building a large in-house team."
+  },
+  {
+    "question": "What is the role of a result-oriented digital marketing agency in elevating your business?",
+    "answer": "A results-driven partner aligns channels to KPIs, runs continuous experiments, optimizes budgets in real-time, and reports outcomes clearly to drive revenue and efficiency."
+  },
+  {
+    "question": "Top 6 services an agency should offer for your business?",
+    "answer": "Strategy, Performance Ads, SEO, Social & Content, Marketing Automation/CRM, and Analytics/Attribution."
+  },
+  {
+    "question": "What are the advantages of hiring a leading digital marketing agency?",
+    "answer": "Proven playbooks, specialized teams, enterprise-grade tools, faster time-to-value, and lower total cost of ownership."
+  },
+  {
+    "question": "Can I expect instant results after hiring an agency?",
+    "answer": "Some channels show quick lifts (e.g., performance ads). Others compound over time (e.g., SEO). A balanced mix delivers both short-term and long-term ROI."
+  },
+  {
+    "question": "Is it possible to measure the efficacy of your digital marketing agency's strategies?",
+    "answer": "Yes. With clear KPIs, proper tracking, conversion events, and multi-touch attribution, you can measure impact across the funnel."
+  },
+  {
+    "question": "What is the budget to hire a digital marketing agency for your business?",
+    "answer": "The budget to hire the best digital marketing agency in Mumbai depends on your requirements which includes various factors like your scope of services, the industry, the size of your business and, most importantly, your marketing goals and expectations. It is essential to contact the agency directly for any further queries about budget or services to make a better deal. Approximately the budget ranges from 70k to 2 Lakh to hire a good marketing agency for your business.To ensure an informed decision, consider several factors carefully."
+  },
+  {
+    "question": "Before signing up with an agency, should I consider geographic factors like location?",
+    "answer": "No, one does not need to consider the agency's location, as digital marketing services are provided online and are certainly not restricted to physical presence or areas. Anyone can easily receive top digital marketing services from Mumbai to anywhere in the world. However, it is essential to consider the following factors: the agency's expertise in your domain, industry alignment, experience, and facilities they provide for online operations to ensure a smooth working process."
+  },
+  {
+    "question": "What skills are necessary for an agency before onboarding?",
+    "answer": "When onboarding and deciding on an agency, it is essential to prioritize domain expertise, transparent communication that helps build trust, creative design and marketing strategy, and keeping a track record of quality work. The team of people coordinating should have qualities of problem-solving with efficiency. This shows that the agency is highly dependable and trustworthy."
+  }
+];
+
+const IndiaLocation: React.FC = () => {
+  useEffect(() => {
+    document.body.classList.add('service-page');
+    
+    // Re-initialize GSAP DOM animations specifically for the page
+    if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
+      setTimeout(() => {
+        (window as any).initHomeDOMAnimations();
+      }, 100); // Slight delay to ensure DOM is fully painted
+    }
+
+    return () => {
+      document.body.classList.remove('service-page');
+      const { ScrollTrigger } = window as any;
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((t: any) => {
+          if (t.trigger && (t.trigger.closest('.scrub-item') || t.trigger.closest('.logos') || t.trigger.closest('#connect') || t.trigger.closest('#cases-pin'))) {
+            t.kill();
+          }
+        });
+      }
+    };
+  }, []);
+
+  const headline = `Digital Marketing Agency in India`;
+  const description = `We help businesses boost their online presence and growth with expert SEO, social media, and paid media strategies. Based in India, we proudly offer top-tier 360° digital marketing services to businesses across the India. Our dedicated team works as an extension of your brand, helping you uncover your unique voice, refine your messaging, and build genuine connections with your audience. What sets us apart as a leading digital marketing agency? It's our ability to combine creativity, strategy, and a client-centric approach to deliver results you can depend on. Our philosophy is simple: your success is our success. Together, we’ll create a digital future where your brand thrives.`;
+
+  return (
+    <main id="main-content">
+      
+
+      <ServiceHero 
+        headlineParts={[headline]}
+        headlineAccent="India"
+        description={description}
+        buttons={[
+          { text: "Connect Now", link: "/contact-us/", cursor: "GO" }
+        ]}
+      />
+
+      <CaseStudies />
+      <Logos title={`Trusted by Teams in India & Beyond`} />
+      <BrandFilm />
+      <Services />
+      <Testimonials />
+      <FAQ data={locationFaqs} />
+      <Contact />
+    </main>
+  );
+};
+
+export default IndiaLocation;

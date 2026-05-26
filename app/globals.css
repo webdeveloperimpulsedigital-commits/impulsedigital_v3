@@ -1,0 +1,14 @@
+/*
+ * globals.css — imports all existing CSS from the public/css directory.
+ * The actual styles live in /css/styles.css and /css/about.css (loaded via <link> in layout.tsx).
+ * This file imports the existing index.css which was the Vite source CSS.
+ */
+
+/* Re-export the existing CSS bundle.
+   The large index.css and case-study.css from the old Vite src are kept
+   in the public/css/ directory and loaded via <link> tags in layout.tsx
+   for maximum caching efficiency.
+   
+   Any CSS that MUST be inlined by Next.js goes here. */
+
+/* Base resets already in styles.css — nothing to add here */
