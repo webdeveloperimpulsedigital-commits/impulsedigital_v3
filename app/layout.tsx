@@ -66,8 +66,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=5" />
+        <link rel="stylesheet" href="/css/styles.css?v=25" />
         <link rel="stylesheet" href="/css/about.css" />
+        <link rel="stylesheet" href="/css/case-study.css?v=1" />
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
         <link

@@ -29,6 +29,7 @@ const GenerativeSearchOptimisation: React.FC = () => {
   useServicePageBackground();
 
   useEffect(() => {
+    document.body.classList.add('gso-page');
     // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
     const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
     // Lazy proxy — reads window.ScrollTrigger at call-time
@@ -190,6 +191,7 @@ const GenerativeSearchOptimisation: React.FC = () => {
     }
 
     return () => {
+      document.body.classList.remove('gso-page');
       window.removeEventListener('resize', measureFn);
       if (measureTimeout) window.clearTimeout(measureTimeout);
       if (clarityTrigger) clarityTrigger.kill();
