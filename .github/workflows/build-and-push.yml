@@ -34,8 +34,10 @@ jobs:
           cp -R public dist/
           mkdir -p dist/.next
           cp -R .next/static dist/.next/
-          echo "blog/" > dist/.gitignore
-          echo "blogs/" >> dist/.gitignore
+          echo "public/blog/*" > dist/.gitignore
+          echo "!public/blog/.gitkeep" >> dist/.gitignore
+          echo "public/blogs/*" >> dist/.gitignore
+          echo "!public/blogs/.gitkeep" >> dist/.gitignore
 
       - name: Push built files to production branch
         uses: peaceiris/actions-gh-pages@v4

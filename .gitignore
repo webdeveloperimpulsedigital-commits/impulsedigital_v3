@@ -40,6 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /react-website
-/blog
-/blogs
+/public/blog/*
+!/public/blog/.gitkeep
+/public/blogs/*
+!/public/blogs/.gitkeep
 /scripts/sanitize-css.js
