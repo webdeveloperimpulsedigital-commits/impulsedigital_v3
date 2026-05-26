@@ -63,22 +63,14 @@
 
 
   # --------------------------------
-  # 6. REACT SPA ROUTING (FALLBACK TO 200.html)
   # --------------------------------
-  # Don't rewrite the actual index.html or 200.html file
-  RewriteRule ^(index|200)\.html$ - [L]
-
-  # If the requested path is a real file or directory, serve it
+  # 6. PASS NON-STATIC REQUESTS TO NEXT.JS
+  # --------------------------------
+  # If the requested path is a real file or directory in public, serve it directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule . - [L]
 
-  # Serve prerendered index.html for directory routes without requiring a trailing slash
-  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
-  RewriteRule ^(.*)$ /$1/index.html [L]
-
-  # Otherwise, let React handle it via the clean 200.html fallback
-  RewriteRule . /200.html [L]
 
 </IfModule>
 ########## END: REWRITE & REDIRECT RULES ##########
