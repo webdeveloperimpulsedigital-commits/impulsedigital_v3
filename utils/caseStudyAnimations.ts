@@ -59,8 +59,9 @@ export function initCaseStudyAnimations(): () => void {
 
   // Split text reveals
   if (SplitType) {
-    document.querySelectorAll('.split-text').forEach((text: Element) => {
+    document.querySelectorAll('.split-text:not(.split-done)').forEach((text: Element) => {
       if (!text.classList.contains('cs-hero-title') && !text.classList.contains('cs-hero-subtitle')) {
+        text.classList.add('split-done');
         const split = new SplitType(text, { types: 'lines, words' });
         split.lines?.forEach((line: HTMLElement) => {
           const w = document.createElement('div');
