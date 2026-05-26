@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Output standalone build for Hostinger Passenger Node.js compatibility
+  output: 'standalone',
+
   // Preserve existing URL structure — all routes have trailing slashes
   trailingSlash: true,
 
@@ -12,7 +15,7 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       { protocol: 'https', hostname: 'www.theimpulsedigital.com' },
-      { protocol: 'https', hostname: 'cyan-woodcock-459640.hostingersite.com' },
+      { protocol: 'https', hostname: 'lightcyan-pig-140007.hostingersite.com' },
     ],
   },
 
