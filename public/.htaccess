@@ -66,7 +66,8 @@
   # --------------------------------
   # 6. PASS NON-STATIC REQUESTS TO NEXT.JS
   # --------------------------------
-  # If the requested path is a real file or directory in public, serve it directly
+  # If the requested path is a real file or directory in public (excluding the root URL), serve it directly
+  RewriteCond %{REQUEST_URI} !^/$
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule . - [L]
