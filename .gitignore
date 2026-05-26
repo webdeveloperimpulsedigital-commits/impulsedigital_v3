@@ -42,6 +42,8 @@ next-env.d.ts
 /react-website
 /public/blog/*
 !/public/blog/.gitkeep
+!/public/blog/.htaccess
 /public/blogs/*
 !/public/blogs/.gitkeep
+!/public/blogs/.htaccess
 /scripts/sanitize-css.js
