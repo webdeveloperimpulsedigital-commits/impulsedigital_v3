@@ -858,3 +858,75 @@
     padding: clamp(1.5rem, 7vw, 2.25rem) clamp(1rem, 5vw, 1.5rem);
   }
 }
+
+/* --- Download Form Styles --- */
+.cs-download-form {
+  margin: 6rem auto 2rem;
+  max-width: 600px;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  background: rgba(7, 3, 20, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(138, 92, 246, 0.25);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.cs-download-form-glow {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138,92,246,0.6), transparent);
+}
+
+/* --- General Spacing and Layout Responsiveness overrides --- */
+@media (max-width: 900px) {
+  .cs-intro-block {
+    padding: 4rem 1.5rem;
+  }
+  .cs-results-module {
+    margin-bottom: 4rem;
+    padding: 3rem 1.5rem;
+  }
+  .cs-result-banner {
+    margin-top: 2rem;
+  }
+  .cs-section {
+    padding: 4rem 1.5rem;
+  }
+  .cs-final {
+    padding: 6rem 1.5rem;
+  }
+  .cs-journey-wrapper {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-journey-steps {
+    gap: 2rem;
+  }
+  .cs-journey-step {
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px 32px 8px 32px;
+  }
+  .cs-journey-step:hover {
+    transform: none;
+  }
+  .cs-journey-text {
+    font-size: clamp(1.3rem, 4.5vw, 1.7rem);
+  }
+  .cs-journey-step.highlight .cs-journey-text {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .cs-download-form {
+    margin: 4rem 1rem 2rem;
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+}
+

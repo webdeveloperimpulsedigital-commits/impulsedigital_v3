@@ -151,26 +151,9 @@ const DownloadCaseStudyForm: React.FC<DownloadCaseStudyFormProps> = ({ ctaText, 
   };
 
   return (
-    <section
-      className="cs-download-form"
-      style={{
-        margin: '6rem auto 2rem',
-        maxWidth: '600px',
-        padding: '3rem 2.5rem',
-        borderRadius: '20px',
-        background: 'rgba(7, 3, 20, 0.75)',
-        backdropFilter: 'blur(24px)',
-        WebkitBackdropFilter: 'blur(24px)',
-        border: '1px solid rgba(138, 92, 246, 0.25)',
-        boxShadow: '0 24px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06)',
-        position: 'relative',
-      }}
-    >
+    <section className="cs-download-form">
       {/* Top glow edge */}
-      <div style={{
-        position: 'absolute', top: 0, left: '20%', right: '20%', height: '1px',
-        background: 'linear-gradient(90deg, transparent, rgba(138,92,246,0.6), transparent)',
-      }} />
+      <div className="cs-download-form-glow" />
 
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
         <h3 style={{
