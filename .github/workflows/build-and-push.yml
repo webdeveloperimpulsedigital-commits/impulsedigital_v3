@@ -35,6 +35,7 @@ jobs:
           mkdir -p dist/.next
           cp -R .next/static dist/.next/
           echo "blog/" > dist/.gitignore
+          echo "blogs/" >> dist/.gitignore
 
       - name: Push built files to production branch
         uses: peaceiris/actions-gh-pages@v4

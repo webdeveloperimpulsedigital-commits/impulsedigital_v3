@@ -1,6 +1,6 @@
 # WordPress Blog Setup Guide (Hostinger + Next.js Subfolder)
 
-This guide explains how to install and run a WordPress blog inside a `/blog/` subdirectory of your Next.js application on Hostinger.
+This guide explains how to install and run a WordPress blog inside a `/blogs/` subdirectory of your Next.js application on Hostinger.
 
 ---
 
@@ -20,7 +20,7 @@ Your server directory structure should look like this:
     ├── .htaccess           <-- Main Next.js .htaccess file
     ├── css/
     ├── js/
-    └── blog/               <-- CREATE THIS FOLDER & PLACE WORDPRESS HERE
+    └── blogs/              <-- CREATE THIS FOLDER & PLACE WORDPRESS HERE
         ├── wp-admin/
         ├── wp-content/
         ├── wp-includes/
@@ -41,21 +41,21 @@ Your server directory structure should look like this:
 1. Log into your Hostinger **hPanel**.
 2. Go to **File Manager** and navigate to your application root (e.g., `/public_html`).
 3. Open the `public/` folder.
-4. Create a new folder named `blog` inside `public/`.
-5. Upload all the contents of the extracted `wordpress` folder *directly* into `public/blog/`.
+4. Create a new folder named `blogs` inside `public/`.
+5. Upload all the contents of the extracted `wordpress` folder *directly* into `public/blogs/`.
 
 ### Step 2.3: Create MySQL Database
 1. In the Hostinger hPanel, search for **MySQL Databases**.
 2. Create a new database:
-   - **Database Name**: e.g., `u123456789_blog`
-   - **Database User**: e.g., `u123456789_bloguser`
+   - **Database Name**: e.g., `u123456789_blogs`
+   - **Database User**: e.g., `u123456789_blogsuser`
    - **Password**: (Generate a secure password)
 3. Write down these details; you will need them during the WordPress setup.
 
 ### Step 2.4: Run the WordPress Installation Wizard
 1. Open your web browser and navigate to:
-   `https://lightcyan-pig-140007.hostingersite.com/blog/`
-   *(Once your live domain is set up, this will be `https://www.theimpulsedigital.com/blog/`)*.
+   `https://lightcyan-pig-140007.hostingersite.com/blogs/`
+   *(Once your live domain is set up, this will be `https://www.theimpulsedigital.com/blogs/`)*.
 2. Select your language and click **Continue**.
 3. Enter your MySQL database details (Host, Database Name, User, and Password) when prompted.
 4. Complete the installation by creating your WordPress admin username and password.
@@ -74,21 +74,21 @@ We replaced the React SPA fallback rules with a clean static fallback rule:
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule . - [L]
 ```
-Since `/blog/` is a physical directory inside the `public/` folder, Apache matches `RewriteCond %{REQUEST_FILENAME} -d` and skips forwarding it to Next.js, allowing WordPress to execute natively.
+Since `/blogs/` is a physical directory inside the `public/` folder, Apache matches `RewriteCond %{REQUEST_FILENAME} -d` and skips forwarding it to Next.js, allowing WordPress to execute natively.
 
-### WordPress Sub-directory `.htaccess` (`public/blog/.htaccess`)
-Inside the `public/blog/` directory, create or modify the `.htaccess` file to handle WordPress pretty permalinks (e.g., `https://domain.com/blog/sample-post/`):
+### WordPress Sub-directory `.htaccess` (`public/blogs/.htaccess`)
+Inside the `public/blogs/` directory, create or modify the `.htaccess` file to handle WordPress pretty permalinks (e.g., `https://domain.com/blogs/sample-post/`):
 
 ```apache
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /blog/
+RewriteBase /blogs/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /blog/index.php [L]
+RewriteRule . /blogs/index.php [L]
 </IfModule>
 # END WordPress
 ```
@@ -97,4 +97,4 @@ RewriteRule . /blog/index.php [L]
 
 ## 4. Git Considerations
 
-* **Excluded from Git**: The `blog/` folder is explicitly excluded in your root [.gitignore](file:///g:/ID-website-v3/.gitignore) and `dist/.gitignore`. This ensures that your Git pushes and GitHub Actions deployments will **never** overwrite or delete your WordPress files, database connections, or uploaded media (`wp-content/uploads/`).
+* **Excluded from Git**: The `blog/` and `blogs/` folders are explicitly excluded in your root [.gitignore](file:///g:/ID-website-v3/.gitignore) and `dist/.gitignore`. This ensures that your Git pushes and GitHub Actions deployments will **never** overwrite or delete your WordPress files, database connections, or uploaded media (`wp-content/uploads/`).
