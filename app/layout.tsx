@@ -102,9 +102,12 @@ export default function RootLayout({
     var src=node.src||'';
     var id=node.id||'';
     var cls=(node.className&&typeof node.className==='string')?node.className:'';
+    var label=(node.getAttribute&&node.getAttribute('aria-label'))||'';
     if(src.indexOf('zohopublic')>-1||src.indexOf('salesiq.zoho')>-1||
        id.indexOf('zsiq')>-1||id.indexOf('zsales')>-1||
-       cls.indexOf('zsiq')>-1){
+       id.indexOf('siq_')>-1||id==='siq_chatwindow'||
+       cls.indexOf('zsiq')>-1||cls.indexOf('siq_')>-1||
+       label.toLowerCase().indexOf('salesiq')>-1){
       node.parentNode.removeChild(node);
     }
   }
@@ -113,13 +116,15 @@ export default function RootLayout({
       m.addedNodes.forEach(function(n){
         removeZoho(n);
         if(n.querySelectorAll){
-          n.querySelectorAll('[id*="zsiq"],[class*="zsiq"],iframe[src*="zohopublic"],script[src*="zohopublic"]')
+          n.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],[class*="siq_"],iframe[src*="zohopublic"],script[src*="zohopublic"],iframe[aria-label*="SalesIQ"]')
            .forEach(removeZoho);
         }
       });
     });
   });
   obs.observe(document.documentElement,{childList:true,subtree:true});
+  /* Also clean up anything already in the DOM */
+  document.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],iframe[aria-label*="SalesIQ"]').forEach(removeZoho);
 })();`,
           }}
         />
