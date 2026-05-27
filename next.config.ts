@@ -67,6 +67,29 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  // Proxy /blogs/ to the existing WordPress installation on impulsedigital.co.in
+  // Hostinger Node.js hosting routes ALL requests to Node.js — PHP cannot run
+  // inside the app directory. The only way to serve WordPress at /blogs/ is to
+  // have Next.js proxy the requests to the WordPress server transparently.
+  //
+  // IMPORTANT: Also update WordPress site URL in wp-admin → Settings → General:
+  //   WordPress Address (URL): https://www.theimpulsedigital.com/blogs
+  //   Site Address (URL):      https://www.theimpulsedigital.com/blogs
+  async rewrites() {
+    return [
+      {
+        // Proxy /blogs (no trailing slash)
+        source: '/blogs',
+        destination: 'https://impulsedigital.co.in/ID-web-blog/',
+      },
+      {
+        // Proxy /blogs/ and all sub-paths (posts, wp-admin, wp-content, etc.)
+        source: '/blogs/:path*',
+        destination: 'https://impulsedigital.co.in/ID-web-blog/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
