@@ -278,6 +278,20 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  /* Remove sticky so left column doesn't float over content in single-column layout */
+  .cs-h2 {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-split {
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+  .cs-h2 {
+    font-size: clamp(1.7rem, 6.5vw, 2.2rem);
+  }
 }
 
 .cs-h2 {
@@ -429,6 +443,11 @@
   .cs-journey-container {
     grid-template-columns: 1fr;
     gap: 4rem;
+  }
+  /* Remove sticky — in single-column layout sticky causes left block to
+     overlap the journey steps below it on mobile */
+  .cs-journey-left {
+    position: static;
   }
 }
 
@@ -896,6 +915,8 @@
   .cs-results-module {
     margin-bottom: 4rem;
     padding: 3rem 1.5rem;
+    flex-direction: column;
+    gap: 2rem;
   }
   .cs-result-banner {
     margin-top: 2rem;
@@ -909,24 +930,51 @@
   .cs-journey-wrapper {
     padding: 5rem 0;
   }
+  .cs-hero {
+    padding: 140px 1.25rem 3rem;
+  }
+  .cs-proof-module,
+  .cs-proof-module.reverse {
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .cs-journey-left, .cs-h2 {
+    position: static !important;
+  }
   .cs-journey-steps {
     gap: 2rem;
   }
   .cs-journey-step {
-    padding: 2.5rem 1.5rem;
-    border-radius: 8px 32px 8px 32px;
+    padding: 2rem 1.25rem;
+    border-radius: 8px 24px 8px 24px;
   }
   .cs-journey-step:hover {
     transform: none;
   }
   .cs-journey-text {
-    font-size: clamp(1.3rem, 4.5vw, 1.7rem);
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
   }
   .cs-journey-step.highlight .cs-journey-text {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+  }
+  .cs-journey-num {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cs-intro-text {
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+  }
+  .cs-p {
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  }
+  .cs-p.highlight {
+    font-size: clamp(1.35rem, 4.5vw, 1.9rem);
+    padding-left: 1.25rem;
+  }
+  .cs-result-number {
+    font-size: clamp(3rem, 10vw, 5rem);
   }
   .cs-download-form {
     margin: 4rem 1rem 2rem;
@@ -935,3 +983,25 @@
   }
 }
 
+@media (max-width: 480px) {
+  .cs-hero {
+    padding: 120px 1rem 2.5rem;
+  }
+  .cs-hero-title {
+    font-size: clamp(2rem, 11vw, 3.5rem);
+  }
+  .cs-section {
+    padding: 3rem 1rem;
+  }
+  .cs-journey-wrapper {
+    padding: 3.5rem 0;
+  }
+  .cs-journey-container {
+    padding-inline: 1rem;
+    gap: 2rem;
+  }
+  .cs-final-punch {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    padding: clamp(1.25rem, 5vw, 2rem) clamp(0.85rem, 4vw, 1.25rem);
+  }
+}

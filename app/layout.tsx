@@ -68,7 +68,7 @@ export default function RootLayout({
         {/* External CSS */}
         <link rel="stylesheet" href="/css/styles.css?v=40" />
         <link rel="stylesheet" href="/css/about.css?v=4" />
-        <link rel="stylesheet" href="/css/case-study.css?v=26" />
+        <link rel="stylesheet" href="/css/case-study.css?v=27" />
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
         <link
