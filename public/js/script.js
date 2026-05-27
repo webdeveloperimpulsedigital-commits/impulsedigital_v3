@@ -384,6 +384,16 @@ window.addEventListener('resize', () => {
     if(cosmosCards.length > 0) {
         const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
+        // iOS Safari detection — needed for ScrollTrigger pin fix
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                      (navigator.maxTouchPoints > 0 && /Macintosh/.test(navigator.userAgent));
+
+        // iOS fix: normalizeScroll intercepts native iOS scroll so ScrollTrigger
+        // pinning works correctly. Without this, iOS jumps/skips the pinned section.
+        if (isIOS) {
+            ScrollTrigger.normalizeScroll(true);
+        }
+
         // Mobile geometry matches desktop proportionally:
         // 50vw card + 25% x-offset = card starts at viewport edge, flies in and fills screen (overflow clipped)
         // This is the SAME left/right alternating effect as desktop, scaled to mobile viewport.
@@ -450,6 +460,11 @@ window.addEventListener('resize', () => {
             scrollTrigger: {
                 trigger: cosmosSection,
                 pin: true,
+                // iOS: use transform-based pinning (avoids position:fixed WebKit bug
+                // where fixed elements break inside perspective containers)
+                pinType: isIOS ? 'transform' : 'fixed',
+                anticipatePin: isIOS ? 1 : 0,
+                invalidateOnRefresh: true,
                 scrub: 0.7,
                 start: 'top top',
                 end: () => '+=' + (cosmosCards.length * (isMobileDevice ? 1200 : 1080)),

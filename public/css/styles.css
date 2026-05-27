@@ -11580,6 +11580,28 @@ iframe[src*='zohopublic'] {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   iOS SAFARI FIX: overflow:hidden on cosmos-section clips position:fixed and
+   breaks 3D perspective transforms. Use overflow:clip instead which avoids the
+   WebKit stacking context bug while still clipping visually overflowing cards.
+   Targets iOS Safari only via the -webkit-touch-callout hack.
+   ───────────────────────────────────────────────────────────────────────────── */
+@supports (-webkit-touch-callout: none) {
+    .cosmos-section {
+        overflow: clip;
+        -webkit-transform: translateZ(0);
+    }
+
+    .cosmos-wrapper {
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .cosmos-section.cosmos-js-ready {
+        height: 100svh;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    COSMOS STATIC GRID: 641px – 768px
    The pre-JS CSS static grid already handles ≤640px (inside @media max-width:640px).
    This block covers the gap for tablets and large landscape phones in the 641-768px
