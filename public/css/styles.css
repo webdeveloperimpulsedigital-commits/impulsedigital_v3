@@ -8552,6 +8552,9 @@ button,
 
 @media (max-width: 768px) {
     .hero-copy-reveal {
+        /* Disable compositor layer promotion on mobile — each will-change element
+           costs GPU memory, and multiple hero lines + cosmos cards exhaust it */
+        will-change: auto;
         animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) 0.45s forwards;
     }
 
@@ -9148,7 +9151,6 @@ button,
     .footer-col ul {
         display: flex !important;
         flex-direction: column !important;
-<<<<<<< HEAD
         align-items: flex-start !important;
         gap: 0.75rem !important;
     }
@@ -9160,9 +9162,7 @@ button,
 
     .footer-col ul li, .footer-col ul li a {
         font-size: 0.85rem !important;
-=======
-        align-items: center !important;
->>>>>>> de7f16f25915689bbd211a8f1ac90e31e2e7c7b9
+    }
     }
 }
 
@@ -9438,30 +9438,31 @@ button,
     }
 
     .cosmos-card {
-        width: 44vw !important;
+        width: 88vw !important;
         height: auto !important;
-        aspect-ratio: 6 / 5 !important;
-        transform: translate(-50%, -50%);
+        aspect-ratio: 3 / 2 !important;
+        /* Restore auto — no pre-promotion; compositor layer created only during animation */
+        will-change: auto;
     }
 
     .cosmos-card .hs-card-inner {
-        padding: 0.4rem !important;
+        padding: 1.25rem !important;
     }
 
     .cosmos-card .hs-client {
-        font-size: 0.6rem !important;
-        margin-bottom: 0.15rem !important;
-        line-height: 1.1 !important;
-    }
-
-    .cosmos-card .hs-desc {
-        font-size: 0.45rem !important;
+        font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+        margin-bottom: 0.5rem !important;
         line-height: 1.15 !important;
     }
 
+    .cosmos-card .hs-desc {
+        font-size: clamp(0.8rem, 3vw, 1rem) !important;
+        line-height: 1.5 !important;
+    }
+
     .cosmos-wrapper {
-        overflow: clip;
-        contain: paint;
+        /* Shorter focal length than desktop 1500px — same depth illusion, less GPU strain */
+        perspective: 800px;
     }
 
     .contact-page .contact-hero-mark {
@@ -11513,7 +11514,7 @@ button,
     }
 }
 
-/* -- Force-hide Zoho SalesIQ chat widget (removed from GTM � CSS failsafe) -- */
+/* -- Force-hide Zoho SalesIQ chat widget (removed from GTM - CSS failsafe) -- */
 #zsiq_float,
 #zsiq_agtpic,
 .zsiq_flt_rel,
@@ -11527,4 +11528,64 @@ iframe[src*='zohopublic'] {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COSMOS 3D FLY-THROUGH: mobile viewport fix when cosmos-js-ready is active
+   Uses 100svh (small viewport height) so the pinned section sits flush with the
+   screen edge on mobile browsers where the address bar shrinks on scroll.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .cosmos-section.cosmos-js-ready {
+        height: 100svh;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   COSMOS STATIC GRID: 641px – 768px
+   The pre-JS CSS static grid already handles ≤640px (inside @media max-width:640px).
+   This block covers the gap for tablets and large landscape phones in the 641-768px
+   range, shown only before JS has had a chance to run.
+   ───────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 641px) and (max-width: 768px) {
+    .cosmos-section:not(.cosmos-js-ready) {
+        height: auto !important;
+        min-height: 100svh;
+        padding-bottom: 4rem;
+        overflow: visible !important;
+    }
+
+    .cosmos-section:not(.cosmos-js-ready) .cosmos-wrapper {
+        position: relative !important;
+        height: auto !important;
+        padding: 0 1.5rem;
+        display: grid !important;
+        gap: 1.5rem;
+        perspective: none !important;
+        contain: none !important;
+        overflow: visible !important;
+        pointer-events: auto;
+    }
+
+    .cosmos-section:not(.cosmos-js-ready) .cosmos-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: min(30rem, 65vh) !important;
+        opacity: 1 !important;
+        transform: none !important;
+        will-change: auto !important;
+        pointer-events: auto !important;
+    }
+
+    .cosmos-section:not(.cosmos-js-ready) .cosmos-cta {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 2rem 1.5rem 0;
+        text-align: center;
+    }
+}
 }

@@ -26,9 +26,12 @@ const scene = new THREE.Scene();
 // Fog removed to allow infinite deep space visibility
 
 const isMobile = window.innerWidth <= 768;
+// Touch capability check — covers Android Chrome, iOS, and any other touch browser
+const isMobileDevice = isMobile || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
-const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+// Disable antialias on mobile — MSAA is expensive and the quality gain is invisible on small screens
+const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
 
@@ -40,7 +43,7 @@ let brandMesh = null; // Removed large white logo per user request
 // ==========================================
 // 2. DATA FLOW: Original Hero Starfield
 // ==========================================
-const particlesCount = isMobile ? 1000 : 3000;
+const particlesCount = isMobile ? 500 : 3000;
 const posArray = new Float32Array(particlesCount * 3);
 
 for(let i = 0; i < particlesCount * 3; i+=3) {
@@ -71,7 +74,7 @@ window.particlesMaterial = particlesMaterial;
 // ==========================================
 // REMOVED BLURRY DOT TEXTURE. Using raw WebGL pixels for 100% crisp, sharp dots.
 
-const tunnelCount = isMobile ? 200 : 880; // Reduced by ~12% for the perfect balance
+const tunnelCount = isMobile ? 80 : 880; // Mobile gets minimal count — warp is disabled on mobile anyway
 const tunnelPos = new Float32Array(tunnelCount * 3);
 for(let i = 0; i < tunnelCount * 3; i+=3) {
     tunnelPos[i] = (customRandom() - 0.5) * 2000; 
@@ -95,7 +98,8 @@ window.tunnelMat = tunnelMat;
 const reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const setCaseStudyWarpActive = (active) => {
-    const shouldRenderWarp = Boolean(active) && !reducedMotionMedia.matches;
+    // Never activate warp on mobile — simultaneous 3D GSAP scrub + tunnel GPU uploads crash mobile browsers
+    const shouldRenderWarp = Boolean(active) && !reducedMotionMedia.matches && !isMobileDevice;
     tunnelMesh.visible = shouldRenderWarp;
     if (!shouldRenderWarp) {
         tunnelMat.opacity = 0;
@@ -134,7 +138,7 @@ resetBackgroundForRoute();
 // ==========================================
 // 4. DEEP SPACE BACKGROUND (Static & Sparkly)
 // ==========================================
-const bgStarsCount = isMobile ? 5000 : 25000; // The true millions of static stars background
+const bgStarsCount = isMobile ? 1500 : 25000; // Reduced on mobile to cut GPU memory pressure
 const bgStarsPos = new Float32Array(bgStarsCount * 3);
 const bgStarsColors = new Float32Array(bgStarsCount * 3);
 
@@ -196,8 +200,14 @@ const clock = new THREE.Clock();
 let lastFrameTime = 0;
 const fpsInterval = 1000 / 30; // 30 FPS target for mobile
 
+// Pause the RAF loop when the tab is backgrounded — mobile browsers kill it anyway
+// but this prevents draining CPU on desktop when the user has switched tabs.
+let pageHidden = false;
+document.addEventListener('visibilitychange', () => { pageHidden = document.hidden; });
+
 function animate3D(time) {
     requestAnimationFrame(animate3D);
+    if (pageHidden) return;
 
     // Frame throttling on mobile to save CPU/Battery
     if (isMobile) {
@@ -263,9 +273,9 @@ window.addEventListener('resize', () => {
 // DOM & GSAP LOGIC
 // ==========================================
 
-    // iOS Safari detection — Lenis smooth scroll breaks native momentum
-    // scrolling on iPhone/iPad (WebKit intercepts touch events differently).
-    // On iOS we skip Lenis and use native scroll for everything.
+    // Mobile detection for scroll: Lenis intercepts native touch events on ALL mobile
+    // browsers (not just iOS), causing conflicts with pinned ScrollTrigger sections.
+    // Use native scroll on any touch-capable device; Lenis only on true desktop.
     const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
@@ -279,8 +289,8 @@ window.addEventListener('resize', () => {
         }
     };
 
-    if (!isIOS) {
-        // Non-iOS: use Lenis smooth scroll as before
+    if (!isMobileDevice) {
+        // Desktop only: use Lenis smooth scroll
         const lenis = new window.Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -294,11 +304,10 @@ window.addEventListener('resize', () => {
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0, 0);
     } else {
-        // iOS: native scroll — wire up ScrollTrigger and nav state via scroll event
+        // Mobile (iOS, Android, any touch browser): native scroll
         window.globalLenis = null;
         window.addEventListener('scroll', ScrollTrigger.update, { passive: true });
         window.addEventListener('scroll', handleNavScroll, { passive: true });
-        // Tell ScrollTrigger to use native scroll values
         ScrollTrigger.config({ ignoreMobileResize: true });
     }
 
@@ -373,84 +382,50 @@ window.addEventListener('resize', () => {
     const cosmosCards = gsap.utils.toArray('.cosmos-card');
 
     if(cosmosCards.length > 0) {
-        
-        const isMobile = window.innerWidth <= 768;
-        
-        if (isIOS) {
-            // ── iOS FALLBACK: 2D slide-in from sides ──────────────────────────────────
-            // 3D z-axis transforms (z: -5000 → z: 1200) cause entire compositing layers
-            // to go blank on iOS WebKit. Use a clean 2D slide instead.
-            cosmosCards.forEach((card, index) => {
-                const isLeft = index % 2 === 0;
-                const xStart = isLeft ? '-110%' : '110%';
-                gsap.set(card, {
-                    xPercent: -50,
-                    yPercent: -50,
-                    x: isLeft ? -window.innerWidth * 0.25 : window.innerWidth * 0.25,
-                    opacity: 0,
-                    pointerEvents: 'none',
-                    clearProps: 'z,rotationZ'
-                });
+        const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-                ScrollTrigger.create({
-                    trigger: cosmosSection,
-                    start: `top+=${index * 300} center`,
-                    end: `top+=${index * 300 + 400} center`,
-                    scrub: true,
-                    onEnter: () => {
-                        gsap.to(card, { opacity: 1, duration: 0.4, pointerEvents: 'auto' });
-                    },
-                    onLeave: () => {
-                        gsap.to(card, { opacity: 0, duration: 0.3, pointerEvents: 'none' });
-                    },
-                    onEnterBack: () => {
-                        gsap.to(card, { opacity: 1, duration: 0.3, pointerEvents: 'auto' });
-                    },
-                    onLeaveBack: () => {
-                        gsap.to(card, { opacity: 0, duration: 0.3, pointerEvents: 'none' });
-                    }
-                });
-            });
-        } else {
-            // ── Desktop / Android: full 3D fly-through ────────────────────────────────
-            
-            // Initial State: Position cards deep in a true 3D tunnel using Z-axis
-            cosmosCards.forEach((card, index) => {
-                const isLeft = index % 2 === 0;
-                const offsetMultiplier = isMobile ? 0.26 : 0.3;
-                const xOffset = isLeft ? -window.innerWidth * offsetMultiplier : window.innerWidth * offsetMultiplier;
-                
-                gsap.set(card, { 
-                    x: xOffset, 
-                    y: 0, 
-                    xPercent: -50, 
-                    yPercent: -50, 
-                    z: -5000,
-                    scale: 1,
-                    opacity: 0, 
-                    pointerEvents: 'none',
-                    rotationZ: isMobile ? 0 : (isLeft ? -5 : 5)
-                });
-            });
-            
-            // Background Color Inversion
-            gsap.to(document.body, { 
-                backgroundColor: '#000000',
-                scrollTrigger: {
-                    trigger: cosmosSection,
-                    start: 'top bottom',
-                    end: 'top top',
-                    scrub: true
-                }
-            });
+        // Mobile uses a shallower starting depth — same cinematic effect, proportionate to screen size
+        const startZ = isMobileDevice ? -2500 : -5000;
 
-            // Crossfade Particle Systems (Hero slow drift -> Fast warp)
-            gsap.fromTo(particlesMaterial, 
-                { opacity: 0.7 },
-                { opacity: 0, scrollTrigger: { trigger: cosmosSection, start: 'top 80%', end: 'top 20%', scrub: true } }
-            );
+        // Position all cards deep in z-space to start
+        cosmosCards.forEach((card, index) => {
+            const isLeft = index % 2 === 0;
+            const xOffset = isLeft ? -window.innerWidth * 0.3 : window.innerWidth * 0.3;
 
-            gsap.fromTo(tunnelMat, 
+            gsap.set(card, {
+                x: xOffset,
+                y: 0,
+                xPercent: -50,
+                yPercent: -50,
+                z: startZ,
+                scale: 1,
+                opacity: 0,
+                pointerEvents: 'none',
+                rotationZ: isLeft ? -5 : 5
+            });
+        });
+
+        // Background Color Inversion
+        gsap.to(document.body, {
+            backgroundColor: '#000000',
+            scrollTrigger: {
+                trigger: cosmosSection,
+                start: 'top bottom',
+                end: 'top top',
+                scrub: true
+            }
+        });
+
+        // Hero starfield fades out as cosmos section enters (lightweight material opacity only)
+        gsap.fromTo(particlesMaterial,
+            { opacity: 0.7 },
+            { opacity: 0, scrollTrigger: { trigger: cosmosSection, start: 'top 80%', end: 'top 20%', scrub: true } }
+        );
+
+        if (!isMobileDevice) {
+            // Warp tunnel crossfade — desktop only. WebGL particle updates every frame
+            // are too costly on mobile GPUs even with reduced particle counts.
+            gsap.fromTo(tunnelMat,
                 { opacity: 0 },
                 {
                     opacity: 0.8,
@@ -465,45 +440,50 @@ window.addEventListener('resize', () => {
                     }
                 }
             );
+        }
 
-            // Pin the section for continuous forward travel
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: cosmosSection,
-                    pin: true,
-                    scrub: 0.7,
-                    start: 'top top',
-                    end: () => '+=' + (cosmosCards.length * 1080),
-                    onLeave: () => {
+        // Pin the section for the 3D fly-through (both mobile and desktop)
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: cosmosSection,
+                pin: true,
+                scrub: 0.7,
+                start: 'top top',
+                end: () => '+=' + (cosmosCards.length * 1080),
+                onLeave: () => {
+                    if (!isMobileDevice) {
                         gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });
-                    },
-                    onEnterBack: () => {
+                    }
+                },
+                onEnterBack: () => {
+                    if (!isMobileDevice) {
                         setCaseStudyWarpActive(true);
                         gsap.to(tunnelMat, { opacity: 0.8, duration: 0.5 });
                     }
                 }
-            });
+            }
+        });
 
-            cosmosCards.forEach((card, index) => {
-                const staggerTime = 2.0; 
-                const startTime = index * staggerTime; 
-                const flyDuration = 5.0; 
+        cosmosCards.forEach((card, index) => {
+            const staggerTime = 2.0;
+            const startTime = index * staggerTime;
+            const flyDuration = 5.0;
 
-                tl.to(card, {
-                    opacity: 1, pointerEvents: 'auto', duration: 1.5, ease: 'power1.inOut'
-                }, startTime) 
-                
-                tl.to(card, { 
-                    z: 1200,
-                    ease: 'none',
-                    duration: flyDuration 
-                }, startTime) 
-                
-                tl.to(card, {
-                    opacity: 0, pointerEvents: 'none', duration: 0.5, ease: 'power1.in'
-                }, startTime + flyDuration - 0.5);
-            });
-        }
+            tl.to(card, {
+                opacity: 1, pointerEvents: 'auto', duration: 1.5, ease: 'power1.inOut'
+            }, startTime)
+
+            tl.to(card, {
+                z: 1200,
+                ease: 'none',
+                duration: flyDuration
+            }, startTime)
+
+            tl.to(card, {
+                opacity: 0, pointerEvents: 'none', duration: 0.5, ease: 'power1.in'
+            }, startTime + flyDuration - 0.5);
+        });
+
         if (cosmosSection) {
             cosmosSection.classList.add('cosmos-js-ready');
         }
