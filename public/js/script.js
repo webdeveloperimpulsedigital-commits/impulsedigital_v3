@@ -384,13 +384,15 @@ window.addEventListener('resize', () => {
     if(cosmosCards.length > 0) {
         const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-        // Mobile uses a shallower starting depth — same cinematic effect, proportionate to screen size
-        const startZ = isMobileDevice ? -2500 : -5000;
+        // Mobile: deeper start depth + tighter x-offset = same cinematic center fly-through as desktop
+        const startZ = isMobileDevice ? -3500 : -5000;
 
         // Position all cards deep in z-space to start
         cosmosCards.forEach((card, index) => {
             const isLeft = index % 2 === 0;
-            const xOffset = isLeft ? -window.innerWidth * 0.3 : window.innerWidth * 0.3;
+            // Mobile: 20% offset (centered feel) vs desktop 30% (wider spread)
+            const xOffsetRatio = isMobileDevice ? 0.18 : 0.3;
+            const xOffset = isLeft ? -window.innerWidth * xOffsetRatio : window.innerWidth * xOffsetRatio;
 
             gsap.set(card, {
                 x: xOffset,
@@ -401,7 +403,7 @@ window.addEventListener('resize', () => {
                 scale: 1,
                 opacity: 0,
                 pointerEvents: 'none',
-                rotationZ: isLeft ? -5 : 5
+                rotationZ: isLeft ? -8 : 8
             });
         });
 
@@ -449,7 +451,7 @@ window.addEventListener('resize', () => {
                 pin: true,
                 scrub: 0.7,
                 start: 'top top',
-                end: () => '+=' + (cosmosCards.length * 1080),
+                end: () => '+=' + (cosmosCards.length * (isMobileDevice ? 1200 : 1080)),
                 onLeave: () => {
                     if (!isMobileDevice) {
                         gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });

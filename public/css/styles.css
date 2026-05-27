@@ -9438,31 +9438,31 @@ button,
     }
 
     .cosmos-card {
-        width: 88vw !important;
+        width: 72vw !important;
         height: auto !important;
         aspect-ratio: 3 / 2 !important;
-        /* Restore auto — no pre-promotion; compositor layer created only during animation */
         will-change: auto;
     }
 
     .cosmos-card .hs-card-inner {
-        padding: 1.25rem !important;
+        padding: 1.5rem !important;
+        background: linear-gradient(to top, rgba(2,0,24,0.95) 0%, rgba(2,0,24,0.5) 70%, transparent 100%) !important;
     }
 
     .cosmos-card .hs-client {
-        font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+        font-size: clamp(1.4rem, 5vw, 2rem) !important;
         margin-bottom: 0.5rem !important;
         line-height: 1.15 !important;
     }
 
     .cosmos-card .hs-desc {
-        font-size: clamp(0.8rem, 3vw, 1rem) !important;
+        font-size: clamp(0.85rem, 3vw, 1.1rem) !important;
         line-height: 1.5 !important;
     }
 
     .cosmos-wrapper {
-        /* Shorter focal length than desktop 1500px — same depth illusion, less GPU strain */
-        perspective: 800px;
+        /* Deeper focal length = stronger 3D depth illusion on mobile */
+        perspective: 1200px;
     }
 
     .contact-page .contact-hero-mark {
