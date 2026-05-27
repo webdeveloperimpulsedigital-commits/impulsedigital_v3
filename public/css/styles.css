@@ -9448,19 +9448,19 @@ button,
     }
 
     .cosmos-card .hs-card-inner {
-        padding: 1.5rem !important;
+        padding: 0.9rem !important;
         background: linear-gradient(to top, rgba(2,0,24,0.95) 0%, rgba(2,0,24,0.5) 70%, transparent 100%) !important;
     }
 
     .cosmos-card .hs-client {
-        font-size: clamp(1.4rem, 5vw, 2rem) !important;
-        margin-bottom: 0.5rem !important;
+        font-size: clamp(0.95rem, 3vw, 1.2rem) !important;
+        margin-bottom: 0.3rem !important;
         line-height: 1.15 !important;
     }
 
     .cosmos-card .hs-desc {
-        font-size: clamp(0.85rem, 3vw, 1.1rem) !important;
-        line-height: 1.5 !important;
+        font-size: clamp(0.65rem, 2vw, 0.8rem) !important;
+        line-height: 1.4 !important;
     }
 
     .cosmos-wrapper {
