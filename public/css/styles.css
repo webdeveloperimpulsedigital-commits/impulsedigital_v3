@@ -11512,3 +11512,19 @@ button,
         overflow-wrap: anywhere;
     }
 }
+
+/* -- Force-hide Zoho SalesIQ chat widget (removed from GTM — CSS failsafe) -- */
+#zsiq_float,
+#zsiq_agtpic,
+.zsiq_flt_rel,
+[id^='zsiq'],
+[class^='zsiq'],
+[id*='siqwebchat'],
+[class*='siqwebchat'],
+iframe[src*='salesiq.zoho'],
+iframe[src*='zohopublic'] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

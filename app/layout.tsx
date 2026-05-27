@@ -66,7 +66,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=30" />
+        <link rel="stylesheet" href="/css/styles.css?v=31" />
         <link rel="stylesheet" href="/css/about.css?v=4" />
         <link rel="stylesheet" href="/css/case-study.css?v=26" />
 
