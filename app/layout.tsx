@@ -91,6 +91,39 @@ export default function RootLayout({
 
       </head>
       <body>
+        {/* Block Zoho SalesIQ — removes any Zoho elements GTM tries to inject */}
+        <Script
+          id="block-zoho-salesiq"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+  function removeZoho(node){
+    if(!node||!node.parentNode)return;
+    var src=node.src||'';
+    var id=node.id||'';
+    var cls=(node.className&&typeof node.className==='string')?node.className:'';
+    if(src.indexOf('zohopublic')>-1||src.indexOf('salesiq.zoho')>-1||
+       id.indexOf('zsiq')>-1||id.indexOf('zsales')>-1||
+       cls.indexOf('zsiq')>-1){
+      node.parentNode.removeChild(node);
+    }
+  }
+  var obs=new MutationObserver(function(muts){
+    muts.forEach(function(m){
+      m.addedNodes.forEach(function(n){
+        removeZoho(n);
+        if(n.querySelectorAll){
+          n.querySelectorAll('[id*="zsiq"],[class*="zsiq"],iframe[src*="zohopublic"],script[src*="zohopublic"]')
+           .forEach(removeZoho);
+        }
+      });
+    });
+  });
+  obs.observe(document.documentElement,{childList:true,subtree:true});
+})();`,
+          }}
+        />
+
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
