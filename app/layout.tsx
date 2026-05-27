@@ -167,12 +167,6 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        {/* Zoho SalesIQ */}
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.in/widget?wc=siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364"
-          strategy="lazyOnload"
-        />
 
         {/* Google Analytics */}
         <Script
