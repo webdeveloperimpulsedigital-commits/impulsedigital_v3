@@ -1390,6 +1390,14 @@
 @media (max-width: 700px) {
   .ab-section { padding: 5.5rem 0; }
   .ab-wrap, .ab-wrap-narrow, .ab-wrap-full { padding: 0 1.25rem; }
+  .ab-section,
+  .ab-section * {
+    max-width: 100%;
+  }
+  .ab-appetite,
+  .ab-appetite * {
+    overflow-wrap: anywhere;
+  }
   .ab-index { right: 1.25rem; top: 2rem; }
   .ab-fit-attrs { grid-template-columns: 1fr; }
   .ab-tasks { grid-template-columns: 1fr; }
@@ -1419,4 +1427,18 @@
   .ab-final-stack .row:nth-child(2),
   .ab-final-stack .row:nth-child(3) { margin-left: 0; }
   .ab-final-cta-row { justify-content: center; }
+}
+
+@media (max-width: 700px) {
+  .ab-hero-h {
+    font-size: clamp(2.45rem, 11vw, 2.9rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+  .ab-hero-tagline,
+  .ab-hero-lede {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
 }

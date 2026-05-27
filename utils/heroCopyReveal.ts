@@ -13,6 +13,15 @@ const toElements = (targets?: RevealTarget | RevealTarget[]) => {
   return list.filter((target): target is HTMLElement => target instanceof HTMLElement);
 };
 
+const waitForFonts = async () => {
+  if (!document.fonts?.ready) return;
+
+  await Promise.race([
+    document.fonts.ready,
+    new Promise((resolve) => window.setTimeout(resolve, 900)),
+  ]);
+};
+
 export const startHeroCopyReveal = ({
   primary,
   supporting,
@@ -30,7 +39,7 @@ export const startHeroCopyReveal = ({
 
   const reveal = async () => {
     try {
-      await document.fonts?.ready;
+      await waitForFonts();
     } catch {
       // The reveal should proceed even if the browser cannot settle font loading.
     }

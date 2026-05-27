@@ -1,4 +1,4 @@
-# Disable Phusion Passenger for this subdirectory so Apache serves PHP/WordPress directly
+# Disable Phusion Passenger so Apache/LiteSpeed serves WordPress PHP directly
 PassengerEnabled off
 
 # BEGIN WordPress

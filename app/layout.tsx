@@ -66,8 +66,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=28" />
-        <link rel="stylesheet" href="/css/about.css?v=2" />
+        <link rel="stylesheet" href="/css/styles.css?v=30" />
+        <link rel="stylesheet" href="/css/about.css?v=4" />
         <link rel="stylesheet" href="/css/case-study.css?v=26" />
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
@@ -163,7 +163,7 @@ export default function RootLayout({
 
         {/* WebGL Canvas Particles & Animations script */}
         <Script
-          src="/js/script.js?v=61"
+          src="/js/script.js?v=62"
           strategy="afterInteractive"
         />
 

@@ -504,6 +504,9 @@ window.addEventListener('resize', () => {
                 }, startTime + flyDuration - 0.5);
             });
         }
+        if (cosmosSection) {
+            cosmosSection.classList.add('cosmos-js-ready');
+        }
     }
 
 
