@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/tcpl/layout,_N_T_/case-studies/tcpl/page,_N_T_/case-studies/tcpl"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/tcpl/__PAGE__",
+    "/case-studies/tcpl",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}

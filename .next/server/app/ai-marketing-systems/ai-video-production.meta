@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ai-marketing-systems/layout,_N_T_/ai-marketing-systems/ai-video-production/layout,_N_T_/ai-marketing-systems/ai-video-production/page,_N_T_/ai-marketing-systems/ai-video-production"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ai-marketing-systems/ai-video-production/__PAGE__",
+    "/ai-marketing-systems/ai-video-production",
+    "/ai-marketing-systems",
+    "/_index",
+    "/_head"
+  ]
+}

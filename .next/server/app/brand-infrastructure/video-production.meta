@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brand-infrastructure/layout,_N_T_/brand-infrastructure/video-production/layout,_N_T_/brand-infrastructure/video-production/page,_N_T_/brand-infrastructure/video-production"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/brand-infrastructure/video-production/__PAGE__",
+    "/brand-infrastructure/video-production",
+    "/brand-infrastructure",
+    "/_index",
+    "/_head"
+  ]
+}

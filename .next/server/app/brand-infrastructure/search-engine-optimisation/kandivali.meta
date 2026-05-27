@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brand-infrastructure/layout,_N_T_/brand-infrastructure/search-engine-optimisation/layout,_N_T_/brand-infrastructure/search-engine-optimisation/kandivali/layout,_N_T_/brand-infrastructure/search-engine-optimisation/kandivali/page,_N_T_/brand-infrastructure/search-engine-optimisation/kandivali"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/brand-infrastructure/search-engine-optimisation/kandivali/__PAGE__",
+    "/brand-infrastructure/search-engine-optimisation/kandivali",
+    "/brand-infrastructure/search-engine-optimisation",
+    "/brand-infrastructure",
+    "/_index",
+    "/_head"
+  ]
+}

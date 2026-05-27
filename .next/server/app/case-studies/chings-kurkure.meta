@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/chings-kurkure/layout,_N_T_/case-studies/chings-kurkure/page,_N_T_/case-studies/chings-kurkure"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/chings-kurkure/__PAGE__",
+    "/case-studies/chings-kurkure",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}

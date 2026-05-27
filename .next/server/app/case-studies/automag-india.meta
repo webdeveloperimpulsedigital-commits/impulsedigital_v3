@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/automag-india/layout,_N_T_/case-studies/automag-india/page,_N_T_/case-studies/automag-india"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/automag-india/__PAGE__",
+    "/case-studies/automag-india",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}

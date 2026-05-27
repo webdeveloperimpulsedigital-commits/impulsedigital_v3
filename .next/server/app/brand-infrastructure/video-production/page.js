@@ -1,0 +1,13 @@
+var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/brand-infrastructure/video-production/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0tp90zv._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0jp1ppx.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0ukttjy._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__01i7tsd._.js")
+R.c("server/chunks/ssr/_0jrmzz2._.js")
+R.c("server/chunks/ssr/app_not-found_tsx_0u42gv_._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_0ee1czk._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
+R.c("server/chunks/ssr/0zjb_server_app_brand-infrastructure_video-production_page_actions_0wf1kgo.js")
+R.m(90033)
+module.exports=R.m(90033).exports

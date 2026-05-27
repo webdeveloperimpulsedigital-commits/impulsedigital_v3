@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brand-infrastructure/layout,_N_T_/brand-infrastructure/social-media-marketing/layout,_N_T_/brand-infrastructure/social-media-marketing/page,_N_T_/brand-infrastructure/social-media-marketing"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/brand-infrastructure/social-media-marketing/__PAGE__",
+    "/brand-infrastructure/social-media-marketing",
+    "/brand-infrastructure",
+    "/_index",
+    "/_head"
+  ]
+}

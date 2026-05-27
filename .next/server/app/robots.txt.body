@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /_next/
+
+Host: https://www.theimpulsedigital.com
+Sitemap: https://www.theimpulsedigital.com/sitemap.xml

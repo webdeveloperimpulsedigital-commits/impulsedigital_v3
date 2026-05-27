@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brand-infrastructure/layout,_N_T_/brand-infrastructure/search-engine-optimisation/layout,_N_T_/brand-infrastructure/search-engine-optimisation/andheri/layout,_N_T_/brand-infrastructure/search-engine-optimisation/andheri/page,_N_T_/brand-infrastructure/search-engine-optimisation/andheri"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/brand-infrastructure/search-engine-optimisation/andheri/__PAGE__",
+    "/brand-infrastructure/search-engine-optimisation/andheri",
+    "/brand-infrastructure/search-engine-optimisation",
+    "/brand-infrastructure",
+    "/_index",
+    "/_head"
+  ]
+}

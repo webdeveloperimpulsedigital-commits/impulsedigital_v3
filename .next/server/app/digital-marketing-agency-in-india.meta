@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/digital-marketing-agency-in-india/layout,_N_T_/digital-marketing-agency-in-india/page,_N_T_/digital-marketing-agency-in-india"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/digital-marketing-agency-in-india/__PAGE__",
+    "/digital-marketing-agency-in-india",
+    "/_index",
+    "/_head"
+  ]
+}

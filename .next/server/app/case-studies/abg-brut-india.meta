@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/abg-brut-india/layout,_N_T_/case-studies/abg-brut-india/page,_N_T_/case-studies/abg-brut-india"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/abg-brut-india/__PAGE__",
+    "/case-studies/abg-brut-india",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}

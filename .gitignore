@@ -1,0 +1,6 @@
+public/blog/*
+!public/blog/.gitkeep
+!public/blog/.htaccess
+public/blogs/*
+!public/blogs/.gitkeep
+!public/blogs/.htaccess

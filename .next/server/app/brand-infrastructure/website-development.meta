@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/brand-infrastructure/layout,_N_T_/brand-infrastructure/website-development/layout,_N_T_/brand-infrastructure/website-development/page,_N_T_/brand-infrastructure/website-development"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/brand-infrastructure/website-development/__PAGE__",
+    "/brand-infrastructure/website-development",
+    "/brand-infrastructure",
+    "/_index",
+    "/_head"
+  ]
+}

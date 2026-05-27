@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/fours-for-good/layout,_N_T_/case-studies/fours-for-good/page,_N_T_/case-studies/fours-for-good"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/fours-for-good/__PAGE__",
+    "/case-studies/fours-for-good",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}
