@@ -262,27 +262,45 @@ window.addEventListener('resize', () => {
 // ==========================================
 // DOM & GSAP LOGIC
 // ==========================================
-    
-    const lenis = new window.Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        smooth: true,
-    });
-    window.globalLenis = lenis;
 
+    // iOS Safari detection — Lenis smooth scroll breaks native momentum
+    // scrolling on iPhone/iPad (WebKit intercepts touch events differently).
+    // On iOS we skip Lenis and use native scroll for everything.
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
     gsap.registerPlugin(ScrollTrigger);
-    lenis.on('scroll', ScrollTrigger.update);
-    lenis.on('scroll', () => {
+
+    const handleNavScroll = () => {
         const nav = document.getElementById('main-nav');
-        if(nav) {
-            if(window.scrollY > 10) nav.classList.add('scrolled');
+        if (nav) {
+            if (window.scrollY > 10) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
         }
-    });
-    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-    gsap.ticker.lagSmoothing(0, 0);
+    };
+
+    if (!isIOS) {
+        // Non-iOS: use Lenis smooth scroll as before
+        const lenis = new window.Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            smooth: true,
+        });
+        window.globalLenis = lenis;
+
+        lenis.on('scroll', ScrollTrigger.update);
+        lenis.on('scroll', handleNavScroll);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0, 0);
+    } else {
+        // iOS: native scroll — wire up ScrollTrigger and nav state via scroll event
+        window.globalLenis = null;
+        window.addEventListener('scroll', ScrollTrigger.update, { passive: true });
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        // Tell ScrollTrigger to use native scroll values
+        ScrollTrigger.config({ ignoreMobileResize: true });
+    }
 
     // ==========================================================
     // MARK CURSOR — the user's pointer is the brand mark.

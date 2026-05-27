@@ -11,17 +11,14 @@ const Navbar: React.FC = () => {
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
   useEffect(() => {
-    const checkAndToggleLenis = () => {
+    // iOS Safari: globalLenis is null (we skip Lenis on iOS)
+    // Always guard lenis calls with null check
+    const toggleLenis = (stop: boolean) => {
       const lenis = (window as any).globalLenis;
-      if (lenis) {
-        if (isMobileMenuOpen) {
-          lenis.stop();
-        } else {
-          lenis.start();
-        }
-        return true;
-      }
-      return false;
+      if (!lenis) return true; // null = iOS native scroll, nothing to toggle
+      if (stop) lenis.stop();
+      else lenis.start();
+      return true;
     };
 
     if (isMobileMenuOpen) {
@@ -29,30 +26,19 @@ const Navbar: React.FC = () => {
       document.body.dataset.scrollY = String(scrollY);
       document.body.style.top = `-${scrollY}px`;
       document.body.classList.add('mobile-menu-active');
+      toggleLenis(true);
     } else {
       const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
       document.body.classList.remove('mobile-menu-active');
       document.body.style.top = '';
       delete document.body.dataset.scrollY;
-      window.scrollTo({ top: scrollY, behavior: 'instant' });
-    }
-
-    const success = checkAndToggleLenis();
-
-    let intervalId: any;
-    if (isMobileMenuOpen) {
-      if (!success) {
-        intervalId = setInterval(() => {
-          if (checkAndToggleLenis()) {
-            clearInterval(intervalId);
-          }
-        }, 50);
-      }
-    } else {
-      setTimeout(() => {
-        const lenis = (window as any).globalLenis;
-        lenis?.start();
-      }, 50);
+      // Restore scroll — must happen AFTER removing position:fixed
+      // Use requestAnimationFrame on iOS to ensure layout is recalculated first
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY);
+      });
+      // Small delay before restarting Lenis to avoid position jump on non-iOS
+      setTimeout(() => { toggleLenis(false); }, 50);
     }
 
     return () => {
@@ -60,10 +46,10 @@ const Navbar: React.FC = () => {
       document.body.classList.remove('mobile-menu-active');
       document.body.style.top = '';
       delete document.body.dataset.scrollY;
-      if (scrollY > 0) window.scrollTo({ top: scrollY, behavior: 'instant' });
-      if (intervalId) clearInterval(intervalId);
-      const lenis = (window as any).globalLenis;
-      lenis?.start();
+      if (scrollY > 0) {
+        requestAnimationFrame(() => { window.scrollTo(0, scrollY); });
+      }
+      toggleLenis(false);
     };
   }, [isMobileMenuOpen]);
 
