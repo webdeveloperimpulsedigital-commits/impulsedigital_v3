@@ -5,4 +5,4 @@
 :HL["/css/about.css?v=4","style"]
 :HL["/css/case-study.css?v=26","style"]
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"growth-intelligence","param":null,"prefetchHints":0,"slots":{"children":{"name":"market-intelligence","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"oPYDuT2Sq9U9FtX-TlSDE"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"growth-intelligence","param":null,"prefetchHints":0,"slots":{"children":{"name":"market-intelligence","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"dnnS7xvwizQ9Lqfvd0_K7"}
