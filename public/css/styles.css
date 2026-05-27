@@ -9438,10 +9438,13 @@ button,
     }
 
     .cosmos-card {
-        width: 80vw !important;
+        /* 50vw + 25% x-offset = card starts at viewport edge, same geometry as desktop 40vw + 30%.
+           Cards fly in from left/right and grow to fill screen — overflow clipped by cosmos-section. */
+        width: 50vw !important;
         height: auto !important;
         aspect-ratio: 3 / 2 !important;
         will-change: auto;
+        border-radius: 14px !important;
     }
 
     .cosmos-card .hs-card-inner {

@@ -384,14 +384,15 @@ window.addEventListener('resize', () => {
     if(cosmosCards.length > 0) {
         const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-        // Mobile: closer start (cards appear larger) + tight x-offset (no clipping on narrow viewport)
-        // Math: 80vw card = 300px radius 150px. Safe offset = (375/2)-150 = 37px = ~10%
-        const startZ = isMobileDevice ? -2500 : -5000;
+        // Mobile geometry matches desktop proportionally:
+        // 50vw card + 25% x-offset = card starts at viewport edge, flies in and fills screen (overflow clipped)
+        // This is the SAME left/right alternating effect as desktop, scaled to mobile viewport.
+        const startZ = isMobileDevice ? -4000 : -5000;
 
         cosmosCards.forEach((card, index) => {
             const isLeft = index % 2 === 0;
-            // Mobile: 8% offset keeps full card in viewport. Desktop: 30% spread.
-            const xOffsetRatio = isMobileDevice ? 0.08 : 0.3;
+            // Mobile: 25% offset (card starts at viewport edge, same as desktop 30% geometry)
+            const xOffsetRatio = isMobileDevice ? 0.25 : 0.3;
             const xOffset = isLeft ? -window.innerWidth * xOffsetRatio : window.innerWidth * xOffsetRatio;
 
             gsap.set(card, {
