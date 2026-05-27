@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "node scripts/ensure-wordpress.js",
+    "postbuild": "node scripts/ensure-wordpress.js"
   },
   "dependencies": {
     "next": "16.2.6",
