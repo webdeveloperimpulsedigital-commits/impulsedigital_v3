@@ -121,9 +121,6 @@ const Navbar: React.FC = () => {
                   <Link href="/growth-intelligence/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Growth Intelligence
                   </Link>
-                  <span className="mobile-only-icon" onClick={(e) => toggleSubMenu('growth', e)} style={{ cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {openSubMenu === 'growth' ? '−' : '+'}
-                  </span>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'growth' ? 'mobile-open' : ''}`}>
                   <Link href="/growth-intelligence/consumer-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Consumer Intelligence</Link>
@@ -137,9 +134,6 @@ const Navbar: React.FC = () => {
                   <Link href="/ai-marketing-systems/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     AI Marketing Systems
                   </Link>
-                  <span className="mobile-only-icon" onClick={(e) => toggleSubMenu('ai', e)} style={{ cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {openSubMenu === 'ai' ? '−' : '+'}
-                  </span>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'ai' ? 'mobile-open' : ''}`}>
                   <Link href="/ai-marketing-systems/archer-ai/" className="dropdown-item" onClick={handleDropdownNavClick}>Archer AI</Link>
@@ -153,9 +147,6 @@ const Navbar: React.FC = () => {
                   <Link href="/brand-infrastructure/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Brand Infrastructure
                   </Link>
-                  <span className="mobile-only-icon" onClick={(e) => toggleSubMenu('brand', e)} style={{ cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {openSubMenu === 'brand' ? '−' : '+'}
-                  </span>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'brand' ? 'mobile-open' : ''}`}>
                   <Link href="/brand-infrastructure/search-engine-optimisation/" className="dropdown-item" onClick={handleDropdownNavClick}>Search Engine Optimization</Link>
