@@ -9438,7 +9438,7 @@ button,
     }
 
     .cosmos-card {
-        width: 72vw !important;
+        width: 80vw !important;
         height: auto !important;
         aspect-ratio: 3 / 2 !important;
         will-change: auto;
@@ -9461,8 +9461,8 @@ button,
     }
 
     .cosmos-wrapper {
-        /* Deeper focal length = stronger 3D depth illusion on mobile */
-        perspective: 1200px;
+        /* Match desktop perspective exactly — prevents cards going behind camera at z=1200 */
+        perspective: 1500px;
     }
 
     .contact-page .contact-hero-mark {

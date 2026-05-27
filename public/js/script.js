@@ -384,14 +384,14 @@ window.addEventListener('resize', () => {
     if(cosmosCards.length > 0) {
         const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-        // Mobile: deeper start depth + tighter x-offset = same cinematic center fly-through as desktop
-        const startZ = isMobileDevice ? -3500 : -5000;
+        // Mobile: closer start (cards appear larger) + tight x-offset (no clipping on narrow viewport)
+        // Math: 80vw card = 300px radius 150px. Safe offset = (375/2)-150 = 37px = ~10%
+        const startZ = isMobileDevice ? -2500 : -5000;
 
-        // Position all cards deep in z-space to start
         cosmosCards.forEach((card, index) => {
             const isLeft = index % 2 === 0;
-            // Mobile: 20% offset (centered feel) vs desktop 30% (wider spread)
-            const xOffsetRatio = isMobileDevice ? 0.18 : 0.3;
+            // Mobile: 8% offset keeps full card in viewport. Desktop: 30% spread.
+            const xOffsetRatio = isMobileDevice ? 0.08 : 0.3;
             const xOffset = isLeft ? -window.innerWidth * xOffsetRatio : window.innerWidth * xOffsetRatio;
 
             gsap.set(card, {
@@ -403,7 +403,7 @@ window.addEventListener('resize', () => {
                 scale: 1,
                 opacity: 0,
                 pointerEvents: 'none',
-                rotationZ: isLeft ? -8 : 8
+                rotationZ: isLeft ? -10 : 10
             });
         });
 
