@@ -1,4 +1,7 @@
 ########## BEGIN: REWRITE & REDIRECT RULES ##########
+# Allow Apache to follow symbolic links (required for WordPress symlink)
+Options +FollowSymLinks +SymLinksIfOwnerMatch
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
