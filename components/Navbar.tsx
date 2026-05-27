@@ -121,6 +121,13 @@ const Navbar: React.FC = () => {
                   <Link href="/growth-intelligence/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Growth Intelligence
                   </Link>
+                  <button
+                    className="submenu-toggle"
+                    onClick={(e) => toggleSubMenu('growth', e)}
+                    aria-label="Toggle Growth Intelligence submenu"
+                  >
+                    {openSubMenu === 'growth' ? '−' : '+'}
+                  </button>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'growth' ? 'mobile-open' : ''}`}>
                   <Link href="/growth-intelligence/consumer-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Consumer Intelligence</Link>
@@ -134,6 +141,13 @@ const Navbar: React.FC = () => {
                   <Link href="/ai-marketing-systems/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     AI Marketing Systems
                   </Link>
+                  <button
+                    className="submenu-toggle"
+                    onClick={(e) => toggleSubMenu('ai', e)}
+                    aria-label="Toggle AI Marketing Systems submenu"
+                  >
+                    {openSubMenu === 'ai' ? '−' : '+'}
+                  </button>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'ai' ? 'mobile-open' : ''}`}>
                   <Link href="/ai-marketing-systems/archer-ai/" className="dropdown-item" onClick={handleDropdownNavClick}>Archer AI</Link>
@@ -147,6 +161,13 @@ const Navbar: React.FC = () => {
                   <Link href="/brand-infrastructure/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Brand Infrastructure
                   </Link>
+                  <button
+                    className="submenu-toggle"
+                    onClick={(e) => toggleSubMenu('brand', e)}
+                    aria-label="Toggle Brand Infrastructure submenu"
+                  >
+                    {openSubMenu === 'brand' ? '−' : '+'}
+                  </button>
                 </h4>
                 <div className={`dropdown-list ${openSubMenu === 'brand' ? 'mobile-open' : ''}`}>
                   <Link href="/brand-infrastructure/search-engine-optimisation/" className="dropdown-item" onClick={handleDropdownNavClick}>Search Engine Optimization</Link>
