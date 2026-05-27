@@ -376,109 +376,136 @@ window.addEventListener('resize', () => {
         
         const isMobile = window.innerWidth <= 768;
         
-        // Initial State: Position cards deep in a true 3D tunnel using Z-axis
-        cosmosCards.forEach((card, index) => {
-            const isLeft = index % 2 === 0;
-            // X position is fixed. Perspective naturally moves them outward as you fly closer.
-            // On mobile, push them perfectly to the sides (0.26 * width) so they don't overlap in the center and don't go off screen with 44vw width!
-            const offsetMultiplier = isMobile ? 0.26 : 0.3;
-            const xOffset = isLeft ? -window.innerWidth * offsetMultiplier : window.innerWidth * offsetMultiplier;
-            // No vertical offset needed if they are neatly on the sides
-            const yOffset = 0;
-            
-            gsap.set(card, { 
-                x: xOffset, 
-                y: yOffset, 
-                xPercent: -50, 
-                yPercent: -50, 
-                z: -5000, // Very deep in the tunnel
-                scale: 1, // Let CSS perspective handle sizing natively
-                opacity: 0, 
-                pointerEvents: 'none',
-                rotationZ: isMobile ? 0 : (isLeft ? -5 : 5)
+        if (isIOS) {
+            // ── iOS FALLBACK: 2D slide-in from sides ──────────────────────────────────
+            // 3D z-axis transforms (z: -5000 → z: 1200) cause entire compositing layers
+            // to go blank on iOS WebKit. Use a clean 2D slide instead.
+            cosmosCards.forEach((card, index) => {
+                const isLeft = index % 2 === 0;
+                const xStart = isLeft ? '-110%' : '110%';
+                gsap.set(card, {
+                    xPercent: -50,
+                    yPercent: -50,
+                    x: isLeft ? -window.innerWidth * 0.25 : window.innerWidth * 0.25,
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    clearProps: 'z,rotationZ'
+                });
+
+                ScrollTrigger.create({
+                    trigger: cosmosSection,
+                    start: `top+=${index * 300} center`,
+                    end: `top+=${index * 300 + 400} center`,
+                    scrub: true,
+                    onEnter: () => {
+                        gsap.to(card, { opacity: 1, duration: 0.4, pointerEvents: 'auto' });
+                    },
+                    onLeave: () => {
+                        gsap.to(card, { opacity: 0, duration: 0.3, pointerEvents: 'none' });
+                    },
+                    onEnterBack: () => {
+                        gsap.to(card, { opacity: 1, duration: 0.3, pointerEvents: 'auto' });
+                    },
+                    onLeaveBack: () => {
+                        gsap.to(card, { opacity: 0, duration: 0.3, pointerEvents: 'none' });
+                    }
+                });
             });
-        });
-        
-        // Background Color Inversion
-        gsap.to(document.body, { 
-            backgroundColor: '#000000',
-            scrollTrigger: {
-                trigger: cosmosSection,
-                start: 'top bottom',
-                end: 'top top',
-                scrub: true
-            }
-        });
-
-        // Crossfade Particle Systems (Hero slow drift -> Fast warp)
-        gsap.fromTo(particlesMaterial, 
-            { opacity: 0.7 },
-            { opacity: 0, scrollTrigger: { trigger: cosmosSection, start: 'top 80%', end: 'top 20%', scrub: true } }
-        );
-
-        gsap.fromTo(tunnelMat, 
-            { opacity: 0 },
-            {
-                opacity: 0.8,
+        } else {
+            // ── Desktop / Android: full 3D fly-through ────────────────────────────────
+            
+            // Initial State: Position cards deep in a true 3D tunnel using Z-axis
+            cosmosCards.forEach((card, index) => {
+                const isLeft = index % 2 === 0;
+                const offsetMultiplier = isMobile ? 0.26 : 0.3;
+                const xOffset = isLeft ? -window.innerWidth * offsetMultiplier : window.innerWidth * offsetMultiplier;
+                
+                gsap.set(card, { 
+                    x: xOffset, 
+                    y: 0, 
+                    xPercent: -50, 
+                    yPercent: -50, 
+                    z: -5000,
+                    scale: 1,
+                    opacity: 0, 
+                    pointerEvents: 'none',
+                    rotationZ: isMobile ? 0 : (isLeft ? -5 : 5)
+                });
+            });
+            
+            // Background Color Inversion
+            gsap.to(document.body, { 
+                backgroundColor: '#000000',
                 scrollTrigger: {
                     trigger: cosmosSection,
-                    start: 'top 80%',
-                    end: 'top 20%',
-                    scrub: true,
-                    onEnter: () => setCaseStudyWarpActive(true),
-                    onEnterBack: () => setCaseStudyWarpActive(true),
-                    onLeaveBack: () => setCaseStudyWarpActive(false)
+                    start: 'top bottom',
+                    end: 'top top',
+                    scrub: true
                 }
-            }
-        );
-        
-        // Hide warp particles smoothly when exiting into the Logos/Services section
-        // Handled by the master timeline's onLeave to account for pin spacing
+            });
 
-        // Pin the section for continuous forward travel
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: cosmosSection,
-                pin: true,
-                scrub: 0.7, // Reduced lag for a 10% faster response to scroll
-                start: 'top top',
-                end: () => '+=' + (cosmosCards.length * 1080), // Reduced distance by 10% to make them fly faster
-                onLeave: () => {
-                    // Fade out the warp strictly AFTER the pinned section finishes
-                    gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });
-                },
-                onEnterBack: () => {
-                    // Bring back the warp if scrolling up into the case studies again
-                    setCaseStudyWarpActive(true);
-                    gsap.to(tunnelMat, { opacity: 0.8, duration: 0.5 });
+            // Crossfade Particle Systems (Hero slow drift -> Fast warp)
+            gsap.fromTo(particlesMaterial, 
+                { opacity: 0.7 },
+                { opacity: 0, scrollTrigger: { trigger: cosmosSection, start: 'top 80%', end: 'top 20%', scrub: true } }
+            );
+
+            gsap.fromTo(tunnelMat, 
+                { opacity: 0 },
+                {
+                    opacity: 0.8,
+                    scrollTrigger: {
+                        trigger: cosmosSection,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        scrub: true,
+                        onEnter: () => setCaseStudyWarpActive(true),
+                        onEnterBack: () => setCaseStudyWarpActive(true),
+                        onLeaveBack: () => setCaseStudyWarpActive(false)
+                    }
                 }
-            }
-        });
+            );
 
-        cosmosCards.forEach((card, index) => {
-            // Restore desktop-style time stagger so two cards are visible, but our new yOffset prevents physical overlap
-            const staggerTime = 2.0; 
-            const startTime = index * staggerTime; 
-            const flyDuration = 5.0; 
+            // Pin the section for continuous forward travel
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: cosmosSection,
+                    pin: true,
+                    scrub: 0.7,
+                    start: 'top top',
+                    end: () => '+=' + (cosmosCards.length * 1080),
+                    onLeave: () => {
+                        gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });
+                    },
+                    onEnterBack: () => {
+                        setCaseStudyWarpActive(true);
+                        gsap.to(tunnelMat, { opacity: 0.8, duration: 0.5 });
+                    }
+                }
+            });
 
-            // 1. Fade in as it approaches from the deep vanishing point
-            tl.to(card, {
-                opacity: 1, pointerEvents: 'auto', duration: 1.5, ease: 'power1.inOut'
-            }, startTime) 
-            
-            // 2. TRUE CONTINUOUS 3D FLY-THROUGH (Never stops, never artificially slides)
-            tl.to(card, { 
-                z: 1200, // Fly close to camera lens but avoid hitting perspective=1500px to prevent renderer glitches
-                ease: 'none', // Constant velocity to maintain travel illusion
-                duration: flyDuration 
-            }, startTime) 
-            
-            // 3. Fade out quickly right as it blows past your peripheral vision
-            tl.to(card, {
-                opacity: 0, pointerEvents: 'none', duration: 0.5, ease: 'power1.in'
-            }, startTime + flyDuration - 0.5);
-        });
+            cosmosCards.forEach((card, index) => {
+                const staggerTime = 2.0; 
+                const startTime = index * staggerTime; 
+                const flyDuration = 5.0; 
+
+                tl.to(card, {
+                    opacity: 1, pointerEvents: 'auto', duration: 1.5, ease: 'power1.inOut'
+                }, startTime) 
+                
+                tl.to(card, { 
+                    z: 1200,
+                    ease: 'none',
+                    duration: flyDuration 
+                }, startTime) 
+                
+                tl.to(card, {
+                    opacity: 0, pointerEvents: 'none', duration: 0.5, ease: 'power1.in'
+                }, startTime + flyDuration - 0.5);
+            });
+        }
     }
+
 
     // Services Scrub
     const textFills = document.querySelectorAll('.text-fill');

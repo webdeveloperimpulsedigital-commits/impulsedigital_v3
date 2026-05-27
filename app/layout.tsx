@@ -66,7 +66,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=27" />
+        <link rel="stylesheet" href="/css/styles.css?v=28" />
         <link rel="stylesheet" href="/css/about.css?v=2" />
         <link rel="stylesheet" href="/css/case-study.css?v=26" />
 
@@ -163,7 +163,7 @@ export default function RootLayout({
 
         {/* WebGL Canvas Particles & Animations script */}
         <Script
-          src="/js/script.js?v=60"
+          src="/js/script.js?v=61"
           strategy="afterInteractive"
         />
 

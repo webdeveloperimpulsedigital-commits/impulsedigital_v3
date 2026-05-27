@@ -77,11 +77,6 @@
     }
 }
 
-/* iOS baseline: ensure native scroll always works */
-html {
-    -webkit-overflow-scrolling: touch;
-}
-
 body {
     font-family: var(--font-body);
     background-color: var(--core-black);
@@ -89,8 +84,6 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Ensure iOS respects body scroll */
-    -webkit-overflow-scrolling: touch;
 }
 
 body.mobile-menu-active {
@@ -100,6 +93,21 @@ body.mobile-menu-active {
     /* iOS: prevent background scroll when menu is open */
     touch-action: none;
     -webkit-overflow-scrolling: auto;
+}
+
+/* ── Zoho SalesIQ Chat Widget — force right-side positioning on all devices.
+   On iOS, fixed-position widgets inside GPU composite contexts can drift to
+   the left. This override anchors it to the bottom-right corner. */
+#zsiq_float,
+.zsiq-float,
+[id^="zsiq"],
+[class^="zsiq"],
+#siqiframe,
+.siq-btn,
+.siq_bR {
+    right: 16px !important;
+    left: auto !important;
+    bottom: 16px !important;
 }
 
 h1,
@@ -555,8 +563,9 @@ nav.scrolled {
     position: relative;
     display: flex;
     flex-direction: column;
+    /* REMOVED: contain: paint — causes iOS WebKit to blank-out the section
+       when combined with 3D z-axis transforms on child elements */
     overflow: hidden;
-    contain: paint;
     background: transparent;
 }
 
@@ -570,7 +579,8 @@ nav.scrolled {
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-    transform-style: preserve-3d;
+    /* REMOVED: transform-style: preserve-3d — combined with GSAP z:-5000 this
+       creates compositing layer explosions on iOS Safari that hide all content */
     pointer-events: none;
 }
 
