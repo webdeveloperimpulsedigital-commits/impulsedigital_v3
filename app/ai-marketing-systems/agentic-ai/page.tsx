@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Agentic AI Marketing Solutions | Impulse Digital',
     description: 'Impulse Digital\'s Agentic AI solutions bring autonomous AI agents to marketing workflows, enabling smarter, faster, and more scalable brand operations.',
     url: `${SITE_URL}/ai-marketing-systems/agentic-ai/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Agentic AI Marketing Solutions | Impulse Digital',
     description: 'Impulse Digital\'s Agentic AI solutions bring autonomous AI agents to marketing workflows, enabling smarter, faster, and more scalable brand operations.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

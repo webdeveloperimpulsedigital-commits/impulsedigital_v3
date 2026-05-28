@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Ecommerce SEO Services | Impulse Digital',
     description: 'Impulse Digital\'s ecommerce SEO services help online stores rank higher, drive organic traffic, and grow revenue through strategic search engine optimisation.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/ecommerce-seo/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ecommerce SEO Services | Impulse Digital',
     description: 'Impulse Digital\'s ecommerce SEO services help online stores rank higher, drive organic traffic, and grow revenue through strategic search engine optimisation.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Growth Intelligence Services | Impulse Digital',
     description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
     url: `${SITE_URL}/growth-intelligence/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Growth Intelligence Services | Impulse Digital',
     description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'HUL Case Study | Impulse Digital',
     description: 'How Impulse Digital partnered with Hindustan Unilever to deliver effective digital marketing campaigns that reached millions and drove measurable impact.',
     url: `${SITE_URL}/case-studies/hul/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HUL Case Study | Impulse Digital',
     description: 'How Impulse Digital partnered with Hindustan Unilever to deliver effective digital marketing campaigns that reached millions and drove measurable impact.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Mastercard Case Study | Impulse Digital',
     description: 'How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.',
     url: `${SITE_URL}/case-studies/mastercard/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mastercard Case Study | Impulse Digital',
     description: 'How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

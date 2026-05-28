@@ -118,7 +118,7 @@ const EmployerBrandingCaseStudy: React.FC = () => {
       {/* Hero */}
       <section className="svc-hero-page" id="hero">
         <div className="svc-hero-page-content">
-          <h1 className="svc-hero-headline hero-copy-reveal">Talent Chooses the Story<br />Before the Offer.</h1>
+          <h1 className="svc-hero-headline hero-copy-reveal">Talent Chooses the Story{' '}<br />Before the Offer.</h1>
           <p className="svc-hero-page-desc hero-copy-reveal">The best candidates are not only comparing salaries. They are reading your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever apply. Impulse Digital helps brands turn employee experience into a clear employer story, so the right people understand why your company is worth joining, staying with, and growing inside.</p>
           <div className="svc-hero-cta-row">
             <a href="/contact-us" className="btn hero-copy-reveal" data-cursor="BUILD"><span className="btn-text">Build Your Employer Brand</span><div className="btn-fill"></div></a>

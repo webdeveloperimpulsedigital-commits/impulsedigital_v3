@@ -125,7 +125,7 @@ const AIMarketingSystems: React.FC = () => {
       <section className="gi2-split" id="warp-start">
         {/* Left: Sticky Title */}
         <div className="gi2-split-left">
-          <h1 className="gi2-main-title">AI Marketing<br />Systems.</h1>
+          <h1 className="gi2-main-title">AI Marketing{' '}<br />Systems.</h1>
           <p className="gi2-main-desc">Deploy autonomous, intelligent systems that scale your marketing exponentially without human bottlenecks.</p>
         </div>
 

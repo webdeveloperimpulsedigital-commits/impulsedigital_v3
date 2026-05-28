@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'SEO Agency in Airoli | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Airoli, helping businesses in Airoli rank higher and attract more customers through search.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/airoli/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SEO Agency in Airoli | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Airoli, helping businesses in Airoli rank higher and attract more customers through search.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

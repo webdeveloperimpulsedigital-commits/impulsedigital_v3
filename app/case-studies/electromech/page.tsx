@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'ElectroMech Case Study | Impulse Digital',
     description: 'How Impulse Digital helped ElectroMech strengthen their B2B digital presence and generate quality leads through targeted SEO and content marketing.',
     url: `${SITE_URL}/case-studies/electromech/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ElectroMech Case Study | Impulse Digital',
     description: 'How Impulse Digital helped ElectroMech strengthen their B2B digital presence and generate quality leads through targeted SEO and content marketing.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

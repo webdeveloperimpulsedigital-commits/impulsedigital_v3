@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Careers at Impulse Digital | Join Our Team',
     description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
     url: `${SITE_URL}/careers/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Careers at Impulse Digital | Join Our Team',
     description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

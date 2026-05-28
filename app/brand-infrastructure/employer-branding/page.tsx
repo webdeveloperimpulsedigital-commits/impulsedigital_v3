@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Employer Branding Agency | Impulse Digital',
     description: 'Impulse Digital\'s employer branding services help companies attract, retain, and engage top talent by building a compelling employer value proposition and brand narrative.',
     url: `${SITE_URL}/brand-infrastructure/employer-branding/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Employer Branding Agency | Impulse Digital',
     description: 'Impulse Digital\'s employer branding services help companies attract, retain, and engage top talent by building a compelling employer value proposition and brand narrative.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

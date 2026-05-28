@@ -220,7 +220,7 @@ nav.scrolled {
 
 .dropdown-content {
     display: grid;
-    grid-template-columns: repeat(3, 260px);
+    grid-template-columns: repeat(3, 280px);
     gap: 2rem;
     position: absolute;
     top: 100%;
@@ -245,19 +245,14 @@ nav.scrolled {
     transform: translateX(-50%) translateY(0);
 }
 
-.dropdown-col h4 {
+.dropdown-col .dropdown-col-title {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, #aa3bff, #e0c3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    font-size: 1rem;
+    color: var(--white);
     margin-bottom: 1.5rem;
     opacity: 1;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .mobile-only-icon {
@@ -1854,6 +1849,13 @@ footer {
     font-size: clamp(1.4rem, 2vw, 1.9rem);
     font-weight: 700;
     line-height: 1.25;
+    margin-bottom: 1.25rem;
+    color: var(--white);
+}
+
+.dropdown-col .dropdown-col-title {
+    font-size: 1.1rem;
+    font-weight: 500;
     margin-bottom: 1.25rem;
     color: var(--white);
 }
@@ -4172,11 +4174,10 @@ button,
         width: 100%;
     }
 
-    .dropdown-col h4 {
+    .dropdown-col .dropdown-col-title {
         margin-bottom: 0;
         padding: 1rem 0;
         font-size: 0.95rem;
-        letter-spacing: 2px;
         opacity: 0.8;
         text-align: center;
         width: 100%;
@@ -4188,7 +4189,7 @@ button,
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .dropdown-col h4.active {
+    .dropdown-col .dropdown-col-title.active {
         color: var(--white);
         opacity: 1;
     }
@@ -4225,7 +4226,7 @@ button,
         border-color: var(--impulse-violet);
     }
 
-    .dropdown-col h4.active .submenu-toggle {
+    .dropdown-col .dropdown-col-title.active .submenu-toggle {
         background: rgba(138, 92, 246, 0.2);
         border-color: var(--impulse-violet);
     }
@@ -13453,4 +13454,15 @@ iframe[src*='zohopublic'] {
 
     }
 }
+}
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }

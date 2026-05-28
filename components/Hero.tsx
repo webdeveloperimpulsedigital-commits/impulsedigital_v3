@@ -19,14 +19,16 @@ const Hero: React.FC = () => {
   return (
     <section className="hero" id="hero">
       <div className="hero-content">
-        <h1 className="hero-headline title-large hero-copy-reveal" style={{ marginBottom: '0' }}>
-          Your Data Knows.
-        </h1>
-        <h1 className="hero-headline title-large hero-copy-reveal" style={{ margin: '0' }}>
-          Your Marketing
-        </h1>
-        <h1 className="hero-headline title-large text-violet hero-copy-reveal" style={{ marginTop: '0', marginBottom: '1.5rem' }}>
-          Should Too.
+        <h1 className="hero-title-wrapper" style={{ margin: 0, padding: 0 }}>
+          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', marginBottom: '0' }}>
+            Your Data Knows.
+          </span>
+          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', margin: '0' }}>
+            Your Marketing
+          </span>
+          <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem' }}>
+            Should Too.
+          </span>
         </h1>
 
         <div className="hero-bottom" style={{ marginTop: '1rem' }}>

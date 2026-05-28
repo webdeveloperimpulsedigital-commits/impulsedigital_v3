@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'About Impulse Digital - Creative Digital Marketing Agency',
     description: 'Get to know Impulse Digital, a trusted digital marketing agency delivering SEO, paid media, branding, agentic ai, and website solutions that drive measurable business growth.',
     url: `${SITE_URL}/about-us/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Impulse Digital - Creative Digital Marketing Agency',
     description: 'Get to know Impulse Digital, a trusted digital marketing agency delivering SEO, paid media, branding, agentic ai, and website solutions that drive measurable business growth.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

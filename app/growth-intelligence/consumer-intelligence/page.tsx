@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Consumer Intelligence Services | Impulse Digital',
     description: 'Impulse Digital delivers consumer intelligence solutions that help brands understand audiences, uncover insights, and make smarter marketing decisions.',
     url: `${SITE_URL}/growth-intelligence/consumer-intelligence/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Consumer Intelligence Services | Impulse Digital',
     description: 'Impulse Digital delivers consumer intelligence solutions that help brands understand audiences, uncover insights, and make smarter marketing decisions.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

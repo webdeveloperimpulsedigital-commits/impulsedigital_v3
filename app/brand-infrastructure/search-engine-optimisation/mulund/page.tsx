@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'SEO Agency in Mulund | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Mulund, improving search rankings and driving local business visibility.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mulund/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SEO Agency in Mulund | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Mulund, improving search rankings and driving local business visibility.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

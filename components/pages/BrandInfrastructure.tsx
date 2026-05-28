@@ -167,7 +167,7 @@ const BrandInfrastructure: React.FC = () => {
       <section className="gi2-split" id="warp-start">
         {/* Left: Sticky Title */}
         <div className="gi2-split-left">
-          <h1 className="gi2-main-title">Brand<br />Infrastructure.</h1>
+          <h1 className="gi2-main-title">Brand{' '}<br />Infrastructure.</h1>
           <p className="gi2-main-desc">Architect authoritative digital footprints that dominate search and command absolute trust.</p>
         </div>
 

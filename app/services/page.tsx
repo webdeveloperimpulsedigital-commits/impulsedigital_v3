@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Digital Marketing Services | Impulse Digital',
     description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
     url: `${SITE_URL}/services/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Digital Marketing Services | Impulse Digital',
     description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

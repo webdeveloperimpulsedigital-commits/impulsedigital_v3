@@ -88,9 +88,10 @@ const Footer: React.FC = () => {
             <div className="contact-item address-item">
               <span className="contact-icon"><i className="fas fa-map-marker-alt"></i></span>
               <span className="contact-text">
-                304 - 305, Chirag Infotech,<br />
+                Chirag Infotech, 304 - 305,<br />
                 Road No. 16/Z, Ambica Nagar,<br />
-                Wagle Ind. Estate, Thane, Mumbai 400604
+                Wagle Industrial Estate, Thane West,<br />
+                Thane, Maharashtra 400604, India
               </span>
             </div>
           </div>
@@ -100,9 +101,9 @@ const Footer: React.FC = () => {
         <div className="footer-bottom">
           <p>&copy; 2026 Impulse Digital All rights reserved</p>
           <div className="footer-legal-links">
-            <a href="#">Privacy Policy</a>
+            <Link href="/privacy-policy/">Privacy Policy</Link>
             <span className="separator">|</span>
-            <a href="#">Terms &amp; Conditions</a>
+            <Link href="/terms-and-conditions/">Terms &amp; Conditions</Link>
           </div>
         </div>
         <div className="footer-divider"></div>

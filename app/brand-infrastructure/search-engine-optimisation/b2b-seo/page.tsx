@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
     description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/b2b-seo/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
     description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

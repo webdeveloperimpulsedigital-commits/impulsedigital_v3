@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/siteUrl';
 import { getPosts, formatDate, stripHtml } from '@/lib/wordpress';
 
 export const metadata: Metadata = {
-  title: 'Blog | Digital Marketing Insights & Strategies',
+  title: 'Blog | Digital Marketing Insights & Strategies | Impulse Digital',
   description:
     "Read our latest articles on digital marketing, SEO, AI marketing, social media, and growth strategies from Impulse Digital — India's leading digital marketing agency.",
   alternates: { canonical: `${SITE_URL}/blog/` },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
       'Digital marketing insights, SEO guides, and AI marketing strategies from Impulse Digital.',
     url: `${SITE_URL}/blog/`,
     type: 'website',
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'TCPL Case Study | Impulse Digital',
     description: 'How Impulse Digital helped TCPL execute effective digital marketing campaigns that drove brand awareness and consumer engagement.',
     url: `${SITE_URL}/case-studies/tcpl/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TCPL Case Study | Impulse Digital',
     description: 'How Impulse Digital helped TCPL execute effective digital marketing campaigns that drove brand awareness and consumer engagement.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'ABG Brut India Case Study | Impulse Digital',
     description: 'How Impulse Digital helped ABG Brut India build digital brand presence and drive consumer engagement through creative digital marketing campaigns.',
     url: `${SITE_URL}/case-studies/abg-brut-india/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ABG Brut India Case Study | Impulse Digital',
     description: 'How Impulse Digital helped ABG Brut India build digital brand presence and drive consumer engagement through creative digital marketing campaigns.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

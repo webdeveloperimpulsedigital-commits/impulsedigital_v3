@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Automag Bajaj Auto Case Study | Impulse Digital',
     description: 'How Impulse Digital and Automag partnered with Bajaj Auto to execute high-impact digital campaigns that drove brand engagement and sales.',
     url: `${SITE_URL}/case-studies/automag-bajaj-auto/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Automag Bajaj Auto Case Study | Impulse Digital',
     description: 'How Impulse Digital and Automag partnered with Bajaj Auto to execute high-impact digital campaigns that drove brand engagement and sales.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

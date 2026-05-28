@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'AI Video Production Services | Impulse Digital',
     description: 'Impulse Digital\'s AI Video Production service creates high-quality cinematic videos using AI tools, combining creative direction with AI-powered production capabilities.',
     url: `${SITE_URL}/ai-marketing-systems/ai-video-production/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Video Production Services | Impulse Digital',
     description: 'Impulse Digital\'s AI Video Production service creates high-quality cinematic videos using AI tools, combining creative direction with AI-powered production capabilities.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
