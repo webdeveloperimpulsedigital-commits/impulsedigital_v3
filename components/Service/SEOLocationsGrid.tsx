@@ -8,6 +8,7 @@ import { seoLocations } from '../../data/seoLocationsList';
 
 export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ currentLocation }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showAllLocations, setShowAllLocations] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const locationsToShow = seoLocations.filter(loc => loc.name !== currentLocation);
 
@@ -158,6 +159,38 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             color: #fff;
             padding-left: 2.5rem;
           }
+
+          .loc-show-all-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem 2rem;
+            color: var(--impulse-violet);
+            background: rgba(124, 58, 237, 0.05);
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+          }
+
+          .loc-show-all-btn:hover {
+            background: rgba(124, 58, 237, 0.15);
+            color: #fff;
+          }
+
+          @media (max-width: 768px) {
+            .loc-dropdown-list {
+              position: relative;
+              max-height: none;
+              overflow-y: visible;
+              top: 0;
+              margin-top: 0.5rem;
+              box-shadow: none;
+            }
+          }
         `}</style>
         
         <div className="loc-dropdown-container" ref={dropdownRef}>
@@ -175,7 +208,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
           </div>
           
           <div className={`loc-dropdown-list ${isOpen ? 'open' : ''}`}>
-            {locationsToShow.map((loc) => (
+            {locationsToShow.slice(0, showAllLocations ? undefined : 5).map((loc) => (
               <Link 
                 key={loc.slug} 
                 href={`/brand-infrastructure/search-engine-optimisation/${loc.slug}/`}
@@ -185,9 +218,18 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
                 {loc.name}
               </Link>
             ))}
+            {!showAllLocations && locationsToShow.length > 5 && (
+              <button 
+                className="loc-show-all-btn"
+                onClick={() => setShowAllLocations(true)}
+              >
+                + Show All Locations
+              </button>
+            )}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
