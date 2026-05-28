@@ -430,7 +430,6 @@
                     }
                 });
 
-<<<<<<< HEAD
                 // Hero starfield fades out as cosmos section enters (lightweight material opacity only)
                 gsap.fromTo(particlesMaterial,
                     { opacity: 0.7 },
@@ -462,10 +461,9 @@
                     scrollTrigger: {
                         trigger: cosmosSection,
                         pin: true,
-                        // iOS: use transform-based pinning (avoids position:fixed WebKit bug
-                        // where fixed elements break inside perspective containers)
-                        pinType: isIOS ? 'transform' : 'fixed',
-                        anticipatePin: isIOS ? 1 : 0,
+                        // Mobile native scrolling requires fixed pinning to avoid jitter
+                        pinType: 'fixed',
+                        anticipatePin: 1,
                         invalidateOnRefresh: true,
                         scrub: 0.7,
                         start: 'top top',
@@ -481,23 +479,6 @@
                                 gsap.to(tunnelMat, { opacity: 0.8, duration: 0.5 });
                             }
                         }
-=======
-        // Pin the section for the 3D fly-through (both mobile and desktop)
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: cosmosSection,
-                pin: true,
-                // Mobile native scrolling requires fixed pinning to avoid jitter
-                pinType: 'fixed',
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-                scrub: 0.7,
-                start: 'top top',
-                end: () => '+=' + (cosmosCards.length * 1080),
-                onLeave: () => {
-                    if (!isMobileDevice) {
-                        gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });
->>>>>>> 7e311694c567b79ae04dfc93cd592e9cff0313c9
                     }
                 });
 
