@@ -30,7 +30,7 @@ const CaseStudies: React.FC = () => {
         </Link>
 
         <Link href="/case-studies/shaking-things-up/" className="cosmos-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img src={`/images/case-study-image/salt/shaking-things-up.png`} className="hs-card-img" alt="Tata Consumer Products Case Study" loading="lazy" decoding="async"  width="600" height="400" />
+          <img src={`/images/case-study-image/salt/tata-cunsumer.png`} className="hs-card-img" alt="Tata Consumer Products Case Study" loading="lazy" decoding="async"  width="600" height="400" />
           <div className="hs-card-inner">
             <h3 className="hs-client">Tata Consumer Products</h3>
             <p className="hs-desc">Decoding category transformation for staple ingredients and mapping diaspora demand to market launch.</p>
