@@ -36,20 +36,26 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ headlineParts, headlineAccent
     <section className="svc-hero-page" id="hero">
       <div className="svc-hero-page-content">
         {headlineHtml ? (
-          <h1 className="svc-hero-headline hero-copy-reveal" dangerouslySetInnerHTML={{ __html: headlineHtml }} />
+          <>
+            <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }} dangerouslySetInnerHTML={{ __html: headlineHtml.replace(/<[^>]*>?/gm, '') }} />
+            <div className="svc-hero-headline hero-copy-reveal" aria-hidden="true" dangerouslySetInnerHTML={{ __html: headlineHtml }} />
+          </>
         ) : (
-          <h1 className="svc-hero-headline hero-copy-reveal">
-            {headlineParts?.map((part, i) => (
-              <React.Fragment key={i}>
-                {part === headlineAccent ? (
-                  <span style={{ color: 'var(--impulse-violet)' }}>{part}</span>
-                ) : (
-                  part
-                )}
-                {i < (headlineParts?.length || 0) - 1 && <br />}
-              </React.Fragment>
-            ))}
-          </h1>
+          <>
+            <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>{headlineParts?.join(' ')}</h1>
+            <div className="svc-hero-headline hero-copy-reveal" aria-hidden="true">
+              {headlineParts?.map((part, i) => (
+                <React.Fragment key={i}>
+                  {part === headlineAccent ? (
+                    <span style={{ color: 'var(--impulse-violet)' }}>{part}</span>
+                  ) : (
+                    part
+                  )}
+                  {i < (headlineParts?.length || 0) - 1 && <>{' '}<br /></>}
+                </React.Fragment>
+              ))}
+            </div>
+          </>
         )}
         <p className="svc-hero-page-desc hero-copy-reveal" dangerouslySetInnerHTML={{ __html: description }} />
         <div className="svc-hero-cta-row">

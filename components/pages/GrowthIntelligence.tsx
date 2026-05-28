@@ -120,7 +120,7 @@ const GrowthIntelligence: React.FC = () => {
       <section className="gi2-split" id="warp-start">
         {/* Left: Sticky Title */}
         <div className="gi2-split-left">
-          <h1 className="gi2-main-title">Growth<br />Intelligence.</h1>
+          <h1 className="gi2-main-title">Growth{' '}<br />Intelligence.</h1>
           <p className="gi2-main-desc">Four disciplines that turn market data into competitive advantage.</p>
         </div>
 

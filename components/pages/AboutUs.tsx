@@ -292,7 +292,7 @@ const AboutUs: React.FC = () => {
       <section className="ab-section ab-hero" id="hero">
         <div className="ab-wrap-full">
           <div className="ab-hero-inner">
-            <h1 className="ab-hero-h hero-copy-reveal">Momentum for<br/><span style={{ color: 'var(--impulse-violet)' }}>brands with appetite.</span></h1>
+            <h1 className="ab-hero-h hero-copy-reveal">Momentum for {' '}<br/><span style={{ color: 'var(--impulse-violet)' }}>brands with appetite.</span></h1>
             <p className="ab-hero-tagline hero-copy-reveal">The best brands are never truly still.</p>
 
             <div className="ab-hero-truths hero-copy-reveal">

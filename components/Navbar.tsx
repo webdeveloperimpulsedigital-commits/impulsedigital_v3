@@ -117,7 +117,7 @@ const Navbar: React.FC = () => {
             </a>
             <div className={`dropdown-content ${isMobileServicesOpen ? 'mobile-expanded' : ''}`} style={(!isMobileServicesOpen && isDropdownSuspended) ? { display: 'none' } : {}}>
               <div className="dropdown-col">
-                <h4 className={openSubMenu === 'growth' ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                <div className={`dropdown-col-title ${openSubMenu === 'growth' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                   <Link href="/growth-intelligence/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Growth Intelligence
                   </Link>
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
                   >
                     {openSubMenu === 'growth' ? '−' : '+'}
                   </button>
-                </h4>
+                </div>
                 <div className={`dropdown-list ${openSubMenu === 'growth' ? 'mobile-open' : ''}`}>
                   <Link href="/growth-intelligence/consumer-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Consumer Intelligence</Link>
                   <Link href="/growth-intelligence/market-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Market and Competitive Intelligence</Link>
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
               <div className="dropdown-col">
-                <h4 className={openSubMenu === 'ai' ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                <div className={`dropdown-col-title ${openSubMenu === 'ai' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                   <Link href="/ai-marketing-systems/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     AI Marketing Systems
                   </Link>
@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
                   >
                     {openSubMenu === 'ai' ? '−' : '+'}
                   </button>
-                </h4>
+                </div>
                 <div className={`dropdown-list ${openSubMenu === 'ai' ? 'mobile-open' : ''}`}>
                   <Link href="/ai-marketing-systems/archer-ai/" className="dropdown-item" onClick={handleDropdownNavClick}>Archer AI</Link>
                   <Link href="/ai-marketing-systems/agentic-ai/" className="dropdown-item" onClick={handleDropdownNavClick}>Agentic AI</Link>
@@ -157,7 +157,7 @@ const Navbar: React.FC = () => {
                 </div>
               </div>
               <div className="dropdown-col">
-                <h4 className={openSubMenu === 'brand' ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                <div className={`dropdown-col-title ${openSubMenu === 'brand' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                   <Link href="/brand-infrastructure/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
                     Brand Infrastructure
                   </Link>
@@ -168,7 +168,7 @@ const Navbar: React.FC = () => {
                   >
                     {openSubMenu === 'brand' ? '−' : '+'}
                   </button>
-                </h4>
+                </div>
                 <div className={`dropdown-list ${openSubMenu === 'brand' ? 'mobile-open' : ''}`}>
                   <Link href="/brand-infrastructure/search-engine-optimisation/" className="dropdown-item" onClick={handleDropdownNavClick}>Search Engine Optimization</Link>
                   <Link href="/brand-infrastructure/social-media-marketing/" className="dropdown-item" onClick={handleDropdownNavClick}>Social Media</Link>
