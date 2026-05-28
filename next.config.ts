@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.theimpulsedigital.com' },
       { protocol: 'https', hostname: 'lightcyan-pig-140007.hostingersite.com' },
+      // WordPress media served from the source domain
+      { protocol: 'https', hostname: 'impulsedigital.co.in' },
     ],
   },
 
@@ -207,27 +209,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Proxy /blog/ to the existing WordPress installation on impulsedigital.co.in
-  // Hostinger Node.js hosting routes ALL requests to Node.js — PHP cannot run
-  // inside the app directory. The only way to serve WordPress at /blog/ is to
-  // have Next.js proxy the requests to the WordPress server transparently.
-  //
-  // IMPORTANT: Also update WordPress site URL in wp-admin → Settings → General:
-  //   WordPress Address (URL): https://www.theimpulsedigital.com/blog
-  //   Site Address (URL):      https://www.theimpulsedigital.com/blog
+  // /blog/ is now handled by Next.js pages (app/blog/page.tsx and
+  // app/blog/[slug]/page.tsx) which fetch from WordPress REST API.
+  // No proxy rewrite needed — all blog URLs stay on theimpulsedigital.com.
   async rewrites() {
-    return [
-      {
-        // Proxy /blog (no trailing slash)
-        source: '/blog',
-        destination: 'https://impulsedigital.co.in/ID-web-blog/',
-      },
-      {
-        // Proxy /blog/ and all sub-paths (posts, wp-admin, wp-content, etc.)
-        source: '/blog/:path*',
-        destination: 'https://impulsedigital.co.in/ID-web-blog/:path*',
-      },
-    ];
+    return [];
   },
 };
 
