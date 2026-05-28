@@ -28,60 +28,64 @@ export const metadata: Metadata = {
 };
 
 export default function PuneLocationPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why should businesses in Pune use digital marketing services?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Digital marketing helps businesses in Pune improve online visibility, build stronger brand positioning, reach relevant audiences, and generate business enquiries across digital platforms."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What digital marketing services are commonly used in Pune?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Businesses in Pune commonly invest in SEO, social media marketing, website development, performance marketing, branding, local SEO, and content marketing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can SEO help businesses in Pune generate enquiries?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. SEO can improve search visibility, attract relevant audiences, and support long-term enquiry generation through organic discovery."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is digital marketing performance measured?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Performance is measured through conversions, search visibility, engagement quality, traffic behaviour, campaign efficiency, and business-level outcomes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does digital marketing work for startups and growing businesses?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Digital marketing helps startups and growing businesses improve discoverability, build trust, communicate value clearly, and generate growth opportunities."
-        }
-      }
-    ]
-  };
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <PuneLocation />
-    </>
-  );
+      const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why should businesses in Pune use digital marketing services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Digital marketing helps businesses in Pune improve online visibility, build stronger brand positioning, reach relevant audiences, and generate business enquiries across digital platforms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What digital marketing services are commonly used in Pune?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Businesses in Pune commonly invest in SEO, social media marketing, website development, performance marketing, branding, local SEO, and content marketing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can SEO help businesses in Pune generate enquiries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. SEO can improve search visibility, attract relevant audiences, and support long-term enquiry generation through organic discovery."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is digital marketing performance measured?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Performance is measured through conversions, search visibility, engagement quality, traffic behaviour, campaign efficiency, and business-level outcomes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does digital marketing work for startups and growing businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Digital marketing helps startups and growing businesses improve discoverability, build trust, communicate value clearly, and generate growth opportunities."
+            }
+          }
+        ]
+      }
+    ];
+
+      return (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          />
+          <PuneLocation />
+        </>
+      );
+        
 }

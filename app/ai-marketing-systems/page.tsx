@@ -28,38 +28,42 @@ export const metadata: Metadata = {
 };
 
 export default function AIMarketingSystemsPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/#service",
-    "name": "AI Marketing Systems",
-    "url": "https://www.theimpulsedigital.com/ai-marketing-systems/",
-    "description": "Impulse Digital builds AI marketing systems for brands, including agentic AI, AI-powered outbound engines, AI video production, and generative search optimisation.",
-    "serviceType": [
-      "AI Marketing Systems",
-      "Agentic AI",
-      "AI Video Production",
-      "Generative Search Optimisation",
-      "AI Outbound Automation"
-    ],
-    "areaServed": [
-      "IN",
-      "US"
-    ],
-    "provider": {
-      "@type": "Organization",
-      "name": "Impulse Digital",
-      "url": "https://www.theimpulsedigital.com/"
-    }
-  };
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <AIMarketingSystems />
-    </>
-  );
+      const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/#service",
+        "name": "AI Marketing Systems",
+        "url": "https://www.theimpulsedigital.com/ai-marketing-systems/",
+        "description": "Impulse Digital builds AI marketing systems for brands, including agentic AI, AI-powered outbound engines, AI video production, and generative search optimisation.",
+        "serviceType": [
+          "AI Marketing Systems",
+          "Agentic AI",
+          "AI Video Production",
+          "Generative Search Optimisation",
+          "AI Outbound Automation"
+        ],
+        "areaServed": [
+          "IN",
+          "US"
+        ],
+        "provider": {
+          "@type": "Organization",
+          "name": "Impulse Digital",
+          "url": "https://www.theimpulsedigital.com/"
+        }
+      }
+    ];
+
+      return (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          />
+          <AIMarketingSystems />
+        </>
+      );
+        
 }

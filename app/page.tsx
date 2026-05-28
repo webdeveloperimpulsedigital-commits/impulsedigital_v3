@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
+
+      const schemas = [
       {
+        "@context": "https://schema.org",
         "@type": "Organization",
         "@id": "https://www.theimpulsedigital.com/#organization",
         "name": "Impulse Digital",
@@ -49,10 +49,22 @@ export default function HomePage() {
           "addressCountry": "IN"
         },
         "areaServed": [
-          { "@type": "Country", "name": "India" },
-          { "@type": "City", "name": "Thane" },
-          { "@type": "City", "name": "Navi Mumbai" },
-          { "@type": "City", "name": "Pune" }
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "City",
+            "name": "Thane"
+          },
+          {
+            "@type": "City",
+            "name": "Navi Mumbai"
+          },
+          {
+            "@type": "City",
+            "name": "Pune"
+          }
         ],
         "sameAs": [
           "https://www.facebook.com/theimpulsedigital",
@@ -67,31 +79,44 @@ export default function HomePage() {
           "email": "collabs@theimpulsedigital.com",
           "contactType": "business enquiries",
           "areaServed": "IN",
-          "availableLanguage": ["English", "Hindi"]
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
         }
       },
       {
+        "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://www.theimpulsedigital.com/#webpage",
         "url": "https://www.theimpulsedigital.com/",
         "name": "Impulse Digital: Best Digital Marketing Agency in Mumbai",
         "description": "Impulse Digital is a digital marketing agency helping brands with social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation.",
-        "isPartOf": { "@id": "https://www.theimpulsedigital.com/#website" },
-        "about": { "@id": "https://www.theimpulsedigital.com/#organization" },
+        "isPartOf": {
+          "@id": "https://www.theimpulsedigital.com/#website"
+        },
+        "about": {
+          "@id": "https://www.theimpulsedigital.com/#organization"
+        },
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://www.theimpulsedigital.com/header-logo.png"
         },
-        "publisher": { "@id": "https://www.theimpulsedigital.com/#organization" }
+        "publisher": {
+          "@id": "https://www.theimpulsedigital.com/#organization"
+        }
       },
       {
+        "@context": "https://schema.org",
         "@type": "WebSite",
         "@id": "https://www.theimpulsedigital.com/#website",
         "url": "https://www.theimpulsedigital.com/",
         "name": "Impulse Digital",
         "alternateName": "Impulse Digital Marketing Agency",
         "description": "Impulse Digital is a digital marketing agency offering social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
-        "publisher": { "@id": "https://www.theimpulsedigital.com/#organization" },
+        "publisher": {
+          "@id": "https://www.theimpulsedigital.com/#organization"
+        },
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
@@ -99,6 +124,7 @@ export default function HomePage() {
         }
       },
       {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {
@@ -183,16 +209,16 @@ export default function HomePage() {
           }
         ]
       }
-    ]
-  };
+    ];
 
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Home />
-    </>
-  );
+      return (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          />
+          <Home />
+        </>
+      );
+        
 }
