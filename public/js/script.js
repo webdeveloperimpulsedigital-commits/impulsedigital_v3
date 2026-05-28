@@ -461,10 +461,9 @@ window.addEventListener('resize', () => {
             scrollTrigger: {
                 trigger: cosmosSection,
                 pin: true,
-                // iOS: use transform-based pinning (avoids position:fixed WebKit bug
-                // where fixed elements break inside perspective containers)
-                pinType: isIOS ? 'transform' : 'fixed',
-                anticipatePin: isIOS ? 1 : 0,
+                // Mobile native scrolling requires fixed pinning to avoid jitter
+                pinType: 'fixed',
+                anticipatePin: 1,
                 invalidateOnRefresh: true,
                 scrub: 0.7,
                 start: 'top top',
