@@ -7,4 +7,4 @@
 :HL["/css/blog.css?v=1","style"]
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
 :HL["https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2025/05/futuristic-robot-interacting-with-digital-interface.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"mastering-ai-a-look-at-the-latest-chatgpt-updates-and-tips-for-effective-content-creation","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"OYEoSNJKhCOlH1y6zM3T8"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"mastering-ai-a-look-at-the-latest-chatgpt-updates-and-tips-for-effective-content-creation","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"e8Gpe3slCZxwm8fw9cbXM"}

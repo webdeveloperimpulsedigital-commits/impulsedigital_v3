@@ -247,14 +247,8 @@ nav.scrolled {
 
 .dropdown-col .dropdown-col-title {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, #aa3bff, #e0c3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    font-size: 1rem;
+    color: var(--white);
     margin-bottom: 1.5rem;
     opacity: 1;
     font-weight: 700;
@@ -4184,7 +4178,6 @@ button,
         margin-bottom: 0;
         padding: 1rem 0;
         font-size: 0.95rem;
-        letter-spacing: 2px;
         opacity: 0.8;
         text-align: center;
         width: 100%;
