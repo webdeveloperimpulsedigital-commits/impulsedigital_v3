@@ -7,6 +7,8 @@
   "/ai-marketing-systems/archer-ai/page": "app/ai-marketing-systems/archer-ai/page.js",
   "/ai-marketing-systems/generative-search-optimisation/page": "app/ai-marketing-systems/generative-search-optimisation/page.js",
   "/ai-marketing-systems/page": "app/ai-marketing-systems/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
   "/brand-infrastructure/branding/page": "app/brand-infrastructure/branding/page.js",
   "/brand-infrastructure/employer-branding/page": "app/brand-infrastructure/employer-branding/page.js",
   "/brand-infrastructure/page": "app/brand-infrastructure/page.js",

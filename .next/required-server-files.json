@@ -72,6 +72,10 @@
         {
           "protocol": "https",
           "hostname": "lightcyan-pig-140007.hostingersite.com"
+        },
+        {
+          "protocol": "https",
+          "hostname": "impulsedigital.co.in"
         }
       ],
       "qualities": [
@@ -320,16 +324,7 @@
     "distDirRoot": ".next",
     "_originalRewrites": {
       "beforeFiles": [],
-      "afterFiles": [
-        {
-          "source": "/blog",
-          "destination": "https://impulsedigital.co.in/ID-web-blog/"
-        },
-        {
-          "source": "/blog/:path*",
-          "destination": "https://impulsedigital.co.in/ID-web-blog/:path*"
-        }
-      ],
+      "afterFiles": [],
       "fallback": []
     },
     "_originalRedirects": [
