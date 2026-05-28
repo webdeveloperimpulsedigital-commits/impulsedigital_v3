@@ -1,6 +1,6 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/case-studies/dmart/page.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0h1a3s-._.js")
-R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0mvpv-m.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_02.-2mc.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0xxcpb7._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__01i7tsd._.js")
 R.c("server/chunks/ssr/_0jrmzz2._.js")
@@ -8,6 +8,7 @@ R.c("server/chunks/ssr/app_not-found_tsx_0u42gv_._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_0ee1czk._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
+R.c("server/chunks/ssr/app_case-studies_layout_tsx_0r2j70i._.js")
 R.c("server/chunks/ssr/_next-internal_server_app_case-studies_dmart_page_actions_0uziv-g.js")
-R.m(12666)
-module.exports=R.m(12666).exports
+R.m(71997)
+module.exports=R.m(71997).exports

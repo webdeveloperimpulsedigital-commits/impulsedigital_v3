@@ -322,6 +322,12 @@
       "namedRegex": "^/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$"
     },
     {
+      "page": "/api/blog-posts",
+      "regex": "^/api/blog\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/blog\\-posts(?:/)?$"
+    },
+    {
       "page": "/blog",
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},

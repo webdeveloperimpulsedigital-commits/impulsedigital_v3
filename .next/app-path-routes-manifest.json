@@ -7,6 +7,7 @@
   "/ai-marketing-systems/archer-ai/page": "/ai-marketing-systems/archer-ai",
   "/ai-marketing-systems/generative-search-optimisation/page": "/ai-marketing-systems/generative-search-optimisation",
   "/ai-marketing-systems/page": "/ai-marketing-systems",
+  "/api/blog-posts/route": "/api/blog-posts",
   "/blog/[slug]/page": "/blog/[slug]",
   "/blog/page": "/blog",
   "/brand-infrastructure/branding/page": "/brand-infrastructure/branding",
