@@ -118,8 +118,10 @@ const Navbar: React.FC = () => {
             <div className={`dropdown-content ${isMobileServicesOpen ? 'mobile-expanded' : ''}`} style={(!isMobileServicesOpen && isDropdownSuspended) ? { display: 'none' } : {}}>
               <div className="dropdown-col">
                 <div className={`dropdown-col-title ${openSubMenu === 'growth' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                  <Link href="/growth-intelligence/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
-                    Growth Intelligence
+                  <Link href="/growth-intelligence/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', flex: 1, paddingRight: '1rem' }}>
+                    <span style={{ background: 'linear-gradient(90deg, #b829ea 0%, #e4a2fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold' }}>
+                      Growth Intelligence
+                    </span>
                   </Link>
                   <button
                     className="submenu-toggle"
@@ -138,8 +140,10 @@ const Navbar: React.FC = () => {
               </div>
               <div className="dropdown-col">
                 <div className={`dropdown-col-title ${openSubMenu === 'ai' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                  <Link href="/ai-marketing-systems/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
-                    AI Marketing Systems
+                  <Link href="/ai-marketing-systems/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', flex: 1, paddingRight: '1rem' }}>
+                    <span style={{ background: 'linear-gradient(90deg, #b829ea 0%, #e4a2fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold' }}>
+                      AI Marketing Systems
+                    </span>
                   </Link>
                   <button
                     className="submenu-toggle"
@@ -158,8 +162,10 @@ const Navbar: React.FC = () => {
               </div>
               <div className="dropdown-col">
                 <div className={`dropdown-col-title ${openSubMenu === 'brand' ? 'active' : ''}`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                  <Link href="/brand-infrastructure/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', color: 'inherit', flex: 1, paddingRight: '1rem' }}>
-                    Brand Infrastructure
+                  <Link href="/brand-infrastructure/" onClick={handleDropdownNavClick} style={{ textDecoration: 'none', flex: 1, paddingRight: '1rem' }}>
+                    <span style={{ background: 'linear-gradient(90deg, #b829ea 0%, #e4a2fc 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 'bold' }}>
+                      Brand Infrastructure
+                    </span>
                   </Link>
                   <button
                     className="submenu-toggle"
