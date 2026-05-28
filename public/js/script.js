@@ -388,21 +388,22 @@ window.addEventListener('resize', () => {
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                       (navigator.maxTouchPoints > 0 && /Macintosh/.test(navigator.userAgent));
 
-        // iOS fix: normalizeScroll intercepts native iOS scroll so ScrollTrigger
-        // pinning works correctly. Without this, iOS jumps/skips the pinned section.
+        // iOS fix: normalizeScroll deactivated as it intercepts and locks all touch movements
+        // globally, breaking page and menu scrolling on mobile devices.
         if (isIOS) {
-            ScrollTrigger.normalizeScroll(true);
+            // ScrollTrigger.normalizeScroll(true);
         }
 
         // Mobile geometry matches desktop proportionally:
         // 50vw card + 25% x-offset = card starts at viewport edge, flies in and fills screen (overflow clipped)
         // This is the SAME left/right alternating effect as desktop, scaled to mobile viewport.
-        const startZ = isMobileDevice ? -4000 : -5000;
+        const startZ = -5000;
 
         cosmosCards.forEach((card, index) => {
             const isLeft = index % 2 === 0;
-            // Mobile: 25% offset (card starts at viewport edge, same as desktop 30% geometry)
-            const xOffsetRatio = isMobileDevice ? 0.25 : 0.3;
+            // Desktop: 30% offset (40vw card width). Mobile: 45% offset (80vw card width).
+            // Ensures cards originate off-center (left/right) due to 3D perspective and clear the screen as they zoom forward.
+            const xOffsetRatio = isMobileDevice ? 0.45 : 0.3;
             const xOffset = isLeft ? -window.innerWidth * xOffsetRatio : window.innerWidth * xOffsetRatio;
 
             gsap.set(card, {
@@ -467,7 +468,7 @@ window.addEventListener('resize', () => {
                 invalidateOnRefresh: true,
                 scrub: 0.7,
                 start: 'top top',
-                end: () => '+=' + (cosmosCards.length * (isMobileDevice ? 1200 : 1080)),
+                end: () => '+=' + (cosmosCards.length * 1080),
                 onLeave: () => {
                     if (!isMobileDevice) {
                         gsap.to(tunnelMat, { opacity: 0, duration: 0.5, onComplete: () => setCaseStudyWarpActive(false) });
@@ -487,15 +488,17 @@ window.addEventListener('resize', () => {
             const startTime = index * staggerTime;
             const flyDuration = 5.0;
 
+            // Identical premium zoom-through and pass-by effect for both mobile and desktop:
+            // Starts off-center visually (perspective z=-5000) and flies past the camera (z=1200)
             tl.to(card, {
                 opacity: 1, pointerEvents: 'auto', duration: 1.5, ease: 'power1.inOut'
-            }, startTime)
+            }, startTime);
 
             tl.to(card, {
                 z: 1200,
                 ease: 'none',
                 duration: flyDuration
-            }, startTime)
+            }, startTime);
 
             tl.to(card, {
                 opacity: 0, pointerEvents: 'none', duration: 0.5, ease: 'power1.in'
