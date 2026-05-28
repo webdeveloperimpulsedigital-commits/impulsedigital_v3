@@ -91,8 +91,9 @@ const Navbar: React.FC = () => {
       <div className="nav-container">
         <div className="nav-left">
           <Link href="/" className="logo" onClick={handleNavClick}>
-            <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital - Leading Digital Marketing Agency in Mumbai" />
+            <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital - Leading Digital Marketing Agency in Mumbai" width={110} height={110} />
           </Link>
+
         </div>
 
         <div className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`} data-lenis-prevent="true">

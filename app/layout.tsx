@@ -64,12 +64,15 @@ export default function RootLayout({
         {/* Preconnect for Google Fonts (if any inline usage) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        />
+
 
         {/* External CSS */}
         <link rel="stylesheet" href="/css/styles.css?v=40" />
-        <link rel="stylesheet" href="/css/about.css?v=4" />
-        <link rel="stylesheet" href="/css/case-study.css?v=27" />
-        <link rel="stylesheet" href="/css/blog.css?v=1" />
+
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
         <link

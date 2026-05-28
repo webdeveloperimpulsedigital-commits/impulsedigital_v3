@@ -38,6 +38,9 @@ const Contact: React.FC<ContactProps> = ({ title }) => {
   }, []);
 
   useEffect(() => {
+    let hasLoaded = false;
+    let timeoutId: NodeJS.Timeout;
+
     (window as any).rccallback1132219000000597005 = () => {
       const recap = document.getElementById('recap1132219000000597005');
       if (recap) {
@@ -71,42 +74,86 @@ const Contact: React.FC<ContactProps> = ({ title }) => {
       renderCaptcha();
     };
 
-    if (!(window as any).grecaptcha) {
-      const script = document.createElement('script');
-      script.id = 'recaptcha-key-script';
-      script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit';
-      script.async = true;
-      script.defer = true;
-      document.body.appendChild(script);
+    const loadThirdPartyScripts = () => {
+      if (hasLoaded) return;
+      hasLoaded = true;
+
+      // Clean up event listeners
+      cleanupListeners();
+
+      // 1. Load reCAPTCHA
+      if (!(window as any).grecaptcha) {
+        const script = document.createElement('script');
+        script.id = 'recaptcha-key-script';
+        script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+      } else {
+        renderCaptcha();
+      }
+
+      // 2. Load Zoho SalesIQ
+      if (!document.getElementById('zsiqscript')) {
+        const $zoho = (window as any).$zoho || {};
+        (window as any).$zoho = $zoho;
+        $zoho.salesiq = $zoho.salesiq || {
+          widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
+          values: {},
+          ready: function() {}
+        };
+        const s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.id = 'zsiqscript';
+        s.defer = true;
+        s.src = 'https://salesiq.zoho.in/widget';
+        document.body.appendChild(s);
+      }
+
+      // 3. Load Zoho WebForm Analytics
+      if (!document.getElementById('wf_anal')) {
+        const s = document.createElement('script');
+        s.id = 'wf_anal';
+        s.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=067668c42525f92cfed5f91050cdbfa8489c91874a5a54216702fcf877cd09f2852c07a02518ad7dce00158ab836b3bbgidf49cea193c2cf8b393426a36d01b0ab349078788f5831fbf064b6096965a444dgid0c1d92dd9017ebb9f13e39c13cebbc5bf318167b2b6f826f9a7040e44cc9d9abgidc6e30ae4a0a75b59822449105d7bdf8697ffbb537da4c276848fdfd4b89026a2&tw=6415fe8afd736bd3ade910387402f0e6a9a16c831797ff621152ee2c123cbbf3';
+        s.defer = true;
+        document.body.appendChild(s);
+      }
+    };
+
+    const triggerLoad = () => {
+      loadThirdPartyScripts();
+    };
+
+    const addListeners = () => {
+      window.addEventListener('scroll', triggerLoad, { passive: true });
+      window.addEventListener('mousemove', triggerLoad, { passive: true });
+      window.addEventListener('mousedown', triggerLoad, { passive: true });
+      window.addEventListener('touchstart', triggerLoad, { passive: true });
+      window.addEventListener('keydown', triggerLoad, { passive: true });
+    };
+
+    const cleanupListeners = () => {
+      window.removeEventListener('scroll', triggerLoad);
+      window.removeEventListener('mousemove', triggerLoad);
+      window.removeEventListener('mousedown', triggerLoad);
+      window.removeEventListener('touchstart', triggerLoad);
+      window.removeEventListener('keydown', triggerLoad);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+
+    // If recaptcha is already loaded, render immediately
+    if ((window as any).grecaptcha) {
+      loadThirdPartyScripts();
     } else {
-      renderCaptcha();
-    }
-
-    if (!document.getElementById('zsiqscript')) {
-      const $zoho = (window as any).$zoho || {};
-      (window as any).$zoho = $zoho;
-      $zoho.salesiq = $zoho.salesiq || {
-        widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
-        values: {},
-        ready: function() {}
-      };
-      const s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.id = 'zsiqscript';
-      s.defer = true;
-      s.src = 'https://salesiq.zoho.in/widget';
-      document.body.appendChild(s);
-    }
-
-    if (!document.getElementById('wf_anal')) {
-      const s = document.createElement('script');
-      s.id = 'wf_anal';
-      s.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=067668c42525f92cfed5f91050cdbfa8489c91874a5a54216702fcf877cd09f2852c07a02518ad7dce00158ab836b3bbgidf49cea193c2cf8b393426a36d01b0ab349078788f5831fbf064b6096965a444dgid0c1d92dd9017ebb9f13e39c13cebbc5bf318167b2b6f826f9a7040e44cc9d9abgidc6e30ae4a0a75b59822449105d7bdf8697ffbb537da4c276848fdfd4b89026a2&tw=6415fe8afd736bd3ade910387402f0e6a9a16c831797ff621152ee2c123cbbf3';
-      s.defer = true;
-      document.body.appendChild(s);
+      // Add interaction listeners and set a fallback timeout
+      addListeners();
+      timeoutId = setTimeout(triggerLoad, 4000);
     }
 
     return () => {
+      cleanupListeners();
       delete (window as any).rccallback1132219000000597005;
       delete (window as any).onloadRecaptchaCallback;
     };

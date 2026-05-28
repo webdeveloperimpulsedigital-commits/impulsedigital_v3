@@ -12,14 +12,7 @@ const Blog: React.FC = () => {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const res = await fetch(`/blog/wp-json/wp/v2/posts?_embed&per_page=3&status=publish&_cb=${Date.now()}`, {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache',
-            'Expires': '0'
-          }
-        });
+        const res = await fetch('/api/blog-posts');
         if (res.ok) {
           const data = await res.json();
           if (Array.isArray(data) && data.length > 0) {
