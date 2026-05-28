@@ -40,6 +40,18 @@
       "regex": "^(?!/_next)/local%20seo(?:/)?$"
     },
     {
+      "source": "/blogs",
+      "destination": "/blog/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/blogs(?:/)?$"
+    },
+    {
+      "source": "/blogs/:path*",
+      "destination": "/blog/:path*",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/blogs(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
       "source": "/services/agentic-ai",
       "destination": "/ai-marketing-systems/agentic-ai/",
       "statusCode": 308,
@@ -243,14 +255,14 @@
     "beforeFiles": [],
     "afterFiles": [
       {
-        "source": "/blogs",
+        "source": "/blog",
         "destination": "https://impulsedigital.co.in/ID-web-blog/",
-        "regex": "^/blogs(?:/)?$"
+        "regex": "^/blog(?:/)?$"
       },
       {
-        "source": "/blogs/:path*",
+        "source": "/blog/:path*",
         "destination": "https://impulsedigital.co.in/ID-web-blog/:path*",
-        "regex": "^/blogs(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+        "regex": "^/blog(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
       }
     ],
     "fallback": []

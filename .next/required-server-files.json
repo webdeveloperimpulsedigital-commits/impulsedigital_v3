@@ -322,11 +322,11 @@
       "beforeFiles": [],
       "afterFiles": [
         {
-          "source": "/blogs",
+          "source": "/blog",
           "destination": "https://impulsedigital.co.in/ID-web-blog/"
         },
         {
-          "source": "/blogs/:path*",
+          "source": "/blog/:path*",
           "destination": "https://impulsedigital.co.in/ID-web-blog/:path*"
         }
       ],
@@ -341,6 +341,16 @@
       {
         "source": "/local%20seo",
         "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/blogs",
+        "destination": "/blog/",
+        "permanent": true
+      },
+      {
+        "source": "/blogs/:path*",
+        "destination": "/blog/:path*",
         "permanent": true
       },
       {
