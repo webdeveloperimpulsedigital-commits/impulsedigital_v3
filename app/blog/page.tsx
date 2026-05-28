@@ -25,11 +25,6 @@ export default async function BlogPage() {
 
   return (
     <main className="blog-page">
-      <style dangerouslySetInnerHTML={{ __html: `
-        body {
-          background-color: #000000 !important;
-        }
-      `}} />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="blog-hero">
         <div className="blog-hero-inner">

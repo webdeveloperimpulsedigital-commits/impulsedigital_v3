@@ -750,6 +750,16 @@
                 }
             });
         }
+
+        // Listen for bfcache page restore events (Back-Forward navigation)
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                resetBackgroundForRoute();
+                if (typeof window.initHomeDOMAnimations === 'function') {
+                    window.initHomeDOMAnimations();
+                }
+            }
+        });
     };
 
     if (window.THREE) {
