@@ -67,6 +67,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ── Blog URL rename: /blogs/ → /blog/ ─────────────────────────────────
+      {
+        source: '/blogs',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/blogs/:path*',
+        destination: '/blog/:path*',
+        permanent: true,
+      },
+
       // ── AI Marketing Systems ───────────────────────────────────────────────
       {
         source: '/services/agentic-ai',
@@ -195,24 +207,24 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Proxy /blogs/ to the existing WordPress installation on impulsedigital.co.in
+  // Proxy /blog/ to the existing WordPress installation on impulsedigital.co.in
   // Hostinger Node.js hosting routes ALL requests to Node.js — PHP cannot run
-  // inside the app directory. The only way to serve WordPress at /blogs/ is to
+  // inside the app directory. The only way to serve WordPress at /blog/ is to
   // have Next.js proxy the requests to the WordPress server transparently.
   //
   // IMPORTANT: Also update WordPress site URL in wp-admin → Settings → General:
-  //   WordPress Address (URL): https://www.theimpulsedigital.com/blogs
-  //   Site Address (URL):      https://www.theimpulsedigital.com/blogs
+  //   WordPress Address (URL): https://www.theimpulsedigital.com/blog
+  //   Site Address (URL):      https://www.theimpulsedigital.com/blog
   async rewrites() {
     return [
       {
-        // Proxy /blogs (no trailing slash)
-        source: '/blogs',
+        // Proxy /blog (no trailing slash)
+        source: '/blog',
         destination: 'https://impulsedigital.co.in/ID-web-blog/',
       },
       {
-        // Proxy /blogs/ and all sub-paths (posts, wp-admin, wp-content, etc.)
-        source: '/blogs/:path*',
+        // Proxy /blog/ and all sub-paths (posts, wp-admin, wp-content, etc.)
+        source: '/blog/:path*',
         destination: 'https://impulsedigital.co.in/ID-web-blog/:path*',
       },
     ];

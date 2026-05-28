@@ -1,14 +1,6 @@
-# Disable Phusion Passenger so Apache/LiteSpeed serves WordPress PHP directly
-PassengerEnabled off
-
-# BEGIN WordPress
+# This folder has been renamed to /blog/ — redirect all traffic permanently
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /blogs/
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /blogs/index.php [L]
+RewriteRule ^(.*)$ /blog/$1 [R=301,L]
 </IfModule>
-# END WordPress
