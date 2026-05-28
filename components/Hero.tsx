@@ -19,8 +19,7 @@ const Hero: React.FC = () => {
   return (
     <section className="hero" id="hero">
       <div className="hero-content">
-        <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>Your Data Knows. Your Marketing Should Too.</h1>
-        <div className="hero-title-wrapper" aria-hidden="true" style={{ margin: 0, padding: 0 }}>
+        <h1 className="hero-title-wrapper" style={{ margin: 0, padding: 0 }}>
           <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', marginBottom: '0' }}>
             Your Data Knows.
           </span>
@@ -30,7 +29,7 @@ const Hero: React.FC = () => {
           <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem' }}>
             Should Too.
           </span>
-        </div>
+        </h1>
 
         <div className="hero-bottom" style={{ marginTop: '1rem' }}>
           <p className="hero-desc hero-copy-reveal" style={{ maxWidth: '850px', margin: '0 auto' }}>
