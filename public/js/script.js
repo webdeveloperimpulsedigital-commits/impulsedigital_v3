@@ -124,13 +124,13 @@
                 pathname = window.location.pathname;
             }
             
-            const isBlog = pathname && (pathname === '/blog' || pathname === '/blog/' || pathname.startsWith('/blog/'));
+            const isBlogListing = pathname && (pathname === '/blog' || pathname === '/blog/');
 
-            // Set opacity of larger hero particles to 0 for blog pages to show only the fine stars
-            particlesMaterial.opacity = isBlog ? 0.0 : 0.6;
+            // Set opacity of larger hero particles to 0 only for the blog listing page to show only the fine stars
+            particlesMaterial.opacity = isBlogListing ? 0.0 : 0.6;
             
-            // Apply solid black background to blog paths to match high-contrast homepage cosmic styling
-            if (isBlog) {
+            // Apply solid black background only to the blog listing page
+            if (isBlogListing) {
                 document.body.style.backgroundColor = '#000000';
             } else {
                 document.body.style.backgroundColor = '';
