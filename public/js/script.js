@@ -106,7 +106,7 @@
             }
         };
 
-        const resetBackgroundForRoute = () => {
+        const resetBackgroundForRoute = (pathOrEvent) => {
             setCaseStudyWarpActive(false);
 
             if (window.gsap) {
@@ -114,7 +114,27 @@
             }
 
             particlesMaterial.opacity = 0.6;
-            document.body.style.backgroundColor = '';
+            
+            // Extract pathname from direct call, custom event, or window fallback
+            let pathname = typeof pathOrEvent === 'string' ? pathOrEvent : '';
+            if (pathOrEvent && pathOrEvent.detail && typeof pathOrEvent.detail.pathname === 'string') {
+                pathname = pathOrEvent.detail.pathname;
+            }
+            if (!pathname && typeof window !== 'undefined') {
+                pathname = window.location.pathname;
+            }
+            
+            const isBlog = pathname && (pathname === '/blog' || pathname === '/blog/' || pathname.startsWith('/blog/'));
+
+            // Set opacity of larger hero particles to 0 for blog pages to show only the fine stars
+            particlesMaterial.opacity = isBlog ? 0.0 : 0.6;
+            
+            // Apply solid black background to blog paths to match high-contrast homepage cosmic styling
+            if (isBlog) {
+                document.body.style.backgroundColor = '#000000';
+            } else {
+                document.body.style.backgroundColor = '';
+            }
         };
 
         window.impulseBackground = {
