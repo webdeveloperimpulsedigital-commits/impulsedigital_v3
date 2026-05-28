@@ -29,16 +29,32 @@ function rewriteUrls(text: string): string {
     .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog/g,   SITE_BLOG);
 }
 
-/** Binary content types that we redirect instead of proxying (avoids large buffers). */
-function isBinaryContentType(ct: string): boolean {
+/**
+ * Large binary types we REDIRECT (not proxy) to avoid buffering huge files.
+ * Images are fine to redirect — no CORS restriction on <img> tags.
+ * Fonts MUST be proxied — browsers block cross-origin fonts without CORS headers.
+ */
+function shouldRedirectBinary(ct: string): boolean {
   return (
     ct.startsWith('image/') ||
     ct.startsWith('video/') ||
     ct.startsWith('audio/') ||
+    ct.includes('application/pdf') ||
+    ct.includes('application/zip')
+  );
+}
+
+/**
+ * Small binary types (fonts, wasm, etc.) that must be PROXIED
+ * because browsers enforce CORS on them.
+ */
+function shouldProxyBinary(ct: string): boolean {
+  return (
     ct.includes('font/') ||
     ct.includes('application/font') ||
-    ct.includes('application/pdf') ||
-    ct.includes('application/zip') ||
+    ct.includes('font-woff') ||
+    ct.includes('application/x-font') ||
+    ct.includes('application/wasm') ||
     ct.includes('application/octet-stream')
   );
 }
@@ -83,14 +99,32 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(newLocation, { status });
   }
 
-  // ── Binary assets: redirect browser directly to WordPress origin ────
-  // (avoids buffering large image/font files in middleware)
-  if (isBinaryContentType(contentType)) {
+  // ── Large binary assets (images / video / audio / pdf): redirect ────
+  // <img> tags & downloads don't enforce CORS, so redirecting to the
+  // WordPress origin is fine and avoids buffering megabytes in memory.
+  if (shouldRedirectBinary(contentType)) {
     return NextResponse.redirect(targetUrl, { status: 302 });
   }
 
-  // ── Text content: rewrite URLs and return ──────────────────────────
-  const body     = await wpResponse.text();
+  // ── Font / wasm / octet-stream: PROXY (never redirect) ─────────────
+  // Browsers enforce same-origin CORS on @font-face src files.
+  // Redirecting to a different origin would cause CORS failures, so we
+  // buffer and return the file ourselves with permissive CORS headers.
+  if (shouldProxyBinary(contentType)) {
+    const buffer = await wpResponse.arrayBuffer();
+    const cacheControl = wpResponse.headers.get('cache-control') || 'public, max-age=2592000';
+    return new NextResponse(buffer, {
+      status,
+      headers: {
+        'Content-Type': contentType,
+        'Cache-Control': cacheControl,
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+  }
+
+  // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
+  const body      = await wpResponse.text();
   const rewritten = rewriteUrls(body);
 
   const isHtml = contentType.includes('text/html');
