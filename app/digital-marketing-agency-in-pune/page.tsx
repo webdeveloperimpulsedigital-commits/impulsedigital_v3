@@ -30,53 +30,77 @@ export const metadata: Metadata = {
 export default function PuneLocationPage() {
 
       const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why should businesses in Pune use digital marketing services?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Digital marketing helps businesses in Pune improve online visibility, build stronger brand positioning, reach relevant audiences, and generate business enquiries across digital platforms."
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does it mean that Impulse Digital is a growth partner rather than a vendor?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "As a leading digital marketing agency in Pune, it means we work as an extension of your team, aligning strategy and execution with your goals and sharing responsibility for outcomes. Collaboration, transparency, and measurable progress drive every decision."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you build a strategy that fits my brand and market?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We begin with discovery and a performance audit, define clear objectives, and map audience journeys. From there we create a test and learn roadmap that prioritizes initiatives by impact and effort."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How will success be measured and reported to us?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At our digital marketing agency in Pune, we set KPIs at the start and track visibility, engagement, conversions, and return on investment. Dashboards and review calls convert the data into actions for the next cycle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you serve only Pune based businesses or work across regions as well?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While we are a digital marketing company in Pune, we support clients across India and overseas. Our delivery models remain flexible so collaboration stays smooth regardless of location."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What services can you manage under one engagement?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer performance marketing, search engine optimization, social media, content, branding, website design and development, video production, and analytics. You can choose full service or project based support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How soon can we expect results from a new engagement?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Paid campaigns can show directional signals within days once tracking is verified. Organic growth compounds over weeks and months as technical and content improvements take effect."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does the process look like from first call to launch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We align on goals, run an audit, agree on a plan with milestones, set up tracking, and prepare creative and landing experiences. Launch follows a quality checklist so that data and delivery are reliable from day one."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you share case studies and references before we decide?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. As a transparent digital marketing company in Pune, we provide public case studies and can share additional references on request, subject to confidentiality terms."
+              }
             }
-          },
-          {
-            "@type": "Question",
-            "name": "What digital marketing services are commonly used in Pune?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Businesses in Pune commonly invest in SEO, social media marketing, website development, performance marketing, branding, local SEO, and content marketing."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can SEO help businesses in Pune generate enquiries?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. SEO can improve search visibility, attract relevant audiences, and support long-term enquiry generation through organic discovery."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is digital marketing performance measured?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Performance is measured through conversions, search visibility, engagement quality, traffic behaviour, campaign efficiency, and business-level outcomes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does digital marketing work for startups and growing businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Digital marketing helps startups and growing businesses improve discoverability, build trust, communicate value clearly, and generate growth opportunities."
-            }
-          }
-        ]
-      }
-    ];
+          ]
+        }
+      ];
 
       return (
         <>

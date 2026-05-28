@@ -30,53 +30,93 @@ export const metadata: Metadata = {
 export default function IndiaLocationPage() {
 
       const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I choose the right digital marketing agency in India for my business?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The right agency should understand your business model, audience behaviour, category competition, and growth objectives before suggesting channels or campaigns. At Impulse Digital, every engagement begins with understanding the business problem first and building strategy around measurable outcomes."
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a digital marketing agency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A digital marketing agency helps businesses grow online using services like performance ads, SEO, social, content, automation and analytics tailored to goals and budgets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the benefits of hiring a digital marketing agency to leverage your business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You get senior expertise, speed of execution, cross-channel strategy, creative at scale, and measurable performance without building a large in-house team."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the role of a result-oriented digital marketing agency in elevating your business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A results-driven partner aligns channels to KPIs, runs continuous experiments, optimizes budgets in real-time, and reports outcomes clearly to drive revenue and efficiency."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Top 6 services an agency should offer for your business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Strategy, Performance Ads, SEO, Social & Content, Marketing Automation/CRM, and Analytics/Attribution."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the advantages of hiring a leading digital marketing agency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Proven playbooks, specialized teams, enterprise-grade tools, faster time-to-value, and lower total cost of ownership."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I expect instant results after hiring an agency?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some channels show quick lifts, such as performance ads. Others compound over time, such as SEO. A balanced mix delivers both short-term and long-term ROI."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is it possible to measure the efficacy of your digital marketing agency's strategies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. With clear KPIs, proper tracking, conversion events, and multi-touch attribution, you can measure impact across the funnel."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the budget to hire a digital marketing agency for your business?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The budget to hire the best digital marketing agency in Mumbai depends on your requirements, including scope of services, industry, business size, marketing goals, and expectations. It is essential to contact the agency directly for further queries about budget or services. Approximately, the budget ranges from 70k to 2 lakh to hire a good marketing agency for your business."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Before signing up with an agency, should I consider geographic factors like location?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, one does not need to consider the agency's location, as digital marketing services are provided online and are not restricted to physical presence or areas. Anyone can receive top digital marketing services from Mumbai to anywhere in the world. However, it is essential to consider the agency's expertise in your domain, industry alignment, experience, and facilities they provide for online operations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What skills are necessary for an agency before onboarding?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When onboarding and deciding on an agency, it is essential to prioritize domain expertise, transparent communication, creative design and marketing strategy, and a track record of quality work. The team coordinating should have problem-solving qualities and efficiency, showing that the agency is dependable and trustworthy."
+              }
             }
-          },
-          {
-            "@type": "Question",
-            "name": "What services does a digital marketing agency in India usually offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A digital marketing agency can offer SEO, social media marketing, performance marketing, branding, website development, video production, AI marketing systems, content strategy, and growth intelligence services."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can digital marketing help generate business enquiries?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. A structured digital marketing strategy can help improve visibility, attract qualified audiences, strengthen positioning, and generate enquiries across organic and paid channels."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does digital marketing take to show results?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Some channels like paid advertising can generate early signals quickly, while SEO, branding, and content-led growth usually compound over a longer period. Timelines depend on category competition, positioning, and current digital infrastructure."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you measure digital marketing performance?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Performance can be measured through traffic quality, conversion behaviour, lead quality, search visibility, engagement patterns, campaign efficiency, and business outcomes tied to marketing activity."
-            }
-          }
-        ]
-      }
-    ];
+          ]
+        }
+      ];
 
       return (
         <>

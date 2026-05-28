@@ -30,53 +30,93 @@ export const metadata: Metadata = {
 export default function ThaneLocationPage() {
 
       const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why should businesses in Thane hire a digital marketing agency?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A digital marketing agency can help businesses in Thane improve online visibility, attract relevant audiences, strengthen brand positioning, and generate enquiries through structured digital growth strategies."
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What services does a digital marketing agency in Thane like Impulse Digital offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Impulse Digital offers a wide range of digital marketing services including Search Engine Optimization (SEO), Social Media Marketing, Website Development, Pay-Per-Click Advertising (PPC), Content Marketing, Branding & Creatives, Employer Branding, and Corporate Communication."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why choose a digital marketing agency based in Thane?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Choosing a Thane-based agency ensures you work with experts who understand the local market and consumer behavior. Impulse Digital combines local insights with national and international digital strategies to deliver real results."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much experience does Impulse Digital have in digital marketing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Impulse Digital brings over 34 years of experience in advertising and marketing. We’ve helped startups, SMEs, and large corporations grow their digital presence with customized, result-driven strategies."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What kind of results can clients expect from Impulse Digital?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our clients have seen results like a 200-300% increase in organic traffic and 50 to 100+ leads generated per month. We focus on measurable growth, ROI, and long-term brand building."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which industries does Impulse Digital serve?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with clients from a wide range of industries including FMCG, education, manufacturing, real estate, health care, e-commerce, and professional services."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Impulse Digital work with clients outside of Thane?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we work with clients across Mumbai, Pune, and other cities in India. Our team is equipped to manage projects remotely while maintaining seamless communication and performance tracking."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to see results from digital marketing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the service. SEO typically takes 3 to 6 months to show significant results, while PPC, social media ads, and email marketing can generate leads and traffic in a matter of weeks."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer a free consultation or strategy session?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer a free consultation to understand your business goals and recommend the best digital marketing strategy tailored to your needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is your pricing structured?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our pricing is flexible and based on the services required, campaign goals, and business size. We offer customized packages that align with your marketing objectives and budget."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a clear process for tracking performance and ROI?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We provide transparent performance reports using tools like Google Analytics, Search Console, and ad dashboards. You'll always know what’s working, what’s not, and how your investment is performing."
+              }
             }
-          },
-          {
-            "@type": "Question",
-            "name": "What digital marketing services are useful for businesses in Thane?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Businesses in Thane commonly use SEO, social media marketing, paid advertising, website development, branding, local SEO, content marketing, and performance marketing to improve growth and visibility."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can local SEO help businesses in Thane?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Local SEO helps businesses improve visibility in location-based searches, Google Maps results, and nearby audience discovery."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you measure digital marketing success?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Success can be measured through enquiries, conversions, traffic quality, search visibility, engagement quality, and campaign performance against business objectives."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does digital marketing work for small and medium businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Digital marketing can help small and medium businesses improve visibility, generate leads, build credibility, and compete more effectively within their category."
-            }
-          }
-        ]
-      }
-    ];
+          ]
+        }
+      ];
 
       return (
         <>
