@@ -463,9 +463,9 @@
                         pin: true,
                         // Mobile native scrolling requires fixed pinning to avoid jitter
                         pinType: 'fixed',
-                        anticipatePin: 1,
+                        anticipatePin: isMobileDevice ? 0 : 1,
                         invalidateOnRefresh: true,
-                        scrub: 0.7,
+                        scrub: isMobileDevice ? true : 0.7,
                         start: 'top top',
                         end: () => '+=' + (cosmosCards.length * 1080),
                         onLeave: () => {
@@ -515,7 +515,7 @@
             textFills.forEach(fill => {
                 gsap.to(fill, {
                     backgroundPositionX: '0%', ease: 'none',
-                    scrollTrigger: { trigger: fill, scrub: 1, start: 'top 80%', end: 'top 20%' }
+                    scrollTrigger: { trigger: fill, scrub: isMobileDevice ? true : 1, start: 'top 80%', end: 'top 20%' }
                 });
             });
 
