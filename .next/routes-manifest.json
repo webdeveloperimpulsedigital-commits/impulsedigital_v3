@@ -38,6 +38,150 @@
       "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
       "statusCode": 308,
       "regex": "^(?!/_next)/local%20seo(?:/)?$"
+    },
+    {
+      "source": "/services/agentic-ai",
+      "destination": "/ai-marketing-systems/agentic-ai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/agentic-ai(?:/)?$"
+    },
+    {
+      "source": "/services/agentic-ai/",
+      "destination": "/ai-marketing-systems/agentic-ai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/agentic-ai/(?:/)?$"
+    },
+    {
+      "source": "/services/video-production/ai-video-production",
+      "destination": "/ai-marketing-systems/ai-video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/video-production/ai-video-production(?:/)?$"
+    },
+    {
+      "source": "/services/video-production/ai-video-production/",
+      "destination": "/ai-marketing-systems/ai-video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/video-production/ai-video-production/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/ai-seo-agency",
+      "destination": "/ai-marketing-systems/generative-search-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/ai-seo-agency(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/ai-seo-agency/",
+      "destination": "/ai-marketing-systems/generative-search-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/ai-seo-agency/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization",
+      "destination": "/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/local-seo-services",
+      "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/local-seo-services(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/local-seo-services/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/local-seo-services/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/ecommerce-seo-services",
+      "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/ecommerce-seo-services(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/ecommerce-seo-services/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/ecommerce-seo-services/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/b2b-seo-services",
+      "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/b2b-seo-services(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/b2b-seo-services/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/b2b-seo-services/(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/enterprise-seo-services",
+      "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/enterprise-seo-services(?:/)?$"
+    },
+    {
+      "source": "/services/search-engine-optimization/enterprise-seo-services/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/search-engine-optimization/enterprise-seo-services/(?:/)?$"
+    },
+    {
+      "source": "/services/social-media-management",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-management(?:/)?$"
+    },
+    {
+      "source": "/services/social-media-management/",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-management/(?:/)?$"
+    },
+    {
+      "source": "/services/video-production",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/video-production(?:/)?$"
+    },
+    {
+      "source": "/services/video-production/",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/video-production/(?:/)?$"
+    },
+    {
+      "source": "/services/website-development",
+      "destination": "/brand-infrastructure/website-development/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/website-development(?:/)?$"
+    },
+    {
+      "source": "/services/website-development/",
+      "destination": "/brand-infrastructure/website-development/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/website-development/(?:/)?$"
+    },
+    {
+      "source": "/services/employer-branding-agency",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/employer-branding-agency(?:/)?$"
+    },
+    {
+      "source": "/services/employer-branding-agency/",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/employer-branding-agency/(?:/)?$"
     }
   ],
   "headers": [

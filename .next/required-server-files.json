@@ -342,6 +342,126 @@
         "source": "/local%20seo",
         "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
         "permanent": true
+      },
+      {
+        "source": "/services/agentic-ai",
+        "destination": "/ai-marketing-systems/agentic-ai/",
+        "permanent": true
+      },
+      {
+        "source": "/services/agentic-ai/",
+        "destination": "/ai-marketing-systems/agentic-ai/",
+        "permanent": true
+      },
+      {
+        "source": "/services/video-production/ai-video-production",
+        "destination": "/ai-marketing-systems/ai-video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/services/video-production/ai-video-production/",
+        "destination": "/ai-marketing-systems/ai-video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/ai-seo-agency",
+        "destination": "/ai-marketing-systems/generative-search-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/ai-seo-agency/",
+        "destination": "/ai-marketing-systems/generative-search-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization",
+        "destination": "/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/local-seo-services",
+        "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/local-seo-services/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/ecommerce-seo-services",
+        "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/ecommerce-seo-services/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/b2b-seo-services",
+        "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/b2b-seo-services/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/enterprise-seo-services",
+        "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/search-engine-optimization/enterprise-seo-services/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/services/social-media-management",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/services/social-media-management/",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/services/video-production",
+        "destination": "/brand-infrastructure/video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/services/video-production/",
+        "destination": "/brand-infrastructure/video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/services/website-development",
+        "destination": "/brand-infrastructure/website-development/",
+        "permanent": true
+      },
+      {
+        "source": "/services/website-development/",
+        "destination": "/brand-infrastructure/website-development/",
+        "permanent": true
+      },
+      {
+        "source": "/services/employer-branding-agency",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/services/employer-branding-agency/",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
       }
     ]
   },
