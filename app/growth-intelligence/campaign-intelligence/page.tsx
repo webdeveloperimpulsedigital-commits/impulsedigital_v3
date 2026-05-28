@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Campaign & Performance Intelligence | Impulse Digital',
     description: 'Campaign and performance intelligence services from Impulse Digital help brands measure, analyse, and optimise every campaign for maximum impact.',
     url: `${SITE_URL}/growth-intelligence/campaign-intelligence/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Campaign & Performance Intelligence | Impulse Digital',
     description: 'Campaign and performance intelligence services from Impulse Digital help brands measure, analyse, and optimise every campaign for maximum impact.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

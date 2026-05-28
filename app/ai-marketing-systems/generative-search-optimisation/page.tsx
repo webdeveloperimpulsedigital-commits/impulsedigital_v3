@@ -3,7 +3,7 @@ import { SITE_URL } from '@/lib/siteUrl';
 import GenerativeSearchOptimisation from '@/components/pages/GenerativeSearchOptimisation';
 
 export const metadata: Metadata = {
-  title: 'AI SEO Agency in India | Advanced AI SEO Service',
+  title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
   description: 'Partner with a top AI SEO agency in Mumbai, India that delivers data-driven AI SEO services to boost organic rankings, enhance search visibility, and accelerate business growth with intelligent automation and strategic optimization.',
   keywords: 'ai seo agency, ai seo service, ai seo company, mumbai, india, impulse digital',
   robots: { index: true, follow: true },
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/ai-marketing-systems/generative-search-optimisation/`,
   },
   openGraph: {
-    title: 'AI SEO Agency in India | Advanced AI SEO Service',
+    title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
     description: 'Partner with a top AI SEO agency in Mumbai, India that delivers data-driven AI SEO services to boost organic rankings, enhance search visibility, and accelerate business growth with intelligent automation and strategic optimization.',
     url: `${SITE_URL}/ai-marketing-systems/generative-search-optimisation/`,
     images: [{ url: `${SITE_URL}/AI-SEO-Agency.png` }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI SEO Agency in India | Advanced AI SEO Service',
+    title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
     description: 'Partner with a top AI SEO agency in Mumbai, India that delivers data-driven AI SEO services to boost organic rankings, enhance search visibility, and accelerate business growth with intelligent automation and strategic optimization.',
     images: [`${SITE_URL}/AI-SEO-Agency.png`],
     site: '@impulsedigi',

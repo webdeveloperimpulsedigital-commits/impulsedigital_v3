@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'SEO Agency in Mumbai | Search Engine Optimisation | Impulse Digital',
     description: 'Impulse Digital is a leading SEO agency in Mumbai offering enterprise, ecommerce, B2B and local SEO services to improve search rankings and drive organic growth.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SEO Agency in Mumbai | Search Engine Optimisation | Impulse Digital',
     description: 'Impulse Digital is a leading SEO agency in Mumbai offering enterprise, ecommerce, B2B and local SEO services to improve search rankings and drive organic growth.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

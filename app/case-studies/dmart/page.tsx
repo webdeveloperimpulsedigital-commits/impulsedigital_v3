@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'DMart Case Study | Impulse Digital',
     description: 'How Impulse Digital supported DMart\'s digital marketing efforts, building online presence and driving consumer engagement for India\'s largest retail chain.',
     url: `${SITE_URL}/case-studies/dmart/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DMart Case Study | Impulse Digital',
     description: 'How Impulse Digital supported DMart\'s digital marketing efforts, building online presence and driving consumer engagement for India\'s largest retail chain.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

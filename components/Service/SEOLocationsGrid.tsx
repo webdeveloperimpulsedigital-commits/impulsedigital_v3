@@ -3,6 +3,7 @@
 
 
 import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { seoLocations } from '../../data/seoLocationsList';
 
 export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ currentLocation }) => {
@@ -92,8 +93,8 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
 
           .loc-dropdown-list {
             position: absolute;
-            bottom: calc(100% + 0.5rem);
-            top: auto;
+            top: calc(100% + 0.5rem);
+            bottom: auto;
             left: 0;
             width: 100%;
             background: #0f0f0f;
@@ -105,9 +106,9 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transform: translateY(10px);
+            transform: translateY(-10px);
             transition: all 0.3s ease;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
             overscroll-behavior: contain;
             z-index: 101;
           }
@@ -175,13 +176,14 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
           
           <div className={`loc-dropdown-list ${isOpen ? 'open' : ''}`}>
             {locationsToShow.map((loc) => (
-              <a 
+              <Link 
                 key={loc.slug} 
                 href={`/brand-infrastructure/search-engine-optimisation/${loc.slug}/`}
-                className="loc-dropdown-item" 
+                className="loc-dropdown-item"
+                onClick={() => setIsOpen(false)}
               >
                 {loc.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Chings Kurkure Case Study | Impulse Digital',
     description: 'How Impulse Digital created engaging digital campaigns for Chings Kurkure, driving brand awareness and consumer engagement across digital platforms.',
     url: `${SITE_URL}/case-studies/chings-kurkure/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Chings Kurkure Case Study | Impulse Digital',
     description: 'How Impulse Digital created engaging digital campaigns for Chings Kurkure, driving brand awareness and consumer engagement across digital platforms.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Thank You | Impulse Digital',
     description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',
     url: `${SITE_URL}/thank-you/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Thank You | Impulse Digital',
     description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

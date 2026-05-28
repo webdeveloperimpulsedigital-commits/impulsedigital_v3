@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'ABG KBC Case Study | Impulse Digital',
     description: 'How Impulse Digital delivered impactful digital marketing for ABG KBC, driving brand awareness and audience engagement.',
     url: `${SITE_URL}/case-studies/abg-kbc/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'ABG KBC Case Study | Impulse Digital',
     description: 'How Impulse Digital delivered impactful digital marketing for ABG KBC, driving brand awareness and audience engagement.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

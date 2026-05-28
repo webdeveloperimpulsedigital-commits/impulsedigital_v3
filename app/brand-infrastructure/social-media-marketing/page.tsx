@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Social Media Marketing Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading social media marketing agency in Mumbai offering content creation, community management, paid social, and social media strategy.',
     url: `${SITE_URL}/brand-infrastructure/social-media-marketing/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Social Media Marketing Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading social media marketing agency in Mumbai offering content creation, community management, paid social, and social media strategy.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

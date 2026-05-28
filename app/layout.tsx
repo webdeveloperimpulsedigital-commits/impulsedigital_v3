@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   // Default metadata — overridden by each page's own metadata export
   title: {
     default: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
-    template: '%s | Impulse Digital',
   },
   description:
     'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     description:
       'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
     url: SITE_URL,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
   },
   twitter: {
     card: 'summary_large_image',

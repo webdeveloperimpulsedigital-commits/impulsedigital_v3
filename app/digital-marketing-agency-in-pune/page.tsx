@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Digital Marketing Agency in Pune | Impulse Digital',
     description: 'Impulse Digital is a leading digital marketing agency in Pune providing SEO, social media marketing, branding, and performance marketing for businesses in Pune.',
     url: `${SITE_URL}/digital-marketing-agency-in-pune/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Digital Marketing Agency in Pune | Impulse Digital',
     description: 'Impulse Digital is a leading digital marketing agency in Pune providing SEO, social media marketing, branding, and performance marketing for businesses in Pune.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

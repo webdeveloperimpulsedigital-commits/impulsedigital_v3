@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Tata Soulfull Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Tata Soulfull build digital brand presence and reach health-conscious consumers through targeted content and digital campaigns.',
     url: `${SITE_URL}/case-studies/tata-soulfull/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tata Soulfull Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Tata Soulfull build digital brand presence and reach health-conscious consumers through targeted content and digital campaigns.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Employer Branding Case Study | Impulse Digital',
     description: 'How Impulse Digital helped leading brands build compelling employer brands that attract top talent and strengthen their position as employers of choice.',
     url: `${SITE_URL}/case-studies/employer-branding/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Employer Branding Case Study | Impulse Digital',
     description: 'How Impulse Digital helped leading brands build compelling employer brands that attract top talent and strengthen their position as employers of choice.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

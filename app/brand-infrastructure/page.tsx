@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Brand Infrastructure Services | Impulse Digital',
     description: 'Impulse Digital\'s Brand Infrastructure division builds the digital foundations brands need to grow: SEO, social media, websites, branding, and video production.',
     url: `${SITE_URL}/brand-infrastructure/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brand Infrastructure Services | Impulse Digital',
     description: 'Impulse Digital\'s Brand Infrastructure division builds the digital foundations brands need to grow: SEO, social media, websites, branding, and video production.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

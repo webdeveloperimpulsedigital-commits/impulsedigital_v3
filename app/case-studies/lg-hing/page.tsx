@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'LG Hing Case Study | Impulse Digital',
     description: 'How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.',
     url: `${SITE_URL}/case-studies/lg-hing/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LG Hing Case Study | Impulse Digital',
     description: 'How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

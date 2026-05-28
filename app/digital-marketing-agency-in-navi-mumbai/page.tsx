@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Digital Marketing Agency in Navi Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading digital marketing agency in Navi Mumbai providing SEO, social media marketing, and performance marketing for businesses in Navi Mumbai.',
     url: `${SITE_URL}/digital-marketing-agency-in-navi-mumbai/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Digital Marketing Agency in Navi Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading digital marketing agency in Navi Mumbai providing SEO, social media marketing, and performance marketing for businesses in Navi Mumbai.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

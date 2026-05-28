@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'SEO Agency in Ghatkopar | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Ghatkopar, driving better search rankings and local visibility.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/ghatkopar/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SEO Agency in Ghatkopar | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Ghatkopar, driving better search rankings and local visibility.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

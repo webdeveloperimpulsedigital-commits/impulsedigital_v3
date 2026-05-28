@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'AI Marketing Systems | Impulse Digital',
     description: 'Impulse Digital\'s AI Marketing Systems help brands harness the power of artificial intelligence for smarter marketing, automation, and scalable growth.',
     url: `${SITE_URL}/ai-marketing-systems/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Marketing Systems | Impulse Digital',
     description: 'Impulse Digital\'s AI Marketing Systems help brands harness the power of artificial intelligence for smarter marketing, automation, and scalable growth.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

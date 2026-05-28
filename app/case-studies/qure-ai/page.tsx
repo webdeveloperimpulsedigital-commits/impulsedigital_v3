@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Qure.ai Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Qure.ai expand their digital presence and reach healthcare decision-makers through targeted digital marketing.',
     url: `${SITE_URL}/case-studies/qure-ai/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Qure.ai Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Qure.ai expand their digital presence and reach healthcare decision-makers through targeted digital marketing.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

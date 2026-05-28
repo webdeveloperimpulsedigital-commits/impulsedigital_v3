@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Website Development Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading website development agency in Mumbai building high-performance, SEO-optimised websites for brands, startups, and enterprises.',
     url: `${SITE_URL}/brand-infrastructure/website-development/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Website Development Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is a leading website development agency in Mumbai building high-performance, SEO-optimised websites for brands, startups, and enterprises.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };

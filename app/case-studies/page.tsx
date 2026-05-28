@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Digital Marketing Case Studies | Impulse Digital',
     description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',
     url: `${SITE_URL}/case-studies/`,
-    images: [{ url: `${SITE_URL}/img/logo-id-new.webp` }],
+    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Digital Marketing Case Studies | Impulse Digital',
     description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',
-    images: [`${SITE_URL}/img/logo-id-new.webp`],
+    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
