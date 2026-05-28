@@ -2159,6 +2159,12 @@ button,
     }
 }
 
+@media (max-width: 768px) {
+    .footer-etched {
+        display: none !important;
+    }
+}
+
 /* ============================================================
    SERVICE PAGE SYSTEM (v55)
    Shared design language for all 15 service pages.

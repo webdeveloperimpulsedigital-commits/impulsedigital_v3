@@ -55,26 +55,11 @@ const defaultFaqs: FAQItem[] = [
 ];
 
 const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": data.map((item) => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
-      }
-    }))
-  };
+
 
   return (
     <section className="faq glass-panel">
-      {/* JSON-LD structured data — injected directly since this is a client component */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+
       <div className="container">
         <h2 className="section-heading split-text">Questions we hear<br />from growth leaders.</h2>
         <div className="accordion">
