@@ -13465,3 +13465,9 @@ iframe[src*='zohopublic'] {
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+/* Route-specific body backgrounds to prevent style leakage on SPA navigation */
+body[data-impulse-route="/blog"],
+body[data-impulse-route="/blog/"] {
+    background-color: #000000 !important;
+}
