@@ -74,8 +74,10 @@
   "/growth-intelligence/market-intelligence/page": "/growth-intelligence/market-intelligence",
   "/growth-intelligence/page": "/growth-intelligence",
   "/page": "/",
+  "/privacy-policy/page": "/privacy-policy",
   "/robots.txt/route": "/robots.txt",
   "/services/page": "/services",
   "/sitemap.xml/route": "/sitemap.xml",
+  "/terms-and-conditions/page": "/terms-and-conditions",
   "/thank-you/page": "/thank-you"
 }

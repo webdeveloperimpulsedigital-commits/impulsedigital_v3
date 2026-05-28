@@ -4279,6 +4279,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/privacy-policy": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/privacy-policy",
+      "dataRoute": "/privacy-policy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/robots.txt": {
       "initialHeaders": {
         "cache-control": "public, max-age=0, must-revalidate",
@@ -4361,6 +4385,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/terms-and-conditions": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/terms-and-conditions",
+      "dataRoute": "/terms-and-conditions.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/thank-you": {
       "experimentalBypassFor": [
         {
@@ -4418,8 +4466,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "a2d0c7c8d2441f8a9a1651c233dc7687",
-    "previewModeSigningKey": "12cdf5adec142ce3b0ab314d19ea514ff8670ab022be2485cdfee37f2a6bbc5b",
-    "previewModeEncryptionKey": "09fbe797c3a04dcceed8a87ab0400defd96f2250d68b627844987657d37401bd"
+    "previewModeId": "e9ac314ee4a5e841ffa1b0b1720201a1",
+    "previewModeSigningKey": "f73faf6882fd78cfc83fb6feef3f9bd06d6f503f409f4728b5971149d39cfbb7",
+    "previewModeEncryptionKey": "89483c314e46f0ea292e20dd0a015e3d2403f40c6914bca37797780f438d90be"
   }
 }
