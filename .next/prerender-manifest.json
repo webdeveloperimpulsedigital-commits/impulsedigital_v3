@@ -2093,6 +2093,31 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/test": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/test.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/the-rise-of-sustainability-in-marketing-how-green-marketing-is-becoming-the-new-norm": {
       "experimentalBypassFor": [
         {
@@ -2584,31 +2609,6 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/which-seo-strategies-deliver-the-best-roi-for-e-commerce-websites.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -4466,8 +4466,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "e9ac314ee4a5e841ffa1b0b1720201a1",
-    "previewModeSigningKey": "f73faf6882fd78cfc83fb6feef3f9bd06d6f503f409f4728b5971149d39cfbb7",
-    "previewModeEncryptionKey": "89483c314e46f0ea292e20dd0a015e3d2403f40c6914bca37797780f438d90be"
+    "previewModeId": "bfa51048d51a844dbce732bbd08d09bb",
+    "previewModeSigningKey": "c88cc7e415e8db78602cced2fb66faeebeddbcb8540160d263dcb0c3360b27a0",
+    "previewModeEncryptionKey": "a59405f999e19992c8fc5c1e368ed63e223f6337b3b24458f86697ee7d7acf0f"
   }
 }
