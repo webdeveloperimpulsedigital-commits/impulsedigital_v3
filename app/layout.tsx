@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   // Default metadata — overridden by each page's own metadata export
   title: {
     default: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
-    template: '%s | Impulse Digital',
+    template: '%s',
   },
   description:
     'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
