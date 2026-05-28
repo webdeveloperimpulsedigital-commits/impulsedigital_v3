@@ -441,15 +441,15 @@ const ContactUs: React.FC = () => {
 
             <div className="contact-location-copy">
               <p className="contact-kicker">Where You'll Find Us</p>
-              <p className="contact-address">304/305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane (W), 400604.</p>
+              <p className="contact-address">Chirag Infotech, 304 - 305, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604, India</p>
             </div>
           </div>
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.423719830889!2d72.9554104!3d19.1984954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b92138bc5b4b%3A0x6b63e795c6c8eec9!2sImpulse%20Digital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30142.480967467654!2d72.953999!3d19.203494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9218eaaaaab%3A0xe087a0855822211d!2sImpulse%20Digital%20-%20%231%20Digital%20Marketing%20Agency%20in%20Mumbai!5e0!3m2!1sen!2sus!4v1779974855996!5m2!1sen!2sus"
               width="100%" height="100%"
-              style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 2, filter: 'grayscale(100%) invert(90%) opacity(0.8)' }}
-              allowFullScreen={true} loading="lazy"></iframe>
+              style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 2 }}
+              allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             <div className="contact-map-grid" aria-hidden="true" style={{ zIndex: 1 }}></div>
             <svg viewBox="801 344 274 272" aria-hidden="true" style={{ zIndex: 3, pointerEvents: 'none', opacity: 0.5 }}>
               <use href="#impulse-mark" />

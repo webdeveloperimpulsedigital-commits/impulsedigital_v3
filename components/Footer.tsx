@@ -88,9 +88,10 @@ const Footer: React.FC = () => {
             <div className="contact-item address-item">
               <span className="contact-icon"><i className="fas fa-map-marker-alt"></i></span>
               <span className="contact-text">
-                304 - 305, Chirag Infotech,<br />
+                Chirag Infotech, 304 - 305,<br />
                 Road No. 16/Z, Ambica Nagar,<br />
-                Wagle Ind. Estate, Thane, Mumbai 400604
+                Wagle Industrial Estate, Thane West,<br />
+                Thane, Maharashtra 400604, India
               </span>
             </div>
           </div>
