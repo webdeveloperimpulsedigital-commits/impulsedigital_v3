@@ -28,5 +28,40 @@ export const metadata: Metadata = {
 };
 
 export default function BrandInfrastructurePage() {
-  return <BrandInfrastructure />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.theimpulsedigital.com/brand-infrastructure/#service",
+    "name": "Brand Infrastructure Services",
+    "url": "https://www.theimpulsedigital.com/brand-infrastructure/",
+    "description": "Impulse Digital provides Brand Infrastructure services including branding, SEO, social media marketing, video production, website development, and employer branding.",
+    "serviceType": [
+      "Brand Infrastructure",
+      "Branding",
+      "Search Engine Optimisation",
+      "Social Media Marketing",
+      "Video Production",
+      "Website Development",
+      "Employer Branding"
+    ],
+    "areaServed": [
+      "IN",
+      "US"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Impulse Digital",
+      "url": "https://www.theimpulsedigital.com/"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BrandInfrastructure />
+    </>
+  );
 }

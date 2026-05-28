@@ -28,5 +28,40 @@ export const metadata: Metadata = {
 };
 
 export default function ArcherAIPage() {
-  return <ArcherAI />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/archer-ai/#service",
+    "name": "Archer AI Services",
+    "url": "https://www.theimpulsedigital.com/ai-marketing-systems/archer-ai/",
+    "description": "Impulse Digital provides Archer AI, an AI-powered outbound intelligence engine that detects buying signals, identifies decision-makers, enriches prospect data, and supports personalised B2B outreach.",
+    "serviceType": [
+      "Archer AI",
+      "AI Outbound Engine",
+      "B2B Lead Intelligence",
+      "ICP Diagnostic",
+      "Prospect Discovery",
+      "LinkedIn Outreach",
+      "Email Outreach"
+    ],
+    "areaServed": [
+      "IN",
+      "US"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "Impulse Digital",
+      "url": "https://www.theimpulsedigital.com/"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ArcherAI />
+    </>
+  );
 }
