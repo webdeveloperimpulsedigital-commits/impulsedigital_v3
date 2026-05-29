@@ -23,6 +23,11 @@ export interface WPPost {
     og_image?: Array<{ url: string; width?: number; height?: number }>;
     canonical?: string;
   };
+  _embedded?: {
+    'wp:featuredmedia'?: Array<{
+      source_url: string;
+    }>;
+  };
 }
 
 /** Fetch paginated list of posts (listing page). */
@@ -32,8 +37,11 @@ export async function getPosts(
 ): Promise<{ posts: WPPost[]; total: number; totalPages: number }> {
   try {
     const res = await fetch(
-      `${WP_API}/posts?_fields=id,title,slug,excerpt,date,featured_media,categories,yoast_head_json&per_page=${perPage}&page=${page}&status=publish&orderby=date&order=desc`,
-      { next: { revalidate: 3600 } },
+      `${WP_API}/posts?_fields=id,title,slug,excerpt,date,featured_media,categories,yoast_head_json,_links,_embedded&_embed=true&per_page=${perPage}&page=${page}&status=publish&orderby=date&order=desc`,
+      { 
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(6000)
+      },
     );
     if (!res.ok) return { posts: [], total: 0, totalPages: 0 };
     const posts: WPPost[] = await res.json();
@@ -49,8 +57,11 @@ export async function getPosts(
 export async function getPostBySlug(slug: string): Promise<WPPost | null> {
   try {
     const res = await fetch(
-      `${WP_API}/posts?slug=${encodeURIComponent(slug)}&_fields=id,title,slug,content,date,featured_media,categories,yoast_head_json&status=publish`,
-      { next: { revalidate: 3600 } },
+      `${WP_API}/posts?slug=${encodeURIComponent(slug)}&_fields=id,title,slug,content,date,featured_media,categories,yoast_head_json,_links,_embedded&_embed=true&status=publish`,
+      { 
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(6000)
+      },
     );
     if (!res.ok) return null;
     const posts: WPPost[] = await res.json();
@@ -65,7 +76,10 @@ export async function getAllPostSlugs(): Promise<string[]> {
   try {
     const res = await fetch(
       `${WP_API}/posts?_fields=slug&per_page=100&status=publish`,
-      { next: { revalidate: 3600 } },
+      { 
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(6000)
+      },
     );
     if (!res.ok) return [];
     const posts: Pick<WPPost, 'slug'>[] = await res.json();
@@ -74,6 +88,24 @@ export async function getAllPostSlugs(): Promise<string[]> {
     return [];
   }
 }
+
+/** Fetch all post slugs and modification dates for sitemap generation. */
+export async function getAllPostsForSitemap(): Promise<Array<{ slug: string; date: string }>> {
+  try {
+    const res = await fetch(
+      `${WP_API}/posts?_fields=slug,date&per_page=100&status=publish`,
+      { 
+        next: { revalidate: 3600 },
+        signal: AbortSignal.timeout(6000)
+      },
+    );
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
 
 /**
  * Rewrite internal WordPress URLs in rendered content so links stay on

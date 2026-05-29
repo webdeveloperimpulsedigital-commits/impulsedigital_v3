@@ -62,6 +62,16 @@ function shouldProxyBinary(ct: string): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
+  // Bypass proxy for custom blog sitemap route and its rewrite destination
+  if (
+    pathname === '/blog/sitemap_index.xml' ||
+    pathname === '/blog/sitemap_index.xml/' ||
+    pathname === '/blog/sitemap-index' ||
+    pathname === '/blog/sitemap-index/'
+  ) {
+    return NextResponse.next();
+  }
+
   // Build the equivalent WordPress URL
   // /blog/foo/bar  →  /ID-web-blog/foo/bar
   const wpPathname = pathname.replace(/^\/blog/, WP_PATH) || `${WP_PATH}/`;

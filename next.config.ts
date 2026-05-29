@@ -213,7 +213,16 @@ const nextConfig: NextConfig = {
   // app/blog/[slug]/page.tsx) which fetch from WordPress REST API.
   // No proxy rewrite needed — all blog URLs stay on theimpulsedigital.com.
   async rewrites() {
-    return [];
+    return [
+      {
+        source: '/blog/sitemap_index.xml',
+        destination: '/blog/sitemap-index/',
+      },
+      {
+        source: '/blog/sitemap_index.xml/',
+        destination: '/blog/sitemap-index/',
+      },
+    ];
   },
 };
 

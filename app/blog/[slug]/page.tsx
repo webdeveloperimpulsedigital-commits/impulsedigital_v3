@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   const yoast = post.yoast_head_json;
-  const ogImage = yoast?.og_image?.[0]?.url;
+  const ogImage = yoast?.og_image?.[0]?.url || post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
   const title = yoast?.title || stripHtml(post.title.rendered);
   const description = yoast?.description || '';
 
@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const ogImage = post.yoast_head_json?.og_image?.[0]?.url;
+  const ogImage = post.yoast_head_json?.og_image?.[0]?.url || post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
   const content = rewriteWPContent(post.content.rendered);
 
   return (

@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
+import { getAllPostsForSitemap } from '@/lib/wordpress';
 
 /**
- * Auto-generated sitemap for all ~75 routes.
+ * Auto-generated sitemap for all routes including dynamic blog posts.
  * Next.js serves this at /sitemap.xml automatically.
  * 
  * To switch staging → production: change NEXT_PUBLIC_SITE_URL in Hostinger hPanel.
  * All sitemap URLs update automatically — no code changes needed.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   const staticRoutes = [
@@ -93,10 +94,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/brand-infrastructure/search-engine-optimisation/vashi/', priority: 0.6, changeFrequency: 'monthly' as const },
   ];
 
-  return staticRoutes.map(route => ({
-    url: `${SITE_URL}${route.url}`,
-    lastModified: now,
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
+  const blogPosts = await getAllPostsForSitemap();
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}/`,
+    lastModified: post.date ? new Date(post.date) : now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
   }));
+
+  return [
+    ...staticRoutes.map((route) => ({
+      url: `${SITE_URL}${route.url}`,
+      lastModified: now,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    })),
+    ...blogRoutes,
+  ];
 }

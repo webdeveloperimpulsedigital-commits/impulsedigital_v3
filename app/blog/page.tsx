@@ -47,7 +47,7 @@ export default async function BlogPage() {
           ) : (
             <div className="blog-grid">
               {posts.map((post) => {
-                const ogImage = post.yoast_head_json?.og_image?.[0]?.url;
+                const ogImage = post.yoast_head_json?.og_image?.[0]?.url || post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
                 const rawExcerpt = stripHtml(post.excerpt.rendered);
                 const excerpt =
                   rawExcerpt.length > 150 ? rawExcerpt.slice(0, 150) + '…' : rawExcerpt;
