@@ -4373,7 +4373,8 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": false,
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
       "srcRoute": "/sitemap.xml",
       "dataRoute": null,
       "allowHeader": [
@@ -4466,8 +4467,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "8ddfbcd06cf21bbf553baa18f2a3bcce",
-    "previewModeSigningKey": "8dcabab49461f06f4722eb65fc73052f130ff55578540323264ea3616a7c2f93",
-    "previewModeEncryptionKey": "4dbb2c735589bbed33bd3ffbb064ffc8bf81f8f2d38283d95155e2b7009edf53"
+    "previewModeId": "885fe968659aebe4e477aad26fe70e0a",
+    "previewModeSigningKey": "400b0c65f0b43d07fb24281bb4b2253e33f2006479ddc990620507e43bfc1cc3",
+    "previewModeEncryptionKey": "a7fa15e706ee14bbeaa72b872ed781ac128132caef77ff350b0e3648e44ed4e1"
   }
 }

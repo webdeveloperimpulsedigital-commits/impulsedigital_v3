@@ -253,7 +253,18 @@
   "onMatchHeaders": [],
   "rewrites": {
     "beforeFiles": [],
-    "afterFiles": [],
+    "afterFiles": [
+      {
+        "source": "/blog/sitemap_index.xml",
+        "destination": "/blog/sitemap-index/",
+        "regex": "^/blog/sitemap_index\\.xml(?:/)?$"
+      },
+      {
+        "source": "/blog/sitemap_index.xml/",
+        "destination": "/blog/sitemap-index/",
+        "regex": "^/blog/sitemap_index\\.xml/(?:/)?$"
+      }
+    ],
     "fallback": []
   },
   "dynamicRoutes": [
@@ -332,6 +343,12 @@
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/blog/sitemap-index",
+      "regex": "^/blog/sitemap\\-index(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/sitemap\\-index(?:/)?$"
     },
     {
       "page": "/brand-infrastructure",

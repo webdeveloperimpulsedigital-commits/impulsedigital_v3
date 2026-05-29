@@ -324,7 +324,16 @@
     "distDirRoot": ".next",
     "_originalRewrites": {
       "beforeFiles": [],
-      "afterFiles": [],
+      "afterFiles": [
+        {
+          "source": "/blog/sitemap_index.xml",
+          "destination": "/blog/sitemap-index/"
+        },
+        {
+          "source": "/blog/sitemap_index.xml/",
+          "destination": "/blog/sitemap-index/"
+        }
+      ],
       "fallback": []
     },
     "_originalRedirects": [

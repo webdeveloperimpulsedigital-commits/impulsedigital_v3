@@ -10,6 +10,7 @@
   "/api/blog-posts/route": "/api/blog-posts",
   "/blog/[slug]/page": "/blog/[slug]",
   "/blog/page": "/blog",
+  "/blog/sitemap-index/route": "/blog/sitemap-index",
   "/brand-infrastructure/branding/page": "/brand-infrastructure/branding",
   "/brand-infrastructure/employer-branding/page": "/brand-infrastructure/employer-branding",
   "/brand-infrastructure/page": "/brand-infrastructure",
