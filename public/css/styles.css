@@ -1,4 +1,4 @@
-
+﻿
 @font-face {
     font-family: 'Satoshi';
     src: url('../fonts/Satoshi-Light.woff2') format('woff2');
@@ -55,7 +55,7 @@
     box-sizing: border-box;
 }
 
-/* Lenis smooth scroll — only applied on non-iOS browsers.
+/* Lenis smooth scroll â€” only applied on non-iOS browsers.
    iOS Safari has its own native momentum scroll; Lenis intercepts
    touch events via rAF which freezes the page on WebKit. */
 @supports not (-webkit-touch-callout: none) {
@@ -93,7 +93,7 @@ body.mobile-menu-active {
     -webkit-overflow-scrolling: auto;
 }
 
-/* ── Zoho SalesIQ Chat Widget — force right-side positioning on all devices.
+/* â”€â”€ Zoho SalesIQ Chat Widget â€” force right-side positioning on all devices.
    On iOS, fixed-position widgets inside GPU composite contexts can drift to
    the left. This override anchors it to the bottom-right corner. */
 #zsiq_float,
@@ -561,7 +561,7 @@ nav.scrolled {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* REMOVED: contain: paint — causes iOS WebKit to blank-out the section
+    /* REMOVED: contain: paint â€” causes iOS WebKit to blank-out the section
        when combined with 3D z-axis transforms on child elements */
     overflow: hidden;
     background: transparent;
@@ -577,7 +577,7 @@ nav.scrolled {
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-    /* REMOVED: transform-style: preserve-3d — combined with GSAP z:-5000 this
+    /* REMOVED: transform-style: preserve-3d â€” combined with GSAP z:-5000 this
        creates compositing layer explosions on iOS Safari that hide all content */
     pointer-events: none;
 }
@@ -798,7 +798,7 @@ nav.scrolled {
     gap: 1.25rem;
 }
 
-/* .author-img — legacy circle styling superseded by mark-clip SVG below */
+/* .author-img â€” legacy circle styling superseded by mark-clip SVG below */
 .author-info {
     display: flex;
     flex-direction: column;
@@ -1693,7 +1693,7 @@ footer {
 }
 
 /* ============================================================
-   SERVICES — Mark as Motion Revealer
+   SERVICES â€” Mark as Motion Revealer
    ============================================================ */
 
 /* .scrub-left becomes a flex column: mark draw on top, number below */
@@ -1736,7 +1736,7 @@ footer {
 }
 
 /* ============================================================
-   TESTIMONIALS — Mark as Spatial Frame
+   TESTIMONIALS â€” Mark as Spatial Frame
    ============================================================ */
 .testimonials {
     padding: 10rem 0;
@@ -1744,7 +1744,7 @@ footer {
     overflow: hidden;
 }
 
-/* Large background mark that draws itself — the spatial field for testimonials */
+/* Large background mark that draws itself â€” the spatial field for testimonials */
 .test-mark-bg {
     position: absolute;
     top: 50%;
@@ -1762,7 +1762,7 @@ footer {
     display: block;
 }
 
-/* The drawn path — starts invisible, GSAP animates stroke-dashoffset */
+/* The drawn path â€” starts invisible, GSAP animates stroke-dashoffset */
 .test-mark-path {
     fill: none;
     stroke: rgba(84, 61, 152, 0.28);
@@ -1781,7 +1781,7 @@ footer {
 }
 
 /* ============================================================
-   BLOG CARDS — Clean typographic layout
+   BLOG CARDS â€” Clean typographic layout
    ============================================================ */
 .blog-header {
     display: flex;
@@ -1887,10 +1887,10 @@ footer {
 }
 
 /* ============================================================
-   CONTACT — Mark as Origin Point
+   CONTACT â€” Mark as Origin Point
    ============================================================ */
 
-/* The mark behind the contact headline — draws itself as section enters */
+/* The mark behind the contact headline â€” draws itself as section enters */
 .contact-mark-origin {
     position: absolute;
     top: 44%;
@@ -1908,7 +1908,7 @@ footer {
     display: block;
 }
 
-/* The drawn path — starts invisible, GSAP animates stroke-dashoffset */
+/* The drawn path â€” starts invisible, GSAP animates stroke-dashoffset */
 .contact-mark-path {
     fill: none;
     stroke: rgba(84, 61, 152, 0.42);
@@ -1918,12 +1918,12 @@ footer {
 }
 
 /* ============================================================
-   FOOTER — Etched brand principle
+   FOOTER â€” Etched brand principle
    ============================================================ */
 
 /* ============================================================
    THE MARK AS DNA (v27)
-   The brand mark is not stamped on sections — it IS the
+   The brand mark is not stamped on sections â€” it IS the
    architecture. Cursor, image frames, card geometry, dividers,
    page progress: all descended from the mark's geometry.
    ============================================================ */
@@ -1962,7 +1962,7 @@ footer {
     transition: fill 0.3s, stroke 0.3s, stroke-width 0.3s;
 }
 
-/* Custom cursor disabled — using OS default pointer */
+/* Custom cursor disabled â€” using OS default pointer */
 .cursor,
 .cursor-dot,
 .cursor-text {
@@ -1984,7 +1984,7 @@ button,
     cursor: pointer !important;
 }
 
-/* ---------- 2. AUTHOR PHOTOS — restored to circle treatment ---------- */
+/* ---------- 2. AUTHOR PHOTOS â€” restored to circle treatment ---------- */
 .author-img {
     width: 72px;
     height: 72px;
@@ -1997,7 +1997,7 @@ button,
 
 
 /* ---------- 4. LOGOS CARD DISSOLVES INTO SPACE ---------- */
-/* The white block no longer cuts the cosmos — it fades top
+/* The white block no longer cuts the cosmos â€” it fades top
    and bottom into the dark, becoming a floating credential. */
 .logo-display-card {
     -webkit-mask-image: linear-gradient(to bottom,
@@ -2021,7 +2021,7 @@ button,
 
 /* ---------- 5. CARD GEOMETRY INHERITS MARK ASYMMETRY ---------- */
 /* Every container's silhouette echoes the mark's directional curve.
-   Small TL radius, oversized BR radius — the cards "point" forward. */
+   Small TL radius, oversized BR radius â€” the cards "point" forward. */
 .test-card {
     border-radius: 8px 30px 8px 64px;
 }
@@ -2044,10 +2044,10 @@ button,
     border-radius: 4px 4px 4px 32px;
 }
 
-/* Section dividers removed — no chain pattern between sections. */
+/* Section dividers removed â€” no chain pattern between sections. */
 
 /* ============================================================
-   BRAND FILM — "Insight to Impact" (10s loop)
+   BRAND FILM â€” "Insight to Impact" (10s loop)
    Cinematic insert in the cosmos. No card, no rounded corners,
    no introduction. The film sits in the dark space and speaks
    for itself, with a subtle violet glow tying it to the scene.
@@ -2169,7 +2169,7 @@ button,
 /* ============================================================
    SERVICE PAGE SYSTEM (v55)
    Shared design language for all 15 service pages.
-   The brand mark is the recurring atom — used as bullet,
+   The brand mark is the recurring atom â€” used as bullet,
    corner accent, constellation center, glyph in every chip.
    ============================================================ */
 
@@ -2201,7 +2201,7 @@ button,
 }
 
 /* SplitType wraps each line in an overflow:hidden box with only 0.1em
-   of bottom padding — descenders like "g" / "p" / "y" get clipped at
+   of bottom padding â€” descenders like "g" / "p" / "y" get clipped at
    this scale. Override to give the hero enough room. */
 .svc-hero-headline .line-wrapper {
     padding-bottom: 0.32em !important;
@@ -3410,7 +3410,7 @@ button,
 }
 
 /* ==============================================================
-   AGENTIC AI v70 — STUNNING POLISH PASS
+   AGENTIC AI v70 â€” STUNNING POLISH PASS
    Hero choreography, architectural stats, broken-chain gaps,
    systems node diagram, big punchline, final-cta reimagined,
    ticking checklist, idle life, use-case cascade, handoffs.
@@ -3952,7 +3952,7 @@ button,
     opacity: 1 !important;
 }
 
-/* AI Runs the Engine — compact horizontal AI/Humans split */
+/* AI Runs the Engine â€” compact horizontal AI/Humans split */
 .archer-split {
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
@@ -4200,7 +4200,7 @@ button,
         line-height: 1;
     }
 
-    /* Plus/Minus toggle button for service submenus — mobile only */
+    /* Plus/Minus toggle button for service submenus â€” mobile only */
     .submenu-toggle {
         display: inline-flex;
         align-items: center;
@@ -4553,7 +4553,7 @@ button,
 
 
 /* ============================================================
-   CASE STUDIES PAGE — Ultra Premium Minimalist Layout
+   CASE STUDIES PAGE â€” Ultra Premium Minimalist Layout
    ============================================================ */
 
 .cs3-page {
@@ -4562,7 +4562,7 @@ button,
     background: transparent;
 }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .cs3-hero {
     padding: 12rem 2rem 6rem;
     max-width: 1600px;
@@ -4591,7 +4591,7 @@ button,
     font-weight: 300;
 }
 
-/* ── GRID ── */
+/* â”€â”€ GRID â”€â”€ */
 .cs3-grid-wrapper {
     width: 100%;
 }
@@ -4743,7 +4743,7 @@ button,
     opacity: 0.5;
 }
 
-/* ── CTA ── */
+/* â”€â”€ CTA â”€â”€ */
 .cs3-footer-cta {
     padding: 10rem 2rem;
     display: flex;
@@ -4764,7 +4764,7 @@ button,
     margin-bottom: 3rem;
 }
 
-/* ── RESPONSIVE ── */
+/* â”€â”€ RESPONSIVE â”€â”€ */
 @media (max-width: 1024px) {
     .cs3-grid-item {
         padding: 3rem;
@@ -4797,7 +4797,7 @@ button,
     overflow-x: hidden;
 }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .csp-hero {
     position: relative;
     min-height: 90vh;
@@ -4903,7 +4903,7 @@ button,
     background: linear-gradient(to bottom, transparent, rgba(138, 92, 246, 0.4));
 }
 
-/* ── TICKER ── */
+/* â”€â”€ TICKER â”€â”€ */
 .csp-ticker {
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -4936,7 +4936,7 @@ button,
     vertical-align: middle;
 }
 
-/* ── GRID ── */
+/* â”€â”€ GRID â”€â”€ */
 .csp-grid-section {
     padding: 3rem 0 8rem;
 }
@@ -4962,7 +4962,7 @@ button,
     grid-column: span 1;
 }
 
-/* ── TILE ── */
+/* â”€â”€ TILE â”€â”€ */
 .csp-tile {
     position: relative;
     background: rgba(8, 5, 28, 0.95);
@@ -5057,7 +5057,7 @@ button,
     transform-origin: center center;
 }
 
-/* Scan line — simulates video playback */
+/* Scan line â€” simulates video playback */
 .csp-scan {
     position: absolute;
     top: 0;
@@ -5130,7 +5130,7 @@ button,
     mix-blend-mode: overlay;
 }
 
-/* Bottom footer — always visible over image */
+/* Bottom footer â€” always visible over image */
 .csp-tile-footer {
     position: relative;
     z-index: 3;
@@ -5199,7 +5199,7 @@ button,
     opacity: 1;
 }
 
-/* ── BOTTOM CTA ── */
+/* â”€â”€ BOTTOM CTA â”€â”€ */
 .csp-bottom-cta {
     padding: 8rem 2rem;
     text-align: center;
@@ -5241,7 +5241,7 @@ button,
     color: var(--white);
 }
 
-/* ── RESPONSIVE ── */
+/* â”€â”€ RESPONSIVE â”€â”€ */
 @media (max-width: 1024px) {
     .csp-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -5305,7 +5305,7 @@ button,
     overflow-x: hidden;
 }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .cs2-hero {
     position: relative;
     min-height: 100vh;
@@ -5448,7 +5448,7 @@ button,
     color: rgba(255, 255, 255, 0.2);
 }
 
-/* ── MARQUEE ── */
+/* â”€â”€ MARQUEE â”€â”€ */
 .cs2-marquee-wrap {
     position: relative;
     width: 100%;
@@ -5483,7 +5483,7 @@ button,
     font-size: 0.7em;
 }
 
-/* ── CHAPTERS ── */
+/* â”€â”€ CHAPTERS â”€â”€ */
 .cs2-chapters {
     padding: 4rem 0 0;
 }
@@ -5709,7 +5709,7 @@ button,
     display: none;
 }
 
-/* ── CTA BAND ── */
+/* â”€â”€ CTA BAND â”€â”€ */
 .cs2-cta-band {
     position: relative;
     padding: 10rem 2rem;
@@ -5768,7 +5768,7 @@ button,
     margin-top: 1rem;
 }
 
-/* ── RESPONSIVE ── */
+/* â”€â”€ RESPONSIVE â”€â”€ */
 @media (max-width: 1024px) {
     .cs2-chapter-inner {
         grid-template-columns: 1fr;
@@ -5857,7 +5857,7 @@ button,
     min-height: 100vh;
 }
 
-/* ── Hero ── */
+/* â”€â”€ Hero â”€â”€ */
 .cs-page-hero {
     min-height: 70vh;
     display: flex;
@@ -5941,7 +5941,7 @@ button,
     }
 }
 
-/* ── Grid Section ── */
+/* â”€â”€ Grid Section â”€â”€ */
 .cs-grid-section {
     padding: 0 0 8rem;
 }
@@ -5974,7 +5974,7 @@ button,
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(138, 92, 246, 0.1);
 }
 
-/* Grid layout — alternating sizes */
+/* Grid layout â€” alternating sizes */
 .cs-card:nth-child(1) {
     grid-column: span 7;
 }
@@ -5999,7 +5999,7 @@ button,
     grid-column: span 7;
 }
 
-/* Featured card — bigger image */
+/* Featured card â€” bigger image */
 .cs-card--featured .cs-card-img-wrap {
     aspect-ratio: 16 / 9;
 }
@@ -6201,7 +6201,7 @@ button,
     height: 100%;
 }
 
-/* ── CTA Band ── */
+/* â”€â”€ CTA Band â”€â”€ */
 .cs-cta-band {
     padding: 8rem 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -6248,7 +6248,7 @@ button,
     color: var(--white);
 }
 
-/* ── MOBILE RESPONSIVE ── */
+/* â”€â”€ MOBILE RESPONSIVE â”€â”€ */
 @media (max-width: 1024px) {
     .cs-page-hero {
         padding: 10rem 1.5rem 4rem;
@@ -6298,7 +6298,7 @@ button,
 }
 
 /* ============================================================
-   CAREERS PAGE — scoped to .careers-page
+   CAREERS PAGE â€” scoped to .careers-page
    Premium, editorial, immersive. Desktop-first.
    ============================================================ */
 .careers-page .container {
@@ -6482,7 +6482,7 @@ button,
     max-width: 920px;
 }
 
-/* --- TRANSLATE — close to business --- */
+/* --- TRANSLATE â€” close to business --- */
 .careers-page .car-translate {
     padding: 8rem 0;
 }
@@ -6765,7 +6765,7 @@ button,
     overflow: visible;
 }
 
-/* The corporate-cliché jab — "Life at Impulse" gets struck through */
+/* The corporate-clichÃ© jab â€” "Life at Impulse" gets struck through */
 .careers-page .car-life-jab {
     position: relative;
     display: inline-block;
@@ -6784,7 +6784,7 @@ button,
     line-height: 0.95;
 }
 
-/* The strike — a thick line drawn left-to-right via --strike-w */
+/* The strike â€” a thick line drawn left-to-right via --strike-w */
 .careers-page .car-life-jab-strike {
     position: absolute;
     top: 50%;
@@ -6796,10 +6796,10 @@ button,
     transform: translateY(-50%);
     display: block;
     will-change: width;
-    /* No CSS transition — width driven by GSAP for precision */
+    /* No CSS transition â€” width driven by GSAP for precision */
 }
 
-/* The real title — hidden until strike completes */
+/* The real title â€” hidden until strike completes */
 .careers-page .car-life-title {
     font-family: var(--font-heading);
     font-size: clamp(2.6rem, 7.4vw, 8rem);
@@ -7196,7 +7196,7 @@ button,
 }
 
 /* ============================================================
-   CAREERS — IMMERSIVE ENHANCEMENTS
+   CAREERS â€” IMMERSIVE ENHANCEMENTS
    Pointer spotlights, scroll rails, watermarks, kinetic accents.
    All restrained, on-brand, layered behind copy.
    ============================================================ */
@@ -7468,7 +7468,7 @@ button,
     z-index: 1;
 }
 
-/* The contact block becomes a real link target — match hover state */
+/* The contact block becomes a real link target â€” match hover state */
 .careers-page a.car-final-contact {
     display: block;
     text-decoration: none;
@@ -8311,7 +8311,7 @@ button,
 }
 
 /* ============================================================
-   CONTACT PAGE — scoped to .contact-page
+   CONTACT PAGE â€” scoped to .contact-page
    First-fold form, premium dark interface, restrained kinetic layers.
    ============================================================ */
 .contact-page #main-content {
@@ -9107,7 +9107,7 @@ button,
 
 @media (max-width: 768px) {
     .hero-copy-reveal {
-        /* Disable compositor layer promotion on mobile — each will-change element
+        /* Disable compositor layer promotion on mobile â€” each will-change element
            costs GPU memory, and multiple hero lines + cosmos cards exhaust it */
         will-change: auto;
         animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) 0.45s forwards;
@@ -10334,7 +10334,7 @@ button,
     }
 
     .cosmos-wrapper {
-        /* Match desktop perspective exactly — prevents cards going behind camera at z=1200 */
+        /* Match desktop perspective exactly â€” prevents cards going behind camera at z=1200 */
         perspective: 1500px;
     }
 
@@ -10795,10 +10795,10 @@ button,
 }
 
 /* ================================================================
-   GROWTH INTELLIGENCE — PREMIUM EDITORIAL LIST
+   GROWTH INTELLIGENCE â€” PREMIUM EDITORIAL LIST
 ================================================================ */
 
-/* ── Outer section ────────────────────────────────────── */
+/* â”€â”€ Outer section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 
 /* ===== Archer Split Layout ===== */
@@ -10871,10 +10871,10 @@ button,
 }
 
 /* ================================================================
-   GROWTH INTELLIGENCE — PREMIUM EDITORIAL LIST
+   GROWTH INTELLIGENCE â€” PREMIUM EDITORIAL LIST
 ================================================================ */
 
-/* ── Outer section ────────────────────────────────────── */
+/* â”€â”€ Outer section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .gi2-split {
     display: flex;
     align-items: flex-start;
@@ -10919,7 +10919,7 @@ button,
     width: 100%;
 }
 
-/* ── CARD ─────────────────────────────────────────────── */
+/* â”€â”€ CARD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .gi2-card {
     position: relative;
     display: grid;
@@ -10939,7 +10939,7 @@ button,
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/* ── Hover background wash ── */
+/* â”€â”€ Hover background wash â”€â”€ */
 .gi2-card-bg {
     position: absolute;
     inset: 0;
@@ -10954,7 +10954,7 @@ button,
     opacity: 1;
 }
 
-/* ── Hover glow ── */
+/* â”€â”€ Hover glow â”€â”€ */
 .gi2-card-glow {
     position: absolute;
     right: 0;
@@ -10975,13 +10975,13 @@ button,
     opacity: 1;
 }
 
-/* ── Impulse mark — fully visible, traces on hover ── */
+/* â”€â”€ Impulse mark â€” fully visible, traces on hover â”€â”€ */
 .gi2-card-mark {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    /* Natural 274×272 viewBox aspect ratio */
+    /* Natural 274Ã—272 viewBox aspect ratio */
     width: 200px;
     height: 199px;
     opacity: 0.1;
@@ -11011,7 +11011,7 @@ button,
     /* strokeDashoffset managed by GSAP */
 }
 
-/* ── Animated bottom sweep line ── */
+/* â”€â”€ Animated bottom sweep line â”€â”€ */
 .gi2-card-line {
     position: absolute;
     bottom: 0;
@@ -11028,7 +11028,7 @@ button,
     width: 100%;
 }
 
-/* ── Left column: number ── */
+/* â”€â”€ Left column: number â”€â”€ */
 .gi2-card-left {
     position: relative;
     z-index: 2;
@@ -11049,13 +11049,13 @@ button,
     opacity: 1;
 }
 
-/* ── Right column: label → title → desc ── */
+/* â”€â”€ Right column: label â†’ title â†’ desc â”€â”€ */
 .gi2-card-center {
     position: relative;
     z-index: 2;
 }
 
-/* Label — tagline style (like home page scrub-label) */
+/* Label â€” tagline style (like home page scrub-label) */
 .gi2-card-label {
     font-family: var(--font-body);
     font-size: 0.82rem;
@@ -11072,7 +11072,7 @@ button,
     opacity: 1;
 }
 
-/* Title — big editorial heading */
+/* Title â€” big editorial heading */
 .gi2-card-title {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 3.5vw, 3.5rem);
@@ -11120,7 +11120,7 @@ button,
     transform: translateY(-1px);
 }
 
-/* ── service-listing-page scoped upgrades ── */
+/* â”€â”€ service-listing-page scoped upgrades â”€â”€ */
 .service-listing-page .gi2-list {
     width: 100%;
     display: flex;
@@ -11283,7 +11283,7 @@ button,
     box-shadow: 0 12px 30px rgba(255, 255, 255, 0.14);
 }
 
-/* ── RESPONSIVE ───────────────────────────────────────── */
+/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 900px) {
     .gi2-split {
         flex-direction: column;
@@ -11408,7 +11408,7 @@ button,
 }
 
 /* ============================================================
-   CONTACT PAGE — scoped to .contact-page
+   CONTACT PAGE â€” scoped to .contact-page
    First-fold form, premium dark interface, restrained kinetic layers.
    ============================================================ */
 .contact-page #main-content {
@@ -13372,23 +13372,23 @@ iframe[src*='zohopublic'] {
     pointer-events: none !important;
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    COSMOS 3D FLY-THROUGH: mobile viewport fix when cosmos-js-ready is active
    Uses 100svh (small viewport height) so the pinned section sits flush with the
    screen edge on mobile browsers where the address bar shrinks on scroll.
-   ───────────────────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
     .cosmos-section.cosmos-js-ready {
         height: 100svh;
     }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    iOS SAFARI FIX: overflow:hidden on cosmos-section clips position:fixed and
    breaks 3D perspective transforms. Use overflow:clip instead which avoids the
    WebKit stacking context bug while still clipping visually overflowing cards.
    Targets iOS Safari only via the -webkit-touch-callout hack.
-   ───────────────────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @supports (-webkit-touch-callout: none) {
     .cosmos-section {
         overflow: clip;
@@ -13405,12 +13405,12 @@ iframe[src*='zohopublic'] {
     }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   COSMOS STATIC GRID: 641px – 768px
-   The pre-JS CSS static grid already handles ≤640px (inside @media max-width:640px).
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+   COSMOS STATIC GRID: 641px â€“ 768px
+   The pre-JS CSS static grid already handles â‰¤640px (inside @media max-width:640px).
    This block covers the gap for tablets and large landscape phones in the 641-768px
    range, shown only before JS has had a chance to run.
-   ───────────────────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (min-width: 641px) and (max-width: 768px) {
     .cosmos-section:not(.cosmos-js-ready) {
         height: auto !important;

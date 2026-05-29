@@ -448,3 +448,12 @@
     font-size: 1.75rem;
   }
 }
+
+/* Force transparency so the 3D canvas background is visible */
+.blog-post-page,
+.blog-post-header,
+.blog-post-content-wrap,
+.blog-post-back-cta {
+  background: transparent !important;
+  background-color: transparent !important;
+}
