@@ -124,13 +124,13 @@
                 pathname = window.location.pathname;
             }
             
-            const isBlogListing = pathname && (pathname === '/blog' || pathname === '/blog/');
+            const isBlogPage = pathname && (pathname.startsWith('/blog') || pathname.startsWith('/blogs'));
 
             // Set opacity of larger hero particles to 0 only for the blog listing page to show only the fine stars
-            particlesMaterial.opacity = isBlogListing ? 0.0 : 0.6;
+            particlesMaterial.opacity = isBlogPage ? 0.0 : 0.6;
             
             // Apply solid black background only to the blog listing page
-            if (isBlogListing) {
+            if (isBlogPage) {
                 document.body.style.backgroundColor = '#000000';
             } else {
                 document.body.style.backgroundColor = '';
@@ -169,12 +169,10 @@
 
             let r, g, b;
             const colorType = customRandom();
-            if (colorType > 0.6) {
+            if (colorType > 0.5) {
                 r = 0.48; g = 0.22; b = 0.92; // Bright Violet
-            } else if (colorType > 0.2) {
-                r = 0.33; g = 0.24; b = 0.59; // Core Impulse Violet
             } else {
-                r = 0.8; g = 0.7; b = 0.9; // White/Soft Violet
+                r = 0.33; g = 0.24; b = 0.59; // Core Impulse Violet
             }
 
             const brightness = customRandom() > 0.85 ? 1.0 : (customRandom() * 0.3 + 0.1);
