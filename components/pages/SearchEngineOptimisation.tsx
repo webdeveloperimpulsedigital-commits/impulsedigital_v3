@@ -210,8 +210,8 @@ const SearchEngineOptimisation: React.FC = () => {
               </div>
             </div>
             <MobileSignalRail items={data.channels.list.map((item: any) => item.label)} />
-            {data.channels.outro && data.channels.outro.split('\n').map((p: string, i: number) => (
-              <p className="svc-channels-intro" key={i} dangerouslySetInnerHTML={{ __html: p }}></p>
+            {data.channels.outro && data.channels.outro.split('\n').map((p: string, i: number, arr: string[]) => (
+              <p className="svc-channels-intro" style={{ marginBottom: i === arr.length - 1 ? 0 : '1rem' }} key={i} dangerouslySetInnerHTML={{ __html: p }}></p>
             ))}
           </div>
         </section>
