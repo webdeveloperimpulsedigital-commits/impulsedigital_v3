@@ -47,6 +47,10 @@ export function initCaseStudyAnimations(): () => void {
     };
   }
 
+  let disposed = false;
+  let particleTimer: any = null;
+  let particleTrigger: any = null;
+
   // Create scoped GSAP context
   const ctx = gsap.context(() => {
     // Background transition
@@ -56,13 +60,31 @@ export function initCaseStudyAnimations(): () => void {
         backgroundColor: '#000000',
         scrollTrigger: { trigger: cosmosTrigger, start: 'top bottom', end: 'top top', scrub: true },
       });
-      if ((window as any).particlesMaterial) {
-        gsap.fromTo(
-          (window as any).particlesMaterial,
-          { opacity: 0.7 },
-          { opacity: 0, scrollTrigger: { trigger: cosmosTrigger, start: 'top 80%', end: 'top 20%', scrub: true } }
-        );
-      }
+
+      let attempts = 0;
+      const setupParticlesAnimation = () => {
+        if (disposed) return;
+        const { particlesMaterial } = window as any;
+        if (particlesMaterial && gsap && ScrollTrigger) {
+          ctx.add(() => {
+            gsap.killTweensOf(particlesMaterial);
+            gsap.set(particlesMaterial, { opacity: 0.7 });
+            particleTrigger = gsap.fromTo(
+              particlesMaterial,
+              { opacity: 0.7 },
+              {
+                opacity: 0,
+                scrollTrigger: { trigger: cosmosTrigger, start: 'top 80%', end: 'top 20%', scrub: true }
+              }
+            );
+          });
+        } else if (attempts < 100) {
+          attempts++;
+          particleTimer = setTimeout(setupParticlesAnimation, 50);
+        }
+      };
+      // Defer execution slightly to ensure ctx is initialized
+      particleTimer = setTimeout(setupParticlesAnimation, 0);
     }
 
     // Split text reveals
@@ -139,10 +161,18 @@ export function initCaseStudyAnimations(): () => void {
   }, 100);
 
   return () => {
+    disposed = true;
+    if (particleTimer) clearTimeout(particleTimer);
     if (scrollListener) window.removeEventListener('scroll', scrollListener);
     if (resizeListener) window.removeEventListener('resize', resizeListener);
     ctx.revert(); // Safely reverts only the animations created in this context
     gsap.to(document.body, { backgroundColor: '', duration: 0 });
+
+    const { particlesMaterial } = window as any;
+    if (particlesMaterial) {
+      gsap.killTweensOf(particlesMaterial);
+      gsap.set(particlesMaterial, { opacity: 0.6 });
+    }
   };
 }
 

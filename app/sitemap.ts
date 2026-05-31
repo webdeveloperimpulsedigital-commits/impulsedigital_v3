@@ -45,6 +45,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/brand-infrastructure/employer-branding/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/brand-infrastructure/video-production/', priority: 0.7, changeFrequency: 'monthly' as const },
     // Case Studies
+    { url: '/case-studies/amazon-unplugged/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/case-studies/amazon-india-evp-strategy/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/case-studies/amazon-talent-communication-engine/', priority: 0.6, changeFrequency: 'yearly' as const },
     { url: '/case-studies/uppercase/', priority: 0.6, changeFrequency: 'yearly' as const },
     { url: '/case-studies/qure-ai/', priority: 0.6, changeFrequency: 'yearly' as const },
     { url: '/case-studies/mastercard/', priority: 0.6, changeFrequency: 'yearly' as const },

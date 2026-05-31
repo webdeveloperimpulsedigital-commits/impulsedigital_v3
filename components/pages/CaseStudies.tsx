@@ -10,6 +10,25 @@ import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 const caseStudiesData = [
   {
+    client: "Amazon India",
+    subNames: ["Amazon Unplugged", "Amazon India EVP Strategy", "Amazon People-Led Talent Marketing"],
+    subDescriptions: [
+      "Employer brand video series featuring leadership conversations, delivering 1.2M+ views and 9.5M+ impressions.",
+      "Employee-backed EVP development through immersion, primary research, and thematic focus group synthesis.",
+      "Keeping the employer brand alive between hiring moments through a structured, multi-channel communication engine."
+    ],
+    subSlugs: ["/case-studies/amazon-unplugged", "/case-studies/amazon-india-evp-strategy", "/case-studies/amazon-talent-communication-engine"],
+    title: "Employer Branding & EVP Strategy",
+    category: "Employer Branding",
+    description: "Employer brand video series, research-backed EVP development, and always-on talent communication engine.",
+    images: [
+      "/case studies/Written Content/Amazon Unplugged/Amazon Unplugged Title.webp",
+      "/case studies/Written Content/Amazon EVP/Amazon EVP Title.webp",
+      "/case studies/Written Content/Amazon Comms/Amazon Comms Title.webp"
+    ],
+    slug: "/case-studies/amazon-unplugged"
+  },
+  {
     client: "Mastercard",
     title: "Merchant Outreach",
     category: "Outreach",
