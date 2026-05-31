@@ -579,6 +579,24 @@
       "namedRegex": "^/case\\-studies/abg\\-kbc(?:/)?$"
     },
     {
+      "page": "/case-studies/amazon-india-evp-strategy",
+      "regex": "^/case\\-studies/amazon\\-india\\-evp\\-strategy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/case\\-studies/amazon\\-india\\-evp\\-strategy(?:/)?$"
+    },
+    {
+      "page": "/case-studies/amazon-talent-communication-engine",
+      "regex": "^/case\\-studies/amazon\\-talent\\-communication\\-engine(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/case\\-studies/amazon\\-talent\\-communication\\-engine(?:/)?$"
+    },
+    {
+      "page": "/case-studies/amazon-unplugged",
+      "regex": "^/case\\-studies/amazon\\-unplugged(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/case\\-studies/amazon\\-unplugged(?:/)?$"
+    },
+    {
       "page": "/case-studies/automag-bajaj-auto",
       "regex": "^/case\\-studies/automag\\-bajaj\\-auto(?:/)?$",
       "routeKeys": {},

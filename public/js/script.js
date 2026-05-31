@@ -107,6 +107,14 @@
         };
 
         const resetBackgroundForRoute = (pathOrEvent) => {
+            // On initial script load, pathOrEvent is undefined.
+            // If we are currently on a case study page during initial load,
+            // we should not reset the background or kill the case study animations.
+            const isInitialLoad = !pathOrEvent;
+            if (isInitialLoad && document.body.classList.contains('case-study-page')) {
+                return;
+            }
+
             setCaseStudyWarpActive(false);
 
             if (window.gsap) {

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/case-studies/layout,_N_T_/case-studies/amazon-unplugged/layout,_N_T_/case-studies/amazon-unplugged/page,_N_T_/case-studies/amazon-unplugged"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/case-studies/amazon-unplugged/__PAGE__",
+    "/case-studies/amazon-unplugged",
+    "/case-studies",
+    "/_index",
+    "/_head"
+  ]
+}
