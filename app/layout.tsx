@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
+import Chatbot from '@/components/Chatbot/Chatbot';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -166,6 +167,9 @@ export default function RootLayout({
 
         {/* Footer */}
         <Footer />
+
+        {/* AI Chatbot Widget */}
+        <Chatbot />
 
         {/* Vanilla-tilt */}
         <Script
