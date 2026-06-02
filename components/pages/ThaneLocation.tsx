@@ -79,7 +79,8 @@ const ThaneLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in Thane`;
-  const description = `The world has gone digital, and your business shouldn’t be left behind. At Impulse Digital, we’re more than just a digital marketing agency, we’re growth partners for brands that want to make their mark online. Our approach blends data-driven strategies, customer-centric insights, and realistic timelines to ensure your digital presence aligns seamlessly with your business goals. We believe in long-term partnerships over one-time transactions. By deeply understanding our clients’ industries and speaking their language, we design digital strategies that don’t just create noise but deliver measurable results. As a trusted digital marketing agency in Thane, we simplify the ever-expanding digital landscape for our clients, making it easier to boost visibility, increase engagement, and win on social media. So, why keep searching for digital marketing solutions when the answer is right here? Choose Impulse Digital, your Digital Marketing Agency in Thane.`;
+  const description = `The world has gone digital, and your brand needs more than a presence, it needs a strategy that delivers. At Impulse Digital, we are more than a digital marketing agency in Thane. We are growth partners who combine data-driven intelligence, AI-powered systems, and proven brand execution to help businesses boost visibility, increase engagement, and win online. We believe in long-term partnerships built on deep industry understanding not one-time transactions. Every strategy we build is designed to deliver measurable results, not just digital noise.
+<br>Choose Impulse Digital - your trusted digital marketing company in Thane.`;
 
   return (
     <main id="main-content">

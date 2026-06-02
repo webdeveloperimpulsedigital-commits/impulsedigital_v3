@@ -90,8 +90,8 @@ const Footer: React.FC = () => {
               <span className="contact-text">
                 Chirag Infotech, 304 - 305,<br />
                 Road No. 16/Z, Ambica Nagar,<br />
-                Wagle Industrial Estate, Thane West,<br />
-                Thane, Maharashtra 400604, India
+                Wagle Industrial Estate, Thane,<br />
+                Mumbai, Maharashtra - 400604, India
               </span>
             </div>
           </div>

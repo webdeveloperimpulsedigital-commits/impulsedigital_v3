@@ -42,7 +42,7 @@ const locationFaqs = [
   },
   {
     "question": "Can you share case studies and learning resources before we decide?",
-    "answer": "Yes. Public case studies and knowledge resources are available, and additional references can be shared on request subject to confidentiality. We can outline expected benchmarks for similar categories."
+    "answer": "Yes. As the best digital marketing agency in Navi Mumbai for enterprise brands, Impulse Digital publishes case studies across FMCG, healthcare, retail, and fintech — including results for Mastercard, Qure.ai, Tata Consumer Products, and HUL. Additional references and category benchmarks are available on request subject to confidentiality."
   },
   {
     "question": "How do you ensure brand safety and data privacy?",
@@ -50,14 +50,14 @@ const locationFaqs = [
   },
   {
     "question": "How do we get a proposal tailored to our needs?",
-    "answer": "As a digital marketing agency in Navi Mumbai, we start by understanding your objectives, timelines, target markets, and any past reports shared through our contact form. We then set up a discovery call and return with a clear plan that outlines scope, milestones, and measurement."
+    "answer": "The conversation starts with your problem, not our rate card. As a digital marketing company in Navi Mumbai that has worked with Amazon India, HUL, and Mastercard, we bring enterprise-level strategic thinking to every discovery session regardless of your business size. Share your objectives, timelines, and current challenges through our contact form. We will set up a discovery call and return with a scoped plan covering objectives, approach, milestones, and measurement."
   }
 ];
 
 const NaviMumbaiLocation: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
-    
+
     // Re-initialize GSAP DOM animations specifically for the page
     if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
       setTimeout(() => {
@@ -83,9 +83,9 @@ const NaviMumbaiLocation: React.FC = () => {
 
   return (
     <main id="main-content">
-      
 
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={[headline]}
         headlineAccent="Navi Mumbai"
         description={description}
