@@ -8,6 +8,8 @@
   "/ai-marketing-systems/generative-search-optimisation/page": "/ai-marketing-systems/generative-search-optimisation",
   "/ai-marketing-systems/page": "/ai-marketing-systems",
   "/api/blog-posts/route": "/api/blog-posts",
+  "/api/chat/route": "/api/chat",
+  "/api/lead/route": "/api/lead",
   "/blog/[slug]/page": "/blog/[slug]",
   "/blog/page": "/blog",
   "/blog/sitemap-index/route": "/blog/sitemap-index",
