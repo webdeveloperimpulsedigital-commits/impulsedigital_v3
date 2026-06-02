@@ -29,196 +29,196 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
 
-      const schemas = [
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.theimpulsedigital.com/#organization",
+      "name": "Impulse Digital",
+      "url": "https://www.theimpulsedigital.com/",
+      "logo": "https://www.theimpulsedigital.com/header-logo.png",
+      "description": "Impulse Digital is a digital marketing agency offering social media marketing, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
+      "telephone": "+91-9769285224",
+      "email": "collabs@theimpulsedigital.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate",
+        "addressLocality": "Thane",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400604",
+        "addressCountry": "IN"
+      },
+      "areaServed": [
         {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "@id": "https://www.theimpulsedigital.com/#organization",
-          "name": "Impulse Digital",
-          "url": "https://www.theimpulsedigital.com/",
-          "logo": "https://www.theimpulsedigital.com/header-logo.png",
-          "description": "Impulse Digital is a digital marketing agency offering social media marketing, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
-          "telephone": "+91-9769285224",
-          "email": "collabs@theimpulsedigital.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate",
-            "addressLocality": "Thane",
-            "addressRegion": "Maharashtra",
-            "postalCode": "400604",
-            "addressCountry": "IN"
-          },
-          "areaServed": [
-            {
-              "@type": "Country",
-              "name": "India"
-            },
-            {
-              "@type": "City",
-              "name": "Thane"
-            },
-            {
-              "@type": "City",
-              "name": "Navi Mumbai"
-            },
-            {
-              "@type": "City",
-              "name": "Pune"
-            }
-          ],
-          "sameAs": [
-            "https://www.facebook.com/theimpulsedigital",
-            "https://twitter.com/impulsedigi",
-            "https://www.instagram.com/_impulse_digital/",
-            "https://www.linkedin.com/company/impulse-digital-marketing-mumbai",
-            "https://www.youtube.com/channel/UCzQglQAeXGI99Z-LZI9jBkw"
-          ],
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-9769285224",
-            "email": "collabs@theimpulsedigital.com",
-            "contactType": "business enquiries",
-            "areaServed": "IN",
-            "availableLanguage": [
-              "English",
-              "Hindi"
-            ]
-          }
+          "@type": "Country",
+          "name": "India"
         },
         {
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "@id": "https://www.theimpulsedigital.com/#webpage",
-          "url": "https://www.theimpulsedigital.com/",
-          "name": "Impulse Digital: Best Digital Marketing Agency in Mumbai",
-          "description": "Impulse Digital is a digital marketing agency helping brands with social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation.",
-          "isPartOf": {
-            "@id": "https://www.theimpulsedigital.com/#website"
-          },
-          "about": {
-            "@id": "https://www.theimpulsedigital.com/#organization"
-          },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://www.theimpulsedigital.com/header-logo.png"
-          },
-          "publisher": {
-            "@id": "https://www.theimpulsedigital.com/#organization"
-          }
+          "@type": "City",
+          "name": "Thane"
         },
         {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "@id": "https://www.theimpulsedigital.com/#website",
-          "url": "https://www.theimpulsedigital.com/",
-          "name": "Impulse Digital",
-          "alternateName": "Impulse Digital Marketing Agency",
-          "description": "Impulse Digital is a digital marketing agency offering social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
-          "publisher": {
-            "@id": "https://www.theimpulsedigital.com/#organization"
-          },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
+          "@type": "City",
+          "name": "Mumbai"
         },
         {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "How do I choose the right digital marketing agency in Mumbai for my business?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The decision should start with how well the agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the benefits of hiring a digital marketing company to leverage your business?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. With Impulse Digital, you gain a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the role of a result-oriented digital marketing agency in elevating your business?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, we define KPIs at the business level, not the channel level. The question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the top services an agency should offer for your business?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The capabilities matter less than how they are integrated. A fragmented approach to digital marketing creates activity without direction. Impulse Digital organises capability into three layers: Growth Intelligence, AI Agency, and Performance Studios. Intelligence leads. AI differentiates. Execution scales."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What are the advantages of hiring a leading digital marketing agency in Mumbai?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A proven digital marketing agency in Mumbai brings tested frameworks, specialised teams, enterprise-grade analytical tools, and the pattern recognition that comes from working across categories and scales. With Impulse Digital, you also get direct access to the founding team, and the agility of a focused operation with the client portfolio of a much larger agency."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I expect instant results after hiring an agency?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Some digital marketing channels produce visible movement quickly. Performance marketing can show early signal within weeks. Intelligence-led SEO and Generative Search Optimisation compound over quarters. The most durable outcome is decision quality: when your marketing team starts allocating budget based on evidence rather than habit, the return is structural, not episodic."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is it possible to measure the efficacy of your digital marketing agency's strategies?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Measurement is not optional; it is the starting point. Impulse Digital implements proper tracking infrastructure, defines conversion events tied to revenue, and builds attribution models that your team can interrogate independently. Every engagement includes regular performance reviews with full transparency. No vanity metrics. No dashboards designed to look impressive without being useful."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What is the budget to hire a digital marketing agency in Mumbai for my business?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. Impulse Digital works with marketing teams to scope engagements that reflect the actual decision value being unlocked. The conversation starts with what you are trying to solve, not a rate card."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Before signing up with an agency, should I consider geographic factors like location?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. Digital marketing capability is not bound by geography. Impulse Digital is headquartered in Mumbai and has served clients across India, the United States, and Japan. What matters is domain expertise, strategic alignment, communication cadence, and the ability to embed into your team's workflow, regardless of where either party is based."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What skills are necessary for an agency before onboarding?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Look for strategic depth over tactical breadth. The digital marketing agency should demonstrate the ability to diagnose before prescribing, show named outcomes from comparable engagements, communicate with the same rigour they bring to execution, and operate as a thinking partner rather than a task-taker. At Impulse Digital, every engagement is led by people who understand the business problem first and the marketing channel second."
-              }
-            }
-          ]
+          "@type": "City",
+          "name": "Pune"
         }
-      ];
+      ],
+      "sameAs": [
+        "https://www.facebook.com/theimpulsedigital",
+        "https://twitter.com/impulsedigi",
+        "https://www.instagram.com/_impulse_digital/",
+        "https://www.linkedin.com/company/impulse-digital-marketing-mumbai",
+        "https://www.youtube.com/channel/UCzQglQAeXGI99Z-LZI9jBkw"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9769285224",
+        "email": "collabs@theimpulsedigital.com",
+        "contactType": "business enquiries",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "English",
+          "Hindi"
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.theimpulsedigital.com/#webpage",
+      "url": "https://www.theimpulsedigital.com/",
+      "name": "Impulse Digital: Best Digital Marketing Agency in Mumbai",
+      "description": "Impulse Digital is a digital marketing agency helping brands with social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation.",
+      "isPartOf": {
+        "@id": "https://www.theimpulsedigital.com/#website"
+      },
+      "about": {
+        "@id": "https://www.theimpulsedigital.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.theimpulsedigital.com/header-logo.png"
+      },
+      "publisher": {
+        "@id": "https://www.theimpulsedigital.com/#organization"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.theimpulsedigital.com/#website",
+      "url": "https://www.theimpulsedigital.com/",
+      "name": "Impulse Digital",
+      "alternateName": "Impulse Digital",
+      "description": "Impulse Digital is a digital marketing agency offering social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
+      "publisher": {
+        "@id": "https://www.theimpulsedigital.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I choose the right digital marketing agency in Mumbai for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The decision should start with how well the agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of hiring a digital marketing company to leverage your business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. With Impulse Digital, you gain a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the role of a result-oriented digital marketing agency in elevating your business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, we define KPIs at the business level, not the channel level. The question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the top services an agency should offer for your business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The capabilities matter less than how they are integrated. A fragmented approach to digital marketing creates activity without direction. Impulse Digital organises capability into three layers: Growth Intelligence, AI Agency, and Performance Studios. Intelligence leads. AI differentiates. Execution scales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the advantages of hiring a leading digital marketing agency in Mumbai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A proven digital marketing agency in Mumbai brings tested frameworks, specialised teams, enterprise-grade analytical tools, and the pattern recognition that comes from working across categories and scales. With Impulse Digital, you also get direct access to the founding team, and the agility of a focused operation with the client portfolio of a much larger agency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I expect instant results after hiring an agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some digital marketing channels produce visible movement quickly. Performance marketing can show early signal within weeks. Intelligence-led SEO and Generative Search Optimisation compound over quarters. The most durable outcome is decision quality: when your marketing team starts allocating budget based on evidence rather than habit, the return is structural, not episodic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it possible to measure the efficacy of your digital marketing agency's strategies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measurement is not optional; it is the starting point. Impulse Digital implements proper tracking infrastructure, defines conversion events tied to revenue, and builds attribution models that your team can interrogate independently. Every engagement includes regular performance reviews with full transparency. No vanity metrics. No dashboards designed to look impressive without being useful."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the budget to hire a digital marketing agency in Mumbai for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. Impulse Digital works with marketing teams to scope engagements that reflect the actual decision value being unlocked. The conversation starts with what you are trying to solve, not a rate card."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Before signing up with an agency, should I consider geographic factors like location?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Digital marketing capability is not bound by geography. Impulse Digital is headquartered in Mumbai and has served clients across India, the United States, and Japan. What matters is domain expertise, strategic alignment, communication cadence, and the ability to embed into your team's workflow, regardless of where either party is based."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What skills are necessary for an agency before onboarding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for strategic depth over tactical breadth. The digital marketing agency should demonstrate the ability to diagnose before prescribing, show named outcomes from comparable engagements, communicate with the same rigour they bring to execution, and operate as a thinking partner rather than a task-taker. At Impulse Digital, every engagement is led by people who understand the business problem first and the marketing channel second."
+          }
+        }
+      ]
+    }
+  ];
 
-      return (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-          />
-          <Home />
-        </>
-      );
-        
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <Home />
+    </>
+  );
+
 }

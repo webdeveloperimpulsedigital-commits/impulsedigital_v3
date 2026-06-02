@@ -14,39 +14,39 @@ import Contact from '@/components/Contact';
 const locationFaqs = [
   {
     "question": "What services does a digital marketing agency in Thane like Impulse Digital offer?",
-    "answer": "Impulse Digital offers a wide range of digital marketing services including Search Engine Optimization (SEO), Social Media Marketing, Website Development, Pay-Per-Click Advertising (PPC), Content Marketing, Branding & Creatives, Employer Branding, and Corporate Communication."
+    "answer": "Impulse Digital is a digital marketing agency in Thane that operates across three integrated service pillars. Growth Intelligence covers Consumer Intelligence, Market and Competitive Intelligence, Always-On Intelligence, and Campaign and Performance Intelligence giving your brand the data infrastructure to make faster, better decisions. AI Marketing Systems includes Archer AI, Agentic AI, AI Video Production, and Generative Search Optimisation deploying autonomous systems that scale your marketing without adding headcount. Brand Infrastructure delivers Search Engine Optimisation, Social Media Marketing, Video Production, Website Development, Brand Identity, and Employer Branding the execution layer that makes your brand visible, credible, and consistent across every channel."
   },
   {
     "question": "Why choose a digital marketing agency based in Thane?",
-    "answer": "Choosing a Thane-based agency ensures you work with experts who understand the local market and consumer behavior. Impulse Digital combines local insights with national and international digital strategies to deliver real results."
+    "answer": "Choosing a Thane-based digital marketing agency ensures you work with experts who understand the local market and consumer behavior. Impulse Digital combines local insights with national and international digital strategies to deliver real results."
   },
   {
     "question": "How much experience does Impulse Digital have in digital marketing?",
-    "answer": "Impulse Digital brings over 34 years of experience in advertising and marketing. We’ve helped startups, SMEs, and large corporations grow their digital presence with customized, result-driven strategies."
+    "answer": "Impulse Digital brings over 34 years of experience in advertising and marketing, making it one of the most established digital marketing companies in Thane. That depth of experience is embedded into our Brand Infrastructure practice where Search Engine Optimisation, Social Media Marketing, Website Development, Brand Identity, and Employer Branding are delivered not as standalone services but as a connected system built on three decades of knowing what works for brands at scale. We have built and grown digital presence for startups, SMEs, and enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products."
   },
   {
     "question": "What kind of results can clients expect from Impulse Digital?",
-    "answer": "Our clients have seen results like a 200-300% increase in organic traffic and 50 to 100+ leads generated per month. We focus on measurable growth, ROI, and long-term brand building."
+    "answer": "Our clients have seen a 200 to 300% increase in organic traffic, 50 to 100+ qualified leads per month, and measurable improvements in cost-per-acquisition across paid channels. These results are not accidental, they are the direct output of our Campaign and Performance Intelligence practice, which tracks every campaign signal in real time and connects performance data to the business outcomes your leadership team actually cares about. When you work with the best digital marketing agency in Thane, results come with data attached not just a monthly report."
   },
   {
     "question": "Which industries does Impulse Digital serve?",
-    "answer": "We work with clients from a wide range of industries including FMCG, education, manufacturing, real estate, health care, e-commerce, and professional services."
+    "answer": "We work with clients across FMCG, education, manufacturing, real estate, healthcare, eCommerce, financial services, and professional services including enterprise brands like Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group."
   },
   {
     "question": "Can Impulse Digital work with clients outside of Thane?",
-    "answer": "Yes, we work with clients across Mumbai, Pune, and other cities in India. Our team is equipped to manage projects remotely while maintaining seamless communication and performance tracking."
+    "answer": "Yes, we work with clients across Mumbai, Pune, and other cities in India as well as globally. Our team is equipped to manage projects remotely while maintaining seamless communication and performance tracking."
   },
   {
-    "question": "How long does it take to see results from digital marketing?",
-    "answer": "It depends on the service. SEO typically takes 3 to 6 months to show significant results, while PPC, social media ads, and email marketing can generate leads and traffic in a matter of weeks."
+    "question": "How long does it take to see results from digital marketing services in thane?",
+    "answer": "It depends on the service. The timeline depends on the digital marketing services in Thane you are investing in. Search Engine Optimisation the most compounding channel in our Brand Infrastructure suite typically takes 3 to 6 months to show significant ranking and traffic improvement, with results strengthening every month thereafter. Social Media Marketing and paid performance channels can generate qualified leads within 2 to 4 weeks. AI Video Production and Generative Search Optimisation through our AI Marketing Systems pillar can accelerate content velocity and search visibility significantly faster than traditional production cycles. A blended strategy across all three pillars consistently delivers the best combination of short-term leads and long-term authority."
   },
   {
-    "question": "Do you offer a free consultation or strategy session?",
-    "answer": "Yes, we offer a free consultation to understand your business goals and recommend the best digital marketing strategy tailored to your needs."
+    "question": "Do you offer a free consultation or strategy session for digital marketing services?",
+    "answer": "Yes. We offer a free consultation for brands exploring digital marketing services in Thane and across India. In this session, our strategists apply our Consumer Intelligence and Market and Competitive Intelligence frameworks to your current digital presence identifying where your buyers are, what your competitors are doing, and where the highest-impact growth opportunities exist for your specific business. You leave with a clear picture of what a strategy looks like, with no obligation and no rate card pushed upfront."
   },
   {
-    "question": "How is your pricing structured?",
-    "answer": "Our pricing is flexible and based on the services required, campaign goals, and business size. We offer customized packages that align with your marketing objectives and budget."
+    "question": "How is pricing structured at a digital marketing company in Thane like Impulse Digital?",
+    "answer": "Unlike a typical digital marketing company in Thane that sells fixed packages, Impulse Digital structures pricing around the actual scope and strategic depth of your engagement. A Brand Infrastructure-only engagement covering SEO, Social Media, and Website Development is priced differently from a full-stack programme that adds Growth Intelligence for data and analytics and AI Marketing Systems for autonomous campaign execution. Pricing reflects the value being unlocked and the complexity of your marketing environment not a one-size-fits-all rate card. Every proposal is built specifically for your business."
   },
   {
     "question": "Is there a clear process for tracking performance and ROI?",
@@ -57,7 +57,7 @@ const locationFaqs = [
 const ThaneLocation: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
-    
+
     // Re-initialize GSAP DOM animations specifically for the page
     if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
       setTimeout(() => {
@@ -83,9 +83,9 @@ const ThaneLocation: React.FC = () => {
 
   return (
     <main id="main-content">
-      
 
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={[headline]}
         headlineAccent="Thane"
         description={description}

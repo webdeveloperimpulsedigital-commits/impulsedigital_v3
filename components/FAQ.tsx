@@ -14,18 +14,18 @@ interface FAQProps {
 const defaultFaqs: FAQItem[] = [
   {
     question: "How do I choose the right digital marketing agency in Mumbai for my business?",
-    answer: "The decision should start with how well the agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."
+    answer: "The decision should start with how well the digital marketing agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."
   },
   {
-    question: "What are the benefits of hiring a digital marketing company to leverage your business?",
-    answer: "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. With Impulse Digital, you gain a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
+    question: "What are the benefits of hiring a digital marketing company in Mumbai to grow your business?",
+    answer: "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. What separates the best digital marketing company in Mumbai from the rest is exactly this: a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
   },
   {
-    question: "What is the role of a result-oriented digital marketing agency in elevating your business?",
-    answer: "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, we define KPIs at the business level, not the channel level. The question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
+    question: "What is the role of a result-oriented digital marketing agency in Mumbai in elevating your business?",
+    answer: "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, one of the few digital marketing companies in Mumbai that defines KPIs at the business level rather than the channel level, the question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
   },
   {
-    question: "What are the top services an agency should offer for your business?",
+    question: "What are the top services an digital marketing agency should offer for your business?",
     answer: "The capabilities matter less than how they are integrated. A fragmented approach to digital marketing creates activity without direction. Impulse Digital organises capability into three layers: Growth Intelligence (analytics, campaign intelligence, competitive sensing), AI Agency (agentic AI, cinematic AI production, Generative Search Optimisation), and Performance Studios (social media marketing, performance marketing, content, web development, branding). Intelligence leads. AI differentiates. Execution scales."
   },
   {
@@ -42,15 +42,15 @@ const defaultFaqs: FAQItem[] = [
   },
   {
     question: "What is the budget to hire a digital marketing agency in Mumbai for my business?",
-    answer: "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. Impulse Digital works with marketing teams to scope engagements that reflect the actual decision value being unlocked. The conversation starts with what you are trying to solve, not a rate card."
+    answer: "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. What most digital marketing companies in Mumbai will not tell you upfront is that pricing should reflect the decision value being unlocked, not a fixed rate card. At Impulse Digital, the conversation starts with what you are trying to solve."
   },
   {
     question: "Before signing up with an agency, should I consider geographic factors like location?",
-    answer: "No. Digital marketing capability is not bound by geography. Impulse Digital is headquartered in Mumbai and has served clients across India, the United States, and Japan. What matters is domain expertise, strategic alignment, communication cadence, and the ability to embed into your team's workflow, regardless of where either party is based."
+    answer: "No. Digital marketing capability is not bound by geography. Impulse Digital is headquartered in Mumbai and has served clients across India, the United States, and Globally. What matters is domain expertise, strategic alignment, communication cadence, and the ability to embed into your team's workflow, regardless of where either party is based."
   },
   {
     question: "What skills are necessary for an agency before onboarding?",
-    answer: "Look for strategic depth over tactical breadth. The digital marketing agency should demonstrate the ability to diagnose before prescribing, show named outcomes from comparable engagements, communicate with the same rigour they bring to execution, and operate as a thinking partner rather than a task-taker. At Impulse Digital, every engagement is led by people who understand the business problem first and the marketing channel second."
+    answer: "Look for strategic depth over tactical breadth. The digital marketing company should demonstrate the ability to diagnose before prescribing, show named outcomes from comparable engagements, communicate with the same rigour they bring to execution, and operate as a thinking partner rather than a task-taker. At Impulse Digital, every engagement is led by people who understand the business problem first and the marketing channel second."
   }
 ];
 
