@@ -57,7 +57,7 @@ const locationFaqs = [
 const IndiaLocation: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
-    
+
     // Re-initialize GSAP DOM animations specifically for the page
     if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
       setTimeout(() => {
@@ -79,13 +79,13 @@ const IndiaLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in India`;
-  const description = `We help businesses boost their online presence and growth with expert SEO, social media, and paid media strategies. Based in India, we proudly offer top-tier 360° digital marketing services to businesses across the India. Our dedicated team works as an extension of your brand, helping you uncover your unique voice, refine your messaging, and build genuine connections with your audience. What sets us apart as a leading digital marketing agency? It's our ability to combine creativity, strategy, and a client-centric approach to deliver results you can depend on. Our philosophy is simple: your success is our success. Together, we’ll create a digital future where your brand thrives.`;
+  const description = `We help businesses boost their online presence and growth with expert SEO, social media, and paid media strategies. Based in India, we proudly offer top-tier 360° digital marketing services to businesses across the India. Our dedicated team works as an extension of your brand, helping you uncover your unique voice, refine your messaging, and build genuine connections with your audience. What sets us apart as a leading digital marketing agency in India? It's our ability to combine creativity, strategy, and a client-centric approach to deliver results you can depend on. Our philosophy is simple: your success is our success. Together, we’ll create a digital future where your brand thrives.`;
 
   return (
     <main id="main-content">
-      
 
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={[headline]}
         headlineAccent="India"
         description={description}

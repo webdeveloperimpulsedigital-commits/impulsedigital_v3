@@ -14,7 +14,7 @@ import Contact from '@/components/Contact';
 const locationFaqs = [
   {
     "question": "What does it mean that Impulse Digital is a growth partner rather than a vendor?",
-    "answer": "As a leading digital marketing agency in Pune, it means we work as an extension of your team, aligning strategy and execution with your goals and sharing responsibility for outcomes. Collaboration, transparency, and measurable progress drive every decision."
+    "answer": "As the best digital marketing agency in Pune for enterprise brands, it means we work as an extension of your team, aligning strategy and execution with your specific business goals. Our Growth Intelligence practice maps your market and buyer behaviour before we build anything. Our AI Marketing Systems automate execution without adding headcount. Our Brand Infrastructure delivers the SEO, social media, and content that make your brand visible and credible. Collaboration, transparency, and measurable outcomes drive every decision we make together."
   },
   {
     "question": "How do you build a strategy that fits my brand and market?",
@@ -25,12 +25,12 @@ const locationFaqs = [
     "answer": "At our digital marketing agency in Pune, we set KPIs at the start and track visibility, engagement, conversions, and return on investment. Dashboards and review calls convert the data into actions for the next cycle."
   },
   {
-    "question": "Do you serve only Pune based businesses or work across regions as well?",
+    "question": "As a digital marketing company in Pune, do you work with businesses outside the city too?",
     "answer": "While we are a digital marketing company in Pune, we support clients across India and overseas. Our delivery models remain flexible so collaboration stays smooth regardless of location."
   },
   {
-    "question": "What services can you manage under one engagement?",
-    "answer": "We offer performance marketing, search engine optimization, social media, content, branding, website design and development, video production, and analytics. You can choose full service or project based support."
+    "question": "What digital marketing services in Pune does Impulse Digital manage under one engagement?",
+    "answer": "Impulse Digital manages the full range of digital marketing services in Pune under one coordinated engagement. This includes Search Engine Optimisation, Social Media Marketing, Performance Marketing, Content Marketing, Brand Identity, Website Development, Video Production, Employer Branding, and AI-powered campaign execution through our Archer AI and Agentic AI systems. You can choose full-service delivery or project-based support depending on your current priorities."
   },
   {
     "question": "How soon can we expect results from a new engagement?",
@@ -42,14 +42,14 @@ const locationFaqs = [
   },
   {
     "question": "Can you share case studies and references before we decide?",
-    "answer": "Yes. As a transparent digital marketing company in Pune, we provide public case studies and can share additional references on request, subject to confidentiality terms."
+    "answer": "Yes. As the best digital marketing company in Pune for enterprise work, Impulse Digital publishes case studies across FMCG, healthcare, retail, and fintech, including documented results for Mastercard, Qure.ai, Tata Consumer Products, HUL, and Aditya Birla Group. Additional references and category-specific benchmarks are available on request, subject to confidentiality. We can also share expected performance benchmarks for your specific industry and market."
   }
 ];
 
 const PuneLocation: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
-    
+
     // Re-initialize GSAP DOM animations specifically for the page
     if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
       setTimeout(() => {
@@ -71,13 +71,13 @@ const PuneLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in Pune`;
-  const description = `The digital world is growing rapidly, and your brand deserves to stand out. At Impulse Digital, we’re more than just a digital marketing agency, we’re growth partners for brands. We don’t believe in being a mere vendor, we believe in being collaborators. By investing in understanding your industry, challenges, and vision, we create strategies that drive measurable results. As a trusted digital marketing agency in Pune, we simplify the complexities of the digital landscape, helping businesses boost visibility, engage meaningfully, and scale confidently.`;
+  const description = `Impulse Digital is the best digital marketing agency in Pune for enterprise brands that want growth backed by data, not guesswork. We operate across three integrated service pillars: Growth Intelligence for consumer and market insights, AI Marketing Systems for autonomous campaign execution, and Brand Infrastructure for SEO, Social Media Marketing, Website Development, and Brand Identity. As a trusted digital marketing company in Pune, we have delivered measurable results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We bring that same strategic depth to every engagement, regardless of your size or stage.`;
 
   return (
     <main id="main-content">
-      
 
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={[headline]}
         headlineAccent="Pune"
         description={description}
@@ -87,7 +87,7 @@ const PuneLocation: React.FC = () => {
       />
 
       <CaseStudies />
-      <Logos title={`Trusted by Teams in Pune & Beyond`} />
+      <Logos title={`Brands That Trust Our Digital Marketing Services in Pune & Beyond`} />
       <BrandFilm />
       <Services />
       <Testimonials />

@@ -41,8 +41,8 @@ const locationFaqs = [
     "answer": "Our in-house teams produce copy, design, and video so execution stays consistent with strategy. We can also collaborate with your existing partners where preferred."
   },
   {
-    "question": "Can you share case studies and learning resources before we decide?",
-    "answer": "Yes. As the best digital marketing agency in Navi Mumbai for enterprise brands, Impulse Digital publishes case studies across FMCG, healthcare, retail, and fintech — including results for Mastercard, Qure.ai, Tata Consumer Products, and HUL. Additional references and category benchmarks are available on request subject to confidentiality."
+    "question": "Can you share case studies from your work as a digital marketing agency in Navi Mumbai?",
+    "answer": "Yes. As the best digital marketing agency in Navi Mumbai for enterprise brands, Impulse Digital publishes case studies across FMCG, healthcare, retail, and fintech including results for Mastercard, Qure.ai, Tata Consumer Products, and HUL. Additional references and category benchmarks are available on request subject to confidentiality."
   },
   {
     "question": "How do you ensure brand safety and data privacy?",
@@ -79,7 +79,8 @@ const NaviMumbaiLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in Navi Mumbai`;
-  const description = `In today’s fast-paced digital world, your business deserves to shine online. Is your brand missing a powerful digital impact? Are your revenue goals hampered due to a drab marketing strategy? With Impulse Digital, your digital evolution is in the right hands. We are a veteran digital marketing agency in Navi Mumbai with decades of expertise in global marketing. Our team of proficient experts endure 24*7 to see your brand excel in the online landscape. At Impulse Digital, we unleash your business potential to conquer the most challenging goals. As a digital marketing agency in Navi Mumbai, we achieve this by employing thoroughly analysed, cutting-edge digital marketing strategies tailored specifically for your brand. From result-driven SEO strategies and high-performance website development to innovative social media campaigns, PPC, content marketing, employer branding, and more, we seamlessly fulfil all your marketing endeavours within steadfast timelines.`;
+  const description = `Impulse Digital is the best digital marketing agency in Navi Mumbai for enterprise brands that want growth backed by data, not guesswork. We operate across Growth Intelligence, AI Marketing Systems, and Brand Infrastructure, giving Navi Mumbai businesses the strategic depth and execution capability of an enterprise marketing team. We have delivered measurable results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We bring that same thinking to every brand we work with.
+<br>Ready to grow? Talk to the digital marketing company in Navi Mumbai that connects marketing to business outcomes.`;
 
   return (
     <main id="main-content">
