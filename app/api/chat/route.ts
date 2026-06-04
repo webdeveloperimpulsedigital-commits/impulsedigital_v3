@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
     console.error('Error in chatbot API route:', error);
     return NextResponse.json(
       {
-        message: "Oops! Something went wrong while processing your request. Please try again or contact us directly.",
+        message: `Oops! Something went wrong: ${error.message || error}. Please verify your OpenAI key, balance, or billing status.`,
         metadata: {
           recommendationGiven: false,
           handoffReady: false,

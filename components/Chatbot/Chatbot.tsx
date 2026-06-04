@@ -299,7 +299,7 @@ export default function Chatbot() {
       // or map properly for the LLM call. The backend endpoint expects standard messages format.
       const chatHistory = updatedMessages.slice(1);
 
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/chat/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
