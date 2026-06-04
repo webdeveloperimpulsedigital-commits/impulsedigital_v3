@@ -7,27 +7,67 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      console.error('OPENAI_API_KEY is not defined in environment variables.');
-      return NextResponse.json(
-        {
-          message: "I apologize, but I am unable to connect to the AI service right now. Please feel free to reach out to us directly via phone or email!",
-          metadata: {
-            recommendationGiven: false,
-            handoffReady: false,
-            leadInfo: {
-              name: "",
-              email: "",
-              phone: "",
-              company: "",
-              preferredTime: "",
-              userRequirement: "",
-              mainChallenge: "",
-              recommendedDirection: ""
-            }
+      console.warn('OPENAI_API_KEY is not defined. Using local mock chatbot responder for testing.');
+      
+      // Determine reply based on last message to make local testing interactive
+      const lastMessage = messages[messages.length - 1]?.content || '';
+      const lastUserMsgLower = lastMessage.toLowerCase();
+      
+      let replyMessage = "Hello! I am running in local mock mode because no `OPENAI_API_KEY` was found in your environment variables. You can test my features by asking to connect or typing your contact details.";
+      let recommendationGiven = false;
+      let handoffReady = false;
+      
+      // Initialize/extract lead details
+      let name = "";
+      let email = "";
+      let phone = "";
+      let company = "";
+      let userRequirement = "";
+
+      // Look through all messages to persist or extract details
+      messages.forEach((m: any) => {
+        if (m.role === 'user') {
+          const txt = m.content;
+          const emailMatch = txt.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+          if (emailMatch) email = emailMatch[0];
+          
+          const phoneMatch = txt.match(/(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/) || txt.match(/\d{10}/);
+          if (phoneMatch) phone = phoneMatch[0];
+        }
+      });
+
+      // Simple mock state machine
+      if (lastUserMsgLower.includes('connect') || lastUserMsgLower.includes('talk') || lastUserMsgLower.includes('speak') || lastUserMsgLower.includes('pricing') || lastUserMsgLower.includes('cost') || lastUserMsgLower.includes('contact')) {
+        replyMessage = "I would be happy to connect you with the Impulse Digital team. Could you share your name, company, email, and phone number here, so we can connect you properly?";
+        recommendationGiven = true;
+      } else if (email || phone) {
+        name = "Local Tester";
+        company = "Local Test Corp";
+        userRequirement = "Local development test of chatbot integration.";
+        replyMessage = "Thank you! I have captured your contact details. The Google reCAPTCHA verification should now appear to complete the test.";
+        recommendationGiven = true;
+        handoffReady = true;
+      } else if (lastUserMsgLower.trim() !== '') {
+        replyMessage = `[Mock Mode] You said: "${lastMessage}". To test the Zoho CRM and WhatsApp handoff flows, type "connect" or share your email/phone number.`;
+      }
+
+      return NextResponse.json({
+        message: replyMessage,
+        metadata: {
+          recommendationGiven,
+          handoffReady,
+          leadInfo: {
+            name: name || (email || phone ? "Local Tester" : ""),
+            email: email,
+            phone: phone,
+            company: company || (email || phone ? "Local Test Corp" : ""),
+            preferredTime: "Anytime",
+            userRequirement: userRequirement || "Testing chatbot locally.",
+            mainChallenge: "Local Mocking",
+            recommendedDirection: "AI Marketing Systems"
           }
-        },
-        { status: 500 }
-      );
+        }
+      });
     }
 
     const systemMessage = {
