@@ -5,12 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
-import dynamic from 'next/dynamic';
+// import Chatbot from '@/components/Chatbot/Chatbot';
 import './globals.css';
-
-const Chatbot = dynamic(() => import('@/components/Chatbot/Chatbot'), {
-  ssr: false,
-});
 
 export const metadata: Metadata = {
   // Default metadata — overridden by each page's own metadata export
@@ -172,8 +168,8 @@ export default function RootLayout({
         {/* Footer */}
         <Footer />
         
-        {/* AI Chatbot Widget */}
-        <Chatbot />
+        {/* AI Chatbot Widget (Temporarily disabled to fix rendering block) */}
+        {/* <Chatbot /> */}
 
         {/* Vanilla-tilt */}
         <Script
