@@ -34,6 +34,7 @@ export default function Chatbot() {
   const [showCaptcha, setShowCaptcha] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaToken, setCaptchaToken] = useState('');
+  const [isLocalhost, setIsLocalhost] = useState(false);
   
   const [leadForm, setLeadForm] = useState<LeadInfo>({
     name: '',
@@ -118,6 +119,14 @@ export default function Chatbot() {
   };
 
 
+
+  // Check if current hostname is localhost to toggle local helper messages
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hn = window.location.hostname;
+      setIsLocalhost(hn === 'localhost' || hn === '127.0.0.1' || hn.startsWith('192.168.'));
+    }
+  }, []);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -469,10 +478,10 @@ Please connect with me.`;
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.5rem' }}>
                 <div id="chatbot-recaptcha-element"></div>
               </div>
-              {typeof window !== 'undefined' && window.location.hostname === 'localhost' && (
+              {showCaptcha && !captchaVerified && isLocalhost && (
                 <div style={{ marginTop: '12px', padding: '8px 10px', backgroundColor: 'rgba(255, 77, 77, 0.1)', border: '1px solid rgba(255, 77, 77, 0.2)', borderRadius: '6px', fontSize: '11px', color: '#ff8a8a', lineHeight: '1.4' }}>
                   <i className="fas fa-exclamation-triangle" style={{ marginRight: '6px' }}></i>
-                  <strong>Testing locally:</strong> This reCAPTCHA key is registered for your production domain. It will render and work automatically on the live site, but to test it on localhost, you must add <code>localhost</code> to the domains list in your Google reCAPTCHA Admin Console.
+                  <strong>Note:</strong> To test locally, you must add <code>localhost</code> to the domains list in your Google reCAPTCHA Admin Console.
                 </div>
               )}
             </div>
