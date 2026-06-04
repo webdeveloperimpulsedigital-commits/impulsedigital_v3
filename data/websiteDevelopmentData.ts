@@ -271,5 +271,57 @@ export const websiteDevelopmentData = {
     ],
     "footnote": "No template thinking. No design without direction. Just conversion-ready website development built around clarity, performance, and growth."
   },
-  "faq": []
+  "faq": {
+    "title": "What to Know About Website Design & Development",
+    "items": [
+      {
+        "q": "What does Impulse Digital offer in website design & development services?",
+        "a": "As a full-service website development company, we cover every phase of discovery, information architecture, design, development, content support, testing, launch, and post-launch maintenance. Each step is aligned to your goals such as brand credibility, performance, SEO readiness, and lead conversion. Our website design and development services ensure your digital presence is visually engaging and performance-driven."
+      },
+      {
+        "q": "How do you decide on the right platform or CMS for our site?",
+        "a": "We evaluate your goals, content workflows, integration needs, and budget. Based on these insights, we recommend the right platform such as WordPress, Shopify, React, or a custom build, outlining trade-offs for scalability, security, and easy of management."
+      },
+      {
+        "q": "How do you ensure fast load times and strong performance?",
+        "a": "Performance is a core part of our web services. We optimize images and code, manage scripts efficiently, implement caching, and follow clean coding standards. Core Web Vitals are tracked during development and post-launch to ensure speed and responsiveness."
+      },
+      {
+        "q": "Will the website be mobile-friendly and cross-browser compatible?",
+        "a": "Absolutely. We follow a mobile-first approach and test across modern browsers and devices. Interfaces are optimized for touch gestures, various screen sizes, and accessibility for a consistent experience across platforms."
+      },
+      {
+        "q": "How do you make the website search-ready at launch?",
+        "a": "We integrate on-page SEO best practices from day one optimized structure, metadata, internal linking, image alt text, analytics, and Google Search Console setup. XML sitemaps are submitted and guidance is provided for content strategy and organic growth."
+      },
+      {
+        "q": "What is your approach to security and data protection?",
+        "a": "Security is built into our development process. We implement secure coding practices, SSL, software updates, backups, CDN, and strict access controls to ensure data privacy for both you and your users."
+      },
+      {
+        "q": "Can you handle content migration and redirects from an existing site?",
+        "a": "Yes. We manage content migration and URL mapping to preserve SEO equity. Redirects are tested to ensure a seamless experience for visitors and search engines."
+      },
+      {
+        "q": "Do you provide hosting and domain support?",
+        "a": "We can recommend or provision hosting, manage domain setup, and configure SSL certificates, ensuring stable performance, security, and clear ownership of digital assets."
+      },
+      {
+        "q": "What happens after the site goes live?",
+        "a": "Post-launch, our maintenance program covers monitoring, updates, performance reviews, small enhancements, uptime tracking, and traffic analysis. This ensures long-term reliability and continuous improvement of your website."
+      },
+      {
+        "q": "How long will the project take and what affects the timeline?",
+        "a": "Timelines depend on scope, integrations, and feedback cycles. During discovery, we share a detailed milestone plan and provide regular updates to keep you informed. Our structured process ensures a transparent and efficient journey from concept to completion."
+      },
+      {
+        "q": "Do you create custom designs or use templates?",
+        "a": "We focus on custom designs tailored to your brand and audience. Templates may be used for rapid prototyping, but the final design is always unique and aligned with your business goals."
+      },
+      {
+        "q": "Can you integrate third-party tools and APIs?",
+        "a": "Yes. We handle integrations with CRMs, payment gateways, analytics, marketing tools, and other APIs to extend your website’s functionality and business impact."
+      }
+    ]
+  }
 };

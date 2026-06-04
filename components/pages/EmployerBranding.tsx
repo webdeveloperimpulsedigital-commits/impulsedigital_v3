@@ -231,7 +231,12 @@ const EmployerBranding: React.FC = () => {
       
       {data.finalCta && <ServiceFinalCTA data={data.finalCta} />}
       <Contact />
-      {data.faq && data.faq.length > 0 && <ServiceFAQ data={data.faq} />}
+      {data.faq && data.faq.items && data.faq.items.length > 0 && (
+        <>
+          <ServiceHandoff />
+          <ServiceFAQ data={data.faq} />
+        </>
+      )}
     </main>
   );
 };
