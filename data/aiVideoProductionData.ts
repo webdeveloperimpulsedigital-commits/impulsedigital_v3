@@ -1,15 +1,15 @@
 export const aiVideoProductionData = {
   hero: {
-    headlineParts: ["Imagine More.", "Produce Faster."],
-    headlineAccent: "Produce Faster.",
-    description: "Your best ideas can now travel further. Impulse Digital creates AI-led videos that turn one strong thought into campaign films, explainers, social assets, training videos, and multilingual versions. Human-led. AI-enabled. Built to scale.",
+    headlineParts: ["AI Video", "Production Agency"],
+    headlineAccent: "Production Agency",
+    description: "Impulse Digital is an AI video production agency helping brands create campaign films, product explainers, social-first videos, training videos, multilingual content, and digital ad creatives faster. Our AI video production services combine human creative direction with AI-enabled tools to produce scalable, brand-ready videos without starting from scratch every time.",
     buttons: [
       { text: "Start an AI Video Project", link: "#connect", cursor: "BUILD" },
       { text: "See What AI Video Can Do", link: "#process", cursor: "EXPLORE" }
     ]
   },
   stats: {
-    title: "Built to Make Video Easier to Scale",
+    title: "Why Choose Impulse Digital for AI Video Production Agency",
     metrics: [
       { target: "70", suffix: "%", decimals: "0", desc: "Lower production cost than traditional shoots." },
       { target: "4", suffix: "X", decimals: "0", desc: "Faster content scalability using AI automation." },
@@ -45,7 +45,7 @@ export const aiVideoProductionData = {
     closing: "AI can generate visuals, avatars, voiceovers, edits, and variations. But taste still matters. So does context. Emotion. Pacing. Brand tone. Audience understanding.  Impulse Digital brings the creative direction that makes AI-led video feel intentional, useful, and brand-ready.  <span style=\"color: white; font-weight: 500;\">The goal is not AI-looking content. The goal is better video, made faster.</span>"
   },
   uses: {
-    title: "Where AI Video Creates Business Leverage",
+    title: "What Our AI Video Production Services Include",
     cards: [
       {
         title: "Campaign and Brand Films",
@@ -123,15 +123,18 @@ export const aiVideoProductionData = {
     footnote: "No generic templates. No AI gimmicks. Just sharper visual storytelling, built faster."
   },
   faq: {
-    title: "What to Know Before You Create With AI Video",
+    title: "FAQs About AI Video Production Services",
     items: [
       { q: "What is AI video production?", a: "AI video production uses AI tools to support or create parts of the video process, including scripting, avatars, visuals, voiceovers, dubbing, editing, subtitles, and format adaptations. The best results still need human creative direction." },
+      { q: "What does an AI video production agency do?", a: "An AI video production agency helps brands create high-quality videos using a mix of human creative direction and AI-powered production tools. At Impulse Digital, we plan the message, write the script, define the visual direction, generate or assemble AI-led visuals, add voiceovers, subtitles, edits, and polish the final video for different platforms such as Instagram, YouTube, LinkedIn, websites, and paid ads." },
+      { q: "Why should brands choose Impulse Digital for AI video production services?", a: "Brands choose Impulse Digital because our AI video production services are not only tool-based. Every video is backed by strategy, content thinking, brand understanding, platform knowledge, and creative supervision. We focus on creating videos that are clear, premium, brand-safe, and business-ready, not videos that simply look AI-generated." },
       { q: "Is AI video a replacement for traditional shoots?", a: "Not always. Some ideas need a live shoot. Some are better built with AI. Many work best as a hybrid." },
-      { q: "What types of videos can you create?", a: "Campaign films, explainers, product videos, social media videos, launch assets, training videos, onboarding videos, corporate communication, multilingual videos, and digital ad creatives." },
+      { q: "What types of videos can you create with ai video production services?", a: "Campaign films, explainers, product videos, social media videos, launch assets, training videos, onboarding videos, corporate communication, multilingual videos, and digital ad creatives." },
       { q: "Will the video look obviously AI-generated?", a: "Not if it is directed properly. We focus on scripting, visual treatment, editing, sound, and brand checks so the output feels intentional." },
       { q: "Can one video become multiple formats?", a: "Yes. One video direction can be adapted into vertical cuts, teasers, short-form edits, ad versions, internal videos, and presentation-ready assets." },
       { q: "What do you need from us to start?", a: "We need the objective, audience, message, brand guidelines, references, timelines, platforms, and any mandatory product, legal, or compliance details." },
-      { q: "Is AI video right for every brand?", a: "AI video is right when the idea benefits from speed, scale, flexibility, multilingual adaptation, or visual imagination. It is not right when real people, live proof, or documentary credibility are essential." }
+      { q: "Is AI video right for every brand?", a: "AI video is right when the idea benefits from speed, scale, flexibility, multilingual adaptation, or visual imagination. It is not right when real people, live proof, or documentary credibility are essential." },
+      { q: "How does Impulse Digital maintain quality in AI video production?", a: "Impulse Digital follows a structured process for AI video production. We begin with the brand objective, audience, message, script, and platform requirement. After that, we define the visual direction, generate or assemble video assets, edit the final output, review it for brand consistency, and optimise it for the required platform. This ensures the final video is strategic, useful, and professionally finished." }
     ]
   }
 };

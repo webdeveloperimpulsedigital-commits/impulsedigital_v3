@@ -282,7 +282,7 @@ const AIVideoProduction: React.FC = () => {
     `;
     document.head.appendChild(style);
     document.body.classList.add('ai-video-production-page');
-    
+
     const pageScrollTriggers: any[] = [];
 
     // Stats reveal sequence
@@ -361,7 +361,7 @@ const AIVideoProduction: React.FC = () => {
     let signalObs: IntersectionObserver | null = null;
     let signalCancelled = false;
     let signalScrollRaf: number | null = null;
-    let checkSignalRailTrigger: () => void = () => {};
+    let checkSignalRailTrigger: () => void = () => { };
     let signalItemObs: IntersectionObserver | null = null;
     let signalDotPlayed = false;
     let visibleSignalCount = 0;
@@ -549,7 +549,7 @@ const AIVideoProduction: React.FC = () => {
     let convergenceActive = false;
     let measureTimeout1: any, measureTimeout2: any;
     let sectionObs: IntersectionObserver | null = null;
-    let measureFn: () => void = () => {};
+    let measureFn: () => void = () => { };
 
     if (!isMobileChannels && stage && linesSvg && centerEl && centerPath && gsap && ScrollTrigger) {
       let chipPositions: any[] = [];
@@ -677,8 +677,8 @@ const AIVideoProduction: React.FC = () => {
 
   return (
     <main id="main-content">
-      
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={data.hero.headlineParts}
         headlineAccent={data.hero.headlineAccent}
         description={data.hero.description}
@@ -703,16 +703,16 @@ const AIVideoProduction: React.FC = () => {
       </section>
 
       <ServiceHandoff />
-      
+
       <ServiceProblem data={data.problem} />
       <ServiceHandoff />
-      
+
       <ServiceVs data={data.vs} />
       <ServiceHandoff />
-      
+
       <ServiceUses data={data.uses} />
       <ServiceHandoff />
-      
+
       {/* CHANNELS */}
       <section className="svc-channels ai-video-channels">
         <div className="container">
@@ -749,7 +749,7 @@ const AIVideoProduction: React.FC = () => {
             <span className="ai-video-signal-dot" aria-hidden="true"></span>
           </div>
           <p style={{ textAlign: 'center', color: 'var(--soft-grey)', fontSize: '1.15rem', marginTop: '3rem', fontStyle: 'italic' }}>
-            One idea can become a film, a teaser, a vertical cut, an internal video, and an ad asset.<br/>That is where AI starts creating scale.
+            One idea can become a film, a teaser, a vertical cut, an internal video, and an ad asset.<br />That is where AI starts creating scale.
           </p>
         </div>
       </section>
@@ -760,15 +760,15 @@ const AIVideoProduction: React.FC = () => {
       <ServiceHandoff />
 
       <ServiceProcess data={data.process} />
-      
-      <Logos title="Trusted by Brands Expecting Production Quality" />
-      
+
+      <Logos title="Trusted by Brands Expecting AI Production Quality" />
+
       <Testimonials />
       <ServiceHandoff />
-      
+
       <ServiceFit data={data.fit} />
       <ServiceHandoff />
-      
+
       <ServiceFinalCTA data={data.finalCta} />
       <Contact />
       <ServiceFAQ data={data.faq} />
