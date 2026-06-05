@@ -77,7 +77,7 @@ const EmployerBrandingCaseStudy: React.FC = () => {
           });
         }
       });
-      
+
       setTimeout(() => {
         ScrollTrigger.refresh();
       }, 100);
@@ -104,7 +104,7 @@ const EmployerBrandingCaseStudy: React.FC = () => {
 
   return (
     <main id="main-content">
-      
+
 
       {/* Hidden SVG defs */}
       <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>

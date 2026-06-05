@@ -1,11 +1,11 @@
 export const employerBrandingData = {
   "hero": {
     "headlineParts": [
-      "Talent Chooses the Story",
-      "Before the Offer."
+      "Employer Branding",
+      "Agency"
     ],
-    "headlineAccent": "Before the Offer.",
-    "description": "The best candidates are not only comparing salaries. They are reading\n          your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever\n          apply. Impulse Digital helps brands turn employee experience into a clear employer story, so the right people\n          understand why your company is worth joining, staying with, and growing inside.",
+    "headlineAccent": "Agency",
+    "description": "The best candidates are not only comparing salaries. They are reading your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever apply. Impulse Digital is a specialist employer branding agency offering employer branding consulting for enterprise brands, helping you turn employee experience into a clear employer story so the right talent understands why your company is worth joining, staying with, and growing inside.",
     "buttons": [
       {
         "text": "Build Your Employer Brand",
@@ -58,12 +58,12 @@ export const employerBrandingData = {
     ],
     "outro": [
       "Candidates see the job description.",
-      "Employer branding closes that gap.",
+      "Employee branding agency's closes that gap.",
       "It helps your company show what it stands for, what people experience inside it, and why the right talent should see a future there."
     ]
   },
   "vs": {
-    "title": "Employer Branding, in Plain English",
+    "title": "Employer Branding Agency, in Plain English",
     "leftLabel": "Recruitment",
     "leftStrike": "tells people there is a role.",
     "rightLabel": "Employer Branding",
@@ -94,7 +94,7 @@ export const employerBrandingData = {
     "closing": "The output is not a campaign slogan. It is a talent-facing brand system that helps\n            people understand why they should join, stay, and grow with you."
   },
   "uses": {
-    "title": "Where Employer Branding Creates Business Leverage",
+    "title": "Where Employer Branding Services Create Business Leverage",
     "cards": [
       {
         "title": "Employee Value Proposition",
@@ -120,7 +120,7 @@ export const employerBrandingData = {
   },
   "channels": {
     "title": "When Talent Needs More Than a Job Description",
-    "intro": "Employer branding matters when the role alone is not enough to create preference.",
+    "intro": "Employer branding agency matters when the role alone is not enough to create preference.",
     "list": [
       {
         "label": "Better-fit candidates",
@@ -231,7 +231,7 @@ export const employerBrandingData = {
     "footer": "The aim is not to make the company look attractive.\n\nThe aim is to make the right talent understand why it is worth choosing."
   },
   "fit": {
-    "title": "Employer Branding Is Right for You If",
+    "title": "Employer Branding Agency Is Right for You If",
     "list": [
       "Your company is hiring, but not attracting enough of the right candidates.",
       "Your culture is strong, but hard to explain.",
@@ -260,5 +260,46 @@ export const employerBrandingData = {
     ],
     "footnote": "No generic employer-branding claims. No culture theatre. Just a clearer workplace story built to attract, engage, and retain the right people."
   },
-  "faq": []
+  "faq": {
+    "title": "FAQ's for Employer Branding Agency",
+    "items": [
+      {
+        "q": "Why is employer branding important for companies competing for top talent?",
+        "a": "Employer branding directly affects who applies to your company, who accepts your offers, and who stays. Research consistently shows that organisations with a strong employer brand reduce cost-per-hire by up to 50% and see significantly lower employee turnover. As a specialist employer branding agency, Impulse Digital sees this pattern repeatedly: companies with a clear Employee Value Proposition attract better-fit candidates, not just more candidates. The difference is not the salary. It is the story. When talent can see your culture, your people, and your purpose before they apply, the wrong people self-select out and the right people feel pulled in."
+      },
+      {
+        "q": "What is an Employee Value Proposition (EVP)?",
+        "a": "An EVP is the promise your company makes to its people. It answers why someone should join, stay, perform, and refer others, serving as the foundation for your employer branding strategy."
+      },
+      {
+        "q": "How long does it take to see results from an employer branding services?",
+        "a": "Timeline varies by what you are measuring, but a structured employer branding programme typically delivers results across three horizons. In the first 3 months, you will see improvements in candidate engagement, message consistency, and the quality of employer brand assets. Between months 3 and 6, application rates and candidate fit begin to improve measurably. Our clients report an average 70% increase in application rates through targeted Recruitment Marketing campaigns within this window. Substantial shifts in employer brand perception and employee retention typically take 6 to 12 months. Across our client base, 85% report improved employer brand perception within 6 months, and organisations that invest in Culture Storytelling and Internal Brand Communication alongside recruitment marketing see a 25% decrease in employee turnover within the first year."
+      },
+      {
+        "q": "How is employer branding agency different from Recruitment Marketing?",
+        "a": "EEmployer branding defines what your company stands for as a place to work. It covers the Employee Value Proposition, the culture narrative, and the story your workplace tells to the outside world. Recruitment Marketing is how that story gets distributed to attract the right candidates, through campaigns, platform-specific content, career page messaging, and hiring narratives. Think of it this way: employer branding is the foundation, recruitment marketing is the amplification. You cannot amplify a message that is unclear, and a clear message goes nowhere without the right distribution. The two disciplines work together, not instead of each other. As an employer branding consulting partner, Impulse Digital builds both in the same engagement so the story and the distribution are aligned from day one."
+      },
+      {
+        "q": "How do you measure the success of an Employer Branding campaign?",
+        "a": "We measure success through various metrics such as increased application rates, better candidate quality (fit), improved employee retention, and overall sentiment in employer brand perception."
+      },
+      {
+        "q": "What does Impulse Digital actually deliver in an employer branding engagement?",
+        "a": "Every employer branding engagement at Impulse Digital is structured around four practice areas. Employee Value Proposition development defines the promise your company makes to its people, the EVP framework, messaging pillars, tone guidance, and talent-facing communication direction. Recruitment Marketing turns that clarity into candidate interest through campaigns, platform-specific content, career communication themes, and hiring narratives. Culture Storytelling makes your workplace visible through employee stories, leadership features, behind-the-scenes content, and culture-led campaign assets. Internal Brand Communication ensures your employees understand, believe, and repeat the employer story from inside the organisation. You can engage one practice area or all four depending on where your employer brand needs the most work."
+      },
+      {
+        "q": "Which companies need an employer branding agency?",
+        "a": "Any organisation competing for skilled talent in a market where candidates have choices benefits from a structured employer branding programme. In practice, the businesses that need an employer branding agency most urgently tend to fall into four situations. First, high-growth companies scaling headcount rapidly who need a consistent employer story that travels across hiring teams and geographies. Second, organisations with high employee turnover who have not yet identified whether the problem is culture, communication, or candidate mismatch. Third, established brands whose consumer reputation does not translate into employer desirability, the company is well-known as a product but unknown as a place to work. Fourth, companies going through transformation, a new leadership team, a culture change, a merger, who need to rebuild or reposition their employer narrative. Impulse Digital works across all four situations, bringing employer branding consulting expertise built on 34 years of brand and communications experience."
+      },
+      {
+        "q": "How do we get started with employer branding at Impulse Digital?",
+        "a": "The process starts with understanding where your employer brand currently stands and where the gap is. In the first conversation, we look at three things: how your company is perceived as an employer today, what your current employees would say about working there, and what your ideal candidates need to hear before they apply. From that, we build a scoped engagement that starts with the practice area that will have the most immediate impact, whether that is EVP development, Recruitment Marketing, Culture Storytelling, or Internal Brand Communication. As one of the best employer branding companies for enterprise brands in India, Impulse Digital brings 34 years of brand and communications expertise to every engagement. The first conversation is free. Reach out through our contact form or call us directly."
+      },
+      {
+        "q": "What is the difference between an employer branding agency and an employee branding agency?",
+        "a": "An employer branding agency helps a company build its reputation as a great place to work, focusing on workplace culture, employee stories, hiring communication, leadership content, and recruitment marketing. An employee branding agency focuses more on building the personal brand of employees, leaders, or internal talent through individual storytelling, thought leadership, and professional visibility. At Impulse Digital, employer branding is about making the company more attractive to the right talent while also highlighting the people who shape its culture."
+      }
+
+    ]
+  }
 };

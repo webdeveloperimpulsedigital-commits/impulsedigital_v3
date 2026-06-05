@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SearchEngineOptimisation from '@/components/pages/SearchEngineOptimisation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Mumbai | Search Engine Optimisation | Impulse Digital',
-  description: 'Impulse Digital is a leading SEO agency in Mumbai offering enterprise, ecommerce, B2B and local SEO services to improve search rankings and drive organic growth.',
-  keywords: 'seo agency in mumbai, search engine optimisation, seo services',
+  title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
+  description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
+  keywords: 'seo company in thane, seo agency in thane, best seo service,search engine optimisation, seo services, thane, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/`,
   },
   openGraph: {
-    title: 'SEO Agency in Mumbai | Search Engine Optimisation | Impulse Digital',
-    description: 'Impulse Digital is a leading SEO agency in Mumbai offering enterprise, ecommerce, B2B and local SEO services to improve search rankings and drive organic growth.',
+    title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Mumbai | Search Engine Optimisation | Impulse Digital',
-    description: 'Impulse Digital is a leading SEO agency in Mumbai offering enterprise, ecommerce, B2B and local SEO services to improve search rankings and drive organic growth.',
+    title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -29,126 +29,126 @@ export const metadata: Metadata = {
 
 export default function SearchEngineOptimisationPage() {
 
-      const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/#service",
-        "name": "Search Engine Optimisation Services",
-        "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/",
-        "description": "Impulse Digital provides search engine optimisation services including technical SEO, on-page SEO, off-page SEO, keyword strategy, content optimisation, local SEO, ecommerce SEO, B2B SEO, and enterprise SEO.",
-        "serviceType": [
-          "Search Engine Optimisation",
-          "Technical SEO",
-          "On Page SEO",
-          "Off Page SEO",
-          "Keyword Research",
-          "Content Optimisation",
-          "Local SEO",
-          "eCommerce SEO",
-          "B2B SEO",
-          "Enterprise SEO"
-        ],
-        "areaServed": [
-          "IN",
-          "US"
-        ],
-        "provider": {
-          "@type": "Organization",
-          "name": "Impulse Digital",
-          "url": "https://www.theimpulsedigital.com/"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/#faq",
-        "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What does SEO services with Impulse Digital include?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our approach covers strategy, research, and execution across on-page, off-page, and technical SEO. We align every task to business goals such as qualified visibility, conversions, and sustainable growth."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you decide the right SEO mix for my business?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We audit your site and market, map search intent to the buyer journey, and prioritize fixes and opportunities. The plan balances content, authority building, and technical improvements based on impact and effort."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How soon can we expect results?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Timelines vary by competition, current site health, and content depth. Most engagements begin to show directional gains within three to six months, with stronger compounding results over the following quarters."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you guarantee page one rankings?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, your website will rank, but results depend on factors like industry, competition, business type, and goals. We focus on best practices and steady improvements to drive qualified traffic and conversions."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you measure success and report progress?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We set clear goals and track metrics such as qualified impressions, rankings, organic traffic, engagement, and conversion rate. Reporting is delivered at agreed intervals with insights and next steps."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is Impulse Digital’s SEO process to rank in search engines?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We follow a structured flow that includes discovery, audit, keyword and topic mapping, content and technical work, quality checks, publishing support, and ongoing optimization based on analytics."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can you support enterprise and multi-location SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. We plan for scale with page templates, internal linking models, structured data where relevant, location strategy, and governance for content and approvals. The setup respects brand standards and local needs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you handle ecommerce and marketplace SEO service?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. We optimize ecommerce website architecture, product and category pages, internal search, and metadata, and we can advise on marketplace content. Efforts focus on discoverability and conversion throughout the ecommerce SEO service."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is your approach to local search and maps visibility?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We optimize your Google Business Profile, citations, local content, and location signals. The goal is to improve local SEO pack presence and drive qualified visits, calls, and enquiries for each service area."
-            }
-          }
-        ]
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/#service",
+      "name": "Search Engine Optimisation Services",
+      "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/",
+      "description": "Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.",
+      "serviceType": [
+        "Search Engine Optimisation",
+        "Technical SEO",
+        "On Page SEO",
+        "Off Page SEO",
+        "Keyword Research",
+        "Content Optimisation",
+        "Local SEO",
+        "eCommerce SEO",
+        "B2B SEO",
+        "Enterprise SEO"
+      ],
+      "areaServed": [
+        "IN",
+        "US"
+      ],
+      "provider": {
+        "@type": "Organization",
+        "name": "Impulse Digital",
+        "url": "https://www.theimpulsedigital.com/"
       }
-    ];
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/#faq",
+      "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does SEO services with Impulse Digital include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our approach covers strategy, research, and execution across on-page, off-page, and technical SEO. We align every task to business goals such as qualified visibility, conversions, and sustainable growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you decide the right SEO mix for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We audit your site and market, map search intent to the buyer journey, and prioritize fixes and opportunities. The plan balances content, authority building, and technical improvements based on impact and effort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How soon can we expect results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines vary by competition, current site health, and content depth. Most engagements begin to show directional gains within three to six months, with stronger compounding results over the following quarters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee page one rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, your website will rank, but results depend on factors like industry, competition, business type, and goals. We focus on best practices and steady improvements to drive qualified traffic and conversions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure success and report progress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We set clear goals and track metrics such as qualified impressions, rankings, organic traffic, engagement, and conversion rate. Reporting is delivered at agreed intervals with insights and next steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Impulse Digital’s SEO process to rank in search engines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We follow a structured flow that includes discovery, audit, keyword and topic mapping, content and technical work, quality checks, publishing support, and ongoing optimization based on analytics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you support enterprise and multi-location SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We plan for scale with page templates, internal linking models, structured data where relevant, location strategy, and governance for content and approvals. The setup respects brand standards and local needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle ecommerce and marketplace SEO service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We optimize ecommerce website architecture, product and category pages, internal search, and metadata, and we can advise on marketplace content. Efforts focus on discoverability and conversion throughout the ecommerce SEO service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your approach to local search and maps visibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We optimize your Google Business Profile, citations, local content, and location signals. The goal is to improve local SEO pack presence and drive qualified visits, calls, and enquiries for each service area."
+          }
+        }
+      ]
+    }
+  ];
 
-      return (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-          />
-          <SearchEngineOptimisation />
-        </>
-      );
-        
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
+      <SearchEngineOptimisation />
+    </>
+  );
+
 }

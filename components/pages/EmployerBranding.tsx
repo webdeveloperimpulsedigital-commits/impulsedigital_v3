@@ -35,7 +35,7 @@ const EmployerBranding: React.FC = () => {
     // Lazy proxy — reads window.ScrollTrigger at call-time
     const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
     document.body.classList.add('employer-page');
-    
+
     // Channels orbit animation
     const stage = document.getElementById('channels-stage');
     const linesSvg = document.getElementById('channels-orbit-lines');
@@ -46,7 +46,7 @@ const EmployerBranding: React.FC = () => {
     let convergenceActive = false;
     let measureTimeout1: any, measureTimeout2: any;
     let sectionObs: IntersectionObserver | null = null;
-    let measureFn: () => void = () => {};
+    let measureFn: () => void = () => { };
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
@@ -165,8 +165,8 @@ const EmployerBranding: React.FC = () => {
 
   return (
     <main id="main-content">
-      
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={data.hero.headlineParts}
         headlineAccent={data.hero.headlineAccent}
         description={data.hero.description}
@@ -175,16 +175,16 @@ const EmployerBranding: React.FC = () => {
 
       {data.stats && <ServiceStats data={data.stats} />}
       <ServiceHandoff />
-      
+
       {data.problem && <ServiceProblem data={data.problem} />}
       <ServiceHandoff />
-      
+
       {data.vs && <ServiceVs data={data.vs} />}
       <ServiceHandoff />
-      
+
       {data.uses && <ServiceUses data={data.uses} />}
       <ServiceHandoff />
-      
+
       {/* CHANNELS — When Talent Needs More Than a Job Description */}
       {data.channels && (
         <section className="svc-channels has-mobile-signal">
@@ -212,7 +212,7 @@ const EmployerBranding: React.FC = () => {
       )}
 
       <ServiceHandoff />
-      
+
       {data.whenToUse && <ServiceWhenToUse data={data.whenToUse} />}
       <ServiceHandoff />
 
@@ -220,15 +220,15 @@ const EmployerBranding: React.FC = () => {
       <ServiceHandoff />
 
       {data.process && <ServiceProcess data={data.process} />}
-      
+
       <Logos title="Trusted by Brands That Put People First" />
-      
+
       <Testimonials />
       <ServiceHandoff />
-      
+
       {data.fit && <ServiceFit data={data.fit} />}
       <ServiceHandoff />
-      
+
       {data.finalCta && <ServiceFinalCTA data={data.finalCta} />}
       <Contact />
       {data.faq && data.faq.items && data.faq.items.length > 0 && (
