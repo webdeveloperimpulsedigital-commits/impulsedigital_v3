@@ -6,5 +6,8 @@
  * Staging:    NEXT_PUBLIC_SITE_URL=https://cyan-woodcock-459640.hostingersite.com
  * Production: NEXT_PUBLIC_SITE_URL=https://www.theimpulsedigital.com
  */
-export const SITE_URL =
+const rawSiteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.theimpulsedigital.com';
+
+export const SITE_URL = rawSiteUrl.endsWith('/') ? rawSiteUrl.slice(0, -1) : rawSiteUrl;
+
