@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
-// import Chatbot from '@/components/Chatbot/Chatbot';
+import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -67,6 +67,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -170,8 +172,8 @@ export default function RootLayout({
         {/* Footer */}
         <Footer />
         
-        {/* AI Chatbot Widget (Temporarily disabled to fix rendering block) */}
-        {/* <Chatbot /> */}
+        {/* AI Chatbot Widget */}
+        <ChatbotWrapper />
 
         {/* Vanilla-tilt */}
         <Script

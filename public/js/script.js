@@ -216,11 +216,7 @@
         camera.position.z = 35;
 
         // Interaction
-        let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
-        window.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX - window.innerWidth / 2) * 0.05;
-            mouseY = (event.clientY - window.innerHeight / 2) * 0.05;
-        });
+        // Unused mouseX/mouseY variables removed to optimize WebGL event cycles.
 
         const clock = new THREE.Clock();
         let lastFrameTime = 0;
@@ -307,11 +303,16 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
+        let isScrolled = false;
         const handleNavScroll = () => {
             const nav = document.getElementById('main-nav');
             if (nav) {
-                if (window.scrollY > 10) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
+                const scrolled = window.scrollY > 10;
+                if (scrolled !== isScrolled) {
+                    isScrolled = scrolled;
+                    if (scrolled) nav.classList.add('scrolled');
+                    else nav.classList.remove('scrolled');
+                }
             }
         };
 
@@ -346,21 +347,35 @@
         const cursorDot = document.querySelector('.cursor-dot');
 
         if (cursor && cursorDot) {
+            const xTo = gsap.quickTo(cursor, "x", { duration: 0.18, ease: 'power2.out' });
+            const yTo = gsap.quickTo(cursor, "y", { duration: 0.18, ease: 'power2.out' });
+            const dxTo = gsap.quickTo(cursorDot, "x", { duration: 0.05 });
+            const dyTo = gsap.quickTo(cursorDot, "y", { duration: 0.05 });
+
             window.addEventListener('mousemove', (e) => {
-                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.18, ease: 'power2.out' });
-                gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0.05 });
+                xTo(e.clientX);
+                yTo(e.clientY);
+                dxTo(e.clientX);
+                dyTo(e.clientY);
             });
         }
 
         const magneticLinks = document.querySelectorAll('.magnetic-link, .work-item, .hs-card, .test-card, .btn, .acc-header');
 
         magneticLinks.forEach(link => {
+            let rect = null;
+            link.addEventListener('mouseenter', () => {
+                if (link.classList.contains('magnetic-link')) {
+                    rect = link.getBoundingClientRect();
+                }
+            });
             link.addEventListener('mouseleave', () => {
+                rect = null;
                 gsap.to(link, { x: 0, y: 0, duration: 0.5, ease: 'power2.out' });
             });
             if (link.classList.contains('magnetic-link')) {
                 link.addEventListener('mousemove', (e) => {
-                    const rect = link.getBoundingClientRect();
+                    if (!rect) rect = link.getBoundingClientRect();
                     const relX = e.clientX - rect.left - rect.width / 2;
                     const relY = e.clientY - rect.top - rect.height / 2;
                     gsap.to(link, { x: relX * 0.2, y: relY * 0.2, duration: 0.3, ease: 'power2.out' });
@@ -586,13 +601,15 @@
             });
 
             // Spotlight Glow Pointer Tracking (Extreme GSAP-Smoothed Effect)
-            document.addEventListener('mousemove', (e) => {
-                const { clientX, clientY } = e;
-
-                document.querySelectorAll('.logo-card').forEach(card => {
-                    const rect = card.getBoundingClientRect();
-                    const x = clientX - rect.left;
-                    const y = clientY - rect.top;
+            document.querySelectorAll('.logo-card').forEach(card => {
+                let rect = null;
+                card.addEventListener('mouseenter', () => {
+                    rect = card.getBoundingClientRect();
+                });
+                card.addEventListener('mousemove', (e) => {
+                    if (!rect) rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
 
                     // Use GSAP to smooth out the CSS variable updates (removes stutter)
                     gsap.to(card, {
@@ -603,12 +620,19 @@
                         overwrite: 'auto'
                     });
                 });
+                card.addEventListener('mouseleave', () => {
+                    rect = null;
+                });
             });
 
             // Custom Testimonial Interaction (Guaranteed Snap-Back)
             document.querySelectorAll('.test-card').forEach(card => {
+                let rect = null;
+                card.addEventListener('mouseenter', () => {
+                    rect = card.getBoundingClientRect();
+                });
                 card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
+                    if (!rect) rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
                     const centerX = rect.width / 2;
@@ -626,6 +650,7 @@
                 });
 
                 card.addEventListener('mouseleave', () => {
+                    rect = null;
                     gsap.to(card, {
                         rotateX: 0,
                         rotateY: 0,
@@ -768,14 +793,21 @@
         });
     };
 
-    if (window.THREE) {
-        init();
-    } else {
+    const checkAndInit = () => {
+        if (window.THREE && window.gsap && window.ScrollTrigger && window.SplitType && window.Lenis) {
+            init();
+            return true;
+        }
+        return false;
+    };
+
+    if (!checkAndInit()) {
         const interval = setInterval(() => {
-            if (window.THREE) {
+            if (checkAndInit()) {
                 clearInterval(interval);
-                init();
             }
         }, 50);
+        // Safety timeout to prevent infinite polling if something goes wrong
+        setTimeout(() => clearInterval(interval), 10000);
     }
 })();
