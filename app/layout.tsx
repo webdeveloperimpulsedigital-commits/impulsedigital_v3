@@ -62,9 +62,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Preconnect for Google Fonts (if any inline usage) */}
+        {/* Preconnect for Google Fonts & Tag Manager/Analytics */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -174,31 +176,31 @@ export default function RootLayout({
         {/* Vanilla-tilt */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
 
         {/* Lenis smooth scroll */}
         <Script
           src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
 
         {/* GSAP core */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
 
         {/* GSAP ScrollTrigger — after GSAP loads */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
 
         {/* SplitType */}
         <Script
           src="https://unpkg.com/split-type"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
 
         {/* Three.js — loaded after interactive to not block LCP */}

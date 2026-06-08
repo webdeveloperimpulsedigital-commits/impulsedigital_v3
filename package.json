@@ -10,6 +10,7 @@
     "postbuild": "node scripts/ensure-wordpress.js"
   },
   "dependencies": {
+    "image-size": "^2.0.2",
     "next": "16.2.6",
     "pagespeed-mcp-server": "^2.0.1",
     "react": "19.2.4",
