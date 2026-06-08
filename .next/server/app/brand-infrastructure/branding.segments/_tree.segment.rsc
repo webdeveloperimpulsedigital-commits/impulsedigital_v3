@@ -4,4 +4,4 @@
 :HL["https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap","style"]
 :HL["/css/styles.css?v=40","style"]
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"brand-infrastructure","param":null,"prefetchHints":0,"slots":{"children":{"name":"branding","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"acGzoZ4kPNQ7VPUD6lDSG"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"brand-infrastructure","param":null,"prefetchHints":0,"slots":{"children":{"name":"branding","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"0hgn8U161uGc8FMFgwahJ"}
