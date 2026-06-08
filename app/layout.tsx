@@ -190,19 +190,19 @@ export default function RootLayout({
         {/* GSAP core */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
 
         {/* GSAP ScrollTrigger — after GSAP loads */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
 
         {/* SplitType */}
         <Script
           src="https://unpkg.com/split-type"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
 
         {/* Three.js — loaded after interactive to not block LCP */}

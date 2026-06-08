@@ -71,11 +71,11 @@ export default function Chatbot() {
     try {
       if (zohoFormRef.current) {
         const form = zohoFormRef.current;
-        const nameInput = form.querySelector('input[name="Last Name"]') as HTMLInputElement;
-        const companyInput = form.querySelector('input[name="Company"]') as HTMLInputElement;
-        const emailInput = form.querySelector('input[name="Email"]') as HTMLInputElement;
-        const phoneInput = form.querySelector('input[name="Phone"]') as HTMLInputElement;
-        const descInput = form.querySelector('textarea[name="Description"]') as HTMLTextAreaElement;
+        const nameInput = form.elements.namedItem('Last Name') as HTMLInputElement;
+        const companyInput = form.elements.namedItem('Company') as HTMLInputElement;
+        const emailInput = form.elements.namedItem('Email') as HTMLInputElement;
+        const phoneInput = form.elements.namedItem('Phone') as HTMLInputElement;
+        const descInput = form.elements.namedItem('Description') as HTMLTextAreaElement;
 
         if (nameInput) nameInput.value = info.name || 'Website Visitor';
         if (companyInput) companyInput.value = info.company || 'Not Specified';
@@ -86,8 +86,25 @@ export default function Chatbot() {
           descInput.value = `Requirement: ${info.userRequirement || 'Not specified'}\nRecommended Direction: ${info.recommendedDirection || 'Not specified'}\nPreferred connection time: ${info.preferredTime || 'Not specified'}`;
         }
 
+        // Set Zoho SalesIQ unique visitor ID and details
+        try {
+          const $zoho = (window as any).$zoho;
+          if ($zoho && $zoho.salesiq) {
+            const ldtuvidInput = form.elements.namedItem('LDTuvid') as HTMLInputElement;
+            if (ldtuvidInput) {
+              ldtuvidInput.value = $zoho.salesiq.visitor.uniqueid() || '';
+            }
+            $zoho.salesiq.visitor.name(info.name || 'Website Visitor');
+            if (info.email) {
+              $zoho.salesiq.visitor.email(info.email);
+            }
+          }
+        } catch (err) {
+          console.error('Error tracking SalesIQ visitor in chatbot:', err);
+        }
+
         // Append g-recaptcha-response to the form dynamically
-        let captchaInput = form.querySelector('textarea[name="g-recaptcha-response"]') as HTMLTextAreaElement;
+        let captchaInput = form.elements.namedItem('g-recaptcha-response') as HTMLTextAreaElement;
         if (!captchaInput) {
           captchaInput = document.createElement('textarea');
           captchaInput.name = 'g-recaptcha-response';
@@ -126,6 +143,67 @@ export default function Chatbot() {
       const hn = window.location.hostname;
       setIsLocalhost(hn === 'localhost' || hn === '127.0.0.1' || hn.startsWith('192.168.'));
     }
+  }, []);
+
+  // Load Zoho SalesIQ and WebForm Analytics scripts if not already present
+  useEffect(() => {
+    const loadZohoScripts = () => {
+      // 1. Zoho SalesIQ
+      if (!document.getElementById('zsiqscript')) {
+        const $zoho = (window as any).$zoho || {};
+        (window as any).$zoho = $zoho;
+        $zoho.salesiq = $zoho.salesiq || {
+          widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
+          values: {},
+          ready: function() {}
+        };
+        const s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.id = 'zsiqscript';
+        s.defer = true;
+        s.src = 'https://salesiq.zoho.in/widget';
+        document.body.appendChild(s);
+      }
+
+      // 2. Zoho WebForm Analytics
+      if (!document.getElementById('wf_anal')) {
+        const s = document.createElement('script');
+        s.id = 'wf_anal';
+        s.src = 'https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=067668c42525f92cfed5f91050cdbfa8489c91874a5a54216702fcf877cd09f2852c07a02518ad7dce00158ab836b3bbgidf49cea193c2cf8b393426a36d01b0ab349078788f5831fbf064b6096965a444dgid0c1d92dd9017ebb9f13e39c13cebbc5bf318167b2b6f826f9a7040e44cc9d9abgidc6e30ae4a0a75b59822449105d7bdf8697ffbb537da4c276848fdfd4b89026a2&tw=6415fe8afd736bd3ade910387402f0e6a9a16c831797ff621152ee2c123cbbf3';
+        s.defer = true;
+        document.body.appendChild(s);
+      }
+    };
+
+    // Trigger on interaction or fallback after 4 seconds
+    const triggerLoad = () => {
+      loadZohoScripts();
+      cleanupListeners();
+    };
+
+    const addListeners = () => {
+      window.addEventListener('scroll', triggerLoad, { passive: true });
+      window.addEventListener('mousemove', triggerLoad, { passive: true });
+      window.addEventListener('mousedown', triggerLoad, { passive: true });
+      window.addEventListener('touchstart', triggerLoad, { passive: true });
+      window.addEventListener('keydown', triggerLoad, { passive: true });
+    };
+
+    const cleanupListeners = () => {
+      window.removeEventListener('scroll', triggerLoad);
+      window.removeEventListener('mousemove', triggerLoad);
+      window.removeEventListener('mousedown', triggerLoad);
+      window.removeEventListener('touchstart', triggerLoad);
+      window.removeEventListener('keydown', triggerLoad);
+    };
+
+    addListeners();
+    const timeoutId = setTimeout(triggerLoad, 4000);
+
+    return () => {
+      cleanupListeners();
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Scroll to bottom on new messages
@@ -546,27 +624,31 @@ Please connect with me.`;
         <iframe name="zoho-submit-iframe" style={{ display: 'none' }}></iframe>
         <form
           ref={zohoFormRef}
+          id="webform1132219000000597005"
+          name="WebToLeads1132219000000597005"
           action="https://crm.zoho.in/crm/WebToLeadForm"
           method="POST"
           target="zoho-submit-iframe"
           style={{ display: 'none' }}
           acceptCharset="UTF-8"
         >
-          <input type="hidden" name="xnQsjsdp" value="3fdab897f0bcfb046c089a96653ff3ce3e052ac4ee2710bf1975f74e718c56f5" />
-          <input type="hidden" name="xmIwtLD" value="73b678a6bc6723d2f2228f3b5916f3593bf43d1fbc528d305c97cc00bea7dec6afe8822544be20609bd9f6ee44997ec6" />
-          <input type="hidden" name="actionType" value="TGVhZHM=" />
-          <input type="hidden" name="returnURL" value="https://www.theimpulsedigital.com/thank-you/" />
+          <input type="text" style={{display:'none'}} name="xnQsjsdp" value="3fdab897f0bcfb046c089a96653ff3ce3e052ac4ee2710bf1975f74e718c56f5" readOnly />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+          <input type="text" style={{display:'none'}} name="xmIwtLD" value="73b678a6bc6723d2f2228f3b5916f3593bf43d1fbc528d305c97cc00bea7dec6afe8822544be20609bd9f6ee44997ec6" readOnly />
+          <input type="text" style={{display:'none'}} name="actionType" value="TGVhZHM=" readOnly />
+          <input type="text" style={{display:'none'}} name="returnURL" value="https://www.theimpulsedigital.com/thank-you/" readOnly />
           <input type="hidden" name="Lead Source" value="Website Contact Us" />
-          <input type="hidden" name="aG9uZXlwb3Q" value="" />
-          <input type="hidden" name="zc_gad" value="" />
-          <input type="hidden" name="ldeskuid" value="" />
-          <input type="hidden" name="LDTuvid" value="" />
+          {/* Do not remove this code. */}
+          <input type="text" style={{display:'none'}} id="ldeskuid" name="ldeskuid" readOnly />
+          <input type="text" style={{display:'none'}} id="LDTuvid" name="LDTuvid" readOnly />
+          {/* Do not remove this code. */}
+          <input type="text" style={{display: 'none'}} name="aG9uZXlwb3Q" value="" readOnly />
           
-          <input type="hidden" name="Last Name" />
-          <input type="hidden" name="Company" />
-          <input type="hidden" name="Email" />
-          <input type="hidden" name="Phone" />
-          <textarea name="Description" style={{ display: 'none' }} />
+          <input type="text" style={{display:'none'}} id="Last_Name" name="Last Name" readOnly />
+          <input type="text" style={{display:'none'}} id="Company" name="Company" readOnly />
+          <input type="text" style={{display:'none'}} id="Email" name="Email" readOnly />
+          <input type="text" style={{display:'none'}} id="Phone" name="Phone" readOnly />
+          <textarea id="Description" name="Description" style={{ display: 'none' }} readOnly />
         </form>
       </div>
     </>

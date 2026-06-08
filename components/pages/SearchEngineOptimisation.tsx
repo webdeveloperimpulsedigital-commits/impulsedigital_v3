@@ -27,14 +27,38 @@ import { SEOLocationsGrid } from '@/components/Service/SEOLocationsGrid';
 import { searchEngineOptimisationData as data } from '@/data/searchEngineOptimisationData';
 
 
+/** Helper: run `fn` as soon as window.gsap & window.ScrollTrigger are both loaded.
+ *  Returns a cleanup function that cancels the poll if the component unmounts first. */
+function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | void, timeoutMs = 8000): () => void {
+  if (typeof window === 'undefined') return () => {};
+  const w = window as any;
+  // Already loaded → run immediately
+  if (w.gsap && w.ScrollTrigger) {
+    const cleanup = fn(w.gsap, w.ScrollTrigger);
+    return cleanup || (() => {});
+  }
+  let cancelled = false;
+  let cleanupFn: (() => void) | void;
+  const interval = setInterval(() => {
+    if (cancelled) { clearInterval(interval); return; }
+    if (w.gsap && w.ScrollTrigger) {
+      clearInterval(interval);
+      cleanupFn = fn(w.gsap, w.ScrollTrigger);
+    }
+  }, 80);
+  const timeout = setTimeout(() => clearInterval(interval), timeoutMs);
+  return () => {
+    cancelled = true;
+    clearInterval(interval);
+    clearTimeout(timeout);
+    if (cleanupFn) cleanupFn();
+  };
+}
+
 const SearchEngineOptimisation: React.FC = () => {
   useServicePageBackground();
 
   useEffect(() => {
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
     document.body.classList.add('seo-page');
     
     // Channels orbit animation
@@ -51,108 +75,110 @@ const SearchEngineOptimisation: React.FC = () => {
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
-    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath && gsap && ScrollTrigger) {
-      let chipPositions: any[] = [];
-      let cx = 0, cy = 0;
-      let markRadius = 80;
+    const cancel = whenGsapReady((gsap, ScrollTrigger) => {
+      if (!isMobileChannels && stage && linesSvg && centerEl && centerPath) {
+        let chipPositions: any[] = [];
+        let cx = 0, cy = 0;
+        let markRadius = 80;
 
-      measureFn = () => {
-        const sr = stage.getBoundingClientRect();
-        linesSvg.setAttribute('viewBox', `0 0 ${sr.width} ${sr.height}`);
-        cx = sr.width / 2;
-        cy = sr.height / 2;
-        const centerRect = centerEl.getBoundingClientRect();
-        markRadius = Math.min(centerRect.width, centerRect.height) * 0.46;
+        measureFn = () => {
+          const sr = stage.getBoundingClientRect();
+          linesSvg.setAttribute('viewBox', `0 0 ${sr.width} ${sr.height}`);
+          cx = sr.width / 2;
+          cy = sr.height / 2;
+          const centerRect = centerEl.getBoundingClientRect();
+          markRadius = Math.min(centerRect.width, centerRect.height) * 0.46;
 
-        chipPositions = [...stage.querySelectorAll('.svc-channel-chip')].map((chip) => {
-          const cr = chip.getBoundingClientRect();
-          const x = cr.left - sr.left + cr.width / 2;
-          const y = cr.top - sr.top + cr.height / 2;
-          const dx = cx - x;
-          const dy = cy - y;
-          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const tx = x + dx * ((dist - markRadius) / dist);
-          const ty = y + dy * ((dist - markRadius) / dist);
-          return { x, y, tx, ty };
-        });
+          chipPositions = [...stage.querySelectorAll('.svc-channel-chip')].map((chip) => {
+            const cr = chip.getBoundingClientRect();
+            const x = cr.left - sr.left + cr.width / 2;
+            const y = cr.top - sr.top + cr.height / 2;
+            const dx = cx - x;
+            const dy = cy - y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            const tx = x + dx * ((dist - markRadius) / dist);
+            const ty = y + dy * ((dist - markRadius) / dist);
+            return { x, y, tx, ty };
+          });
 
-        linesSvg.querySelectorAll('line').forEach(l => l.remove());
-        chipPositions.forEach((p) => {
-          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-          line.setAttribute('x1', p.x);
-          line.setAttribute('y1', p.y);
-          line.setAttribute('x2', p.tx);
-          line.setAttribute('y2', p.ty);
-          linesSvg.appendChild(line);
-        });
-      };
+          linesSvg.querySelectorAll('line').forEach(l => l.remove());
+          chipPositions.forEach((p) => {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', p.x);
+            line.setAttribute('y1', p.y);
+            line.setAttribute('x2', p.tx);
+            line.setAttribute('y2', p.ty);
+            linesSvg.appendChild(line);
+          });
+        };
 
-      const flashCenter = () => {
-        gsap.fromTo(centerPath,
-          { strokeWidth: 6, stroke: 'rgba(138, 92, 246, 0.85)' },
-          {
-            strokeWidth: 11,
-            stroke: 'rgba(220, 200, 255, 1)',
-            duration: 0.18,
-            yoyo: true,
-            repeat: 1,
-            ease: 'power2.out'
-          }
-        );
-      };
+        const flashCenter = () => {
+          gsap.fromTo(centerPath,
+            { strokeWidth: 6, stroke: 'rgba(138, 92, 246, 0.85)' },
+            {
+              strokeWidth: 11,
+              stroke: 'rgba(220, 200, 255, 1)',
+              duration: 0.18,
+              yoyo: true,
+              repeat: 1,
+              ease: 'power2.out'
+            }
+          );
+        };
 
-      const emitPulse = () => {
-        if (!chipPositions.length) return;
-        const idx = Math.floor(Math.random() * chipPositions.length);
-        const p = chipPositions[idx];
-        const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        pulse.setAttribute('cx', String(p.x));
-        pulse.setAttribute('cy', String(p.y));
-        pulse.setAttribute('r', '4.5');
-        pulse.setAttribute('class', 'svc-channels-pulse');
-        linesSvg.appendChild(pulse);
+        const emitPulse = () => {
+          if (!chipPositions.length) return;
+          const idx = Math.floor(Math.random() * chipPositions.length);
+          const p = chipPositions[idx];
+          const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          pulse.setAttribute('cx', String(p.x));
+          pulse.setAttribute('cy', String(p.y));
+          pulse.setAttribute('r', '4.5');
+          pulse.setAttribute('class', 'svc-channels-pulse');
+          linesSvg.appendChild(pulse);
 
-        gsap.timeline({ onComplete: () => pulse.remove() })
-          .fromTo(pulse, { opacity: 0, attr: { r: 2 } }, { opacity: 1, attr: { r: 5 }, duration: 0.35, ease: 'power2.out' })
-          .to(pulse, {
-            attr: { cx: p.tx, cy: p.ty },
-            duration: 1.3,
-            ease: 'power2.in'
-          }, 0)
-          .to(pulse, { opacity: 0, attr: { r: 2 }, duration: 0.2, ease: 'power2.in' }, '-=0.18')
-          .add(flashCenter, '-=0.18');
-      };
+          gsap.timeline({ onComplete: () => pulse.remove() })
+            .fromTo(pulse, { opacity: 0, attr: { r: 2 } }, { opacity: 1, attr: { r: 5 }, duration: 0.35, ease: 'power2.out' })
+            .to(pulse, {
+              attr: { cx: p.tx, cy: p.ty },
+              duration: 1.3,
+              ease: 'power2.in'
+            }, 0)
+            .to(pulse, { opacity: 0, attr: { r: 2 }, duration: 0.2, ease: 'power2.in' }, '-=0.18')
+            .add(flashCenter, '-=0.18');
+        };
 
-      const startConvergence = () => {
-        if (convergenceActive) return;
-        convergenceActive = true;
-        gsap.fromTo(centerPath,
-          { opacity: 0.15, strokeWidth: 4 },
-          { opacity: 1, strokeWidth: 6, duration: 1.6, ease: 'power2.out' }
-        );
-        pulseTimer = setInterval(emitPulse, 380);
-      };
+        const startConvergence = () => {
+          if (convergenceActive) return;
+          convergenceActive = true;
+          gsap.fromTo(centerPath,
+            { opacity: 0.15, strokeWidth: 4 },
+            { opacity: 1, strokeWidth: 6, duration: 1.6, ease: 'power2.out' }
+          );
+          pulseTimer = setInterval(emitPulse, 380);
+        };
 
-      const stopConvergence = () => {
-        convergenceActive = false;
-        if (pulseTimer) { clearInterval(pulseTimer); pulseTimer = null; }
-      };
+        const stopConvergence = () => {
+          convergenceActive = false;
+          if (pulseTimer) { clearInterval(pulseTimer); pulseTimer = null; }
+        };
 
-      measureFn();
-      measureTimeout1 = setTimeout(measureFn, 250);
-      measureTimeout2 = setTimeout(measureFn, 800);
-      window.addEventListener('resize', measureFn);
+        measureFn();
+        measureTimeout1 = setTimeout(measureFn, 250);
+        measureTimeout2 = setTimeout(measureFn, 800);
+        window.addEventListener('resize', measureFn);
 
-      sectionObs = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) startConvergence();
-          else stopConvergence();
-        });
-      }, { threshold: 0.2 });
-      sectionObs.observe(stage);
+        sectionObs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) startConvergence();
+            else stopConvergence();
+          });
+        }, { threshold: 0.2 });
+        sectionObs.observe(stage);
 
-      gsap.set(centerPath, { opacity: 0.15 });
-    }
+        gsap.set(centerPath, { opacity: 0.15 });
+      }
+    });
 
     return () => {
       document.body.classList.remove('seo-page');
@@ -161,6 +187,7 @@ const SearchEngineOptimisation: React.FC = () => {
       clearTimeout(measureTimeout1);
       clearTimeout(measureTimeout2);
       if (sectionObs) sectionObs.disconnect();
+      cancel();
     };
   }, []);
 

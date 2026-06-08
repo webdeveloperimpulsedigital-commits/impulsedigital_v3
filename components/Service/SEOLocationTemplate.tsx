@@ -15,60 +15,87 @@ interface SEOData {
   faq: { title: string; items: { question: string; answer: string[] }[] };
 }
 
+/** Helper: run `fn` as soon as window.gsap & window.ScrollTrigger are both loaded.
+ *  Returns a cleanup function that cancels the poll if the component unmounts first. */
+function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | void, timeoutMs = 8000): () => void {
+  if (typeof window === 'undefined') return () => {};
+  const w = window as any;
+  // Already loaded → run immediately
+  if (w.gsap && w.ScrollTrigger) {
+    const cleanup = fn(w.gsap, w.ScrollTrigger);
+    return cleanup || (() => {});
+  }
+  let cancelled = false;
+  let cleanupFn: (() => void) | void;
+  const interval = setInterval(() => {
+    if (cancelled) { clearInterval(interval); return; }
+    if (w.gsap && w.ScrollTrigger) {
+      clearInterval(interval);
+      cleanupFn = fn(w.gsap, w.ScrollTrigger);
+    }
+  }, 80);
+  const timeout = setTimeout(() => clearInterval(interval), timeoutMs);
+  return () => {
+    cancelled = true;
+    clearInterval(interval);
+    clearTimeout(timeout);
+    if (cleanupFn) cleanupFn();
+  };
+}
+
 const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   useEffect(() => {
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    if (!gsap || !ScrollTrigger) return;
-    
-    let ctx = gsap.context(() => {
-      // Grid Cards
-      const cards = document.querySelectorAll('.seo-loc-card');
-    if (cards.length) {
-      gsap.set(cards, { opacity: 0, y: 40 });
-      ScrollTrigger.batch('.seo-loc-card', {
-        onEnter: (elements: any) => {
-          gsap.to(elements, {
-            opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+    const cancel = whenGsapReady((gsap, ScrollTrigger) => {
+      const ctx = gsap.context(() => {
+        // Grid Cards
+        const cards = document.querySelectorAll('.seo-loc-card');
+        if (cards.length) {
+          gsap.set(cards, { opacity: 0, y: 40 });
+          ScrollTrigger.batch('.seo-loc-card', {
+            onEnter: (elements: any) => {
+              gsap.to(elements, {
+                opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out'
+              });
+            }
           });
         }
-      });
-    }
 
-    // Fit List
-    const fitItems = document.querySelectorAll('.svc-text-list-wrapper .svc-fit-list li');
-    if (fitItems.length) {
-      gsap.set(fitItems, { opacity: 0, x: -12 });
-      ScrollTrigger.create({
-        trigger: '.svc-text-list-wrapper',
-        start: 'top 65%',
-        once: true,
-        onEnter: () => {
-          gsap.to(fitItems, {
-            opacity: 1, x: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out'
+        // Fit List
+        const fitItems = document.querySelectorAll('.svc-text-list-wrapper .svc-fit-list li');
+        if (fitItems.length) {
+          gsap.set(fitItems, { opacity: 0, x: -12 });
+          ScrollTrigger.create({
+            trigger: '.svc-text-list-wrapper',
+            start: 'top 65%',
+            once: true,
+            onEnter: () => {
+              gsap.to(fitItems, {
+                opacity: 1, x: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out'
+              });
+            }
           });
         }
-      });
-    }
 
-    // Scrubber Process
-    const textFills = gsap.utils.toArray('.scrub-container .text-fill');
-    textFills.forEach((fill: any) => {
-      gsap.to(fill, {
-        backgroundPositionX: '0%', ease: 'none',
-        scrollTrigger: { trigger: fill, scrub: 1, start: 'top 80%', end: 'top 20%' }
+        // Scrubber Process
+        const textFills = gsap.utils.toArray('.scrub-container .text-fill');
+        textFills.forEach((fill: any) => {
+          gsap.to(fill, {
+            backgroundPositionX: '0%', ease: 'none',
+            scrollTrigger: { trigger: fill, scrub: 1, start: 'top 80%', end: 'top 20%' }
+          });
+        });
       });
+
+      return () => {
+        if (ctx) ctx.revert();
+      };
     });
 
-
-    
-    }); // End of gsap.context
-
-    return () => ctx.revert();
+    return () => {
+      cancel();
+    };
   }, []);
 
   const toggleFaq = (index: number) => {
