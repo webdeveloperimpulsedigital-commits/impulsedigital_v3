@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/02mwm~nf6lgvk.js","/_next/static/chunks/0d3shmwh5_nmn.js"],""]
-6:I[97367,["/_next/static/chunks/02mwm~nf6lgvk.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:I[22016,["/_next/static/chunks/0p3e74px1dngy.js","/_next/static/chunks/0d3shmwh5_nmn.js"],""]
+6:I[97367,["/_next/static/chunks/0p3e74px1dngy.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-:HL["https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2023/06/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.jpg","image"]
-3:T3151,<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="872" height="572" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/07/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan-1-1.jpg" alt="" class="wp-image-5205" srcset="/blog/wp-content/uploads/2023/07/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan-1-1.jpg 872w, /blog/wp-content/uploads/2023/07/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan-1-1-300x197.jpg 300w, /blog/wp-content/uploads/2023/07/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan-1-1-768x504.jpg 768w" sizes="auto, (max-width: 872px) 100vw, 872px" /></figure>
+:HL["https://localhost/impulse-blog/wp-content/uploads/2023/06/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.jpg","image"]
+3:T2cdd,<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/07/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan-1-1.jpg" alt="" class="wp-image-5205"/></figure>
 </div>
 
 
@@ -24,7 +24,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T122922.011.jpg" alt="employer-branding" class="wp-image-5060" width="500" height="334" srcset="/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T122922.011.jpg 1000w, /blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T122922.011-300x200.jpg 300w, /blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T122922.011-768x512.jpg 768w" sizes="auto, (max-width: 500px) 100vw, 500px" /></figure>
+<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T122922.011.jpg" alt="employer-branding" class="wp-image-5060" width="500" height="334"/></figure>
 </div>
 
 
@@ -40,7 +40,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T123252.924.jpg" alt="Impact-of-employer-branding-on-marketing-plan " class="wp-image-5061" width="500" height="327" srcset="/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T123252.924.jpg 1000w, /blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T123252.924-300x196.jpg 300w, /blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T123252.924-768x502.jpg 768w" sizes="auto, (max-width: 500px) 100vw, 500px" /></figure>
+<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" src="https://theimpulsedigital.com/blog/wp-content/uploads/2023/06/MicrosoftTeams-image-2023-06-27T123252.924.jpg" alt="Impact-of-employer-branding-on-marketing-plan " class="wp-image-5061" width="500" height="327"/></figure>
 </div>
 
 
@@ -195,7 +195,7 @@
 
 
 <p class="wp-block-paragraph">As a creative agency, we aim to create a different place for the brand in the customer’s mind. Our team of experts help ease all your digital marketing problems with creative and noteworthy solutions; we assist clients by offering various <strong>digital marketing services.</strong>&nbsp;&nbsp;&nbsp;</p>
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"blog-post-page","children":[["$","div",null,{"className":"blog-post-featured-wrap","children":["$","img",null,{"src":"https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2023/06/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.jpg","alt":"Why Employer Branding Should Be an Essential Element of Your Marketing Plan","className":"blog-post-featured-img","width":"1200","height":"630"}]}],["$","div",null,{"className":"blog-post-header","children":["$","div",null,{"className":"blog-post-header-inner","children":[["$","$L2",null,{"href":"/blog/","className":"blog-back-link","children":[["$","svg",null,{"width":"16","height":"16","viewBox":"0 0 16 16","fill":"none","children":["$","path",null,{"d":"M13 8H3M3 8L7 4M3 8L7 12","stroke":"currentColor","strokeWidth":"1.5","strokeLinecap":"round","strokeLinejoin":"round"}]}],"All Articles"]}],["$","h1",null,{"className":"blog-post-title","dangerouslySetInnerHTML":{"__html":"Why Employer Branding Should Be an Essential Element of Your Marketing Plan "}}],["$","div",null,{"className":"blog-post-meta","children":[["$","time",null,{"dateTime":"2023-06-27T12:43:45","children":"27 June 2023"}],["$","span",null,{"className":"blog-post-meta-dot","children":"·"}],["$","span",null,{"children":"Impulse Digital"}]]}]]}]}],["$","div",null,{"className":"blog-post-content-wrap","children":["$","div",null,{"className":"blog-post-content-inner","children":["$","article",null,{"className":"wp-content","dangerouslySetInnerHTML":{"__html":"$3"}}]}]}],"$L4"]}],null,"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Aq4AvFwBQ-Co5HmEnhjEC"}
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"blog-post-page","children":[["$","div",null,{"className":"blog-post-featured-wrap","children":["$","img",null,{"src":"https://localhost/impulse-blog/wp-content/uploads/2023/06/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.jpg","alt":"Why Employer Branding Should Be an Essential Element of Your Marketing Plan","className":"blog-post-featured-img","width":"1200","height":"630"}]}],["$","div",null,{"className":"blog-post-header","children":["$","div",null,{"className":"blog-post-header-inner","children":[["$","$L2",null,{"href":"/blog/","className":"blog-back-link","children":[["$","svg",null,{"width":"16","height":"16","viewBox":"0 0 16 16","fill":"none","children":["$","path",null,{"d":"M13 8H3M3 8L7 4M3 8L7 12","stroke":"currentColor","strokeWidth":"1.5","strokeLinecap":"round","strokeLinejoin":"round"}]}],"All Articles"]}],["$","h1",null,{"className":"blog-post-title","dangerouslySetInnerHTML":{"__html":"Why Employer Branding Should Be an Essential Element of Your Marketing Plan "}}],["$","div",null,{"className":"blog-post-meta","children":[["$","time",null,{"dateTime":"2023-06-27T12:43:45","children":"27 June 2023"}],["$","span",null,{"className":"blog-post-meta-dot","children":"·"}],["$","span",null,{"children":"Impulse Digital"}]]}]]}]}],["$","div",null,{"className":"blog-post-content-wrap","children":["$","div",null,{"className":"blog-post-content-inner","children":["$","article",null,{"className":"wp-content","dangerouslySetInnerHTML":{"__html":"$3"}}]}]}],"$L4"]}],null,"$L5"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"PruZ6UMQ3fo_k8nq4fUv3"}
 4:["$","div",null,{"className":"blog-post-back-cta","children":["$","div",null,{"className":"blog-post-content-inner","children":["$","$L2",null,{"href":"/blog/","className":"blog-back-btn","children":"← Back to All Articles"}]}]}]
 5:["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]
 8:null
