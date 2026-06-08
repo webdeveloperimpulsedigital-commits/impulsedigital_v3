@@ -795,6 +795,12 @@
       "namedRegex": "^/terms\\-and\\-conditions(?:/)?$"
     },
     {
+      "page": "/test-chatbot",
+      "regex": "^/test\\-chatbot(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/test\\-chatbot(?:/)?$"
+    },
+    {
       "page": "/thank-you",
       "regex": "^/thank\\-you(?:/)?$",
       "routeKeys": {},

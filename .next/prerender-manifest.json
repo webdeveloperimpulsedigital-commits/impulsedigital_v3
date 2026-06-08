@@ -4482,6 +4482,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/test-chatbot": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/test-chatbot",
+      "dataRoute": "/test-chatbot.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/thank-you": {
       "experimentalBypassFor": [
         {
@@ -4539,8 +4563,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "a8aaf00b4e65401bb374ceed3e3a1ff5",
-    "previewModeSigningKey": "202d21029b49d0c694782504237dce46199167a936789f9b4f2042e9e4f1a336",
-    "previewModeEncryptionKey": "29373cec4c98a0c15b9787d9ef8704da3163b9f91e246e4f2a6595ce77ca0df4"
+    "previewModeId": "525af5c5be863457cd8eed16c6af9b5a",
+    "previewModeSigningKey": "2a23eca463e6f9b16cc01504bd1a25d9c8f1b5b835468b9a77dcd7baef8edb6f",
+    "previewModeEncryptionKey": "6f31e2a6af869a54dc2a3ed7459d016f6c12f7c35f3a82efb04c6f4109fef10f"
   }
 }

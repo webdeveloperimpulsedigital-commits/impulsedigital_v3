@@ -86,5 +86,6 @@
   "/services/page": "app/services/page.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/terms-and-conditions/page": "app/terms-and-conditions/page.js",
+  "/test-chatbot/page": "app/test-chatbot/page.js",
   "/thank-you/page": "app/thank-you/page.js"
 }
