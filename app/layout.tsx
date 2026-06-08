@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
+import InteractionLoader from '@/components/InteractionLoader';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -75,8 +76,7 @@ export default function RootLayout({
         />
 
 
-        {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=40" />
+        {/* External CSS is now imported via globals.css for Next.js minification */}
 
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
@@ -175,47 +175,8 @@ export default function RootLayout({
         {/* AI Chatbot Widget */}
         <ChatbotWrapper />
 
-        {/* Vanilla-tilt */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
-          strategy="afterInteractive"
-        />
-
-        {/* Lenis smooth scroll */}
-        <Script
-          src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"
-          strategy="afterInteractive"
-        />
-
-        {/* GSAP core */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* GSAP ScrollTrigger — after GSAP loads */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* SplitType */}
-        <Script
-          src="https://unpkg.com/split-type"
-          strategy="beforeInteractive"
-        />
-
-        {/* Three.js — loaded after interactive to not block LCP */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
-          strategy="afterInteractive"
-        />
-
-        {/* WebGL Canvas Particles & Animations script */}
-        <Script
-          src="/js/script.js?v=70"
-          strategy="afterInteractive"
-        />
+        {/* Interaction Loader: Defers heavy animation scripts until user interaction */}
+        <InteractionLoader />
 
 
         {/* Google Analytics */}
