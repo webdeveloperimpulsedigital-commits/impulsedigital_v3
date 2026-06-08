@@ -5192,6 +5192,7 @@ button,
     border: 1px solid transparent;
     background: linear-gradient(135deg, rgba(138, 92, 246, 0.3), transparent, rgba(138, 92, 246, 0.1)) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     opacity: 0;
@@ -6116,6 +6117,7 @@ button,
     margin-bottom: 1.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -9315,11 +9317,6 @@ button,
 .work-list-separator.active {
     transform: scaleX(1);
 }
-
-
-
-.svc-vs-statement,
-.svc-vs-statement-loud {}
 
 .gso-page .gso-understanding {
     padding-bottom: 8rem;
@@ -13416,6 +13413,7 @@ iframe[src*='zohopublic'] {
     .cosmos-section {
         overflow: clip;
         -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 
     .cosmos-wrapper {
