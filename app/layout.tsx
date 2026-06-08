@@ -123,10 +123,12 @@ export default function RootLayout({
   var obs=new MutationObserver(function(muts){
     muts.forEach(function(m){
       m.addedNodes.forEach(function(n){
-        removeZoho(n);
-        if(n.querySelectorAll){
-          n.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],[class*="siq_"],iframe[src*="zohopublic"],script[src*="zohopublic"],iframe[aria-label*="SalesIQ"]')
-           .forEach(removeZoho);
+        if (n.nodeType === 1) {
+          removeZoho(n);
+          if (n.tagName === 'DIV' || n.tagName === 'IFRAME' || n.tagName === 'SCRIPT') {
+            n.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],[class*="siq_"],iframe[src*="zohopublic"],script[src*="zohopublic"],iframe[aria-label*="SalesIQ"]')
+             .forEach(removeZoho);
+          }
         }
       });
     });
@@ -137,25 +139,6 @@ export default function RootLayout({
 })();`,
           }}
         />
-
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4TW43X3');`,
-          }}
-        />
-
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M4TW43X3"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
 
         {/* Client-side providers: scroll restoration, route animation */}
         <ClientProviders />
@@ -178,27 +161,8 @@ export default function RootLayout({
         {/* Interaction Loader: Defers heavy animation scripts until user interaction */}
         <InteractionLoader />
 
-
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="ga4-init"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EFFQ2YYFN8');`,
-          }}
-        />
-        {/* FontAwesome — switch from print to all media after load */}
-        <Script
-          id="fa-media-switch"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach(function(l){l.media='all';});`,
-          }}
-        />
+        {/* Google Tag Manager and GA are now deferred via InteractionLoader */}
+        {/* FontAwesome media switch is deferred via InteractionLoader */}
       </body>
     </html>
   );

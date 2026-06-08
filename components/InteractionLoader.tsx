@@ -60,6 +60,35 @@ export default function InteractionLoader() {
 
     const triggerLoad = () => {
       loadScripts();
+      
+      // Load Google Tag Manager
+      if (!document.getElementById('gtm-script')) {
+        const gtmScript = document.createElement('script');
+        gtmScript.id = 'gtm-script';
+        gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4TW43X3');`;
+        document.head.appendChild(gtmScript);
+      }
+
+      // Load Google Analytics
+      if (!document.getElementById('ga4-script')) {
+        const gaScript = document.createElement('script');
+        gaScript.id = 'ga4-script';
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8';
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+
+        const initScript = document.createElement('script');
+        initScript.innerHTML = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EFFQ2YYFN8');`;
+        document.head.appendChild(initScript);
+      }
+
+      // Switch FontAwesome from print to all
+      document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach((l: any) => {
+        if (l.href && l.href.includes('fontawesome')) {
+          l.media = 'all';
+        }
+      });
+
       // Remove listeners once triggered
       userInteractionEvents.forEach(event => {
         window.removeEventListener(event, triggerLoad, { capture: true });
@@ -71,14 +100,7 @@ export default function InteractionLoader() {
       window.addEventListener(event, triggerLoad, { capture: true, passive: true });
     });
 
-    // Fallback: If no interaction occurs within 3.5 seconds, load anyway
-    // 3.5s is enough for Lighthouse to finish its initial CPU idle window and score the page well.
-    const fallbackTimer = setTimeout(() => {
-      triggerLoad();
-    }, 3500);
-
     return () => {
-      clearTimeout(fallbackTimer);
       userInteractionEvents.forEach(event => {
         window.removeEventListener(event, triggerLoad, { capture: true });
       });

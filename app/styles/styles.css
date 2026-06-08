@@ -9115,7 +9115,7 @@ button,
         /* Disable compositor layer promotion on mobile â€” each will-change element
            costs GPU memory, and multiple hero lines + cosmos cards exhaust it */
         will-change: auto;
-        animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) 0.45s forwards;
+        animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) calc(0.45s + var(--hero-copy-delay, 0ms)) forwards;
     }
 
     .hero-copy-reveal.hero-copy-reveal-active {

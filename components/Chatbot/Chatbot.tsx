@@ -198,11 +198,9 @@ export default function Chatbot() {
     };
 
     addListeners();
-    const timeoutId = setTimeout(triggerLoad, 4000);
 
     return () => {
       cleanupListeners();
-      clearTimeout(timeoutId);
     };
   }, []);
 
