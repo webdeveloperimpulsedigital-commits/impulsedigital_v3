@@ -1,8 +1,8 @@
 export const seoBandraData = {
   "location": "Bandra",
   "hero": {
-    "title": "SEO Agency in Bandra",
-    "headline": "Performance Focused SEO Agency in Bandra",
+    "title": "#1 SEO Agency in Bandra",
+    "headline": "#1 SEO Agency in Bandra",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
       "If your business is based in Bandra, you already know how competitive things can get, not just offline, but online too. Whether it’s a service, a brand, or even a niche offering, people are constantly searching… and usually clicking on whatever shows up first and feels reliable.",
@@ -181,9 +181,9 @@ export const seoBandraData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Bandra?",
+        "question": "Is Impulse Digital the right SEO agency in Bandra for a growing local business?",
         "answer": [
-          "We focus on steady, long-term growth instead of quick fixes. The idea is to bring in the right audience and turn that into real business."
+          "A local retailer building a first search presence needs a different strategy from a Bandra manufacturer targeting procurement buyers. As a specialist SEO agency in Bandra, we diagnose your current position, competition, and buyer behaviour before recommending anything. If SEO is the right investment for your stage, we tell you clearly what it delivers and when."
         ]
       },
       {
@@ -207,7 +207,25 @@ export const seoBandraData = {
       {
         "question": "How do you measure success?",
         "answer": [
-          "We look at traffic, rankings, and, most importantly, whether you’re getting more inquiries or leads."
+          "We track rankings, traffic, and conversions to ensure your SEO efforts are contributing to overall business growth."
+        ]
+      },
+      {
+        "question": "How do I know if I am working with the best SEO agency in Bandra for my category?",
+        "answer": [
+          "Ask three questions. Can they show case study data from your category, not just claims? Do they audit your site before proposing a programme? And do they measure success in leads and revenue, not just rankings? The best SEO agency in Bandra answers all three with specific evidence. Impulse Digital publishes its results 737% traffic growth for Qure.ai, 101 merchant queries for Mastercard because accountability is how trust is built."
+        ]
+      },
+      {
+        "question": "Does Bandra's growing D2C ecosystem need a different SEO approach?",
+        "answer": [
+          "Yes. D2C and e-commerce businesses in Bandra need category pages ranking for purchase-intent keywords, product pages with schema markup and fast mobile load times, and internal architecture that passes authority from category to product pages systematically. Local service SEO and e-commerce SEO are structurally different programmes. Our E-Commerce and Shopify SEO practices are built for this the goal is organic revenue that compounds, not just product page rankings."
+        ]
+      },
+      {
+        "question": "What is the first step to starting an SEO engagement with Impulse Digital in Bandra?",
+        "answer": [
+          "A diagnostic conversation not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point for your business: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Bandra with 34 years of experience and results for Amazon India, HUL, and Mastercard, the first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]
