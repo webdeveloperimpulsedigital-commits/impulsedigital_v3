@@ -12,10 +12,10 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ handleToggle }) => {
     <div className={styles.chatHeader}>
       <div className={styles.headerInfo}>
         <div className={styles.avatar}>
-          <img 
-            src="/images/adwait_3d_avatar.png" 
-            alt="Adwait AI" 
-            className={styles.headerAvatarImg} 
+          <img
+            src="/images/About Us/avtar.webp"
+            alt="Adwait AI"
+            className={styles.headerAvatarImg}
           />
         </div>
         <div className={styles.titleContainer}>

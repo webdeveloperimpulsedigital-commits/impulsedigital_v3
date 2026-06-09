@@ -141,8 +141,70 @@ export default function Chatbot() {
     if (typeof window !== 'undefined') {
       const hn = window.location.hostname;
       setIsLocalhost(hn === 'localhost' || hn === '127.0.0.1' || hn.startsWith('192.168.'));
+
+      // Restore Chatbot state from sessionStorage
+      try {
+        const savedMessages = sessionStorage.getItem('chatbot_messages');
+        if (savedMessages) {
+          setMessages(JSON.parse(savedMessages));
+        }
+        
+        const savedLeadForm = sessionStorage.getItem('chatbot_lead_form');
+        if (savedLeadForm) {
+          setLeadForm(JSON.parse(savedLeadForm));
+        }
+
+        const savedHandoff = sessionStorage.getItem('chatbot_handoff_ready');
+        if (savedHandoff) {
+          setIsHandoffReady(savedHandoff === 'true');
+        }
+
+        const savedRecommendation = sessionStorage.getItem('chatbot_recommendation_given');
+        if (savedRecommendation) {
+          setRecommendationGiven(savedRecommendation === 'true');
+        }
+
+        const savedIsOpen = sessionStorage.getItem('chatbot_is_open');
+        if (savedIsOpen) {
+          setIsOpen(savedIsOpen === 'true');
+        }
+      } catch (e) {
+        console.error('Error restoring chatbot state from sessionStorage:', e);
+      }
     }
   }, []);
+
+  // Save Chatbot state changes to sessionStorage to survive page navigations
+  useEffect(() => {
+    if (typeof window !== 'undefined' && messages.length > 0) {
+      sessionStorage.setItem('chatbot_messages', JSON.stringify(messages));
+    }
+  }, [messages]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('chatbot_lead_form', JSON.stringify(leadForm));
+    }
+  }, [leadForm]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('chatbot_handoff_ready', isHandoffReady ? 'true' : 'false');
+    }
+  }, [isHandoffReady]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('chatbot_recommendation_given', recommendationGiven ? 'true' : 'false');
+    }
+  }, [recommendationGiven]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('chatbot_is_open', isOpen ? 'true' : 'false');
+    }
+  }, [isOpen]);
+
 
   useEffect(() => {
     let greeting = "How can I help you today?";
@@ -474,17 +536,7 @@ My Details:
 
   return (
     <>
-      {/* Floating Trigger Button */}
-      {!isOpen && (
-        <div 
-          className={styles.chatTooltip}
-          onClick={handleToggle}
-          id="chatbot-trigger-tooltip"
-        >
-          <span className={styles.tooltipDot}></span>
-          <span>How can we help you today?</span>
-        </div>
-      )}
+
       <button 
         className={`${styles.chatTrigger} ${isOpen ? styles.active : ''}`} 
         onClick={handleToggle}
