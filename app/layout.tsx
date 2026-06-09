@@ -5,11 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
-<<<<<<< HEAD
-=======
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import InteractionLoader from '@/components/InteractionLoader';
->>>>>>> 0aabcad7fbd8090666af4869807fde1ee7ec63d0
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -158,19 +155,11 @@ export default function RootLayout({
         {/* Footer */}
         <Footer />
         
-<<<<<<< HEAD
-        {/* Vanilla-tilt */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
-          strategy="afterInteractive"
-        />
-=======
         {/* AI Chatbot Widget */}
         <ChatbotWrapper />
 
         {/* Interaction Loader: Defers heavy animation scripts until user interaction */}
         <InteractionLoader />
->>>>>>> 0aabcad7fbd8090666af4869807fde1ee7ec63d0
 
         {/* Google Tag Manager and GA are now deferred via InteractionLoader */}
         {/* FontAwesome media switch is deferred via InteractionLoader */}
