@@ -164,10 +164,7 @@ export default function Chatbot() {
           setRecommendationGiven(savedRecommendation === 'true');
         }
 
-        const savedIsOpen = sessionStorage.getItem('chatbot_is_open');
-        if (savedIsOpen) {
-          setIsOpen(savedIsOpen === 'true');
-        }
+
       } catch (e) {
         console.error('Error restoring chatbot state from sessionStorage:', e);
       }
@@ -199,11 +196,7 @@ export default function Chatbot() {
     }
   }, [recommendationGiven]);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      sessionStorage.setItem('chatbot_is_open', isOpen ? 'true' : 'false');
-    }
-  }, [isOpen]);
+
 
 
   useEffect(() => {
