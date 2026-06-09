@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0ujqf0ucmygs1.css","style"]
+:HL["/_next/static/chunks/0-l1_spz2e8sc.css","style"]
 :HL["/_next/static/chunks/0fwx12ld_1jig.css","style"]
 :HL["/fonts/Satoshi-Bold.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
 :HL["/fonts/Satoshi-Regular.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
@@ -6,4 +6,4 @@
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
 :HL["/css/blog.css?v=1","style"]
 :HL["https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2025/09/evergreen-content-which-is-content-that-doesnt-go-out-date-1-new.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"storytelling-in-digital-marketing-how-to-build-emotional-brands","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Wf1MBmI6bC1wSpSW7NBES"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"storytelling-in-digital-marketing-how-to-build-emotional-brands","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"J4yDRcNyVie-oVO5gbAmh"}
