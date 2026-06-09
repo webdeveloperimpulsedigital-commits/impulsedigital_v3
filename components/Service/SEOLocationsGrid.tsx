@@ -40,8 +40,8 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <h2 className="svc-h2" style={{ 
-            fontSize: 'clamp(2.5rem, 4vw, 4rem)', 
+          <h2 className="svc-h2" style={{
+            fontSize: 'clamp(2.5rem, 4vw, 4rem)',
             textAlign: 'center',
             margin: '0 auto 3.5rem auto',
             width: '100%',
@@ -50,7 +50,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             Explore More <span style={{ color: 'var(--impulse-violet)' }}>Locations</span>
           </h2>
         </div>
-        
+
         <style>{`
           .loc-dropdown-container {
             max-width: 400px;
@@ -110,7 +110,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             transform: translateY(-10px);
             transition: all 0.3s ease;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-            overscroll-behavior: contain;
+            overscroll-behavior: auto !important;
             z-index: 99999;
           }
 
@@ -183,34 +183,34 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
 
           @media (max-width: 768px) {
             .loc-dropdown-list {
-              position: relative;
-              max-height: none;
-              overflow-y: visible;
-              top: 0;
-              margin-top: 0.5rem;
-              box-shadow: none;
+              position: absolute;
+              max-height: 320px;
+              overflow-y: auto;
+              -webkit-overflow-scrolling: touch;
+              top: calc(100% + 0.5rem);
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
             }
           }
         `}</style>
-        
+
         <div className="loc-dropdown-container" ref={dropdownRef}>
-          <div 
-            className="loc-dropdown-header" 
+          <div
+            className="loc-dropdown-header"
             onClick={() => setIsOpen(!isOpen)}
           >
             <span>Select a Location</span>
-            <svg 
-              className={`loc-dropdown-icon ${isOpen ? 'open' : ''}`} 
+            <svg
+              className={`loc-dropdown-icon ${isOpen ? 'open' : ''}`}
               width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </div>
-          
+
           <div className={`loc-dropdown-list ${isOpen ? 'open' : ''}`} data-lenis-prevent="true">
             {locationsToShow.slice(0, showAllLocations ? undefined : 5).map((loc) => (
-              <Link 
-                key={loc.slug} 
+              <Link
+                key={loc.slug}
                 href={`/brand-infrastructure/search-engine-optimisation/${loc.slug}/`}
                 className="loc-dropdown-item"
                 onClick={() => setIsOpen(false)}
@@ -219,7 +219,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
               </Link>
             ))}
             {!showAllLocations && locationsToShow.length > 5 && (
-              <button 
+              <button
                 className="loc-show-all-btn"
                 onClick={() => setShowAllLocations(true)}
               >
