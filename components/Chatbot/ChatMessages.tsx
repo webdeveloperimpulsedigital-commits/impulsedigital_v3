@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import styles from './Chatbot.module.css';
 
 interface Message {
@@ -30,13 +31,104 @@ interface ChatMessagesProps {
   messagesEndRef: React.RefObject<HTMLDivElement | null>;
 }
 
-const parseBoldText = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*)/);
-  return parts.map((part, idx) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={idx}>{part.slice(2, -2)}</strong>;
+interface Token {
+  type: 'text' | 'bold' | 'link';
+  content: string;
+  url?: string;
+}
+
+const parseMessageText = (text: string) => {
+  let tokens: Token[] = [{ type: 'text', content: text }];
+
+  // 1. Parse markdown links [text](url)
+  let updatedTokens: Token[] = [];
+  for (const token of tokens) {
+    if (token.type === 'text') {
+      const parts = token.content.split(/(\[[^\]]+\]\([^)]+\))/g);
+      for (const part of parts) {
+        if (!part) continue;
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (match) {
+          updatedTokens.push({ type: 'link', content: match[1], url: match[2] });
+        } else {
+          updatedTokens.push({ type: 'text', content: part });
+        }
+      }
+    } else {
+      updatedTokens.push(token);
     }
-    return part;
+  }
+  tokens = updatedTokens;
+
+  // 2. Parse bold text **bold**
+  updatedTokens = [];
+  for (const token of tokens) {
+    if (token.type === 'text') {
+      const parts = token.content.split(/(\*\*[^*]+\*\*)/g);
+      for (const part of parts) {
+        if (!part) continue;
+        const match = part.match(/^\*\*([^*]+)\*\*$/);
+        if (match) {
+          updatedTokens.push({ type: 'bold', content: match[1] });
+        } else {
+          updatedTokens.push({ type: 'text', content: part });
+        }
+      }
+    } else {
+      updatedTokens.push(token);
+    }
+  }
+  tokens = updatedTokens;
+
+  // 3. Parse raw internal paths (e.g. /case-studies/uppercase or '/contact-us')
+  const rawPathRegex = /(['"]?\/(?:case-studies|contact-us|about-us|careers|blog|growth-intelligence|ai-marketing-systems|brand-infrastructure)(?:\/[a-zA-Z0-9\-_]+)*\/?['"]?)/g;
+  updatedTokens = [];
+  for (const token of tokens) {
+    if (token.type === 'text') {
+      const parts = token.content.split(rawPathRegex);
+      for (const part of parts) {
+        if (!part) continue;
+        
+        const pathMatch = part.match(/^['"]?(\/(?:case-studies|contact-us|about-us|careers|blog|growth-intelligence|ai-marketing-systems|brand-infrastructure)(?:\/[a-zA-Z0-9\-_]+)*\/??)['"]?$/);
+        if (pathMatch) {
+          const cleanPath = pathMatch[1];
+          updatedTokens.push({ type: 'link', content: cleanPath, url: cleanPath });
+        } else {
+          updatedTokens.push({ type: 'text', content: part });
+        }
+      }
+    } else {
+      updatedTokens.push(token);
+    }
+  }
+  tokens = updatedTokens;
+
+  return tokens.map((token, idx) => {
+    if (token.type === 'bold') {
+      return <strong key={idx}>{token.content}</strong>;
+    }
+    if (token.type === 'link') {
+      const isExternal = token.url && (token.url.startsWith('http://') || token.url.startsWith('https://'));
+      if (isExternal) {
+        return (
+          <a
+            key={idx}
+            href={token.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.chatLink}
+          >
+            {token.content}
+          </a>
+        );
+      }
+      return (
+        <Link key={idx} href={token.url || '#'} className={styles.chatLink}>
+          {token.content}
+        </Link>
+      );
+    }
+    return token.content;
   });
 };
 
@@ -54,7 +146,7 @@ const formatMessageContent = (text: string) => {
       return (
         <ul key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
           {items.map((item, idx) => (
-            <li key={idx}>{parseBoldText(item)}</li>
+            <li key={idx}>{parseMessageText(item)}</li>
           ))}
         </ul>
       );
@@ -69,13 +161,13 @@ const formatMessageContent = (text: string) => {
       return (
         <ol key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
           {items.map((item, idx) => (
-            <li key={idx}>{parseBoldText(item)}</li>
+            <li key={idx}>{parseMessageText(item)}</li>
           ))}
         </ol>
       );
     }
 
-    return <p key={index}>{parseBoldText(paragraph)}</p>;
+    return <p key={index}>{parseMessageText(paragraph)}</p>;
   });
 };
 

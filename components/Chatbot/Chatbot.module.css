@@ -263,6 +263,20 @@
   margin-bottom: 0;
 }
 
+.chatLink {
+  color: #b88bf9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  word-break: break-all;
+}
+
+.chatLink:hover {
+  color: #ffffff;
+  text-decoration-color: #b88bf9;
+}
+
 /* Inline Lead Form card */
 .leadFormCard {
   margin-top: 1rem;
