@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
-import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -172,9 +171,6 @@ export default function RootLayout({
         {/* Footer */}
         <Footer />
         
-        {/* AI Chatbot Widget */}
-        <ChatbotWrapper />
-
         {/* Vanilla-tilt */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"

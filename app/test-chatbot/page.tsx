@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Home from '@/components/pages/Home';
+import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 
 export const metadata: Metadata = {
   title: 'Chatbot Testing Page | Impulse Digital',
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function TestChatbotPage() {
-  return <Home />;
+  return (
+    <>
+      <Home />
+      <ChatbotWrapper />
+    </>
+  );
 }

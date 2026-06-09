@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, company, email, phone, preferredTime, userRequirement, recommendedDirection } = await req.json();
+    const { name, company, email, phone, preferredTime, userRequirement, recommendedDirection, chatHistory } = await req.json();
 
     // 1. Dispatch Email alert via Resend
     let emailSent = false;
@@ -19,6 +19,23 @@ export async function POST(req: NextRequest) {
           dateStyle: 'medium',
           timeStyle: 'short'
         }) + ' (IST)';
+
+        let chatHistoryHtml = '';
+        if (chatHistory && Array.isArray(chatHistory)) {
+          chatHistoryHtml = `
+            <h2 style="font-size: 15px; font-weight: 600; margin-top: 20px; margin-bottom: 12px; border-bottom: 2px solid #f3f4f6; padding-bottom: 6px; color: #1f2937;">Chat Transcript</h2>
+            <div style="font-size: 13px; color: #4b5563; background-color: #f9fafb; padding: 12px; border-radius: 8px; border: 1px solid #e5e7eb; max-height: 250px; overflow-y: auto;">
+              ${chatHistory.map((m: any) => {
+                const roleName = m.role === 'user' ? 'Client' : 'Assistant (Adwait)';
+                const roleColor = m.role === 'user' ? '#8a5cf6' : '#1f2937';
+                return `<div style="margin-bottom: 10px;">
+                  <strong style="color: ${roleColor};">${roleName}:</strong>
+                  <span style="white-space: pre-wrap;">${m.content}</span>
+                </div>`;
+              }).join('')}
+            </div>
+          `;
+        }
 
         const emailHtmlContent = `
           <!DOCTYPE html>
@@ -76,6 +93,8 @@ export async function POST(req: NextRequest) {
                       <td>${dateFormatted}</td>
                     </tr>
                   </table>
+
+                  ${chatHistoryHtml}
                 </td>
               </tr>
               <tr>
@@ -96,7 +115,7 @@ export async function POST(req: NextRequest) {
           },
           body: JSON.stringify({
             from: 'Impulse Digital Chatbot <onboarding@resend.dev>',
-            to: 'adwait@theimpulsedigital.com',
+            to: ['adwait@theimpulsedigital.com', 'abhishek@theimpulsedigital.com'],
             subject: `New Chatbot Lead - ${company}`,
             html: emailHtmlContent,
           }),

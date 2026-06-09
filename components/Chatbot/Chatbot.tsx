@@ -2,6 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Chatbot.module.css';
+import { usePathname } from 'next/navigation';
+import ChatHeader from './ChatHeader';
+import ChatMessages from './ChatMessages';
+import ChatInput from './ChatInput';
+
 
 interface Message {
   role: 'user' | 'assistant';
@@ -20,6 +25,7 @@ interface LeadInfo {
 }
 
 export default function Chatbot() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -27,7 +33,6 @@ export default function Chatbot() {
       content: "How can I help you today?",
     },
   ]);
-  const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [recommendationGiven, setRecommendationGiven] = useState(false);
   const [isHandoffReady, setIsHandoffReady] = useState(false);
@@ -47,8 +52,8 @@ export default function Chatbot() {
     recommendedDirection: '',
   });
 
+  const queryCache = useRef<Map<string, any>>(new Map());
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const leadSubmittedRef = useRef(false);
   const zohoFormRef = useRef<HTMLFormElement>(null);
 
@@ -61,15 +66,15 @@ export default function Chatbot() {
       preferredTime: string;
       userRequirement: string;
       recommendedDirection: string;
+      chatHistory?: { role: string; content: string }[];
     },
     token: string
   ) => {
     if (leadSubmittedRef.current) return;
     leadSubmittedRef.current = true;
 
-    // 1. Submit natively to Zoho CRM via hidden iframe
     try {
-      if (zohoFormRef.current) {
+      if (zohoFormRef && zohoFormRef.current) {
         const form = zohoFormRef.current;
         const nameInput = form.elements.namedItem('Last Name') as HTMLInputElement;
         const companyInput = form.elements.namedItem('Company') as HTMLInputElement;
@@ -86,7 +91,6 @@ export default function Chatbot() {
           descInput.value = `Requirement: ${info.userRequirement || 'Not specified'}\nRecommended Direction: ${info.recommendedDirection || 'Not specified'}\nPreferred connection time: ${info.preferredTime || 'Not specified'}`;
         }
 
-        // Set Zoho SalesIQ unique visitor ID and details
         try {
           const $zoho = (window as any).$zoho;
           if ($zoho && $zoho.salesiq) {
@@ -103,7 +107,6 @@ export default function Chatbot() {
           console.error('Error tracking SalesIQ visitor in chatbot:', err);
         }
 
-        // Append g-recaptcha-response to the form dynamically
         let captchaInput = form.elements.namedItem('g-recaptcha-response') as HTMLTextAreaElement;
         if (!captchaInput) {
           captchaInput = document.createElement('textarea');
@@ -120,7 +123,6 @@ export default function Chatbot() {
       console.error('Error submitting natively to Zoho:', zohoErr);
     }
 
-    // 2. Submit to backend API for Resend email alert
     try {
       await fetch('/api/lead', {
         method: 'POST',
@@ -135,9 +137,6 @@ export default function Chatbot() {
     }
   };
 
-
-
-  // Check if current hostname is localhost to toggle local helper messages
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hn = window.location.hostname;
@@ -145,10 +144,33 @@ export default function Chatbot() {
     }
   }, []);
 
-  // Load Zoho SalesIQ and WebForm Analytics scripts if not already present
+  useEffect(() => {
+    let greeting = "How can I help you today?";
+
+    if (pathname) {
+      if (pathname.includes('/search-engine-optimisation')) {
+        greeting = "Looking to grow your search traffic and rank higher on Google? Let's discuss your SEO goals!";
+      } else if (pathname.includes('/video-production') || pathname.includes('/brand-film')) {
+        greeting = "Hey! Need high-impact brand films or AI-powered video production? Tell me about your video requirements.";
+      } else if (pathname.includes('/website-development')) {
+        greeting = "Looking to build a premium, high-performance website? Let's chat about what you need.";
+      } else if (pathname.includes('/social-media-marketing')) {
+        greeting = "Hey there! Want to elevate your brand's presence across social platforms? Let's talk content strategy.";
+      } else if (pathname.includes('/careers')) {
+        greeting = "Hey! Interested in joining the team at Impulse Digital? Ask me anything about our open roles!";
+      }
+    }
+
+    setMessages([
+      {
+        role: 'assistant',
+        content: greeting,
+      },
+    ]);
+  }, [pathname]);
+
   useEffect(() => {
     const loadZohoScripts = () => {
-      // 1. Zoho SalesIQ
       if (!document.getElementById('zsiqscript')) {
         const $zoho = (window as any).$zoho || {};
         (window as any).$zoho = $zoho;
@@ -165,7 +187,6 @@ export default function Chatbot() {
         document.body.appendChild(s);
       }
 
-      // 2. Zoho WebForm Analytics
       if (!document.getElementById('wf_anal')) {
         const s = document.createElement('script');
         s.id = 'wf_anal';
@@ -175,7 +196,6 @@ export default function Chatbot() {
       }
     };
 
-    // Trigger on interaction or fallback after 4 seconds
     const triggerLoad = () => {
       loadZohoScripts();
       cleanupListeners();
@@ -206,10 +226,9 @@ export default function Chatbot() {
     };
   }, []);
 
-  // Scroll to bottom on new messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, isLoading, recommendationGiven, showCaptcha]);
+  }, [messages, isLoading, recommendationGiven, showCaptcha, captchaVerified]);
 
   const loadRecaptchaScript = (callback: () => void) => {
     if ((window as any).grecaptcha && (window as any).grecaptcha.render) {
@@ -257,7 +276,8 @@ export default function Chatbot() {
       phone: leadForm.phone,
       preferredTime: leadForm.preferredTime,
       userRequirement: leadForm.userRequirement,
-      recommendedDirection: leadForm.recommendedDirection
+      recommendedDirection: leadForm.recommendedDirection,
+      chatHistory: messages.map(m => ({ role: m.role, content: m.content }))
     }, token);
   };
 
@@ -288,120 +308,72 @@ export default function Chatbot() {
     setIsOpen(!isOpen);
   };
 
-  const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
-    // Auto resize
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 100)}px`;
-    }
-  };
-
-  const handleFormChange = (field: keyof LeadInfo, value: string) => {
-    setLeadForm((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
-
-  const parseBoldText = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/);
-    return parts.map((part, idx) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={idx}>{part.slice(2, -2)}</strong>;
-      }
-      return part;
-    });
-  };
-
-  const formatMessageContent = (text: string) => {
-    return text.split('\n\n').map((paragraph, index) => {
-      const trimmedParagraph = paragraph.trim();
-      if (!trimmedParagraph) return null;
-
-      // Handle unordered lists (lines starting with - or * )
-      if (trimmedParagraph.startsWith('- ') || trimmedParagraph.startsWith('* ')) {
-        const items = trimmedParagraph
-          .split(/\n[-*]\s+/)
-          .map((item) => item.replace(/^[-*]\s+/, '').trim())
-          .filter(Boolean);
-
-        return (
-          <ul key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
-            {items.map((item, idx) => (
-              <li key={idx}>{parseBoldText(item)}</li>
-            ))}
-          </ul>
-        );
-      }
-
-      // Handle ordered lists (lines starting with number followed by period)
-      if (/^\d+\.\s+/.test(trimmedParagraph)) {
-        const items = trimmedParagraph
-          .split(/\n\d+\.\s+/)
-          .map((item) => item.replace(/^\d+\.\s+/, '').trim())
-          .filter(Boolean);
-
-        return (
-          <ol key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
-            {items.map((item, idx) => (
-              <li key={idx}>{parseBoldText(item)}</li>
-            ))}
-          </ol>
-        );
-      }
-
-      // Default paragraph
-      return <p key={index}>{parseBoldText(paragraph)}</p>;
-    });
-  };
-
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const query = inputValue.trim();
-    if (!query || isLoading) return;
-
+  const executeQuery = async (query: string) => {
     const userMessage: Message = { role: 'user', content: query };
     const updatedMessages = [...messages, userMessage];
 
     setMessages(updatedMessages);
-    setInputValue('');
     setIsLoading(true);
 
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
-    }
-
     try {
-      // Exclude first system-like welcome message from context to save tokens and align prompt,
-      // or map properly for the LLM call. The backend endpoint expects standard messages format.
-      const chatHistory = updatedMessages.slice(1);
-
-      const response = await fetch('/api/chat/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ messages: chatHistory }),
-      });
-
       let data: any = null;
-      try {
-        data = await response.json();
-      } catch (jsonErr) {
-        console.error('Error parsing response JSON:', jsonErr);
+
+      if (queryCache.current.has(query)) {
+        data = queryCache.current.get(query);
+        console.log('Serving chat response from client cache:', query);
+      } else {
+        const chatHistory = updatedMessages.slice(1);
+
+        const response = await fetch('/api/chat/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ messages: chatHistory }),
+        });
+
+        try {
+          data = await response.json();
+        } catch (jsonErr) {
+          console.error('Error parsing response JSON:', jsonErr);
+        }
+
+        if (!response.ok) {
+          throw new Error(data?.message || 'Network response error');
+        }
+        
+        if (data) {
+          queryCache.current.set(query, data);
+        }
       }
 
-      if (!response.ok) {
-        throw new Error(data?.message || 'Network response error');
-      }
       console.log('Chatbot response data:', data);
 
-      if (data.message) {
-        setMessages((prev) => [...prev, { role: 'assistant', content: data.message }]);
+      if (data && data.message) {
+        const paragraphs = data.message.split('\n\n').filter((p: string) => p.trim() !== '');
+        
+        const deliverMessages = async () => {
+          for (let i = 0; i < paragraphs.length; i++) {
+            const paragraph = paragraphs[i];
+            setIsLoading(true);
+            
+            const delay = Math.max(600, Math.min(2000, paragraph.length * 10));
+            await new Promise((resolve) => setTimeout(resolve, delay));
+            
+            setMessages((prev) => [...prev, { role: 'assistant', content: paragraph }]);
+            
+            if (i < paragraphs.length - 1) {
+              setIsLoading(false);
+              await new Promise((resolve) => setTimeout(resolve, 400));
+            }
+          }
+          setIsLoading(false);
+        };
+        
+        await deliverMessages();
       }
 
-      if (data.metadata) {
+      if (data && data.metadata) {
         const meta = data.metadata;
         if (meta.recommendationGiven) {
           setRecommendationGiven(true);
@@ -427,7 +399,6 @@ export default function Chatbot() {
           setLeadForm(updatedForm);
         }
 
-        // Show Captcha verification card if name and email/phone are populated, and handoff/recommendation is ready
         const hasContactInfo = updatedForm.email || updatedForm.phone;
         const hasName = updatedForm.name;
         const isHandoffTriggered = meta.handoffReady || meta.recommendationGiven || recommendationGiven;
@@ -454,25 +425,33 @@ export default function Chatbot() {
     }
   };
 
+  const handleSend = async (query: string) => {
+    await executeQuery(query);
+  };
+
   const handleWhatsAppHandoff = () => {
-    const { name, email, phone, company, preferredTime, userRequirement, mainChallenge, recommendedDirection } = leadForm;
+    const { name, email, phone, company, userRequirement } = leadForm;
 
     const reqPart = userRequirement 
       ? userRequirement 
-      : "I'm looking to discuss my digital growth requirements and explore customized services.";
+      : "I came from the website to discuss my growth requirements.";
 
     const messageTemplate = `Hello Impulse Digital,
 
 I came from the website to discuss my growth requirement.
 
+Summary of Requirement:
 ${reqPart}
 
-Please connect with me.`;
+My Details:
+- Name: ${name || 'Not specified'}
+- Email: ${email || 'Not specified'}
+- Phone: ${phone || 'Not specified'}
+- Company: ${company || 'Not specified'}`;
 
     const encodedMessage = encodeURIComponent(messageTemplate);
     const whatsappUrl = `https://wa.me/919769285224?text=${encodedMessage}`;
     
-    // Add handoff log to chat
     setMessages((prev) => [
       ...prev,
       {
@@ -487,6 +466,16 @@ Please connect with me.`;
   return (
     <>
       {/* Floating Trigger Button */}
+      {!isOpen && (
+        <div 
+          className={styles.chatTooltip}
+          onClick={handleToggle}
+          id="chatbot-trigger-tooltip"
+        >
+          <span className={styles.tooltipDot}></span>
+          <span>How can we help you today?</span>
+        </div>
+      )}
       <button 
         className={`${styles.chatTrigger} ${isOpen ? styles.active : ''}`} 
         onClick={handleToggle}
@@ -494,7 +483,38 @@ Please connect with me.`;
         id="chatbot-trigger-btn"
       >
         <span className={styles.chatTriggerIcon}>
-          {isOpen ? <i className="fas fa-times"></i> : <i className="fas fa-comment-dots"></i>}
+          {isOpen ? (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ display: 'block' }}
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ display: 'block' }}
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="rgba(255, 255, 255, 0.15)"></path>
+              <path d="M8 10h8" strokeWidth="2"></path>
+              <path d="M8 14h6" strokeWidth="2"></path>
+            </svg>
+          )}
         </span>
       </button>
 
@@ -503,122 +523,23 @@ Please connect with me.`;
         className={`${styles.chatContainer} ${isOpen ? styles.open : ''}`}
         id="chatbot-window-container"
       >
-        {/* Header */}
-        <div className={styles.chatHeader}>
-          <div className={styles.headerInfo}>
-            <div className={styles.avatar}>ID</div>
-            <div className={styles.titleContainer}>
-              <h3 className={styles.title}>Adwait</h3>
-              <div className={styles.status}>
-                <span className={styles.statusDot}></span>
-                <span>Active | Impulse Digital</span>
-              </div>
-            </div>
-          </div>
-          <button className={styles.closeBtn} onClick={handleToggle} aria-label="Close Chat">
-            <i className="fas fa-times"></i>
-          </button>
-        </div>
+        <ChatHeader handleToggle={handleToggle} />
 
-        {/* Messages */}
-        <div className={styles.chatMessages} data-lenis-prevent="true">
-          {messages.map((msg, index) => (
-            <div 
-              key={index} 
-              className={`${styles.messageRow} ${msg.role === 'user' ? styles.userRow : styles.assistantRow}`}
-            >
-              <div className={`${styles.messageBubble} ${msg.role === 'user' ? styles.userBubble : styles.assistantBubble}`}>
-                {formatMessageContent(msg.content)}
-              </div>
-            </div>
-          ))}
+        <ChatMessages
+          messages={messages}
+          isLoading={isLoading}
+          showCaptcha={showCaptcha}
+          captchaVerified={captchaVerified}
+          isLocalhost={isLocalhost}
+          leadForm={leadForm}
+          handleWhatsAppHandoff={handleWhatsAppHandoff}
+          messagesEndRef={messagesEndRef}
+        />
 
-          {/* Typing Indicator */}
-          {isLoading && (
-            <div className={`${styles.messageRow} ${styles.assistantRow}`}>
-              <div className={styles.typingIndicator}>
-                <span className={styles.typingDot}></span>
-                <span className={styles.typingDot}></span>
-                <span className={styles.typingDot}></span>
-              </div>
-            </div>
-          )}
-
-          {/* Google reCAPTCHA Card */}
-          {showCaptcha && !captchaVerified && (
-            <div className={styles.leadFormCard} id="chatbot-recaptcha-card">
-              <h4 className={styles.leadFormTitle}>
-                <i className="fas fa-shield-alt" style={{ color: '#8a5cf6', fontSize: '15px' }}></i> Verification Required
-              </h4>
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '1.2rem', lineHeight: '1.5' }}>
-                Please verify that you are not a robot to send your query to our team:
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.5rem' }}>
-                <div id="chatbot-recaptcha-element"></div>
-              </div>
-              {showCaptcha && !captchaVerified && isLocalhost && (
-                <div style={{ marginTop: '12px', padding: '8px 10px', backgroundColor: 'rgba(255, 77, 77, 0.1)', border: '1px solid rgba(255, 77, 77, 0.2)', borderRadius: '6px', fontSize: '11px', color: '#ff8a8a', lineHeight: '1.4' }}>
-                  <i className="fas fa-exclamation-triangle" style={{ marginRight: '6px' }}></i>
-                  <strong>Note:</strong> To test locally, you must add <code>localhost</code> to the domains list in your Google reCAPTCHA Admin Console.
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* WhatsApp Direct Handoff */}
-          {recommendationGiven && (
-            <div className={styles.leadFormCard}>
-              <h4 className={styles.leadFormTitle}>
-                <i className="fab fa-whatsapp" style={{ color: '#25d366', fontSize: '15px' }}></i> Continue on WhatsApp
-              </h4>
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '1.2rem', lineHeight: '1.5' }}>
-                Click the button below to connect with our team on WhatsApp.
-              </p>
-              <button
-                className={styles.whatsappBtn}
-                onClick={handleWhatsAppHandoff}
-                id="continue-whatsapp-btn"
-              >
-                <i className="fab fa-whatsapp"></i> Continue on WhatsApp
-              </button>
-            </div>
-          )}
-
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Input form */}
-        <form className={styles.chatInputForm} onSubmit={handleSend}>
-          <div className={styles.inputWrapper}>
-            <textarea
-              ref={textareaRef}
-              rows={1}
-              value={inputValue}
-              onChange={handleTextareaChange}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSend(e);
-                }
-              }}
-              placeholder="Ask a question..."
-              className={styles.textareaInput}
-              disabled={isLoading}
-              id="chatbot-textarea-input"
-            />
-          </div>
-          <button 
-            type="submit" 
-            className={styles.sendBtn}
-            disabled={!inputValue.trim() || isLoading}
-            aria-label="Send Message"
-            id="chatbot-send-btn"
-          >
-            <span className={styles.sendBtnIcon}>
-              <i className="fas fa-paper-plane"></i>
-            </span>
-          </button>
-        </form>
+        <ChatInput
+          isLoading={isLoading}
+          onSend={handleSend}
+        />
 
         {/* Hidden Zoho Web-to-Lead Form and target iframe */}
         <iframe name="zoho-submit-iframe" style={{ display: 'none' }}></iframe>
@@ -638,10 +559,8 @@ Please connect with me.`;
           <input type="text" style={{display:'none'}} name="actionType" value="TGVhZHM=" readOnly />
           <input type="text" style={{display:'none'}} name="returnURL" value="https://www.theimpulsedigital.com/thank-you/" readOnly />
           <input type="hidden" name="Lead Source" value="Website Contact Us" />
-          {/* Do not remove this code. */}
           <input type="text" style={{display:'none'}} id="ldeskuid" name="ldeskuid" readOnly />
           <input type="text" style={{display:'none'}} id="LDTuvid" name="LDTuvid" readOnly />
-          {/* Do not remove this code. */}
           <input type="text" style={{display: 'none'}} name="aG9uZXlwb3Q" value="" readOnly />
           
           <input type="text" style={{display:'none'}} id="Last_Name" name="Last Name" readOnly />
