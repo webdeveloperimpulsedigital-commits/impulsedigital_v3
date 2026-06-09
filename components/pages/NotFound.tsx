@@ -2,18 +2,19 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import Link from 'next/link';
 
 const NotFound: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
+    return () => {
+      document.body.classList.remove('service-page');
+    };
+  }, []);
 
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-
+  useGsapSafeEffect((gsap) => {
     const runIntro = () => {
-      if (!gsap) return;
-
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.fromTo('.nf-code',
@@ -49,10 +50,7 @@ const NotFound: React.FC = () => {
     }
 
     return () => {
-      document.body.classList.remove('service-page');
-      if ((window as any).gsap) {
-        gsap.killTweensOf('.nf-code, .nf-label, .nf-headline, .nf-text, .nf-cta');
-      }
+      gsap.killTweensOf('.nf-code, .nf-label, .nf-headline, .nf-text, .nf-cta');
     };
   }, []);
 

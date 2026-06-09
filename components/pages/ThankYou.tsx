@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect, Suspense } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
@@ -14,12 +15,13 @@ const ThankYouInner: React.FC = () => {
 
   useEffect(() => {
     document.body.classList.add('thank-you-page-body');
+    return () => {
+      document.body.classList.remove('service-page', 'thank-you-page-body');
+    };
+  }, []);
 
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-
+  useGsapSafeEffect((gsap) => {
     const runThankYouIntro = () => {
-      if (!gsap) return;
       const mark = document.querySelector('.thank-you-mark');
       const badge = document.querySelector('.thank-you-badge');
       const title = document.querySelector('.thank-you-title');
@@ -71,14 +73,11 @@ const ThankYouInner: React.FC = () => {
     }
 
     return () => {
-      document.body.classList.remove('service-page', 'thank-you-page-body');
-      if ((window as any).gsap) {
-        gsap.killTweensOf('.thank-you-mark');
-        gsap.killTweensOf('.thank-you-badge');
-        gsap.killTweensOf('.thank-you-title');
-        gsap.killTweensOf('.thank-you-text');
-        gsap.killTweensOf('.thank-you-cta');
-      }
+      gsap.killTweensOf('.thank-you-mark');
+      gsap.killTweensOf('.thank-you-badge');
+      gsap.killTweensOf('.thank-you-title');
+      gsap.killTweensOf('.thank-you-text');
+      gsap.killTweensOf('.thank-you-cta');
     };
   }, [isCaseStudy]);
 

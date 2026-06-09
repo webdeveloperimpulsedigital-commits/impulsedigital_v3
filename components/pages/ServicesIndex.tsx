@@ -7,6 +7,7 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import Link from 'next/link';
 
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 
 
 const servicesData = [
@@ -74,101 +75,104 @@ const ServicesIndex: React.FC<ServicesIndexProps> = ({ categoryFilter }) => {
   }, [categoryFilter]);
 
   useEffect(() => {
-    const { gsap, ScrollTrigger, SplitType } = window as any;
     document.body.classList.add('services-index-page');
     const stopHeroReveal = startHeroCopyReveal({
       primary: document.querySelector('.aww3-hero-title'),
       supporting: document.querySelector('.aww3-hero-desc'),
     });
 
-    if (gsap && ScrollTrigger && containerRef.current) {
-        // Background color inversion & particle fade (like agentic-ai.html)
-        const firstSection = document.querySelector('.aww3-main-content');
-        if (firstSection) {
-          gsap.to(document.body, {
-            backgroundColor: '#000000',
-            scrollTrigger: {
-              trigger: firstSection,
-              start: 'top bottom',
-              end: 'top top',
-              scrub: true
-            }
-          });
-
-          if ((window as any).particlesMaterial) {
-            gsap.fromTo((window as any).particlesMaterial,
-              { opacity: 0.6 },
-              {
-                opacity: 0,
-                scrollTrigger: {
-                  trigger: firstSection,
-                  start: 'top 80%',
-                  end: 'top 20%',
-                  scrub: true
-                }
-              }
-            );
-          }
-        }
-
-      const sections = containerRef.current.querySelectorAll('.aww3-category-section');
-      sections.forEach((sec: any) => {
-        const header = sec.querySelector('.aww3-section-header');
-        const cards = sec.querySelectorAll('.aww3-stripe-item');
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sec,
-            start: "top 85%",
-          }
-        });
-
-        if (header) {
-          tl.fromTo(header, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 0);
-        }
-        if (cards.length) {
-          tl.fromTo(cards, 
-            { y: 60, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.8, stagger: 0.05, ease: "back.out(1.2)" }, 
-            0.2
-          );
-        }
-      });
-
-      // Text Fill scrub effect
-      const textFills = containerRef.current.querySelectorAll('.text-fill');
-      textFills.forEach((fill: any) => {
-        gsap.to(fill, {
-          backgroundPositionX: '0%', 
-          ease: 'none',
-          scrollTrigger: { 
-            trigger: fill, 
-            scrub: 1, 
-            start: 'top 85%', 
-            end: 'top 20%' 
-          }
-        });
-      });
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 150);
-    }
-
     return () => {
       stopHeroReveal();
       document.body.classList.remove('services-index-page');
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    if (!containerRef.current) return;
+
+    // Background color inversion & particle fade (like agentic-ai.html)
+    const firstSection = document.querySelector('.aww3-main-content');
+    if (firstSection) {
+      gsap.to(document.body, {
+        backgroundColor: '#000000',
+        scrollTrigger: {
+          trigger: firstSection,
+          start: 'top bottom',
+          end: 'top top',
+          scrub: true
+        }
+      });
+
+      if ((window as any).particlesMaterial) {
+        gsap.fromTo((window as any).particlesMaterial,
+          { opacity: 0.6 },
+          {
+            opacity: 0,
+            scrollTrigger: {
+              trigger: firstSection,
+              start: 'top 80%',
+              end: 'top 20%',
+              scrub: true
+            }
+          }
+        );
+      }
+    }
+
+    const sections = containerRef.current.querySelectorAll('.aww3-category-section');
+    sections.forEach((sec: any) => {
+      const header = sec.querySelector('.aww3-section-header');
+      const cards = sec.querySelectorAll('.aww3-stripe-item');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sec,
+          start: "top 85%",
+        }
+      });
+
+      if (header) {
+        tl.fromTo(header, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, 0);
+      }
+      if (cards.length) {
+        tl.fromTo(cards, 
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.05, ease: "back.out(1.2)" }, 
+          0.2
+        );
+      }
+    });
+
+    // Text Fill scrub effect
+    const textFills = containerRef.current.querySelectorAll('.text-fill');
+    textFills.forEach((fill: any) => {
+      gsap.to(fill, {
+        backgroundPositionX: '0%', 
+        ease: 'none',
+        scrollTrigger: { 
+          trigger: fill, 
+          scrub: 1, 
+          start: 'top 85%', 
+          end: 'top 20%' 
+        }
+      });
+    });
+
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+
+    return () => {
+      clearTimeout(refreshTimer);
       gsap.to(document.body, { backgroundColor: '#020018', duration: 0 });
       if ((window as any).particlesMaterial) {
         gsap.to((window as any).particlesMaterial, { opacity: 0.6, duration: 0 });
       }
-      if ((window as any).ScrollTrigger) {
-        (window as any).ScrollTrigger.getAll().forEach((t: any) => {
-          if (t.trigger && t.trigger.closest && t.trigger.closest('.aww3-wrapper')) {
-            t.kill();
-          }
-        });
-      }
+      ScrollTrigger.getAll().forEach((t: any) => {
+        if (t.trigger && t.trigger.closest && t.trigger.closest('.aww3-wrapper')) {
+          t.kill();
+        }
+      });
     };
   }, []);
 

@@ -4,8 +4,6 @@
  * Mirrors the page-specific <script> logic from the HTML source files.
  */
 export function initCaseStudyAnimations(): () => void {
-  const { gsap, ScrollTrigger, SplitType } = window as any;
-
   // Feature image scroll reveal (CSS-based)
   const featureWrapper = document.querySelector('.cs-feature-wrapper') as HTMLElement;
   const featureImage = document.querySelector('.cs-feature-image') as HTMLElement;
@@ -35,60 +33,60 @@ export function initCaseStudyAnimations(): () => void {
     window.addEventListener('resize', updateReveal);
   }
 
-  // Fallback: If GSAP or ScrollTrigger are not loaded, make elements visible immediately
-  if (!gsap || !ScrollTrigger) {
-    document.querySelectorAll('.gsap-fade-up, .gsap-item').forEach((item: Element) => {
-      (item as HTMLElement).style.opacity = '1';
-      (item as HTMLElement).style.transform = 'none';
-    });
-    return () => {
-      if (scrollListener) window.removeEventListener('scroll', scrollListener);
-      if (resizeListener) window.removeEventListener('resize', resizeListener);
-    };
-  }
-
+  let checkInterval: NodeJS.Timeout;
+  let timeoutId: NodeJS.Timeout;
+  let initialized = false;
+  let cleanupFn: (() => void) | void;
   let disposed = false;
-  let particleTimer: any = null;
-  let particleTrigger: any = null;
 
-  // Create scoped GSAP context
-  const ctx = gsap.context(() => {
-    // Background transition
-    const cosmosTrigger = document.querySelector('#warp-start');
-    if (cosmosTrigger) {
-      gsap.to(document.body, {
-        backgroundColor: '#000000',
-        scrollTrigger: { trigger: cosmosTrigger, start: 'top bottom', end: 'top top', scrub: true },
-      });
-
-      let attempts = 0;
-      const setupParticlesAnimation = () => {
-        if (disposed) return;
-        const { particlesMaterial } = window as any;
-        if (particlesMaterial && gsap && ScrollTrigger) {
-          ctx.add(() => {
-            gsap.killTweensOf(particlesMaterial);
-            gsap.set(particlesMaterial, { opacity: 0.7 });
-            particleTrigger = gsap.fromTo(
-              particlesMaterial,
-              { opacity: 0.7 },
-              {
-                opacity: 0,
-                scrollTrigger: { trigger: cosmosTrigger, start: 'top 80%', end: 'top 20%', scrub: true }
-              }
-            );
-          });
-        } else if (attempts < 100) {
-          attempts++;
-          particleTimer = setTimeout(setupParticlesAnimation, 50);
-        }
-      };
-      // Defer execution slightly to ensure ctx is initialized
-      particleTimer = setTimeout(setupParticlesAnimation, 0);
+  const init = () => {
+    const { gsap, ScrollTrigger, SplitType } = window as any;
+    if (gsap && ScrollTrigger && SplitType && !initialized && !disposed) {
+      initialized = true;
+      cleanupFn = setupGsap(gsap, ScrollTrigger, SplitType);
     }
+  };
 
-    // Split text reveals
-    if (SplitType) {
+  const setupGsap = (gsap: any, ScrollTrigger: any, SplitType: any) => {
+    let particleTimer: any = null;
+    let particleTrigger: any = null;
+
+    // Create scoped GSAP context
+    const ctx = gsap.context(() => {
+      // Background transition
+      const cosmosTrigger = document.querySelector('#warp-start');
+      if (cosmosTrigger) {
+        gsap.to(document.body, {
+          backgroundColor: '#000000',
+          scrollTrigger: { trigger: cosmosTrigger, start: 'top bottom', end: 'top top', scrub: true },
+        });
+
+        let attempts = 0;
+        const setupParticlesAnimation = () => {
+          if (disposed) return;
+          const { particlesMaterial } = window as any;
+          if (particlesMaterial && gsap && ScrollTrigger) {
+            ctx.add(() => {
+              gsap.killTweensOf(particlesMaterial);
+              gsap.set(particlesMaterial, { opacity: 0.7 });
+              particleTrigger = gsap.fromTo(
+                particlesMaterial,
+                { opacity: 0.7 },
+                {
+                  opacity: 0,
+                  scrollTrigger: { trigger: cosmosTrigger, start: 'top 80%', end: 'top 20%', scrub: true }
+                }
+              );
+            });
+          } else if (attempts < 100) {
+            attempts++;
+            particleTimer = setTimeout(setupParticlesAnimation, 50);
+          }
+        };
+        particleTimer = setTimeout(setupParticlesAnimation, 0);
+      }
+
+      // Split text reveals
       document.querySelectorAll('.split-text:not(.split-done)').forEach((text: Element) => {
         if (!text.classList.contains('cs-hero-title') && !text.classList.contains('cs-hero-subtitle')) {
           text.classList.add('split-done');
@@ -110,69 +108,94 @@ export function initCaseStudyAnimations(): () => void {
           }
         }
       });
-    }
 
-    // Counter animations
-    document.querySelectorAll('.counter').forEach((counter: Element, index: number) => {
-      ScrollTrigger.create({
-        trigger: '.cs-results-module',
-        start: 'top 80%',
-        once: true,
-        onEnter: () => {
-          const el = counter as HTMLElement;
-          const targetText = el.getAttribute('data-target') || '0';
-          const target = parseFloat(targetText);
-          const decimals = targetText.includes('.') ? targetText.split('.')[1].length : 0;
-          const state = { value: 0 };
-          gsap.to(state, {
-            value: target, duration: 2.2, delay: index * 0.08, ease: 'power4.out',
-            onUpdate: () => {
-              el.textContent = state.value.toLocaleString('en-IN', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
-            },
-          });
-        },
+      // Counter animations
+      document.querySelectorAll('.counter').forEach((counter: Element, index: number) => {
+        ScrollTrigger.create({
+          trigger: '.cs-results-module',
+          start: 'top 80%',
+          once: true,
+          onEnter: () => {
+            const el = counter as HTMLElement;
+            const targetText = el.getAttribute('data-target') || '0';
+            const target = parseFloat(targetText);
+            const decimals = targetText.includes('.') ? targetText.split('.')[1].length : 0;
+            const state = { value: 0 };
+            gsap.to(state, {
+              value: target, duration: 2.2, delay: index * 0.08, ease: 'power4.out',
+              onUpdate: () => {
+                el.textContent = state.value.toLocaleString('en-IN', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+              },
+            });
+          },
+        });
       });
+
+      // Fade-up animations
+      document.querySelectorAll('.gsap-fade-up, .gsap-item').forEach((item: Element) => {
+        gsap.fromTo(
+          item,
+          { y: 40, opacity: 0 },
+          { scrollTrigger: { trigger: item, start: 'top 90%' }, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+        );
+      });
+
+      // CTA SVG stroke drawing
+      const ctaMark = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
+      if (ctaMark) {
+        const len = ctaMark.getTotalLength();
+        gsap.set(ctaMark, { strokeDasharray: len, strokeDashoffset: len });
+        ScrollTrigger.create({
+          trigger: '.svc-final-cta', start: 'top 60%', once: true,
+          onEnter: () => gsap.to(ctaMark, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
+        });
+      }
     });
 
-    // Fade-up animations
-    document.querySelectorAll('.gsap-fade-up, .gsap-item').forEach((item: Element) => {
-      gsap.fromTo(
-        item,
-        { y: 40, opacity: 0 },
-        { scrollTrigger: { trigger: item, start: 'top 90%' }, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
-      );
-    });
+    // Safe deferred refresh
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
 
-    // CTA SVG stroke drawing
-    const ctaMark = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
-    if (ctaMark) {
-      const len = ctaMark.getTotalLength();
-      gsap.set(ctaMark, { strokeDasharray: len, strokeDashoffset: len });
-      ScrollTrigger.create({
-        trigger: '.svc-final-cta', start: 'top 60%', once: true,
-        onEnter: () => gsap.to(ctaMark, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
-      });
-    }
-  });
+    return () => {
+      clearTimeout(refreshTimer);
+      if (particleTimer) clearTimeout(particleTimer);
+      ctx.revert();
+      gsap.to(document.body, { backgroundColor: '', duration: 0 });
 
-  // Safe deferred refresh
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 100);
+      const { particlesMaterial } = window as any;
+      if (particlesMaterial) {
+        gsap.killTweensOf(particlesMaterial);
+        gsap.set(particlesMaterial, { opacity: 0.6 });
+      }
+    };
+  };
+
+  // Run immediate try
+  init();
+
+  // If not initialized yet, start polling
+  if (!initialized) {
+    checkInterval = setInterval(init, 100);
+    // Fallback: If GSAP/ScrollTrigger doesn't load in 15 seconds, clear interval and make elements visible
+    timeoutId = setTimeout(() => {
+      clearInterval(checkInterval);
+      if (!initialized) {
+        document.querySelectorAll('.gsap-fade-up, .gsap-item').forEach((item: Element) => {
+          (item as HTMLElement).style.opacity = '1';
+          (item as HTMLElement).style.transform = 'none';
+        });
+      }
+    }, 15000);
+  }
 
   return () => {
     disposed = true;
-    if (particleTimer) clearTimeout(particleTimer);
+    if (checkInterval) clearInterval(checkInterval);
+    if (timeoutId) clearTimeout(timeoutId);
     if (scrollListener) window.removeEventListener('scroll', scrollListener);
     if (resizeListener) window.removeEventListener('resize', resizeListener);
-    ctx.revert(); // Safely reverts only the animations created in this context
-    gsap.to(document.body, { backgroundColor: '', duration: 0 });
-
-    const { particlesMaterial } = window as any;
-    if (particlesMaterial) {
-      gsap.killTweensOf(particlesMaterial);
-      gsap.set(particlesMaterial, { opacity: 0.6 });
-    }
+    if (cleanupFn) cleanupFn();
   };
 }
 

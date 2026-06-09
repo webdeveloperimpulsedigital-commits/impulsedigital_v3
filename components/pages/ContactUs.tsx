@@ -3,16 +3,12 @@
 
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 const ContactUs: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page', 'contact-page');
-
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
 
     const stopHeroReveal = startHeroCopyReveal({
       primary: document.querySelector('.contact-headline'),
@@ -20,31 +16,52 @@ const ContactUs: React.FC = () => {
       actions: document.querySelector('.contact-shell-form'),
     });
 
-    const waitForGsap = setInterval(() => {
-      if ((window as any).gsap && (window as any).ScrollTrigger) {
-        clearInterval(waitForGsap);
-        const trigger = document.querySelector('#warp-start');
-        if (!trigger) return;
+    const fields = document.querySelectorAll('.contact-shell-form input, .contact-shell-form textarea');
+    const fieldListeners: { field: HTMLElement; focus: any; blur: any }[] = [];
 
-        gsap.to(document.body, {
-          backgroundColor: '#000000',
-          scrollTrigger: { trigger: trigger, start: 'top bottom', end: 'top top', scrub: true }
-        });
+    fields.forEach((field) => {
+      const inputField = field as HTMLInputElement | HTMLTextAreaElement;
+      const onFocus = () => field.closest('label')?.classList.add('active');
+      const onBlur = () => field.closest('label')?.classList.toggle('active', Boolean(inputField.value));
 
-        if ((window as any).particlesMaterial) {
-          gsap.fromTo((window as any).particlesMaterial,
-            { opacity: 0.68 },
-            { opacity: 0, scrollTrigger: { trigger: trigger, start: 'top 85%', end: 'top 25%', scrub: true } }
-          );
-        }
+      field.addEventListener('focus', onFocus);
+      field.addEventListener('blur', onBlur);
+      fieldListeners.push({ field: field as HTMLElement, focus: onFocus, blur: onBlur });
+    });
+
+    return () => {
+      stopHeroReveal();
+      document.body.classList.remove('service-page', 'contact-page');
+      document.body.style.backgroundColor = ''; // Reset background
+      fieldListeners.forEach(({ field, focus, blur }) => {
+        field.removeEventListener('focus', focus);
+        field.removeEventListener('blur', blur);
+      });
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    const cleanups: (() => void)[] = [];
+
+    const trigger = document.querySelector('#warp-start');
+    if (trigger) {
+      gsap.to(document.body, {
+        backgroundColor: '#000000',
+        scrollTrigger: { trigger: trigger, start: 'top bottom', end: 'top top', scrub: true }
+      });
+
+      if ((window as any).particlesMaterial) {
+        gsap.fromTo((window as any).particlesMaterial,
+          { opacity: 0.68 },
+          { opacity: 0, scrollTrigger: { trigger: trigger, start: 'top 85%', end: 'top 25%', scrub: true } }
+        );
       }
-    }, 80);
-    setTimeout(() => clearInterval(waitForGsap), 6000);
+    }
 
     const hero = document.querySelector('.contact-hero');
     const mark = document.querySelector('.contact-hero-mark');
     const form = document.querySelector('.contact-shell-form');
-    if (hero && mark && form && (window as any).gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (hero && mark && form && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       let cx = 0, cy = 0, tx = 0, ty = 0;
       const moveHandler = (event: MouseEvent) => {
         const rect = hero.getBoundingClientRect();
@@ -60,22 +77,15 @@ const ContactUs: React.FC = () => {
         gsap.set(form, { x: cx * 8, y: cy * 6 });
       };
       gsap.ticker.add(tickerHandler);
-      
-      // Cleanup for this effect
-      (hero as any)._cleanup = () => {
+
+      cleanups.push(() => {
         hero.removeEventListener('mousemove', moveHandler as EventListener);
         gsap.ticker.remove(tickerHandler);
-      };
+      });
     }
 
-    document.querySelectorAll('.contact-shell-form input, .contact-shell-form textarea').forEach((field) => {
-      const inputField = field as HTMLInputElement | HTMLTextAreaElement;
-      field.addEventListener('focus', () => field.closest('label')?.classList.add('active'));
-      field.addEventListener('blur', () => field.closest('label')?.classList.toggle('active', Boolean(inputField.value)));
-    });
-
     const filterCards = document.querySelectorAll('.contact-filter-card');
-    if (filterCards.length && (window as any).gsap && (window as any).ScrollTrigger) {
+    if (filterCards.length) {
       gsap.set(filterCards, { y: 56 });
       ScrollTrigger.create({
         trigger: '.contact-filter-cards',
@@ -86,7 +96,7 @@ const ContactUs: React.FC = () => {
     }
 
     const mapShell = document.querySelector('.contact-map-shell');
-    if (mapShell && (window as any).gsap && (window as any).ScrollTrigger) {
+    if (mapShell) {
       gsap.fromTo(mapShell, { clipPath: 'inset(18% 18% 18% 18% round 22px)' }, {
         clipPath: 'inset(0% 0% 0% 0% round 22px)',
         ease: 'power3.out',
@@ -95,25 +105,19 @@ const ContactUs: React.FC = () => {
     }
 
     return () => {
-      stopHeroReveal();
-      document.body.classList.remove('service-page', 'contact-page');
-      document.body.style.backgroundColor = ''; // Reset background
-      if (hero && (hero as any)._cleanup) {
-        (hero as any)._cleanup();
-      }
-      clearInterval(waitForGsap);
+      cleanups.forEach((c) => c());
 
-      if ((window as any).ScrollTrigger) {
-        (window as any).ScrollTrigger.getAll().forEach((t: any) => {
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((t: any) => {
           if (t.trigger && t.trigger.closest && t.trigger.closest('.contact-page-wrapper')) {
             t.kill();
           }
         });
       }
 
-      if ((window as any).gsap && (window as any).particlesMaterial) {
-        (window as any).gsap.killTweensOf((window as any).particlesMaterial);
-        (window as any).gsap.set((window as any).particlesMaterial, { opacity: 0.6 });
+      if (gsap && (window as any).particlesMaterial) {
+        gsap.killTweensOf((window as any).particlesMaterial);
+        gsap.set((window as any).particlesMaterial, { opacity: 0.6 });
       }
     };
   }, []);

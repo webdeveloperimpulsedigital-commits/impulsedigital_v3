@@ -5,6 +5,7 @@
 // @ts-nocheck
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import Link from 'next/link';
 
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
@@ -13,13 +14,6 @@ import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 const AboutUs: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page', 'about-page');
-
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-
-
 
     const stopHeroReveal = startHeroCopyReveal({
       primary: document.querySelector('.ab-hero-h'),
@@ -30,251 +24,250 @@ const AboutUs: React.FC = () => {
       actions: document.querySelector('.ab-hero-foot'),
     });
 
-    // ===== Generic scroll reveals =====
-    if (window.gsap && window.ScrollTrigger) {
-
-      const heads = document.querySelectorAll(
-        '.ab-drift-pivot, .ab-drift-resist,' +
-        '.ab-appetite-head, .ab-appetite-def, .ab-appetite-close p,' +
-        '.ab-formation-body p, .ab-formation-close,' +
-        '.ab-bridge, .ab-reveal-pre, .ab-reveal-h,' +
-        '.ab-clarity-h-sub, .ab-clarity-stack .row,' +
-        '.ab-senior-sub, .ab-senior-foot p,' +
-        '.ab-fit-close'
-      );
-      heads.forEach((el) => {
-        gsap.fromTo(el, { y: 26, opacity: 0 }, {
-          y: 0, opacity: 1, duration: 0.95, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
-        });
-      });
-
-      const batches = ['.ab-routine-cell', '.ab-drift-q', '.ab-appetite-row', '.ab-senior-row', '.ab-fit-attr'];
-      batches.forEach((sel) => {
-        const items = gsap.utils.toArray(sel);
-        if (!items.length) return;
-        gsap.set(items, { y: 24, opacity: 0 });
-        ScrollTrigger.batch(items, {
-          start: 'top 90%',
-          onEnter: batch => gsap.to(batch, { y: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }),
-          once: true
-        });
-      });
-
-      ['.ab-clarity-pane', '.ab-fit-pane'].forEach((sel) => {
-        const items = gsap.utils.toArray(sel);
-        if (!items.length) return;
-        gsap.set(items, { y: 30, opacity: 0 });
-        ScrollTrigger.batch(items, {
-          start: 'top 88%',
-          onEnter: batch => gsap.to(batch, { y: 0, opacity: 1, duration: 0.85, stagger: 0.12, ease: 'power3.out' }),
-          once: true
-        });
-      });
-
-      // ===== Movement system: keep the structure, add a living sequence =====
-      const movementSystem = document.querySelector('.ab-movement-system');
-      if (movementSystem) {
-        const movementCards = gsap.utils.toArray('.ab-movement-system .ab-task');
-        const revealPanel = document.querySelector('.ab-reveal');
-        const movementOrder = [0, 3, 1, 2, 4, 5, 6, 7];
-
-        ScrollTrigger.create({
-          trigger: movementSystem,
-          start: 'top 72%',
-          once: true,
-          onEnter: () => {
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            movementOrder.forEach((idx, i) => {
-              const card = movementCards[idx];
-              if (!card) return;
-              tl.fromTo(card, {
-                opacity: 0,
-                y: 28,
-                scale: 0.96
-              }, {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.62,
-                onStart: () => card.classList.add('is-lit'),
-                onComplete: () => setTimeout(() => card.classList.remove('is-lit'), 900)
-              }, i * 0.08);
-            });
-            tl.fromTo(revealPanel, {
-              opacity: 0,
-              y: 24,
-              scale: 0.97
-            }, {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.9,
-              onStart: () => revealPanel && revealPanel.classList.add('is-lit')
-            }, 0.32);
-            tl.to(revealPanel, { '--shine-x': '160%', duration: 1.2, ease: 'power2.out' }, 0.62);
-          }
-        });
-
-        movementCards.forEach((card) => {
-          card.addEventListener('pointermove', (event) => {
-            const rect = card.getBoundingClientRect();
-            card.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
-            card.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
-          });
-        });
-      }
-
-      const strike = document.querySelector('.ab-appetite-head .strike');
-      if (strike) {
-        ScrollTrigger.create({
-          trigger: '.ab-appetite-head',
-          start: 'top 70%',
-          once: true,
-          onEnter: () => strike.style.setProperty('--strike-w', '1')
-        });
-      }
-
-      // ===== Formation V-flock reveal =====
-      const order = ['l3', 'r3', 'l2', 'r2', 'l1', 'r1', 'lead'];
-      if (document.querySelector('.ab-form-mark')) {
-        ScrollTrigger.create({
-          trigger: '.ab-formation-stage',
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            order.forEach((pos, i) => {
-              const el = document.querySelector(`.ab-form-mark[data-pos="${pos}"]`);
-              if (!el) return;
-              const isLead = el.classList.contains('lead');
-              const isTail = (pos === 'l3' || pos === 'r3');
-              gsap.fromTo(el,
-                { opacity: 0, scale: 0.6, y: 30 },
-                {
-                  opacity: isLead ? 1 : (isTail ? 0.5 : 0.88),
-                  scale: 1, y: 0,
-                  duration: 0.8,
-                  delay: i * 0.12,
-                  ease: 'power3.out'
-                }
-              );
-            });
-            gsap.to('.ab-form-mark.lead', {
-              y: -6, duration: 2.3, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: 1.2
-            });
-          }
-        });
-      }
-
-      // ===== Founder section reveals =====
-      document.querySelectorAll('.ab-founder-section').forEach((sec) => {
-        const ghost = sec.querySelector('.ab-founder-ghost-name');
-        const portrait = sec.querySelector('.ab-founder-portrait img');
-        const name = sec.querySelector('.ab-founder-name');
-        const head = sec.querySelector('.ab-founder-headline');
-        const body = sec.querySelector('.ab-founder-body');
-        const founderText = [name, head, body].filter(Boolean);
-
-        gsap.set(ghost, { opacity: 0 });
-        gsap.set(portrait, { y: 60, opacity: 0 });
-        gsap.set(founderText, { y: 24, opacity: 0 });
-
-        ScrollTrigger.create({
-          trigger: sec,
-          start: 'top 75%',
-          once: true,
-          onEnter: () => {
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            tl.to(ghost, { opacity: 1, duration: 1.4 }, 0.15)
-              .to(portrait, { y: 0, opacity: 1, duration: 1.1, ease: 'power4.out' }, 0.2)
-              .to(name, { y: 0, opacity: 1, duration: 0.9 }, 0.5)
-              .to(head, { y: 0, opacity: 1, duration: 0.9 }, 0.65)
-              .to(body, { y: 0, opacity: 1, duration: 0.9 }, 0.8);
-          }
-        });
-
-        gsap.to(ghost, {
-          y: -50, ease: 'none',
-          scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true }
-        });
-        gsap.to(portrait, {
-          y: -20, ease: 'none',
-          scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true }
-        });
-      });
-      const finalCard = document.querySelector('.ab-final-card');
-      const finalRows = gsap.utils.toArray('.ab-final-stack .row');
-      const finalButton = document.querySelector('.ab-final-cta-row');
-      if (finalCard && finalButton) {
-        ScrollTrigger.create({
-          trigger: finalCard,
-          start: 'top 84%',
-          once: true,
-          onEnter: () => {
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            tl.fromTo(finalRows, {
-              y: 58,
-              opacity: 0,
-              filter: 'blur(14px)'
-            }, {
-              y: 0,
-              opacity: 1,
-              filter: 'blur(0px)',
-              duration: 1,
-              stagger: 0.13
-            })
-              .fromTo(finalButton, {
-                y: 24,
-                opacity: 0
-              }, {
-                y: 0,
-                opacity: 1,
-                duration: 0.65
-              }, '-=0.25');
-          }
-        });
-      }
-    }
-
-    // ===== Hero → drift transition =====
-    const waitForGsap = setInterval(() => {
-      if (window.gsap && window.ScrollTrigger) {
-        clearInterval(waitForGsap);
-        // Re-read from window here — guaranteed to exist at this point
-        const gsapNow = (window as any).gsap;
-        const trigger = document.querySelector('.ab-drift');
-        if (!trigger) return;
-        gsapNow.to(document.body, {
-          backgroundColor: '#000000',
-          scrollTrigger: { trigger, start: 'top bottom', end: 'top top', scrub: true }
-        });
-        if (window.particlesMaterial) {
-          gsapNow.fromTo(window.particlesMaterial,
-            { opacity: 0.7 },
-            { opacity: 0, scrollTrigger: { trigger, start: 'top 80%', end: 'top 20%', scrub: true } }
-          );
-        }
-      }
-    }, 80);
-    setTimeout(() => clearInterval(waitForGsap), 6000);
-
-
     return () => {
       stopHeroReveal();
       document.body.classList.remove('service-page', 'about-page');
       document.body.style.backgroundColor = '';
+    };
+  }, []);
 
-      if (window.ScrollTrigger) {
-        window.ScrollTrigger.getAll().forEach((t: any) => {
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    const cleanups: (() => void)[] = [];
+
+    const heads = document.querySelectorAll(
+      '.ab-drift-pivot, .ab-drift-resist,' +
+      '.ab-appetite-head, .ab-appetite-def, .ab-appetite-close p,' +
+      '.ab-formation-body p, .ab-formation-close,' +
+      '.ab-bridge, .ab-reveal-pre, .ab-reveal-h,' +
+      '.ab-clarity-h-sub, .ab-clarity-stack .row,' +
+      '.ab-senior-sub, .ab-senior-foot p,' +
+      '.ab-fit-close'
+    );
+    heads.forEach((el) => {
+      gsap.fromTo(el, { y: 26, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.95, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+      });
+    });
+
+    const batches = ['.ab-routine-cell', '.ab-drift-q', '.ab-appetite-row', '.ab-senior-row', '.ab-fit-attr'];
+    batches.forEach((sel) => {
+      const items = gsap.utils.toArray(sel);
+      if (!items.length) return;
+      gsap.set(items, { y: 24, opacity: 0 });
+      ScrollTrigger.batch(items, {
+        start: 'top 90%',
+        onEnter: batch => gsap.to(batch, { y: 0, opacity: 1, duration: 0.6, stagger: 0.06, ease: 'power3.out' }),
+        once: true
+      });
+    });
+
+    ['.ab-clarity-pane', '.ab-fit-pane'].forEach((sel) => {
+      const items = gsap.utils.toArray(sel);
+      if (!items.length) return;
+      gsap.set(items, { y: 30, opacity: 0 });
+      ScrollTrigger.batch(items, {
+        start: 'top 88%',
+        onEnter: batch => gsap.to(batch, { y: 0, opacity: 1, duration: 0.85, stagger: 0.12, ease: 'power3.out' }),
+        once: true
+      });
+    });
+
+    // ===== Movement system: keep the structure, add a living sequence =====
+    const movementSystem = document.querySelector('.ab-movement-system');
+    if (movementSystem) {
+      const movementCards = gsap.utils.toArray('.ab-movement-system .ab-task');
+      const revealPanel = document.querySelector('.ab-reveal');
+      const movementOrder = [0, 3, 1, 2, 4, 5, 6, 7];
+
+      ScrollTrigger.create({
+        trigger: movementSystem,
+        start: 'top 72%',
+        once: true,
+        onEnter: () => {
+          const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          movementOrder.forEach((idx, i) => {
+            const card = movementCards[idx];
+            if (!card) return;
+            tl.fromTo(card, {
+              opacity: 0,
+              y: 28,
+              scale: 0.96
+            }, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.62,
+              onStart: () => card.classList.add('is-lit'),
+              onComplete: () => setTimeout(() => card.classList.remove('is-lit'), 900)
+            }, i * 0.08);
+          });
+          tl.fromTo(revealPanel, {
+            opacity: 0,
+            y: 24,
+            scale: 0.97
+          }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.9,
+            onStart: () => revealPanel && (revealPanel as HTMLElement).classList.add('is-lit')
+          }, 0.32);
+          tl.to(revealPanel, { '--shine-x': '160%', duration: 1.2, ease: 'power2.out' }, 0.62);
+        }
+      });
+
+      movementCards.forEach((card: any) => {
+        const onPointerMove = (event: any) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+          card.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+        };
+        card.addEventListener('pointermove', onPointerMove);
+        cleanups.push(() => card.removeEventListener('pointermove', onPointerMove));
+      });
+    }
+
+    const strike = document.querySelector('.ab-appetite-head .strike');
+    if (strike) {
+      ScrollTrigger.create({
+        trigger: '.ab-appetite-head',
+        start: 'top 70%',
+        once: true,
+        onEnter: () => (strike as any).style.setProperty('--strike-w', '1')
+      });
+    }
+
+    // ===== Formation V-flock reveal =====
+    const order = ['l3', 'r3', 'l2', 'r2', 'l1', 'r1', 'lead'];
+    if (document.querySelector('.ab-form-mark')) {
+      ScrollTrigger.create({
+        trigger: '.ab-formation-stage',
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          order.forEach((pos, i) => {
+            const el = document.querySelector(`.ab-form-mark[data-pos="${pos}"]`);
+            if (!el) return;
+            const isLead = el.classList.contains('lead');
+            const isTail = (pos === 'l3' || pos === 'r3');
+            gsap.fromTo(el,
+              { opacity: 0, scale: 0.6, y: 30 },
+              {
+                opacity: isLead ? 1 : (isTail ? 0.5 : 0.88),
+                scale: 1, y: 0,
+                duration: 0.8,
+                delay: i * 0.12,
+                ease: 'power3.out'
+              }
+            );
+          });
+          gsap.to('.ab-form-mark.lead', {
+            y: -6, duration: 2.3, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: 1.2
+          });
+        }
+      });
+    }
+
+    // ===== Founder section reveals =====
+    document.querySelectorAll('.ab-founder-section').forEach((sec) => {
+      const ghost = sec.querySelector('.ab-founder-ghost-name');
+      const portrait = sec.querySelector('.ab-founder-portrait img');
+      const name = sec.querySelector('.ab-founder-name');
+      const head = sec.querySelector('.ab-founder-headline');
+      const body = sec.querySelector('.ab-founder-body');
+      const founderText = [name, head, body].filter(Boolean);
+
+      gsap.set(ghost, { opacity: 0 });
+      gsap.set(portrait, { y: 60, opacity: 0 });
+      gsap.set(founderText, { y: 24, opacity: 0 });
+
+      ScrollTrigger.create({
+        trigger: sec,
+        start: 'top 75%',
+        once: true,
+        onEnter: () => {
+          const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          tl.to(ghost, { opacity: 1, duration: 1.4 }, 0.15)
+            .to(portrait, { y: 0, opacity: 1, duration: 1.1, ease: 'power4.out' }, 0.2)
+            .to(name, { y: 0, opacity: 1, duration: 0.9 }, 0.5)
+            .to(head, { y: 0, opacity: 1, duration: 0.9 }, 0.65)
+            .to(body, { y: 0, opacity: 1, duration: 0.9 }, 0.8);
+        }
+      });
+
+      gsap.to(ghost, {
+        y: -50, ease: 'none',
+        scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+      gsap.to(portrait, {
+        y: -20, ease: 'none',
+        scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+
+    const finalCard = document.querySelector('.ab-final-card');
+    const finalRows = gsap.utils.toArray('.ab-final-stack .row');
+    const finalButton = document.querySelector('.ab-final-cta-row');
+    if (finalCard && finalButton) {
+      ScrollTrigger.create({
+        trigger: finalCard,
+        start: 'top 84%',
+        once: true,
+        onEnter: () => {
+          const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          tl.fromTo(finalRows, {
+            y: 58,
+            opacity: 0,
+            filter: 'blur(14px)'
+          }, {
+            y: 0,
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: 1,
+            stagger: 0.13
+          })
+            .fromTo(finalButton, {
+              y: 24,
+              opacity: 0
+            }, {
+              y: 0,
+              opacity: 1,
+              duration: 0.65
+            }, '-=0.25');
+        }
+      });
+    }
+
+    // ===== Hero → drift transition =====
+    const driftTrigger = document.querySelector('.ab-drift');
+    if (driftTrigger) {
+      gsap.to(document.body, {
+        backgroundColor: '#000000',
+        scrollTrigger: { trigger: driftTrigger, start: 'top bottom', end: 'top top', scrub: true }
+      });
+      if ((window as any).particlesMaterial) {
+        gsap.fromTo((window as any).particlesMaterial,
+          { opacity: 0.7 },
+          { opacity: 0, scrollTrigger: { trigger: driftTrigger, start: 'top 80%', end: 'top 20%', scrub: true } }
+        );
+      }
+    }
+
+    return () => {
+      cleanups.forEach((c) => c());
+
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((t: any) => {
           if (t.trigger && t.trigger.closest && t.trigger.closest('.about-page-container')) {
             t.kill();
           }
         });
       }
 
-      if (window.gsap && window.particlesMaterial) {
-        window.gsap.killTweensOf(window.particlesMaterial);
-        window.gsap.set(window.particlesMaterial, { opacity: 0.6 });
+      if (gsap && (window as any).particlesMaterial) {
+        gsap.killTweensOf((window as any).particlesMaterial);
+        gsap.set((window as any).particlesMaterial, { opacity: 0.6 });
       }
     };
   }, []);

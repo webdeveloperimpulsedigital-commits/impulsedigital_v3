@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import ServiceHero from '@/components/Service/ServiceHero';
 import ServiceHandoff from '@/components/Service/ServiceHandoff';
 import Logos from '@/components/Logos';
@@ -41,12 +42,7 @@ const agenticChannels = [
 const AgenticAI: React.FC = () => {
   useServicePageBackground();
 
-  useEffect(() => {
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
     // Channels orbit animation
     const stage = document.getElementById('channels-stage');
     const linesSvg = document.getElementById('channels-orbit-lines');
@@ -61,7 +57,7 @@ const AgenticAI: React.FC = () => {
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
-    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath && gsap && ScrollTrigger) {
+    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath) {
       let chipPositions: any[] = [];
       let cx = 0, cy = 0;
       let markRadius = 80;

@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 
 import { ServiceVs } from '@/components/Service/ServiceTemplate';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 
 /**
  * Employer Branding service page converted from employer-branding.html
@@ -20,80 +21,79 @@ const EmployerBrandingCaseStudy: React.FC = () => {
       actions: Array.from(document.querySelectorAll('.svc-hero-cta-row .btn')),
     });
 
-    const { gsap, ScrollTrigger, SplitType } = window as any;
-    let ctx: any;
-
-    if (gsap && ScrollTrigger) {
-      ctx = gsap.context(() => {
-        // Background transition
-        const warpStart = document.querySelector('#warp-start');
-        if (warpStart) {
-          gsap.to(document.body, {
-            backgroundColor: '#000000',
-            scrollTrigger: { trigger: warpStart, start: 'top bottom', end: 'top top', scrub: true },
-          });
-        }
-        // Split text
-        if (SplitType) {
-          document.querySelectorAll('.split-text').forEach((text: Element) => {
-            const split = new SplitType(text, { types: 'lines, words' });
-            if (split.lines) {
-              split.lines.forEach((line: HTMLElement) => {
-                const w = document.createElement('div');
-                w.classList.add('line-wrapper');
-                line.parentNode?.insertBefore(w, line);
-                w.appendChild(line);
-              });
-            }
-            if (split.words && split.words.length) {
-              gsap.fromTo(split.words, { yPercent: 100, opacity: 0 }, {
-                scrollTrigger: { trigger: text, start: 'top 85%' },
-                yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power3.out',
-              });
-            }
-          });
-        }
-        // Stat counters
-        document.querySelectorAll('[data-stat-target]').forEach((el: Element, i: number) => {
-          const target = parseFloat((el as HTMLElement).getAttribute('data-stat-target') || '0');
-          const suffix = (el as HTMLElement).getAttribute('data-stat-suffix') || '';
-          const state = { value: 0 };
-          ScrollTrigger.create({
-            trigger: '.svc-stats', start: 'top 80%', once: true,
-            onEnter: () => gsap.to(state, {
-              value: target, duration: 2, delay: i * 0.1, ease: 'power4.out',
-              onUpdate: () => { el.textContent = Math.round(state.value) + suffix; },
-            }),
-          });
-        });
-        // CTA path
-        const ctaPath = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
-        if (ctaPath) {
-          const len = ctaPath.getTotalLength();
-          gsap.set(ctaPath, { strokeDasharray: len, strokeDashoffset: len });
-          ScrollTrigger.create({
-            trigger: '.svc-final-cta', start: 'top 60%', once: true,
-            onEnter: () => gsap.to(ctaPath, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
-          });
-        }
-      });
-
-      setTimeout(() => {
-        ScrollTrigger.refresh();
-      }, 100);
-    }
-
     return () => {
       stopHeroReveal();
       document.body.classList.remove('service-page', 'employer-page');
-      if (gsap) {
-        gsap.to(document.body, { backgroundColor: '', duration: 0 });
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger, SplitType) => {
+    const ctx = gsap.context(() => {
+      // Background transition
+      const warpStart = document.querySelector('#warp-start');
+      if (warpStart) {
+        gsap.to(document.body, {
+          backgroundColor: '#000000',
+          scrollTrigger: { trigger: warpStart, start: 'top bottom', end: 'top top', scrub: true },
+        });
       }
+      // Split text
+      if (SplitType) {
+        document.querySelectorAll('.split-text').forEach((text: Element) => {
+          const split = new SplitType(text, { types: 'lines, words' });
+          if (split.lines) {
+            split.lines.forEach((line: HTMLElement) => {
+              const w = document.createElement('div');
+              w.classList.add('line-wrapper');
+              line.parentNode?.insertBefore(w, line);
+              w.appendChild(line);
+            });
+          }
+          if (split.words && split.words.length) {
+            gsap.fromTo(split.words, { yPercent: 100, opacity: 0 }, {
+              scrollTrigger: { trigger: text, start: 'top 85%' },
+              yPercent: 0, opacity: 1, duration: 0.8, stagger: 0.015, ease: 'power3.out',
+            });
+          }
+        });
+      }
+      // Stat counters
+      document.querySelectorAll('[data-stat-target]').forEach((el: Element, i: number) => {
+        const target = parseFloat((el as HTMLElement).getAttribute('data-stat-target') || '0');
+        const suffix = (el as HTMLElement).getAttribute('data-stat-suffix') || '';
+        const state = { value: 0 };
+        ScrollTrigger.create({
+          trigger: '.svc-stats', start: 'top 80%', once: true,
+          onEnter: () => gsap.to(state, {
+            value: target, duration: 2, delay: i * 0.1, ease: 'power4.out',
+            onUpdate: () => { el.textContent = Math.round(state.value) + suffix; },
+          }),
+        });
+      });
+      // CTA path
+      const ctaPath = document.querySelector('.svc-final-cta-path') as SVGPathElement | null;
+      if (ctaPath) {
+        const len = ctaPath.getTotalLength();
+        gsap.set(ctaPath, { strokeDasharray: len, strokeDashoffset: len });
+        ScrollTrigger.create({
+          trigger: '.svc-final-cta', start: 'top 60%', once: true,
+          onEnter: () => gsap.to(ctaPath, { strokeDashoffset: 0, duration: 3.5, ease: 'power2.inOut' }),
+        });
+      }
+    });
+
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      clearTimeout(refreshTimer);
+      gsap.to(document.body, { backgroundColor: '', duration: 0 });
       if (ctx) {
         ctx.revert();
       }
     };
-  }, []);
+  }, [], true);
 
   const svgPath = "M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z";
   const ImpulseMark = () => (

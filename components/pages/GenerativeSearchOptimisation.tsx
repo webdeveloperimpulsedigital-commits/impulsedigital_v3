@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import ServiceHero from '@/components/Service/ServiceHero';
 import ServiceHandoff from '@/components/Service/ServiceHandoff';
 import Logos from '@/components/Logos';
@@ -30,11 +31,12 @@ const GenerativeSearchOptimisation: React.FC = () => {
 
   useEffect(() => {
     document.body.classList.add('gso-page');
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    
+    return () => {
+      document.body.classList.remove('gso-page');
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
     // GSO Clarity Stage Animation
     const clarityStage = document.getElementById('gso-clarity-stage');
     const clarityLines = document.getElementById('gso-clarity-lines');
@@ -49,7 +51,7 @@ const GenerativeSearchOptimisation: React.FC = () => {
     let clarityTrigger: any = null;
     const isMobileClarity = window.matchMedia('(max-width: 768px)').matches;
 
-    if (!isMobileClarity && clarityStage && clarityLines && signalChips.length && lens && ringProgress && answerCard && gsap && ScrollTrigger) {
+    if (!isMobileClarity && clarityStage && clarityLines && signalChips.length && lens && ringProgress && answerCard) {
       const ringLength = 2 * Math.PI * 68;
       gsap.set(ringProgress, { strokeDasharray: ringLength, strokeDashoffset: ringLength });
       gsap.set(signalChips, { opacity: 0, x: -20 });
@@ -191,7 +193,6 @@ const GenerativeSearchOptimisation: React.FC = () => {
     }
 
     return () => {
-      document.body.classList.remove('gso-page');
       window.removeEventListener('resize', measureFn);
       if (measureTimeout) window.clearTimeout(measureTimeout);
       if (clarityTrigger) clarityTrigger.kill();

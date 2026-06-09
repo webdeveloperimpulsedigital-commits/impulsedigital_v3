@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import { useRouter } from 'next/navigation';
 
 
@@ -394,65 +395,66 @@ const CaseStudies: React.FC = () => {
       primary: containerRef.current?.querySelector('.work-hero-title'),
       supporting: containerRef.current?.querySelector('.work-hero-desc'),
     });
-    
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    if ((window as any).gsap && (window as any).ScrollTrigger && containerRef.current) {
-        // Background color inversion & particle fade
-        const triggerEl = document.querySelector('.work-list-section');
-        if (triggerEl) {
-          gsap.to(document.body, {
-            backgroundColor: '#000000',
+
+    return () => {
+      stopHeroReveal();
+      document.body.classList.remove('work-page');
+      document.body.classList.remove('service-page');
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    if (!containerRef.current) return;
+
+    // Background color inversion & particle fade
+    const triggerEl = document.querySelector('.work-list-section');
+    if (triggerEl) {
+      gsap.to(document.body, {
+        backgroundColor: '#000000',
+        scrollTrigger: {
+          trigger: triggerEl,
+          start: 'top 60%',
+          end: 'top 10%',
+          scrub: true
+        }
+      });
+
+      if ((window as any).particlesMaterial) {
+        gsap.fromTo((window as any).particlesMaterial,
+          { opacity: 0.6 },
+          {
+            opacity: 0,
             scrollTrigger: {
               trigger: triggerEl,
               start: 'top 60%',
               end: 'top 10%',
               scrub: true
             }
-          });
-
-          if ((window as any).particlesMaterial) {
-            gsap.fromTo((window as any).particlesMaterial,
-              { opacity: 0.6 },
-              {
-                opacity: 0,
-                scrollTrigger: {
-                  trigger: triggerEl,
-                  start: 'top 60%',
-                  end: 'top 10%',
-                  scrub: true
-                }
-              }
-            );
           }
-        }
-
-      // Handoff Line Reveal
-      const separators = containerRef.current.querySelectorAll('.work-list-separator');
-      separators.forEach((sep: any) => {
-        ScrollTrigger.create({
-          trigger: sep,
-          start: 'top 95%',
-          onEnter: () => sep.classList.add('active'),
-          once: true
-        });
-      });
-
-      ScrollTrigger.refresh();
+        );
+      }
     }
 
+    // Handoff Line Reveal
+    const separators = containerRef.current.querySelectorAll('.work-list-separator');
+    separators.forEach((sep: any) => {
+      ScrollTrigger.create({
+        trigger: sep,
+        start: 'top 95%',
+        onEnter: () => sep.classList.add('active'),
+        once: true
+      });
+    });
+
+    ScrollTrigger.refresh();
+
     return () => {
-      stopHeroReveal();
-      document.body.classList.remove('work-page');
-      document.body.classList.remove('service-page');
       gsap.to(document.body, { backgroundColor: '#020018', duration: 0 });
       if ((window as any).particlesMaterial) {
         gsap.to((window as any).particlesMaterial, { opacity: 0.6, duration: 0 });
       }
-      if ((window as any).ScrollTrigger) {
-        (window as any).ScrollTrigger.getAll().forEach((t: any) => {
+      if (ScrollTrigger) {
+        ScrollTrigger.getAll().forEach((t: any) => {
           if (t.trigger && t.trigger.closest && t.trigger.closest('.work-wrapper')) {
             t.kill();
           }

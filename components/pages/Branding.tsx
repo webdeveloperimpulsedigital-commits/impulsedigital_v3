@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import ServiceHero from '@/components/Service/ServiceHero';
 import ServiceHandoff from '@/components/Service/ServiceHandoff';
 import Logos from '@/components/Logos';
@@ -30,12 +31,13 @@ const Branding: React.FC = () => {
   useServicePageBackground();
 
   useEffect(() => {
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
     document.body.classList.add('branding-page');
-    
+    return () => {
+      document.body.classList.remove('branding-page');
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
     // Channels orbit animation
     const stage = document.getElementById('channels-stage');
     const linesSvg = document.getElementById('channels-orbit-lines');
@@ -50,7 +52,7 @@ const Branding: React.FC = () => {
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
-    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath && gsap && ScrollTrigger) {
+    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath) {
       let chipPositions: any[] = [];
       let cx = 0, cy = 0;
       let markRadius = 80;
@@ -154,7 +156,6 @@ const Branding: React.FC = () => {
     }
 
     return () => {
-      document.body.classList.remove('branding-page');
       window.removeEventListener('resize', measureFn);
       if (pulseTimer) clearInterval(pulseTimer);
       clearTimeout(measureTimeout1);

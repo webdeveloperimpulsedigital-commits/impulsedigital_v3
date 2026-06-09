@@ -4,6 +4,7 @@
 
 
 import React, { useEffect, useRef } from 'react';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import Link from 'next/link';
 
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
@@ -93,16 +94,14 @@ const BrandInfrastructure: React.FC = () => {
   const pageRef = useRef<HTMLElement>(null);
   useServicePageBackground('.gi2-split');
 
-  useEffect(() => {
-    // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
-    const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
-    // Lazy proxy — reads window.ScrollTrigger at call-time
-    const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
-    if (!gsap || !ScrollTrigger || !pageRef.current) return;
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    if (!pageRef.current) return;
 
     /* ── Cards reveal ── */
     const cards = pageRef.current.querySelectorAll('.gi2-card');
     let cardsTrigger: any = null;
+    let cleanups: (() => void)[] = [];
+
     if (cards.length) {
       cardsTrigger = ScrollTrigger.create({
         trigger: '.gi2-split',
@@ -120,17 +119,22 @@ const BrandInfrastructure: React.FC = () => {
       if (!path) return;
       const len = path.getTotalLength?.() ?? 2000;
       gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
-      card.addEventListener('mouseenter', () =>
-        gsap.to(path, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.out' })
-      );
-      card.addEventListener('mouseleave', () =>
-        gsap.to(path, { strokeDashoffset: len, duration: 1.0, ease: 'power2.in' })
-      );
+
+      const onMouseEnter = () => gsap.to(path, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.out' });
+      const onMouseLeave = () => gsap.to(path, { strokeDashoffset: len, duration: 1.0, ease: 'power2.in' });
+
+      card.addEventListener('mouseenter', onMouseEnter);
+      card.addEventListener('mouseleave', onMouseLeave);
+
+      cleanups.push(() => {
+        card.removeEventListener('mouseenter', onMouseEnter);
+        card.removeEventListener('mouseleave', onMouseLeave);
+      });
     });
 
     /* ── Magnetic 3D Tilt on hover ── */
     cards.forEach((card) => {
-      card.addEventListener('pointermove', (e: any) => {
+      const onPointerMove = (e: any) => {
         if (window.innerWidth <= 900) return; // Disable on mobile
         const rect = (card as HTMLElement).getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -148,14 +152,22 @@ const BrandInfrastructure: React.FC = () => {
           transformPerspective: 1000,
           transformOrigin: 'center center',
         });
+      };
+
+      const onPointerLeave = () => gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.8, ease: 'elastic.out(1,0.5)' });
+
+      card.addEventListener('pointermove', onPointerMove);
+      card.addEventListener('pointerleave', onPointerLeave);
+
+      cleanups.push(() => {
+        card.removeEventListener('pointermove', onPointerMove);
+        card.removeEventListener('pointerleave', onPointerLeave);
       });
-      card.addEventListener('pointerleave', () =>
-        gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.8, ease: 'elastic.out(1,0.5)' })
-      );
     });
 
     return () => {
       if (cardsTrigger) cardsTrigger.kill();
+      cleanups.forEach((c) => c());
     };
   }, []);
 

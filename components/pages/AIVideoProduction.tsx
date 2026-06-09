@@ -10,6 +10,7 @@ import Logos from '@/components/Logos';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
+import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 
 import {
   ServiceProblem,
@@ -59,8 +60,6 @@ const AIVideoProduction: React.FC = () => {
   useServicePageBackground();
 
   useEffect(() => {
-    const { gsap, ScrollTrigger, SplitType } = window as any;
-
     // Add specific style for this page
     const style = document.createElement('style');
     style.textContent = `
@@ -283,76 +282,6 @@ const AIVideoProduction: React.FC = () => {
     document.head.appendChild(style);
     document.body.classList.add('ai-video-production-page');
 
-    const pageScrollTriggers: any[] = [];
-
-    // Stats reveal sequence
-    const statsGrid = document.querySelector('.svc-stats-grid');
-    const statsCols = document.querySelectorAll('.svc-stat');
-    if (statsGrid && statsCols.length && gsap && ScrollTrigger) {
-      gsap.set(statsCols, { opacity: 0, y: 32 });
-      const statsTrigger = ScrollTrigger.create({
-        trigger: statsGrid,
-        start: 'top 70%',
-        once: true,
-        onEnter: () => {
-          gsap.to(statsCols, {
-            opacity: 1, y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            onComplete: () => {
-              statsCols.forEach((col) => {
-                const numEl = col.querySelector('[data-stat-target]');
-                if (!numEl) return;
-                const target = parseFloat(numEl.getAttribute('data-stat-target') || '0');
-                const suffix = numEl.getAttribute('data-stat-suffix') || '';
-                const decimals = parseInt(numEl.getAttribute('data-stat-decimals') || '0', 10);
-                const proxy = { v: 0 };
-                gsap.to(proxy, {
-                  v: target,
-                  duration: 2.2,
-                  ease: 'power3.out',
-                  delay: 0.1,
-                  onUpdate: () => {
-                    const val = decimals > 0 ? proxy.v.toFixed(decimals) : Math.round(proxy.v).toLocaleString();
-                    numEl.textContent = val + suffix;
-                  }
-                });
-              });
-            }
-          });
-        }
-      });
-      pageScrollTriggers.push(statsTrigger);
-    }
-
-    // Problem gaps broken-chain specific animation for AI Video
-    const gapItems = document.querySelectorAll('.svc-problem-gaps li');
-    if (gapItems.length && gsap && ScrollTrigger) {
-      // Clear any generic ScrollTriggers on this element from other scripts
-      // Then re-init for specific animation
-      const gapTrigger = ScrollTrigger.create({
-        trigger: '.svc-problem-gaps',
-        start: 'top 65%',
-        once: true,
-        onEnter: () => {
-          gapItems.forEach((item, i) => {
-            gsap.to(item, {
-              opacity: 0.85,
-              x: 0,
-              duration: 0.5,
-              delay: i * 0.18,
-              ease: 'power2.out',
-              onStart: () => {
-                setTimeout(() => item.classList.add('struck'), 200);
-              }
-            });
-          });
-        }
-      });
-      pageScrollTriggers.push(gapTrigger);
-    }
-
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -539,6 +468,90 @@ const AIVideoProduction: React.FC = () => {
       }
     }
 
+    return () => {
+      if (document.head.contains(style)) document.head.removeChild(style);
+      document.body.classList.remove('ai-video-production-page');
+      signalCancelled = true;
+      signalTimers.forEach((timer) => clearTimeout(timer));
+      signalRevealQueue = [];
+      signalRevealTimer = null;
+      if (signalScrollRaf) window.cancelAnimationFrame(signalScrollRaf);
+      window.removeEventListener('scroll', checkSignalRailTrigger);
+      window.removeEventListener('resize', checkSignalRailTrigger);
+      if (signalObs) signalObs.disconnect();
+      if (signalItemObs) signalItemObs.disconnect();
+    };
+  }, []);
+
+  useGsapSafeEffect((gsap, ScrollTrigger) => {
+    const pageScrollTriggers: any[] = [];
+
+    // Stats reveal sequence
+    const statsGrid = document.querySelector('.svc-stats-grid');
+    const statsCols = document.querySelectorAll('.svc-stat');
+    if (statsGrid && statsCols.length) {
+      gsap.set(statsCols, { opacity: 0, y: 32 });
+      const statsTrigger = ScrollTrigger.create({
+        trigger: statsGrid,
+        start: 'top 70%',
+        once: true,
+        onEnter: () => {
+          gsap.to(statsCols, {
+            opacity: 1, y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            onComplete: () => {
+              statsCols.forEach((col) => {
+                const numEl = col.querySelector('[data-stat-target]');
+                if (!numEl) return;
+                const target = parseFloat(numEl.getAttribute('data-stat-target') || '0');
+                const suffix = numEl.getAttribute('data-stat-suffix') || '';
+                const decimals = parseInt(numEl.getAttribute('data-stat-decimals') || '0', 10);
+                const proxy = { v: 0 };
+                gsap.to(proxy, {
+                  v: target,
+                  duration: 2.2,
+                  ease: 'power3.out',
+                  delay: 0.1,
+                  onUpdate: () => {
+                    const val = decimals > 0 ? proxy.v.toFixed(decimals) : Math.round(proxy.v).toLocaleString();
+                    numEl.textContent = val + suffix;
+                  }
+                });
+              });
+            }
+          });
+        }
+      });
+      pageScrollTriggers.push(statsTrigger);
+    }
+
+    // Problem gaps broken-chain specific animation for AI Video
+    const gapItems = document.querySelectorAll('.svc-problem-gaps li');
+    if (gapItems.length) {
+      const gapTrigger = ScrollTrigger.create({
+        trigger: '.svc-problem-gaps',
+        start: 'top 65%',
+        once: true,
+        onEnter: () => {
+          gapItems.forEach((item, i) => {
+            gsap.to(item, {
+              opacity: 0.85,
+              x: 0,
+              duration: 0.5,
+              delay: i * 0.18,
+              ease: 'power2.out',
+              onStart: () => {
+                setTimeout(() => item.classList.add('struck'), 200);
+              }
+            });
+          });
+        }
+      });
+      pageScrollTriggers.push(gapTrigger);
+    }
+
     // Channels orbit animation
     const stage = document.getElementById('channels-stage');
     const linesSvg = document.getElementById('channels-orbit-lines');
@@ -551,7 +564,9 @@ const AIVideoProduction: React.FC = () => {
     let sectionObs: IntersectionObserver | null = null;
     let measureFn: () => void = () => { };
 
-    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath && gsap && ScrollTrigger) {
+    const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
+
+    if (!isMobileChannels && stage && linesSvg && centerEl && centerPath) {
       let chipPositions: any[] = [];
       let cx = 0, cy = 0;
       let markRadius = 80;
@@ -655,19 +670,8 @@ const AIVideoProduction: React.FC = () => {
     }
 
     return () => {
-      if (document.head.contains(style)) document.head.removeChild(style);
-      document.body.classList.remove('ai-video-production-page');
       window.removeEventListener('resize', measureFn);
       if (pulseTimer) clearInterval(pulseTimer);
-      signalCancelled = true;
-      signalTimers.forEach((timer) => clearTimeout(timer));
-      signalRevealQueue = [];
-      signalRevealTimer = null;
-      if (signalScrollRaf) window.cancelAnimationFrame(signalScrollRaf);
-      window.removeEventListener('scroll', checkSignalRailTrigger);
-      window.removeEventListener('resize', checkSignalRailTrigger);
-      if (signalObs) signalObs.disconnect();
-      if (signalItemObs) signalItemObs.disconnect();
       clearTimeout(measureTimeout1);
       clearTimeout(measureTimeout2);
       if (sectionObs) sectionObs.disconnect();
