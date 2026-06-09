@@ -13,16 +13,20 @@ import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 const Careers: React.FC = () => {
   useEffect(() => {
-    document.body.classList.add('service-page', 'careers-page');
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     // Lazy proxy — reads window.gsap at call-time, not at mount-time (avoids stale CDN closure)
     const gsap = new Proxy({} as any, { get: (_t, k) => (window as any).gsap?.[k as string] });
     // Lazy proxy — reads window.ScrollTrigger at call-time
     const ScrollTrigger = new Proxy({} as any, { get: (_t, k) => (window as any).ScrollTrigger?.[k as string] });
     const SplitType = (window as any).SplitType;
 
+    let checkInterval: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout;
+    let strikeStyleTag: HTMLStyleElement | undefined;
+    let jobCardCleanups: (() => void)[] = [];
+    let initialized = false;
 
+    // 1. Immediate non-GSAP setup
+    document.body.classList.add('service-page', 'careers-page');
 
     const stopHeroReveal = startHeroCopyReveal({
       primary: document.querySelector('.car-hero-headline'),
@@ -34,13 +38,63 @@ const Careers: React.FC = () => {
       actions: Array.from(document.querySelectorAll('.car-hero .svc-hero-cta-row .btn')),
     });
 
-    // --- BACKGROUND TRANSITION — purple → black, drift fades ---
-    const waitForGsap = setInterval(() => {
-      if (gsap && ScrollTrigger) {
-        clearInterval(waitForGsap);
-        const trigger = document.querySelector('#warp-start');
-        if (!trigger) return;
+    const handoffs = document.querySelectorAll('.svc-handoff');
+    if (handoffs.length) {
+      const handoffObs = new IntersectionObserver((entries) => {
+        entries.forEach((entry: any) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            handoffObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      handoffs.forEach((h) => handoffObs.observe(h));
+    }
 
+    // Positions toggles (click handlers are immediately safe)
+    const jobCards = document.querySelectorAll('[data-job-card]');
+    if (jobCards.length) {
+      jobCards.forEach((card: any) => {
+        const toggle = card.querySelector('.car-job-toggle');
+        const setOpen = (open: any) => {
+          card.classList.toggle('is-open', open);
+          if (toggle) toggle.setAttribute('aria-expanded', String(open));
+          const ScrollTrigger = (window as any).ScrollTrigger;
+          if (ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 320);
+        };
+
+        if (toggle) {
+          const clickHandler = (event: any) => {
+            event.preventDefault();
+            const shouldOpen = !card.classList.contains('is-open');
+            jobCards.forEach((other) => {
+              if (other !== card) {
+                other.classList.remove('is-open');
+                const otherToggle = other.querySelector('.car-job-toggle');
+                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+              }
+            });
+            setOpen(shouldOpen);
+          };
+          toggle.addEventListener('click', clickHandler);
+          jobCardCleanups.push(() => toggle.removeEventListener('click', clickHandler));
+        }
+      });
+    }
+
+    // 2. Define the GSAP / ScrollTrigger dependent setup
+    const initAnimations = () => {
+      const gsap = (window as any).gsap;
+      const ScrollTrigger = (window as any).ScrollTrigger;
+      const SplitType = (window as any).SplitType;
+
+      if (!gsap || !ScrollTrigger) return;
+
+      initialized = true;
+
+      // --- BACKGROUND TRANSITION — purple → black, drift fades ---
+      const trigger = document.querySelector('#warp-start');
+      if (trigger) {
         gsap.to(document.body, {
           backgroundColor: '#000000',
           scrollTrigger: {
@@ -66,389 +120,343 @@ const Careers: React.FC = () => {
           );
         }
       }
-    }, 80);
-    setTimeout(() => clearInterval(waitForGsap), 6000);
 
-    // --- HANDOFFS — same activation pattern as service pages ---
-    const handoffs = document.querySelectorAll('.svc-handoff');
-    if (handoffs.length) {
-      const handoffObs = new IntersectionObserver((entries) => {
-        entries.forEach((entry: any) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            handoffObs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      handoffs.forEach((h) => handoffObs.observe(h));
-    }
-
-    // --- QUESTION LIST — illuminate sequentially ---
-    const qs = document.querySelectorAll('.car-q');
-    if (qs.length && gsap && ScrollTrigger) {
-      gsap.set(qs, { opacity: 0, x: -20 });
-      ScrollTrigger.create({
-        trigger: '.car-questions',
-        start: 'top 70%',
-        once: true,
-        onEnter: () => {
-          qs.forEach((q, i) => {
-            gsap.to(q, {
-              opacity: 1, x: 0,
-              duration: 0.6,
-              delay: i * 0.18,
-              ease: 'power3.out',
-              onStart: () => setTimeout(() => q.classList.add('lit'), 220)
-            });
-          });
-        }
-      });
-    }
-
-    // --- TRANSLATION ROWS — reveal with stagger ---
-    const tRows = document.querySelectorAll('.car-translate-row');
-    if (tRows.length && gsap && ScrollTrigger) {
-      gsap.set(tRows, { opacity: 0, y: 24 });
-      ScrollTrigger.create({
-        trigger: '.car-translate-list',
-        start: 'top 65%',
-        once: true,
-        onEnter: () => {
-          gsap.to(tRows, {
-            opacity: 1, y: 0,
-            duration: 0.7, stagger: 0.1,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // --- VALUE CARDS — cascade in ---
-    const values = document.querySelectorAll('.car-value');
-    if (values.length && gsap && ScrollTrigger) {
-      gsap.set(values, { opacity: 0, y: 40 });
-      ScrollTrigger.create({
-        trigger: '.car-values-grid',
-        start: 'top 60%',
-        once: true,
-        onEnter: () => {
-          gsap.to(values, {
-            opacity: 1, y: 0,
-            duration: 0.9, stagger: 0.15,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // --- EXPECT LIST — reveal each row ---
-    const exItems = document.querySelectorAll('.car-expect-list li');
-    if (exItems.length && gsap && ScrollTrigger) {
-      gsap.set(exItems, { opacity: 0, x: -18 });
-      ScrollTrigger.create({
-        trigger: '.car-expect-list',
-        start: 'top 65%',
-        once: true,
-        onEnter: () => {
-          gsap.to(exItems, {
-            opacity: 1, x: 0,
-            duration: 0.6, stagger: 0.12,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // --- GALLERY — staggered reveal + light parallax ---
-    const gImgs = document.querySelectorAll('.car-life-img');
-    if (gImgs.length && gsap && ScrollTrigger) {
-      gsap.set(gImgs, { opacity: 0, y: 60, scale: 0.96 });
-      ScrollTrigger.create({
-        trigger: '.car-life-gallery',
-        start: 'top 70%',
-        once: true,
-        onEnter: () => {
-          gsap.to(gImgs, {
-            opacity: 1, y: 0, scale: 1,
-            duration: 1.1, stagger: 0.12,
-            ease: 'power3.out'
-          });
-        }
-      });
-
-      // Light parallax: each image drifts upward slightly while in view
-      gImgs.forEach((img, i) => {
-        const depth = (i % 3) * 18 + 12;
-        gsap.to(img, {
-          y: -depth,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: img,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-          }
-        });
-      });
-    }
-
-    // --- FIT LIST ---
-    const fitItems = document.querySelectorAll('.car-fit-list li');
-    if (fitItems.length && gsap && ScrollTrigger) {
-      gsap.set(fitItems, { opacity: 0, x: -14 });
-      ScrollTrigger.create({
-        trigger: '.car-fit-list',
-        start: 'top 65%',
-        once: true,
-        onEnter: () => {
-          gsap.to(fitItems, {
-            opacity: 1, x: 0,
-            duration: 0.55, stagger: 0.1,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // --- APPETITE BLOCK ---
-    const appetite = document.querySelector('.car-appetite');
-    if (appetite && gsap && ScrollTrigger) {
-      const lines = appetite.querySelectorAll('p');
-      gsap.set(lines, { opacity: 0, y: 22 });
-      ScrollTrigger.create({
-        trigger: appetite,
-        start: 'top 70%',
-        once: true,
-        onEnter: () => {
-          gsap.to(lines, {
-            opacity: 1, y: 0,
-            duration: 0.8, stagger: 0.18,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // --- FINAL CARD reveal ---
-    const finalCard = document.querySelector('.car-final-card');
-    if (finalCard && gsap && ScrollTrigger) {
-      gsap.set(finalCard, { opacity: 0, y: 50 });
-      ScrollTrigger.create({
-        trigger: finalCard,
-        start: 'top 75%',
-        once: true,
-        onEnter: () => {
-          gsap.to(finalCard, {
-            opacity: 1, y: 0,
-            duration: 1.0,
-            ease: 'power3.out'
-          });
-        }
-      });
-    }
-
-    // =====================================================
-    // IMMERSIVE LAYER — pointer spotlights, scroll rails,
-    // magnetic CTAs, watermark drift, scrubbed illumination.
-    // =====================================================
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isDesktop = window.innerWidth > 900;
-
-    // --- Hero: faint watermark fade-in + drift parallax ---
-    const heroWm = document.querySelector('.car-hero-watermark');
-    const heroSection = document.querySelector('.car-hero');
-    if (heroWm && gsap) {
-      gsap.to(heroWm, { opacity: 0.07, duration: 2.4, delay: 0.6, ease: 'power2.out' });
-    }
-    if (heroSection && gsap && !prefersReduced && isDesktop) {
-      const heroContent = heroSection.querySelector('.svc-hero-page-content');
-      let hx = 0, hy = 0, tx = 0, ty = 0;
-      heroSection.addEventListener('mousemove', (e) => {
-        const r = heroSection.getBoundingClientRect();
-        tx = ((e.clientX - r.left) / r.width - 0.5);
-        ty = ((e.clientY - r.top) / r.height - 0.5);
-      });
-      gsap.ticker.add(() => {
-        hx += (tx - hx) * 0.08;
-        hy += (ty - hy) * 0.08;
-        if (heroWm) gsap.set(heroWm, { x: hx * -40, y: hy * -40 });
-        if (heroContent) gsap.set(heroContent, { x: hx * 10, y: hy * 8 });
-      });
-    }
-
-    // --- Questions: scroll-progress rail fill ---
-    const rail = document.querySelector('.car-questions-rail');
-    const railFill = document.querySelector('.car-questions-rail-fill');
-    const questionsList = document.querySelector('.car-questions');
-    if (rail && railFill && questionsList && gsap && ScrollTrigger) {
-      ScrollTrigger.create({
-        trigger: questionsList,
-        start: 'top 75%',
-        end: 'bottom 55%',
-        scrub: 0.4,
-        onUpdate: (self) => {
-          (railFill as any).style.setProperty('--rail-progress', (self.progress * 100) + '%');
-        }
-      });
-    }
-
-    // --- Translate rows: scroll-scrubbed illumination per row ---
-    document.querySelectorAll('.car-translate-row').forEach((row) => {
-      ScrollTrigger.create({
-        trigger: row,
-        start: 'top 70%',
-        end: 'bottom 30%',
-        onEnter: () => row.classList.add('lit'),
-        onEnterBack: () => row.classList.add('lit'),
-        onLeave: () => { },
-        onLeaveBack: () => row.classList.remove('lit')
-      });
-    });
-
-    // --- Value cards: pointer spotlight + VanillaTilt ---
-    const valueCards = document.querySelectorAll('.car-value');
-    valueCards.forEach((card: any) => {
-      card.addEventListener('mousemove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
-      });
-    });
-    if ((window as any).VanillaTilt && isDesktop && valueCards.length) {
-      (window as any).VanillaTilt.init(valueCards, {
-        max: 4,
-        speed: 600,
-        glare: false,
-        perspective: 1400,
-        scale: 1.012,
-        'reset-to-start': true
-      });
-    }
-
-    // --- Final card: pointer spotlight tracking ---
-    if (finalCard && !prefersReduced) {
-      finalCard.addEventListener('mousemove', (e) => {
-        const r = finalCard.getBoundingClientRect();
-        finalCard.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-        finalCard.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
-      });
-    }
-
-    // Note: gallery hover/dim is handled in CSS to avoid conflicts
-    // with the GSAP parallax tweens on .car-life-img.
-
-    // --- "Life at Impulse" jab: scroll-triggered strikethrough sequence ---
-    // Sequence: corporate label fades in faintly → thick line draws L→R
-    // through it (rejection) → "The Part You Actually Join" slams up.
-    const jabWrap = document.querySelector('.car-life-jab');
-    const jabText = document.querySelector('.car-life-jab-text');
-    const jabStrike = document.querySelector('.car-life-jab-strike');
-    const lifeTitle = document.querySelector('.car-life-title');
-    if (jabWrap && jabStrike && lifeTitle && gsap && ScrollTrigger) {
-      // Inject CSS custom property driver for strike width
-      const strikeStyleTag = document.createElement('style');
-      strikeStyleTag.textContent = '.car-life-jab-strike { width: var(--strike-w, 0%); }';
-      document.head.appendChild(strikeStyleTag);
-
-      ScrollTrigger.create({
-        trigger: '.car-life-header',
-        start: 'top 60%',
-        once: true,
-        onEnter: () => {
-          const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-          gsap.set(jabWrap, { y: 18 });
-
-          // 1. Corporate label arrives first, large enough to feel deliberate.
-          tl.to(jabWrap, { opacity: 1, y: 0, duration: 0.65 })
-
-            // 2. The Impulse purple strike rejects the corporate line.
-            .add(() => {
-              const prog = { v: 0 };
-              gsap.to(prog, {
-                v: 106,
-                duration: 0.58,
-                ease: 'power3.inOut',
-                onUpdate: () => jabStrike.style.setProperty('--strike-w', prog.v + '%')
+      // --- QUESTION LIST — illuminate sequentially ---
+      const qs = document.querySelectorAll('.car-q');
+      if (qs.length) {
+        gsap.set(qs, { opacity: 0, x: -20 });
+        ScrollTrigger.create({
+          trigger: '.car-questions',
+          start: 'top 70%',
+          once: true,
+          onEnter: () => {
+            qs.forEach((q, i) => {
+              gsap.to(q, {
+                opacity: 1, x: 0,
+                duration: 0.6,
+                delay: i * 0.18,
+                ease: 'power3.out',
+                onStart: () => setTimeout(() => q.classList.add('lit'), 220)
               });
-            }, '+=0.35')
-            .to(jabText, {
-              opacity: 0.38,
-              duration: 0.28,
-              ease: 'power2.out'
-            }, '+=0.35')
-
-            // 3. The real title appears in Impulse purple.
-            .to(lifeTitle, {
-              opacity: 1,
-              y: 0,
-              duration: 0.85,
-              ease: 'power4.out'
-            }, '-=0.05');
-        }
-      });
-    }
-
-    // --- Open positions: hover preview, click/tap lock, center mark reveal ---
-    const positionsSection = document.querySelector('.car-positions');
-    const jobCards = document.querySelectorAll('[data-job-card]');
-    if (jobCards.length) {
-      jobCards.forEach((card: any) => {
-        const toggle = card.querySelector('.car-job-toggle');
-        const setOpen = (open: any) => {
-          card.classList.toggle('is-open', open);
-          if (toggle) toggle.setAttribute('aria-expanded', String(open));
-          if (ScrollTrigger) setTimeout(() => ScrollTrigger.refresh(), 320);
-        };
-
-        if (toggle) {
-          toggle.addEventListener('click', (event: any) => {
-            event.preventDefault();
-            const shouldOpen = !card.classList.contains('is-open');
-            jobCards.forEach((other) => {
-              if (other !== card) {
-                other.classList.remove('is-open');
-                const otherToggle = other.querySelector('.car-job-toggle');
-                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
-              }
             });
-            setOpen(shouldOpen);
+          }
+        });
+      }
+
+      // --- TRANSLATION ROWS — reveal with stagger ---
+      const tRows = document.querySelectorAll('.car-translate-row');
+      if (tRows.length) {
+        gsap.set(tRows, { opacity: 0, y: 24 });
+        ScrollTrigger.create({
+          trigger: '.car-translate-list',
+          start: 'top 65%',
+          once: true,
+          onEnter: () => {
+            gsap.to(tRows, {
+              opacity: 1, y: 0,
+              duration: 0.7, stagger: 0.1,
+              ease: 'power3.out'
+            });
+          }
+        });
+      }
+
+      // --- VALUE CARDS — cascade in ---
+      const values = document.querySelectorAll('.car-value');
+      if (values.length) {
+        gsap.set(values, { opacity: 0, y: 40 });
+        ScrollTrigger.create({
+          trigger: '.car-values-grid',
+          start: 'top 60%',
+          once: true,
+          onEnter: () => {
+            gsap.to(values, {
+              opacity: 1, y: 0,
+              duration: 0.9, stagger: 0.15,
+              ease: 'power3.out'
+            });
+          }
+        });
+      }
+
+      // --- EXPECT LIST — reveal each row ---
+      const exItems = document.querySelectorAll('.car-expect-list li');
+      if (exItems.length) {
+        gsap.set(exItems, { opacity: 0, x: -18 });
+        ScrollTrigger.create({
+          trigger: '.car-expect-list',
+          start: 'top 65%',
+          once: true,
+          onEnter: () => {
+            gsap.to(exItems, {
+              opacity: 1, x: 0,
+              duration: 0.6, stagger: 0.12,
+              ease: 'power3.out'
+            });
+          }
+        });
+      }
+
+      // --- GALLERY — staggered reveal + light parallax ---
+      const gImgs = document.querySelectorAll('.car-life-img');
+      if (gImgs.length) {
+        gsap.set(gImgs, { opacity: 0, y: 60, scale: 0.96 });
+        ScrollTrigger.create({
+          trigger: '.car-life-gallery',
+          start: 'top 70%',
+          once: true,
+          onEnter: () => {
+            gsap.to(gImgs, {
+              opacity: 1, y: 0, scale: 1,
+              duration: 1.1, stagger: 0.12,
+              ease: 'power3.out'
+            });
+          }
+        });
+
+        // Light parallax: each image drifts upward slightly while in view
+        gImgs.forEach((img, i) => {
+          const depth = (i % 3) * 18 + 12;
+          gsap.to(img, {
+            y: -depth,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: img,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true
+            }
           });
-        }
+        });
+      }
 
-        const markPath = card.querySelector('.car-job-mark-path');
-        if (markPath && gsap) {
-          const pathLen = markPath.getTotalLength();
-          gsap.set(markPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
-
-          const drawMark = () => {
-            gsap.killTweensOf(markPath);
-            gsap.to(markPath, {
-              strokeDashoffset: 0,
-              duration: 1.05,
-              ease: 'power2.inOut'
+      // --- FIT LIST ---
+      const fitItems = document.querySelectorAll('.car-fit-list li');
+      if (fitItems.length) {
+        gsap.set(fitItems, { opacity: 0, x: -14 });
+        ScrollTrigger.create({
+          trigger: '.car-fit-list',
+          start: 'top 65%',
+          once: true,
+          onEnter: () => {
+            gsap.to(fitItems, {
+              opacity: 1, x: 0,
+              duration: 0.55, stagger: 0.1,
+              ease: 'power3.out'
             });
-          };
+          }
+        });
+      }
 
-          const resetMark = () => {
-            gsap.killTweensOf(markPath);
-            gsap.to(markPath, {
-              strokeDashoffset: pathLen,
-              duration: 0.35,
-              ease: 'power2.out'
+      // --- APPETITE BLOCK ---
+      const appetite = document.querySelector('.car-appetite');
+      if (appetite) {
+        const lines = appetite.querySelectorAll('p');
+        gsap.set(lines, { opacity: 0, y: 22 });
+        ScrollTrigger.create({
+          trigger: appetite,
+          start: 'top 70%',
+          once: true,
+          onEnter: () => {
+            gsap.to(lines, {
+              opacity: 1, y: 0,
+              duration: 0.8, stagger: 0.18,
+              ease: 'power3.out'
             });
-          };
+          }
+        });
+      }
 
-          card.addEventListener('mouseenter', drawMark);
-          card.addEventListener('mouseleave', resetMark);
-          card.addEventListener('focusin', drawMark);
-          card.addEventListener('focusout', (event: any) => {
-            if (!card.contains(event.relatedTarget)) resetMark();
-          });
-        }
+      // --- FINAL CARD reveal ---
+      const finalCard = document.querySelector('.car-final-card');
+      if (finalCard) {
+        gsap.set(finalCard, { opacity: 0, y: 50 });
+        ScrollTrigger.create({
+          trigger: finalCard,
+          start: 'top 75%',
+          once: true,
+          onEnter: () => {
+            gsap.to(finalCard, {
+              opacity: 1, y: 0,
+              duration: 1.0,
+              ease: 'power3.out'
+            });
+          }
+        });
+      }
+
+      // =====================================================
+      // IMMERSIVE LAYER — pointer spotlights, scroll rails,
+      // magnetic CTAs, watermark drift, scrubbed illumination.
+      // =====================================================
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isDesktop = window.innerWidth > 900;
+
+      // --- Hero: faint watermark fade-in + drift parallax ---
+      const heroWm = document.querySelector('.car-hero-watermark');
+      const heroSection = document.querySelector('.car-hero');
+      if (heroWm) {
+        gsap.to(heroWm, { opacity: 0.07, duration: 2.4, delay: 0.6, ease: 'power2.out' });
+      }
+      if (heroSection && !prefersReduced && isDesktop) {
+        const heroContent = heroSection.querySelector('.svc-hero-page-content');
+        let hx = 0, hy = 0, tx = 0, ty = 0;
+        heroSection.addEventListener('mousemove', (e: MouseEvent) => {
+          const r = heroSection.getBoundingClientRect();
+          tx = ((e.clientX - r.left) / r.width - 0.5);
+          ty = ((e.clientY - r.top) / r.height - 0.5);
+        });
+        gsap.ticker.add(() => {
+          hx += (tx - hx) * 0.08;
+          hy += (ty - hy) * 0.08;
+          if (heroWm) gsap.set(heroWm, { x: hx * -40, y: hy * -40 });
+          if (heroContent) gsap.set(heroContent, { x: hx * 10, y: hy * 8 });
+        });
+      }
+
+      // --- Questions: scroll-progress rail fill ---
+      const rail = document.querySelector('.car-questions-rail');
+      const railFill = document.querySelector('.car-questions-rail-fill');
+      const questionsList = document.querySelector('.car-questions');
+      if (rail && railFill && questionsList) {
+        ScrollTrigger.create({
+          trigger: questionsList,
+          start: 'top 75%',
+          end: 'bottom 55%',
+          scrub: 0.4,
+          onUpdate: (self: any) => {
+            (railFill as any).style.setProperty('--rail-progress', (self.progress * 100) + '%');
+          }
+        });
+      }
+
+      // --- Translate rows: scroll-scrubbed illumination per row ---
+      document.querySelectorAll('.car-translate-row').forEach((row) => {
+        ScrollTrigger.create({
+          trigger: row,
+          start: 'top 70%',
+          end: 'bottom 30%',
+          onEnter: () => row.classList.add('lit'),
+          onEnterBack: () => row.classList.add('lit'),
+          onLeave: () => { },
+          onLeaveBack: () => row.classList.remove('lit')
+        });
       });
 
-      if (gsap && ScrollTrigger) {
+      // --- Value cards: pointer spotlight + VanillaTilt ---
+      const valueCards = document.querySelectorAll('.car-value');
+      valueCards.forEach((card: any) => {
+        card.addEventListener('mousemove', (e: MouseEvent) => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+          card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+        });
+      });
+      if ((window as any).VanillaTilt && isDesktop && valueCards.length) {
+        (window as any).VanillaTilt.init(valueCards, {
+          max: 4,
+          speed: 600,
+          glare: false,
+          perspective: 1400,
+          scale: 1.012,
+          'reset-to-start': true
+        });
+      }
+
+      // --- Final card: pointer spotlight tracking ---
+      if (finalCard && !prefersReduced) {
+        finalCard.addEventListener('mousemove', (e: MouseEvent) => {
+          const r = finalCard.getBoundingClientRect();
+          finalCard.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+          finalCard.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+        });
+      }
+
+      // --- "Life at Impulse" jab: scroll-triggered strikethrough sequence ---
+      const jabWrap = document.querySelector('.car-life-jab');
+      const jabText = document.querySelector('.car-life-jab-text');
+      const jabStrike = document.querySelector('.car-life-jab-strike');
+      const lifeTitle = document.querySelector('.car-life-title');
+      if (jabWrap && jabStrike && lifeTitle) {
+        strikeStyleTag = document.createElement('style');
+        strikeStyleTag.textContent = '.car-life-jab-strike { width: var(--strike-w, 0%); }';
+        document.head.appendChild(strikeStyleTag);
+
+        ScrollTrigger.create({
+          trigger: '.car-life-header',
+          start: 'top 60%',
+          once: true,
+          onEnter: () => {
+            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            gsap.set(jabWrap, { y: 18 });
+            tl.to(jabWrap, { opacity: 1, y: 0, duration: 0.65 })
+              .add(() => {
+                const prog = { v: 0 };
+                gsap.to(prog, {
+                  v: 106,
+                  duration: 0.58,
+                  ease: 'power3.inOut',
+                  onUpdate: () => jabStrike.style.setProperty('--strike-w', prog.v + '%')
+                });
+              }, '+=0.35')
+              .to(jabText, {
+                opacity: 0.38,
+                duration: 0.28,
+                ease: 'power2.out'
+              }, '+=0.35')
+              .to(lifeTitle, {
+                opacity: 1,
+                y: 0,
+                duration: 0.85,
+                ease: 'power4.out'
+              }, '-=0.05');
+          }
+        });
+      }
+
+      // --- Open positions: drawing mark path ---
+      if (jobCards.length) {
+        jobCards.forEach((card: any) => {
+          const markPath = card.querySelector('.car-job-mark-path');
+          if (markPath) {
+            const pathLen = markPath.getTotalLength();
+            gsap.set(markPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
+
+            const drawMark = () => {
+              gsap.killTweensOf(markPath);
+              gsap.to(markPath, {
+                strokeDashoffset: 0,
+                duration: 1.05,
+                ease: 'power2.inOut'
+              });
+            };
+
+            const resetMark = () => {
+              gsap.killTweensOf(markPath);
+              gsap.to(markPath, {
+                strokeDashoffset: pathLen,
+                duration: 0.35,
+                ease: 'power2.out'
+              });
+            };
+
+            card.addEventListener('mouseenter', drawMark);
+            card.addEventListener('mouseleave', resetMark);
+            card.addEventListener('focusin', drawMark);
+            const focusOutHandler = (event: any) => {
+              if (!card.contains(event.relatedTarget)) resetMark();
+            };
+            card.addEventListener('focusout', focusOutHandler);
+
+            jobCardCleanups.push(() => {
+              card.removeEventListener('mouseenter', drawMark);
+              card.removeEventListener('mouseleave', resetMark);
+              card.removeEventListener('focusin', drawMark);
+              card.removeEventListener('focusout', focusOutHandler);
+            });
+          }
+        });
+
         ScrollTrigger.create({
           trigger: '.car-jobs-list',
           start: 'top 72%',
@@ -464,10 +472,9 @@ const Careers: React.FC = () => {
           }
         });
       }
-    }
 
-    if (positionsSection) {
-      if (ScrollTrigger) {
+      const positionsSection = document.querySelector('.car-positions');
+      if (positionsSection) {
         ScrollTrigger.create({
           trigger: positionsSection,
           start: 'top 68%',
@@ -477,53 +484,62 @@ const Careers: React.FC = () => {
           onLeave: () => positionsSection.classList.remove('mark-visible'),
           onLeaveBack: () => positionsSection.classList.remove('mark-visible')
         });
-      } else {
-        const markObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry: any) => positionsSection.classList.toggle('mark-visible', entry.isIntersecting));
-        }, { threshold: 0.2 });
-        markObserver.observe(positionsSection);
       }
-    }
 
-    // --- Section title: split-line stagger reveal on enter ---
-    // Exclude .car-life-title — it is handled by the jab sequence above.
-    document.querySelectorAll('.car-section-title').forEach((el: any) => {
-      if (!SplitType || !gsap || !ScrollTrigger) return;
-      if (el.closest('.car-positions')) return;
-      const split = new SplitType(el, { types: 'lines, words' });
-      if (split.lines) {
-        split.lines.forEach((line: any) => {
-          const w = document.createElement('div');
-          w.classList.add('line-wrapper');
-          line.parentNode.insertBefore(w, line);
-          w.appendChild(line);
-        });
+      // --- Section title reveal ---
+      document.querySelectorAll('.car-section-title').forEach((el: any) => {
+        if (!SplitType) return;
+        if (el.closest('.car-positions')) return;
+        const split = new SplitType(el, { types: 'lines, words' });
+        if (split.lines) {
+          split.lines.forEach((line: any) => {
+            const w = document.createElement('div');
+            w.classList.add('line-wrapper');
+            line.parentNode.insertBefore(w, line);
+            w.appendChild(line);
+          });
+        }
+        if (split.words && split.words.length) {
+          gsap.set(split.words, { yPercent: 110, opacity: 0 });
+          ScrollTrigger.create({
+            trigger: el,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+              gsap.to(split.words, {
+                yPercent: 0, opacity: 1,
+                duration: 1.0, stagger: 0.05,
+                ease: 'power4.out'
+              });
+            }
+          });
+        }
+      });
+    };
+
+    // 3. Poll for GSAP & ScrollTrigger to load
+    checkInterval = setInterval(() => {
+      if ((window as any).gsap && (window as any).ScrollTrigger) {
+        clearInterval(checkInterval);
+        initAnimations();
       }
-      if (split.words && split.words.length) {
-        gsap.set(split.words, { yPercent: 110, opacity: 0 });
-        ScrollTrigger.create({
-          trigger: el,
-          start: 'top 80%',
-          once: true,
-          onEnter: () => {
-            gsap.to(split.words, {
-              yPercent: 0, opacity: 1,
-              duration: 1.0, stagger: 0.05,
-              ease: 'power4.out'
-            });
-          }
-        });
-      }
-    });
+    }, 100);
 
-
-
-
+    timeoutId = setTimeout(() => {
+      clearInterval(checkInterval);
+    }, 15000);
 
     return () => {
+      clearInterval(checkInterval);
+      clearTimeout(timeoutId);
       stopHeroReveal();
       document.body.classList.remove('service-page', 'careers-page');
       document.body.style.backgroundColor = '';
+
+      if (strikeStyleTag && strikeStyleTag.parentNode) {
+        strikeStyleTag.parentNode.removeChild(strikeStyleTag);
+      }
+      jobCardCleanups.forEach((cleanup) => cleanup());
 
       if (window.ScrollTrigger) {
         window.ScrollTrigger.getAll().forEach((t: any) => {
