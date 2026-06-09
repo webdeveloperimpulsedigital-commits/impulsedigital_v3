@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoAiroliLocation from '@/components/pages/seo-locations/SeoAiroliLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Airoli | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Airoli, helping businesses in Airoli rank higher and attract more customers through search.',
-  keywords: 'seo agency airoli, local seo airoli, digital marketing airoli',
+  title: 'SEO Agency in Airoli | Best SEO Company | Impulse Digital',
+  description: 'Impulse Digital is the best SEO agency in Airoli offering Technical SEO, Local SEO, and B2B SEO for businesses across Airoli. Get higher rank  and attract more customers through our SEO service in Airoli.',
+  keywords: 'seo agency in airoli, seo company in airoli, seo services in airoli, local seo airoli, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/airoli/`,
   },
   openGraph: {
-    title: 'SEO Agency in Airoli | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Airoli, helping businesses in Airoli rank higher and attract more customers through search.',
+    title: 'SEO Agency in Airoli | Best SEO Company | Impulse Digital',
+    description: 'Impulse Digital is the best SEO agency in Airoli offering Technical SEO, Local SEO, and B2B SEO for businesses across Airoli. Get higher rank  and attract more customers through our SEO service in Airoli.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/airoli/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Airoli | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Airoli, helping businesses in Airoli rank higher and attract more customers through search.',
+    title: 'SEO Agency in Airoli | Best SEO Company | Impulse Digital',
+    description: 'Impulse Digital is the best SEO agency in Airoli offering Technical SEO, Local SEO, and B2B SEO for businesses across Airoli. Get higher rank  and attract more customers through our SEO service in Airoli.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

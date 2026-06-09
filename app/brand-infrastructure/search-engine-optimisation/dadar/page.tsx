@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoDadarLocation from '@/components/pages/seo-locations/SeoDadarLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Dadar | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Dadar, helping businesses improve rankings and attract local customers.',
-  keywords: 'seo agency dadar, local seo dadar, digital marketing dadar',
+  title: 'SEO Agency in Dadar | Best SEO Company | Impulse Digital',
+  description: 'Impulse Digital is the best SEO agency in Dadar and we are offering B2b, Local, Ecommerce & Enterprice seo service in Dadar. We are helping businesses improve rankings and attract customers via search.',
+  keywords: 'seo agency in dadar, seo company in dadar, seo services in dadar, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/dadar/`,
   },
   openGraph: {
-    title: 'SEO Agency in Dadar | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Dadar, helping businesses improve rankings and attract local customers.',
+    title: 'SEO Agency in Dadar | Best SEO Company | Impulse Digital',
+    description: 'Impulse Digital is the best SEO agency in Dadar and we are offering B2b, Local, Ecommerce & Enterprice seo service in Dadar. We are helping businesses improve rankings and attract customers via search.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/dadar/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Dadar | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Dadar, helping businesses improve rankings and attract local customers.',
+    title: 'SEO Agency in Dadar | Best SEO Company | Impulse Digital',
+    description: 'Impulse Digital is the best SEO agency in Dadar and we are offering B2b, Local, Ecommerce & Enterprice seo service in Dadar. We are helping businesses improve rankings and attract customers via search.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

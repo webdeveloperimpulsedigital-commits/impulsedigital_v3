@@ -1,13 +1,11 @@
 export const seoDadarData = {
   "location": "Dadar",
   "hero": {
-    "title": "SEO Agency in Dadar",
-    "headline": "Performance Focused SEO Agency in Dadar",
+    "title": "Best SEO Agency in Dadar",
+    "headline": "Best SEO Agency in Dadar",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "If you’re running a business in Dadar, you’ve probably seen how quickly people move when they’re searching online. They type, scan a few results, and pick what looks right. That’s usually all it takes.",
-      "So if your business isn’t showing up at that moment, you’re likely missing out even if your service is solid.",
-      "As an SEO company in Dadar, we focus on helping businesses become visible where it actually matters. Not just for rankings, but for getting real inquiries and consistent traction over time."
+      "In Dadar, a buyer searching for your service makes a decision in seconds. They scan the first few results, pick what looks credible, and move on. If your business is not showing up at that moment, your competitors are getting the call instead. <br>Impulse Digital is a trusted SEO company in Dadar with 34 years of marketing experience and documented results for Amazon India, HUL, Mastercard, and Tata Consumer Products. We build search systems that put Dadar businesses in front of the right buyers at the right moment and convert that visibility into real enquiries over time."
     ]
   },
   "services": {
@@ -178,9 +176,9 @@ export const seoDadarData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Dadar?",
+        "question": "Why should a Dadar business choose Impulse Digital as their SEO company in Dadar?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust."
+          "Because 34 years of experience and documented results for Amazon India, HUL, Mastercard, and Tata Consumer Products is not a claim it is a case study library. As a specialist SEO company in Dadar, we bring that depth to every local engagement, starting with a diagnostic of your current search position before recommending anything."
         ]
       },
       {
@@ -196,15 +194,21 @@ export const seoDadarData = {
         ]
       },
       {
-        "question": "Do you only work with local businesses?",
+        "question": "Which Dadar businesses benefit most from Local SEO versus B2B SEO?",
         "answer": [
-          "No, but we do help improve local visibility if your audience is nearby."
+          "The split follows Dadar's geography. Businesses in Dadar West retail stores, clinics, tutoring centres, legal firms, restaurants primarily serve customers within a 3 to 5 kilometre radius. Local SEO is the highest-leverage investment here: Google Business Profile, local keyword targeting, and reviews that build nearby buyer trust. Businesses connected to Dadar East's manufacturing and wholesale belt industrial suppliers, logistics firms, raw material traders primarily serve buyers who search across Mumbai and Maharashtra before making contact. B2B SEO is the right investment here: building topical authority, mapping procurement-stage search queries, and creating content that earns trust from buyers who research for weeks before picking up the phone. Many Dadar businesses need both. We tell you which to prioritise first based on where your most valuable buyers actually come from."
         ]
       },
       {
         "question": "How do you measure success?",
         "answer": [
           "We track rankings, traffic, and most importantly, whether you're getting more leads or inquiries."
+        ]
+      },
+      {
+        "question": "What results can a business realistically expect from SEO with Impulse Digital?",
+        "answer": [
+          "Honest answer: it depends on three variables your starting position, your category's competition level, and how consistently the programme runs. <br>For Dadar businesses starting from a low search presence with no technical issues, Local SEO typically produces visible ranking improvements within 6 to 10 weeks. Google Business Profile visibility and local pack appearances for nearby searches often move faster. For businesses in competitive Dadar categories jewellery, medical, legal, financial services achieving top-3 local pack positions takes 3 to 6 months of consistent work. <br> Beyond local rankings, the broader impact of a well-run SEO programme shows in enquiry quality, not just volume. Our SEO work for Qure.ai, a healthcare AI company, delivered 737% organic traffic growth and more importantly, that traffic came from healthcare buyers with genuine purchase intent, not generic visitors. For HUL, our campaign-linked SEO and content work produced 12,548 measurable conversion journeys. <br> We do not promise ranking positions. We build search systems that compound over time and connect visibility to business outcomes. Every Dadar engagement is measured against those outcomes monthly. <br>As a trusted SEO company in Dadar with 34 years of experience, Impulse Digital brings the same commercial accountability to a Dadar clinic or retailer that we bring to national enterprise brands. Reach out through our contact form."
         ]
       }
     ]
