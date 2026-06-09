@@ -173,7 +173,15 @@ const ContactUs: React.FC = () => {
       $zoho.salesiq = $zoho.salesiq || {
         widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
         values: {},
-        ready: function() {}
+        ready: function() {
+          try {
+            if ($zoho.salesiq && $zoho.salesiq.floatbutton) {
+              $zoho.salesiq.floatbutton.visible('hide');
+            }
+          } catch (e) {
+            console.error('Error hiding Zoho floatbutton:', e);
+          }
+        }
       };
       const s = document.createElement('script');
       s.type = 'text/javascript';

@@ -84,7 +84,7 @@ export default function InteractionLoader() {
 
       // Switch FontAwesome from print to all
       document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach((l: any) => {
-        if (l.href && l.href.includes('fontawesome')) {
+        if (l.href && (l.href.includes('font-awesome') || l.href.includes('fontawesome'))) {
           l.media = 'all';
         }
       });

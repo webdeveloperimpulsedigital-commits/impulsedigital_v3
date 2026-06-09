@@ -142,6 +142,27 @@ export default function Chatbot() {
       const hn = window.location.hostname;
       setIsLocalhost(hn === 'localhost' || hn === '127.0.0.1' || hn.startsWith('192.168.'));
 
+      // Periodically check and hide Zoho SalesIQ's default float button/sticker
+      const hideZohoWidget = () => {
+        try {
+          const $zoho = (window as any).$zoho;
+          if ($zoho && $zoho.salesiq && $zoho.salesiq.floatbutton) {
+            $zoho.salesiq.floatbutton.visible('hide');
+            return true;
+          }
+        } catch (e) {
+          // ignore
+        }
+        return false;
+      };
+
+      hideZohoWidget();
+      const hideInterval = setInterval(() => {
+        if (hideZohoWidget()) {
+          clearInterval(hideInterval);
+        }
+      }, 500);
+
       // Restore Chatbot state from sessionStorage
       try {
         const savedMessages = sessionStorage.getItem('chatbot_messages');
@@ -168,6 +189,8 @@ export default function Chatbot() {
       } catch (e) {
         console.error('Error restoring chatbot state from sessionStorage:', e);
       }
+
+      return () => clearInterval(hideInterval);
     }
   }, []);
 
@@ -243,7 +266,15 @@ export default function Chatbot() {
         $zoho.salesiq = $zoho.salesiq || {
           widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
           values: {},
-          ready: function() {}
+          ready: function() {
+            try {
+              if ($zoho.salesiq && $zoho.salesiq.floatbutton) {
+                $zoho.salesiq.floatbutton.visible('hide');
+              }
+            } catch (e) {
+              console.error('Error hiding Zoho floatbutton:', e);
+            }
+          }
         };
         const s = document.createElement('script');
         s.type = 'text/javascript';
