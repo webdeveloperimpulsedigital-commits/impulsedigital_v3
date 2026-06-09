@@ -5,6 +5,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
+<<<<<<< HEAD
+=======
+import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
+import InteractionLoader from '@/components/InteractionLoader';
+>>>>>>> 0aabcad7fbd8090666af4869807fde1ee7ec63d0
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -74,8 +79,7 @@ export default function RootLayout({
         />
 
 
-        {/* External CSS */}
-        <link rel="stylesheet" href="/css/styles.css?v=40" />
+        {/* External CSS is now imported via globals.css for Next.js minification */}
 
 
         {/* FontAwesome — preload for performance, applied via Script after page loads */}
@@ -122,10 +126,12 @@ export default function RootLayout({
   var obs=new MutationObserver(function(muts){
     muts.forEach(function(m){
       m.addedNodes.forEach(function(n){
-        removeZoho(n);
-        if(n.querySelectorAll){
-          n.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],[class*="siq_"],iframe[src*="zohopublic"],script[src*="zohopublic"],iframe[aria-label*="SalesIQ"]')
-           .forEach(removeZoho);
+        if (n.nodeType === 1) {
+          removeZoho(n);
+          if (n.tagName === 'DIV' || n.tagName === 'IFRAME' || n.tagName === 'SCRIPT') {
+            n.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],[class*="siq_"],iframe[src*="zohopublic"],script[src*="zohopublic"],iframe[aria-label*="SalesIQ"]')
+             .forEach(removeZoho);
+          }
         }
       });
     });
@@ -136,25 +142,6 @@ export default function RootLayout({
 })();`,
           }}
         />
-
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4TW43X3');`,
-          }}
-        />
-
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M4TW43X3"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
 
         {/* Client-side providers: scroll restoration, route animation */}
         <ClientProviders />
@@ -171,69 +158,22 @@ export default function RootLayout({
         {/* Footer */}
         <Footer />
         
+<<<<<<< HEAD
         {/* Vanilla-tilt */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
           strategy="afterInteractive"
         />
+=======
+        {/* AI Chatbot Widget */}
+        <ChatbotWrapper />
 
-        {/* Lenis smooth scroll */}
-        <Script
-          src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"
-          strategy="afterInteractive"
-        />
+        {/* Interaction Loader: Defers heavy animation scripts until user interaction */}
+        <InteractionLoader />
+>>>>>>> 0aabcad7fbd8090666af4869807fde1ee7ec63d0
 
-        {/* GSAP core */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* GSAP ScrollTrigger — after GSAP loads */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-          strategy="beforeInteractive"
-        />
-
-        {/* SplitType */}
-        <Script
-          src="https://unpkg.com/split-type"
-          strategy="beforeInteractive"
-        />
-
-        {/* Three.js — loaded after interactive to not block LCP */}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
-          strategy="afterInteractive"
-        />
-
-        {/* WebGL Canvas Particles & Animations script */}
-        <Script
-          src="/js/script.js?v=70"
-          strategy="afterInteractive"
-        />
-
-
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="ga4-init"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EFFQ2YYFN8');`,
-          }}
-        />
-        {/* FontAwesome — switch from print to all media after load */}
-        <Script
-          id="fa-media-switch"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach(function(l){l.media='all';});`,
-          }}
-        />
+        {/* Google Tag Manager and GA are now deferred via InteractionLoader */}
+        {/* FontAwesome media switch is deferred via InteractionLoader */}
       </body>
     </html>
   );

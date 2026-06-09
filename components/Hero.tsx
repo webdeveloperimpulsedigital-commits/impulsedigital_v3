@@ -20,22 +20,22 @@ const Hero: React.FC = () => {
     <section className="hero" id="hero">
       <div className="hero-content">
         <h1 className="hero-title-wrapper" style={{ margin: 0, padding: 0 }}>
-          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', marginBottom: '0' }}>
+          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', marginBottom: '0', '--hero-copy-delay': '0ms' } as React.CSSProperties}>
             Your Data Knows.
           </span>
-          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', margin: '0' }}>
+          <span className="hero-headline title-large hero-copy-reveal" style={{ display: 'block', margin: '0', '--hero-copy-delay': '0ms' } as React.CSSProperties}>
             Your Marketing
           </span>
-          <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem' }}>
+          <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem', '--hero-copy-delay': '0ms' } as React.CSSProperties}>
             Should Too.
           </span>
         </h1>
 
         <div className="hero-bottom" style={{ marginTop: '1rem' }}>
-          <p className="hero-desc hero-copy-reveal" style={{ maxWidth: '850px', margin: '0 auto' }}>
+          <p className="hero-desc" style={{ maxWidth: '850px', margin: '0 auto' }}>
             Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.
           </p>
-          <Link href="/growth-intelligence/" className="hero-premium-cta hero-copy-reveal" data-cursor="EXPLORE" style={{ marginTop: '2.5rem', marginBottom: '3rem' }}>
+          <Link href="/growth-intelligence/" className="hero-premium-cta hero-copy-reveal" data-cursor="EXPLORE" style={{ marginTop: '2.5rem', marginBottom: '3rem', '--hero-copy-delay': '220ms' } as React.CSSProperties}>
             <span className="btn-text">FIND THE DECISIONS INSIDE YOUR DATA</span>
           </Link>
         </div>

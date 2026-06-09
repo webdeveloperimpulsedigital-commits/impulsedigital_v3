@@ -147,9 +147,8 @@ const Contact: React.FC<ContactProps> = ({ title }) => {
     if ((window as any).grecaptcha) {
       loadThirdPartyScripts();
     } else {
-      // Add interaction listeners and set a fallback timeout
+      // Add interaction listeners
       addListeners();
-      timeoutId = setTimeout(triggerLoad, 4000);
     }
 
     return () => {
