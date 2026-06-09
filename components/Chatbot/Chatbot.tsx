@@ -510,6 +510,12 @@ export default function Chatbot() {
     await executeQuery(query);
   };
 
+  const handleLinkClick = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setIsOpen(false);
+    }
+  };
+
   const handleWhatsAppHandoff = () => {
     const { name, email, phone, company, userRequirement } = leadForm;
 
@@ -605,6 +611,7 @@ My Details:
           leadForm={leadForm}
           handleWhatsAppHandoff={handleWhatsAppHandoff}
           messagesEndRef={messagesEndRef}
+          onLinkClick={handleLinkClick}
         />
 
         <ChatInput

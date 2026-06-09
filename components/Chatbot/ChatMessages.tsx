@@ -29,6 +29,7 @@ interface ChatMessagesProps {
   leadForm: LeadInfo;
   handleWhatsAppHandoff: () => void;
   messagesEndRef: React.RefObject<HTMLDivElement | null>;
+  onLinkClick?: () => void;
 }
 
 interface Token {
@@ -37,7 +38,7 @@ interface Token {
   url?: string;
 }
 
-const parseMessageText = (text: string) => {
+const parseMessageText = (text: string, onLinkClick?: () => void) => {
   let tokens: Token[] = [{ type: 'text', content: text }];
 
   // 1. Parse markdown links [text](url)
@@ -117,13 +118,14 @@ const parseMessageText = (text: string) => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.chatLink}
+            onClick={onLinkClick}
           >
             {token.content}
           </a>
         );
       }
       return (
-        <Link key={idx} href={token.url || '#'} className={styles.chatLink}>
+        <Link key={idx} href={token.url || '#'} className={styles.chatLink} onClick={onLinkClick}>
           {token.content}
         </Link>
       );
@@ -132,7 +134,7 @@ const parseMessageText = (text: string) => {
   });
 };
 
-const formatMessageContent = (text: string) => {
+const formatMessageContent = (text: string, onLinkClick?: () => void) => {
   return text.split('\n\n').map((paragraph, index) => {
     const trimmedParagraph = paragraph.trim();
     if (!trimmedParagraph) return null;
@@ -146,7 +148,7 @@ const formatMessageContent = (text: string) => {
       return (
         <ul key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
           {items.map((item, idx) => (
-            <li key={idx}>{parseMessageText(item)}</li>
+            <li key={idx}>{parseMessageText(item, onLinkClick)}</li>
           ))}
         </ul>
       );
@@ -161,13 +163,13 @@ const formatMessageContent = (text: string) => {
       return (
         <ol key={index} style={{ margin: '0.5rem 0', paddingLeft: '1.2rem' }}>
           {items.map((item, idx) => (
-            <li key={idx}>{parseMessageText(item)}</li>
+            <li key={idx}>{parseMessageText(item, onLinkClick)}</li>
           ))}
         </ol>
       );
     }
 
-    return <p key={index}>{parseMessageText(paragraph)}</p>;
+    return <p key={index}>{parseMessageText(paragraph, onLinkClick)}</p>;
   });
 };
 
@@ -180,6 +182,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
   leadForm,
   handleWhatsAppHandoff,
   messagesEndRef,
+  onLinkClick,
 }) => {
   return (
     <div className={styles.chatMessages} data-lenis-prevent="true">
@@ -191,7 +194,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
           className={`${styles.messageRow} ${msg.role === 'user' ? styles.userRow : styles.assistantRow}`}
         >
           <div className={`${styles.messageBubble} ${msg.role === 'user' ? styles.userBubble : styles.assistantBubble}`}>
-            {formatMessageContent(msg.content)}
+            {formatMessageContent(msg.content, onLinkClick)}
           </div>
         </div>
       ))}
