@@ -161,12 +161,23 @@ export default function Chatbot() {
       }
     }
 
-    setMessages([
-      {
-        role: 'assistant',
-        content: greeting,
-      },
-    ]);
+    setMessages((prev) => {
+      // If a conversation has already started (user messages exist or history is longer than 1), do not reset it
+      const hasStarted = prev.some((m) => m.role === 'user') || prev.length > 1;
+      if (hasStarted) return prev;
+
+      // If the greeting is already correct, do not update state to prevent unnecessary re-renders
+      if (prev.length === 1 && prev[0].role === 'assistant' && prev[0].content === greeting) {
+        return prev;
+      }
+
+      return [
+        {
+          role: 'assistant',
+          content: greeting,
+        },
+      ];
+    });
   }, [pathname]);
 
   useEffect(() => {
