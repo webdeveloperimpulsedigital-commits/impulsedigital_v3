@@ -56,7 +56,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             max-width: 400px;
             margin: 0 auto;
             position: relative;
-            z-index: 100;
+            z-index: 99999;
           }
           
           .loc-dropdown-header {
@@ -101,7 +101,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             background: #0f0f0f;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            max-height: 250px;
+            max-height: 450px;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             opacity: 0;
@@ -111,7 +111,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             transition: all 0.3s ease;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
             overscroll-behavior: contain;
-            z-index: 101;
+            z-index: 99999;
           }
 
           .loc-dropdown-list.open {
@@ -207,7 +207,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             </svg>
           </div>
           
-          <div className={`loc-dropdown-list ${isOpen ? 'open' : ''}`}>
+          <div className={`loc-dropdown-list ${isOpen ? 'open' : ''}`} data-lenis-prevent="true">
             {locationsToShow.slice(0, showAllLocations ? undefined : 5).map((loc) => (
               <Link 
                 key={loc.slug} 
@@ -223,7 +223,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
                 className="loc-show-all-btn"
                 onClick={() => setShowAllLocations(true)}
               >
-                + Show All Locations
+                + Show More
               </button>
             )}
           </div>

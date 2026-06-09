@@ -223,21 +223,7 @@ export default function Chatbot() {
 
 
   useEffect(() => {
-    let greeting = "How can I help you today?";
-
-    if (pathname) {
-      if (pathname.includes('/search-engine-optimisation')) {
-        greeting = "Looking to grow your search traffic and rank higher on Google? Let's discuss your SEO goals!";
-      } else if (pathname.includes('/video-production') || pathname.includes('/brand-film')) {
-        greeting = "Hey! Need high-impact brand films or AI-powered video production? Tell me about your video requirements.";
-      } else if (pathname.includes('/website-development')) {
-        greeting = "Looking to build a premium, high-performance website? Let's chat about what you need.";
-      } else if (pathname.includes('/social-media-marketing')) {
-        greeting = "Hey there! Want to elevate your brand's presence across social platforms? Let's talk content strategy.";
-      } else if (pathname.includes('/careers')) {
-        greeting = "Hey! Interested in joining the team at Impulse Digital? Ask me anything about our open roles!";
-      }
-    }
+    const greeting = "How can I help you today?";
 
     setMessages((prev) => {
       // If a conversation has already started (user messages exist or history is longer than 1), do not reset it

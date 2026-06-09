@@ -13491,3 +13491,9 @@ body[data-impulse-route="/blog"],
 body[data-impulse-route="/blog/"] {
     background-color: #000000 !important;
 }
+
+/* Fix CSS Stacking Context so main content drops downs overlap the footer */
+#main-content {
+    position: relative;
+    z-index: 11;
+}
