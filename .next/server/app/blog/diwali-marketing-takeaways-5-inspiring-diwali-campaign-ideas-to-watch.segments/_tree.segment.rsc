@@ -6,4 +6,4 @@
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
 :HL["/css/blog.css?v=1","style"]
 :HL["https://www.theimpulsedigital.com/blog/wp-content/uploads/2024/10/diwali-campaings.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"diwali-marketing-takeaways-5-inspiring-diwali-campaign-ideas-to-watch","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"EEfdzcEPqoVOc5EsWihgi"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"diwali-marketing-takeaways-5-inspiring-diwali-campaign-ideas-to-watch","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"9E86MH-wkFPxFVMKx_U9N"}
