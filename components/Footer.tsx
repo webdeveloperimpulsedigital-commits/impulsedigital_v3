@@ -66,9 +66,6 @@ const Footer: React.FC = () => {
             <h4>Resources</h4>
             <ul>
               <li><a href="#blogs">Blog</a></li>
-              <li><a href="#">EBooks</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">Slideshare ppt</a></li>
             </ul>
           </div>
 
