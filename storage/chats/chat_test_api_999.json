@@ -1,0 +1,35 @@
+{
+  "sessionId": "chat_test_api_999",
+  "updatedAt": "2026-06-10T08:14:22.654Z",
+  "ip": "::1",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "hello from api test script"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! I'm here to assist you with any questions or information about Impulse Digital and our services. How can I help you today?"
+    }
+  ],
+  "location": {
+    "city": "Localhost",
+    "region": "Development",
+    "country": "Local Host",
+    "timezone": "Local"
+  },
+  "leadInfo": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "company": "",
+    "preferredTime": "",
+    "userRequirement": "",
+    "mainChallenge": "",
+    "recommendedDirection": ""
+  }
+}
