@@ -4,8 +4,8 @@ import adminConfig from '@/config/admin.json';
 
 export async function GET(req: NextRequest) {
   try {
-    // Read password from JSON config (immune to dotenv # and $ parsing issues)
-    const expectedPassword = adminConfig.password;
+    // Read password from JSON config with fallback to env variable (immune to dotenv # and $ parsing issues)
+    const expectedPassword = adminConfig?.password || process.env.ADMIN_PASSWORD;
 
     // Try reading from Authorization header (Bearer token)
     const authHeader = req.headers.get('authorization');

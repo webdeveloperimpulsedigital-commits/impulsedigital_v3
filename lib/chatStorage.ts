@@ -28,7 +28,7 @@ export interface ChatSession {
   }[];
 }
 
-const STORAGE_DIR = path.join(process.cwd(), 'storage', 'chats');
+const STORAGE_DIR = process.env.CHAT_STORAGE_DIR || path.join(process.cwd(), 'storage', 'chats');
 
 /**
  * Saves or updates a chat session JSON file on the local filesystem.

@@ -114,10 +114,12 @@ export default function AdminChatsPage() {
         }
       } else {
         setError('An error occurred. Status: ' + res.status);
+        setIsAuthenticated(false);
       }
     } catch (err) {
       console.error(err);
       setError('Connection failed. Please check your server.');
+      setIsAuthenticated(false);
     } finally {
       setIsLoading(false);
     }
