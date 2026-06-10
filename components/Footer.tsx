@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           <div className="footer-col">
             <h4>Resources</h4>
             <ul>
-              <li><a href="#blogs">Blog</a></li>
+              <li><Link href="/blog/">Blog</Link></li>
             </ul>
           </div>
 
