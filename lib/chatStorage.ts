@@ -190,3 +190,31 @@ export async function listChatSessions(): Promise<ChatSession[]> {
     return [];
   }
 }
+
+export async function getStorageDiagnostics() {
+  const resolvedPath = STORAGE_DIR;
+  let exists = false;
+  let isWritable = false;
+  let writeError = '';
+
+  try {
+    exists = fs.existsSync(resolvedPath);
+    if (!exists) {
+      fs.mkdirSync(resolvedPath, { recursive: true });
+      exists = fs.existsSync(resolvedPath);
+    }
+    const testFile = path.join(resolvedPath, '.write_test');
+    fs.writeFileSync(testFile, 'test', 'utf8');
+    fs.unlinkSync(testFile);
+    isWritable = true;
+  } catch (err: any) {
+    writeError = err.message || String(err);
+  }
+
+  return {
+    storageDir: resolvedPath,
+    exists,
+    isWritable,
+    writeError
+  };
+}
