@@ -1,8 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { saveChatSession } from '@/lib/chatStorage';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, company, email, phone, preferredTime, userRequirement, recommendedDirection, chatHistory } = await req.json();
+    const { name, company, email, phone, preferredTime, userRequirement, recommendedDirection, chatHistory, sessionId } = await req.json();
+
+    // Sync with chat history store
+    if (sessionId) {
+      const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 
+                 req.headers.get('x-real-ip') || 
+                 '127.0.0.1';
+      const leadInfo = {
+        name,
+        company,
+        email,
+        phone,
+        preferredTime,
+        userRequirement,
+        recommendedDirection,
+      };
+      if (chatHistory && Array.isArray(chatHistory)) {
+        await saveChatSession(sessionId, chatHistory, leadInfo, ip);
+      }
+    }
 
     // 1. Dispatch Email alert via Resend
     let emailSent = false;

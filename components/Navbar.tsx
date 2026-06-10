@@ -2,8 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar: React.FC = () => {
+  const pathname = usePathname();
+
+  if (pathname && pathname.startsWith('/admin')) {
+    return null;
+  }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownSuspended, setIsDropdownSuspended] = useState(false);
 

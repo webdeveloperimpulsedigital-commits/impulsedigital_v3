@@ -2,8 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  if (pathname && pathname.startsWith('/admin')) {
+    return null;
+  }
   const [showScroll, setShowScroll] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 

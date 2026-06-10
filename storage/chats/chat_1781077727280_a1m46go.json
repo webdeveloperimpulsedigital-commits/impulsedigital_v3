@@ -1,0 +1,44 @@
+{
+  "sessionId": "chat_1781077727280_a1m46go",
+  "updatedAt": "2026-06-10T07:54:12.986Z",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "Hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? If you're looking for information about digital growth services or have any specific questions, feel free to ask!"
+    },
+    {
+      "role": "user",
+      "content": "no thanks"
+    },
+    {
+      "role": "assistant",
+      "content": "That's perfectly fine! If you need anything in the future or have any questions, don't hesitate to reach out. Have a great day!"
+    },
+    {
+      "role": "user",
+      "content": "i wanted to connect with ur team how can i connect"
+    },
+    {
+      "role": "assistant",
+      "content": "Could you share your name, company, email, and phone number here, so we can connect you properly?"
+    }
+  ],
+  "leadInfo": {
+    "name": "",
+    "email": "",
+    "phone": "",
+    "company": "",
+    "preferredTime": "",
+    "userRequirement": "",
+    "mainChallenge": "",
+    "recommendedDirection": ""
+  }
+}

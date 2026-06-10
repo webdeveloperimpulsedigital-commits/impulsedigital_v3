@@ -40,6 +40,7 @@ export default function Chatbot() {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaToken, setCaptchaToken] = useState('');
   const [isLocalhost, setIsLocalhost] = useState(false);
+  const [sessionId, setSessionId] = useState<string>('');
   
   const [leadForm, setLeadForm] = useState<LeadInfo>({
     name: '',
@@ -129,7 +130,7 @@ export default function Chatbot() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(info),
+        body: JSON.stringify({ ...info, sessionId }),
       });
       console.log('Resend email alert triggered via backend successfully');
     } catch (error) {
@@ -165,6 +166,13 @@ export default function Chatbot() {
 
       // Restore Chatbot state from sessionStorage
       try {
+        let sid = sessionStorage.getItem('chatbot_session_id');
+        if (!sid) {
+          sid = 'chat_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+          sessionStorage.setItem('chatbot_session_id', sid);
+        }
+        setSessionId(sid);
+
         const savedMessages = sessionStorage.getItem('chatbot_messages');
         if (savedMessages) {
           setMessages(JSON.parse(savedMessages));
@@ -404,25 +412,52 @@ export default function Chatbot() {
         console.log('Serving chat response from client cache:', query);
       } else {
         const chatHistory = updatedMessages.slice(1);
+        let response: Response | null = null;
+        let attempts = 2;
+        let lastError: any = null;
 
-        const response = await fetch('/api/chat/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ messages: chatHistory }),
-        });
+        for (let attempt = 1; attempt <= attempts; attempt++) {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 seconds timeout
 
-        try {
-          data = await response.json();
-        } catch (jsonErr) {
-          console.error('Error parsing response JSON:', jsonErr);
+          try {
+            response = await fetch('/api/chat/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ messages: chatHistory, sessionId }),
+              signal: controller.signal,
+            });
+
+            clearTimeout(timeoutId);
+
+            try {
+              data = await response.json();
+            } catch (jsonErr) {
+              console.error('Error parsing response JSON:', jsonErr);
+            }
+
+            if (!response.ok) {
+              throw new Error(data?.message || 'Network response error');
+            }
+
+            break; // Success! Break out of the retry loop.
+          } catch (err: any) {
+            clearTimeout(timeoutId);
+            lastError = err;
+            console.warn(`Chat API call failed (attempt ${attempt}/${attempts}):`, err.message || err);
+            if (attempt < attempts) {
+              // Wait 800ms before retrying
+              await new Promise((resolve) => setTimeout(resolve, 800));
+            }
+          }
         }
 
-        if (!response.ok) {
-          throw new Error(data?.message || 'Network response error');
+        if (!response || !response.ok) {
+          throw lastError || new Error('Network response error');
         }
-        
+
         if (data) {
           queryCache.current.set(query, data);
         }
@@ -491,9 +526,18 @@ export default function Chatbot() {
       }
     } catch (err: any) {
       console.error('Chat error:', err);
-      const errMsg = err.message === 'Network response error'
-        ? "I apologize, but I encountered an error connecting to our system. Please try again, or feel free to message our team directly via the WhatsApp button."
-        : (err.message || "I apologize, but I encountered an error. Please try again.");
+      let errMsg = "I apologize, but I encountered a temporary connection issue. Please try again, or feel free to message our team directly via the WhatsApp button.";
+      
+      if (err.message && 
+          err.message !== 'Network response error' && 
+          !err.message.toLowerCase().includes('abort') && 
+          !err.message.toLowerCase().includes('fetch') &&
+          !err.message.toLowerCase().includes('failed') &&
+          !err.message.toLowerCase().includes('oops') &&
+          !err.message.toLowerCase().includes('openai') &&
+          !err.message.toLowerCase().includes('status')) {
+        errMsg = err.message;
+      }
       setMessages((prev) => [
         ...prev,
         {
