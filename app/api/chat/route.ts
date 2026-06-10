@@ -7,6 +7,8 @@ export async function POST(req: NextRequest) {
     const { messages, sessionId } = await req.json();
     console.log('[API/chat] Received request, sessionId:', sessionId, 'messages count:', messages?.length);
 
+    const activeSessionId = sessionId || 'chat_srv_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() || 
                req.headers.get('x-real-ip') || 
                '127.0.0.1';
@@ -77,16 +79,16 @@ export async function POST(req: NextRequest) {
         }
       };
 
-      if (sessionId) {
+      if (activeSessionId) {
         const fullHistory = [
           { role: 'assistant', content: 'How can I help you today?' },
           ...messages,
           { role: 'assistant', content: replyMessage }
         ];
-        await saveChatSession(sessionId, fullHistory, leadInfo, ip);
+        await saveChatSession(activeSessionId, fullHistory, leadInfo, ip);
       }
 
-      return NextResponse.json(replyPayload);
+      return NextResponse.json({ ...replyPayload, sessionId: activeSessionId });
     }
 
     const systemMessage = {
@@ -155,16 +157,16 @@ export async function POST(req: NextRequest) {
     // and send it back to the client directly.
     const parsedContent = JSON.parse(assistantMessageContent);
 
-    if (sessionId) {
+    if (activeSessionId) {
       const fullHistory = [
         { role: 'assistant', content: 'How can I help you today?' },
         ...messages,
         { role: 'assistant', content: parsedContent.message || '' }
       ];
-      await saveChatSession(sessionId, fullHistory, parsedContent.metadata?.leadInfo, ip);
+      await saveChatSession(activeSessionId, fullHistory, parsedContent.metadata?.leadInfo, ip);
     }
 
-    return NextResponse.json(parsedContent);
+    return NextResponse.json({ ...parsedContent, sessionId: activeSessionId });
 
   } catch (error: any) {
     console.error('Error in chatbot API route:', error);

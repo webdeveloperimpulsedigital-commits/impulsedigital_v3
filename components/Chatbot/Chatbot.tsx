@@ -460,6 +460,10 @@ export default function Chatbot() {
 
         if (data) {
           queryCache.current.set(query, data);
+          if (data.sessionId) {
+            sessionStorage.setItem('chatbot_session_id', data.sessionId);
+            setSessionId(data.sessionId);
+          }
         }
       }
 

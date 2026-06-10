@@ -64,10 +64,16 @@ export async function saveChatSession(
       }
     }
 
-    const mergedLeadInfo = {
-      ...(existingData.leadInfo || {}),
-      ...(leadInfo || {}),
-    };
+    // Safe merge of leadInfo (do not overwrite populated fields with empty strings)
+    const mergedLeadInfo = { ...(existingData.leadInfo || {}) } as any;
+    if (leadInfo) {
+      Object.keys(leadInfo).forEach((key) => {
+        const val = leadInfo[key];
+        if (val !== undefined && val !== null && val !== '') {
+          mergedLeadInfo[key] = val;
+        }
+      });
+    }
 
     // Determine IP and Location
     const activeIp = ip || existingData.ip || '127.0.0.1';
