@@ -10,6 +10,14 @@
   box-sizing: border-box;
 }
 
+.dashboardContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
 .loginWrapper {
   display: flex;
   justify-content: center;
@@ -149,9 +157,10 @@
 
 .dashboardGrid {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 2rem;
-  height: calc(100vh - 180px);
+  grid-template-columns: 340px 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
 }
 
 .sidebar {
@@ -288,6 +297,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.detailHeaderMain {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .detailTitle {
   font-size: 1.25rem;
   font-weight: 700;
@@ -298,6 +313,58 @@
   font-size: 0.85rem;
   color: #9ca3af;
   margin: 0;
+}
+
+.backBtn {
+  display: none; /* Hidden on desktop */
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #d1d5db;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.backBtn svg {
+  display: block;
+}
+
+.mobileTabs {
+  display: none; /* Hidden on desktop */
+  gap: 0.5rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.5rem;
+}
+
+.tabBtn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  text-align: center;
+}
+
+.tabBtnActive {
+  color: #a78bfa;
+  border-bottom-color: #8a5cf6;
 }
 
 .detailBody {
@@ -423,20 +490,87 @@
   to { transform: rotate(360deg); }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .dashboardContainer {
+    padding: 0.75rem;
+    height: 100vh;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .headerActions {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .searchBar {
+    flex: 1;
+    min-width: 0;
+  }
+
   .dashboardGrid {
     grid-template-columns: 1fr;
-    height: auto;
+    gap: 0;
   }
-  .sidebar {
-    height: 400px;
+
+  /* Handle showing/hiding sidebar vs main view on mobile */
+  .dashboardGrid:not(.hasSelected) .mainView {
+    display: none;
   }
+
+  .dashboardGrid.hasSelected .sidebar {
+    display: none;
+  }
+
+  .backBtn {
+    display: flex; /* Shown on mobile */
+  }
+
+  .mobileTabs {
+    display: flex; /* Shown on mobile */
+  }
+
+  .detailHeader {
+    padding: 1rem;
+  }
+
   .detailBody {
     grid-template-columns: 1fr;
-    height: 500px;
   }
+
+  /* Show/hide panels on mobile based on tab selection */
+  .detailBody.showChatTab .detailsPanel {
+    display: none;
+  }
+
+  .detailBody.showDetailsTab .transcriptContainer {
+    display: none;
+  }
+
   .transcriptContainer {
+    padding: 1rem;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .detailsPanel {
+    padding: 1rem;
+  }
+
+  .loginCard {
+    padding: 2rem 1.5rem;
   }
 }

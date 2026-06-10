@@ -44,6 +44,12 @@ export default function AdminChatsPage() {
   const [selectedSession, setSelectedSession] = useState<ChatSession | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState<'chat' | 'details'>('chat');
+
+  // Reset tab to chat when selected session changes
+  useEffect(() => {
+    setActiveTab('chat');
+  }, [selectedSession?.sessionId]);
 
   // Check localStorage on mount
   useEffect(() => {
@@ -189,7 +195,7 @@ export default function AdminChatsPage() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.dashboardContainer}`}>
       <header className={styles.header}>
         <div>
           <h1>Chatbot Logs</h1>
@@ -211,7 +217,7 @@ export default function AdminChatsPage() {
         </div>
       </header>
 
-      <div className={styles.dashboardGrid}>
+      <div className={`${styles.dashboardGrid} ${selectedSession ? styles.hasSelected : ''}`}>
         {/* Left column: Chat list */}
         <div className={styles.sidebar}>
           <div className={styles.sidebarHeader}>
@@ -267,14 +273,53 @@ export default function AdminChatsPage() {
           {selectedSession ? (
             <>
               <div className={styles.detailHeader}>
-                <h2 className={styles.detailTitle}>
-                  {selectedSession.leadInfo?.name || 'Anonymous Session'}
-                </h2>
-                <p className={styles.detailSub}>
-                  Session ID: <code style={{ color: '#a78bfa', fontSize: '0.85rem' }}>{selectedSession.sessionId}</code> | Updated: {formatTime(selectedSession.updatedAt)}
-                </p>
+                <div className={styles.detailHeaderMain}>
+                  <button 
+                    onClick={() => setSelectedSession(null)} 
+                    className={styles.backBtn}
+                    aria-label="Back to conversations list"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="19" y1="12" x2="5" y2="12"></line>
+                      <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    <span>Back</span>
+                  </button>
+                  <div>
+                    <h2 className={styles.detailTitle}>
+                      {selectedSession.leadInfo?.name || 'Anonymous Session'}
+                    </h2>
+                    <p className={styles.detailSub}>
+                      Session ID: <code style={{ color: '#a78bfa', fontSize: '0.85rem' }}>{selectedSession.sessionId}</code> | Updated: {formatTime(selectedSession.updatedAt)}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className={styles.mobileTabs}>
+                  <button 
+                    onClick={() => setActiveTab('chat')} 
+                    className={`${styles.tabBtn} ${activeTab === 'chat' ? styles.tabBtnActive : ''}`}
+                  >
+                    Chat
+                  </button>
+                  <button 
+                    onClick={() => setActiveTab('details')} 
+                    className={`${styles.tabBtn} ${activeTab === 'details' ? styles.tabBtnActive : ''}`}
+                  >
+                    Lead Info
+                  </button>
+                </div>
               </div>
-              <div className={styles.detailBody}>
+              <div className={`${styles.detailBody} ${activeTab === 'details' ? styles.showDetailsTab : styles.showChatTab}`}>
                 {/* Chat transcript */}
                 <div className={styles.transcriptContainer}>
                   {selectedSession.messages && selectedSession.messages.map((msg, idx) => {
