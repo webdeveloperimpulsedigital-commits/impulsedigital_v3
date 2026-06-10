@@ -1,0 +1,62 @@
+// @ts-nocheck
+'use client';
+
+import React, { useEffect } from 'react';
+import { initCaseStudyAnimations } from '@/utils/caseStudyAnimations';
+import DownloadCaseStudyForm from '@/components/DownloadCaseStudyForm';
+
+const SaltCaseStudy: React.FC = () => {
+  useEffect(() => {
+    document.body.classList.add('case-study-page');
+    const cleanup = initCaseStudyAnimations();
+    return () => { document.body.classList.remove('case-study-page'); cleanup(); };
+  }, []);
+  const base = '/';
+
+  return (
+    <main id="main-content">
+      
+      <section className="cs-hero">
+        <div className="cs-hero-header">
+          <h1 className="cs-hero-title">Shaking Things Up</h1>
+          <h2 className="cs-hero-subtitle">The New Age of Salt</h2>
+        </div>
+      </section>
+      <div className="cs-feature-wrapper">
+        <div className="cs-feature-image">
+          <img src={`${base}images/case-study-image/salt/shaking-things-up.png`} alt="Shaking Things Up - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+        </div>
+      </div>
+      <section className="cs-intro-block" id="warp-start" style={{ paddingBottom: '4rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          A mature staple category began showing early signals of transformation, with consumers moving beyond price and habit toward health, premium cues, provenance, and benefit-led choices.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          The opportunity was to decode where future category growth could emerge without forcing innovation too far from everyday kitchen relevance.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          The lens expanded beyond the salt shelf, bringing in adjacent daily-use categories to identify new value creation possibilities.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '4rem', lineHeight: 1.6 }}>
+          What emerged was a sharper view of how salt could evolve from a commodity staple into a platform for premiumization, communication, and product innovation.
+        </p>
+      </section>
+
+      <section style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <DownloadCaseStudyForm
+          ctaText="Access the full case study to see where the next growth wave in salt could come from."
+          zoho={{
+            formId: '1132219000001842110',
+            xnQsjsdp: '8b3a9efc131c5420cc972ad812df7050f0a651b64f76aa7f6e8b138cb480f8c0',
+            xmIwtLD: '62a9e3548e6707de97d9ecefabee5b834cf0f3e6e5b656e2daec783ac9be239beedfe1ec14a08f4a81a8f9291e328a3e',
+            leadSource: 'shaking-things-up',
+            analyticsRid: 'ceb5d44719917962f2b217db48791ca28b7b9634225475d3512ff7324ff265cb069c0bcf76b787f011a9721db494d72dgidf1cd4b418afb87d5ca1b3500fb9aab70297da95a2e1fbb397097da1f1e54881cgid54b9193e85fbb32f7689017ff7c4546a4e985f690c4e059d4d683c04e36bbc54gid5e6420470b939ab6e4412f9148b9cd06827df7ee83fabe6e3d525b694074856c',
+            analyticsTw: '2d1633b0ecec025d81976088e50013c5eb732058930660d1faaaf807948f3444',
+            pdfPath: '/case-studies-pdf/salt+tata.pdf',
+          }}
+        />
+      </section>
+    </main>
+  );
+};
+export default SaltCaseStudy;

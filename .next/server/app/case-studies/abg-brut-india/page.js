@@ -10,5 +10,5 @@ R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthor
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
 R.c("server/chunks/ssr/app_case-studies_layout_tsx_0r2j70i._.js")
 R.c("server/chunks/ssr/_next-internal_server_app_case-studies_abg-brut-india_page_actions_0cspkb4.js")
-R.m(17651)
-module.exports=R.m(17651).exports
+R.m(99876)
+module.exports=R.m(99876).exports

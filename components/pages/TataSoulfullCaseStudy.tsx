@@ -1,0 +1,62 @@
+// @ts-nocheck
+'use client';
+
+import React, { useEffect } from 'react';
+import { initCaseStudyAnimations } from '@/utils/caseStudyAnimations';
+import DownloadCaseStudyForm from '@/components/DownloadCaseStudyForm';
+
+const TataSoulfullCaseStudy: React.FC = () => {
+  useEffect(() => {
+    document.body.classList.add('case-study-page');
+    const cleanup = initCaseStudyAnimations();
+    return () => { document.body.classList.remove('case-study-page'); cleanup(); };
+  }, []);
+  const base = '/';
+
+  return (
+    <main id="main-content">
+      
+      <section className="cs-hero">
+        <div className="cs-hero-header">
+          <h1 className="cs-hero-title">The Next Bite</h1>
+          <h2 className="cs-hero-subtitle">Decoding India's Health Snacking Bar Consumer</h2>
+        </div>
+      </section>
+      <div className="cs-feature-wrapper">
+        <div className="cs-feature-image">
+          <img src={`${base}images/case-study-image/tata-soulfull/Generated%20image%201.png`} alt="Tata Soulfull - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+        </div>
+      </div>
+      <section className="cs-intro-block" id="warp-start" style={{ paddingBottom: '4rem', maxWidth: '1000px', margin: '0 auto' }}>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          India's health snacking bar category sits at the intersection of nutrition, taste, convenience, and trust.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          While consumers enter the category with better-for-you intent, their actual choices are shaped by flavour, texture, indulgence, protein cues, and everyday usage moments.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+          The project decoded what drives trial, what builds repeat purchase, and where the category could stretch from functional fuel to mainstream snacking.
+        </p>
+        <p className="cs-p split-text" style={{ fontSize: '1.5rem', marginBottom: '4rem', lineHeight: 1.6 }}>
+          The result was a clearer view of how brands can build relevance in a space where health creates permission, but taste creates commitment.
+        </p>
+      </section>
+
+      <section style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <DownloadCaseStudyForm
+          ctaText="Access the full case study to understand what could shape the next bite in health snacking."
+          zoho={{
+            formId: '1132219000001842099',
+            xnQsjsdp: 'd3b2c181f8035bd7393d52b0975d1e91654046a2af9dff3acb668854324108e2',
+            xmIwtLD: '128611eb30fdd719bd77edb76cdb39134844749f34a39212964311859345df9919e89c20b6fbed3a42213c223d80782f',
+            leadSource: 'tata-soulfull',
+            analyticsRid: '1357371798bdf8b4777af4d0b3c68170d8f9cf2b456883b71b2940fcb8113f60e03d78bd70c46b05acf22a8fbd58520bgid989473ea4bf3908c3aec2d00e5671d92fd4fb5a6baf6dc210946bfd60637eff0gide43577f3e5732478fb22d0eb4d4f2f3afbb440d0c9e8a8ffe4738f98ce9002b6gid59c6d8e56b17f006ab9091841431f6c41ce7574390f5933e42e882e637ccca68',
+            analyticsTw: '2d1c0de2ec0b3cd95fa478e4cb25a1628c3b1295bc64bdc60de9dfbd4f0d5dcb',
+            pdfPath: '/case-studies-pdf/Snacking Bar Case Study - Tata Soulful.pdf',
+          }}
+        />
+      </section>
+    </main>
+  );
+};
+export default TataSoulfullCaseStudy;

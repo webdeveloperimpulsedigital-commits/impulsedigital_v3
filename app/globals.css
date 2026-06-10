@@ -1,0 +1,10 @@
+/*
+ * globals.css — imports all existing CSS from the app/styles directory.
+ * This allows Next.js to auto-bundle, prefix, dead-code eliminate, and minify the CSS.
+ * This is critical for reducing LCP and Network Payload issues.
+ */
+
+@import './styles/styles.css';
+@import './styles/about.css';
+@import './styles/case-study.css';
+@import './styles/blog.css';
