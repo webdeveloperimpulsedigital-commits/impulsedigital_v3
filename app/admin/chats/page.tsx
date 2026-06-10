@@ -88,7 +88,7 @@ export default function AdminChatsPage() {
     try {
       const res = await fetch('/api/admin/chats', {
         headers: {
-          'x-admin-password': passToVerify
+          'Authorization': `Bearer ${passToVerify}`
         }
       });
 
