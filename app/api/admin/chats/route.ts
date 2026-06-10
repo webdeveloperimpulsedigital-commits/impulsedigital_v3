@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { listChatSessions } from '@/lib/chatStorage';
+import { listChatSessions, getStorageDiagnostics } from '@/lib/chatStorage';
 import adminConfig from '@/config/admin.json';
 
 export async function GET(req: NextRequest) {
@@ -25,8 +25,9 @@ export async function GET(req: NextRequest) {
     }
 
     const sessions = await listChatSessions();
+    const diagnostics = await getStorageDiagnostics();
     console.log('[API/admin/chats] Returning sessions count:', sessions.length);
-    return NextResponse.json({ sessions });
+    return NextResponse.json({ sessions, diagnostics });
   } catch (error: any) {
     console.error('Error in admin chats API:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

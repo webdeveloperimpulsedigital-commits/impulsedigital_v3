@@ -45,6 +45,7 @@ export default function AdminChatsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<'chat' | 'details'>('chat');
+  const [diagnostics, setDiagnostics] = useState<any>(null);
 
   // Reset tab to chat when selected session changes
   useEffect(() => {
@@ -102,6 +103,7 @@ export default function AdminChatsPage() {
         const data = await res.json();
         setSessions(data.sessions || []);
         setFilteredSessions(data.sessions || []);
+        setDiagnostics(data.diagnostics || null);
         setIsAuthenticated(true);
         if (typeof window !== 'undefined') {
           localStorage.setItem('impulse_admin_password', passToVerify);
@@ -268,6 +270,28 @@ export default function AdminChatsPage() {
               })
             )}
           </div>
+          {diagnostics && (
+            <div style={{
+              padding: '0.75rem 1.25rem',
+              background: diagnostics.isWritable ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)',
+              borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+              fontSize: '0.8rem',
+              color: diagnostics.isWritable ? '#34d399' : '#f87171'
+            }}>
+              <div style={{ fontWeight: 'bold', marginBottom: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                <span style={{ fontSize: '0.65rem' }}>{diagnostics.isWritable ? '●' : '●'}</span>
+                <span>{diagnostics.isWritable ? 'Storage Connected' : 'Storage Error'}</span>
+              </div>
+              <div style={{ opacity: 0.8, fontFamily: 'monospace', wordBreak: 'break-all', fontSize: '0.7rem' }}>
+                Path: {diagnostics.storageDir}
+              </div>
+              {!diagnostics.isWritable && (
+                <div style={{ marginTop: '0.35rem', color: '#ef4444', fontWeight: 'bold', fontSize: '0.75rem' }}>
+                  Error: {diagnostics.writeError}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Right column: Chat details */}
