@@ -227,7 +227,7 @@ export default function AdminChatsPage() {
           <div className={styles.sidebarHeader}>
             Conversations ({filteredSessions.length})
           </div>
-          <div className={styles.chatList}>
+          <div className={styles.chatList} data-lenis-prevent="true">
             {isLoading && sessions.length === 0 ? (
               <div style={{ display: 'flex', justifyContent: 'center', padding: '2rem' }}>
                 <div className={styles.loadingSpinner}></div>
@@ -347,7 +347,7 @@ export default function AdminChatsPage() {
               </div>
               <div className={`${styles.detailBody} ${activeTab === 'details' ? styles.showDetailsTab : styles.showChatTab}`}>
                 {/* Chat transcript */}
-                <div className={styles.transcriptContainer}>
+                <div className={styles.transcriptContainer} data-lenis-prevent="true">
                   {selectedSession.messages && selectedSession.messages.map((msg, idx) => {
                     const isUser = msg.role === 'user';
                     return (
@@ -367,7 +367,7 @@ export default function AdminChatsPage() {
                 </div>
 
                 {/* Sidebar details */}
-                <div className={styles.detailsPanel}>
+                <div className={styles.detailsPanel} data-lenis-prevent="true">
                   <h3 className={styles.panelTitle}>Lead Details</h3>
                   
                   <div className={styles.infoGroup}>
