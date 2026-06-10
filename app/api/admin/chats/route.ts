@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { listChatSessions } from '@/lib/chatStorage';
+import adminConfig from '@/config/admin.json';
 
 export async function GET(req: NextRequest) {
   try {
-    const expectedPassword = process.env.ADMIN_PASSWORD || '';
+    // Read password from JSON config (immune to dotenv # and $ parsing issues)
+    const expectedPassword = adminConfig.password;
 
     // Try reading from Authorization header (Bearer token)
     const authHeader = req.headers.get('authorization');
