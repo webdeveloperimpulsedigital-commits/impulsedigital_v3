@@ -29,6 +29,15 @@ module.exports=[69313,a=>{"use strict";let b=process.env.NEXT_PUBLIC_SITE_URL||"
   obs.observe(document.documentElement,{childList:true,subtree:true});
   /* Also clean up anything already in the DOM */
   document.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],iframe[aria-label*="SalesIQ"]').forEach(removeZoho);
-})();`}}),(0,b.jsx)(h.default,{}),(0,b.jsx)(g.default,{}),(0,b.jsx)(e.default,{}),a,(0,b.jsx)(f.default,{}),(0,b.jsx)(i.default,{}),(0,b.jsx)(j.default,{})]})]})},"metadata",0,k])},70864,a=>{a.n(a.i(33290))}];
+})();`}}),(0,b.jsx)(c.default,{id:"hotjar-tracking",strategy:"afterInteractive",dangerouslySetInnerHTML:{__html:`
+              (function(h,o,t,j,a,r){
+                  h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                  h._hjSettings={hjid:5340267,hjsv:6};
+                  a=o.getElementsByTagName('head')[0];
+                  r=o.createElement('script');r.async=1;
+                  r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                  a.appendChild(r);
+              })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            `}}),(0,b.jsx)(h.default,{}),(0,b.jsx)(g.default,{}),(0,b.jsx)(e.default,{}),a,(0,b.jsx)(f.default,{}),(0,b.jsx)(i.default,{}),(0,b.jsx)(j.default,{})]})]})},"metadata",0,k])},70864,a=>{a.n(a.i(33290))}];
 
 //# sourceMappingURL=_07svcav._.js.map

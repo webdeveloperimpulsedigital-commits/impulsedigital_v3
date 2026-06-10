@@ -303,6 +303,12 @@
       "namedRegex": "^/about\\-us(?:/)?$"
     },
     {
+      "page": "/admin/chats",
+      "regex": "^/admin/chats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/chats(?:/)?$"
+    },
+    {
       "page": "/ai-marketing-systems",
       "regex": "^/ai\\-marketing\\-systems(?:/)?$",
       "routeKeys": {},
@@ -331,6 +337,12 @@
       "regex": "^/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$"
+    },
+    {
+      "page": "/api/admin/chats",
+      "regex": "^/api/admin/chats(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/chats(?:/)?$"
     },
     {
       "page": "/api/blog-posts",

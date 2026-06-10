@@ -98,6 +98,30 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/admin/chats": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/admin/chats",
+      "dataRoute": "/admin/chats.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/ai-marketing-systems": {
       "experimentalBypassFor": [
         {
@@ -4563,8 +4587,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "ed845915ce8a64f53bee90f8cd537619",
-    "previewModeSigningKey": "db808b777a11b599813841bafcb524e7e3f6f46eec510c0903ffb8fb236650f5",
-    "previewModeEncryptionKey": "1b6fcc769280f890af122a02101eee3a1d4b5a3cb98707bb9b71204084818fa8"
+    "previewModeId": "7d37cc273cbb40187aeef8a5e08db766",
+    "previewModeSigningKey": "2e0900a3d9716ededcd8f79e0507791c6e41f6306240f90f70c75fb0eaf7ddac",
+    "previewModeEncryptionKey": "206f6f3c0831e5cf53f63ea4d0227971ac9f1f3eecda6b3e327768ba26625164"
   }
 }
