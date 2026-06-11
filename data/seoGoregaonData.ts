@@ -1,12 +1,11 @@
 export const seoGoregaonData = {
   "location": "Goregaon",
   "hero": {
-    "title": "SEO Agency in Goregaon",
-    "headline": "Performance Focused SEO Agency in Goregaon",
+    "title": "#1 SEO Company in Goregaon",
+    "headline": "#1 SEO Company in Goregaon",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "If you’re running a business in Goregaon, you’ve probably seen how crowded the online space has become. It’s not just about having a website anymore, but it’s about whether people can actually find you when they search.",
-      "Most people usually stick to the top few results and rarely scroll further. So if you’re not there, you’re probably missing out on potential customers without even realizing it. As an SEO company in Goregaon, we focus on helping businesses show up where it matters and turn that visibility into something meaningful."
+      "Goregaon sits at the intersection of Mumbai's media industry, residential economy, and emerging IT corridor. Businesses here serve buyers who search with high intent and make decisions quickly based on what they find in the first few results. <br> Impulse Digital is a specialist SEO company in Goregaon combining Technical SEO, Local SEO, and B2B SEO to build search visibility that compounds over time for Goregaon businesses. With 34 years of marketing experience and documented results including 737% organic traffic growth for Qure.ai and 12,548 measurable conversion journeys for HUL, we bring enterprise-grade thinking to every engagement. The goal is not more traffic. It is a search presence that makes your first sales conversation easier before it even begins."
     ]
   },
   "services": {
@@ -179,15 +178,15 @@ export const seoGoregaonData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Goregaon?",
+        "question": "Why should I choose Impulse Digital's SEO services in Goregaon?",
         "answer": [
           "We focus on practical improvements that bring real results. The goal is to help your business get discovered and generate actual inquiries."
         ]
       },
       {
-        "question": "How do you decide the SEO strategy?",
+        "question": "Our website has not been updated in over a year. Does that affect our search rankings in Goregaon?",
         "answer": [
-          "It depends on your business, competition, and current visibility. We don’t follow a fixed template."
+          "It depends on what type of content has not been updated. Service pages describing what your business offers rarely need frequent updates Google does not penalise them for staying current. What does matter is whether those pages still accurately reflect what buyers in Goregaon are searching for, whether the technical structure is still clean, and whether competing pages have published significantly more useful content since yours was written. Blog and resource content ages differently. Outdated statistics, references to superseded tools, or advice based on older search behaviour actively signal to Google that the content is no longer the most useful answer. Impulse Digital's content audit process identifies specifically which pages on your site need refreshing and which are performing adequately as they are — avoiding unnecessary work while fixing what is genuinely costing you visibility."
         ]
       },
       {
@@ -197,9 +196,15 @@ export const seoGoregaonData = {
         ]
       },
       {
-        "question": "Do you only work with local businesses?",
+        "question": "Does having a Google Business Profile help SEO for a Goregaon business?",
         "answer": [
-          "No, but we do help improve local visibility if your customers are based nearby."
+          "For businesses serving customers within Goregaon and the surrounding areas, Google Business Profile is not a supplement to SEO it is a primary search channel in its own right. When someone in Goregaon searches for a service on their phone, the three businesses that appear in the map pack at the top of results get the majority of clicks before anyone reads a single organic listing. Your Business Profile is what determines whether you appear there. The signals that determine map pack ranking are different from the signals that drive organic page rankings they include review volume, review recency, profile completeness, post frequency, photo engagement, and citation consistency across directories. Impulse Digital's Local SEO programme manages all of these as an integrated system rather than treating the Business Profile as a separate task from the rest of your search strategy."
+        ]
+      },
+      {
+        "question": "Our last SEO agency sent monthly reports but we never understood what they meant for our business. How is Impulse Digital different?",
+        "answer": [
+          "Most SEO reports are built to show the agency's activity, not to show the client's business movement. They display keyword position changes, session counts, and bounce rates data that is accurate but disconnected from the questions a business owner actually needs answered: are more of the right people finding us, are they enquiring, and is search paying for itself? Impulse Digital builds reports around three business-level signals. Pipeline attribution: how many enquiries, calls, and form fills can be traced to organic search this month. Audience quality: are the sessions coming from buyers in your category or irrelevant traffic inflating the numbers. Competitive movement: are you gaining or losing ground against the specific Goregaon and Mumbai competitors your buyers compare you to. Every report also includes a plain-language summary of what to do next not just what happened."
         ]
       },
       {
