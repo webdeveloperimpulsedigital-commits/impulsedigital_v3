@@ -1,11 +1,10 @@
 export const searchEngineOptimisationData = {
   "hero": {
     "headlineParts": [
-      "Your Website Is Not",
-      "the First Impression.",
-      "Search Is."
+      "SEO Company in Thane.",
+      "Be Found First."
     ],
-    "headlineAccent": "Search Is.",
+    "headlineAccent": "Be Found First.",
     "description": "<span class=\"seo-hero-lead\">Before a buyer reaches your website, search has already done the introduction. They have seen who appears, who sounds credible, who answers clearly, and who feels worth the click. Impulse Digital is the best SEO company in Thane, building search systems that help your brand get found, understood, and trusted when buyers are already looking.",
     "buttons": [
       {

@@ -3,8 +3,8 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoJogeshwariLocation from '@/components/pages/seo-locations/SeoJogeshwariLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Jogeshwari | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Jogeshwari to improve local search rankings and business visibility.',
+  title: 'SEO Agency in Jogeshwari | Best SEO Company | Impulse Digital',
+  description: 'Impulse Digital is a trusted SEO agency in Jogeshwari helping businesses improve Google rankings, local visibility, and organic traffic. Our SEO service in Jogeshwari includes technical SEO, keyword research, content optimisation, and clear performance reporting to generate qualified inquiries.',
   keywords: 'seo agency jogeshwari, local seo jogeshwari, digital marketing jogeshwari',
   robots: { index: true, follow: true },
   alternates: {
