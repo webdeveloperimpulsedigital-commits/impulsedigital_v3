@@ -218,7 +218,7 @@ export const seoGoregaonData = {
         "answer": [
           "More worth investing in, not less but the nature of what earns visibility is changing. AI search systems like Google AI Overviews, Perplexity, and ChatGPT do not generate answers from nothing. They extract from pages that are well-structured, clearly written, and demonstrably authoritative in their category. A Goregaon business with thin service pages, no FAQ content, and weak technical foundations will not appear in AI-generated responses any more than it appears in traditional search results. The businesses that will dominate both traditional and AI search over the next three years are the ones building genuine topical authority now clear content that answers real buyer questions, proper structured data markup, and a search presence that earns trust from both human readers and the AI systems that summarise what they find. Impulse Digital's Generative Search Optimisation service is built specifically for this transition."
         ]
-      }
+      },
       {
         "question": "What happens in the first 30 days if we start working with Impulse Digital as our SEO company in Goregaon?",
         "answer": [
