@@ -207,7 +207,7 @@ export const seoKandivaliData = {
         "answer": [
           "Almost certainly yes and it is a very specific type of SEO problem called authority distribution failure. A website with 50 pages where only 3 to 5 receive traffic typically has a broken internal linking structure. Pages on a website do not rank independently they share authority with each other through internal links. If your high-authority pages (usually the homepage and a few top service pages) are not linking to your deeper pages with descriptive anchor text, those deeper pages have no authority to rank with regardless of how good their content is. This is one of the most underdiagnosed SEO problems on Kandivali business websites. An internal linking audit maps exactly which pages have authority flowing to them and which are orphaned receiving no internal links and therefore invisible to Google despite existing on the site. Fixing it requires no new content only restructuring the links that already exist. Impulse Digital's technical SEO audit covers internal link architecture as a foundational step before any content or keyword work begins."
         ]
-      }
+      },
        {
         "question": "How do you figure out which Kandivali competitors we should be trying to outrank?",
         "answer": [

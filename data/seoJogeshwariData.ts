@@ -210,7 +210,7 @@ export const seoJogeshwariData = {
         "answer": [
           "Search rankings measure how well a page communicates its relevance and authority to Google not how good the underlying service actually is. A competitor outranking you in Jogeshwari despite a weaker offering almost always comes down to one of four structural advantages their website has over yours. Their pages use clearer heading structures that tell Google exactly what each page is about. They have more content covering the questions your shared audience asks during the research phase. Their domain has accumulated more backlinks from relevant sources, giving it higher authority in Google's assessment. Or their technical foundations are cleaner faster load times, better internal linking, fewer crawl errors. None of these advantages are permanent. Each one can be systematically closed through a structured SEO programme. Impulse Digital's competitive analysis process identifies exactly which of these four factors is causing the gap within the first two weeks of an engagement."
         ]
-      }
+      },
       {
         "question": "What does the first month of working with Impulse Digital as an SEO agency in Jogeshwari look like?",
         "answer": [
