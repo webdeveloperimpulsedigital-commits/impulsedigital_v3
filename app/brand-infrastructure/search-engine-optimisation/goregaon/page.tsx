@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoGoregaonLocation from '@/components/pages/seo-locations/SeoGoregaonLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Goregaon | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Goregaon, helping businesses rank higher in local search results.',
-  keywords: 'seo agency goregaon, local seo goregaon, digital marketing goregaon',
+  title: 'SEO Company in Goregaon | Best SEO Services | Impulse Digital',
+  description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
+  keywords: 'seo agency in goregaon, seo company in goregaon, seo services, local seo goregaon, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/goregaon/`,
   },
   openGraph: {
     title: 'SEO Agency in Goregaon | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Goregaon, helping businesses rank higher in local search results.',
+    description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/goregaon/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Agency in Goregaon | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Goregaon, helping businesses rank higher in local search results.',
+    description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

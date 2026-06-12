@@ -208,9 +208,21 @@ export const seoGoregaonData = {
         ]
       },
       {
-        "question": "How do you measure success?",
+        "question": "How do we verify that Impulse Digital is genuinely the right SEO company in Goregaon for our category?",
         "answer": [
-          "We look at rankings, traffic, and most importantly, whether you're getting more leads or inquiries."
+          "Ask for proof that is specific to your industry, not just a list of client logos. An SEO company in Goregaon worth working with should be able to show you documented traffic and lead data from a business comparable to yours not a case study from a completely different vertical. Impulse Digital publishes specific results: 737% organic traffic growth for Qure.ai in a specialised healthcare AI category where generic SEO approaches consistently fail, 12,548 measurable conversion journeys for HUL through search-integrated campaign content, and top-10 keyword rankings for 90% of targeted keywords for Vendiman within three months. These are category-specific, verifiable, and representative of what structured SEO produces when it is built around commercial outcomes rather than ranking activity. We will also walk you through a diagnostic of your current search position in the first conversation at no cost so you can judge the quality of our thinking before committing to anything."
+        ]
+      },
+      {
+        "question": "With AI search and voice search growing, is traditional SEO still worth investing in for a Goregaon business?",
+        "answer": [
+          "More worth investing in, not less but the nature of what earns visibility is changing. AI search systems like Google AI Overviews, Perplexity, and ChatGPT do not generate answers from nothing. They extract from pages that are well-structured, clearly written, and demonstrably authoritative in their category. A Goregaon business with thin service pages, no FAQ content, and weak technical foundations will not appear in AI-generated responses any more than it appears in traditional search results. The businesses that will dominate both traditional and AI search over the next three years are the ones building genuine topical authority now clear content that answers real buyer questions, proper structured data markup, and a search presence that earns trust from both human readers and the AI systems that summarise what they find. Impulse Digital's Generative Search Optimisation service is built specifically for this transition."
+        ]
+      },
+      {
+        "question": "What happens in the first 30 days if we start working with Impulse Digital as our SEO company in Goregaon?",
+        "answer": [
+          "The first 30 days are entirely diagnostic and foundational not a period where we publish content and hope for movement. In week one, we audit your current search position: which keywords you rank for, which technical barriers are preventing pages from being indexed correctly, and where your content gaps are costing you consideration from buyers already searching in Goregaon and your wider category. In week two, we map your competitive landscape identifying which businesses are ranking ahead of you, what they are doing that you are not, and where the realistic gaps are. In weeks three and four, we build the strategic plan: a scoped programme starting with the highest-impact area for your specific business, whether that is a technical fix, a Local SEO programme, a B2B content strategy, or a combination. As a trusted SEO company in Goregaon with 34 years of experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, Impulse Digital brings a structured diagnostic rigour to every engagement that most agencies skip entirely. The first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]
