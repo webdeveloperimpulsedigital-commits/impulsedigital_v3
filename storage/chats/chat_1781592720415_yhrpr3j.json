@@ -1,0 +1,33 @@
+{
+  "sessionId": "chat_1781592720415_yhrpr3j",
+  "updatedAt": "2026-06-16T06:57:23.674Z",
+  "ip": "::1",
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today? If you have questions about our services or need support with digital growth, feel free to ask!"
+    },
+    {
+      "role": "user",
+      "content": "do you  provide outdoor video shoots"
+    },
+    {
+      "role": "assistant",
+      "content": "Absolutely, we can help with that! Our video production services include creating premium brand films and ad campaigns, which can encompass outdoor shoots as well. \n\nWould you like to share more about your project or requirements?"
+    }
+  ],
+  "location": {
+    "city": "Localhost",
+    "region": "Development",
+    "country": "Local Host",
+    "timezone": "Local"
+  }
+}
