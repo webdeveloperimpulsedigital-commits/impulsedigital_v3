@@ -29,7 +29,12 @@ module.exports=[69313,a=>{"use strict";let b=process.env.NEXT_PUBLIC_SITE_URL||"
   obs.observe(document.documentElement,{childList:true,subtree:true});
   /* Also clean up anything already in the DOM */
   document.querySelectorAll('[id*="zsiq"],[id*="siq_"],[class*="zsiq"],iframe[aria-label*="SalesIQ"]').forEach(removeZoho);
-})();`}}),(0,b.jsx)(c.default,{id:"hotjar-tracking",strategy:"afterInteractive",dangerouslySetInnerHTML:{__html:`
+})();`}}),(0,b.jsx)(c.default,{src:"https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8",strategy:"afterInteractive"}),(0,b.jsx)(c.default,{id:"google-analytics",strategy:"afterInteractive",children:`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EFFQ2YYFN8');
+          `}),(0,b.jsx)(c.default,{id:"hotjar-tracking",strategy:"afterInteractive",dangerouslySetInnerHTML:{__html:`
               (function(h,o,t,j,a,r){
                   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
                   h._hjSettings={hjid:5340267,hjsv:6};
