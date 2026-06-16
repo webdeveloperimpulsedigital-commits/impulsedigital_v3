@@ -85,7 +85,9 @@ export async function POST(req: NextRequest) {
           ...messages,
           { role: 'assistant', content: replyMessage }
         ];
-        await saveChatSession(activeSessionId, fullHistory, leadInfo, ip);
+        saveChatSession(activeSessionId, fullHistory, leadInfo, ip).catch(err => {
+          console.error('[API/chat] Failed to save session:', err);
+        });
       }
 
       return NextResponse.json({ ...replyPayload, sessionId: activeSessionId });
@@ -163,7 +165,9 @@ export async function POST(req: NextRequest) {
         ...messages,
         { role: 'assistant', content: parsedContent.message || '' }
       ];
-      await saveChatSession(activeSessionId, fullHistory, parsedContent.metadata?.leadInfo, ip);
+      saveChatSession(activeSessionId, fullHistory, parsedContent.metadata?.leadInfo, ip).catch(err => {
+        console.error('[API/chat] Failed to save session:', err);
+      });
     }
 
     return NextResponse.json({ ...parsedContent, sessionId: activeSessionId });

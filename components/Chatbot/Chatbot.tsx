@@ -477,14 +477,14 @@ export default function Chatbot() {
             const paragraph = paragraphs[i];
             setIsLoading(true);
             
-            const delay = Math.max(600, Math.min(2000, paragraph.length * 10));
+            // Reduced delay for much faster response
+            const delay = Math.min(150, paragraph.length * 2);
             await new Promise((resolve) => setTimeout(resolve, delay));
             
             setMessages((prev) => [...prev, { role: 'assistant', content: paragraph }]);
             
             if (i < paragraphs.length - 1) {
-              setIsLoading(false);
-              await new Promise((resolve) => setTimeout(resolve, 400));
+              await new Promise((resolve) => setTimeout(resolve, 50));
             }
           }
           setIsLoading(false);
