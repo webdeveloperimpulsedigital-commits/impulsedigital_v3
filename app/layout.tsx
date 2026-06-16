@@ -98,6 +98,18 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* Google Analytics directly in head for SEO verification */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-EFFQ2YYFN8');
+            `,
+          }}
+        />
       </head>
       <body>
         {/* Block Zoho SalesIQ — removes any Zoho elements GTM tries to inject */}
@@ -139,20 +151,6 @@ export default function RootLayout({
 })();`,
           }}
         />
-
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-EFFQ2YYFN8');
-          `}
-        </Script>
 
         {/* Hotjar Tracking Code for https://theimpulsedigital.com */}
         <Script
