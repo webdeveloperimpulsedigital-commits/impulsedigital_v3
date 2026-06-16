@@ -252,64 +252,44 @@ export const socialMediaManagementData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why do I need a social media marketing agency in Mumbai?",
-        "answer": [
-          "A social media management agency brings strategy, consistency, and expertise to your brand's online presence. Instead of just posting randomly, an agency ensures that every piece of content aligns with your business goals, engages your target audience, and drives measurable results."
-        ]
+        "q": "Why do I need a social media marketing agency in Mumbai?",
+        "a": "A social media management agency brings strategy, consistency, and expertise to your brand's online presence. Instead of just posting randomly, an agency ensures that every piece of content aligns with your business goals, engages your target audience, and drives measurable results."
       },
       {
-        "question": "Why does my Mumbai business need a social media marketing agency rather than handling it in-house?",
-        "answer": [
-          "Most in-house teams in Mumbai manage social media alongside five other responsibilities. The result is content that goes live on schedule but rarely goes anywhere. A specialist social media marketing agency in Mumbai brings three things an in-house team stretched across multiple functions cannot consistently deliver: a dedicated creative system that produces content with a clear brand point of view, a community management discipline that responds to comments and messages within brand-safe parameters, and a performance learning loop that uses monthly data to make the next month's content sharper. Impulse Digital has built and managed social presence for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group brands where the cost of inconsistent social is not just missed engagement but missed commercial opportunity. We bring that standard of social discipline to every brand we manage."
-        ]
+        "q": "Why does my Mumbai business need a social media marketing agency rather than handling it in-house?",
+        "a": "Most in-house teams in Mumbai manage social media alongside five other responsibilities. The result is content that goes live on schedule but rarely goes anywhere. A specialist social media marketing agency in Mumbai brings three things an in-house team stretched across multiple functions cannot consistently deliver: a dedicated creative system that produces content with a clear brand point of view, a community management discipline that responds to comments and messages within brand-safe parameters, and a performance learning loop that uses monthly data to make the next month's content sharper. Impulse Digital has built and managed social presence for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group brands where the cost of inconsistent social is not just missed engagement but missed commercial opportunity. We bring that standard of social discipline to every brand we manage."
       },
       {
-        "question": "How do you measure the success of a social media campaign?",
-        "answer": [
-          "We track a variety of metrics depending on your objectives, including reach, engagement rate, website traffic from social channels, lead generation, and overall conversion rates. We provide regular reports to keep you informed of our progress and ROI."
-        ]
+        "q": "How do you measure the success of a social media campaign?",
+        "a": "We track a variety of metrics depending on your objectives, including reach, engagement rate, website traffic from social channels, lead generation, and overall conversion rates. We provide regular reports to keep you informed of our progress and ROI."
       },
       {
-        "question": "Can you handle customer service and community management?",
-        "answer": [
-          "Yes. Social media is a two-way conversation. We manage comments, respond to direct messages, and escalate critical customer service issues according to predefined brand guidelines to maintain a positive brand reputation."
-        ]
+        "q": "Can you handle customer service and community management?",
+        "a": "Yes. Social media is a two-way conversation. We manage comments, respond to direct messages, and escalate critical customer service issues according to predefined brand guidelines to maintain a positive brand reputation."
       },
       {
-        "question": "How often will you post on my social media accounts?",
-        "answer": [
-          "Posting frequency is tailored to your brand's strategy and the specific platform's best practices. Quality always trumps quantity; our goal is to maintain a consistent presence that keeps your audience engaged without overwhelming them."
-        ]
+        "q": "How often will you post on my social media accounts?",
+        "a": "Posting frequency is tailored to your brand's strategy and the specific platform's best practices. Quality always trumps quantity; our goal is to maintain a consistent presence that keeps your audience engaged without overwhelming them."
       },
       {
-        "question": "We are on Instagram, LinkedIn, and Facebook but none of them are working well. Should we add more platforms or fix what we have?",
-        "answer": [
-          "Almost always fix what you have first. The instinct to add platforms when existing ones underperform is one of the most common and expensive mistakes Mumbai brands make on social. Adding a new platform adds production requirements, community management overhead, and strategic complexity without addressing why the existing platforms are not working. The root cause of underperformance on multiple platforms simultaneously is almost always one of three things: the content does not have a clear enough point of view to earn attention in a crowded feed, the posting frequency is optimised for activity rather than impact, or the content is not adapted to each platform's specific format and audience behaviour. Instagram content that works as a carousel performs differently as a reel. LinkedIn content that builds authority for a B2B audience reads differently from Facebook content targeting consumers. Impulse Digital's social strategy process audits each platform independently before recommending any changes to your platform mix."
-        ]
+        "q": "We are on Instagram, LinkedIn, and Facebook but none of them are working well. Should we add more platforms or fix what we have?",
+        "a": "Almost always fix what you have first. The instinct to add platforms when existing ones underperform is one of the most common and expensive mistakes Mumbai brands make on social. Adding a new platform adds production requirements, community management overhead, and strategic complexity without addressing why the existing platforms are not working. The root cause of underperformance on multiple platforms simultaneously is almost always one of three things: the content does not have a clear enough point of view to earn attention in a crowded feed, the posting frequency is optimised for activity rather than impact, or the content is not adapted to each platform's specific format and audience behaviour. Instagram content that works as a carousel performs differently as a reel. LinkedIn content that builds authority for a B2B audience reads differently from Facebook content targeting consumers. Impulse Digital's social strategy process audits each platform independently before recommending any changes to your platform mix."
       },
       {
-        "question": "What does an SMM agency in Mumbai actually manage on a day-to-day basis?",
-        "answer": [
-          "More than most brands realise before they start working with one. An SMM agency in Mumbai managing a brand's social presence handles six interconnected workstreams simultaneously. Content planning: mapping monthly content pillars, campaign moments, and topical opportunities into a structured calendar. Creative production: briefing, designing, writing, and producing static posts, carousels, reels, and scripts across platform specifications. Publishing management: scheduling and posting across platforms at the right times for the right audiences. Community management: responding to comments, DMs, mentions, and brand tags with speed and brand voice consistency. Paid amplification: supporting high-priority content with targeted paid distribution. And performance reporting: analysing what worked, what was ignored, and what the next month's content and budget decisions should be based on. Impulse Digital manages all six as one integrated system not as separate services handed to different teams."
-        ]
+        "q": "What does an SMM agency in Mumbai actually manage on a day-to-day basis?",
+        "a": "More than most brands realise before they start working with one. An SMM agency in Mumbai managing a brand's social presence handles six interconnected workstreams simultaneously. Content planning: mapping monthly content pillars, campaign moments, and topical opportunities into a structured calendar. Creative production: briefing, designing, writing, and producing static posts, carousels, reels, and scripts across platform specifications. Publishing management: scheduling and posting across platforms at the right times for the right audiences. Community management: responding to comments, DMs, mentions, and brand tags with speed and brand voice consistency. Paid amplification: supporting high-priority content with targeted paid distribution. And performance reporting: analysing what worked, what was ignored, and what the next month's content and budget decisions should be based on. Impulse Digital manages all six as one integrated system not as separate services handed to different teams."
       },
       {
-        "question": "Do we need to run paid social ads if our organic social is already active?",
-        "answer": [
-          "Organic and paid social solve different problems and the answer depends on what your social presence needs to do. Organic social builds sustained relevance it creates the brand associations, community relationships, and content archive that earns long-term audience trust. Paid social amplifies specific moments a product launch, a campaign, a seasonal opportunity, or a high performing piece of organic content that deserves a wider audience than the algorithm gave it. The mistake most Mumbai brands make is treating paid social as a substitute for weak organic rather than an amplifier for strong organic. Paying to push content that does not earn attention organically wastes budget and rarely improves results. Impulse Digital's paid social practice is built on the principle that paid amplification should extend the reach of content that is already performing well organically not rescue content that was not working to begin with."
-        ]
+        "q": "Do we need to run paid social ads if our organic social is already active?",
+        "a": "Organic and paid social solve different problems and the answer depends on what your social presence needs to do. Organic social builds sustained relevance it creates the brand associations, community relationships, and content archive that earns long-term audience trust. Paid social amplifies specific moments a product launch, a campaign, a seasonal opportunity, or a high performing piece of organic content that deserves a wider audience than the algorithm gave it. The mistake most Mumbai brands make is treating paid social as a substitute for weak organic rather than an amplifier for strong organic. Paying to push content that does not earn attention organically wastes budget and rarely improves results. Impulse Digital's paid social practice is built on the principle that paid amplification should extend the reach of content that is already performing well organically not rescue content that was not working to begin with."
       },
       {
-        "question": "We need social media management but also SEO and performance marketing. Can one agency handle all three?",
-        "answer": [
-          "Yes and for enterprise brands in Mumbai, having all three managed by the same team produces significantly better results than splitting them across different agencies. When the best digital marketing company in Mumbai manages social, SEO, and performance marketing as connected disciplines, three things happen that do not happen when they are managed separately. Content produced for social can be repurposed and optimised for SEO without a brief crossing between two agencies. Audience insights from paid performance campaigns inform social content strategy in real time rather than arriving in a quarterly review. And the brand voice remains consistent across every channel because the same strategic team is making decisions across all three. Impulse Digital operates across all three disciplines and our client results for Amazon India, HUL, Mastercard, and Tata Consumer Products are built on exactly this connected approach."
-        ]
+        "q": "We need social media management but also SEO and performance marketing. Can one agency handle all three?",
+        "a": "Yes and for enterprise brands in Mumbai, having all three managed by the same team produces significantly better results than splitting them across different agencies. When the best digital marketing company in Mumbai manages social, SEO, and performance marketing as connected disciplines, three things happen that do not happen when they are managed separately. Content produced for social can be repurposed and optimised for SEO without a brief crossing between two agencies. Audience insights from paid performance campaigns inform social content strategy in real time rather than arriving in a quarterly review. And the brand voice remains consistent across every channel because the same strategic team is making decisions across all three. Impulse Digital operates across all three disciplines and our client results for Amazon India, HUL, Mastercard, and Tata Consumer Products are built on exactly this connected approach."
       },
       {
-        "question": "How do we evaluate whether Impulse Digital is the right SMM company in Mumbai for our brand?",
-        "answer": [
-          "Ask for category-specific proof before anything else. An SMM company in Mumbai worth working with should be able to show you documented engagement and campaign results from brands in your category or a comparable one not just a logo slide of well-known clients. Impulse Digital publishes specific social results: 959,000 impressions and 31% engagement on a single LinkedIn post for Grasim Industries, 5.49 million plays for Uppercase's AI-led New Year campaign, and structured weekly social sentiment tracking for Tata Consumer Products' Agent Chings campaign. These are outcomes from brands in FMCG, manufacturing, and retail categories where social has to connect directly to commercial movement, not just awareness metrics. In our first conversation, we review your current social presence, identify specifically what is limiting performance, and recommend where to start at no cost and with no obligation. Reach out through our contact form or call us directly."
-        ]
+        "q": "How do we evaluate whether Impulse Digital is the right SMM company in Mumbai for our brand?",
+        "a": "Ask for category-specific proof before anything else. An SMM company in Mumbai worth working with should be able to show you documented engagement and campaign results from brands in your category or a comparable one not just a logo slide of well-known clients. Impulse Digital publishes specific social results: 959,000 impressions and 31% engagement on a single LinkedIn post for Grasim Industries, 5.49 million plays for Uppercase's AI-led New Year campaign, and structured weekly social sentiment tracking for Tata Consumer Products' Agent Chings campaign. These are outcomes from brands in FMCG, manufacturing, and retail categories where social has to connect directly to commercial movement, not just awareness metrics. In our first conversation, we review your current social presence, identify specifically what is limiting performance, and recommend where to start at no cost and with no obligation. Reach out through our contact form or call us directly."
       }
     ]
   }
