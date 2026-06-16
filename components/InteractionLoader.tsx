@@ -69,19 +69,6 @@ export default function InteractionLoader() {
         document.head.appendChild(gtmScript);
       }
 
-      // Load Google Analytics
-      if (!document.getElementById('ga4-script')) {
-        const gaScript = document.createElement('script');
-        gaScript.id = 'ga4-script';
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8';
-        gaScript.async = true;
-        document.head.appendChild(gaScript);
-
-        const initScript = document.createElement('script');
-        initScript.innerHTML = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-EFFQ2YYFN8');`;
-        document.head.appendChild(initScript);
-      }
-
       // Switch FontAwesome from print to all
       document.querySelectorAll('link[rel="stylesheet"][media="print"]').forEach((l: any) => {
         if (l.href && (l.href.includes('font-awesome') || l.href.includes('fontawesome'))) {
