@@ -1,12 +1,12 @@
 export const generativeSearchOptimisationData = {
   "hero": {
-    "headlineHtml": "You're Not Just Fighting<br>for <span style=\"color: var(--impulse-violet);\">Rank Anymore.</span>",
+    "headlineHtml": "AI SEO Agency<br> For <span style=\"color: var(--impulse-violet);\">Generative Search.</span>",
     "headlineParts": [
-      "You're Not Just Fighting",
-      "for Rank Anymore."
+      "AI SEO Agency",
+      "for Generative Search."
     ],
     "headlineAccent": "",
-    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital helps your brand build the signals AI systems need to understand, trust, and surface you in the moments that matter.",
+    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency in India helping enterprise brands build the signals that AI systems Google AI Overviews, ChatGPT, Perplexity, and Gemini need to understand, trust, and surface your brand in the moments that matter most. With 34 years of marketing experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, we build AI SEO services that go beyond traditional rankings into genuine AI-led recommendation and discovery.",
     "buttons": [
       {
         "text": "Improve Your AI Search Visibility",
@@ -65,10 +65,10 @@ export const generativeSearchOptimisationData = {
     ]
   },
   "vs": {
-    "title": "AI Search Optimisation, in Plain English",
+    "title": "AI SEO Service, in Plain English",
     "leftLabel": "SEO",
     "leftStrike": "helps you appear.",
-    "rightLabel": "AI Search",
+    "rightLabel": "AI SEO Service",
     "rightText": "helps you get ",
     "rightHighlight": "considered",
     "steps": [
@@ -96,7 +96,7 @@ export const generativeSearchOptimisationData = {
     "closing": "This is not keyword stuffing for a new platform. It is search clarity for how people discover brands now."
   },
   "uses": {
-    "title": "Where AI Search Creates Business Leverage",
+    "title": "Where AI SEO Service Creates Business Leverage",
     "cards": [
       {
         "title": "Answer Engine Optimisation",
@@ -122,11 +122,11 @@ export const generativeSearchOptimisationData = {
   },
   "channels": {
     "title": "Before Buyers Choose, They Ask.",
-    "intro1": "AI Search Optimisation matters when your category is not bought in one quick search.",
+    "intro1": "AI SEO Search Optimisation matters when your category is not bought in one quick search.",
     "intro2": "Your buyer compares, questions, evaluates, and looks for proof before making a decision.",
     "systemsTitle": "We Make Your Expertise Easier to Find",
     "systemsParagraphs": [
-      "AI search visibility becomes weak when the signals are scattered.",
+      "AI seo service helps to get visibility for your brand when the signals are scattered.",
       "A blog says one thing. A service page says another. Schema is missing. Entities are unclear. Proof sits too deep. The brand exists online, but it is not easy to interpret."
     ],
     "closer": "We connect the signals that help your brand make sense.",
@@ -170,7 +170,7 @@ export const generativeSearchOptimisationData = {
       },
       {
         "title": "Strategic interpretation",
-        "desc": "so SEO becomes a demand-generation system, not just a ranking exercise"
+        "desc": "so AI SEO becomes a demand-generation system, not just a ranking exercise"
       }
     ],
     "punchlineLine1": "Rankings matter.",
@@ -208,7 +208,7 @@ export const generativeSearchOptimisationData = {
     "footer": "The aim is not to satisfy algorithms alone.\n\nThe aim is to become easier for buyers and AI systems to understand."
   },
   "fit": {
-    "title": "AI Search Optimisation Is Right for You If",
+    "title": "AI SEO Agency Is Right for You If",
     "closer": "If buyers are asking questions your brand should be part of, AI Search Optimisation helps you become easier to find and recommend.",
     "list": [
       "Your buyers compare multiple options before speaking to sales.",
@@ -245,28 +245,36 @@ export const generativeSearchOptimisationData = {
     "title": "What to Know Before You Optimise for AI Search",
     "items": [
       {
-        "q": "What is AI Search Optimisation?",
-        "a": "AI Search Optimisation helps brands improve how they are found, understood, and recommended across traditional search engines and AI-led discovery platforms."
+        "q": "What is AI Search Optimisation and why does it matter now?",
+        "a": "AI Search Optimisation is how brands ensure they are found, understood, and recommended by AI systems not just ranked in traditional search results. When a buyer asks ChatGPT to recommend a digital marketing agency, asks Perplexity to compare healthcare AI companies, or reads a Google AI Overview about enterprise software vendors, the brands that appear there have built something specific: clear entity signals, structured proof, and content that AI systems can extract, summarise, and cite. As a specialist AI SEO agency, Impulse Digital builds exactly these signals for enterprise brands helping you move from being present in search to being recommended by AI. We have deployed this for brands including Amazon India, HUL, Mastercard, and Tata Consumer Products, where AI-led discovery is increasingly part of how buyers shortlist before contacting anyone."
       },
       {
-        "q": "How is this different from traditional SEO?",
-        "a": "Traditional SEO focuses on rankings, keywords, backlinks, and on-page optimisation. AI Search Optimisation also improves how AI systems interpret your brand, content, expertise, entities, and proof."
+        "q": "How is an AI SEO service different from traditional SEO?",
+        "a": "Traditional SEO focuses on rankings where your pages appear in a list of results. An AI SEO service focuses on recommendation  whether AI systems understand your brand well enough to surface it in answers, summaries, and comparisons when buyers are not searching for your brand directly but for your category. The practical differences are significant. Traditional SEO optimises for keyword placement, backlinks, and technical structure. AI SEO optimises for entity clarity (how clearly AI systems understand what your brand is and does), answer readiness (whether your content is structured to be extracted and cited), and authority signals (whether enough credible sources reference your brand for AI systems to trust it). Impulse Digital's AI SEO service covers all four practice areas Answer Engine Optimisation, Generative Engine Optimisation, Entity Optimisation, and Structured Data as a connected system rather than isolated tactics."
       },
       {
-        "q": "What are AEO and GEO?",
-        "a": "AEO means Answer Engine Optimisation. It helps your content appear in direct answers, snippets, voice results, and question-led search. GEO means Generative Engine Optimisation. It helps improve visibility inside AI-generated answers, summaries, comparisons, and recommendations."
+        "q": "What are AEO and GEO and how do they work together?",
+        "a": "Answer Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) are two distinct but complementary disciplines within AI search. AEO focuses on traditional search surfaces featured snippets, People Also Ask boxes, voice assistant responses, and Google AI Overviews. It structures your content around direct questions so search engines can extract a clean, citable answer rather than sending the user to scroll through a page. GEO focuses on generative AI platforms ChatGPT, Gemini, Perplexity, and Claude where AI systems synthesise multiple sources into a single recommendation or summary. Being referenced in a GEO response requires a different set of signals from AEO: more emphasis on third-party citation, entity verification, comparison-ready content, and authority across multiple domains. At Impulse Digital, we deploy both as part of a unified AI visibility programme because a brand that is strong in AEO but absent in GEO loses the buyer who moved their research from Google to ChatGPT, and vice versa."
       },
       {
-        "q": "Can this help visibility on ChatGPT, Gemini, and Perplexity?",
-        "a": "Yes. We structure content, entities, proof, and authority signals so AI systems can understand your brand more clearly and surface it in relevant discovery moments."
+        "q": "Can Impulse Digital improve visibility on ChatGPT, Gemini, and Perplexity for brands?",
+        "a": "Yes and this is a growing priority for Indian enterprise brands as buyer research behaviour shifts toward AI platforms. As a specialist AI SEO agency in India, Impulse Digital structures content, entity signals, proof assets, and authority indicators specifically so that AI systems can understand Indian brands and surface them in relevant AI-generated responses. The signals that drive visibility on ChatGPT, Gemini, and Perplexity are distinct from traditional Google ranking signals. Schema markup, Organisation and LocalBusiness structured data, third-party review and citation footprint, named expert profiles, and answer-ready FAQ architecture all contribute to how confidently an AI system recommends your brand. Impulse Digital has deployed these signals for enterprise brands across FMCG, healthcare, fintech, and manufacturing categories where AI-led shortlisting is measurably changing how buyers arrive at vendor decisions."
       },
       {
-        "q": "What is entity optimisation?",
-        "a": "Entity optimisation clarifies how your brand, services, categories, audience, proof, and expertise are connected across your digital presence."
+        "q": "What is entity optimisation and why does Google care about it?",
+        "a": "An entity is how Google and AI systems represent a distinct thing a brand, a person, a service, a location in their knowledge systems. Entity optimisation is the process of making your brand's entity as clear, consistent, and well-connected as possible across the web. Google's Knowledge Graph, which underpins both traditional search and AI Overviews, works by connecting entities to each other your brand entity connects to your service entities, your location entity, your client entities, and your expert entities. When these connections are incomplete or inconsistent, AI systems lack confidence in surfacing your brand for relevant queries. At Impulse Digital, entity optimisation covers four layers: brand entity mapping (defining who you are and what you do in machine-readable terms), service entity structure (how your individual offerings connect to your brand), category associations (which search and AI categories your brand should appear in), and internal linking that reinforces these connections across your digital presence."
       },
       {
-        "q": "Do you implement schema and structured data?",
-        "a": "Yes. Schema and structured data help search engines and AI systems understand the meaning of your pages more clearly."
+        "q": "How does schema and structured data improve AI search visibility?",
+        "a": "Schema markup is the language that tells search engines and AI systems the meaning behind your page content not just the words but the relationships, the proof, and the structure. A page with FAQPage schema tells Google exactly which questions it answers and what the answers are making it extractable for AI Overviews and voice responses. A page with Organisation schema tells Google's Knowledge Graph your brand name, founding date, address, service areas, and social profiles building the entity record that AI systems use to recommend and describe your brand. A page with Service schema tells AI systems specifically what you offer, who you serve, and where. Without structured data, AI systems have to infer these relationships from unstructured text and they often get it wrong or lack the confidence to surface the brand at all. Impulse Digital's structured data work covers FAQPage, Organisation, LocalBusiness, Service, Article, and BreadcrumbList schema as standard deployed as a coordinated system, not as individual tags added without strategic intent."
+      },
+      {
+        "q": "How does Impulse Digital measure the impact of AI Search Optimisation?",
+        "a": "AI search visibility is measured differently from traditional SEO because the primary outcome is recommendation frequency, not ranking position. Impulse Digital tracks five signals across every AI SEO engagement. Brand mention growth in AI responses: how frequently your brand appears when AI systems answer queries in your category tracked through structured prompting and AI platform monitoring. Entity clarity score: how consistently and completely AI systems describe your brand when queried directly. Structured data coverage: what percentage of your key pages have accurate, validated schema markup deployed. Third-party citation footprint: how many credible external sources reference your brand in ways AI systems can trace and verify. And AI Overview appearance rate: how often your content is extracted into Google AI Overviews for your target queries. These five signals together give a clear picture of where your brand stands in the AI visibility landscape and what needs to change next. Monthly reporting covers each signal with specific improvement recommendations not just data, but direction."
+      },
+      {
+        "q": "How do you ensure an brand ranks well for AI search queries?",
+        "a": "Ranking well for AI search requires optimising three layers: the page, the entity, and the authority profile. Impulse Digital's approach for brands combines Answer Engine Optimisation (FAQPage schema, direct answers, clear topic signals), Entity Optimisation (structuring your brand entity, services, locations, and people so AI systems understand who you are), and Authority signals (getting third-party sites to reference your brand in structured ways)."
       }
     ]
   }
