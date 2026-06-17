@@ -67,8 +67,6 @@ const Footer: React.FC = () => {
             <ul>
               <li><Link href="/blog/">Blog</Link></li>
               <li><Link href="/ppt/">PPT</Link></li>
-              <li><Link href="/resources/videos/">Videos</Link></li>
-              <li><Link href="/resources/ebooks/">E books</Link></li>
             </ul>
           </div>
 
