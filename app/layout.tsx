@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@impulsedigi',
   },
+  verification: {
+    google: 'L2DP6cEE1zUFFR1Sf-AMVqeFURObeTfpBRPnTOGZ6xw',
+  },
   metadataBase: new URL(SITE_URL),
 };
 
