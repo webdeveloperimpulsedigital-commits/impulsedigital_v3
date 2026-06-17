@@ -1,0 +1,230 @@
+/* Resources Global Layout - Grid Active */
+.resources-page {
+  padding-top: 120px;
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.resources-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem 2rem;
+}
+
+/* Page Header */
+.resources-header-box {
+  margin-bottom: 3rem;
+}
+
+.resources-title-huge {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: #fff;
+}
+
+.resources-subtitle-text {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Layout Grid (Sidebar + Main) */
+.resources-layout {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Sticky Sidebar */
+.resources-sidebar {
+  flex: 0 0 280px;
+  position: sticky;
+  top: 120px; /* Stick below the main nav */
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.8rem;
+}
+
+/* Vertical Category Tabs */
+.resources-tabs-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tab-btn-vertical {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.8rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  display: block;
+  text-align: left;
+  border: 1px solid transparent;
+}
+
+.tab-btn-vertical:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.tab-btn-vertical.active {
+  background: rgba(138, 92, 246, 0.1);
+  color: #fff;
+  border-left: 3px solid #b829ea;
+  font-weight: 700;
+}
+
+/* Main Grid Content Area */
+.resources-main-grid {
+  flex: 1;
+}
+
+/* Simple Grid Layout */
+.ppt-simple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.ppt-grid-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ppt-grid-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 92, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(138, 92, 246, 0.1);
+}
+
+.ppt-card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ppt-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ppt-grid-card:hover .ppt-card-image {
+  transform: scale(1.05);
+}
+
+.ppt-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ppt-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
+  /* limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ppt-card-category {
+  font-size: 0.8rem;
+  color: #8A5CF6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Load More Button */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.load-more-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.load-more-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(138, 92, 246, 0.8);
+  box-shadow: 0 0 20px rgba(138, 92, 246, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .resources-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .resources-sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+  .resources-tabs-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tab-btn-vertical {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  .tab-btn-vertical.active {
+    border-left: 1px solid transparent;
+    background: linear-gradient(90deg, #b829ea 0%, #e4a2fc 100%);
+    color: #000;
+  }
+}

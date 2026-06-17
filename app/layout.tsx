@@ -8,6 +8,7 @@ import ClientProviders from '@/components/ClientProviders';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import InteractionLoader from '@/components/InteractionLoader';
 import './globals.css';
+import './styles/resources.css';
 
 export const metadata: Metadata = {
   // Default metadata — overridden by each page's own metadata export

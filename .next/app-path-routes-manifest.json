@@ -83,6 +83,7 @@
   "/growth-intelligence/market-intelligence/page": "/growth-intelligence/market-intelligence",
   "/growth-intelligence/page": "/growth-intelligence",
   "/page": "/",
+  "/ppt/[[...category]]/page": "/ppt/[[...category]]",
   "/privacy-policy/page": "/privacy-policy",
   "/robots.txt/route": "/robots.txt",
   "/services/page": "/services",

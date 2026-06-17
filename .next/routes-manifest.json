@@ -275,6 +275,14 @@
         "nxtPslug": "nxtPslug"
       },
       "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/ppt/[[...category]]",
+      "regex": "^/ppt(?:/(.+?))?(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory"
+      },
+      "namedRegex": "^/ppt(?:/(?<nxtPcategory>.+?))?(?:/)?$"
     }
   ],
   "staticRoutes": [
