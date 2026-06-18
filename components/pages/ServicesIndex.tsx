@@ -15,7 +15,7 @@ const servicesData = [
     category: "Growth Intelligence",
     description: "Data isn't enough. We engineer systems that uncover hidden market mechanics, turning passive numbers into aggressive, predictable growth.",
     items: [
-      { title: "Consumer Intelligence", path: "/growth-intelligence/consumer-intelligence/", desc: "Deep data analysis to uncover hidden audience behaviors.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", span: 1 },
+      { title: "Customer Intelligence", path: "/growth-intelligence/customer-intelligence/", desc: "Deep data analysis to uncover hidden audience behaviors.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", span: 1 },
       { title: "Market & Competitive Intelligence", path: "/growth-intelligence/market-intelligence/", desc: "Understand your competitors and industry landscape.", image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?auto=format&fit=crop&w=800&q=80", span: 1 },
       { title: "Always-On Intelligence", path: "/growth-intelligence/always-on-intelligence/", desc: "Continuous monitoring for 24/7 strategic advantage.", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", span: 1 },
       { title: "Campaign & Performance Intelligence", path: "/growth-intelligence/campaign-intelligence/", desc: "Real-time insights to optimize live marketing efforts.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", span: 1 }

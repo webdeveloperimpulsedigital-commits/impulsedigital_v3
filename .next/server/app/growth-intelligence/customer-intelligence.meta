@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/growth-intelligence/layout,_N_T_/growth-intelligence/customer-intelligence/layout,_N_T_/growth-intelligence/customer-intelligence/page,_N_T_/growth-intelligence/customer-intelligence"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/growth-intelligence/customer-intelligence/__PAGE__",
+    "/growth-intelligence/customer-intelligence",
+    "/growth-intelligence",
+    "/_index",
+    "/_head"
+  ]
+}

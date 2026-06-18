@@ -11,7 +11,7 @@ const routes = [
   '/',
   '/about-us/',
   '/growth-intelligence/',
-  '/growth-intelligence/consumer-intelligence/',
+  '/growth-intelligence/customer-intelligence/',
   '/growth-intelligence/market-intelligence/',
   '/growth-intelligence/always-on-intelligence/',
   '/growth-intelligence/campaign-intelligence/',

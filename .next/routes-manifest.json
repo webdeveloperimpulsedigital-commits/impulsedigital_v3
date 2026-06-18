@@ -773,10 +773,10 @@
       "namedRegex": "^/growth\\-intelligence/campaign\\-intelligence(?:/)?$"
     },
     {
-      "page": "/growth-intelligence/consumer-intelligence",
-      "regex": "^/growth\\-intelligence/consumer\\-intelligence(?:/)?$",
+      "page": "/growth-intelligence/customer-intelligence",
+      "regex": "^/growth\\-intelligence/customer\\-intelligence(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/growth\\-intelligence/consumer\\-intelligence(?:/)?$"
+      "namedRegex": "^/growth\\-intelligence/customer\\-intelligence(?:/)?$"
     },
     {
       "page": "/growth-intelligence/market-intelligence",

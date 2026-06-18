@@ -1,8 +1,8 @@
 export const marketIntelligenceData = {
   hero: {
-    headlineParts: ["Don't Let the Market", "Surprise You."],
-    headlineAccent: "Surprise You.",
-    description: "Competitors shift. Search behaviour changes. New signals appear before reports catch up. Impulse Digital helps brands read the market early, so positioning, content, e-commerce, and category decisions are made with sharper intelligence.",
+    headlineParts: ["Market & Competitive", "Intelligence Service"],
+    headlineAccent: "Intelligence Service",
+    description: "Competitors shift. Search behaviour changes. New signals appear before reports catch up. Impulse Digital is a trusted market intelligence company and competitive intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We help brands read the market early through competitive intelligence services that cover competitor communication analysis, category trend mapping, e-commerce benchmarking, and search intelligence studies, so positioning, content, and category decisions are made with sharper intelligence before the market moves.",
     buttons: [
       { text: "Map Your Market", link: "#connect", cursor: "MAP" },
       { text: "See What You're Missing", link: "#use-cases", cursor: "EXPLORE" }
@@ -20,11 +20,11 @@ export const marketIntelligenceData = {
     ],
     outro: [
       "By the time the planning deck catches up, the market may already have moved.",
-      "Market and Competitive Intelligence helps you see the shift early, so your next move is based on evidence, not memory."
+      "Market and competitive intelligence service helps you see the shift early, so your next move is based on evidence, not memory."
     ]
   },
   vs: {
-    title: "Market and Competitive Intelligence, in Plain English",
+    title: "Market and Competitive Intelligence Services, in Plain English",
     leftLabel: "Research",
     leftStrike: "tells you what competitors did.",
     rightLabel: "Market intelligence",
@@ -71,7 +71,7 @@ export const marketIntelligenceData = {
       "We are not interested in that kind of intelligence."
     ],
     closer: "",
-    pillsHeading: "Use Market and Competitive Intelligence before",
+    pillsHeading: "Use Market and Competitive Intelligence Service before",
     pills: [
       "Annual brand planning",
       "A brand repositioning",
@@ -84,7 +84,7 @@ export const marketIntelligenceData = {
     ]
   },
   guardrails: {
-    title: "Impulse Digital Connects the Signals<br/>Others Read Separately",
+    title: "How Impulse Digital Works as a<br/>Market Intelligence Agency",
     intro: "Most market studies look in one direction. We connect the external landscape across:",
     rows: [
       { title: "Category trends", desc: "What is changing in the market and where attention is moving" },
@@ -108,7 +108,7 @@ export const marketIntelligenceData = {
     footer: "The market will move anyway.\n\nThe advantage is seeing the movement early."
   },
   fit: {
-    title: "Market and Competitive<br/>Intelligence Is Right<br/>for You If",
+    title: "Market and Competitive<br/>Intelligence Service Is Right<br/>for You If",
     closer: "",
     list: [
       "You are building strategy from last year's category assumptions.",
@@ -124,7 +124,7 @@ export const marketIntelligenceData = {
   finalCta: {
     headingFontSize: "clamp(2.8rem, 5vw, 5.5rem)",
     headingLineHeight: "1.1",
-    titleParts: ["See What Your Market<br/>Is Already<br/>", "Telling You."],
+    titleParts: ["See What Your Market<br/> Intelligence Is Already<br/>", "Telling You."],
     accent: "Telling You.",
     body: "Tell us the category you are competing in. We will help identify the signals your team should be watching before the next strategic decision.",
     buttons: [
@@ -134,17 +134,17 @@ export const marketIntelligenceData = {
     footnote: "No static competitor dump. No screenshot archive. Just clearer market intelligence built for positioning, strategy, and growth decisions."
   },
   faq: {
-    title: "What to Know Before You Map the Market",
+    title: "FAQs About Market Intelligence and Competitive Intelligence Services",
     items: [
-      { q: "What is Market and Competitive Intelligence?", a: "Market and Competitive Intelligence helps brands understand category movement, competitor behaviour, e-commerce performance, and consumer search patterns. It turns external signals into sharper strategy, positioning, communication, and product decisions." },
-      { q: "How is this different from competitor analysis?", a: "Competitor analysis often looks at what others are doing. Market and Competitive Intelligence connects competitor activity with category trends, consumer search behaviour, marketplace signals, and strategic implications." },
-      { q: "What decisions can this support?", a: "It can support brand planning, repositioning, category entry, campaign strategy, e-commerce optimisation, product decisions, content strategy, and innovation planning." },
+      { q: "What is Market and Competitive Intelligence and how does Impulse Digital approach it?", a: "Market and Competitive Intelligence helps brands understand category movement, competitor behaviour, e-commerce performance, and search patterns before that intelligence becomes obvious to everyone else. As a specialist market intelligence agency and competitive intelligence agency, Impulse Digital combines external signals from multiple sources, including competitor communications, digital search data, marketplace signals, and category trend analysis, into decision-ready intelligence for enterprise brands. We have built and delivered this practice for Amazon India, HUL, Tata Consumer Products, Aditya Birla Group, and Himalaya, across categories where missing a market signal early has measurable commercial consequences. The goal is not a quarterly report. It is a continuous intelligence advantage." },
+      { q: "How are Impulse Digital's competitive intelligence services different from a standard competitor analysis?", a: "A standard competitor analysis is a snapshot. It tells you where competitors are positioned today based on what is publicly visible. Impulse Digital's competitive intelligence services go further in three ways. First, they connect competitor activity to category movement, understanding not just what a competitor is doing but why the market is responding to it. Second, they integrate search intelligence and e-commerce signals alongside communication analysis, giving a fuller picture of where competitor investment is actually going. Third, they produce strategic implications, not just observations. Each finding is mapped to a specific decision your brand team can make in response. For Tata Consumer Products, this approach helped identify category transformation dynamics and diaspora demand signals early enough to shape the market launch strategy rather than react to it after launch." },
+      { q: "What decisions can Impulse Digital's market intelligence service support?", a: "Impulse Digital's market intelligence service is designed to inform the decisions that cannot be reversed cheaply once made. These include brand planning cycles where category context and competitive positioning need to be validated before budgets are set, repositioning decisions where the brand needs to understand whether a new territory is genuinely available or already claimed, category entry assessments where market attractiveness needs to be tested against real competitive signals rather than internal assumptions, campaign strategy where the brand needs to know what competitors are saying before deciding what it should say differently, e-commerce optimisation where marketplace performance relative to competitors determines pricing and listing strategy, and innovation planning where emerging consumer expectations need to be spotted before they become mainstream category requirements." },
       { q: "What is Category Trend Mapping?", a: "Category Trend Mapping identifies rising consumer interests, emerging themes, category shifts, and whitespace opportunities. It helps teams see where the market is moving before strategy is locked." },
       { q: "What is Competitor Communication Analysis?", a: "Competitor Communication Analysis studies the narratives, claims, positioning, content themes, and share of voice competitors are building. It helps your brand find clearer differentiation." },
-      { q: "What is E-Commerce Benchmarking?", a: "E-Commerce Benchmarking compares product performance across marketplaces using visible signals such as ratings, reviews, sentiment, listing quality, product claims, and consumer preferences." },
-      { q: "What is Search Intelligence?", a: "Search Intelligence studies what consumers are searching, comparing, asking, and exploring. It helps improve SEO, content, product pages, education journeys, and category strategy." },
-      { q: "Is this a one-time project or ongoing work?", a: "It works best as ongoing intelligence. Markets, competitors, search behaviour, and e-commerce signals keep changing, so the value comes from watching the right signals repeatedly." },
-      { q: "What do we receive at the end?", a: "You receive decision-ready outputs such as category maps, competitor narrative analysis, e-commerce benchmarking, search intelligence themes, opportunity areas, and strategic recommendations." }
+      { q: "What is E-Commerce Benchmarking and how does it help brands?", a: "E-Commerce Benchmarking compares your brand's performance across marketplaces against competitors using the signals that drive discovery and conversion: ratings, review volume, review sentiment, listing quality, product claims, pricing positioning, content completeness, and consumer vocabulary in reviews. Unlike most competitive intelligence providers who work only with panel data or survey research, Impulse Digital combines live marketplace signal analysis with category context and competitor communication data to produce a connected view of how your brand is performing relative to competitors across the full e-commerce experience. Output includes a marketplace performance comparison by category and competitor, listing quality assessment, review sentiment and theme analysis, pricing positioning map, and specific recommendations for improving discoverability and conversion across targeted platforms." },
+      { q: "What is Search Intelligence and why does it matter for brand strategy?", a: "Search Intelligence studies what people are searching, comparing, asking, and exploring across search engines and AI platforms in your category. As a specialist market intelligence company, Impulse Digital uses search intelligence to surface four types of insights your brand strategy needs. Customer vocabulary: the exact words and phrases buyers use when researching your category, which often differ significantly from the language your brand uses internally. Emerging demand signals: search queries that are growing in volume before they show up in purchase data, indicating where category interest is shifting. Competitive comparison behaviour: the specific competitor names and product attributes buyers compare before making a decision. And content gaps: the questions buyers are asking that your brand content does not currently answer. Output includes a search demand map, emerging query analysis, competitive search positioning, content gap recommendations, and SEO and product page improvement priorities." },
+      { q: "Should Market and Competitive Intelligence be a one-time project or an ongoing programme?", a: "It works best as ongoing intelligence. Markets, competitors, search behaviour, and e-commerce signals keep changing, so the value comes from watching the right signals repeatedly." },
+      { q: "What does Impulse Digital deliver at the end of a Market Intelligence engagement?", a: "Every Impulse Digital market intelligence engagement delivers decision-ready outputs structured around the specific questions the engagement was commissioned to answer. These include a category trend map with prioritised opportunity territories and directional recommendations, a competitor narrative analysis with positioning gaps and differentiation options, an e-commerce benchmarking report with performance comparison and improvement priorities, a search intelligence summary with emerging demand signals and content gap recommendations, and a strategic implications document that connects every finding to a specific decision your brand planning, communication, or product team needs to make. We do not deliver data for its own sake. We deliver the intelligence your team needs to make the next decision with more confidence than your competitors can." }
     ]
   },
   logosTitle: "Trusted by Teams That Need the Market to Make Sense",
