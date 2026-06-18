@@ -29,9 +29,9 @@ const VideoProduction: React.FC = () => {
 
   return (
     <main id="main-content">
-      
-      
-      <ServiceHero 
+
+
+      <ServiceHero
         headlineParts={videoProductionData.hero.headlineParts}
         headlineAccent={videoProductionData.hero.headlineAccent}
         description={videoProductionData.hero.description}
@@ -41,16 +41,16 @@ const VideoProduction: React.FC = () => {
       <ServiceStats data={videoProductionData.stats} />
 
       <ServiceHandoff />
-      
+
       <ServiceProblem data={videoProductionData.problem} />
       <ServiceHandoff />
-      
+
       <ServiceVs data={videoProductionData.vs} />
       <ServiceHandoff />
-      
+
       <ServiceUses data={videoProductionData.uses} />
       <ServiceHandoff />
-      
+
       <ServiceWhenToUse data={videoProductionData.whenToUse} />
       <ServiceHandoff />
 
@@ -58,15 +58,15 @@ const VideoProduction: React.FC = () => {
       <ServiceHandoff />
 
       <ServiceProcess data={videoProductionData.process} />
-      
-      <Logos title="Trusted by Teams That Want the Story to Survive the Scroll" />
-      
+
+      <Logos title="Video Production Agency in Mumbai Trusted by Leading Enterprise Brands" />
+
       <Testimonials />
       <ServiceHandoff />
-      
+
       <ServiceFit data={videoProductionData.fit} />
       <ServiceHandoff />
-      
+
       <ServiceFinalCTA data={videoProductionData.finalCta} />
       <Contact title="Let’s turn the message<br/>into a memory." />
       <ServiceFAQ data={videoProductionData.faq} />

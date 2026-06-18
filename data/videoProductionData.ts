@@ -1,8 +1,8 @@
 export const videoProductionData = {
   hero: {
-    headlineParts: ["The Right Video Does More", "Than Look Good."],
-    headlineAccent: "Than Look Good.",
-    description: "A good video is not just watched. It makes something land. A product becomes easier to understand. A brand becomes easier to remember. A campaign becomes easier to care about. A story becomes easier to carry forward. Impulse Digital helps brands create video content that gives the audience a reason to stop, feel, remember, and act.",
+    headlineParts: ["#1 Video Production", "Company in Mumbai."],
+    headlineAccent: "Company in Mumbai.",
+    description: "A good video is not just watched. It makes something land. A product becomes easier to understand. A brand becomes easier to remember. A campaign becomes easier to care about. A story becomes easier to carry forward. Impulse Digital is a specialist video production company in Mumbai offering campaign films, brand films, product videos, and social-first video content helping enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products create video that gives audiences a genuine reason to stop, feel, remember, and act.",
     buttons: [
       { text: "Build Video That Carries the Idea", link: "#connect", cursor: "BUILD" },
       { text: "See the Stories We Built", link: "#process", cursor: "EXPLORE" }
@@ -37,7 +37,7 @@ export const videoProductionData = {
     ]
   },
   vs: {
-    title: "Video Production, in Plain English",
+    title: "Video Production Agency, in Plain English",
     leftLabel: "A script",
     leftStrike: "can explain the point.",
     rightLabel: "A film",
@@ -53,7 +53,7 @@ export const videoProductionData = {
     closing: "The output is not just a video file. It is a brand story made easier to notice, understand, and remember."
   },
   uses: {
-    title: "Where Video Production Creates Business Leverage",
+    title: "Where Video Production Services in Mumbai Create Business Movement",
     cards: [
       {
         title: "Brand Films",
@@ -94,7 +94,7 @@ export const videoProductionData = {
       "The issue is not always production quality. Sometimes the video looks good. It just does not leave anything behind."
     ],
     closer: "Use it when:",
-    pillsHeading: "Video production makes sense when:",
+    pillsHeading: "Video production company makes sense when:",
     pills: [
       "Your brand story needs more emotion.",
       "Your product needs clearer explanation.",
@@ -133,7 +133,7 @@ export const videoProductionData = {
     ]
   },
   fit: {
-    title: "Video Production Is Right for You If",
+    title: "Video Production Company In Mumbai Is Right for You If",
     closer: "This is not for brands looking for footage without thought. It is for teams that want video to carry meaning, memory, and movement.",
     list: [
       "Your brand needs video that does more than fill a content calendar.",
@@ -159,16 +159,16 @@ export const videoProductionData = {
   faq: {
     title: "What to Know Before You Produce Your Next Video",
     items: [
-      { q: "What does Video Production include?", a: "Video Production can include concept development, scripting, storyboarding, shoot planning, filming, editing, motion graphics, sound design, subtitles, format adaptation, AI cinematic production, and platform-ready delivery." },
-      { q: "What kind of videos can Impulse Digital create?", a: "We can create brand films, digital video commercials, concept videos, product videos, service explainers, testimonial videos, reels, social media videos, campaign films, website videos, and AI cinematic productions." },
-      { q: "Is this only for social media videos?", a: "No. Social media video is one part of the service. The larger focus is video production for brand communication, campaigns, DVCs, concepts, products, websites, social media, and digital distribution." },
-      { q: "Do you handle scripting and concepts?", a: "Yes. We can build the concept, script, storyboard, visual treatment, shot list, and production plan before filming or editing begins." },
-      { q: "Do you manage shoots?", a: "Yes. We can manage product shoots, brand shoots, interviews, lifestyle shoots, testimonials, location shoots, and content shoots with the required crew and planning." },
-      { q: "Can you work with existing footage?", a: "Yes. If you already have footage, we can shape it through editing, storytelling, sound, graphics, subtitles, cutdowns, and platform adaptations." },
-      { q: "What is AI Cinematic Production?", a: "AI Cinematic Production uses AI tools to create scenes, visual worlds, cinematic shots, animated sequences, and concept-led films faster. The creative direction, judgment, story, and final quality control remain human-led." },
-      { q: "How do you tailor videos for different platforms?", a: "We adapt pacing, aspect ratio, hook, edit length, subtitle style, thumbnail, title, and format based on whether the video is meant for Instagram, YouTube, LinkedIn, paid ads, websites, or sales journeys." },
-      { q: "How do you measure video performance?", a: "We look at watch time, retention, completion rate, engagement, clicks, enquiries, audience response, and what each video teaches the next one." },
-      { q: "Is Video Production right for every brand?", a: "It is right when your brand needs an idea to be seen, understood, remembered, and acted on. If the goal is only to produce more content without a clear thought, this is not the right fit." }
+      { q: "What does video production include when working with Impulse Digital?", a: "Video production at Impulse Digital covers the full journey from thought to finished film. As a specialist video production company in Mumbai, we handle concept development, scripting, storyboarding, shoot planning, filming, direction, editing, motion graphics, sound design, subtitles, format adaptation, AI cinematic production, and platform-ready delivery. Every element is managed as part of one integrated process not handed between disconnected teams. The starting point is always the business goal and the one thing the video needs to make clear. Production follows the thought, not the other way around." },
+      { q: "What types of videos can Impulse Digital create for enterprise brands?", a: "Impulse Digital creates brand films, digital video commercials (DVCs), concept videos, product and service explainers, testimonial films, campaign reels, social media video content, website videos, corporate communications films, and AI cinematic productions. We have produced video content for Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, Himalaya, Uppercase, and Croda across FMCG, healthcare, fintech, retail, and manufacturing categories. The format is always chosen after the business objective is clear. A brand film and a DVC solve different problems and are built differently. We identify which one you need before briefing any creative route." },
+      { q: "Are your video production services in Mumbai limited to social media content?", a: "No. Social media video is one component of a broader capability. Impulse Digital's video production services in Mumbai cover the full range of brand communication needs brand films, DVCs, concept videos, product stories, corporate films, campaign content, website videos, and AI cinematic productions. Social reels and short-form content are part of the social media video service specifically. The larger focus is video that carries a brand idea across platforms, campaigns, and buyer journeys not content produced to fill a posting calendar." },
+      { q: "Does Impulse Digital handle the script and creative concept or do we need to provide one?", a: "Both routes are available. If you have a brief or a rough direction, we build on it. If you are starting from scratch, we develop the concept, script, storyboard, visual treatment, shot list, and production plan before filming or editing begins. At Impulse Digital, the concept and scripting phase is where the most important work happens not the shoot. A film with the wrong thought, produced perfectly, still fails the audience. Our creative process begins with the business goal, the audience tension, and the one thing the video must make them feel, understand, or do. Everything else format, script, visual treatment follows from that." },
+      { q: "What kinds of shoots can Impulse Digital manage in Mumbai and beyond?", a: "Impulse Digital manages product shoots, brand shoots, lifestyle shoots, interview and testimonial shoots, location shoots, corporate communication shoots, and content shoots with the required crew, equipment, location scouting, talent direction, and shoot planning. We have produced shoots for enterprise brands and categories where accuracy, brand safety, and production discipline are non-negotiable. For brands outside Mumbai, we manage remote production coordination and have worked on shoots across India and internationally. The production management approach is the same regardless of scale: every frame has a reason before the shoot day begins." },
+      { q: "We already have footage from previous shoots. Can Impulse Digital work with what we have?", a: "Yes and this is more common than most brands expect. Brands often have raw footage, old campaign materials, testimonial recordings, or product shoots sitting unused because the edit or the story was never quite right. Impulse Digital can take existing footage and reshape it through editing, storytelling restructuring, sound design, music, motion graphics, subtitle integration, cutdown production, and platform adaptations. The test is not whether the footage is usable. It is whether there is a strong enough thought to build the edit around. If the footage can serve the business goal, we can find the film inside it." },
+      { q: "What exactly is AI Cinematic Production and when does it make sense to use it?", a: "AI Cinematic Production uses AI tools to generate scenes, visual worlds, cinematic shots, animated sequences, and concept-led films that would be impractical, too expensive, or impossible to capture through traditional production. At Impulse Digital, the creative direction, story, editorial judgment, and final quality control are always human-led. AI handles the execution of specific visual possibilities — not the idea behind them. It makes sense when the brand needs visual scale that a standard shoot cannot achieve, when the concept requires worlds or scenarios that do not physically exist, when production speed is a genuine constraint, or when the brand wants to explore visual experimentation without committing to a full traditional production budget. Uppercase's AI-led New Year campaign produced entirely by Impulse Digital using AI for script, visuals, voice, and edit delivered 5.49 million plays. That is the benchmark we hold AI cinematic work to." },
+      { q: "How does Impulse Digital tailor video content for different platforms?", a: "Platform adaptation is built into the production process from brief stage, not added as a final step. As a specialist video production agency in Mumbai, Impulse Digital adapts pacing, aspect ratio (16:9 for YouTube, 9:16 for Reels and Stories, 1:1 for feed posts), hook structure, edit length, subtitle style, thumbnail design, caption treatment, and sound-off performance based on where the video will live. A 90-second brand film for YouTube requires a fundamentally different opening from a 15-second Instagram Reel for the same campaign. A LinkedIn video for a B2B audience needs different pacing and information density from a Facebook video for a consumer audience. Platform behaviour is one of the six pillars we build every video around alongside core idea, audience tension, format logic, production treatment, and performance learning." },
+      { q: "How does Impulse Digital measure whether a video is actually working?", a: "Video performance at Impulse Digital is measured against what the video was built to do not a generic set of vanity metrics. For brand films built to create recall, we track watch time, retention curves, completion rate, and brand sentiment signals in the period after the film launches. For DVCs and campaign videos built to drive action, we track click-through rate, conversion rate, cost-per-view, and enquiry volume attributed to the video. For social media video content, we track engagement rate, share rate, comment quality, and audience growth. The most important metric is what each video teaches the next one. Every performance report includes a specific recommendation for the next content cycle so the learning compounds rather than sitting in a slide that nobody reads again." },
+      { q: "Is video production the right investment for every brand at every stage?", a: "No — and we say this clearly before taking any brief. Video production is the right investment when the brand has a thought that genuinely needs to be seen, felt, and remembered — not just read or scanned. A product that is complex to explain in text becomes clear in 60 seconds of well-produced film. A brand story that lacks emotional resonance in static content can build genuine connection in a brand film. A campaign that needs to travel across platforms requires video that is built for each platform's specific behaviour. But if the goal is simply to produce more content without a clear message, video production will produce impressive-looking output with no business return. Impulse Digital's first question in every brief is not 'what type of video do you need?' It is 'what do you need the audience to understand, feel, or do after they watch it?' If that question has a clear answer, video production is the right investment." }
     ]
   }
 };
