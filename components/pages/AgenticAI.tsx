@@ -53,7 +53,7 @@ const AgenticAI: React.FC = () => {
     let convergenceActive = false;
     let measureTimeout1: any, measureTimeout2: any;
     let sectionObs: IntersectionObserver | null = null;
-    let measureFn: () => void = () => {};
+    let measureFn: () => void = () => { };
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
@@ -171,8 +171,8 @@ const AgenticAI: React.FC = () => {
 
   return (
     <main id="main-content">
-      
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={agenticAiData.hero.headlineParts}
         headlineAccent={agenticAiData.hero.headlineAccent}
         description={agenticAiData.hero.description}
@@ -183,22 +183,22 @@ const AgenticAI: React.FC = () => {
       <ServiceStats data={agenticAiData.stats} />
 
       <ServiceHandoff />
-      
+
       <ServiceProblem data={agenticAiData.problem} />
       <ServiceHandoff />
-      
+
       <ServiceVs data={agenticAiData.vs} />
       <ServiceHandoff />
-      
+
       <ServiceUses data={agenticAiData.uses} />
       <ServiceHandoff />
-      
+
       {/* CHANNELS — Built Across the Channels Your Customers Already Use */}
       <section className="svc-channels has-mobile-signal">
         <div className="container">
-          <h2 className="svc-h2 split-text">Built Across the Channels Your Customers Already Use</h2>
+          <h2 className="svc-h2 split-text">Agentic AI Services Built Across the Channels Your Customers Use</h2>
           <p className="svc-channels-intro">Your customers do not think in channels. They message where it is convenient. Your AI system should keep the experience connected across:</p>
-            <div className="svc-channels-stage" id="channels-stage">
+          <div className="svc-channels-stage" id="channels-stage">
             <svg className="svc-channels-orbit-svg" id="channels-orbit-lines" aria-hidden="true"></svg>
             <div className="svc-channels-center" aria-hidden="true">
               <svg viewBox="801 344 274 272" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@ const AgenticAI: React.FC = () => {
       </section>
 
       <ServiceHandoff />
-      
+
       <ServiceWhenToUse data={agenticAiData.whenToUse} />
       <ServiceHandoff />
 
@@ -229,15 +229,15 @@ const AgenticAI: React.FC = () => {
       <ServiceHandoff />
 
       <ServiceProcess data={agenticAiData.process} />
-      
+
       <Logos title="Trusted by Teams That Expect Thinking Before Execution" />
-      
+
       <Testimonials />
       <ServiceHandoff />
-      
+
       <ServiceFit data={agenticAiData.fit} />
       <ServiceHandoff />
-      
+
       <ServiceFinalCTA data={agenticAiData.finalCta} />
       <Contact title="Let’s give your team<br/>its time back." />
       <ServiceFAQ data={agenticAiData.faq} />

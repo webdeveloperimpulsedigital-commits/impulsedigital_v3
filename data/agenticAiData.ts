@@ -1,15 +1,15 @@
 export const agenticAiData = {
   hero: {
-    headlineParts: ["AI That Follows", "Through."],
-    headlineAccent: "Through.",
-    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. Agentic AI closes that gap. Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in when human judgment matters. So your people spend less time chasing work and more time moving the business forward.",
+    headlineParts: ["Agentic AI Agency", "That Moves Work Forward."],
+    headlineAccent: "That Moves Work Forward.",
+    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As an Agentic AI agency, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in when human judgment matters. Our Agentic AI services help sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into business movement.",
     buttons: [
       { text: "Build Your First AI Workflow", link: "#connect", cursor: "BUILD" },
       { text: "See Practical Use Cases", link: "#use-cases", cursor: "EXPLORE" }
     ]
   },
   stats: {
-    title: "Built to Reduce the Work That Slows Teams Down",
+    title: "Agentic AI Services Built to Reduce the Work That Slows Teams Down",
     metrics: [
       { target: "92", suffix: "%", decimals: "0", desc: "Client productivity improvement through AI-assisted workflows and automation." },
       { target: "3", suffix: "X", decimals: "1", desc: "Faster task execution with custom agent systems built for marketing, sales, and operations." },
@@ -18,7 +18,7 @@ export const agenticAiData = {
     footnote: "Before deployment, we define what success should look like, from response speed and time saved to lead movement, resolution quality, and manual effort reduced."
   },
   problem: {
-    title: "The Problem Is Not Always Demand. It Is Follow-Through.",
+    title: "Agentic AI Agency That Solves the Follow-Through Gap",
     intro: [
       "Most businesses already have conversations happening.",
       "Leads fill out forms. Prospects reply on WhatsApp. Customers ask questions. Campaigns create interest."
@@ -33,11 +33,12 @@ export const agenticAiData = {
     ],
     outro: [
       "Agentic AI helps your business act faster when the next step matters.",
-      "Not as another chatbot. Not as another disconnected tool. But as an intelligent workflow layer that helps your team respond, route, update, and follow through with more consistency."
+      "Not as another chatbot. Not as another disconnected tool. But as an intelligent workflow layer that helps your team respond, route, update, and follow through with more consistency.",
+      "As an Agentic AI company, Impulse Digital builds systems that help businesses reduce these gaps without handing every decision to automation."
     ]
   },
   vs: {
-    title: "AI That Does More Than Answer",
+    title: "Agentic AI Services That Do More Than Answer",
     leftLabel: "A Chatbot",
     leftStrike: "replies.",
     rightLabel: "Agentic AI",
@@ -52,10 +53,10 @@ export const agenticAiData = {
       { num: "06", text: "Update records" },
       { num: "07", text: "Alert your team when a conversation needs human attention" }
     ],
-    closing: "AI should not replace the people who understand your business. It should remove the repetitive work that stops them from doing their best work."
+    closing: "AI should not replace the people who understand your business. It should remove the repetitive work that stops them from doing their best work. These Agentic AI services are designed for work that needs speed, consistency, context, and control."
   },
   uses: {
-    title: "Where Agentic AI Creates Business Leverage",
+    title: "Where Agentic AI Services Create Business Movement",
     cards: [
       {
         title: "Sales Acceleration",
@@ -141,16 +142,16 @@ export const agenticAiData = {
     footnote: "No generic demos. No AI for the sake of AI. Just a clear conversation about where intelligent automation can make your business work better."
   },
   faq: {
-    title: "What to Know Before AI Starts Working for You",
+    title: "What to Know Before Agentic AI Starts Working for You",
     items: [
-      { q: "What is Agentic AI?", a: "Agentic AI refers to AI systems that can understand context, take action, use connected tools, and move workflows forward within approved boundaries." },
-      { q: "How is Agentic AI different from a chatbot?", a: "A chatbot replies. Agentic AI can reply, qualify, follow up, update systems, trigger actions, and escalate to humans when needed." },
+      { q: "What is Agentic AI and how does Impulse Digital define it?", a: "Agentic AI refers to AI systems that understand context, take action, use connected tools, and move workflows forward within pre-approved boundaries, without waiting for a human to trigger each step. At Impulse Digital, our Agentic AI services are built around one principle: a chatbot replies, but an Agentic AI agent follows through. It can qualify a lead, send a follow-up, update a CRM record, book a meeting, and escalate to a human when the conversation needs one, all within the same interaction, across the same platform, without manual intervention." },
+      { q: "How is Agentic AI different from a standard chatbot or IVR?", a: "A chatbot replies to a question and waits. An IVR routes a call and stops. Agentic AI does what comes next. It can reply, qualify, follow up at a predefined interval, update connected systems, trigger downstream actions, send reminders, collect documents, and bring in a human team member when the situation requires genuine judgment. The practical difference shows up in what does not happen with a standard chatbot: leads that go cold because nobody followed up, support tickets that stay open because the customer did not respond, and CRM records that are never updated because the data entry was manual. Impulse Digital builds Agentic AI workflows that close these gaps, replacing the handoffs that slow pipelines down with autonomous action that moves the interaction forward." },
       { q: "What workflows can Agentic AI support?", a: "Lead qualification, customer support, appointment booking, campaign responses, reactivation journeys, CRM updates, document collection, reminders, and workflow routing." },
       { q: "Can AI agents work across WhatsApp, email, voice, DMs, and SMS?", a: "Yes. Agents can work across WhatsApp, email, voice notes, Facebook Messenger, Instagram DM, SMS, website chat, and CRM workflows, depending on your setup." },
-      { q: "How do you control accuracy and brand voice?", a: "We define approved information, tone, response rules, escalation logic, and review processes before the agent goes live." },
+      { q: "How do you control what the AI agent says and ensure it stays on brand?", a: "WBefore any agent goes live, Impulse Digital defines five layers of control. Approved information: the specific facts, offers, processes, and answers the agent is permitted to communicate. Tone and voice rules: how the agent should sound in different situations, formal in B2B qualification, warmer in consumer reactivation, precise in support handling. Response boundaries: what the agent will not say, which topics it will not engage with, and what triggers an escalation instead of a response. Escalation logic: the exact conditions under which the conversation is handed to a human team member with full context intact. And a review and testing process before launch, including edge case testing, adversarial prompting, and sign-off from your team. No agent goes live until it passes every layer of this process." },
       { q: "When does a human step in?", a: "A human steps in when a conversation is complex, sensitive, high-value, uncertain, or outside the agent's approved scope." },
-      { q: "What KPIs should we track?", a: "Response time, qualification rate, follow-up completion, meeting bookings, resolution rate, handoff rate, conversion movement, manual hours saved, and cost per resolved interaction." },
-      { q: "What should not be automated?", a: "Anything that requires sensitive judgment, legal interpretation, complex negotiation, emotional handling, or high-risk decision-making should remain human-led or require human approval." }
+      { q: "What KPIs should we track to know if Agentic AI is working?", a: "Working with Impulse Digital as your Agentic AI agency, we track eight performance signals across every deployment. Response time: how quickly the agent responds versus the previous manual process. Qualification rate: what percentage of incoming leads or contacts are correctly qualified by the agent. Follow-up completion: what percentage of defined follow-up sequences are completed without human intervention. Meeting and appointment bookings: volume of bookings generated autonomously. Resolution rate: what percentage of support interactions are fully resolved by the agent without escalation. Handoff rate: what percentage of conversations are escalated to humans and whether that rate is trending correctly. Conversion movement: whether the pipeline stages downstream of the agent show measurable improvement. And manual hours saved: the actual time reduction for the human team who previously handled these interactions. We report on all eight monthly with specific improvement recommendations." },
+      { q: "What should not be automated with Agentic AI?", a: "Anything that requires sensitive judgment, legal interpretation, complex negotiation, genuine emotional handling, or high-risk decision-making should remain human-led or require explicit human approval before the agent proceeds. At Impulse Digital, we are direct about this boundary before any engagement begins. Agentic AI is not a replacement for human intelligence in situations that genuinely require it. It is a system that removes the repetitive, predictable work so that human attention is concentrated where it actually makes a difference. A well-designed Agentic AI workflow makes your human team more effective, not redundant. The highest-value use of this technology is not automating your most complex decisions. It is automating the volume of routine interactions that currently prevent your team from focusing on the decisions that matter." }
     ]
   }
 };
