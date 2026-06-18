@@ -25,7 +25,7 @@ const defaultFaqs: FAQItem[] = [
     answer: "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, one of the few digital marketing companies in Mumbai that defines KPIs at the business level rather than the channel level, the question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
   },
   {
-    question: "What are the top services an digital marketing agency should offer for your business?",
+    question: "What are the top services a digital marketing agency should offer for your business?",
     answer: "The capabilities matter less than how they are integrated. A fragmented approach to digital marketing creates activity without direction. Impulse Digital organises capability into three layers: Growth Intelligence (analytics, campaign intelligence, competitive sensing), AI Agency (agentic AI, cinematic AI production, Generative Search Optimisation), and Performance Studios (social media marketing, performance marketing, content, web development, branding). Intelligence leads. AI differentiates. Execution scales."
   },
   {

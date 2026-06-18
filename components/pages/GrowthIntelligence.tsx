@@ -18,9 +18,9 @@ const SERVICES = [
   {
     index: '01',
     label: 'Find the signal before you make the move.',
-    title: 'Consumer Intelligence',
+    title: 'Customer Intelligence',
     desc: 'Decode the motivations, tensions, and behavioural patterns driving your target consumer — far beyond what any survey can surface. The output goes directly into briefs, messaging hierarchies, and category strategy.',
-    to: '/growth-intelligence/consumer-intelligence',
+    to: '/growth-intelligence/customer-intelligence',
   },
   {
     index: '02',

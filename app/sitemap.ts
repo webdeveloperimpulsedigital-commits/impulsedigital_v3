@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/contact-us/', priority: 0.8, changeFrequency: 'monthly' as const },
     // Growth Intelligence
     { url: '/growth-intelligence/', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/growth-intelligence/consumer-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/growth-intelligence/customer-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
