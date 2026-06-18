@@ -184,8 +184,7 @@ export const seoKhargharData = {
       {
         "question": "How do you build an SEO strategy specifically for a Kharghar business?",
         "answer": [
-          "Kharghar is one of Navi Mumbai's most planned and rapidly growing nodes, home to IT companies in the business parks near the CBD Belapur belt, residential services businesses, educational institutions, retail outlets, and healthcare providers. The SEO strategy for a Kharghar IT firm targeting enterprise clients differs significantly from the strategy for a Kharghar clinic targeting nearby residential buyers. Before recommending anything, Impulse Digital maps three things: your current keyword rankings and what is blocking better visibility, the specific search behaviour of your buyers in Kharghar and the wider Navi Mumbai market, and the exact competitors ranking above you and what advantages their pages hold. Strategy follows diagnosis, not a template applied to every business regardless of category.
-"
+          "Kharghar is one of Navi Mumbai's most planned and rapidly growing nodes, home to IT companies in the business parks near the CBD Belapur belt, residential services businesses, educational institutions, retail outlets, and healthcare providers. The SEO strategy for a Kharghar IT firm targeting enterprise clients differs significantly from the strategy for a Kharghar clinic targeting nearby residential buyers. Before recommending anything, Impulse Digital maps three things: your current keyword rankings and what is blocking better visibility, the specific search behaviour of your buyers in Kharghar and the wider Navi Mumbai market, and the exact competitors ranking above you and what advantages their pages hold. Strategy follows diagnosis, not a template applied to every business regardless of category."
         ]
       },
       {
