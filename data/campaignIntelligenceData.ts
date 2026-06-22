@@ -1,16 +1,16 @@
 export const campaignIntelligenceData = {
   hero: {
-    headlineParts: ["Views Are Not", "Victory."],
-    headlineAccent: "Victory.",
-    description: "A campaign can be watched, clicked, shared, and still leave nothing behind. Impulse Digital helps brands understand what people remembered, what they felt, what moved them, and what the next campaign should do differently.",
+    headlineParts: ["Campaign & Performance", "Intelligence Agency"],
+    headlineAccent: "Intelligence Agency",
+    description: "A campaign can be watched, clicked, shared, and still leave nothing behind. Impulse Digital is a specialist performance intelligence agency that has tracked campaign recall, sentiment, influencer fit, and message resonance for enterprise brands including HUL, Tata Consumer Products, Mastercard, and Aditya Birla Group. We help brands understand what people remembered, what they felt, what moved them, and what the next campaign should do differently, so every post-campaign learning becomes a sharper brief, a better creator choice, and a stronger budget decision.",
     buttons: [
       { text: "Decode Campaign Impact", link: "#connect", cursor: "DECODE" },
       { text: "See What Actually Landed", link: "#use-cases", cursor: "EXPLORE" }
     ]
   },
   problem: {
-    title: "<span style='white-space: nowrap;'>Built to Measure</span><br/><span style='white-space: nowrap;'>What Moved,</span><br/><span style='white-space: nowrap;'>Not Just What </span><br/>Delivered</span>",
-    intro: "Campaign and Performance Intelligence helps teams move beyond surface-level reporting. It gives brands:",
+    title: "<span style='white-space: nowrap;'>Performance</span><br/><span style='white-space: nowrap;'>Intelligence Built</span><br/><span style='white-space: nowrap;'>to Measure </span><br/>What Moved</span>",
+    intro: "Campaign and performance intelligence agency helps teams move beyond surface-level reporting. It gives brands:",
     gaps: [
       "Clearer understanding of what actually landed",
       "Better read on sentiment, recall, and response",
@@ -23,7 +23,7 @@ export const campaignIntelligenceData = {
     ]
   },
   largeTextSection: {
-    title: "The Report Has Numbers.<br/>The Brand Needs Answers.",
+    title: "The Report Has Numbers.<br/>Performance Intelligence Gives Answers.",
     intro: "The post-campaign deck usually has numbers. Reach. Views. Clicks. Engagement. Creator posts. Channel performance. But the question that matters is harder.",
     lines: [
       "What did people remember?",
@@ -69,7 +69,7 @@ export const campaignIntelligenceData = {
     closing: "The output is not a backward-looking report. It is decision-ready intelligence for the next brief, creator list, media conversation, and budget allocation."
   },
   uses: {
-    title: "Where Campaign Intelligence Creates Business Leverage",
+    title: "Where Campaign Performance Intelligence Creates Business Leverage",
     cards: [
       {
         title: "Campaign Effectiveness Evaluation",
@@ -141,14 +141,14 @@ export const campaignIntelligenceData = {
   faq: {
     title: "What to Know Before You Measure Campaign Impact",
     items: [
-      { q: "What is Campaign and Performance Intelligence?", a: "Campaign and Performance Intelligence measures whether marketing activity created meaningful audience response, brand perception movement, recall, engagement quality, and decision value." },
-      { q: "How is this different from a campaign report?", a: "A campaign report usually records what happened. Campaign Intelligence explains what it means and what should change before the next campaign." },
+      { q: "What is Campaign and Performance Intelligence and how does Impulse Digital approach it?", a: "Campaign and Performance Intelligence measures whether marketing activity created meaningful audience response, brand perception movement, recall, and decision value, not just whether it was seen. As a specialist performance intelligence agency, Impulse Digital helps brands answer the questions a standard campaign report cannot: what did people actually remember, what did they feel, did the message land as intended, and what should the next campaign do differently. We have delivered this practice for enterprise brands including HUL, Tata Consumer Products, Mastercard, and Aditya Birla Group, across categories where the gap between campaign delivery and campaign impact has measurable consequences for brand equity and media investment." },
+      { q: "How is Campaign and Performance Intelligence different from a standard campaign report?", a: "A campaign report records what happened: reach, views, clicks, engagement, and channel performance. Campaign and Performance Intelligence explains what it means and what should change before the next campaign brief is written. The practical difference is significant. A report tells you the influencer post reached 2 million people. Intelligence tells you whether those 2 million people associated the content with your brand, whether the message they took away matched the message you intended, whether the influencer was the right choice for your category, and whether the next round of spend should repeat, refine, or stop that route entirely. At Impulse Digital, every Campaign and Performance Intelligence engagement is structured to produce decision-ready outputs, not backward-looking summaries." },
       { q: "What does Campaign Effectiveness Evaluation measure?", a: "It looks at sentiment movement, content recall, audience response, message clarity, engagement behaviour, and channel-level resonance." },
-      { q: "How do you evaluate influencer fit?", a: "We assess relevance, credibility, audience quality, content performance, engagement quality, and fit with the brand's category and communication objective." },
+      { q: "How does Impulse Digital evaluate influencer fit?", a: "Follower count is not fit. Reach is not trust. Engagement rate is not always quality. Impulse Digital evaluates influencer fit across six dimensions before and after a campaign. Relevance: does the influencer operate in a content territory that your brand and category belong in? Credibility: does the influencer's audience perceive them as a genuine authority in the relevant space? Audience quality: does the influencer's actual audience match the target customer profile in terms of demographics, interests, and purchase behaviour? Content performance: does the influencer's content historically generate meaningful response rather than surface-level engagement? Engagement quality: are the comments and shares from genuine community members or low-value interactions? And brand fit: does the influencer's tone, values, and communication style align with how your brand wants to be perceived? Output includes a fit scorecard, audience quality view, content performance analysis, engagement quality assessment, and a recommendation on whether to proceed, adjust, or discontinue the partnership." },
       { q: "Can this be done before an influencer campaign?", a: "Yes. Influencer Fit and Impact Study can support both pre-campaign selection and post-campaign evaluation." },
-      { q: "What do Strategic Insight Reports include?", a: "They include executive summaries, key findings, what worked, what did not, what to repeat, what to stop, and what to change in the next cycle." },
+      { q: "What do Strategic Insight Reports and Executive Summaries include?", a: "Strategic Insight Reports are not a bonus deliverable. They are the point of the entire Campaign and Performance Intelligence programme. At Impulse Digital, every Strategic Insight Report is structured to answer six questions your leadership team needs answered before the next planning cycle begins. What worked and why? Which creative, channel, or influencer choices produced meaningful audience response? What looked good in delivery metrics but did not land with the audience? What should the brand do more of in the next campaign based on this evidence? What should the brand stop doing because the evidence does not support continuing? And what should change in the brief, the media plan, or the creator selection before the next investment is made? Output includes an executive summary formatted for CMO and leadership review, key findings mapped to specific decisions, what to repeat, what to stop, and what to change, and a recommended next-brief direction grounded in campaign evidence rather than internal intuition." },
       { q: "Who should use this inside the organisation?", a: "CMOs, Heads of Digital, campaign planning teams, media teams, influencer marketing teams, brand managers, and leadership teams." },
-      { q: "When should this be done?", a: "After a major campaign, before the next campaign brief, before influencer budget allocation, or when leadership needs a sharper view of what marketing spend actually achieved." }
+      { q: "When should a brand commission Campaign and Performance Intelligence?", a: "After any major campaign where the budget was significant enough that learning from it has commercial value. Before the next campaign brief is written, while there is still time to act on what the previous campaign revealed. Before influencer budget is allocated for the next cycle, so creator decisions are made on evidence rather than repeat assumption. Before a media plan is locked, so channel allocation reflects what actually resonated rather than what delivered impressions. And when leadership needs a sharper view of what marketing spend actually achieved beyond delivery numbers. Impulse Digital is direct about one thing: commissioning Campaign and Performance Intelligence six months after a campaign has ended, when the brief for the next one is already approved, produces findings nobody can act on. The intelligence that improves campaigns is the intelligence that arrives before the decisions are made." }
     ]
   },
   logosTitle: "Trusted by Teams That Need More Than Metrics",
