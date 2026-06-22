@@ -38,9 +38,9 @@ const SeoKoparkhairaneLocation: React.FC = () => {
 
   return (
     <main id="main-content">
-      
 
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={[hero.headline]}
         headlineAccent="Koparkhairane"
         description={hero.description.join('\n\n')}
@@ -52,7 +52,7 @@ const SeoKoparkhairaneLocation: React.FC = () => {
       <CaseStudies />
       <Logos title="Trusted by Teams in Koparkhairane & Beyond" />
       <BrandFilm />
-      
+
       <SEOLocationTemplate data={seoKoparkhairaneData} />
 
       <Testimonials />

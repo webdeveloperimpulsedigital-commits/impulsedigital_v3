@@ -1,11 +1,11 @@
 export const brandingData = {
   "hero": {
     "headlineParts": [
-      "Forgotten Brands Don't",
-      "Get Chosen."
+      "Best Branding Agency",
+      "In Mumbai"
     ],
-    "headlineAccent": "Get Chosen.",
-    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital builds brand identity systems that make your business easier to recognise, remember, and choose across every touchpoint.",
+    "headlineAccent": "In Mumbai",
+    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Mumbai with 34 years of marketing experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Mumbai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
     "buttons": [
       {
         "text": "Build Your Brand System",
@@ -20,7 +20,7 @@ export const brandingData = {
     ]
   },
   "stats": {
-    "title": "Built to Make Your Brand Easier to Recall",
+    "title": "Mumbai's Branding Agency Built to Make Your Brand Easier to Recall",
     "metrics": [
       {
         "target": 95,
@@ -100,7 +100,7 @@ export const brandingData = {
     ]
   },
   "uses": {
-    "title": "Where Branding Creates Business Leverage",
+    "title": "Where Our Branding Company Creates Business Leverage",
     "cards": [
       {
         "title": "Brand Strategy and Identity",
@@ -225,7 +225,7 @@ export const brandingData = {
     "footer": "The aim is not to make the brand look designed.\n\nThe aim is to make the brand easier to recognise, remember, and trust."
   },
   "fit": {
-    "title": "Branding Is Right for You If",
+    "title": "Branding Agency Is Right for You If",
     "list": [
       "Your brand looks good, but does not feel distinctive enough.",
       "Your logo, design, and communication do not feel aligned.",
@@ -261,7 +261,7 @@ export const brandingData = {
     "items": [
       {
         "q": "What does Impulse Digital offer in branding services?",
-        "a": "We create brand strategy, visual identity, logo systems, brand guidelines, lookbooks, packaging, collaterals, campaign design assets, and communication systems that help brands show up consistently."
+        "a": "As a branding agency in Mumbai working across enterprise and growth-stage brands, Impulse Digital creates brand strategy, visual identity, logo systems, brand guidelines, lookbooks, packaging, collaterals, campaign design assets, and communication systems that help brands show up consistently. We have built brand systems for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group, across categories where consistency at scale is the hardest part of branding to get right."
       },
       {
         "q": "How is branding different from logo design?",
@@ -288,8 +288,8 @@ export const brandingData = {
         "a": "We create guidelines, templates, usage rules, and handover assets so internal teams, external partners, and future campaigns can apply the brand correctly."
       },
       {
-        "q": "How do you measure branding success?",
-        "a": "Branding can be evaluated through recognition, engagement, branded search, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required."
+        "q": "How does Impulse Digital measure branding success?",
+        "a": "As a branding company in Mumbai with 34 years of marketing experience, Impulse Digital evaluates branding through recognition, engagement, branded search volume, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required. We have tracked these signals for enterprise brands including Grasim Industries, where a single LinkedIn post reached 959,000 impressions with a 31% engagement rate, demonstrating measurable brand recall in action rather than as a theoretical metric."
       },
       {
         "q": "Who should be involved from our side?",
