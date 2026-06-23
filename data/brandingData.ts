@@ -1,10 +1,10 @@
 export const brandingData = {
   "hero": {
     "headlineParts": [
-      "Best Branding Agency",
-      "In Mumbai"
+      "Forgotten Brands Don't",
+      "Get Chosen."
     ],
-    "headlineAccent": "In Mumbai",
+    "headlineAccent": "Get Chosen.",
     "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Mumbai with 34 years of marketing experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Mumbai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
     "buttons": [
       {
@@ -100,7 +100,7 @@ export const brandingData = {
     ]
   },
   "uses": {
-    "title": "Where Our Branding Company Creates Business Leverage",
+    "title": "Where Branding Creates Business Leverage",
     "cards": [
       {
         "title": "Brand Strategy and Identity",
@@ -225,7 +225,7 @@ export const brandingData = {
     "footer": "The aim is not to make the brand look designed.\n\nThe aim is to make the brand easier to recognise, remember, and trust."
   },
   "fit": {
-    "title": "Branding Agency Is Right for You If",
+    "title": "Branding Is Right for You If",
     "list": [
       "Your brand looks good, but does not feel distinctive enough.",
       "Your logo, design, and communication do not feel aligned.",

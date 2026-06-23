@@ -1,10 +1,10 @@
 export const employerBrandingData = {
   "hero": {
     "headlineParts": [
-      "Employer Branding",
-      "Agency"
+      "Why Should the Best Talent",
+      "Work Here?"
     ],
-    "headlineAccent": "Agency",
+    "headlineAccent": "Before the Offer.",
     "description": "The best candidates are not only comparing salaries. They are reading your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever apply. Impulse Digital is a specialist employer branding agency offering employer branding consulting for enterprise brands, helping you turn employee experience into a clear employer story so the right talent understands why your company is worth joining, staying with, and growing inside.",
     "buttons": [
       {
@@ -63,7 +63,7 @@ export const employerBrandingData = {
     ]
   },
   "vs": {
-    "title": "Employer Branding Agency, in Plain English",
+    "title": "Employer Branding, in Plain English",
     "leftLabel": "Recruitment",
     "leftStrike": "tells people there is a role.",
     "rightLabel": "Employer Branding",
@@ -94,7 +94,7 @@ export const employerBrandingData = {
     "closing": "The output is not a campaign slogan. It is a talent-facing brand system that helps\n            people understand why they should join, stay, and grow with you."
   },
   "uses": {
-    "title": "Where Employer Branding Services Create Business Leverage",
+    "title": "Where Employer Branding Creates Business Leverage",
     "cards": [
       {
         "title": "Employee Value Proposition",
@@ -231,7 +231,7 @@ export const employerBrandingData = {
     "footer": "The aim is not to make the company look attractive.\n\nThe aim is to make the right talent understand why it is worth choosing."
   },
   "fit": {
-    "title": "Employer Branding Agency Is Right for You If",
+    "title": "Employer Branding Is Right for You If",
     "list": [
       "Your company is hiring, but not attracting enough of the right candidates.",
       "Your culture is strong, but hard to explain.",

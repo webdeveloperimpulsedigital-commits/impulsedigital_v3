@@ -1,7 +1,7 @@
 export const videoProductionData = {
   hero: {
-    headlineParts: ["#1 Video Production", "Company in Mumbai."],
-    headlineAccent: "Company in Mumbai.",
+    headlineParts: ["The Right Video Does More", "Than Look Good."],
+    headlineAccent: "Than Look Good.",
     description: "A good video is not just watched. It makes something land. A product becomes easier to understand. A brand becomes easier to remember. A campaign becomes easier to care about. A story becomes easier to carry forward. Impulse Digital is a specialist video production company in Mumbai offering campaign films, brand films, product videos, and social-first video content helping enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products create video that gives audiences a genuine reason to stop, feel, remember, and act.",
     buttons: [
       { text: "Build Video That Carries the Idea", link: "#connect", cursor: "BUILD" },
@@ -37,7 +37,7 @@ export const videoProductionData = {
     ]
   },
   vs: {
-    title: "Video Production Agency, in Plain English",
+    title: "Video Production, in Plain English",
     leftLabel: "A script",
     leftStrike: "can explain the point.",
     rightLabel: "A film",
@@ -53,7 +53,7 @@ export const videoProductionData = {
     closing: "The output is not just a video file. It is a brand story made easier to notice, understand, and remember."
   },
   uses: {
-    title: "Where Video Production Services in Mumbai Create Business Movement",
+    title: "Where Video Production Creates Business Leverage",
     cards: [
       {
         title: "Brand Films",
@@ -133,7 +133,7 @@ export const videoProductionData = {
     ]
   },
   fit: {
-    title: "Video Production Company In Mumbai Is Right for You If",
+    title: "Video Production Is Right for You If",
     closer: "This is not for brands looking for footage without thought. It is for teams that want video to carry meaning, memory, and movement.",
     list: [
       "Your brand needs video that does more than fill a content calendar.",

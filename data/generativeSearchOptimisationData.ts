@@ -2,8 +2,8 @@ export const generativeSearchOptimisationData = {
   "hero": {
     "headlineHtml": "AI SEO Agency<br> For <span style=\"color: var(--impulse-violet);\">Generative Search.</span>",
     "headlineParts": [
-      "AI SEO Agency",
-      "for Generative Search."
+      "You're Not Just Fighting",
+      "for Rank Anymore."
     ],
     "headlineAccent": "",
     "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency in India helping enterprise brands build the signals that AI systems Google AI Overviews, ChatGPT, Perplexity, and Gemini need to understand, trust, and surface your brand in the moments that matter most. With 34 years of marketing experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, we build AI SEO services that go beyond traditional rankings into genuine AI-led recommendation and discovery.",
@@ -65,7 +65,7 @@ export const generativeSearchOptimisationData = {
     ]
   },
   "vs": {
-    "title": "AI SEO Service, in Plain English",
+    "title": "AI Search Optimisation, in Plain English",
     "leftLabel": "SEO",
     "leftStrike": "helps you appear.",
     "rightLabel": "AI SEO Service",
@@ -96,7 +96,7 @@ export const generativeSearchOptimisationData = {
     "closing": "This is not keyword stuffing for a new platform. It is search clarity for how people discover brands now."
   },
   "uses": {
-    "title": "Where AI SEO Service Creates Business Leverage",
+    "title": "Where AI Search Creates Business Leverage",
     "cards": [
       {
         "title": "Answer Engine Optimisation",
@@ -208,7 +208,7 @@ export const generativeSearchOptimisationData = {
     "footer": "The aim is not to satisfy algorithms alone.\n\nThe aim is to become easier for buyers and AI systems to understand."
   },
   "fit": {
-    "title": "AI SEO Agency Is Right for You If",
+    "title": "AI Search Optimisation Is Right for You If",
     "closer": "If buyers are asking questions your brand should be part of, AI Search Optimisation helps you become easier to find and recommend.",
     "list": [
       "Your buyers compare multiple options before speaking to sales.",

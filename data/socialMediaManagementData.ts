@@ -1,10 +1,10 @@
 export const socialMediaManagementData = {
   "hero": {
     "headlineParts": [
-      "#1 Social Media Marketing",
-      "Agency in Mumbai"
+      "Your Feed Should Not",
+      "Feel Like Attendance."
     ],
-    "headlineAccent": "Agency in Mumbai",
+    "headlineAccent": "Feel Like Attendance.",
     "description": "worth noticing, remembering, responding to, or sharing. Impulse Digital is the best social media marketing agency in Mumbai, combining strategy, content creation, community management, paid amplification, and performance reporting to make your brand more relevant, consistent, and harder to ignore. As a trusted social media marketing company in Mumbai with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Aditya Birla Group, and Tata Consumer Products, we build social systems that earn attention not just fill a calendar.",
     "buttons": [
       {
@@ -63,7 +63,7 @@ export const socialMediaManagementData = {
     ]
   },
   "vs": {
-    "title": "Social Media Marketing, in Plain English",
+    "title": "Social Media Management, in Plain English",
     "leftLabel": "A calendar",
     "leftStrike": "keeps you active.",
     "rightLabel": "A social system",
@@ -94,7 +94,7 @@ export const socialMediaManagementData = {
     "closing": "The output is not just posts. It is a managed social presence built to create relevance, trust, and demand over time."
   },
   "uses": {
-    "title": "Where Social Media Marketing Creates Business Leverage",
+    "title": "Where Social Media Management Creates Business Leverage",
     "cards": [
       {
         "title": "Strategy and Planning",
@@ -218,7 +218,7 @@ export const socialMediaManagementData = {
     "footer": "The aim is not to keep the feed busy.\n\nThe aim is to make the brand worth paying attention to."
   },
   "fit": {
-    "title": "Social Media Marketing Is Right for You If",
+    "title": "Social Media Management Is Right for You If",
     "list": [
       "You do not want your social media reduced to a post count.",
       "Your brand needs a clearer point of view.",

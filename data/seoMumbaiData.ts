@@ -1,12 +1,11 @@
 export const seoMumbaiData = {
   "location": "Mumbai",
   "hero": {
-    "title": "SEO Agency in Mumbai",
-    "headline": "Performance Driven SEO Agency in Mumbai",
+    "title": "Best SEO Agency in Mumbai",
+    "headline": "Best SEO Agency in Mumbai",
     "subHeadline": "SEO - Turning your website into the first place your customers find and trust",
     "description": [
-      "If your business wants consistent visibility on Google, choosing the right SEO agency in Mumbai can define how quickly and effectively you scale online. At Impulse Digital, we deliver structured, research-driven SEO strategies tailored for Mumbai businesses competing in fast-moving markets. Our approach combines technical precision, local search expertise, and conversion-focused content optimization to help brands increase qualified traffic and measurable business outcomes.",
-      "Whether you are a growing startup, an established enterprise, or an ecommerce brand, our SEO systems are built to create long-term search visibility that supports real revenue growth, not just rankings."
+      "If your business wants consistent visibility on Google, choosing the right SEO agency in Mumbai can define how quickly and effectively you scale online. At Impulse Digital, we deliver structured, research-driven SEO strategies tailored for Mumbai businesses competing in fast-moving markets, backed by 34 years of marketing experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech, and a majority of targeted queries ranked on page one within two months for Vendiman. Whether you are a growing startup, an established enterprise, or an ecommerce brand, our SEO company in Mumbai builds systems for long-term search visibility that supports real revenue growth, not just rankings."
     ]
   },
   "services": {
@@ -191,7 +190,7 @@ export const seoMumbaiData = {
       {
         "question": "Why choose Impulse Digital as your SEO company in Mumbai?",
         "answer": [
-          "As an experienced SEO company in Mumbai, we combine technical SEO expertise, localized search strategy, and conversion-focused execution to help your business rank competitively in Mumbai’s digital landscape. Our approach is built around measurable growth, not vanity rankings - ensuring your investment delivers real business impact."
+          "As an experienced SEO company in Mumbai, we combine technical SEO expertise, localised search strategy, and conversion-focused execution to help your business rank competitively in Mumbai's digital landscape. Our work has delivered 737% organic traffic growth for Qure.ai and a 3,500% increase in impressions within 5 months for ElectroMech, with major keywords ranking in the top 10. Our approach is built around measurable growth, not vanity rankings, ensuring your investment delivers real business impact."
         ]
       },
       {
@@ -203,13 +202,13 @@ export const seoMumbaiData = {
       {
         "question": "How long does it take for SEO services to show results?",
         "answer": [
-          "Most businesses working with our SEO services begin seeing measurable improvements in keyword visibility and organic traffic within three to six months. Stronger authority growth and conversion impact continue to build consistently over time with sustained optimization."
+          "Most businesses working with our SEO services begin seeing measurable improvements in keyword visibility and organic traffic within three to six months. For Vendiman, a majority of targeted queries ranked on page one within just two months of a structured SEO foundation build. Stronger authority growth and conversion impact continue to build consistently over time with sustained optimisation."
         ]
       },
       {
         "question": "Are you among the best SEO agencies in Mumbai for long-term growth?",
         "answer": [
-          "Impulse Digital is recognized by clients as one of the best SEO agencies in Mumbai because of our transparent processes, data-backed strategies, and consistent ranking improvements across industries. We focus on sustainable SEO systems that support long-term visibility rather than short-term spikes."
+          "Impulse Digital is recognised by clients as one of the best SEO agencies in Mumbai because of transparent processes, data-backed strategies, and consistent results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase for ElectroMech within 5 months. We focus on sustainable SEO systems that support long-term visibility rather than short-term spikes."
         ]
       },
       {
@@ -222,6 +221,24 @@ export const seoMumbaiData = {
         "question": "How do you measure SEO success for Mumbai-based businesses?",
         "answer": [
           "We measure success using keyword ranking improvements, organic traffic growth, engagement quality, and conversion performance. Every SEO campaign is aligned with business KPIs to ensure SEO contributes directly to revenue and brand visibility."
+        ]
+      },
+      {
+        "question": "Does Impulse Digital offer fixed SEO packages or charge based on scope?",
+        "answer": [
+          "We do not sell fixed SEO packages. SEO charges are scoped to your website size, competition level, and the complexity of your category, so a small local business and an enterprise brand are never priced against the same template. This is why our SEO service providers in Mumbai start every engagement with an audit, not a quote."
+        ]
+      },
+      {
+        "question": "Is Impulse Digital an affordable SEO agency in Mumbai for growing businesses?",
+        "answer": [
+          "Affordability depends on what you compare it against. A scoped SEO programme that delivers 737% organic traffic growth, as it did for Qure.ai, costs less over 12 months than an underpriced package that never moves your rankings. We structure SEO charges around the value being unlocked, which is what makes our SEO packages in Mumbai cost-effective for the outcome, not just cheap upfront."
+        ]
+      },
+      {
+        "question": "What makes Impulse Digital a top SEO agency in Mumbai compared to smaller providers?",
+        "answer": [
+          "Scale of experience and depth of proof. 34 years of marketing experience, a client roster spanning Amazon India, HUL, Mastercard, and Tata Consumer Products, and SEO-specific results including 737% organic growth for Qure.ai and 3,500% impression growth for ElectroMech. Smaller SEO service providers in Mumbai can match enthusiasm. Few can match a track record this verifiable."
         ]
       }
     ]

@@ -1,17 +1,15 @@
 export const seoMansarovarData = {
   "location": "Mansarovar",
   "hero": {
-    "title": "SEO Agency in Mansarovar",
-    "headline": "Performance Focused SEO Agency in Mansarovar",
+    "title": "SEO Company in Mansarovar",
+    "headline": "Best SEO Company in Mansarovar",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "If you’re running a business in Mansarovar, you’ve probably noticed how people now rely heavily on search before making a choice. Whether it’s a service or a product, most journeys begin with a quick search.",
-      "And in most cases, people don’t go too far beyond the first few options.",
-      "So if your business isn’t visible at that stage, you could be missing out on potential customers. As an SEO company in Mansarovar, we focus on helping businesses build consistent visibility, something that works steadily over time, not just in short bursts."
+      "Mansarovar businesses now compete in a market where most customers research online before making a choice. Whether a service or a product, most journeys begin with a quick search. People do not go too far beyond the first few options. They click on what looks relevant and credible, then move on. If your business is not visible at that stage, you could be missing out on customers who never knew to look further. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of marketing experience and documented results for HUL, Mastercard, and Qure.ai. We help businesses build consistent visibility that works steadily over time, not just in short bursts."
     ]
   },
   "services": {
-    "title": "SEO That Feels Practical",
+    "title": "SEO Services in Mansarovar for Visibility",
     "items": [
       {
         "title": "AI SEO",
@@ -76,7 +74,7 @@ export const seoMansarovarData = {
     ]
   },
   "whyUs": {
-    "title": "Why Businesses in Mansarovar Work With Us",
+    "title": "Why Businesses Choose Our SEO Company in Mansarovar",
     "items": [
       {
         "title": "We Keep Things Simple",
@@ -178,35 +176,54 @@ export const seoMansarovarData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Mansarovar?",
+        "question": "Why should I choose Impulse Digital as my SEO company in Mansarovar?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust over time. It’s about building visibility that continues to work instead of short-term gains."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of marketing experience and documented SEO results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. Every engagement starts with a diagnostic of your current search position, not a package recommendation."
         ]
       },
       {
-        "question": "How do you decide the SEO strategy?",
+        "question": "How do you decide the SEO strategy for a Mansarovar business?",
         "answer": [
           "It depends on your business, your competition, and your current position. There’s no fixed formula. We first understand your situation and then create a plan that fits your goals."
         ]
       },
       {
-        "question": "How long does it take to see results?",
+        "question": "How long does it take to see SEO results for a Mansarovar business?",
         "answer": [
-          "SEO typically takes a few months to produce noticeable results. It’s a gradual process. Some changes show results faster, while others take a bit more time to build impact."
+          "Local SEO improvements are typically visible in 4 to 8 weeks. For Vendiman, structured SEO work achieved first-page rankings within 3 months for 90% of targeted keywords. For ElectroMech, impressions grew over 3,500% within 5 months. Results compound from there, with the strongest gains typically appearing from month 6 onwards as content and authority build."
         ]
       },
       {
-        "question": "Do you only work with local businesses?",
+        "question": "Do you only work with local Mansarovar businesses?",
         "answer": [
-          "No, we’re not limited to one type of business, but we do help strengthen local visibility if required. It depends on where your customers are and how they search."
+          "No. We are not limited to one type of business, but we do help strengthen local visibility specifically where it matters. For Mansarovar businesses serving nearby customers, our Local SEO ensures you appear in Google Maps and local search results. For B2B businesses, our approach mirrors what worked for Shree Rubber Works, where consistent SEO investment grew qualified leads from 1 to 2 a month to 20 to 25 a month."
         ]
       },
       {
-        "question": "How do you measure success?",
+        "question": "How do you measure SEO success and report progress?",
         "answer": [
-          "We look at rankings, traffic, and most importantly, whether you’re getting more enquiries or leads. The goal is to connect SEO performance with actual business results."
+          "We look at rankings, traffic, and most importantly, whether you are getting more enquiries or leads. For Shree Rubber Works, that meant tracking the shift from 1 to 2 leads a month to 20 to 25 a month. For ElectroMech, it meant tracking impression growth and keyword position movement into the top 10. The goal is always to connect SEO performance with actual business results."
+        ]
+      },
+      {
+        "question": "How important is Google Business Profile for SEO in Mansarovar?",
+        "answer": [
+          "For Mansarovar businesses serving customers within the local area, Google Business Profile is a primary search channel in its own right. As a specialist SEO company in Mansarovar, Impulse Digital treats Google Business Profile as an integrated part of your search strategy, optimising profile completeness, review velocity, and citation consistency across directories."
+        ]
+      },
+      {
+        "question": "Does the content on our website actually affect how we rank for Mansarovar searches?",
+        "answer": [
+          "Significantly, since Google's Helpful Content System updates. Our SEO work for Qure.ai is a clear example: the strategy went beyond rankings and focused on building the right SEO foundation, website structure, and content ecosystem, which produced sustained organic growth rather than a short-term spike."
+        ]
+      },
+      {
+        "question": "What is the first step to starting an SEO programme with Impulse Digital?",
+        "answer": [
+          "For Mansarovar businesses, the first step is always a diagnostic of your current search position. We analyse what’s working, what’s not, and what competitors are doing. Then we create a structured improvement plan. It’s how we approach every engagement, from local visibility to broader B2B objectives."
         ]
       }
+
     ]
   }
 };

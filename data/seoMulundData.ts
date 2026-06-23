@@ -1,17 +1,15 @@
 export const seoMulundData = {
   "location": "Mulund",
   "hero": {
-    "title": "SEO Agency in Mulund",
-    "headline": "Performance Focused SEO Agency in Mulund",
+    "title": "#1 SEO Company in Mulund",
+    "headline": "#1 SEO Company in Mulund",
     "subHeadline": "SEO – Helping your business get noticed in a way that actually lasts",
     "description": [
-      "If you’re running a business in Mulund, you’ve probably seen how important online visibility has become. People don’t really rely on word-of-mouth alone anymore; they search, compare, and then decide.",
-      "And in most cases, they don’t spend too much time doing it.",
-      "That’s why showing up at the right moment matters more than just “being online.” As an SEO company in Mulund, we work with businesses that want steady visibility, not something that works for a few weeks and then fades away."
+      "Mulund is one of Mumbai's established eastern suburbs, where word of mouth alone no longer decides who gets the business. People search, compare, and then decide, and they do not spend too much time doing it. Showing up at the right moment matters more than simply being online. As a trusted SEO company in Mulund, Impulse Digital delivers SEO services in Mulund built on a track record that includes 737% organic traffic growth for Qure.ai. We work with businesses that want steady visibility, not something that works for a few weeks and then fades away."
     ]
   },
   "services": {
-    "title": "SEO That Feels Practical, Not Overwhelming",
+    "title": "SEO Services in Mulund That Feel Practical, Not Overwhelming",
     "items": [
       {
         "title": "AI SEO",
@@ -145,7 +143,7 @@ export const seoMulundData = {
       {
         "title": "Keyword Research",
         "text": [
-          "We focus on how people actually search, including terms like SEO company in Mulund, but without forcing them everywhere. The idea is to match intent, not just keywords."
+          "We identify the searches your buyers in Mulund are actually making and build content that matches their intent at every stage of the decision."
         ]
       },
       {
@@ -180,31 +178,55 @@ export const seoMulundData = {
       {
         "question": "Why should I choose your SEO services in Mulund?",
         "answer": [
-          "We focus on steady, practical growth that leads to real inquiries. The idea is to make your business easier to find and trust."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. Our SEO services in Mulund are built on 34 years of marketing experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. The idea is to make your business easier to find and trust, not just easier to see for a few weeks."
         ]
       },
       {
-        "question": "How do you decide the SEO strategy?",
+        "question": "How do you decide the SEO strategy for a Mulund business?",
         "answer": [
-          "It depends on your business, your competition, and your current visibility. We don’t follow a fixed template."
+          "It depends on your business, your competition, and your current visibility. We do not follow a fixed template. We first understand your situation, including your current rankings and your specific buyer behaviour in Mulund, then build a plan that fits your goals."
         ]
       },
       {
-        "question": "How long does it take to see results?",
+        "question": "How long does it take to see SEO results for a Mulund business?",
         "answer": [
-          "SEO takes time. You’ll usually start noticing changes within a few months, and it builds gradually."
+          "Local SEO improvements are typically visible in 4 to 8 weeks. For ElectroMech, impressions grew over 3,500% within 5 months. For Vendiman, structured SEO work achieved first-page rankings within 3 months for 90% of targeted keywords. You will usually start noticing changes within the first 3 months, and results build from there."
         ]
       },
       {
-        "question": "Do you only work with local businesses?",
+        "question": "Do you only work with local Mulund businesses?",
         "answer": [
-          "No, but we do help improve local visibility if your audience is nearby."
+          "No, but we do help improve local visibility specifically where your audience is nearby. For Mulund businesses serving local customers, our Local SEO ensures visibility in Google Maps. For B2B firms, our approach mirrors what worked for Shree Rubber Works, where qualified leads grew from 1 to 2 a month to 20 to 25 a month."
         ]
       },
       {
-        "question": "How do you measure success?",
+        "question": "How do you measure SEO success and report progress?",
         "answer": [
-          "We track rankings, traffic, and most importantly, whether you’re getting more leads or enquiries."
+          "We track rankings, traffic, and most importantly, whether you are getting more leads or enquiries. For Shree Rubber Works, that meant tracking lead growth from 1 to 2 a month to over 20. For ElectroMech, it meant tracking impression growth and keyword positions moving into the top 10."
+        ]
+      },
+      {
+        "question": "How important is Google Business Profile for SEO in Mulund?",
+        "answer": [
+          "For Mulund businesses serving customers within the local area, Google Business Profile is a primary search channel in its own right. As a specialist SEO company in Mulund, Impulse Digital treats it as an integrated part of your search strategy, not a separate task."
+        ]
+      },
+      {
+        "question": "Does website content quality affect rankings for Mulund searches?",
+        "answer": [
+          "Significantly, since Google's Helpful Content System updates. Our SEO work for Qure.ai is a clear example, where the strategy went beyond rankings and focused on building the right foundation, website structure, and content ecosystem, which produced sustained organic growth rather than a short-term spike."
+        ]
+      },
+      {
+        "question": "Do you only focus on rankings or do you also look at traffic?",
+        "answer": [
+          "Both. Rankings matter, but so does the kind of traffic you get. We focus on improving visibility for searches that actually matter, so you see relevant visitors and, most importantly, qualified enquiries."
+        ]
+      },
+      {
+        "question": "What is the first step to starting an SEO programme in Mulund?",
+        "answer": [
+          "A diagnostic conversation, not a proposal. As a trusted SEO company in Mulund backed by 34 years of experience and results including 737% organic traffic growth for Qure.ai and first-page rankings for 90% of targeted keywords for Vendiman, the first conversation is free."
         ]
       }
     ]
