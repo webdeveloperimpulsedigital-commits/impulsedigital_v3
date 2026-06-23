@@ -1,7 +1,7 @@
 export const consumerIntelligenceData = {
   hero: {
-    headlineParts: ["Customer Intelligence", "Service"],
-    headlineAccent: "Service",
+    headlineParts: ["Stop Building for the", "Consumer You Imagine."],
+    headlineAccent: "Consumer You Imagine.",
     description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist customer intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our customer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
     buttons: [
       { text: "Decode Your Customer", link: "#connect", cursor: "DECODE" },
@@ -23,7 +23,7 @@ export const consumerIntelligenceData = {
     ]
   },
   vs: {
-    title: "Customer Intelligence Service, in Plain English",
+    title: "Consumer Intelligence, in Plain English",
     leftLabel: "Research",
     leftStrike: "records the Customer.",
     rightLabel: "Intelligence",
@@ -39,7 +39,7 @@ export const consumerIntelligenceData = {
     closing: "The output is not a research dump. It is a decision tool for teams that need to act."
   },
   uses: {
-    title: "Where Customer Intelligence Creates Business Movement",
+    title: "Where Consumer Intelligence Creates Business Leverage",
     cards: [
       {
         title: "Usage and Attitude Studies",
@@ -80,7 +80,7 @@ export const consumerIntelligenceData = {
     title: "Impulse Digital Turns Signals<br/>Into Decisions",
     intro: "Customer understanding becomes weak when it stays trapped in research language. We connect Customer inputs with digital signals, category context, search behaviour, social conversations, reviews, and market patterns. Then we turn that understanding into frameworks your team can use.",
     rows: [
-      { title: "Customer context", desc: "What people say, feel, need, avoid, and expect" },
+      { title: "Consumer context", desc: "What people say, feel, need, avoid, and expect" },
       { title: "Digital signals", desc: "What people search, review, discuss, compare, and question" },
       { title: "Category understanding", desc: "What the market is already teaching us about choice and adoption" },
       { title: "Strategic interpretation", desc: "So the output becomes direction, not documentation" }
@@ -89,7 +89,7 @@ export const consumerIntelligenceData = {
     punchlineLine2: "Better decisions."
   },
   process: {
-    title: "How We Build Customer Intelligence",
+    title: "How We Build Consumer Intelligence",
     steps: [
       { num: "01", title: "Define the Decision", desc: "We start with the business decision your team needs to make, not the research method." },
       { num: "02", title: "Frame the Right Questions", desc: "We identify what must be understood: motivations, behaviours, triggers, barriers, expectations, or innovation opportunities." },
@@ -125,7 +125,7 @@ export const consumerIntelligenceData = {
     footnote: "No generic research dump. No insight theatre. Just sharper Customer understanding built for real brand, product, and growth decisions."
   },
   faq: {
-    title: "FAQs About Customer Intelligence Service",
+    title: "What to Know Before You Study the Consumer",
     items: [
       { q: "What is Customer Intelligence and how does Impulse Digital approach it?", a: "Customer Intelligence helps brands understand who their buyers are, what drives their choices, what holds them back, and what they expect from a category before it changes. At Impulse Digital, we approach this as a specialist customer intelligence agency that works with enterprise brands including Amazon India, HUL, Tata Customer Products, Aditya Birla Group, and Himalaya. Every customer intelligence engagement is built to support a specific decision, not just to produce findings. The output is always action-ready: sharper brand strategy, more relevant messaging, better product decisions, and growth plans built around the real buyer rather than the assumed one." },
       { q: "How is Customer Intelligence different from regular market research?", a: "Regular market research often stops at findings. A report is delivered, presented, filed, and referenced occasionally. Customer Intelligence is built to support active decisions. Impulse Digital combines customer inputs from qualitative and quantitative research with digital behavioural signals, category context, and strategic interpretation to produce recommendations your team can act on immediately. The difference shows up in the output format: instead of a findings deck that describes what customers said, you receive a decision framework that tells your brand, product, and marketing teams what to do next and why. For Tata Customer Products, this approach helped decode category transformation dynamics and map diaspora demand patterns directly into market launch strategy." },
@@ -138,8 +138,8 @@ export const consumerIntelligenceData = {
       { q: "When should we do this?", a: "Before a major decision. That could be before a relaunch, campaign reset, product launch, category entry, price change, or innovation pipeline review." }
     ]
   },
-  logosTitle: "Trusted by Teams That Need a Customer Intelligence Agency",
-  contactTitle: "Decode Your Customer.",
+  logosTitle: "Trusted by Teams That Need More Than Research",
+  contactTitle: "Decode Your Consumer.",
   seo: {
     title: "Customer Intelligence Services | Impulse Digital",
     description: "Impulse Digital's Customer Intelligence service decodes Customer motivations, behaviour, triggers, and barriers to help brands build strategy around real buyers — not assumptions.",

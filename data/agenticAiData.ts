@@ -1,7 +1,7 @@
 export const agenticAiData = {
   hero: {
-    headlineParts: ["Agentic AI Agency", "That Moves Work Forward."],
-    headlineAccent: "That Moves Work Forward.",
+    headlineParts: ["AI That Follows", "Through."],
+    headlineAccent: "Through.",
     description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As an Agentic AI agency, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in when human judgment matters. Our Agentic AI services help sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into business movement.",
     buttons: [
       { text: "Build Your First AI Workflow", link: "#connect", cursor: "BUILD" },
@@ -9,7 +9,7 @@ export const agenticAiData = {
     ]
   },
   stats: {
-    title: "Agentic AI Services Built to Reduce the Work That Slows Teams Down",
+    title: "Built to Reduce the Work That Slows Teams Down",
     metrics: [
       { target: "92", suffix: "%", decimals: "0", desc: "Client productivity improvement through AI-assisted workflows and automation." },
       { target: "3", suffix: "X", decimals: "1", desc: "Faster task execution with custom agent systems built for marketing, sales, and operations." },
@@ -18,7 +18,7 @@ export const agenticAiData = {
     footnote: "Before deployment, we define what success should look like, from response speed and time saved to lead movement, resolution quality, and manual effort reduced."
   },
   problem: {
-    title: "Agentic AI Agency That Solves the Follow-Through Gap",
+    title: "The Problem Is Not Always Demand. It Is Follow-Through.",
     intro: [
       "Most businesses already have conversations happening.",
       "Leads fill out forms. Prospects reply on WhatsApp. Customers ask questions. Campaigns create interest."
@@ -38,7 +38,7 @@ export const agenticAiData = {
     ]
   },
   vs: {
-    title: "Agentic AI Services That Do More Than Answer",
+    title: "AI That Does More Than Answer",
     leftLabel: "A Chatbot",
     leftStrike: "replies.",
     rightLabel: "Agentic AI",
@@ -56,7 +56,7 @@ export const agenticAiData = {
     closing: "AI should not replace the people who understand your business. It should remove the repetitive work that stops them from doing their best work. These Agentic AI services are designed for work that needs speed, consistency, context, and control."
   },
   uses: {
-    title: "Where Agentic AI Services Create Business Movement",
+    title: "Where Agentic AI Creates Business Leverage",
     cards: [
       {
         title: "Sales Acceleration",
@@ -142,7 +142,7 @@ export const agenticAiData = {
     footnote: "No generic demos. No AI for the sake of AI. Just a clear conversation about where intelligent automation can make your business work better."
   },
   faq: {
-    title: "What to Know Before Agentic AI Starts Working for You",
+    title: "What to Know Before AI Starts Working for You",
     items: [
       { q: "What is Agentic AI and how does Impulse Digital define it?", a: "Agentic AI refers to AI systems that understand context, take action, use connected tools, and move workflows forward within pre-approved boundaries, without waiting for a human to trigger each step. At Impulse Digital, our Agentic AI services are built around one principle: a chatbot replies, but an Agentic AI agent follows through. It can qualify a lead, send a follow-up, update a CRM record, book a meeting, and escalate to a human when the conversation needs one, all within the same interaction, across the same platform, without manual intervention." },
       { q: "How is Agentic AI different from a standard chatbot or IVR?", a: "A chatbot replies to a question and waits. An IVR routes a call and stops. Agentic AI does what comes next. It can reply, qualify, follow up at a predefined interval, update connected systems, trigger downstream actions, send reminders, collect documents, and bring in a human team member when the situation requires genuine judgment. The practical difference shows up in what does not happen with a standard chatbot: leads that go cold because nobody followed up, support tickets that stay open because the customer did not respond, and CRM records that are never updated because the data entry was manual. Impulse Digital builds Agentic AI workflows that close these gaps, replacing the handoffs that slow pipelines down with autonomous action that moves the interaction forward." },

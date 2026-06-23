@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoKoparkhairaneLocation from '@/components/pages/seo-locations/SeoKoparkhairaneLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Koparkhairane | Best SEO Services | Impulse Digital',
-  description: 'Struggling to rank in Koparkhairane? Impulse Digital is the SEO company that fixes that, offering Technical SEO, Local SEO and B2B SEO. A results-driven SEO company. Talk to us.',
+  title: 'SEO Company in Koparkhairane | SEO Services by Impulse Digital',
+  description: 'Impulse Digital is an SEO company in Koparkhairane helping businesses improve Google rankings, local visibility, website traffic, and qualified enquiries through technical SEO, content optimisation, local SEO, and clear performance reporting. A results-driven SEO services.',
   keywords: 'seo agency in koparkhairane, local seo in koparkhairane, seo company in koparkhairane, seo service, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/koparkhairane/`,
   },
   openGraph: {
-    title: 'SEO Agency in Koparkhairane | Best SEO Services | Impulse Digital',
-    description: 'Struggling to rank in Koparkhairane? Impulse Digital is the SEO company that fixes that, offering Technical SEO, Local SEO and B2B SEO. A results-driven SEO company. Talk to us.',
+    title: 'SEO Company in Koparkhairane | SEO Services by Impulse Digital',
+    description: 'Impulse Digital is an SEO company in Koparkhairane helping businesses improve Google rankings, local visibility, website traffic, and qualified enquiries through technical SEO, content optimisation, local SEO, and clear performance reporting. A results-driven SEO services.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/koparkhairane/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Koparkhairane | Best SEO Services | Impulse Digital',
-    description: 'Struggling to rank in Koparkhairane? Impulse Digital is the SEO company that fixes that, offering Technical SEO, Local SEO and B2B SEO. A results-driven SEO company. Talk to us.',
+    title: 'SEO Company in Koparkhairane | SEO Services by Impulse Digital',
+    description: 'Impulse Digital is an SEO company in Koparkhairane helping businesses improve Google rankings, local visibility, website traffic, and qualified enquiries through technical SEO, content optimisation, local SEO, and clear performance reporting. A results-driven SEO services.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

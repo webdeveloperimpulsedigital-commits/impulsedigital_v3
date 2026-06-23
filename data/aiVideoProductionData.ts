@@ -1,7 +1,7 @@
 export const aiVideoProductionData = {
   hero: {
-    headlineParts: ["AI Video", "Production Agency"],
-    headlineAccent: "Production Agency",
+    headlineParts: ["Imagine More.", "Produce Faster."],
+    headlineAccent: "Produce Faster.",
     description: "Impulse Digital is an AI video production agency helping brands create campaign films, product explainers, social-first videos, training videos, multilingual content, and digital ad creatives faster. Our AI video production services combine human creative direction with AI-enabled tools to produce scalable, brand-ready videos without starting from scratch every time.",
     buttons: [
       { text: "Start an AI Video Project", link: "#connect", cursor: "BUILD" },
@@ -9,7 +9,7 @@ export const aiVideoProductionData = {
     ]
   },
   stats: {
-    title: "Why Choose Impulse Digital for AI Video Production Agency",
+    title: "Built to Make Video Easier to Scale",
     metrics: [
       { target: "70", suffix: "%", decimals: "0", desc: "Lower production cost than traditional shoots." },
       { target: "4", suffix: "X", decimals: "0", desc: "Faster content scalability using AI automation." },
@@ -45,7 +45,7 @@ export const aiVideoProductionData = {
     closing: "AI can generate visuals, avatars, voiceovers, edits, and variations. But taste still matters. So does context. Emotion. Pacing. Brand tone. Audience understanding.  Impulse Digital brings the creative direction that makes AI-led video feel intentional, useful, and brand-ready.  <span style=\"color: white; font-weight: 500;\">The goal is not AI-looking content. The goal is better video, made faster.</span>"
   },
   uses: {
-    title: "What Our AI Video Production Services Include",
+    title: "Where AI Video Creates Business Leverage",
     cards: [
       {
         title: "Campaign and Brand Films",

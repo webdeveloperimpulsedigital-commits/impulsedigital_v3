@@ -1,7 +1,7 @@
 export const archerAiData = {
   hero: {
-    headlineParts: ["AI Outbound Sales Agent", "Built for B2B Growth"],
-    headlineAccent: "Built for B2B Growth",
+    headlineParts: ["Find Buyers Before", "They Start Looking."],
+    headlineAccent: "They Start Looking.",
     description: "Your next customer may not be searching for you yet. But they may already be hiring, expanding, launching, raising, entering a new market, or showing signals that point to need. Archer AI, your AI outbound sales agent, reads those signals, finds the decision-makers, and turns live market movement into personalised outbound conversations.",
     buttons: [
       { text: "Apply for an ICP Diagnostic", link: "#connect", cursor: "APPLY" },
@@ -19,7 +19,7 @@ export const archerAiData = {
     ]
   },
   vs: {
-    title: "Archer AI: Your AI Outbound Sales Agent, in Plain English",
+    title: "Archer AI, in Plain English",
     leftLabel: "Lead lists",
     leftStrike: "give you names.",
     rightLabel: "Archer AI",
@@ -35,7 +35,7 @@ export const archerAiData = {
     closing: "Archer AI is not outsourced outbound. It is an AI-powered outbound intelligence engine, shaped by human strategy."
   },
   uses: {
-    title: "Where Your AI Outbound Agent Creates Business Leverage",
+    title: "Where Archer AI Creates Business Leverage",
     cards: [
       {
         title: "Buying Signal Detection",
@@ -60,7 +60,7 @@ export const archerAiData = {
     ]
   },
   process: {
-    title: "How Your AI Outbound Agent Works",
+    title: "How Archer AI Works",
     steps: [
       { num: "01", title: "Diagnose the ICP", desc: "We map the industries, company profiles, buyer titles, geographies, offer context, and timing signals that matter." },
       { num: "02", title: "Build the Signal Map", desc: "We define what makes an account worth approaching now, not someday." },
@@ -70,7 +70,7 @@ export const archerAiData = {
     ]
   },
   fit: {
-    title: "AI Outbound Agent Is Right for You If",
+    title: "Archer AI Is Right for You If",
     closer: "",
     list: [
       "Your team converts well, but the top of the funnel is thin.",
@@ -93,7 +93,7 @@ export const archerAiData = {
     footnote: "No stale lead lists. No spray-and-pray outreach. Just an outbound engine built around your buyer, your market, and your timing."
   },
   faq: {
-    title: "What to Know Before You Build Your AI Outbound Agent",
+    title: "What to Know Before You Build an Outbound Engine",
     items: [
       { q: "What is Archer AI?", a: "Archer AI is Impulse Digital's AI outbound agent, an AI-powered outbound intelligence engine. It detects buying signals, identifies decision-makers, and deploys personalised outreach to create better B2B sales conversations." },
       { q: "What is an ICP Diagnostic?", a: "An ICP Diagnostic is a working session where we map your target industries, buyer titles, company profile, geography, offer, and timing signals. It helps determine whether outbound is the right growth channel for you." },

@@ -267,6 +267,31 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/__trashed-2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/__trashed-2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/3-reasons-why-your-b2b-marketing-strategy-framework-is-not-generating-quality-leads": {
       "experimentalBypassFor": [
         {
@@ -842,31 +867,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/embracing-lgbtq-pride-in-2023-employer-branding-encouraging-workplace-diversity-and-inclusion.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/blog/employer-branding-a-guide-to-all-the-terms-you-need-to-know": {
       "experimentalBypassFor": [
         {
@@ -958,31 +958,6 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/evolution-of-workplace-perks-what-employers-are-doing-to-redefine-them.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog/fathers-day-how-brands-cash-in-on-celebrating-dads": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/fathers-day-how-brands-cash-in-on-celebrating-dads.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1242,31 +1217,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blog/how-apples-vr-headset-is-going-to-change-the-game-for-marketers": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/how-apples-vr-headset-is-going-to-change-the-game-for-marketers.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/blog/how-chatgpts-search-feature-is-set-to-enhance-user-experience": {
       "experimentalBypassFor": [
         {
@@ -1333,31 +1283,6 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/how-employer-branding-boosts-your-recruitment-marketing-strategy.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/how-evoking-emotions-and-different-appeals-is-the-key-to-a-successful-advertising-strategy.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1642,6 +1567,31 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/how-we-created-a-lakme-inspired-ai-ugc-video-a-complete-ai-video-generation-case-study": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/how-we-created-a-lakme-inspired-ai-ugc-video-a-complete-ai-video-generation-case-study.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/impact-of-various-forms-of-content-on-brands": {
       "experimentalBypassFor": [
         {
@@ -1708,6 +1658,31 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/instagram-vs-linkedin-vs-x-twitter-which-platform-works-for-your-business.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/local-seo-guide-2026-dominate-city-search": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/local-seo-guide-2026-dominate-city-search.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1858,6 +1833,31 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/new-self-declaration-certificate-for-advertising-in-2024.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/optimise-google-ai-overviews-sge-2026": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/optimise-google-ai-overviews-sge-2026.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -2417,6 +2417,31 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/what-does-an-seo-agency-do": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 3600,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/what-does-an-seo-agency-do.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/what-is-agentic-ai-and-how-is-it-different-from-traditional-ai": {
       "experimentalBypassFor": [
         {
@@ -2608,31 +2633,6 @@
       "initialExpireSeconds": 31536000,
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/which-seo-strategies-deliver-the-best-roi-for-e-commerce-websites.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blog/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 3600,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/blog/[slug]",
-      "dataRoute": "/blog/why-employer-branding-should-be-an-essential-element-of-your-marketing-plan.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -4587,8 +4587,8 @@
   },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "329da0dce34b9da2f017dd113094a566",
-    "previewModeSigningKey": "3348ab1888e86c49a2f2c4a0c398fa5d0b0b30ee330d79aa454bc7a40a0235e9",
-    "previewModeEncryptionKey": "d123cf65ed1d1e07fcf52a7688e61551c175628d22462a84d934f446cb80a71d"
+    "previewModeId": "27dd178f5f1e6cf8ebc3070ceb98f306",
+    "previewModeSigningKey": "9b02ffdbacf8f6100788e9c080c2fa4e5d640e0f191da8bce8c1d0b4093987a0",
+    "previewModeEncryptionKey": "c7a69851cd48e2849b76dc46819b996ba9dca5b2f0cf0927bced0e2160bb0978"
   }
 }

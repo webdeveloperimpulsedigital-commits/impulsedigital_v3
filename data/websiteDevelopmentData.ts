@@ -1,10 +1,10 @@
 export const websiteDevelopmentData = {
   "hero": {
     "headlineParts": [
-      "Website Development",
-      "Company in Mumbai"
+      "Look Good. Perform Well.",
+      "Still Lose the Buyer."
     ],
-    "headlineAccent": "Company in Mumbai",
+    "headlineAccent": "Still Lose the Buyer.",
     "description": "Your visitor came with intent. Then the page took too long. The message felt unclear. The proof was buried. The next step was not obvious. Impulse Digital, a website design company in Mumbai, builds websites that turn interest into action, with strategy, UX, content structure, performance, and development working together.",
     "buttons": [
       {
@@ -242,7 +242,7 @@ export const websiteDevelopmentData = {
     "footer": "The aim is not to launch a website.\n\nThe aim is to launch a digital experience that can support growth."
   },
   "fit": {
-    "title": "Website Design & Development Is Right for You If",
+    "title": "Website Development Is Right for You If",
     "list": [
       "Your website is not converting enough of the traffic it already gets.",
       "Your brand has outgrown the current site.",

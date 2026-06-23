@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoMulundLocation from '@/components/pages/seo-locations/SeoMulundLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Mulund | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Mulund, improving search rankings and driving local business visibility.',
-  keywords: 'seo agency mulund, local seo mulund, digital marketing mulund',
+  title: 'SEO Company in Mulund | SEO Services for Impulse Digital',
+  description: 'Impulse Digital is an SEO company in Mulund offering SEO services for stronger Google rankings, local visibility, relevant traffic, and qualified enquiries through technical SEO, content optimisation, and local search strategy.',
+  keywords: 'seo company in mulund, seo services in mulund, seo agency, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mulund/`,
   },
   openGraph: {
-    title: 'SEO Agency in Mulund | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Mulund, improving search rankings and driving local business visibility.',
+    title: 'SEO Company in Mulund | SEO Services for Impulse Digital',
+    description: 'Impulse Digital is an SEO company in Mulund offering SEO services for stronger Google rankings, local visibility, relevant traffic, and qualified enquiries through technical SEO, content optimisation, and local search strategy.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mulund/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Mulund | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Mulund, improving search rankings and driving local business visibility.',
+    title: 'SEO Company in Mulund | SEO Services for Impulse Digital',
+    description: 'Impulse Digital is an SEO company in Mulund offering SEO services for stronger Google rankings, local visibility, relevant traffic, and qualified enquiries through technical SEO, content optimisation, and local search strategy.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

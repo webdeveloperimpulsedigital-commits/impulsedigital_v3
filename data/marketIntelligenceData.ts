@@ -1,7 +1,7 @@
 export const marketIntelligenceData = {
   hero: {
-    headlineParts: ["Market & Competitive", "Intelligence Service"],
-    headlineAccent: "Intelligence Service",
+    headlineParts: ["Don't Let the Market", "Surprise You."],
+    headlineAccent: "Surprise You.",
     description: "Competitors shift. Search behaviour changes. New signals appear before reports catch up. Impulse Digital is a trusted market intelligence company and competitive intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We help brands read the market early through competitive intelligence services that cover competitor communication analysis, category trend mapping, e-commerce benchmarking, and search intelligence studies, so positioning, content, and category decisions are made with sharper intelligence before the market moves.",
     buttons: [
       { text: "Map Your Market", link: "#connect", cursor: "MAP" },
@@ -24,7 +24,7 @@ export const marketIntelligenceData = {
     ]
   },
   vs: {
-    title: "Market and Competitive Intelligence Services, in Plain English",
+    title: "Market and Competitive Intelligence, in Plain English",
     leftLabel: "Research",
     leftStrike: "tells you what competitors did.",
     rightLabel: "Market intelligence",
@@ -134,7 +134,7 @@ export const marketIntelligenceData = {
     footnote: "No static competitor dump. No screenshot archive. Just clearer market intelligence built for positioning, strategy, and growth decisions."
   },
   faq: {
-    title: "FAQs About Market Intelligence and Competitive Intelligence Services",
+    title: "What to Know Before You Map the Market",
     items: [
       { q: "What is Market and Competitive Intelligence and how does Impulse Digital approach it?", a: "Market and Competitive Intelligence helps brands understand category movement, competitor behaviour, e-commerce performance, and search patterns before that intelligence becomes obvious to everyone else. As a specialist market intelligence agency and competitive intelligence agency, Impulse Digital combines external signals from multiple sources, including competitor communications, digital search data, marketplace signals, and category trend analysis, into decision-ready intelligence for enterprise brands. We have built and delivered this practice for Amazon India, HUL, Tata Consumer Products, Aditya Birla Group, and Himalaya, across categories where missing a market signal early has measurable commercial consequences. The goal is not a quarterly report. It is a continuous intelligence advantage." },
       { q: "How are Impulse Digital's competitive intelligence services different from a standard competitor analysis?", a: "A standard competitor analysis is a snapshot. It tells you where competitors are positioned today based on what is publicly visible. Impulse Digital's competitive intelligence services go further in three ways. First, they connect competitor activity to category movement, understanding not just what a competitor is doing but why the market is responding to it. Second, they integrate search intelligence and e-commerce signals alongside communication analysis, giving a fuller picture of where competitor investment is actually going. Third, they produce strategic implications, not just observations. Each finding is mapped to a specific decision your brand team can make in response. For Tata Consumer Products, this approach helped identify category transformation dynamics and diaspora demand signals early enough to shape the market launch strategy rather than react to it after launch." },
