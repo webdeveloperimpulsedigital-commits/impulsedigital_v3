@@ -1,13 +1,11 @@
 export const seoTurbheData = {
   "location": "Turbhe",
   "hero": {
-    "title": "SEO Agency in Turbhe",
-    "headline": "Performance Focused SEO Agency in Turbhe",
+    "title": "Best SEO Agency in Turbhe",
+    "headline": "Best SEO Agency in Turbhe",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "If you’re running a business in Turbhe, you’ve probably seen how much of the decision-making now starts online. People search, compare a couple of options, and usually go with what feels right.",
-      "And most of the time, they don’t go very far down the list.",
-      "If your business isn’t visible at that moment, you could be missing out on potential inquiries. As an SEO company in Turbhe, we focus on helping businesses build visibility in a steady way, something that keeps working over time instead of fading quickly."
+      "Turbhe sits inside Navi Mumbai's industrial and warehousing belt, a few minutes from the Thane-Belapur Road corridor, which means a meaningful share of businesses here are not selling to walk-in customers at all, they are selling to other businesses that found them through a search, a directory, or a referral that led back to a search anyway. That distinction matters more than most local SEO advice accounts for. A manufacturing unit or a logistics provider in Turbhe does not need the same visibility strategy as a retail storefront. It needs to show up when a procurement manager in a different city is comparing three or four suppliers before ever making a call. As a trusted SEO company in Turbhe, Impulse Digital has built this kind of B2B-first search presence before, with results including 3,500% impression growth in 5 months for ElectroMech, an industrial manufacturer whose buyers research the same way. As a specialist SEO agency in Turbhe, we build for the buyer who is comparing, not just browsing."
     ]
   },
   "services": {
@@ -178,9 +176,9 @@ export const seoTurbheData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Turbhe?",
+        "question": "Why should I choose Impulse Digital's SEO services in Turbhe?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust over time. It’s about building visibility that continues to work, not just short-term gains."
+          "Because Turbhe's businesses are mostly B2B, manufacturing, logistics, and industrial suppliers, and that changes what good SEO actually looks like. As a specialist SEO agency in Turbhe, our work for ElectroMech, an industrial manufacturer with the same kind of procurement-led buyer, grew impressions by 3,500% within 5 months, with quality leads coming in from India and overseas. That is the standard we hold ourselves to here, visibility that reaches the buyer comparing suppliers, not just casual traffic."
         ]
       },
       {
@@ -192,7 +190,7 @@ export const seoTurbheData = {
       {
         "question": "How long does it take to see results?",
         "answer": [
-          "It generally takes a few months for SEO to start showing measurable progress. It’s a gradual process. Some changes show results faster, while others take a bit more time to build impact."
+          "It generally takes a few months for SEO to start showing measurable progress. For ElectroMech, impressions grew by 3,500% within 5 months. Some changes show results faster, while others take a bit more time to build impact."
         ]
       },
       {
@@ -205,6 +203,18 @@ export const seoTurbheData = {
         "question": "How do you measure success?",
         "answer": [
           "We look at rankings, traffic, and most importantly, whether you’re getting more inquiries or leads. The goal is to connect SEO performance with actual business results."
+        ]
+      },
+      {
+        "question": "Does Local SEO even matter for a B2B manufacturer in Turbhe, or is that only for retail businesses?",
+        "answer": [
+          "It matters, just differently. A procurement manager researching suppliers still searches Google, and a strong local presence, Google Business Profile, location-specific pages, citation consistency, builds the same trust signal a retail customer responds to. As a trusted SEO company in Turbhe, we combine that local foundation with the content and technical authority that gets you shortlisted by buyers who are comparing you against suppliers in other cities, not just Navi Mumbai."
+        ]
+      },
+      {
+        "question": "What happens after we reach out about SEO for our Turbhe business?",
+        "answer": [
+          "We look at what you already have before recommending anything new. Most Turbhe businesses we speak to have some web presence, just not one built for how their actual buyers search. We will tell you honestly whether SEO is the right investment for your stage, and if it is not yet, we will say so. Reach out through our contact form, the first conversation is free."
         ]
       }
     ]

@@ -1,13 +1,11 @@
 export const seoNerulData = {
   "location": "Nerul",
   "hero": {
-    "title": "SEO Agency in Nerul",
-    "headline": "Performance Focused SEO Agency in Nerul",
+    "title": "#1 SEO Agency in Nerul",
+    "headline": "#1 SEO Agency in Nerul",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "If you’re running a business in Nerul, you’ve probably noticed how much people rely on search before making a decision. Whether it’s finding a service or comparing options, most of it starts online now.",
-      "And usually, people don’t spend too much time exploring. They go with what shows up early and feels relevant.",
-      "That’s where SEO quietly plays a big role. As an SEO company in Nerul, we focus on helping your business show up consistently, not just once, but in a way that keeps bringing the right kind of visibility over time."
+      "Nerul is one of Navi Mumbai's established residential and commercial nodes, where most buying decisions now start with a search. Whether finding a service or comparing options, the journey usually begins online, and people do not spend too much time exploring. They go with what shows up early and feels relevant. As a trusted SEO company in Nerul, Impulse Digital brings 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Nerul, we focus on helping your business show up consistently, not just once, but in a way that keeps bringing the right kind of visibility over time."
     ]
   },
   "services": {
@@ -178,9 +176,9 @@ export const seoNerulData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Nerul?",
+        "question": "Why should I choose Impulse Digital's SEO services in Nerul?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust over time. It’s about building visibility that continues to work instead of relying on short-term gains."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Nerul, we bring 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai. The goal is to make your business easier to find and trust over time, building visibility that continues to work instead of relying on short-term gains."
         ]
       },
       {
@@ -192,7 +190,7 @@ export const seoNerulData = {
       {
         "question": "How long does it take to see results?",
         "answer": [
-          "SEO typically takes a few months to start showing noticeable results. It’s a gradual process. Some changes show results faster, while others take a bit more time to build impact."
+          "SEO typically takes a few months to start showing noticeable results. For Vendiman, a majority of targeted queries ranked on page one within just two months. Some changes show results faster, while others take a bit more time to build impact."
         ]
       },
       {
@@ -205,6 +203,12 @@ export const seoNerulData = {
         "question": "How do you measure success?",
         "answer": [
           "We look at rankings, traffic, and most importantly, whether you’re getting more inquiries or leads. The goal is to connect SEO performance with actual business results."
+        ]
+      },
+      {
+        "question": "What is the first step to starting an SEO programme in Nerul?",
+        "answer": [
+          "A diagnostic conversation, not a proposal. As a trusted SEO company in Nerul backed by 34 years of experience and results including 737% organic traffic growth for Qure.ai."
         ]
       }
     ]

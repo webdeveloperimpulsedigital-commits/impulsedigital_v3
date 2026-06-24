@@ -7,4 +7,4 @@
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
 :HL["/css/blog.css?v=1","style"]
 :HL["https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2026/05/high-angle-view-over-the-factory-floor-and-assembl-2026-01-09-09-42-55-utc-1.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"b2b-lead-generation-in-india-strategies-that-actually-work","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"2q6qUWqGz-OO_Ujg_bBr5"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"b2b-lead-generation-in-india-strategies-that-actually-work","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"b4N5VTl3M9XpVLFkF8G86"}

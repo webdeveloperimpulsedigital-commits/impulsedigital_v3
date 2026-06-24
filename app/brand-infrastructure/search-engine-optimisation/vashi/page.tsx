@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoVashiLocation from '@/components/pages/seo-locations/SeoVashiLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Vashi | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Vashi, helping businesses rank higher in local search and attract more customers.',
-  keywords: 'seo agency vashi, local seo vashi, digital marketing vashi',
+  title: 'SEO Services in Vashi | SEO Company | Impulse Digital',
+  description: 'Impulse Digital is a trusted SEO company in Vashi offering SEO services backed by 3,500% impression growth for ElectroMech. As an SEO agency in Vashi, we build for lasting visibility.',
+  keywords: 'seo services in vashi, seo agency in vashi, seo company in vashi, local seo, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/vashi/`,
   },
   openGraph: {
-    title: 'SEO Agency in Vashi | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Vashi, helping businesses rank higher in local search and attract more customers.',
+    title: 'SEO Services in Vashi | SEO Company | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Vashi offering SEO services backed by 3,500% impression growth for ElectroMech. As an SEO agency in Vashi, we build for lasting visibility.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/vashi/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Vashi | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Vashi, helping businesses rank higher in local search and attract more customers.',
+    title: 'SEO Services in Vashi | SEO Company | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Vashi offering SEO services backed by 3,500% impression growth for ElectroMech. As an SEO agency in Vashi, we build for lasting visibility.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
