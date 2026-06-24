@@ -23,5 +23,9 @@
     "@types/react-dom": "^19",
     "jimp": "^1.6.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "undici": "^7.28.0",
+    "hono": "^4.12.25"
   }
 }

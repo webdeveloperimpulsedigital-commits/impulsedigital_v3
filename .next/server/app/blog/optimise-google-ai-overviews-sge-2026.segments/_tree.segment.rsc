@@ -7,4 +7,4 @@
 :HL["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css","style",{"media":"print"}]
 :HL["/css/blog.css?v=1","style"]
 :HL["https://impulsedigital.co.in/ID-web-blog/wp-content/uploads/2026/06/woman-contemplating-using-tablet-in-studio-setting-2026-03-26-06-50-07-utc-1.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"optimise-google-ai-overviews-sge-2026","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"h-EI-x4FeD2L3s8t4site"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"optimise-google-ai-overviews-sge-2026","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"2q6qUWqGz-OO_Ujg_bBr5"}
