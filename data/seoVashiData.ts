@@ -1,13 +1,11 @@
 export const seoVashiData = {
   "location": "Vashi",
   "hero": {
-    "title": "SEO Agency in Vashi",
-    "headline": "Performance Focused SEO Agency in Vashi",
+    "title": "Best SEO Service in Vashi",
+    "headline": "Best SEO Service in Vashi",
     "subHeadline": "SEO – Helping your business get found by the right people",
     "description": [
-      "If you’re running a business in Vashi, you’ve probably already realized this: being good at what you do isn’t enough if people can’t find you online. Most customers just search, click one of the top results, and move on. That’s usually it.",
-      "So the real question becomes: how do you make sure your business shows up at the right time?",
-      "That’s where SEO comes in. And not the complicated, over-promised kind, but the kind that actually helps you get noticed consistently. As an SEO agency in Vashi, we work with businesses that want steady growth, not just temporary spikes."
+      "Vashi is Navi Mumbai's commercial centre, home to APMC traders, retail chains, corporate offices near the railway station belt, and a dense mix of service businesses all competing for the same search results. Being good at what you do is not enough here. Most customers search, click one of the top results, and move on, and if you are not one of those results, the decision is already made before you are even considered. That is the real question every Vashi business eventually asks: how do you make sure your business shows up at the right moment, not just occasionally. As a trusted SEO company in Vashi, Impulse Digital offers SEO services in Vashi built on 34 years of marketing experience, with results including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Vashi, we work with businesses that want steady, lasting growth, not short-term spikes that fade once the campaign budget runs out."
     ]
   },
   "services": {
@@ -134,7 +132,7 @@ export const seoVashiData = {
     ]
   },
   "deliverables": {
-    "title": "What Our SEO Work Covers",
+    "title": "What Our SEO services in Vashi Covers",
     "items": [
       {
         "title": "Website Audit",
@@ -178,33 +176,39 @@ export const seoVashiData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I consider your SEO services in Vashi?",
+        "question": "Why choose Impulse Digital for SEO services in Vashi?",
         "answer": [
-          "Because we focus on steady, practical growth, not shortcuts. The goal is to help your business get discovered and bring in real inquiries."
+          "mpulse Digital builds SEO around how your customers search, what your competitors are visible for, and where your website is losing opportunity. The work can include technical fixes, keyword mapping, content optimisation, local visibility improvements, and reporting tied to rankings, traffic, and enquiries."
         ]
       },
       {
-        "question": "How do you decide what SEO strategy to use?",
+        "question": "How do you decide the right SEO strategy for a business in Vashi?",
         "answer": [
-          "It depends on your business, your competition, and where you currently stand. There’s no fixed formula."
+          "The strategy starts with your current website performance, target audience, search demand, local competition, and business goal. A local service business, B2B company, e-commerce brand, and enterprise website do not need the same SEO approach."
         ]
       },
       {
-        "question": "How long does it take to see results?",
+        "question": "How long does SEO take to show results?",
         "answer": [
-          "Usually, a few months before you start noticing changes. SEO builds gradually, not overnight."
+          "SEO builds over time because rankings depend on website quality, competition, technical health, content depth, and search demand. Some improvements can appear within a few months, while stronger organic visibility usually needs consistent work. In one verified B2B case study, Automag India moved from 1–2 leads per month to 45–50 leads per month in under four months."
         ]
       },
       {
-        "question": "Do you only work with local businesses?",
+        "question": "Do you only work with businesses located in Vashi?",
         "answer": [
-          "No, but we do help improve local visibility if that’s important for your business."
+          "No. Impulse Digital works with businesses across Mumbai, India, and international markets. For businesses targeting customers in Vashi, local SEO can help improve visibility for location-based searches through local keyword mapping, Google Business Profile support, on-page optimisation, and stronger local relevance signals."
         ]
       },
       {
         "question": "How do you measure success?",
         "answer": [
-          "We look at traffic, rankings, and most importantly, whether you’re getting more leads or inquiries."
+          "SEO success is measured through the metrics that matter to the business: keyword visibility, organic traffic quality, local search presence, landing page engagement, enquiries, and lead movement. Rankings matter, but they are not the only outcome. The goal is to turn search visibility into relevant business opportunities."
+        ]
+      },
+      {
+        "question": "What is included in SEO services in Vashi?",
+        "answer": [
+          "SEO services can include technical website audits, keyword research, on-page optimisation, content improvements, internal linking, local SEO, Google Business Profile support, backlink strategy, conversion-focused recommendations, and ongoing performance reporting. The final scope depends on the website, category competition, and business objective."
         ]
       }
     ]

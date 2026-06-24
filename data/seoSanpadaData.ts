@@ -1,13 +1,11 @@
 export const seoSanpadaData = {
   "location": "Sanpada",
   "hero": {
-    "title": "SEO Agency in Sanpada",
-    "headline": "Performance Focused SEO Agency in Sanpada",
+    "title": "Best SEO Agency in Sanpada",
+    "headline": "Best SEO Agency in Sanpada",
     "subHeadline": "SEO – Helping your business get discovered, trusted, and chosen",
     "description": [
-      "If you’re running a business in Sanpada, you’ve probably noticed how often people turn to search before making a decision. Whether it’s a service or a product, most journeys begin online now.",
-      "And honestly, people don’t spend too much time exploring. They usually go with what appears early and feels relevant.",
-      "That’s where SEO quietly makes a big difference. As an SEO company in Sanpada, we focus on helping your business show up consistently, not just for a short period, but in a way that keeps building visibility over time."
+      "Sanpada sits in one of Navi Mumbai's most established residential pockets, close enough to the CBD Belapur business corridor that local service businesses and B2B firms both compete for attention in the same search results. A homeowner looking for a contractor and a company researching a vendor are using the same Google, just with different intent. This is the gap most Sanpada businesses miss. A strong SEO foundation built on 34 years of marketing experience, with results including 737% organic traffic growth for Qure.ai, is what separates a business that gets found from one that gets searched past. As a trusted SEO company in Sanpada and specialist SEO agency in Sanpada, Impulse Digital builds for both kinds of buyer at once, not just the easier one to reach."
     ]
   },
   "services": {
@@ -180,7 +178,7 @@ export const seoSanpadaData = {
       {
         "question": "Why should I choose your SEO services in Sanpada?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust over time. It’s about building visibility that continues to work instead of short-term gains."
+          "Because most agencies optimise for rankings. We optimise for the gap between your rankings and your enquiries. As a specialist SEO agency in Sanpada, our work for ElectroMech grew impressions by 3,500% within 5 months, with quality leads coming in from India and overseas. That is the standard we hold every Sanpada engagement to, visibility that turns into something measurable, not just a position on a page."
         ]
       },
       {
@@ -192,7 +190,7 @@ export const seoSanpadaData = {
       {
         "question": "How long does it take to see results?",
         "answer": [
-          "SEO often requires a few months before noticeable progress is seen. It’s a gradual process. Some changes show results faster, while others take a bit more time to build impact."
+          "SEO often requires a few months before noticeable progress is seen. For Qure.ai, organic traffic grew by 737% as the search foundation matured. Some changes show results faster, while others take a bit more time to build impact."
         ]
       },
       {
@@ -205,6 +203,12 @@ export const seoSanpadaData = {
         "question": "How do you measure success?",
         "answer": [
           "We look at rankings, traffic, and most importantly, whether you’re getting more inquiries or leads. The goal is to connect SEO performance with actual business results."
+        ]
+      },
+      {
+        "question": "What happens after we reach out about SEO for our Sanpada business?",
+        "answer": [
+          "We start by looking at what is already working before we suggest anything new. Most businesses we speak to have some search presence, just not enough structure behind it. We will tell you honestly if SEO is the right next investment for where you are, and if it is not yet, we will say so. Reach out through our contact form."
         ]
       }
     ]

@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoTurbheLocation from '@/components/pages/seo-locations/SeoTurbheLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Turbhe | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Turbhe to improve search rankings and drive local business growth.',
-  keywords: 'seo agency turbhe, local seo turbhe, digital marketing turbhe',
+  title: 'SEO Company in Turbhe | SEO Agency | Impulse Digital',
+  description: 'Impulse Digital is a trusted SEO company in Turbhe with proven results, including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Turbhe, we focus on lasting visibility.',
+  keywords: 'seo agency in turbhe, seo company in turbhe, seo services, local seo turbhe, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/turbhe/`,
   },
   openGraph: {
-    title: 'SEO Agency in Turbhe | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Turbhe to improve search rankings and drive local business growth.',
+    title: 'SEO Company in Turbhe | SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Turbhe with proven results, including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Turbhe, we focus on lasting visibility.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/turbhe/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Turbhe | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Turbhe to improve search rankings and drive local business growth.',
+    title: 'SEO Company in Turbhe | SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Turbhe with proven results, including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Turbhe, we focus on lasting visibility.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

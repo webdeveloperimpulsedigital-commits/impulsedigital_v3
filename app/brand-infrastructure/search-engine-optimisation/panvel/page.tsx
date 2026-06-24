@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoPanvelLocation from '@/components/pages/seo-locations/SeoPanvelLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Panvel | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Panvel, driving better local search rankings and business visibility.',
-  keywords: 'seo agency panvel, local seo panvel, digital marketing panvel',
+  title: 'SEO Company in Panvel | SEO Agency | Impulse Digital',
+  description: 'Impulse Digital is a trusted SEO company in Panvel backed by 737% organic traffic growth for Qure.ai. As an SEO agency in Panvel, we focus on lasting visibility.',
+  keywords: 'seo company in panvel, seo agency in panvel, seo services, local seo, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/panvel/`,
   },
   openGraph: {
-    title: 'SEO Agency in Panvel | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Panvel, driving better local search rankings and business visibility.',
+    title: 'SEO Company in Panvel | SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Panvel backed by 737% organic traffic growth for Qure.ai. As an SEO agency in Panvel, we focus on lasting visibility.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/panvel/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Panvel | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Panvel, driving better local search rankings and business visibility.',
+    title: 'SEO Company in Panvel | SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is a trusted SEO company in Panvel backed by 737% organic traffic growth for Qure.ai. As an SEO agency in Panvel, we focus on lasting visibility.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

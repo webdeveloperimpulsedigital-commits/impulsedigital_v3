@@ -1,16 +1,15 @@
 export const seoNaviMumbaiData = {
   "location": "Navi Mumbai",
   "hero": {
-    "title": "SEO Agency in Navi Mumbai",
-    "headline": "Performance Driven SEO Agency in Navi Mumbai",
-    "subHeadline": "SEO – Helping your business get discovered, trusted, and chosen",
+    "title": "Best SEO Agency in Navi Mumbai",
+    "headline": "Best SEO Agency in Navi Mumbai",
+    "subHeadline": "SEO – Helping your business get discovered, trusted, and chosen as an expert SEO company in Navi Mumbai",
     "description": [
-      "If your business is aiming to grow its visibility online, choosing the right SEO agency in Navi Mumbai plays a critical role in how effectively you attract and convert customers. At Impulse Digital, we build performance-focused SEO strategies tailored for businesses operating in Navi Mumbai’s fast-growing and competitive digital ecosystem.",
-      "Whether you are a startup, a service provider, or an established brand, our approach is designed to improve search visibility, bring in qualified traffic, and drive measurable business growth. As a reliable SEO company in Navi Mumbai, we focus on long-term outcomes rather than short-term ranking spikes."
+      "If your business is aiming to grow its visibility online, choosing the right SEO agency in Navi Mumbai plays a critical role in how effectively you attract and convert customers. Impulse Digital is a results-focused SEO company in Navi Mumbai with 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% increase in impressions within 5 months for ElectroMech. Whether you are a startup, a service provider, or an established brand, our SEO service in Navi Mumbai is designed to improve search visibility, bring in qualified traffic, and drive measurable business growth. As a reliable SEO agency in Navi Mumbai, we focus on long-term outcomes rather than short-term ranking spikes"
     ]
   },
   "services": {
-    "title": "SEO That Drives Real Growth",
+    "title": "Expert SEO Services in Navi Mumbai That Drive Growth",
     "items": [
       {
         "title": "AI SEO",
@@ -33,7 +32,7 @@ export const seoNaviMumbaiData = {
       {
         "title": "Local SEO",
         "text": [
-          "As a trusted provider of SEO services in Navi Mumbai, we focus on improving your visibility in location-based searches, helping you attract customers actively searching within Navi Mumbai."
+          "As the best SEO agency in Navi Mumbai for local growth, we focus on improving your visibility in location-based searches, helping you attract customers actively searching within your specific area in Navi Mumbai."
         ]
       },
       {
@@ -69,13 +68,13 @@ export const seoNaviMumbaiData = {
       {
         "title": "Content Marketing",
         "text": [
-          "As a performance-focused SEO agency in Navi Mumbai, we build content ecosystems that improve authority and long-term rankings."
+          "As the best SEO company in Navi Mumbai, we build content ecosystems that improve authority, demonstrate expertise (E-E-A-T), and secure long-term rankings."
         ]
       }
     ]
   },
   "whyUs": {
-    "title": "Why Businesses Choose Impulse Digital",
+    "title": "Why Choose Impulse Digital as Your SEO Company in Navi Mumbai?",
     "items": [
       {
         "title": "A Trusted SEO Agency in Navi Mumbai",
@@ -109,7 +108,7 @@ export const seoNaviMumbaiData = {
       {
         "title": "Strategy-First SEO for Navi Mumbai Businesses",
         "text": [
-          "As a results-driven SEO agency, our process focuses on building strong search visibility while aligning with your business objectives."
+          "As a results-driven seo agency in Navi Mumbai, our process focuses on building strong search visibility while aligning with your overall business objectives and offering helpful, expert content to your users."
         ]
       },
       {
@@ -185,7 +184,7 @@ export const seoNaviMumbaiData = {
       {
         "question": "Why choose Impulse Digital as your SEO company in Navi Mumbai?",
         "answer": [
-          "As an experienced SEO agency, we focus on data-driven strategies, local search expertise, and conversion-focused execution to deliver measurable business growth."
+          "As an experienced SEO agency, we focus on data-driven strategies, local search expertise, and conversion-focused execution to deliver measurable business growth, including a 737% increase in organic traffic for Qure.ai and a 3,500% rise in impressions within 5 months for ElectroMech."
         ]
       },
       {
@@ -197,13 +196,19 @@ export const seoNaviMumbaiData = {
       {
         "question": "What is the typical timeframe to see results from SEO services?",
         "answer": [
-          "Most businesses using our SEO services begin to see improvements in rankings and traffic within 3 to 6 months, with consistent growth over time."
+          "Most businesses using our SEO services begin to see improvements in rankings and traffic within 3 to 6 months, with consistent growth over time. For Vendiman, a majority of targeted queries reached page one within just two months."
         ]
       },
       {
-        "question": "Are you among the best SEO agencies in Navi Mumbai?",
+        "question": "Why is Impulse Digital considered the best SEO agency in Navi Mumbai?",
         "answer": [
-          "Yes, we are recognized as one of the best SEO agency in Navi Mumbai due to our transparent processes, consistent results, and long-term SEO strategies."
+          "We are consistently recognised as the best SEO agency in Navi Mumbai because of our transparent processes, consistent results, including a 737% organic traffic increase for Qure.ai and a 3,500% impression increase for ElectroMech, and long-term SEO strategies that prioritise E-E-A-T."
+        ]
+      },
+      {
+        "question": "What kind of SEO service in Navi Mumbai do you offer?",
+        "answer": [
+          "We offer comprehensive services including Local SEO, Technical SEO, E-Commerce SEO, Content Marketing, and Enterprise SEO, ensuring we cover every essential SEO service in Navi Mumbai."
         ]
       },
       {

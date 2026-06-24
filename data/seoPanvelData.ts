@@ -1,13 +1,11 @@
 export const seoPanvelData = {
   "location": "Panvel",
   "hero": {
-    "title": "SEO Agency in Panvel",
-    "headline": "Performance Focused SEO Agency in Panvel",
+    "title": "#1 SEO Company in Panvel",
+    "headline": "#1 SEO Company in Panvel",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "If you’re running a business in Panvel, you’ve probably seen how much people rely on search before making a decision. Whether it’s checking options or comparing services, most of it starts online now.",
-      "And in most cases, people don’t go too far beyond the first few results.",
-      "So if your business isn’t visible at that stage, you’re likely missing out on potential customers. As an SEO company in Panvel, we focus on helping businesses build steady visibility, something that continues to work over time instead of fading away."
+      "If you are running a business in Panvel, you have probably seen how much people rely on search before making a decision. Whether checking options or comparing services, most of it starts online now, and people do not go too far beyond the first few results. If your business is not visible at that stage, you are likely missing out on potential customers. As a trusted SEO company in Panvel, Impulse Digital brings 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai. We focus on helping businesses build steady visibility, something that continues to work over time instead of fading away."
     ]
   },
   "services": {
@@ -178,9 +176,9 @@ export const seoPanvelData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "question": "Why should I choose your SEO services in Panvel?",
+        "question": "Why should I choose Impulse Digital's SEO services in Panvel?",
         "answer": [
-          "We focus on steady, practical growth that brings real inquiries. The goal is to make your business easier to find and trust over time. It’s about building visibility that continues to work instead of relying on short-term gains."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Panvel, we bring 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai. The goal is to make your business easier to find and trust over time, building visibility that continues to work instead of relying on short-term gains."
         ]
       },
       {
@@ -205,6 +203,18 @@ export const seoPanvelData = {
         "question": "How do you measure success?",
         "answer": [
           "We look at rankings, traffic, and most importantly, whether you’re getting more inquiries or leads. The goal is to connect SEO performance with actual business results."
+        ]
+      },
+      {
+        "question": "What makes Impulse Digital a reliable SEO agency in Panvel for local businesses?",
+        "answer": [
+          "As a specialist SEO agency in Panvel, we treat Google Business Profile and Local SEO as one connected system, optimising profile completeness, review velocity, and citation consistency, rather than treating them as separate tasks."
+        ]
+      },
+      {
+        "question": "What is the first step to starting an SEO programme in Panvel?",
+        "answer": [
+          "A diagnostic conversation, not a proposal. As a trusted SEO company in Panvel backed by 34 years of experience and results including 737% organic traffic growth for Qure.ai, the first conversation is free."
         ]
       }
     ]

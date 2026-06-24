@@ -3,16 +3,16 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoNaviMumbaiLocation from '@/components/pages/seo-locations/SeoNaviMumbaiLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Navi Mumbai | Impulse Digital',
-  description: 'Impulse Digital provides expert local SEO services in Navi Mumbai to improve local search visibility and drive business growth.',
-  keywords: 'seo agency navi-mumbai, local seo navi-mumbai, digital marketing navi-mumbai',
+  title: 'SEO Agency in Navi Mumbai | Best SEO Company | Impulse Digital',
+  description: 'Looking for the best SEO agency in Navi Mumbai? Impulse Digital is a top SEO company offering expert SEO services in Navi Mumbai to drive real business growth.',
+  keywords: 'seo company in navi mumbai, seo agency in navi mumbai, seo service in navi mumbai, best seo agency in navi mumbai, best seo company in navi mumbai, impulse digital',
   robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/navi-mumbai/`,
   },
   openGraph: {
-    title: 'SEO Agency in Navi Mumbai | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Navi Mumbai to improve local search visibility and drive business growth.',
+    title: 'SEO Agency in Navi Mumbai | Best SEO Company | Impulse Digital',
+    description: 'Looking for the best SEO agency in Navi Mumbai? Impulse Digital is a top SEO company offering expert SEO services in Navi Mumbai to drive real business growth.',
     url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/navi-mumbai/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Navi Mumbai | Impulse Digital',
-    description: 'Impulse Digital provides expert local SEO services in Navi Mumbai to improve local search visibility and drive business growth.',
+    title: 'SEO Agency in Navi Mumbai | Best SEO Company | Impulse Digital',
+    description: 'Looking for the best SEO agency in Navi Mumbai? Impulse Digital is a top SEO company offering expert SEO services in Navi Mumbai to drive real business growth.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
