@@ -1,12 +1,12 @@
 export const generativeSearchOptimisationData = {
   "hero": {
-    "headlineHtml": "AI SEO Agency<br> For <span style=\"color: var(--impulse-violet);\">Generative Search.</span>",
+    "headlineHtml": "You're Not Just Fighting<br> <span style=\"color: var(--impulse-violet);\">for Rank Anymore.</span>",
     "headlineParts": [
       "You're Not Just Fighting",
       "for Rank Anymore."
     ],
-    "headlineAccent": "",
-    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency in India helping enterprise brands build the signals that AI systems Google AI Overviews, ChatGPT, Perplexity, and Gemini need to understand, trust, and surface your brand in the moments that matter most. With 34 years of marketing experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, we build AI SEO services that go beyond traditional rankings into genuine AI-led recommendation and discovery.",
+    "headlineAccent": "for Rank Anymore.",
+    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital helps your brand build the signals AI systems need to understand, trust, and surface you in the moments that matter.",
     "buttons": [
       {
         "text": "Improve Your AI Search Visibility",

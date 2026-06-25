@@ -1,11 +1,12 @@
 export const websiteDevelopmentData = {
   "hero": {
+    "headlineHtml": "A Pretty Website Can<br> <span style=\"color: var(--impulse-violet);\">Still Lose the Buyer.</span>",
     "headlineParts": [
-      "Look Good. Perform Well.",
+      "A Pretty Website Can",
       "Still Lose the Buyer."
     ],
     "headlineAccent": "Still Lose the Buyer.",
-    "description": "Your visitor came with intent. Then the page took too long. The message felt unclear. The proof was buried. The next step was not obvious. Impulse Digital, a website design company in Mumbai, builds websites that turn interest into action, with strategy, UX, content structure, performance, and development working together.",
+    "description": "Your visitor came with intent. Then the page took too long. The message felt unclear. The proof was buried. The next step was not obvious. Impulse Digital builds websites that turn interest into action, with strategy, UX, content structure, performance, and development working together.",
     "buttons": [
       {
         "text": "Build a Website That Converts",
