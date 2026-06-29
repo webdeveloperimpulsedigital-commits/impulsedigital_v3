@@ -1,6 +1,6 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/uae/brand-infrastructure/social-media-marketing/page.js")
 R.c("server/chunks/ssr/[root-of-the-server]__02rr5w0._.js")
-R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0vq_r-d.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0of_kht.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0dg83ty._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0c289bo._.js")
 R.c("server/chunks/ssr/_000jkrc._.js")
@@ -10,6 +10,7 @@ R.c("server/chunks/ssr/app_not-found_tsx_0u42gv_._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_0ee1czk._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
 R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
+R.c("server/chunks/ssr/app_uae_layout_tsx_0~72ugn._.js")
 R.c("server/chunks/ssr/0zjb_server_app_uae_brand-infrastructure_social-media-marketing_page_actions_0h4kc.f.js")
-R.m(78454)
-module.exports=R.m(78454).exports
+R.m(88876)
+module.exports=R.m(88876).exports
