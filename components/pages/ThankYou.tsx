@@ -3,7 +3,7 @@
 
 import React, { useEffect, Suspense } from 'react';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import { useSearchParams } from 'next/navigation';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
 

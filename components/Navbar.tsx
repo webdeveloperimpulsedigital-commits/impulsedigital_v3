@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
+import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Navbar: React.FC = () => {
@@ -12,6 +13,7 @@ const Navbar: React.FC = () => {
   }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownSuspended, setIsDropdownSuspended] = useState(false);
+  const [isRegionDropdownOpen, setIsRegionDropdownOpen] = useState(false);
 
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
@@ -93,6 +95,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
+    <>
+    <style>{`
+      .region-dropdown-item:hover {
+        background: rgba(138, 92, 246, 0.2);
+      }
+    `}</style>
     <nav id="main-nav">
       <div className="nav-container">
         <div className="nav-left">
@@ -198,8 +206,81 @@ const Navbar: React.FC = () => {
           <Link href="/careers/" className="nav-item" data-cursor="GO" onClick={handleNavClick}>Careers</Link>
           <Link href="/contact-us/" className="nav-item mobile-contact-item" data-cursor="HI" onClick={handleNavClick}>Contact Us</Link>
         </div>
-        <div className="nav-right">
+        <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <Link href="/contact-us/" className="btn-nav" data-cursor="HI" onClick={handleNavClick}>Contact Us</Link>
+
+          {/* Region Switcher Dropdown */}
+          <div 
+            className="region-dropdown-container" 
+            style={{ position: 'relative', height: '100%', display: 'none', alignItems: 'center' }}
+            onMouseEnter={() => setIsRegionDropdownOpen(true)}
+            onMouseLeave={() => setIsRegionDropdownOpen(false)}
+          >
+            <button 
+              className="region-btn" 
+              style={{ 
+                background: 'transparent', 
+                border: 'none', 
+                color: '#fff', 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '6px', 
+                cursor: 'pointer',
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                padding: '0.5rem'
+              }}
+              aria-label="Select Region"
+            >
+              {pathname?.startsWith('/uae') ? (
+                <><img src="https://flagcdn.com/w20/ae.png" alt="UAE" width="20" /> UAE</>
+              ) : (
+                <><img src="https://flagcdn.com/w20/in.png" alt="India" width="20" /> IN</>
+              )}
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: '2px', transform: isRegionDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            
+            {isRegionDropdownOpen && (
+              <div className="region-dropdown-menu" style={{ 
+                position: 'absolute', 
+                top: '100%', 
+                left: '50%', 
+                transform: 'translateX(-50%)', 
+                background: 'rgba(20, 10, 40, 0.98)', 
+                border: '1px solid rgba(138, 92, 246, 0.3)', 
+                borderRadius: '8px', 
+                padding: '8px 0', 
+                /* Removed marginTop to close the hover gap, ensuring smooth interaction */
+                minWidth: '120px',
+                display: 'flex',
+                flexDirection: 'column',
+                zIndex: 100,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
+              }}>
+                {/* Bridge to prevent mouse leave when moving cursor down */}
+                <div style={{ position: 'absolute', top: '-10px', left: 0, width: '100%', height: '10px', background: 'transparent' }} />
+                
+                <NextLink 
+                  href="/" 
+                  style={{ padding: '8px 16px', color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}
+                  className="region-dropdown-item"
+                  onClick={() => setIsRegionDropdownOpen(false)}
+                >
+                  <img src="https://flagcdn.com/w20/in.png" alt="India" width="20" /> India
+                </NextLink>
+                <NextLink 
+                  href="/uae/" 
+                  style={{ padding: '8px 16px', color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}
+                  className="region-dropdown-item"
+                  onClick={() => setIsRegionDropdownOpen(false)}
+                >
+                  <img src="https://flagcdn.com/w20/ae.png" alt="UAE" width="20" /> UAE
+                </NextLink>
+              </div>
+            )}
+          </div>
 
           <button className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu} aria-label="Toggle Menu">
             <span></span>
@@ -209,6 +290,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

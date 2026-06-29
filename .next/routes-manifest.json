@@ -283,6 +283,14 @@
         "nxtPcategory": "nxtPcategory"
       },
       "namedRegex": "^/ppt(?:/(?<nxtPcategory>.+?))?(?:/)?$"
+    },
+    {
+      "page": "/uae/ppt/[[...category]]",
+      "regex": "^/uae/ppt(?:/(.+?))?(?:/)?$",
+      "routeKeys": {
+        "nxtPcategory": "nxtPcategory"
+      },
+      "namedRegex": "^/uae/ppt(?:/(?<nxtPcategory>.+?))?(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -825,6 +833,480 @@
       "regex": "^/thank\\-you(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/thank\\-you(?:/)?$"
+    },
+    {
+      "page": "/uae",
+      "regex": "^/uae(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae(?:/)?$"
+    },
+    {
+      "page": "/uae/about-us",
+      "regex": "^/uae/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/about\\-us(?:/)?$"
+    },
+    {
+      "page": "/uae/ai-marketing-systems",
+      "regex": "^/uae/ai\\-marketing\\-systems(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/ai\\-marketing\\-systems(?:/)?$"
+    },
+    {
+      "page": "/uae/ai-marketing-systems/agentic-ai",
+      "regex": "^/uae/ai\\-marketing\\-systems/agentic\\-ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/ai\\-marketing\\-systems/agentic\\-ai(?:/)?$"
+    },
+    {
+      "page": "/uae/ai-marketing-systems/ai-video-production",
+      "regex": "^/uae/ai\\-marketing\\-systems/ai\\-video\\-production(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/ai\\-marketing\\-systems/ai\\-video\\-production(?:/)?$"
+    },
+    {
+      "page": "/uae/ai-marketing-systems/archer-ai",
+      "regex": "^/uae/ai\\-marketing\\-systems/archer\\-ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/ai\\-marketing\\-systems/archer\\-ai(?:/)?$"
+    },
+    {
+      "page": "/uae/ai-marketing-systems/generative-search-optimisation",
+      "regex": "^/uae/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure",
+      "regex": "^/uae/brand\\-infrastructure(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/branding",
+      "regex": "^/uae/brand\\-infrastructure/branding(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/branding(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/employer-branding",
+      "regex": "^/uae/brand\\-infrastructure/employer\\-branding(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/employer\\-branding(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/airoli",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/airoli(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/airoli(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/andheri",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/andheri(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/andheri(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/b2b-seo",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/b2b\\-seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/b2b\\-seo(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/bandra",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/bandra(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/bandra(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/borivali",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/borivali(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/borivali(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/dadar",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/dadar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/dadar(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/ecommerce-seo",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ecommerce\\-seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ecommerce\\-seo(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/enterprise-seo",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/enterprise\\-seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/enterprise\\-seo(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/ghansoli",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ghansoli(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ghansoli(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/ghatkopar",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ghatkopar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/ghatkopar(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/goregaon",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/goregaon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/goregaon(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/jogeshwari",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/jogeshwari(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/jogeshwari(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/kandivali",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/kandivali(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/kandivali(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/kharghar",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/kharghar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/kharghar(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/koparkhairane",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/koparkhairane(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/koparkhairane(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/local-seo",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/local\\-seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/local\\-seo(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/malad",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/malad(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/malad(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/mansarovar",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mansarovar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mansarovar(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/mira-road",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mira\\-road(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mira\\-road(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/mulund",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mulund(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mulund(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/mumbai",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mumbai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/mumbai(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/navi-mumbai",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/navi\\-mumbai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/navi\\-mumbai(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/nerul",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/nerul(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/nerul(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/panvel",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/panvel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/panvel(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/sanpada",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/turbhe",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/turbhe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/turbhe(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/search-engine-optimisation/vashi",
+      "regex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/vashi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/search\\-engine\\-optimisation/vashi(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/social-media-marketing",
+      "regex": "^/uae/brand\\-infrastructure/social\\-media\\-marketing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/social\\-media\\-marketing(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/video-production",
+      "regex": "^/uae/brand\\-infrastructure/video\\-production(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/video\\-production(?:/)?$"
+    },
+    {
+      "page": "/uae/brand-infrastructure/website-development",
+      "regex": "^/uae/brand\\-infrastructure/website\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/brand\\-infrastructure/website\\-development(?:/)?$"
+    },
+    {
+      "page": "/uae/careers",
+      "regex": "^/uae/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/careers(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies",
+      "regex": "^/uae/case\\-studies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/abg-brut-india",
+      "regex": "^/uae/case\\-studies/abg\\-brut\\-india(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/abg\\-brut\\-india(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/abg-kbc",
+      "regex": "^/uae/case\\-studies/abg\\-kbc(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/abg\\-kbc(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/amazon-india-evp-strategy",
+      "regex": "^/uae/case\\-studies/amazon\\-india\\-evp\\-strategy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/amazon\\-india\\-evp\\-strategy(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/amazon-talent-communication-engine",
+      "regex": "^/uae/case\\-studies/amazon\\-talent\\-communication\\-engine(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/amazon\\-talent\\-communication\\-engine(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/amazon-unplugged",
+      "regex": "^/uae/case\\-studies/amazon\\-unplugged(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/amazon\\-unplugged(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/automag-bajaj-auto",
+      "regex": "^/uae/case\\-studies/automag\\-bajaj\\-auto(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/automag\\-bajaj\\-auto(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/automag-india",
+      "regex": "^/uae/case\\-studies/automag\\-india(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/automag\\-india(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/chings-foodfarmer",
+      "regex": "^/uae/case\\-studies/chings\\-foodfarmer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/chings\\-foodfarmer(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/chings-kurkure",
+      "regex": "^/uae/case\\-studies/chings\\-kurkure(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/chings\\-kurkure(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/dmart",
+      "regex": "^/uae/case\\-studies/dmart(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/dmart(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/electromech",
+      "regex": "^/uae/case\\-studies/electromech(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/electromech(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/employer-branding",
+      "regex": "^/uae/case\\-studies/employer\\-branding(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/employer\\-branding(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/fours-for-good",
+      "regex": "^/uae/case\\-studies/fours\\-for\\-good(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/fours\\-for\\-good(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/hul",
+      "regex": "^/uae/case\\-studies/hul(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/hul(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/lg-hing",
+      "regex": "^/uae/case\\-studies/lg\\-hing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/lg\\-hing(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/mastercard",
+      "regex": "^/uae/case\\-studies/mastercard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/mastercard(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/qure-ai",
+      "regex": "^/uae/case\\-studies/qure\\-ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/qure\\-ai(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/shaking-things-up",
+      "regex": "^/uae/case\\-studies/shaking\\-things\\-up(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/shaking\\-things\\-up(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/tata-soulfull",
+      "regex": "^/uae/case\\-studies/tata\\-soulfull(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/tata\\-soulfull(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/tcpl",
+      "regex": "^/uae/case\\-studies/tcpl(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/tcpl(?:/)?$"
+    },
+    {
+      "page": "/uae/case-studies/uppercase",
+      "regex": "^/uae/case\\-studies/uppercase(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/case\\-studies/uppercase(?:/)?$"
+    },
+    {
+      "page": "/uae/contact-us",
+      "regex": "^/uae/contact\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/contact\\-us(?:/)?$"
+    },
+    {
+      "page": "/uae/digital-marketing-agency-in-india",
+      "regex": "^/uae/digital\\-marketing\\-agency\\-in\\-india(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/digital\\-marketing\\-agency\\-in\\-india(?:/)?$"
+    },
+    {
+      "page": "/uae/digital-marketing-agency-in-navi-mumbai",
+      "regex": "^/uae/digital\\-marketing\\-agency\\-in\\-navi\\-mumbai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/digital\\-marketing\\-agency\\-in\\-navi\\-mumbai(?:/)?$"
+    },
+    {
+      "page": "/uae/digital-marketing-agency-in-pune",
+      "regex": "^/uae/digital\\-marketing\\-agency\\-in\\-pune(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/digital\\-marketing\\-agency\\-in\\-pune(?:/)?$"
+    },
+    {
+      "page": "/uae/digital-marketing-agency-in-thane",
+      "regex": "^/uae/digital\\-marketing\\-agency\\-in\\-thane(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/digital\\-marketing\\-agency\\-in\\-thane(?:/)?$"
+    },
+    {
+      "page": "/uae/growth-intelligence",
+      "regex": "^/uae/growth\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/growth\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/uae/growth-intelligence/always-on-intelligence",
+      "regex": "^/uae/growth\\-intelligence/always\\-on\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/growth\\-intelligence/always\\-on\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/uae/growth-intelligence/campaign-intelligence",
+      "regex": "^/uae/growth\\-intelligence/campaign\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/growth\\-intelligence/campaign\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/uae/growth-intelligence/customer-intelligence",
+      "regex": "^/uae/growth\\-intelligence/customer\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/growth\\-intelligence/customer\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/uae/growth-intelligence/market-intelligence",
+      "regex": "^/uae/growth\\-intelligence/market\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/growth\\-intelligence/market\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/uae/privacy-policy",
+      "regex": "^/uae/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/uae/services",
+      "regex": "^/uae/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/services(?:/)?$"
+    },
+    {
+      "page": "/uae/terms-and-conditions",
+      "regex": "^/uae/terms\\-and\\-conditions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/terms\\-and\\-conditions(?:/)?$"
+    },
+    {
+      "page": "/uae/test-chatbot",
+      "regex": "^/uae/test\\-chatbot(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/test\\-chatbot(?:/)?$"
+    },
+    {
+      "page": "/uae/thank-you",
+      "regex": "^/uae/thank\\-you(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/uae/thank\\-you(?:/)?$"
     }
   ],
   "dataRoutes": [],

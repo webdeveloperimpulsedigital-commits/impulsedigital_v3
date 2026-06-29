@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import { SITE_URL } from '@/lib/siteUrl';
 import { getPosts, formatDate, stripHtml } from '@/lib/wordpress';
 

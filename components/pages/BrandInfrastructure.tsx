@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
 

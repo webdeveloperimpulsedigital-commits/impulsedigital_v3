@@ -105,6 +105,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+
+
   return [
     ...staticRoutes.map((route) => ({
       url: `${SITE_URL}${route.url}`,
@@ -112,6 +114,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),
+
     ...blogRoutes,
   ];
 }

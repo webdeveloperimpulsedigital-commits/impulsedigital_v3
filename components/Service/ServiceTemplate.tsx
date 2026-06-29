@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import ServiceHero from './ServiceHero';
 import ServiceHandoff from './ServiceHandoff';
 import Logos from '../Logos';

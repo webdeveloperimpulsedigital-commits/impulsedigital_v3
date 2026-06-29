@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import { useParams } from 'next/navigation';
 import { slideshareData } from '@/data/slidesharePpts';
 import PdfThumbnail from '@/components/PdfThumbnail';

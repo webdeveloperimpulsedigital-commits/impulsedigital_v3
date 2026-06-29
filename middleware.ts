@@ -62,99 +62,121 @@ function shouldProxyBinary(ct: string): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
-  // Bypass proxy for custom blog sitemap route and its rewrite destination
-  if (
-    pathname === '/blog/sitemap_index.xml' ||
-    pathname === '/blog/sitemap_index.xml/' ||
-    pathname === '/blog/sitemap-index' ||
-    pathname === '/blog/sitemap-index/'
-  ) {
-    return NextResponse.next();
+  // Add x-pathname header for all requests so layouts can detect the route
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+  
+  if (pathname.startsWith('/uae')) {
+    requestHeaders.set('x-region', 'uae');
+  } else {
+    requestHeaders.set('x-region', 'in');
   }
 
-  // Build the equivalent WordPress URL
-  // /blog/foo/bar  →  /ID-web-blog/foo/bar
-  const wpPathname = pathname.replace(/^\/blog/, WP_PATH) || `${WP_PATH}/`;
-  const targetUrl  = `${WP_ORIGIN}${wpPathname}${search}`;
+  // --- BLOG PROXY LOGIC ---
+  if (pathname.startsWith('/blog')) {
+    // Bypass proxy for custom blog sitemap route and its rewrite destination
+    if (
+      pathname === '/blog/sitemap_index.xml' ||
+      pathname === '/blog/sitemap_index.xml/' ||
+      pathname === '/blog/sitemap-index' ||
+      pathname === '/blog/sitemap-index/'
+    ) {
+      return NextResponse.next({
+        request: {
+          headers: requestHeaders,
+        },
+      });
+    }
 
-  let wpResponse: Response;
-  try {
-    wpResponse = await fetch(targetUrl, {
-      headers: {
-        'User-Agent':      request.headers.get('user-agent')       || 'Mozilla/5.0',
-        'Accept':          request.headers.get('accept')           || 'text/html,*/*',
-        'Accept-Language': request.headers.get('accept-language')  || 'en-US,en;q=0.9',
-        // Request uncompressed so we can read/rewrite the body as text
-        'Accept-Encoding': 'identity',
-      },
-      // Do NOT auto-follow redirects — we rewrite the Location header ourselves
-      redirect: 'manual',
-      // No cache — always serve fresh WordPress content
-      cache: 'no-store',
-    });
-  } catch {
-    return new NextResponse('Blog temporarily unavailable.', {
-      status: 502,
-      headers: { 'Content-Type': 'text/plain' },
-    });
-  }
+    // Build the equivalent WordPress URL
+    const wpPathname = pathname.replace(/^\/blog/, WP_PATH) || `${WP_PATH}/`;
+    const targetUrl  = `${WP_ORIGIN}${wpPathname}${search}`;
 
-  const status      = wpResponse.status;
-  const contentType = wpResponse.headers.get('content-type') || '';
+    let wpResponse: Response;
+    try {
+      wpResponse = await fetch(targetUrl, {
+        headers: {
+          'User-Agent':      request.headers.get('user-agent')       || 'Mozilla/5.0',
+          'Accept':          request.headers.get('accept')           || 'text/html,*/*',
+          'Accept-Language': request.headers.get('accept-language')  || 'en-US,en;q=0.9',
+          'Accept-Encoding': 'identity',
+        },
+        redirect: 'manual',
+        cache: 'no-store',
+      });
+    } catch {
+      return new NextResponse('Blog temporarily unavailable.', {
+        status: 502,
+        headers: { 'Content-Type': 'text/plain' },
+      });
+    }
 
-  // ── 3xx Redirects: rewrite Location header ─────────────────────────
-  if (status >= 300 && status < 400) {
-    const location    = wpResponse.headers.get('location') || '/blog/';
-    const newLocation = rewriteUrls(location);
-    return NextResponse.redirect(newLocation, { status });
-  }
+    const status      = wpResponse.status;
+    const contentType = wpResponse.headers.get('content-type') || '';
 
-  // ── Large binary assets (images / video / audio / pdf): redirect ────
-  // <img> tags & downloads don't enforce CORS, so redirecting to the
-  // WordPress origin is fine and avoids buffering megabytes in memory.
-  if (shouldRedirectBinary(contentType)) {
-    return NextResponse.redirect(targetUrl, { status: 302 });
-  }
+    // ── 3xx Redirects: rewrite Location header ─────────────────────────
+    if (status >= 300 && status < 400) {
+      const location    = wpResponse.headers.get('location') || '/blog/';
+      const newLocation = rewriteUrls(location);
+      return NextResponse.redirect(newLocation, { status });
+    }
 
-  // ── Font / wasm / octet-stream: PROXY (never redirect) ─────────────
-  // Browsers enforce same-origin CORS on @font-face src files.
-  // Redirecting to a different origin would cause CORS failures, so we
-  // buffer and return the file ourselves with permissive CORS headers.
-  if (shouldProxyBinary(contentType)) {
-    const buffer = await wpResponse.arrayBuffer();
-    const cacheControl = wpResponse.headers.get('cache-control') || 'public, max-age=2592000';
-    return new NextResponse(buffer, {
+    // ── Large binary assets (images / video / audio / pdf): redirect ────
+    if (shouldRedirectBinary(contentType)) {
+      return NextResponse.redirect(targetUrl, { status: 302 });
+    }
+
+    // ── Font / wasm / octet-stream: PROXY (never redirect) ─────────────
+    if (shouldProxyBinary(contentType)) {
+      const buffer = await wpResponse.arrayBuffer();
+      const cacheControl = wpResponse.headers.get('cache-control') || 'public, max-age=2592000';
+      return new NextResponse(buffer, {
+        status,
+        headers: {
+          'Content-Type': contentType,
+          'Cache-Control': cacheControl,
+          'Access-Control-Allow-Origin': '*',
+          'x-pathname': pathname,
+        },
+      });
+    }
+
+    // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
+    const body      = await wpResponse.text();
+    const rewritten = rewriteUrls(body);
+    const isHtml = contentType.includes('text/html');
+
+    return new NextResponse(rewritten, {
       status,
       headers: {
-        'Content-Type': contentType,
-        'Cache-Control': cacheControl,
-        'Access-Control-Allow-Origin': '*',
+        'Content-Type': isHtml
+          ? 'text/html; charset=utf-8'
+          : contentType || 'text/plain; charset=utf-8',
+        'x-pathname': pathname,
+        'Cache-Control': isHtml
+          ? 'no-store, must-revalidate'
+          : wpResponse.headers.get('cache-control') || 'public, max-age=86400',
       },
     });
   }
-
-  // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
-  const body      = await wpResponse.text();
-  const rewritten = rewriteUrls(body);
-
-  const isHtml = contentType.includes('text/html');
-
-  return new NextResponse(rewritten, {
-    status,
-    headers: {
-      'Content-Type': isHtml
-        ? 'text/html; charset=utf-8'
-        : contentType || 'text/plain; charset=utf-8',
-      // HTML: never cache (show WordPress edits immediately)
-      // CSS/JS: short cache (WordPress assets change rarely)
-      'Cache-Control': isHtml
-        ? 'no-store, must-revalidate'
-        : wpResponse.headers.get('cache-control') || 'public, max-age=86400',
+  
+  // --- DEFAULT NEXT.JS RESPONSE FOR NON-BLOG ROUTES ---
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
     },
   });
 }
 
 export const config = {
-  // Match /blog, /blog/, and every sub-path under /blog/
-  matcher: ['/blog', '/blog/:path*'],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
+  ],
 };

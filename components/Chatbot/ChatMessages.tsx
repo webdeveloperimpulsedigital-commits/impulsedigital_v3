@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import styles from './Chatbot.module.css';
 
 interface Message {
