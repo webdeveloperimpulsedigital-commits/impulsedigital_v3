@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 
 const Blog: React.FC = () => {
   const blogSliderRef = useRef<HTMLDivElement>(null);

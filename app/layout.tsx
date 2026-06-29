@@ -10,43 +10,67 @@ import InteractionLoader from '@/components/InteractionLoader';
 import './globals.css';
 import './styles/resources.css';
 
-export const metadata: Metadata = {
-  // Default metadata — overridden by each page's own metadata export
-  title: {
-    default: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
-    template: '%s',
-  },
-  description:
-    'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
-  keywords: ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
-  robots: { index: true, follow: true },
-  alternates: { canonical: SITE_URL },
-  openGraph: {
-    type: 'website',
-    siteName: 'Impulse Digital',
-    title: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
-    description:
-      'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
-    url: SITE_URL,
-    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@impulsedigi',
-  },
-  verification: {
-    google: 'L2DP6cEE1zUFFR1Sf-AMVqeFURObeTfpBRPnTOGZ6xw',
-  },
-  metadataBase: new URL(SITE_URL),
-};
+import { headers } from 'next/headers';
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const region = headersList.get('x-region') || 'in';
+  const isUae = region === 'uae';
+
+  const baseUrl = isUae ? `${SITE_URL}/uae` : SITE_URL;
+
+  return {
+    title: {
+      default: isUae ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+      template: '%s',
+    },
+    description: isUae 
+      ? 'Impulse Digital is a top digital marketing agency in UAE that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.'
+      : 'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
+    keywords: isUae 
+      ? ['digital marketing agency in uae', 'digital marketing company', 'impulse digital']
+      : ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
+    robots: isUae ? { index: false, follow: false } : { index: true, follow: true },
+    alternates: { 
+      canonical: baseUrl,
+      languages: {
+        'en-IN': SITE_URL,
+        'en-AE': `${SITE_URL}/uae`,
+        'x-default': SITE_URL,
+      }
+    },
+    openGraph: {
+      type: 'website',
+      siteName: 'Impulse Digital',
+      title: isUae ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+      description: isUae 
+        ? 'Impulse Digital is a top digital marketing agency in UAE helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.'
+        : 'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
+      url: baseUrl,
+      images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@impulsedigi',
+    },
+    verification: {
+      google: 'L2DP6cEE1zUFFR1Sf-AMVqeFURObeTfpBRPnTOGZ6xw',
+    },
+    metadataBase: new URL(SITE_URL),
+  };
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const region = headersList.get('x-region') || 'in';
+  const lang = region === 'uae' ? 'en-AE' : 'en-IN';
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <head>
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.png" />

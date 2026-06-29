@@ -3,7 +3,7 @@
 
 
 import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 import { seoLocations } from '../../data/seoLocationsList';
 
 export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ currentLocation }) => {

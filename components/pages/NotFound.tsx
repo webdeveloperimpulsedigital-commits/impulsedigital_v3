@@ -3,7 +3,7 @@
 
 import React, { useEffect } from 'react';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 
 const NotFound: React.FC = () => {
   useEffect(() => {

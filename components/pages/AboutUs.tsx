@@ -6,7 +6,7 @@
 
 import React, { useEffect } from 'react';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
-import Link from 'next/link';
+import Link from '@/components/RegionLink';
 
 export default function TermsAndConditions() {
   useServicePageBackground();
