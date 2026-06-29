@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Market Intelligence Agency | Competitive Intelligence Services',
   description: 'Impulse Digital is a specialist market intelligence agency offering competitive intelligence services, category trend mapping, e-commerce benchmarking & search intelligence for enterprise brands.',
   keywords: 'market intelligence, competitive intelligence, market research',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/growth-intelligence/market-intelligence/`,
   },

@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Company in Mulund | SEO Services for Impulse Digital',
   description: 'Impulse Digital is an SEO company in Mulund offering SEO services for stronger Google rankings, local visibility, relevant traffic, and qualified enquiries through technical SEO, content optimisation, and local search strategy.',
   keywords: 'seo company in mulund, seo services in mulund, seo agency, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mulund/`,
   },

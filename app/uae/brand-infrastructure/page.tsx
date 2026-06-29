@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Brand Infrastructure Services | Impulse Digital',
   description: 'Impulse Digital\'s Brand Infrastructure division builds the digital foundations brands need to grow: SEO, social media, websites, branding, and video production.',
   keywords: 'brand infrastructure, digital marketing services, brand building',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/`,
   },

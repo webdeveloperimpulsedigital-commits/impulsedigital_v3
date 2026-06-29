@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Agency in Airoli | Best SEO Company | Impulse Digital',
   description: 'Impulse Digital is the best SEO agency in Airoli offering Technical SEO, Local SEO, and B2B SEO for businesses across Airoli. Get higher rank  and attract more customers through our SEO service in Airoli.',
   keywords: 'seo agency in airoli, seo company in airoli, seo services in airoli, local seo airoli, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/airoli/`,
   },

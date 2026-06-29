@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Contact Impulse Digital | Get in Touch',
   description: 'Get in touch with Impulse Digital, Mumbai\'s leading digital marketing agency. Reach out to discuss your marketing goals, campaigns, and growth challenges.',
   keywords: 'contact impulse digital, digital marketing agency contact, marketing agency mumbai',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/contact-us/`,
   },

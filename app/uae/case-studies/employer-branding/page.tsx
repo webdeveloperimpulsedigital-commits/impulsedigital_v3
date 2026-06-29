@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Employer Branding Case Study | Impulse Digital',
   description: 'How Impulse Digital helped leading brands build compelling employer brands that attract top talent and strengthen their position as employers of choice.',
   keywords: 'employer branding case study, talent marketing case study',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/employer-branding/`,
   },

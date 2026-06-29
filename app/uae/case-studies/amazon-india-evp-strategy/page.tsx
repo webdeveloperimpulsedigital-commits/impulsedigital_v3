@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Amazon India EVP Strategy Case Study | Employer Branding by Impulse Digital',
   description: 'See how Impulse Digital supported Amazon India’s EVP development through employee research, focus group discussions, thematic synthesis, and employer brand messaging clarity.',
   keywords: 'amazon india evp strategy, employer branding case study, employee research, focus groups, thematic synthesis',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/amazon-india-evp-strategy/`,
   },

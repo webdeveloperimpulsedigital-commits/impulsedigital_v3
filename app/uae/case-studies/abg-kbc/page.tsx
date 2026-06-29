@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'ABG KBC Case Study | Impulse Digital',
   description: 'How Impulse Digital delivered impactful digital marketing for ABG KBC, driving brand awareness and audience engagement.',
   keywords: 'abg kbc case study, entertainment digital marketing',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/abg-kbc/`,
   },

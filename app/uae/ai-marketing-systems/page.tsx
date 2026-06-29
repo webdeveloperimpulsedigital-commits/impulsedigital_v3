@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'AI Marketing Systems | Impulse Digital',
   description: 'Impulse Digital\'s AI Marketing Systems help brands harness the power of artificial intelligence for smarter marketing, automation, and scalable growth.',
   keywords: 'ai marketing systems, artificial intelligence marketing, ai marketing agency',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/ai-marketing-systems/`,
   },

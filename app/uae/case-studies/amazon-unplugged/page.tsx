@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Amazon Unplugged Case Study | Employer Brand Video Series by Impulse Digital',
   description: 'See how Impulse Digital helped build Amazon Unplugged, a 6-part employer brand video series featuring senior leadership conversations, with 1.2M+ views and 9.5M+ impressions.',
   keywords: 'amazon unplugged, employer brand video series, leadership conversations, talent acquisition',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/amazon-unplugged/`,
   },

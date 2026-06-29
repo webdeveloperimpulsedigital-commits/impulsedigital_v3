@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Chings Kurkure Case Study | Impulse Digital',
   description: 'How Impulse Digital created engaging digital campaigns for Chings Kurkure, driving brand awareness and consumer engagement across digital platforms.',
   keywords: 'chings kurkure case study, snack brand digital marketing',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/chings-kurkure/`,
   },

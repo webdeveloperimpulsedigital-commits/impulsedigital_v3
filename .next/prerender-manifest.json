@@ -85,11 +85,40 @@
       ]
     }
   },
-  "dynamicRoutes": {},
+  "dynamicRoutes": {
+    "/blog/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/blog/([^/]+?)(?:/)?$",
+      "dataRoute": "/blog/[slug].rsc",
+      "fallback": null,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/blog/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "e3731cb29d72bd39a2a742bb4c17c930",
-    "previewModeSigningKey": "2e61af9fc880e9e55b38c4eb5e57baebda90c631495e71eebd1935264b5e4821",
-    "previewModeEncryptionKey": "c835cc0f31d5f964619983c6bc13bc2f218885164235882300a3643e8dcd07e8"
+    "previewModeId": "8f6a23d6e38ee21643743228e2f757f6",
+    "previewModeSigningKey": "a6ec1cf2a632de30ac0fcc292f360625b31d475d2c936df77e09b55bf2cc8721",
+    "previewModeEncryptionKey": "14da6eff59a8dff74814593a3a5009d079b04ca99769fdb1000eaf2da101052a"
   }
 }
