@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Company in Kandivali | SEO Services | Impulse Digital',
   description: 'Impulse Digital provides expert local SEO services in Kandivali, helping businesses attract more customers through local search.',
   keywords: 'seo agency in kandivali, seo company in kandivali, seo services in kandivali, local seo, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/kandivali/`,
   },

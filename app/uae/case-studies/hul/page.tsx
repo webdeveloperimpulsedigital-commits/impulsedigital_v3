@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'HUL Case Study | Impulse Digital',
   description: 'How Impulse Digital partnered with Hindustan Unilever to deliver effective digital marketing campaigns that reached millions and drove measurable impact.',
   keywords: 'hul case study, hindustan unilever digital marketing',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/hul/`,
   },

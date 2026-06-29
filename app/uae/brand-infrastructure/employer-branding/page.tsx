@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Employer Branding Agency & Employee Branding Consulting | Impulse',
   description: 'Impulse Digital is a specialist employer branding agency and employee branding consulting firm helping enterprise brands build EVP, culture storytelling, and recruitment marketing. Talk to us.',
   keywords: 'employer branding agency, employer brand, EVP development',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/employer-branding/`,
   },

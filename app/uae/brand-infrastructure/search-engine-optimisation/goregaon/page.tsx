@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Company in Goregaon | Best SEO Services | Impulse Digital',
   description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
   keywords: 'seo agency in goregaon, seo company in goregaon, seo services, local seo goregaon, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/goregaon/`,
   },

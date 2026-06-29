@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'AI Video Production Agency & Services | Impulse Digital',
   description: 'Impulse Digital is an AI video production agency offering AI video production services for campaign films, product explainers, social media videos, training videos, multilingual content, and digital ads. Create faster, scalable, brand-ready videos with human creative direction and AI-enabled production.',
   keywords: 'ai video production, ai cinematic production, ai video production agency, ai video production service, mumbai, india, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/ai-marketing-systems/ai-video-production/`,
   },

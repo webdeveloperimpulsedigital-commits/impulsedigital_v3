@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Website Design & Development Company in Mumbai | Impulse Digital',
   description: 'Impulse Digital is a website design and development company in Mumbai creating SEO-friendly, mobile-responsive, fast-loading, and conversion-focused websites for brands, startups, and enterprises. As a best website development agency in Mumbai, we build websites that look sharp, perform smoothly, and support business growth.',
   keywords: 'website development company in mumbai, website development agency in mumbai, website design agency in mumbai, website development company in mumbai, website design company, web development company, mumbai, thane, india impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/website-development/`,
   },

@@ -5,7 +5,6 @@ import SeoBandraLocation from '@/components/pages/seo-locations/SeoBandraLocatio
 export const metadata: Metadata = {
   title: 'SEO Agency in Bandra | Best SEO Company | Impulse Digital',
   description: 'Impulse Digital is a trusted SEO company in Bandra offering Technical SEO, Local SEO, B2B SEO and eCommerce SEO services for businesses in Bandra and BKC. Rank higher. Talk to us.',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/bandra/`,
   },

@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Company in Turbhe | SEO Agency | Impulse Digital',
   description: 'Impulse Digital is a trusted SEO company in Turbhe with proven results, including 737% organic traffic growth for Qure.ai. As a specialist SEO agency in Turbhe, we focus on lasting visibility.',
   keywords: 'seo agency in turbhe, seo company in turbhe, seo services, local seo turbhe, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/turbhe/`,
   },

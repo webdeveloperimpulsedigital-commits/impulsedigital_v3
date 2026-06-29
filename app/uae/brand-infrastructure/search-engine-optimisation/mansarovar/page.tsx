@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Company in Mansarovar | SEO Services by Impulse Digital',
   description: 'Impulse Digital provides expert local SEO services in Mansarovar to drive better local search rankings and business growth.',
   keywords: 'seo company in mansarovar, seo agency in mansarovar, seo services in mansarovar, local seo company, impulse digital',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mansarovar/`,
   },

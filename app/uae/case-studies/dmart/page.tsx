@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'DMart Case Study | Impulse Digital',
   description: 'How Impulse Digital supported DMart\'s digital marketing efforts, building online presence and driving consumer engagement for India\'s largest retail chain.',
   keywords: 'dmart case study, retail digital marketing',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/dmart/`,
   },

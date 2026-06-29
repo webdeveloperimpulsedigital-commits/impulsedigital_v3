@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'TCPL Case Study | Impulse Digital',
   description: 'How Impulse Digital helped TCPL execute effective digital marketing campaigns that drove brand awareness and consumer engagement.',
   keywords: 'tcpl case study, fmcg digital marketing',
-  robots: { index: true, follow: true },
   alternates: {
     canonical: `${SITE_URL}/case-studies/tcpl/`,
   },
