@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a trusted SEO agency in Jogeshwari helping businesses improve Google rankings, local visibility, and organic traffic. Our SEO service in Jogeshwari includes technical SEO, keyword research, content optimisation, and clear performance reporting to generate qualified inquiries.',
   keywords: 'seo agency in jogeshwari, seo company in jogeshwari, seo services in jogeshwari, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/jogeshwari/`,
-  },
   openGraph: {
     title: 'SEO Agency in Jogeshwari | Best SEO Company | Impulse Digital',
     description: 'Impulse Digital is a trusted SEO agency in Jogeshwari helping businesses improve Google rankings, local visibility, and organic traffic. Our SEO service in Jogeshwari includes technical SEO, keyword research, content optimisation, and clear performance reporting to generate qualified inquiries.',

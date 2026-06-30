@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped ElectroMech strengthen their B2B digital presence and generate quality leads through targeted SEO and content marketing.',
   keywords: 'electromech case study, b2b digital marketing case study',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/electromech/`,
-  },
   openGraph: {
     title: 'ElectroMech Case Study | Impulse Digital',
     description: 'How Impulse Digital helped ElectroMech strengthen their B2B digital presence and generate quality leads through targeted SEO and content marketing.',

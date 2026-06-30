@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped Tata Soulfull build digital brand presence and reach health-conscious consumers through targeted content and digital campaigns.',
   keywords: 'tata soulfull case study, health food digital marketing',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/tata-soulfull/`,
-  },
   openGraph: {
     title: 'Tata Soulfull Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Tata Soulfull build digital brand presence and reach health-conscious consumers through targeted content and digital campaigns.',

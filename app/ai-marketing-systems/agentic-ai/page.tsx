@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is an Agentic AI agency in Mumbai, India. We build AI agents that respond, qualify leads, follow up, update CRMs, and automate business workflows. Our Agentic AI services shaped around sales, customer engagement, marketing operations, and internal workflow automation.',
   keywords: 'agentic ai agency, agentic ai services, agentic ai company, mumbai, india, thane, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/ai-marketing-systems/agentic-ai/`,
-  },
   openGraph: {
     title: 'Agentic AI Agency | Agentic AI Services by Impulse Digital',
     description: 'Impulse Digital is an Agentic AI agency in Mumbai, India. We build AI agents that respond, qualify leads, follow up, update CRMs, and automate business workflows. Our Agentic AI services shaped around sales, customer engagement, marketing operations, and internal workflow automation.',

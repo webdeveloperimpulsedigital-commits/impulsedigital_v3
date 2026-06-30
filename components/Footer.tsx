@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   if (pathname && pathname.startsWith('/admin')) {
     return null;
@@ -73,10 +74,10 @@ const Footer: React.FC = () => {
           <div className="footer-col">
             <h4>Locations</h4>
             <ul>
-              <li><Link href="/digital-marketing-agency-in-india/">India</Link></li>
-              <li><Link href="/digital-marketing-agency-in-thane/">Thane</Link></li>
-              <li><Link href="/digital-marketing-agency-in-navi-mumbai/">Navi Mumbai</Link></li>
-              <li><Link href="/digital-marketing-agency-in-pune/">Pune</Link></li>
+              <li><Link href={isAe ? "/digital-marketing-agency-in-uae/" : "/digital-marketing-agency-in-india/"}>{isAe ? 'UAE' : 'India'}</Link></li>
+              <li><Link href={isAe ? "/digital-marketing-agency-in-abu-dhabi/" : "/digital-marketing-agency-in-thane/"}>{isAe ? 'Abu Dhabi' : 'Thane'}</Link></li>
+              <li><Link href={isAe ? "/digital-marketing-agency-in-sharjah/" : "/digital-marketing-agency-in-navi-mumbai/"}>{isAe ? 'Sharjah' : 'Navi Mumbai'}</Link></li>
+              <li><Link href={isAe ? "/digital-marketing-agency-in-ajman/" : "/digital-marketing-agency-in-pune/"}>{isAe ? 'Ajman' : 'Pune'}</Link></li>
             </ul>
           </div>
 
@@ -95,7 +96,7 @@ const Footer: React.FC = () => {
                 Chirag Infotech, 304 - 305,<br />
                 Road No. 16/Z, Ambica Nagar,<br />
                 Wagle Industrial Estate, Thane,<br />
-                Mumbai, Maharashtra - 400604, India
+                {isAe ? 'Dubai' : 'Mumbai'}, Maharashtra - 400604, India
               </span>
             </div>
           </div>

@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is best digital marketing agency in Navi Mumbai, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Navi Mumbai.',
   keywords: 'digital marketing agency in navi mumbai, digital marketing navi mumbai, seo navi mumbai',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/digital-marketing-agency-in-navi-mumbai/`,
-  },
   openGraph: {
     title: 'Best Digital Marketing Agency in Navi Mumbai | Impulse Digital',
     description: 'Impulse Digital is best digital marketing agency in Navi Mumbai, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Navi Mumbai.',

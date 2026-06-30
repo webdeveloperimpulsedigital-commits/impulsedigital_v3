@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
       <div className="nav-container">
         <div className="nav-left">
           <Link href="/" className="logo" onClick={handleNavClick}>
-            <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital - Leading Digital Marketing Agency in Mumbai" width={110} height={110} />
+            <img src="/ImpulseDigital_Logo.svg" alt={`Impulse Digital - Leading Digital Marketing Agency in ${pathname === '/ae' || pathname === '/ae/' ? 'Dubai' : 'Mumbai'}`} width={110} height={110} />
           </Link>
 
         </div>

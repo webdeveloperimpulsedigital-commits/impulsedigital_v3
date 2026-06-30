@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Get to know Impulse Digital, a trusted digital marketing agency delivering SEO, paid media, branding, agentic ai, and website solutions that drive measurable business growth.',
   keywords: 'digital marketing agency, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/about-us/`,
-  },
   openGraph: {
     title: 'About Impulse Digital - Creative Digital Marketing Agency',
     description: 'Get to know Impulse Digital, a trusted digital marketing agency delivering SEO, paid media, branding, agentic ai, and website solutions that drive measurable business growth.',

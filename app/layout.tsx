@@ -15,35 +15,68 @@ import { headers } from 'next/headers';
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
   const region = headersList.get('x-region') || 'in';
-  const isUae = region === 'uae';
+  const pathname = headersList.get('x-pathname') || '/';
+  const isAe = region === 'ae';
 
-  const baseUrl = isUae ? `${SITE_URL}/uae` : SITE_URL;
+  const baseUrl = isAe ? `${SITE_URL}/ae` : SITE_URL;
+  const canonicalUrl = `${SITE_URL}${pathname === '/' ? '' : pathname}`;
+
+  // Dynamically build cross-region URLs for hreflang tags
+  const basePath = pathname.startsWith('/ae') 
+    ? pathname.replace(/^\/ae/, '') 
+    : pathname;
+  const normalizedBasePath = basePath || '/';
+
+  let inBasePath = normalizedBasePath;
+  let aeBasePath = normalizedBasePath;
+
+  // Custom routing for regional pages
+  if (normalizedBasePath === '/digital-marketing-agency-in-india/') {
+    aeBasePath = '/digital-marketing-agency-in-uae/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-uae/') {
+    inBasePath = '/digital-marketing-agency-in-india/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-thane/') {
+    aeBasePath = '/digital-marketing-agency-in-abu-dhabi/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-abu-dhabi/') {
+    inBasePath = '/digital-marketing-agency-in-thane/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-navi-mumbai/') {
+    aeBasePath = '/digital-marketing-agency-in-sharjah/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-sharjah/') {
+    inBasePath = '/digital-marketing-agency-in-navi-mumbai/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-pune/') {
+    aeBasePath = '/digital-marketing-agency-in-ajman/';
+  } else if (normalizedBasePath === '/digital-marketing-agency-in-ajman/') {
+    inBasePath = '/digital-marketing-agency-in-pune/';
+  }
+
+  const inUrl = `${SITE_URL}${inBasePath === '/' ? '' : inBasePath}`;
+  const aeUrl = `${SITE_URL}/ae${aeBasePath === '/' ? '' : aeBasePath}`;
 
   return {
     title: {
-      default: isUae ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+      default: isAe ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
       template: '%s',
     },
-    description: isUae 
+    description: isAe 
       ? 'Impulse Digital is a top digital marketing agency in UAE that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.'
       : 'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions.',
-    keywords: isUae 
+    keywords: isAe 
       ? ['digital marketing agency in uae', 'digital marketing company', 'impulse digital']
       : ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
-    robots: isUae ? { index: false, follow: false } : { index: true, follow: true },
+    robots: isAe ? { index: false, follow: false } : { index: true, follow: true },
     alternates: { 
-      canonical: baseUrl,
+      canonical: canonicalUrl,
       languages: {
-        'en-IN': SITE_URL,
-        'en-AE': `${SITE_URL}/uae`,
-        'x-default': SITE_URL,
+        'en-IN': inUrl,
+        'en-AE': aeUrl,
+        'x-default': inUrl,
       }
     },
     openGraph: {
       type: 'website',
       siteName: 'Impulse Digital',
-      title: isUae ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
-      description: isUae 
+      title: isAe ? 'Best Digital Marketing Agency in UAE | Impulse Digital' : 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
+      description: isAe 
         ? 'Impulse Digital is a top digital marketing agency in UAE helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.'
         : 'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
       url: baseUrl,
@@ -67,7 +100,7 @@ export default async function RootLayout({
 }) {
   const headersList = await headers();
   const region = headersList.get('x-region') || 'in';
-  const lang = region === 'uae' ? 'en-AE' : 'en-IN';
+  const lang = region === 'ae' ? 'en-AE' : 'en-IN';
 
   return (
     <html lang={lang}>

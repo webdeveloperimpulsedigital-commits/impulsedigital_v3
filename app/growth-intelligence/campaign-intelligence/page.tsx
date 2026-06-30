@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a specialist campaign & performance intelligence agency in India, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Trusted by HUL, Tata and Mastercard. Talk to us.',
   keywords: 'campaign intelligence, performance intelligence agency, campaign analytics, company, services, mumbai, thane, india',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/growth-intelligence/campaign-intelligence/`,
-  },
   openGraph: {
     title: 'Performance Intelligence Agency | Campaign Intelligence | Impulse Digital',
     description: 'Impulse Digital is a specialist campaign & performance intelligence agency in India, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Trusted by HUL, Tata and Mastercard. Talk to us.',

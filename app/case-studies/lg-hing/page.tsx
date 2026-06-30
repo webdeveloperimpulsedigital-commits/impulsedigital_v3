@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.',
   keywords: 'lg hing case study, fmcg digital marketing case study',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/lg-hing/`,
-  },
   openGraph: {
     title: 'LG Hing Case Study | Impulse Digital',
     description: 'How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.',

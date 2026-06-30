@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital delivers enterprise SEO solutions for large-scale websites, helping businesses improve rankings, drive organic traffic, and dominate competitive search markets.',
   keywords: 'enterprise seo, enterprise seo agency, large scale seo services',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/enterprise-seo/`,
-  },
   openGraph: {
     title: 'Enterprise SEO Services | Impulse Digital',
     description: 'Impulse Digital delivers enterprise SEO solutions for large-scale websites, helping businesses improve rankings, drive organic traffic, and dominate competitive search markets.',

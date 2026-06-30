@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',
 
   robots: { index: false, follow: false },
-  alternates: {
-    canonical: `${SITE_URL}/thank-you/`,
-  },
   openGraph: {
     title: 'Thank You | Impulse Digital',
     description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',

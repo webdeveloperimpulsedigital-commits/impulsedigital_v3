@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/uae/', '/thank-you/', '/_next/'],
+        disallow: ['/ae/', '/thank-you/', '/_next/'],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

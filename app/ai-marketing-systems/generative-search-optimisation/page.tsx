@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across India. As a trusted AI SEO agency in India, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
   keywords: 'ai seo agency, ai seo service, ai seo company, aeo, geo, mumbai, india, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/ai-marketing-systems/generative-search-optimisation/`,
-  },
   openGraph: {
     title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
     description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across India. As a trusted AI SEO agency in India, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',

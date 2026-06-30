@@ -66,8 +66,8 @@ export async function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
   
-  if (pathname.startsWith('/uae')) {
-    requestHeaders.set('x-region', 'uae');
+  if (pathname.startsWith('/ae')) {
+    requestHeaders.set('x-region', 'ae');
   } else {
     requestHeaders.set('x-region', 'in');
   }

@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital\'s local SEO services help businesses in Mumbai and across India rank higher in local search results, Google Maps, and location-based queries.',
   keywords: 'local seo, local seo services, local seo agency mumbai',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/local-seo/`,
-  },
   openGraph: {
     title: 'Local SEO Services in Mumbai | Impulse Digital',
     description: 'Impulse Digital\'s local SEO services help businesses in Mumbai and across India rank higher in local search results, Google Maps, and location-based queries.',

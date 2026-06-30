@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a top SEO agency in Mumbai with transparent SEO packages and proven results. Trusted SEO service providers for enterprise and growth brands. Talk to us.',
   keywords: 'seo agency in mumbai, seo company in mumbai, SEO services, seo packages, best seo agency, mumbai, india, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/mumbai/`,
-  },
   openGraph: {
     title: 'SEO Agency in Mumbai | SEO Company | Impulse Digital',
     description: 'Impulse Digital is a top SEO agency in Mumbai with transparent SEO packages and proven results. Trusted SEO service providers for enterprise and growth brands. Talk to us.',

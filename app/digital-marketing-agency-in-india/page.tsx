@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a top digital marketing agency in India offering SEO, social media, content, performance marketing, and branding solutions for companies in India.',
   keywords: 'digital marketing agency in india, digital marketing company in india, services, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/digital-marketing-agency-in-india/`,
-  },
   openGraph: {
     title: 'Best Digital Marketing Agency in India | Impulse Digital',
     description: 'Impulse Digital is a top digital marketing agency in India offering SEO, social media, content, performance marketing, and branding solutions for companies in India.',

@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a specialist SEO agency in Ghansoli offering Technical SEO, Local SEO and B2B SEO for businesses in Ghansoli. Rank higher and attract more customers. Talk to us.',
   keywords: 'seo agency in ghansoli, seo company in ghansoli, seo services in ghansoli, local seo ghansoli, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/ghansoli/`,
-  },
   openGraph: {
     title: 'SEO Agency in Ghansoli | Best SEO Company | Impulse Digital',
     description: 'Impulse Digital is a specialist SEO agency in Ghansoli offering Technical SEO, Local SEO and B2B SEO for businesses in Ghansoli. Rank higher and attract more customers. Talk to us.',
