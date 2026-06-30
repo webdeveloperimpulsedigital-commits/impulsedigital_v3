@@ -95,7 +95,6 @@ const Footer: React.FC = () => {
               <span className="contact-text">
                 {isAe ? (
                   <>
-                    Impulse Digital Pvt. Ltd.<br />
                     Regus Boulevard Tower 1, 9th Floor,<br />
                     Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd.,<br />
                     P.O Box 340733 Downtown, Dubai

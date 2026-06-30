@@ -459,7 +459,7 @@ const ContactUs: React.FC = () => {
               <p className="contact-kicker">Where You'll Find Us</p>
               <p className="contact-address">
                 {isAe ? (
-                  <>Impulse Digital Pvt. Ltd., Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai</>
+                  <>Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai</>
                 ) : (
                   <>Chirag Infotech, 304 - 305, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604, India</>
                 )}
