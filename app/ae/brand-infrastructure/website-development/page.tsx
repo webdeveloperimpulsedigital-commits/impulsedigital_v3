@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import WebsiteDevelopment from '@/components/pages/WebsiteDevelopment';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Website Design & Development Company in Mumbai | Impulse Digital',
   description: 'Impulse Digital is a website design and development company in Mumbai creating SEO-friendly, mobile-responsive, fast-loading, and conversion-focused websites for brands, startups, and enterprises. As a best website development agency in Mumbai, we build websites that look sharp, perform smoothly, and support business growth.',
@@ -54,8 +52,7 @@ export default function WebsiteDevelopmentPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (

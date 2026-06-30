@@ -10,7 +10,6 @@ import {
   stripHtml,
 } from '@/lib/wordpress';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -56,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 export default async function BlogPostPage({ params }: Props) {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();

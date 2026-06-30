@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAiroliLocation from '@/components/pages/seo-locations/SeoAiroliLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoAiroliData } from "@/data/seoAiroliData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoAiroliLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoAiroliData, false)];
+    const schemas = [getComplexFAQSchema(seoAiroliData, false)];
 
   return <SeoAiroliLocation />;
 }

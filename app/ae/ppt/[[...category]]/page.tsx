@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import PPTGalleryClient from './PPTGalleryClient';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 const CATEGORIES = [
   { name: 'All PPTs', slug: '' },
   { name: 'Social Media PPT', slug: 'social-media' },
@@ -98,7 +96,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas = [];
 
   return <PPTGalleryClient />;
 }

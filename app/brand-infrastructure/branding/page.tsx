@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Branding from '@/components/pages/Branding';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Best Branding Agency in Mumbai | Impulse Digital',
   description: 'Impulse Digital is the best branding agency in Mumbai building brand identity and logo systems. Trusted branding company for enterprise brands. Talk to us.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function BrandingPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
 
   return (
         <>

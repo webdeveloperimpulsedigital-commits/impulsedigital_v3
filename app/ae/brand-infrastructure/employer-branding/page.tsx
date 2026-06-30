@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import EmployerBranding from '@/components/pages/EmployerBranding';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Employer Branding Agency & Employee Branding Consulting | Impulse',
   description: 'Impulse Digital is a specialist employer branding agency and employee branding consulting firm helping enterprise brands build EVP, culture storytelling, and recruitment marketing. Talk to us.',
@@ -54,8 +52,7 @@ export default function EmployerBrandingPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (

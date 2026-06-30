@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AmazonTalentCommunicationCaseStudy from '@/components/pages/AmazonTalentCommunicationCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Amazon Talent Communication Case Study | Employer Branding by Impulse Digital',
   description: 'See how Impulse Digital supported Amazon’s employer branding engine across Prime Day storytelling, employee advocacy, social media, job boards, and internal referral campaigns.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonTalentCommunicationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas = [];
 
   return <AmazonTalentCommunicationCaseStudy />;
 }

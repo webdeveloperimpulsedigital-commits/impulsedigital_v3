@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import BrandInfrastructure from '@/components/pages/BrandInfrastructure';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Brand Infrastructure Services | Impulse Digital',
   description: 'Impulse Digital\'s Brand Infrastructure division builds the digital foundations brands need to grow: SEO, social media, websites, branding, and video production.',
@@ -54,8 +52,7 @@ export default function BrandInfrastructurePage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      },
-          getFAQSchema(defaultFaqs, true)
+      }
     ];
 
       return (

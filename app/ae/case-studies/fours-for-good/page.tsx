@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import FoursForGoodCaseStudy from '@/components/pages/FoursForGoodCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Fours For Good Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Fours For Good build brand awareness and community engagement through strategic digital marketing.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function FoursForGoodCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas = [];
 
   return <FoursForGoodCaseStudy />;
 }

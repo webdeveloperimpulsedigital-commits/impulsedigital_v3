@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoDadarLocation from '@/components/pages/seo-locations/SeoDadarLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoDadarData } from "@/data/seoDadarData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoDadarLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoDadarData, false)];
+    const schemas = [getComplexFAQSchema(seoDadarData, false)];
 
   return <SeoDadarLocation />;
 }

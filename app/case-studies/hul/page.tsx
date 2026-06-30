@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import HULCaseStudy from '@/components/pages/HULCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'HUL Case Study | Impulse Digital',
   description: 'How Impulse Digital partnered with Hindustan Unilever to deliver effective digital marketing campaigns that reached millions and drove measurable impact.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function HULCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
 
   return <HULCaseStudy />;
 }

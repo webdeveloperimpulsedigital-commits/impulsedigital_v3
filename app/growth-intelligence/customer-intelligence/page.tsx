@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ConsumerIntelligence from '@/components/pages/ConsumerIntelligence';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Customer Intelligence Agency | Intelligence Consultant Service | Impulse Digital',
   description: 'Impulse Digital is a customer intelligence agency helping brands decode consumer behaviour, motivations, tensions, and decision triggers through a customer intelligence service built for sharper briefs, messaging, and growth strategy.',
@@ -52,8 +50,7 @@ export default function ConsumerIntelligencePage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, false)
+    }
 ];
 
   return (

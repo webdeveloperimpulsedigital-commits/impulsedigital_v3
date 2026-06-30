@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AgenticAI from '@/components/pages/AgenticAI';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Agentic AI Agency | Agentic AI Services by Impulse Digital',
   description: 'Impulse Digital is an Agentic AI agency in Mumbai, India. We build AI agents that respond, qualify leads, follow up, update CRMs, and automate business workflows. Our Agentic AI services shaped around sales, customer engagement, marketing operations, and internal workflow automation.',
@@ -52,8 +50,7 @@ export default function AgenticAIPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, false)
+    }
 ];
 
   return (

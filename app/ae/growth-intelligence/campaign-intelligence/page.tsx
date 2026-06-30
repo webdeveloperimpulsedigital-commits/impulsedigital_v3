@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import CampaignIntelligence from '@/components/pages/CampaignIntelligence';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Performance Intelligence Agency | Campaign Intelligence | Impulse Digital',
   description: 'Impulse Digital is a specialist campaign & performance intelligence agency in India, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Trusted by HUL, Tata and Mastercard. Talk to us.',
@@ -53,8 +51,7 @@ export default function CampaignIntelligencePage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (

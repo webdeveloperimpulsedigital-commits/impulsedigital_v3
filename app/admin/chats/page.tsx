@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './adminChats.module.css';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 
 interface Message {
   role: 'user' | 'assistant';
@@ -37,7 +36,7 @@ interface ChatSession {
 }
 
 export default function AdminChatsPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [error, setError] = useState('');

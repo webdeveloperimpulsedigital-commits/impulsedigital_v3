@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGhansoliLocation from '@/components/pages/seo-locations/SeoGhansoliLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoGhansoliData } from "@/data/seoGhansoliData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoGhansoliLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoGhansoliData, true)];
+    const schemas = [getComplexFAQSchema(seoGhansoliData, true)];
 
   return <SeoGhansoliLocation />;
 }

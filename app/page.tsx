@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Home from '@/components/pages/Home';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
   description: 'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
@@ -121,8 +119,7 @@ export default function HomePage() {
         "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    },
-      getFAQSchema(defaultFaqs, false)
+    }
 ];
 
   return (

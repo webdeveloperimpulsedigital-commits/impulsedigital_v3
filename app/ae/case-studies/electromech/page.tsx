@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ElectroMechCaseStudy from '@/components/pages/ElectroMechCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'ElectroMech Case Study | Impulse Digital',
   description: 'How Impulse Digital helped ElectroMech strengthen their B2B digital presence and generate quality leads through targeted SEO and content marketing.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ElectroMechCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas = [];
 
   return <ElectroMechCaseStudy />;
 }

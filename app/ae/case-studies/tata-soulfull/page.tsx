@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import TataSoulfullCaseStudy from '@/components/pages/TataSoulfullCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Tata Soulfull Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Tata Soulfull build digital brand presence and reach health-conscious consumers through targeted content and digital campaigns.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function TataSoulfullCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas = [];
 
   return <TataSoulfullCaseStudy />;
 }

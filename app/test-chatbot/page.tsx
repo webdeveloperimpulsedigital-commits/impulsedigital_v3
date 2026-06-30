@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import Home from '@/components/pages/Home';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Chatbot Testing Page | Impulse Digital',
   description: 'Impulse Digital Chatbot testing environment.',
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function TestChatbotPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
 
   return (
         <>

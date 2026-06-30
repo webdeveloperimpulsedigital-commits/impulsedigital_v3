@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import B2BSEO from '@/components/pages/B2BSEO';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
   description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
@@ -53,8 +51,7 @@ export default function B2BSEOPage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      },
-          getFAQSchema(defaultFaqs, true)
+      }
     ];
 
       return (

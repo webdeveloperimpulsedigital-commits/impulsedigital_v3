@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import CaseStudies from '@/components/pages/CaseStudies';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Digital Marketing Case Studies | Impulse Digital',
   description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas = [];
 
   return <CaseStudies />;
 }

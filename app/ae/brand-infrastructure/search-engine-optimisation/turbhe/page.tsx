@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoTurbheLocation from '@/components/pages/seo-locations/SeoTurbheLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoTurbheData } from "@/data/seoTurbheData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoTurbheLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoTurbheData, true)];
+    const schemas = [getComplexFAQSchema(seoTurbheData, true)];
 
   return <SeoTurbheLocation />;
 }

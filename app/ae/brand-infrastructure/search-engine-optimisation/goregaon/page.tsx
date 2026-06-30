@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGoregaonLocation from '@/components/pages/seo-locations/SeoGoregaonLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoGoregaonData } from "@/data/seoGoregaonData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoGoregaonLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoGoregaonData, true)];
+    const schemas = [getComplexFAQSchema(seoGoregaonData, true)];
 
   return <SeoGoregaonLocation />;
 }

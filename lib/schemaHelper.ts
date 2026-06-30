@@ -54,3 +54,35 @@ export function getComplexFAQSchema(faqData: any, isAe: boolean = false) {
     }))
   };
 }
+
+export function getServiceFAQSchema(faqData: any, isAe: boolean = false) {
+  if (!faqData || !faqData.items) return null;
+  const items = faqData.items;
+  
+  const displayData = items.map((item: any) => {
+    let answerText = Array.isArray(item.a) ? item.a.join(' ') : item.a;
+    if (isAe) {
+      return {
+        question: item.q.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
+        answer: answerText.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
+      };
+    }
+    return {
+      question: item.q,
+      answer: answerText
+    };
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": displayData.map((item: any) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+}

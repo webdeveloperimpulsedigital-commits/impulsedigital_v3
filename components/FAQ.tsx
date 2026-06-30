@@ -4,6 +4,7 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 
 import { FAQItem, defaultFaqs } from '@/lib/faqData';
+import { getFAQSchema } from '@/lib/schemaHelper';
 
 interface FAQProps {
   data?: FAQItem[];
@@ -24,7 +25,12 @@ const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
   });
 
   return (
-    <section className="faq glass-panel">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema(data, isAe)) }}
+      />
+      <section className="faq glass-panel">
       <div className="container">
         <h2 className="section-heading split-text">Questions we hear<br />from growth leaders.</h2>
         <div className="accordion">
@@ -41,6 +47,7 @@ const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

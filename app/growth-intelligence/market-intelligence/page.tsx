@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import MarketIntelligence from '@/components/pages/MarketIntelligence';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Market Intelligence Agency | Competitive Intelligence Services',
   description: 'Impulse Digital is a specialist market intelligence agency offering competitive intelligence services, category trend mapping, e-commerce benchmarking & search intelligence for enterprise brands.',
@@ -53,8 +51,7 @@ export default function MarketIntelligencePage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, false)
+    }
 ];
 
   return (
