@@ -13,10 +13,10 @@ interface FAQProps {
 
 const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
   const pathname = usePathname();
-  const isAeHome = pathname === '/ae' || pathname === '/ae/';
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   const displayData = data.map(item => {
-    if (!isAeHome) return item;
+    if (!isAe) return item;
     return {
       question: item.question.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
       answer: item.answer.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),

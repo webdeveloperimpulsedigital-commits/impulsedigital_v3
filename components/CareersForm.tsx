@@ -3,6 +3,7 @@
 
 
 import React, { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface CareersFormProps {
   title?: string;
@@ -10,6 +11,8 @@ interface CareersFormProps {
 
 const CareersForm: React.FC<CareersFormProps> = ({ title }) => {
   const formRef = useRef<HTMLFormElement>(null);
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   useEffect(() => {
     if (formRef.current) {
@@ -46,13 +49,13 @@ const CareersForm: React.FC<CareersFormProps> = ({ title }) => {
           <h2 className="section-heading split-text" style={{ position: 'relative', zIndex: 1 }} dangerouslySetInnerHTML={{ __html: title || "Join the<br>team." }}>
           </h2>
           <div className="contact-details" style={{ marginTop: '3rem', position: 'relative', zIndex: 1 }}>
-            <a href="tel:+919769285224" className="contact-channel">
+            <a href={isAe ? "tel:+97145276816" : "tel:+919769285224"} className="contact-channel">
               <div className="contact-channel-icon">
                 <i className="fas fa-phone"></i>
               </div>
               <div className="contact-channel-body">
                 <span className="contact-channel-label">Call us</span>
-                <span className="contact-channel-value">+91-9769285224</span>
+                <span className="contact-channel-value">{isAe ? "+97145276816" : "+91-9769285224"}</span>
               </div>
               <div className="contact-channel-arrow"><i className="fas fa-arrow-right"></i></div>
             </a>

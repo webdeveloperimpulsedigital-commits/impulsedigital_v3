@@ -37,15 +37,15 @@ export default function HomePage() {
       "url": "https://www.theimpulsedigital.com/",
       "logo": "https://www.theimpulsedigital.com/header-logo.png",
       "description": "Impulse Digital is a digital marketing agency offering social media marketing, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
-      "telephone": "+91-9769285224",
+      "telephone": "+97145276816",
       "email": "collabs@theimpulsedigital.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate",
-        "addressLocality": "Thane",
-        "addressRegion": "Maharashtra",
-        "postalCode": "400604",
-        "addressCountry": "IN"
+        "streetAddress": "Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "postalCode": "340733",
+        "addressCountry": "AE"
       },
       "areaServed": [
         {
@@ -74,10 +74,10 @@ export default function HomePage() {
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-9769285224",
+        "telephone": "+97145276816",
         "email": "collabs@theimpulsedigital.com",
         "contactType": "business enquiries",
-        "areaServed": "IN",
+        "areaServed": "AE",
         "availableLanguage": [
           "English",
           "Hindi"

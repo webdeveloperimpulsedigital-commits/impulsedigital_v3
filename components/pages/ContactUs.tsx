@@ -3,10 +3,13 @@
 
 
 import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 const ContactUs: React.FC = () => {
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
   useEffect(() => {
     document.body.classList.add('service-page', 'contact-page');
 
@@ -445,21 +448,30 @@ const ContactUs: React.FC = () => {
                   <span className="contact-direct-label">Email</span>
                   <span className="contact-direct-value">collabs@theimpulsedigital.com</span>
                 </a>
-                <a href="tel:+919769285224" className="contact-direct-link">
+                <a href={isAe ? "tel:+97145276816" : "tel:+919769285224"} className="contact-direct-link">
                   <span className="contact-direct-label">Phone</span>
-                  <span className="contact-direct-value">+91-9769285224</span>
+                  <span className="contact-direct-value">{isAe ? "+97145276816" : "+91-9769285224"}</span>
                 </a>
               </div>
             </div>
 
             <div className="contact-location-copy">
               <p className="contact-kicker">Where You'll Find Us</p>
-              <p className="contact-address">Chirag Infotech, 304 - 305, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604, India</p>
+              <p className="contact-address">
+                {isAe ? (
+                  <>Impulse Digital Pvt. Ltd., Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai</>
+                ) : (
+                  <>Chirag Infotech, 304 - 305, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604, India</>
+                )}
+              </p>
             </div>
           </div>
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30142.480967467654!2d72.953999!3d19.203494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9218eaaaaab%3A0xe087a0855822211d!2sImpulse%20Digital%20-%20%231%20Digital%20Marketing%20Agency%20in%20Mumbai!5e0!3m2!1sen!2sus!4v1779974855996!5m2!1sen!2sus"
+              src={isAe 
+                ? "https://maps.google.com/maps?q=Regus%20Boulevard%20Tower%201,%20Boulevard%20Plaza%20Tower%201,%20Downtown%20Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30142.480967467654!2d72.953999!3d19.203494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9218eaaaaab%3A0xe087a0855822211d!2sImpulse%20Digital%20-%20%231%20Digital%20Marketing%20Agency%20in%20Mumbai!5e0!3m2!1sen!2sus!4v1779974855996!5m2!1sen!2sus"
+              }
               width="100%" height="100%"
               style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 2 }}
               allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
