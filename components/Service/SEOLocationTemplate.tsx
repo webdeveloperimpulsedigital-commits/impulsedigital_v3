@@ -3,6 +3,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { SEOLocationsGrid } from './SEOLocationsGrid';
 import ServiceHandoff from './ServiceHandoff';
 
@@ -45,6 +46,8 @@ function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | voi
 
 const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   useEffect(() => {
     const cancel = whenGsapReady((gsap, ScrollTrigger) => {
@@ -232,7 +235,7 @@ const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
                         style={{ cursor: 'pointer' }}
                         onClick={() => toggleFaq(i)}
                       >
-                        <h3>{item.question}</h3>
+                        <h3>{isAe ? item.question.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai') : item.question}</h3>
                         <span className="acc-icon" style={{ transform: isActive ? 'rotate(45deg)' : 'none', transition: 'transform 0.3s' }}>+</span>
                       </div>
                       <div 
@@ -244,7 +247,7 @@ const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
                         }}
                       >
                         {item.answer.map((ans, j) => (
-                          <p key={j} dangerouslySetInnerHTML={{ __html: ans }}></p>
+                          <p key={j} dangerouslySetInnerHTML={{ __html: isAe ? ans.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai') : ans }}></p>
                         ))}
                       </div>
                     </div>

@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
@@ -171,6 +171,8 @@ const CaseStudyRow = ({ study, isReady }: { study: any, isReady: boolean }) => {
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<number | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   const handleHover = (index: number) => {
     setActiveIndex(index);
@@ -254,9 +256,9 @@ const CaseStudyRow = ({ study, isReady }: { study: any, isReady: boolean }) => {
     e.stopPropagation();
     e.preventDefault();
     if (study.subSlugs && study.subSlugs[imgIdx]) {
-      router.push(study.subSlugs[imgIdx]);
+      router.push(isAe ? `/ae${study.subSlugs[imgIdx]}` : study.subSlugs[imgIdx]);
     } else if (study.slug) {
-      router.push(study.slug);
+      router.push(isAe ? `/ae${study.slug}` : study.slug);
     }
   };
 
@@ -372,7 +374,7 @@ const CaseStudyRow = ({ study, isReady }: { study: any, isReady: boolean }) => {
 
   return isReady ? (
     <div 
-      onClick={() => router.push(study.slug || '#')} 
+      onClick={() => router.push(study.slug ? (isAe ? `/ae${study.slug}` : study.slug) : '#')} 
       className="work-list-item" 
       style={{ textDecoration: 'none', color: 'inherit', display: 'flex', cursor: 'pointer' }}
     >

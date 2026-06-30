@@ -1,10 +1,13 @@
 'use client';
 
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
 import Link from '@/components/RegionLink';
 
 export default function TermsAndConditions() {
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
   useServicePageBackground();
 
   return (
@@ -130,9 +133,19 @@ export default function TermsAndConditions() {
           In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:
         </p>
         <p style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem' }}>
-          <strong style={{ color: '#fff' }}>Impulse Digital</strong><br />
-          304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane, Mumbai 400604<br />
-          Phone: +91 97-69-285224<br />
+          {isAe ? (
+            <>
+              <strong style={{ color: '#fff' }}>Impulse Digital Pvt. Ltd.</strong><br />
+              Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai<br />
+              Phone: +971 45 276 816<br />
+            </>
+          ) : (
+            <>
+              <strong style={{ color: '#fff' }}>Impulse Digital</strong><br />
+              304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane, Mumbai 400604<br />
+              Phone: +91 97-69-285224<br />
+            </>
+          )}
           Email: <a href="mailto:collabs@theimpulsedigital.com" style={{ color: '#8A5CF6', textDecoration: 'none', fontWeight: 500 }}>collabs@theimpulsedigital.com</a>
         </p>
       </div>

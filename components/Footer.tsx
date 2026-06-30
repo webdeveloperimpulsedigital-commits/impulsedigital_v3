@@ -82,9 +82,9 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="footer-col footer-contact-col">
-            <a href="tel:+919769285224" className="contact-item" style={{ textDecoration: 'none' }}>
+            <a href={isAe ? "tel:+97145276816" : "tel:+919769285224"} className="contact-item" style={{ textDecoration: 'none' }}>
               <span className="contact-icon"><i className="fas fa-phone"></i></span>
-              <span className="contact-text">+91-9769285224</span>
+              <span className="contact-text">{isAe ? "+97145276816" : "+91-9769285224"}</span>
             </a>
             <a href="mailto:collabs@theimpulsedigital.com" className="contact-item" style={{ textDecoration: 'none' }}>
               <span className="contact-icon"><i className="fas fa-envelope"></i></span>
@@ -93,10 +93,21 @@ const Footer: React.FC = () => {
             <div className="contact-item address-item">
               <span className="contact-icon"><i className="fas fa-map-marker-alt"></i></span>
               <span className="contact-text">
-                Chirag Infotech, 304 - 305,<br />
-                Road No. 16/Z, Ambica Nagar,<br />
-                Wagle Industrial Estate, Thane,<br />
-                {isAe ? 'Dubai' : 'Mumbai'}, Maharashtra - 400604, India
+                {isAe ? (
+                  <>
+                    Impulse Digital Pvt. Ltd.<br />
+                    Regus Boulevard Tower 1, 9th Floor,<br />
+                    Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd.,<br />
+                    P.O Box 340733 Downtown, Dubai
+                  </>
+                ) : (
+                  <>
+                    Chirag Infotech, 304 - 305,<br />
+                    Road No. 16/Z, Ambica Nagar,<br />
+                    Wagle Industrial Estate, Thane,<br />
+                    Mumbai, Maharashtra - 400604, India
+                  </>
+                )}
               </span>
             </div>
           </div>
