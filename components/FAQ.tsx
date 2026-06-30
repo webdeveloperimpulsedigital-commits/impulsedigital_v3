@@ -12,7 +12,7 @@ interface FAQProps {
   data?: FAQItem[];
 }
 
-const defaultFaqs: FAQItem[] = [
+export const defaultFaqs: FAQItem[] = [
   {
     question: "How do I choose the right digital marketing agency in Mumbai for my business?",
     answer: "The decision should start with how well the digital marketing agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."

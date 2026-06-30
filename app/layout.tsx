@@ -7,6 +7,7 @@ import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import InteractionLoader from '@/components/InteractionLoader';
+import GlobalFAQSchema from '@/components/GlobalFAQSchema';
 import './globals.css';
 import './styles/resources.css';
 
@@ -105,6 +106,7 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <head>
+        <GlobalFAQSchema isAe={region === 'ae'} />
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.png" />
 
