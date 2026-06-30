@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AgenticAI from '@/components/pages/AgenticAI';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Agentic AI Agency | Agentic AI Services by Impulse Digital',
@@ -50,8 +52,9 @@ export default function AgenticAIPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, false)
+];
 
   return (
     <>

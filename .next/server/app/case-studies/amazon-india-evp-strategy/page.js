@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/case-studies/amazon-india-evp-strategy/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0d7imz4._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0mjkzou._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0aml97m.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0dg83ty._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0c289bo._.js")

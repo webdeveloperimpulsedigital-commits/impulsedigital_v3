@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMulundLocation from '@/components/pages/seo-locations/SeoMulundLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoMulundData } from "@/data/seoMulundData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Mulund | SEO Services for Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMulundLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoMulundData, true)];
+
   return <SeoMulundLocation />;
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Branding from '@/components/pages/Branding';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Best Branding Agency in Mumbai | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function BrandingPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
+
   return (
-    <>
-      
-      <Branding />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <Branding />
+        </>
+      );
 
 }

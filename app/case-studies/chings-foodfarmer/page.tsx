@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ChingsFoodfarmerCaseStudy from '@/components/pages/ChingsFoodfarmerCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Chings Foodfarmer Case Study | Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function ChingsFoodfarmerCaseStudyPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
+
   return <ChingsFoodfarmerCaseStudy />;
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import WebsiteDevelopment from '@/components/pages/WebsiteDevelopment';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Website Design & Development Company in Mumbai | Impulse Digital',
@@ -52,8 +54,9 @@ export default function WebsiteDevelopmentPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, false)
+];
 
   return (
     <>

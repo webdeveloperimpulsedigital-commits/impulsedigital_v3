@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AIVideoProduction from '@/components/pages/AIVideoProduction';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'AI Video Production Agency & Services | Impulse Digital',
@@ -51,8 +53,9 @@ export default function AIVideoProductionPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, true)
+];
 
   return (
     <>

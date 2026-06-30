@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Home from '@/components/pages/Home';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Dubai | Impulse Digital',
@@ -119,8 +121,9 @@ export default function HomePage() {
         "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, true)
+];
 
   return (
     <>

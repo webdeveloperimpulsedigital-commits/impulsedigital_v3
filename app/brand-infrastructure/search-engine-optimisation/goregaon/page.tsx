@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGoregaonLocation from '@/components/pages/seo-locations/SeoGoregaonLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoGoregaonData } from "@/data/seoGoregaonData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Goregaon | Best SEO Services | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoGoregaonLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoGoregaonData, false)];
+
   return <SeoGoregaonLocation />;
 }

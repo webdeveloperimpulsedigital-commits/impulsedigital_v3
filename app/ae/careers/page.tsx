@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Careers from '@/components/pages/Careers';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Careers at Impulse Digital | Join Our Team',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return <Careers />;
 }

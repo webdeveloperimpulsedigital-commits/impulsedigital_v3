@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AutomagIndiaCaseStudy from '@/components/pages/AutomagIndiaCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Automag India Case Study | Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function AutomagIndiaCaseStudyPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
+
   return <AutomagIndiaCaseStudy />;
 }

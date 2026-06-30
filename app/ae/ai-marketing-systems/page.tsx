@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AIMarketingSystems from '@/components/pages/AIMarketingSystems';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'AI Marketing Systems | Impulse Digital',
@@ -50,7 +52,8 @@ export default function AIMarketingSystemsPage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      }
+      },
+          getFAQSchema(defaultFaqs, true)
     ];
 
       return (

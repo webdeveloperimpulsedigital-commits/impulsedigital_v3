@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ThaneLocation from '@/components/pages/ThaneLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { thaneLocationFaqs } from "@/lib/data/seoLocations/thaneLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Agency in Thane | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function ThaneLocationPage() {
+    const schemas = [getFAQSchema(thaneLocationFaqs, false)];
+
   return (
-    <>
-      
-      <ThaneLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <ThaneLocation />
+        </>
+      );
 
 }

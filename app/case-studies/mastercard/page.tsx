@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import MastercardCaseStudy from '@/components/pages/MastercardCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Mastercard Case Study | Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function MastercardCaseStudyPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
+
   return <MastercardCaseStudy />;
 }

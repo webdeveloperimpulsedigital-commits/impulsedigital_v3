@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import IndiaLocation from '@/components/pages/IndiaLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { indiaLocationFaqs } from "@/lib/data/seoLocations/indiaLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in India | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function IndiaLocationPage() {
+    const schemas = [getFAQSchema(indiaLocationFaqs, false)];
+
   return (
-    <>
-      
-      <IndiaLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <IndiaLocation />
+        </>
+      );
 
 }

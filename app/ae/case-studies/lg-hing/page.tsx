@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import LGHingCaseStudy from '@/components/pages/LGHingCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'LG Hing Case Study | Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function LGHingCaseStudyPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return <LGHingCaseStudy />;
 }

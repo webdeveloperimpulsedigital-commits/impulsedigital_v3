@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAiroliLocation from '@/components/pages/seo-locations/SeoAiroliLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoAiroliData } from "@/data/seoAiroliData";
 
 export const metadata: Metadata = {
   title: 'SEO Agency in Airoli | Best SEO Company | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoAiroliLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoAiroliData, true)];
+
   return <SeoAiroliLocation />;
 }

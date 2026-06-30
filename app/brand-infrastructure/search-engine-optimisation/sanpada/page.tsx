@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoSanpadaLocation from '@/components/pages/seo-locations/SeoSanpadaLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoSanpadaData } from "@/data/seoSanpadaData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Sanpada | SEO Agency | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoSanpadaLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoSanpadaData, false)];
+
   return <SeoSanpadaLocation />;
 }

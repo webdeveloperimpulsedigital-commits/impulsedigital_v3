@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import DMartCaseStudy from '@/components/pages/DMartCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'DMart Case Study | Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function DMartCaseStudyPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return <DMartCaseStudy />;
 }

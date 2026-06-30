@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SharjahLocation from '@/components/pages/SharjahLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { sharjahLocationFaqs } from "@/lib/data/seoLocations/sharjahLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Sharjah | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function SharjahLocationPage() {
+    const schemas = [getFAQSchema(sharjahLocationFaqs, true)];
+
   return (
-    <>
-      
-      <SharjahLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <SharjahLocation />
+        </>
+      );
 
 }

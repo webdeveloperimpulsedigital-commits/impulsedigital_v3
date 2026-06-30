@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKandivaliLocation from '@/components/pages/seo-locations/SeoKandivaliLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoKandivaliData } from "@/data/seoKandivaliData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Kandivali | SEO Services | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKandivaliLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoKandivaliData, false)];
+
   return <SeoKandivaliLocation />;
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ArcherAI from '@/components/pages/ArcherAI';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Archer AI: AI Outbound Sales Agent | Impulse Digital',
@@ -52,8 +54,9 @@ export default function ArcherAIPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, false)
+];
 
   return (
     <>

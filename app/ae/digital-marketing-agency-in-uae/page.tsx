@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import UaeLocation from '@/components/pages/UaeLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { uaeLocationFaqs } from "@/lib/data/seoLocations/uaeLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in UAE | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function UaeLocationPage() {
+    const schemas = [getFAQSchema(uaeLocationFaqs, true)];
+
   return (
-    <>
-      
-      <UaeLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <UaeLocation />
+        </>
+      );
 
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
@@ -52,8 +54,9 @@ export default function SocialMediaManagementPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, true)
+];
 
   return (
     <>
