@@ -96,7 +96,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Page() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <PPTGalleryClient />;
 }

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsAndConditionsPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <TermsAndConditions />;
 }

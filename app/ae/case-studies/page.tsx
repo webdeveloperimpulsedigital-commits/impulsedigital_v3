@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <CaseStudies />;
 }

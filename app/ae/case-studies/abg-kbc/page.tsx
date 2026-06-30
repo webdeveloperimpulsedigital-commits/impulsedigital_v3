@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ABGKBCCaseStudyPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <ABGKBCCaseStudy />;
 }

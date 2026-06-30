@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <PrivacyPolicy />;
 }

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AutomagIndiaCaseStudyPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <AutomagIndiaCaseStudy />;
 }

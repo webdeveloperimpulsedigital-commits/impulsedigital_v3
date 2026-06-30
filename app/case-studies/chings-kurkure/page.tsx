@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ChingsKurkureCaseStudyPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <ChingsKurkureCaseStudy />;
 }

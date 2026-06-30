@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonUnpluggedPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <AmazonUnpluggedCaseStudy />;
 }

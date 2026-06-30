@@ -36,7 +36,7 @@ interface ChatSession {
 }
 
 export default function AdminChatsPage() {
-    const schemas = [];
+    const schemas: any[] = [];
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [error, setError] = useState('');

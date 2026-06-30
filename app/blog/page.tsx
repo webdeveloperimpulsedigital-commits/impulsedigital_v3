@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function BlogPage() {
-    const schemas = [];
+    const schemas: any[] = [];
   const { posts } = await getPosts(1, 12);
 
   return (

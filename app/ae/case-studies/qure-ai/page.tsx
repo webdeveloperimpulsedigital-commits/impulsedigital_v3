@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function QureAICaseStudyPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return <QureAICaseStudy />;
 }

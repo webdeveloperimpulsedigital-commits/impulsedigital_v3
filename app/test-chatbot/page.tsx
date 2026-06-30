@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function TestChatbotPage() {
-    const schemas = [];
+    const schemas: any[] = [];
 
   return (
         <>

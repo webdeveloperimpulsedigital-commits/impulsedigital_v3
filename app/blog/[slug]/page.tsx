@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 export default async function BlogPostPage({ params }: Props) {
-    const schemas = [];
+    const schemas: any[] = [];
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();
