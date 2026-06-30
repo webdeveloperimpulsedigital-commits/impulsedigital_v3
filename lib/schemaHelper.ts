@@ -1,6 +1,6 @@
 import { FAQItem } from './faqData';
 
-export function getFAQSchema(faqs: FAQItem[], isAe: boolean = false) {
+export function getFAQSchema(faqs: FAQItem[], isAe: boolean | string = false) {
   const displayData = faqs.map(item => {
     if (!isAe) return item;
     return {
@@ -23,7 +23,7 @@ export function getFAQSchema(faqs: FAQItem[], isAe: boolean = false) {
   };
 }
 
-export function getComplexFAQSchema(faqData: any, isAe: boolean = false) {
+export function getComplexFAQSchema(faqData: any, isAe: boolean | string = false) {
   if (!faqData || !faqData.faq || !faqData.faq.items) return null;
   const items = faqData.faq.items;
   
@@ -55,7 +55,7 @@ export function getComplexFAQSchema(faqData: any, isAe: boolean = false) {
   };
 }
 
-export function getServiceFAQSchema(faqData: any, isAe: boolean = false) {
+export function getServiceFAQSchema(faqData: any, isAe: boolean | string = false) {
   if (!faqData || !faqData.items) return null;
   const items = faqData.items;
   
