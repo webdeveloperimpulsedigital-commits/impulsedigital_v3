@@ -1,6 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import TermsAndConditions from '@/components/pages/TermsAndConditions';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Impulse Digital',
@@ -8,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsAndConditionsPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return <TermsAndConditions />;
 }

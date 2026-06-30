@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import EmployerBranding from '@/components/pages/EmployerBranding';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Employer Branding Agency & Employee Branding Consulting | Impulse',
@@ -52,8 +54,9 @@ export default function EmployerBrandingPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, false)
+];
 
   return (
     <>

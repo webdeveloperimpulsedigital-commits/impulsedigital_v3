@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AjmanLocation from '@/components/pages/AjmanLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { ajmanLocationFaqs } from "@/lib/data/seoLocations/ajmanLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Ajman | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function AjmanLocationPage() {
+    const schemas = [getFAQSchema(ajmanLocationFaqs, true)];
+
   return (
-    <>
-      
-      <AjmanLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <AjmanLocation />
+        </>
+      );
 
 }

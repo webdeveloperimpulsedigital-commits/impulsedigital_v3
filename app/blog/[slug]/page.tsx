@@ -9,6 +9,8 @@ import {
   formatDate,
   stripHtml,
 } from '@/lib/wordpress';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -54,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600;
 
 export default async function BlogPostPage({ params }: Props) {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();
@@ -62,66 +65,69 @@ export default async function BlogPostPage({ params }: Props) {
   const content = rewriteWPContent(post.content.rendered);
 
   return (
-    <main className="blog-post-page">
-      {/* ── Featured Image ────────────────────────────────────── */}
-      {ogImage && (
-        <div className="blog-post-featured-wrap">
-          <img
-            src={ogImage}
-            alt={stripHtml(post.title.rendered)}
-            className="blog-post-featured-img"
-            width="1200"
-            height="630"
-          />
-        </div>
-      )}
-
-      {/* ── Post Header ───────────────────────────────────────── */}
-      <div className="blog-post-header">
-        <div className="blog-post-header-inner">
-          <Link href="/blog/" className="blog-back-link">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M13 8H3M3 8L7 4M3 8L7 12"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          <main className="blog-post-page">
+          {/* ── Featured Image ────────────────────────────────────── */}
+          {ogImage && (
+            <div className="blog-post-featured-wrap">
+              <img
+                src={ogImage}
+                alt={stripHtml(post.title.rendered)}
+                className="blog-post-featured-img"
+                width="1200"
+                height="630"
               />
-            </svg>
-            All Articles
-          </Link>
+            </div>
+          )}
 
-          <h1
-            className="blog-post-title"
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
-          <div className="blog-post-meta">
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
-            <span className="blog-post-meta-dot">·</span>
-            <span>Impulse Digital</span>
+          {/* ── Post Header ───────────────────────────────────────── */}
+          <div className="blog-post-header">
+            <div className="blog-post-header-inner">
+              <Link href="/blog/" className="blog-back-link">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M13 8H3M3 8L7 4M3 8L7 12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                All Articles
+              </Link>
+
+              <h1
+                className="blog-post-title"
+                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+              />
+              <div className="blog-post-meta">
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
+                <span className="blog-post-meta-dot">·</span>
+                <span>Impulse Digital</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      {/* ── Post Content ──────────────────────────────────────── */}
-      <div className="blog-post-content-wrap">
-        <div className="blog-post-content-inner">
-          <article
-            className="wp-content"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </div>
-      </div>
+          {/* ── Post Content ──────────────────────────────────────── */}
+          <div className="blog-post-content-wrap">
+            <div className="blog-post-content-inner">
+              <article
+                className="wp-content"
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            </div>
+          </div>
 
-      {/* ── Back CTA ──────────────────────────────────────────── */}
-      <div className="blog-post-back-cta">
-        <div className="blog-post-content-inner">
-          <Link href="/blog/" className="blog-back-btn">
-            ← Back to All Articles
-          </Link>
-        </div>
-      </div>
-    </main>
-  );
+          {/* ── Back CTA ──────────────────────────────────────────── */}
+          <div className="blog-post-back-cta">
+            <div className="blog-post-content-inner">
+              <Link href="/blog/" className="blog-back-btn">
+                ← Back to All Articles
+              </Link>
+            </div>
+          </div>
+        </main>
+        </>
+      );
 }

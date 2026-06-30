@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import VideoProduction from '@/components/pages/VideoProduction';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
@@ -55,8 +57,9 @@ export default function VideoProductionPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, true)
+];
 
   return (
     <>

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMiraRoadLocation from '@/components/pages/seo-locations/SeoMiraRoadLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoMiraRoadData } from "@/data/seoMiraRoadData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Mira Road | SEO Services by Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMiraRoadLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoMiraRoadData, true)];
+
   return <SeoMiraRoadLocation />;
 }

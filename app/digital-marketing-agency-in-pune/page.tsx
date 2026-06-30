@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import PuneLocation from '@/components/pages/PuneLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { puneLocationFaqs } from "@/lib/data/seoLocations/puneLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Pune | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function PuneLocationPage() {
+    const schemas = [getFAQSchema(puneLocationFaqs, false)];
+
   return (
-    <>
-      
-      <PuneLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <PuneLocation />
+        </>
+      );
 
 }

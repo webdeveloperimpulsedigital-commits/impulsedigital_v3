@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAndheriLocation from '@/components/pages/seo-locations/SeoAndheriLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoAndheriData } from "@/data/seoAndheriData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Andheri | Best SEO Agency | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoAndheriLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoAndheriData, false)];
+
   return <SeoAndheriLocation />;
 }

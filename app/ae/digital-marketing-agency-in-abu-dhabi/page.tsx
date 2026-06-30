@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AbuDhabiLocation from '@/components/pages/AbuDhabiLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { abuDhabiLocationFaqs } from "@/lib/data/seoLocations/abuDhabiLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Agency in Abu Dhabi | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function AbuDhabiLocationPage() {
+    const schemas = [getFAQSchema(abuDhabiLocationFaqs, true)];
+
   return (
-    <>
-      
-      <AbuDhabiLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <AbuDhabiLocation />
+        </>
+      );
 
 }

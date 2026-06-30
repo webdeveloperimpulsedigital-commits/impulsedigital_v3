@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import NaviMumbaiLocation from '@/components/pages/NaviMumbaiLocation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { naviMumbaiLocationFaqs } from "@/lib/data/seoLocations/naviMumbaiLocationFaqs";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Navi Mumbai | Impulse Digital',
@@ -25,11 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function NaviMumbaiLocationPage() {
+    const schemas = [getFAQSchema(naviMumbaiLocationFaqs, false)];
+
   return (
-    <>
-      
-      <NaviMumbaiLocation />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          
+          <NaviMumbaiLocation />
+        </>
+      );
 
 }

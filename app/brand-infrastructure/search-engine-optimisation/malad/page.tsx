@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMaladLocation from '@/components/pages/seo-locations/SeoMaladLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoMaladData } from "@/data/seoMaladData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Malad | Best SEO in Malad | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMaladLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoMaladData, false)];
+
   return <SeoMaladLocation />;
 }

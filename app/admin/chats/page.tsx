@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './adminChats.module.css';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 interface Message {
   role: 'user' | 'assistant';
@@ -35,6 +37,7 @@ interface ChatSession {
 }
 
 export default function AdminChatsPage() {
+    const schemas = [getFAQSchema(defaultFaqs, false)];
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [error, setError] = useState('');
@@ -199,287 +202,288 @@ export default function AdminChatsPage() {
   }
 
   return (
-    <div className={`${styles.container} ${styles.dashboardContainer}`}>
-      <header className={styles.header}>
-        <div>
-          <h1>Chatbot Logs</h1>
-          <p style={{ margin: 0, fontSize: '0.85rem', color: '#9ca3af' }}>
-            Monitor and review AI chatbot conversations in real time
-          </p>
-        </div>
-        <div className={styles.headerActions}>
-          <input
-            type="text"
-            placeholder="Search leads or sessions..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className={styles.searchBar}
-          />
-          <button onClick={handleLogout} className={styles.logoutBtn}>
-            Logout
-          </button>
-        </div>
-      </header>
-
-      <div className={`${styles.dashboardGrid} ${selectedSession ? styles.hasSelected : ''}`}>
-        {/* Left column: Chat list */}
-        <div className={styles.sidebar}>
-          <div className={styles.sidebarHeader}>
-            Conversations ({filteredSessions.length})
-          </div>
-          <div className={styles.chatList} data-lenis-prevent="true">
-            {isLoading && sessions.length === 0 ? (
-              <div style={{ display: 'flex', justifyContent: 'center', padding: '2rem' }}>
-                <div className={styles.loadingSpinner}></div>
-              </div>
-            ) : filteredSessions.length === 0 ? (
-              <div style={{ textAlign: 'center', color: '#6b7280', padding: '2rem', fontSize: '0.9rem' }}>
-                No conversations found.
-              </div>
-            ) : (
-              filteredSessions.map((session) => {
-                const isLead = !!(session.leadInfo?.email || session.leadInfo?.phone);
-                const displayName = session.leadInfo?.name || 'Anonymous Visitor';
-                const messageCount = session.messages ? session.messages.length : 0;
-                const companyName = session.leadInfo?.company || '';
-                
-                return (
-                  <div
-                    key={session.sessionId}
-                    onClick={() => setSelectedSession(session)}
-                    className={`${styles.chatItem} ${selectedSession?.sessionId === session.sessionId ? styles.chatItemActive : ''}`}
-                  >
-                    <div className={styles.chatItemHeader}>
-                      <span className={styles.visitorName}>{displayName}</span>
-                      <span className={styles.chatTime}>{formatTime(session.updatedAt)}</span>
-                    </div>
-                    {companyName && (
-                      <div className={styles.company}>{companyName}</div>
-                    )}
-                    <div className={styles.chatMeta}>
-                      <span style={{ fontSize: '0.75rem', color: '#4b5563', fontFamily: 'monospace' }}>
-                        ID: {session.sessionId.substring(5, 12)}...
-                      </span>
-                      <div className={styles.badges}>
-                        {isLead && <span className={`${styles.badge} ${styles.badgeLead}`}>Lead</span>}
-                        <span className={`${styles.badge} ${styles.badgeCount}`}>{messageCount} msg</span>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })
-            )}
-          </div>
-          {diagnostics && (
-            <div style={{
-              padding: '0.75rem 1.25rem',
-              background: diagnostics.isWritable ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)',
-              borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-              fontSize: '0.8rem',
-              color: diagnostics.isWritable ? '#34d399' : '#f87171'
-            }}>
-              <div style={{ fontWeight: 'bold', marginBottom: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                <span style={{ fontSize: '0.65rem' }}>{diagnostics.isWritable ? '●' : '●'}</span>
-                <span>{diagnostics.isWritable ? 'Storage Connected' : 'Storage Error'}</span>
-              </div>
-              <div style={{ opacity: 0.8, fontFamily: 'monospace', wordBreak: 'break-all', fontSize: '0.7rem' }}>
-                Path: {diagnostics.storageDir}
-              </div>
-              {!diagnostics.isWritable && (
-                <div style={{ marginTop: '0.35rem', color: '#ef4444', fontWeight: 'bold', fontSize: '0.75rem' }}>
-                  Error: {diagnostics.writeError}
-                </div>
-              )}
+        <div className={`${styles.container} ${styles.dashboardContainer}`}>
+          <header className={styles.header}>
+            <div>
+              <h1>Chatbot Logs</h1>
+              <p style={{ margin: 0, fontSize: '0.85rem', color: '#9ca3af' }}>
+                Monitor and review AI chatbot conversations in real time
+              </p>
             </div>
-          )}
-        </div>
+            <div className={styles.headerActions}>
+              <input
+                type="text"
+                placeholder="Search leads or sessions..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={styles.searchBar}
+              />
+              <button onClick={handleLogout} className={styles.logoutBtn}>
+                Logout
+              </button>
+            </div>
+          </header>
 
-        {/* Right column: Chat details */}
-        <div className={styles.mainView}>
-          {selectedSession ? (
-            <>
-              <div className={styles.detailHeader}>
-                <div className={styles.detailHeaderMain}>
-                  <button 
-                    onClick={() => setSelectedSession(null)} 
-                    className={styles.backBtn}
-                    aria-label="Back to conversations list"
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <line x1="19" y1="12" x2="5" y2="12"></line>
-                      <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                    <span>Back</span>
-                  </button>
-                  <div>
-                    <h2 className={styles.detailTitle}>
-                      {selectedSession.leadInfo?.name || 'Anonymous Session'}
-                    </h2>
-                    <p className={styles.detailSub}>
-                      Session ID: <code style={{ color: '#a78bfa', fontSize: '0.85rem' }}>{selectedSession.sessionId}</code> | Updated: {formatTime(selectedSession.updatedAt)}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className={styles.mobileTabs}>
-                  <button 
-                    onClick={() => setActiveTab('chat')} 
-                    className={`${styles.tabBtn} ${activeTab === 'chat' ? styles.tabBtnActive : ''}`}
-                  >
-                    Chat
-                  </button>
-                  <button 
-                    onClick={() => setActiveTab('details')} 
-                    className={`${styles.tabBtn} ${activeTab === 'details' ? styles.tabBtnActive : ''}`}
-                  >
-                    Lead Info
-                  </button>
-                </div>
+          <div className={`${styles.dashboardGrid} ${selectedSession ? styles.hasSelected : ''}`}>
+            {/* Left column: Chat list */}
+            <div className={styles.sidebar}>
+              <div className={styles.sidebarHeader}>
+                Conversations ({filteredSessions.length})
               </div>
-              <div className={`${styles.detailBody} ${activeTab === 'details' ? styles.showDetailsTab : styles.showChatTab}`}>
-                {/* Chat transcript */}
-                <div className={styles.transcriptContainer} data-lenis-prevent="true">
-                  {selectedSession.messages && selectedSession.messages.map((msg, idx) => {
-                    const isUser = msg.role === 'user';
+              <div className={styles.chatList} data-lenis-prevent="true">
+                {isLoading && sessions.length === 0 ? (
+                  <div style={{ display: 'flex', justifyContent: 'center', padding: '2rem' }}>
+                    <div className={styles.loadingSpinner}></div>
+                  </div>
+                ) : filteredSessions.length === 0 ? (
+                  <div style={{ textAlign: 'center', color: '#6b7280', padding: '2rem', fontSize: '0.9rem' }}>
+                    No conversations found.
+                  </div>
+                ) : (
+                  filteredSessions.map((session) => {
+                    const isLead = !!(session.leadInfo?.email || session.leadInfo?.phone);
+                    const displayName = session.leadInfo?.name || 'Anonymous Visitor';
+                    const messageCount = session.messages ? session.messages.length : 0;
+                    const companyName = session.leadInfo?.company || '';
+                    
                     return (
                       <div
-                        key={idx}
-                        className={`${styles.bubbleWrapper} ${isUser ? styles.bubbleUser : styles.bubbleAssistant}`}
+                        key={session.sessionId}
+                        onClick={() => setSelectedSession(session)}
+                        className={`${styles.chatItem} ${selectedSession?.sessionId === session.sessionId ? styles.chatItemActive : ''}`}
                       >
-                        <div className={styles.bubbleSender}>
-                          {isUser ? 'Visitor' : 'Adwait (Assistant)'}
+                        <div className={styles.chatItemHeader}>
+                          <span className={styles.visitorName}>{displayName}</span>
+                          <span className={styles.chatTime}>{formatTime(session.updatedAt)}</span>
                         </div>
-                        <div className={styles.bubbleText}>
-                          {msg.content}
+                        {companyName && (
+                          <div className={styles.company}>{companyName}</div>
+                        )}
+                        <div className={styles.chatMeta}>
+                          <span style={{ fontSize: '0.75rem', color: '#4b5563', fontFamily: 'monospace' }}>
+                            ID: {session.sessionId.substring(5, 12)}...
+                          </span>
+                          <div className={styles.badges}>
+                            {isLead && <span className={`${styles.badge} ${styles.badgeLead}`}>Lead</span>}
+                            <span className={`${styles.badge} ${styles.badgeCount}`}>{messageCount} msg</span>
+                          </div>
                         </div>
                       </div>
                     );
-                  })}
-                </div>
-
-                {/* Sidebar details */}
-                <div className={styles.detailsPanel} data-lenis-prevent="true">
-                  <h3 className={styles.panelTitle}>Lead Details</h3>
-                  
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Name</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.name || <em style={{ color: '#4b5563' }}>Not provided</em>}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Email</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.email ? (
-                        <a href={`mailto:${selectedSession.leadInfo.email}`}>{selectedSession.leadInfo.email}</a>
-                      ) : (
-                        <em style={{ color: '#4b5563' }}>Not provided</em>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Phone</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.phone ? (
-                        <a href={`tel:${selectedSession.leadInfo.phone}`}>{selectedSession.leadInfo.phone}</a>
-                      ) : (
-                        <em style={{ color: '#4b5563' }}>Not provided</em>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Company</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.company || <em style={{ color: '#4b5563' }}>Not provided</em>}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Preferred Time</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.preferredTime || <em style={{ color: '#4b5563' }}>Not provided</em>}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Requirement</div>
-                    <div className={styles.infoValue} style={{ whiteSpace: 'pre-wrap' }}>
-                      {selectedSession.leadInfo?.userRequirement || <em style={{ color: '#4b5563' }}>Not specified</em>}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Recommended Direction</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.leadInfo?.recommendedDirection || <em style={{ color: '#4b5563' }}>Not determined</em>}
-                    </div>
-                  </div>
-
-                  <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.08)', margin: '1.5rem 0' }} />
-                  
-                  <h3 className={styles.panelTitle}>Session Details</h3>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>IP Address</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.ip || <em style={{ color: '#4b5563' }}>Unknown</em>}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Location</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.location ? (
-                        `${selectedSession.location.city || ''}, ${selectedSession.location.region || ''}, ${selectedSession.location.country || ''}`.replace(/^, /, '').replace(/, , /, ', ')
-                      ) : (
-                        <em style={{ color: '#4b5563' }}>Unknown</em>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className={styles.infoGroup}>
-                    <div className={styles.infoLabel}>Timezone</div>
-                    <div className={styles.infoValue}>
-                      {selectedSession.location?.timezone || <em style={{ color: '#4b5563' }}>Unknown</em>}
-                    </div>
-                  </div>
-                </div>
+                  })
+                )}
               </div>
-            </>
-          ) : (
-            <div className={styles.emptyState}>
-              <svg
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-              <h3>Select a Conversation</h3>
-              <p style={{ margin: 0, fontSize: '0.9rem' }}>
-                Select a chat log from the sidebar to view full transcript and captured details.
-              </p>
+              {diagnostics && (
+                <div style={{
+                  padding: '0.75rem 1.25rem',
+                  background: diagnostics.isWritable ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                  fontSize: '0.8rem',
+                  color: diagnostics.isWritable ? '#34d399' : '#f87171'
+                }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '0.2rem', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <span style={{ fontSize: '0.65rem' }}>{diagnostics.isWritable ? '●' : '●'}</span>
+                    <span>{diagnostics.isWritable ? 'Storage Connected' : 'Storage Error'}</span>
+                  </div>
+                  <div style={{ opacity: 0.8, fontFamily: 'monospace', wordBreak: 'break-all', fontSize: '0.7rem' }}>
+                    Path: {diagnostics.storageDir}
+                  </div>
+                  {!diagnostics.isWritable && (
+                    <div style={{ marginTop: '0.35rem', color: '#ef4444', fontWeight: 'bold', fontSize: '0.75rem' }}>
+                      Error: {diagnostics.writeError}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Right column: Chat details */}
+            <div className={styles.mainView}>
+              {selectedSession ? (
+                <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+                  <div className={styles.detailHeader}>
+                    <div className={styles.detailHeaderMain}>
+                      <button 
+                        onClick={() => setSelectedSession(null)} 
+                        className={styles.backBtn}
+                        aria-label="Back to conversations list"
+                      >
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <line x1="19" y1="12" x2="5" y2="12"></line>
+                          <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span>Back</span>
+                      </button>
+                      <div>
+                        <h2 className={styles.detailTitle}>
+                          {selectedSession.leadInfo?.name || 'Anonymous Session'}
+                        </h2>
+                        <p className={styles.detailSub}>
+                          Session ID: <code style={{ color: '#a78bfa', fontSize: '0.85rem' }}>{selectedSession.sessionId}</code> | Updated: {formatTime(selectedSession.updatedAt)}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className={styles.mobileTabs}>
+                      <button 
+                        onClick={() => setActiveTab('chat')} 
+                        className={`${styles.tabBtn} ${activeTab === 'chat' ? styles.tabBtnActive : ''}`}
+                      >
+                        Chat
+                      </button>
+                      <button 
+                        onClick={() => setActiveTab('details')} 
+                        className={`${styles.tabBtn} ${activeTab === 'details' ? styles.tabBtnActive : ''}`}
+                      >
+                        Lead Info
+                      </button>
+                    </div>
+                  </div>
+                  <div className={`${styles.detailBody} ${activeTab === 'details' ? styles.showDetailsTab : styles.showChatTab}`}>
+                    {/* Chat transcript */}
+                    <div className={styles.transcriptContainer} data-lenis-prevent="true">
+                      {selectedSession.messages && selectedSession.messages.map((msg, idx) => {
+                        const isUser = msg.role === 'user';
+                        return (
+                          <div
+                            key={idx}
+                            className={`${styles.bubbleWrapper} ${isUser ? styles.bubbleUser : styles.bubbleAssistant}`}
+                          >
+                            <div className={styles.bubbleSender}>
+                              {isUser ? 'Visitor' : 'Adwait (Assistant)'}
+                            </div>
+                            <div className={styles.bubbleText}>
+                              {msg.content}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Sidebar details */}
+                    <div className={styles.detailsPanel} data-lenis-prevent="true">
+                      <h3 className={styles.panelTitle}>Lead Details</h3>
+                      
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Name</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.name || <em style={{ color: '#4b5563' }}>Not provided</em>}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Email</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.email ? (
+                            <a href={`mailto:${selectedSession.leadInfo.email}`}>{selectedSession.leadInfo.email}</a>
+                          ) : (
+                            <em style={{ color: '#4b5563' }}>Not provided</em>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Phone</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.phone ? (
+                            <a href={`tel:${selectedSession.leadInfo.phone}`}>{selectedSession.leadInfo.phone}</a>
+                          ) : (
+                            <em style={{ color: '#4b5563' }}>Not provided</em>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Company</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.company || <em style={{ color: '#4b5563' }}>Not provided</em>}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Preferred Time</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.preferredTime || <em style={{ color: '#4b5563' }}>Not provided</em>}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Requirement</div>
+                        <div className={styles.infoValue} style={{ whiteSpace: 'pre-wrap' }}>
+                          {selectedSession.leadInfo?.userRequirement || <em style={{ color: '#4b5563' }}>Not specified</em>}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Recommended Direction</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.leadInfo?.recommendedDirection || <em style={{ color: '#4b5563' }}>Not determined</em>}
+                        </div>
+                      </div>
+
+                      <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 255, 255, 0.08)', margin: '1.5rem 0' }} />
+                      
+                      <h3 className={styles.panelTitle}>Session Details</h3>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>IP Address</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.ip || <em style={{ color: '#4b5563' }}>Unknown</em>}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Location</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.location ? (
+                            `${selectedSession.location.city || ''}, ${selectedSession.location.region || ''}, ${selectedSession.location.country || ''}`.replace(/^, /, '').replace(/, , /, ', ')
+                          ) : (
+                            <em style={{ color: '#4b5563' }}>Unknown</em>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className={styles.infoGroup}>
+                        <div className={styles.infoLabel}>Timezone</div>
+                        <div className={styles.infoValue}>
+                          {selectedSession.location?.timezone || <em style={{ color: '#4b5563' }}>Unknown</em>}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className={styles.emptyState}>
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <h3>Select a Conversation</h3>
+                  <p style={{ margin: 0, fontSize: '0.9rem' }}>
+                    Select a chat log from the sidebar to view full transcript and captured details.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  );
+      );
 }

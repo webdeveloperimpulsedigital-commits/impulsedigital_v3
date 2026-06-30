@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKhargharLocation from '@/components/pages/seo-locations/SeoKhargharLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoKhargharData } from "@/data/seoKhargharData";
 
 export const metadata: Metadata = {
   title: 'SEO Agency in Kharghar | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKhargharLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoKhargharData, true)];
+
   return <SeoKhargharLocation />;
 }

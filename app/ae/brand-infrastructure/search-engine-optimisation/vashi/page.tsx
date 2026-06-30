@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoVashiLocation from '@/components/pages/seo-locations/SeoVashiLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoVashiData } from "@/data/seoVashiData";
 
 export const metadata: Metadata = {
   title: 'SEO Services in Vashi | SEO Company | Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoVashiLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoVashiData, true)];
+
   return <SeoVashiLocation />;
 }

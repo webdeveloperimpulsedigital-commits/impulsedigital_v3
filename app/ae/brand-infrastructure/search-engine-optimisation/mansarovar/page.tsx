@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMansarovarLocation from '@/components/pages/seo-locations/SeoMansarovarLocation';
+import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
+import { seoMansarovarData } from "@/data/seoMansarovarData";
 
 export const metadata: Metadata = {
   title: 'SEO Company in Mansarovar | SEO Services by Impulse Digital',
@@ -25,5 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMansarovarLocationPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoMansarovarData, true)];
+
   return <SeoMansarovarLocation />;
 }

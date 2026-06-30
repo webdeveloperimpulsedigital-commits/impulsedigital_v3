@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AmazonUnpluggedCaseStudy from '@/components/pages/AmazonUnpluggedCaseStudy';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Amazon Unplugged Case Study | Employer Brand Video Series by Impulse Digital',
@@ -25,5 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonUnpluggedPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return <AmazonUnpluggedCaseStudy />;
 }

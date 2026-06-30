@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AlwaysOnIntelligence from '@/components/pages/AlwaysOnIntelligence';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Always-On Intelligence | Impulse Digital',
@@ -51,7 +53,8 @@ export default function AlwaysOnIntelligencePage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      }
+      },
+          getFAQSchema(defaultFaqs, true)
     ];
 
       return (

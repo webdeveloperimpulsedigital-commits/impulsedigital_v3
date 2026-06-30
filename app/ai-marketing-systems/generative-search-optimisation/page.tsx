@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import GenerativeSearchOptimisation from '@/components/pages/GenerativeSearchOptimisation';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
@@ -51,8 +53,9 @@ export default function GenerativeSearchOptimisationPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    }
-  ];
+    },
+      getFAQSchema(defaultFaqs, false)
+];
 
   return (
     <>

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Home from '@/components/pages/Home';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
+import { getFAQSchema } from "@/lib/schemaHelper";
+import { defaultFaqs } from "@/lib/faqData";
 
 export const metadata: Metadata = {
   title: 'Chatbot Testing Page | Impulse Digital',
@@ -9,10 +11,13 @@ export const metadata: Metadata = {
 };
 
 export default function TestChatbotPage() {
+    const schemas = [getFAQSchema(defaultFaqs, true)];
+
   return (
-    <>
-      <Home />
-      <ChatbotWrapper />
-    </>
-  );
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
+          <Home />
+          <ChatbotWrapper />
+        </>
+      );
 }
