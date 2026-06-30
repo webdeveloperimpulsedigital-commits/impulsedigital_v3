@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'See how Impulse Digital supported Amazon’s employer branding engine across Prime Day storytelling, employee advocacy, social media, job boards, and internal referral campaigns.',
   keywords: 'amazon talent communication engine, employer branding, employee advocacy, job board optimisation, social media management',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/amazon-talent-communication-engine/`,
-  },
   openGraph: {
     title: 'Amazon Talent Communication Case Study | Employer Branding by Impulse Digital',
     description: 'See how Impulse Digital supported Amazon’s employer branding engine across Prime Day storytelling, employee advocacy, social media, job boards, and internal referral campaigns.',

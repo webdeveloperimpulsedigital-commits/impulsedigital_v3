@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a leading SEO company in Borivali that helps businesses rank higher and drive more organic traffic. Contact us for best SEO services in Borivali.',
   keywords: 'seo agency in borivali, seo company in borivali, seo services in borivali, local seo borivali, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/borivali/`,
-  },
   openGraph: {
     title: 'SEO Agency in Borivali | Best SEO Company | Impulse Digital',
     description: 'Impulse Digital is a leading SEO company in Borivali that helps businesses rank higher and drive more organic traffic. Contact us for best SEO services in Borivali.',

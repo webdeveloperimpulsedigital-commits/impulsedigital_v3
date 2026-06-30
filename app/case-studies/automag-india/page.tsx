@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped Automag India build their digital brand presence and drive engagement through strategic digital marketing.',
   keywords: 'automag india case study, digital marketing case study',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/automag-india/`,
-  },
   openGraph: {
     title: 'Automag India Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Automag India build their digital brand presence and drive engagement through strategic digital marketing.',

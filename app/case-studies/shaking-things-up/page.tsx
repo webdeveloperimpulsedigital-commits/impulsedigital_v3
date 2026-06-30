@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped a challenger salt brand shake things up through creative storytelling and strategic digital marketing.',
   keywords: 'salt case study, fmcg brand marketing case study',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/shaking-things-up/`,
-  },
   openGraph: {
     title: 'Salt Case Study | Shaking Things Up | Impulse Digital',
     description: 'How Impulse Digital helped a challenger salt brand shake things up through creative storytelling and strategic digital marketing.',

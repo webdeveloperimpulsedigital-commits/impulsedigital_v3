@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
   keywords: 'growth intelligence, data-driven marketing, brand intelligence',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/growth-intelligence/`,
-  },
   openGraph: {
     title: 'Growth Intelligence Services | Impulse Digital',
     description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',

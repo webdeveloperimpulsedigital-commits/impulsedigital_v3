@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a trusted SEO company in Vashi offering SEO services backed by 3,500% impression growth for ElectroMech. As an SEO agency in Vashi, we build for lasting visibility.',
   keywords: 'seo services in vashi, seo agency in vashi, seo company in vashi, local seo, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/vashi/`,
-  },
   openGraph: {
     title: 'SEO Services in Vashi | SEO Company | Impulse Digital',
     description: 'Impulse Digital is a trusted SEO company in Vashi offering SEO services backed by 3,500% impression growth for ElectroMech. As an SEO agency in Vashi, we build for lasting visibility.',

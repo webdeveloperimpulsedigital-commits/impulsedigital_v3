@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a customer intelligence agency helping brands decode consumer behaviour, motivations, tensions, and decision triggers through a customer intelligence service built for sharper briefs, messaging, and growth strategy.',
   keywords: 'customer intelligence agency, customer intelligence service, customer intelligence consultant, mumbai, india, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/growth-intelligence/customer-intelligence/`,
-  },
   openGraph: {
     title: 'Customer Intelligence Agency | Intelligence Consultant Service | Impulse Digital',
     description: 'Impulse Digital is a customer intelligence agency helping brands decode consumer behaviour, motivations, tensions, and decision triggers through a customer intelligence service built for sharper briefs, messaging, and growth strategy.',

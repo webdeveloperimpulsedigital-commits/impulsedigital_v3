@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
   keywords: 'seo company in thane, seo agency in thane, best seo service,search engine optimisation, seo services, thane, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/`,
-  },
   openGraph: {
     title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
     description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',

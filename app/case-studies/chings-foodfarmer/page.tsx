@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped Chings Foodfarmer connect with food lovers through creative digital storytelling and targeted social media marketing.',
   keywords: 'chings foodfarmer case study, food brand digital marketing',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/chings-foodfarmer/`,
-  },
   openGraph: {
     title: 'Chings Foodfarmer Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Chings Foodfarmer connect with food lovers through creative digital storytelling and targeted social media marketing.',

@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is the best SEO agency in Dadar and we are offering B2b, Local, Ecommerce & Enterprice seo service in Dadar. We are helping businesses improve rankings and attract customers via search.',
   keywords: 'seo agency in dadar, seo company in dadar, seo services in dadar, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/dadar/`,
-  },
   openGraph: {
     title: 'SEO Agency in Dadar | Best SEO Company | Impulse Digital',
     description: 'Impulse Digital is the best SEO agency in Dadar and we are offering B2b, Local, Ecommerce & Enterprice seo service in Dadar. We are helping businesses improve rankings and attract customers via search.',

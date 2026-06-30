@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a leading video production company in Mumbai offering creative video production services in Mumbai for brands, campaigns, and corporate storytelling with measurable impact.',
   keywords: 'video production company in mumbai, video production agency in mumbai, video production services, thane, navi mumbai, india, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/video-production/`,
-  },
   openGraph: {
     title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
     description: 'Impulse Digital is a leading video production company in Mumbai offering creative video production services in Mumbai for brands, campaigns, and corporate storytelling with measurable impact.',

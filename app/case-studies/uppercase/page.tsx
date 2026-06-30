@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital helped Uppercase build digital brand presence and drive growth through strategic digital marketing and content.',
   keywords: 'uppercase case study, digital marketing case study',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/uppercase/`,
-  },
   openGraph: {
     title: 'Uppercase Case Study | Impulse Digital',
     description: 'How Impulse Digital helped Uppercase build digital brand presence and drive growth through strategic digital marketing and content.',

@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
   keywords: 'social media marketing agency in mumbai, social media marketing company in mumbai, smm agency in mumbai, smm company, social media management, social media agency, impulse digital, mumbai, navi mumbai, thane, india',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/social-media-marketing/`,
-  },
   openGraph: {
     title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
     description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',

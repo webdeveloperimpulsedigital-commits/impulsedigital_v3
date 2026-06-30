@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   title: 'SEO Agency in Bandra | Best SEO Company | Impulse Digital',
   description: 'Impulse Digital is a trusted SEO company in Bandra offering Technical SEO, Local SEO, B2B SEO and eCommerce SEO services for businesses in Bandra and BKC. Rank higher. Talk to us.',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/bandra/`,
-  },
   openGraph: {
     title: 'SEO Agency in Bandra | Best SEO Company | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Bandra, helping businesses improve their search rankings and attract local customers. Rank higher. Talk to us.',

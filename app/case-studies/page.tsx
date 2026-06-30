@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',
   keywords: 'digital marketing case studies, impulse digital work, marketing results',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/`,
-  },
   openGraph: {
     title: 'Digital Marketing Case Studies | Impulse Digital',
     description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',

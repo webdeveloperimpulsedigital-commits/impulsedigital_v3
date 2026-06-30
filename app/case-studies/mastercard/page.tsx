@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.',
   keywords: 'mastercard case study, fintech digital marketing',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/case-studies/mastercard/`,
-  },
   openGraph: {
     title: 'Mastercard Case Study | Impulse Digital',
     description: 'How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.',

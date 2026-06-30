@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Always-on intelligence from Impulse Digital keeps your brand informed with continuous data monitoring, insight generation, and real-time decision support.',
   keywords: 'always on intelligence, continuous monitoring, brand intelligence',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/growth-intelligence/always-on-intelligence/`,
-  },
   openGraph: {
     title: 'Always-On Intelligence | Impulse Digital',
     description: 'Always-on intelligence from Impulse Digital keeps your brand informed with continuous data monitoring, insight generation, and real-time decision support.',

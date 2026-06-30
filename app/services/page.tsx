@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
   keywords: 'digital marketing services, marketing services mumbai, impulse digital services',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/services/`,
-  },
   openGraph: {
     title: 'Digital Marketing Services | Impulse Digital',
     description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',

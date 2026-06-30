@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital provides expert local SEO services in Kharghar to improve search rankings and drive local business growth.',
   keywords: 'seo agency kharghar, local seo kharghar, digital marketing kharghar',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/kharghar/`,
-  },
   openGraph: {
     title: 'SEO Agency in Kharghar | Impulse Digital',
     description: 'Impulse Digital provides expert local SEO services in Kharghar to improve search rankings and drive local business growth.',

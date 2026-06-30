@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital\'s ecommerce SEO services help online stores rank higher, drive organic traffic, and grow revenue through strategic search engine optimisation.',
   keywords: 'ecommerce seo, ecommerce seo agency, ecommerce seo services',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/ecommerce-seo/`,
-  },
   openGraph: {
     title: 'Ecommerce SEO Services | Impulse Digital',
     description: 'Impulse Digital\'s ecommerce SEO services help online stores rank higher, drive organic traffic, and grow revenue through strategic search engine optimisation.',

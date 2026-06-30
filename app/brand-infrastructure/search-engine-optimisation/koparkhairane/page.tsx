@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is an SEO company in Koparkhairane helping businesses improve Google rankings, local visibility, website traffic, and qualified enquiries through technical SEO, content optimisation, local SEO, and clear performance reporting. A results-driven SEO services.',
   keywords: 'seo agency in koparkhairane, local seo in koparkhairane, seo company in koparkhairane, seo service, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/koparkhairane/`,
-  },
   openGraph: {
     title: 'SEO Company in Koparkhairane | SEO Services by Impulse Digital',
     description: 'Impulse Digital is an SEO company in Koparkhairane helping businesses improve Google rankings, local visibility, website traffic, and qualified enquiries through technical SEO, content optimisation, local SEO, and clear performance reporting. A results-driven SEO services.',

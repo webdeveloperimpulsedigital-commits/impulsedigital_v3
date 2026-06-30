@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
   keywords: 'digital marketing agency in mumbai, digital marketing company, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/`,
-  },
   openGraph: {
     title: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is a top digital marketing agency in Mumbai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',

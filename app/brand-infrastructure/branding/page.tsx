@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital is the best branding agency in Mumbai building brand identity and logo systems. Trusted branding company for enterprise brands. Talk to us.',
   keywords: 'branding agency in mumbai, best branding company in mumbai, brand identity, brand design agency, mumbai, thane, navi mumbai, india, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/branding/`,
-  },
   openGraph: {
     title: 'Best Branding Agency in Mumbai | Impulse Digital',
     description: 'Impulse Digital is the best branding agency in Mumbai building brand identity and logo systems. Trusted branding company for enterprise brands. Talk to us.',

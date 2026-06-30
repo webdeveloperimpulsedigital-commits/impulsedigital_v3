@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Impulse Digital, the SEO company in Sanpada and SEO agency businesses trust. Proven results, including 737% organic traffic growth for Qure.ai. Talk to us.',
   keywords: 'seo agency in sanpada, seo company in sanpada, local seo, seo services, impulse digital',
   robots: { index: true, follow: true },
-  alternates: {
-    canonical: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/sanpada/`,
-  },
   openGraph: {
     title: 'SEO Company in Sanpada | SEO Agency | Impulse Digital',
     description: 'Impulse Digital, the SEO company in Sanpada and SEO agency businesses trust. Proven results, including 737% organic traffic growth for Qure.ai. Talk to us.',
