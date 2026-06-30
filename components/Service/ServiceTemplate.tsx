@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from '@/components/RegionLink';
 import ServiceHero from './ServiceHero';
 import ServiceHandoff from './ServiceHandoff';
@@ -553,6 +554,8 @@ export const ServiceTextList: React.FC<{ data: any }> = ({ data }) => {
 
 export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -576,7 +579,7 @@ export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
                   style={{ cursor: 'pointer' }}
                   onClick={() => toggleAccordion(i)}
                 >
-                  <h3>{item.q}</h3>
+                  <h3>{isAe ? item.q.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai') : item.q}</h3>
                   <span className="acc-icon" style={{ transform: isActive ? 'rotate(45deg)' : 'none', transition: 'transform 0.3s' }}>+</span>
                 </div>
                 <div
@@ -587,7 +590,7 @@ export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
                     transition: 'max-height 0.4s ease'
                   }}
                 >
-                  <p dangerouslySetInnerHTML={{ __html: item.a }}></p>
+                  <p dangerouslySetInnerHTML={{ __html: isAe ? item.a.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai') : item.a }}></p>
                 </div>
               </div>
             );
