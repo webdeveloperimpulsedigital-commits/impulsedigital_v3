@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AIVideoProduction from '@/components/pages/AIVideoProduction';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'AI Video Production Agency & Services | Impulse Digital',
   description: 'Impulse Digital is an AI video production agency offering AI video production services for campaign films, product explainers, social media videos, training videos, multilingual content, and digital ads. Create faster, scalable, brand-ready videos with human creative direction and AI-enabled production.',
@@ -53,8 +51,7 @@ export default function AIVideoProductionPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (

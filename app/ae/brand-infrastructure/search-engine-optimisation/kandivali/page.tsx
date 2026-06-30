@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKandivaliLocation from '@/components/pages/seo-locations/SeoKandivaliLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoKandivaliData } from "@/data/seoKandivaliData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKandivaliLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoKandivaliData, true)];
+    const schemas = [getComplexFAQSchema(seoKandivaliData, true)];
 
   return <SeoKandivaliLocation />;
 }

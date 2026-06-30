@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ECommerceSEO from '@/components/pages/ECommerceSEO';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Ecommerce SEO Services | Impulse Digital',
   description: 'Impulse Digital\'s ecommerce SEO services help online stores rank higher, drive organic traffic, and grow revenue through strategic search engine optimisation.',
@@ -53,8 +51,7 @@ export default function ECommerceSEOPage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      },
-          getFAQSchema(defaultFaqs, true)
+      }
     ];
 
       return (

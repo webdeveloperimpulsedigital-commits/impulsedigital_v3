@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Careers from '@/components/pages/Careers';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Careers at Impulse Digital | Join Our Team',
   description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
 
   return <Careers />;
 }

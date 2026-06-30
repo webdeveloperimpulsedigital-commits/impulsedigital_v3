@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import QureAICaseStudy from '@/components/pages/QureAICaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Qure.ai Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Qure.ai expand their digital presence and reach healthcare decision-makers through targeted digital marketing.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function QureAICaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
 
   return <QureAICaseStudy />;
 }

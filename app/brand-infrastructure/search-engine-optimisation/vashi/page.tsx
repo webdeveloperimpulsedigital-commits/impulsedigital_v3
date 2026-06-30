@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoVashiLocation from '@/components/pages/seo-locations/SeoVashiLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoVashiData } from "@/data/seoVashiData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoVashiLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoVashiData, false)];
+    const schemas = [getComplexFAQSchema(seoVashiData, false)];
 
   return <SeoVashiLocation />;
 }

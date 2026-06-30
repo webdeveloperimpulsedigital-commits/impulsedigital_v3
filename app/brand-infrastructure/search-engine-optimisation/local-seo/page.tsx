@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import LocalSEO from '@/components/pages/LocalSEO';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Local SEO Services in Mumbai | Impulse Digital',
   description: 'Impulse Digital\'s local SEO services help businesses in Mumbai and across India rank higher in local search results, Google Maps, and location-based queries.',
@@ -50,8 +48,7 @@ export default function LocalSEOPage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      },
-          getFAQSchema(defaultFaqs, false)
+      }
     ];
 
       return (

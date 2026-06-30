@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ContactUs from '@/components/pages/ContactUs';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Contact Impulse Digital | Get in Touch',
   description: 'Get in touch with Impulse Digital, Mumbai\'s leading digital marketing agency. Reach out to discuss your marketing goals, campaigns, and growth challenges.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactUsPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
 
   return <ContactUs />;
 }

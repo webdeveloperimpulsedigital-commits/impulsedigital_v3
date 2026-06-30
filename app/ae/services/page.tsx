@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ServicesIndex from '@/components/pages/ServicesIndex';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Digital Marketing Services | Impulse Digital',
   description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesIndexPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas: any[] = [];
 
   return <ServicesIndex />;
 }

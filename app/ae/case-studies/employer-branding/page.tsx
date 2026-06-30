@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import EmployerBrandingCaseStudy from '@/components/pages/EmployerBrandingCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Employer Branding Case Study | Impulse Digital',
   description: 'How Impulse Digital helped leading brands build compelling employer brands that attract top talent and strengthen their position as employers of choice.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function EmployerBrandingCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas: any[] = [];
 
   return <EmployerBrandingCaseStudy />;
 }

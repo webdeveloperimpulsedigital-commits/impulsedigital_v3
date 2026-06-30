@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import UppercaseCaseStudy from '@/components/pages/UppercaseCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Uppercase Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Uppercase build digital brand presence and drive growth through strategic digital marketing and content.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function UppercaseCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true)];
+    const schemas: any[] = [];
 
   return <UppercaseCaseStudy />;
 }

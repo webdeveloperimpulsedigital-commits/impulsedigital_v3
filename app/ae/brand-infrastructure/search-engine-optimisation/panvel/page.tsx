@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoPanvelLocation from '@/components/pages/seo-locations/SeoPanvelLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoPanvelData } from "@/data/seoPanvelData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoPanvelLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoPanvelData, true)];
+    const schemas = [getComplexFAQSchema(seoPanvelData, true)];
 
   return <SeoPanvelLocation />;
 }

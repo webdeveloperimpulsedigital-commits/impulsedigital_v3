@@ -4,6 +4,7 @@
 import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from '@/components/RegionLink';
+import { getServiceFAQSchema } from '@/lib/schemaHelper';
 import ServiceHero from './ServiceHero';
 import ServiceHandoff from './ServiceHandoff';
 import Logos from '../Logos';
@@ -566,7 +567,14 @@ export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
   };
 
   return (
-    <section className="faq glass-panel" id="faq">
+    <>
+      {data && data.items && data.items.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceFAQSchema(data, isAe)) }}
+        />
+      )}
+      <section className="faq glass-panel" id="faq">
       <div className="container">
         <h2 className="section-heading split-text">{data.title}</h2>
         <div className="accordion">
@@ -598,6 +606,7 @@ export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

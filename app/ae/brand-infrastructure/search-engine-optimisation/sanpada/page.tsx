@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoSanpadaLocation from '@/components/pages/seo-locations/SeoSanpadaLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoSanpadaData } from "@/data/seoSanpadaData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoSanpadaLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoSanpadaData, true)];
+    const schemas = [getComplexFAQSchema(seoSanpadaData, true)];
 
   return <SeoSanpadaLocation />;
 }

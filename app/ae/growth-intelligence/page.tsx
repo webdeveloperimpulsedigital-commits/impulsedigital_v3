@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import GrowthIntelligence from '@/components/pages/GrowthIntelligence';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Growth Intelligence Services | Impulse Digital',
   description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
@@ -52,8 +50,7 @@ export default function GrowthIntelligencePage() {
           "name": "Impulse Digital",
           "url": "https://www.theimpulsedigital.com/"
         }
-      },
-          getFAQSchema(defaultFaqs, true)
+      }
     ];
 
       return (

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAndheriLocation from '@/components/pages/seo-locations/SeoAndheriLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoAndheriData } from "@/data/seoAndheriData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoAndheriLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoAndheriData, true)];
+    const schemas = [getComplexFAQSchema(seoAndheriData, true)];
 
   return <SeoAndheriLocation />;
 }

@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SearchEngineOptimisation from '@/components/pages/SearchEngineOptimisation';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
   description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
@@ -57,8 +55,7 @@ export default function SearchEngineOptimisationPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (

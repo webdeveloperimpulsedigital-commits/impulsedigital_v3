@@ -1,5 +1,5 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/ae/growth-intelligence/market-intelligence/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__023gnk9._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__07-6p-q._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0rf312w.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0dg83ty._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0c289bo._.js")

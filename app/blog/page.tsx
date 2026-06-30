@@ -3,8 +3,6 @@ import Link from '@/components/RegionLink';
 import { SITE_URL } from '@/lib/siteUrl';
 import { getPosts, formatDate, stripHtml } from '@/lib/wordpress';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Blog | Digital Marketing Insights & Strategies | Impulse Digital',
   description:
@@ -23,7 +21,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function BlogPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
   const { posts } = await getPosts(1, 12);
 
   return (

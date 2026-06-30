@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoNaviMumbaiLocation from '@/components/pages/seo-locations/SeoNaviMumbaiLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoNaviMumbaiData } from "@/data/seoNaviMumbaiData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoNaviMumbaiLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false), getComplexFAQSchema(seoNaviMumbaiData, false)];
+    const schemas = [getComplexFAQSchema(seoNaviMumbaiData, false)];
 
   return <SeoNaviMumbaiLocation />;
 }

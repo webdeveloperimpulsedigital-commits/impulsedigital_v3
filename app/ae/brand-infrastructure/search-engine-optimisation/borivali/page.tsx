@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoBorivaliLocation from '@/components/pages/seo-locations/SeoBorivaliLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoBorivaliData } from "@/data/seoBorivaliData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoBorivaliLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoBorivaliData, true)];
+    const schemas = [getComplexFAQSchema(seoBorivaliData, true)];
 
   return <SeoBorivaliLocation />;
 }

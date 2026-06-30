@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ABGBrutIndiaCaseStudy from '@/components/pages/ABGBrutIndiaCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'ABG Brut India Case Study | Impulse Digital',
   description: 'How Impulse Digital helped ABG Brut India build digital brand presence and drive consumer engagement through creative digital marketing campaigns.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function ABGBrutIndiaCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
 
   return <ABGBrutIndiaCaseStudy />;
 }

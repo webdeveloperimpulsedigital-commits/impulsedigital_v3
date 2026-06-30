@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { SEOLocationsGrid } from './SEOLocationsGrid';
 import ServiceHandoff from './ServiceHandoff';
+import { getComplexFAQSchema } from '@/lib/schemaHelper';
 
 interface SEOData {
   location: string;
@@ -221,6 +222,10 @@ const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
       {/* Premium FAQ */}
       {data.faq && data.faq.items && data.faq.items.length > 0 && (
         <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(getComplexFAQSchema({ faq: data.faq }, isAe)) }}
+          />
           <ServiceHandoff />
           <section className="faq glass-panel" id="faq">
             <div className="container">

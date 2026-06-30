@@ -1,5 +1,5 @@
 var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/case-studies/qure-ai/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__06mu5ea._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0.1kb5v._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_07yvg0w.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0dg83ty._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0c289bo._.js")

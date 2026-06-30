@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AutomagIndiaCaseStudy from '@/components/pages/AutomagIndiaCaseStudy';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Automag India Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Automag India build their digital brand presence and drive engagement through strategic digital marketing.',
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function AutomagIndiaCaseStudyPage() {
-    const schemas = [getFAQSchema(defaultFaqs, false)];
+    const schemas: any[] = [];
 
   return <AutomagIndiaCaseStudy />;
 }

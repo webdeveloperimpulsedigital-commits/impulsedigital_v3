@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoNerulLocation from '@/components/pages/seo-locations/SeoNerulLocation';
 import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
 import { seoNerulData } from "@/data/seoNerulData";
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function SeoNerulLocationPage() {
-    const schemas = [getFAQSchema(defaultFaqs, true), getComplexFAQSchema(seoNerulData, true)];
+    const schemas = [getComplexFAQSchema(seoNerulData, true)];
 
   return <SeoNerulLocation />;
 }

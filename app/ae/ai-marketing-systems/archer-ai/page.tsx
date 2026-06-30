@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ArcherAI from '@/components/pages/ArcherAI';
 import { getFAQSchema } from "@/lib/schemaHelper";
-import { defaultFaqs } from "@/lib/faqData";
-
 export const metadata: Metadata = {
   title: 'Archer AI: AI Outbound Sales Agent | Impulse Digital',
   description: 'Meet Archer AI, an AI outbound sales agent built by Impulse Digital. We build AI outbound agents that turn live market signals into qualified conversations.',
@@ -54,8 +52,7 @@ export default function ArcherAIPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-      getFAQSchema(defaultFaqs, true)
+    }
 ];
 
   return (
