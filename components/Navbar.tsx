@@ -232,7 +232,7 @@ const Navbar: React.FC = () => {
                 }}
                 aria-label="Select Region"
               >
-                {pathname?.startsWith('/uae') ? (
+                {pathname?.startsWith('/ae') ? (
                   <><img src="https://flagcdn.com/w20/ae.png" alt="UAE" width="20" /> UAE</>
                 ) : (
                   <><img src="https://flagcdn.com/w20/in.png" alt="India" width="20" /> IN</>
@@ -271,7 +271,7 @@ const Navbar: React.FC = () => {
                     <img src="https://flagcdn.com/w20/in.png" alt="India" width="20" /> India
                   </NextLink>
                   <NextLink
-                    href="/uae/"
+                    href="/ae/"
                     style={{ padding: '8px 16px', color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}
                     className="region-dropdown-item"
                     onClick={() => setIsRegionDropdownOpen(false)}
