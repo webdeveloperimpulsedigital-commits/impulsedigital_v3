@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
                 <div className={`dropdown-list ${openSubMenu === 'growth' ? 'mobile-open' : ''}`}>
                   <Link href="/growth-intelligence/customer-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Customer Intelligence</Link>
                   <Link href="/growth-intelligence/market-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Market and Competitive Intelligence</Link>
-                  <Link href="/growth-intelligence/always-on-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Always-On Intelligence</Link>
+                  <Link href="/growth-intelligence/social-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Always-On Intelligence</Link>
                   <Link href="/growth-intelligence/campaign-intelligence/" className="dropdown-item" onClick={handleDropdownNavClick}>Campaign and Performance Intelligence</Link>
                 </div>
               </div>

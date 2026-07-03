@@ -709,6 +709,7 @@ export const ServiceTemplate: React.FC<{ data: any }> = ({ data }) => {
   return (
     <main id="main-content">
       <ServiceHero
+        headlineHtml={data.hero.headlineHtml}
         headlineParts={data.hero.headlineParts}
         headlineAccent={data.hero.headlineAccent}
         description={data.hero.description}

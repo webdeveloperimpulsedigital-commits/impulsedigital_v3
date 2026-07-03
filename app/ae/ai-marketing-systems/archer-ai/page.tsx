@@ -30,10 +30,10 @@ export default function ArcherAIPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/archer-ai/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/archer-ai/#service",
       "name": "Archer AI Services",
-      "url": "https://www.theimpulsedigital.com/ai-marketing-systems/archer-ai/",
-      "description": "Impulse Digital provides Archer AI, an AI-powered outbound intelligence engine that detects buying signals, identifies decision-makers, enriches prospect data, and supports personalised B2B outreach.",
+      "url": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/archer-ai/",
+      "description": "Meet Archer AI, an AI outbound sales agent built by Impulse Digital. We build AI outbound agents that turn live market signals into qualified conversations.",
       "serviceType": [
         "Archer AI",
         "AI Outbound Engine",
@@ -44,16 +44,16 @@ export default function ArcherAIPage() {
         "Email Outreach"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

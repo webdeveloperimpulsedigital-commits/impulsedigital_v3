@@ -13,7 +13,7 @@ const routes = [
   '/growth-intelligence/',
   '/growth-intelligence/customer-intelligence/',
   '/growth-intelligence/market-intelligence/',
-  '/growth-intelligence/always-on-intelligence/',
+  '/growth-intelligence/social-intelligence/',
   '/growth-intelligence/campaign-intelligence/',
   '/ai-marketing-systems/',
   '/ai-marketing-systems/archer-ai/',

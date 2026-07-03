@@ -1,8 +1,8 @@
 export const archerAiData = {
   hero: {
-    headlineParts: ["Find Buyers Before", "They Start Looking."],
-    headlineAccent: "They Start Looking.",
-    description: "Your next customer may not be searching for you yet. But they may already be hiring, expanding, launching, raising, entering a new market, or showing signals that point to need. Archer AI, your AI outbound sales agent, reads those signals, finds the decision-makers, and turns live market movement into personalised outbound conversations.",
+    headlineParts: ["AI Outbound Sales Agent", "Built to Find Buyers Faster"],
+    headlineAccent: "Built to Find Buyers Faster",
+    description: "Your next customer may not be searching for you yet. But they may already be hiring, expanding, launching, raising, entering a new market, or showing signals that point to need. Archer AI, your AI outbound sales agent, reads those signals, finds the decision-makers, and turns live market movement into personalised outbound conversations, built on 34 years of B2B marketing experience and deployed for brands competing in categories where the right buyer is harder to find than the right message.",
     buttons: [
       { text: "Apply for an ICP Diagnostic", link: "#connect", cursor: "APPLY" },
       { text: "See How Archer AI Works", link: "#process", cursor: "EXPLORE" }
@@ -70,7 +70,7 @@ export const archerAiData = {
     ]
   },
   fit: {
-    title: "Archer AI Is Right for You If",
+    title: "AI Outbound Sales Agent Is Right for You If",
     closer: "",
     list: [
       "Your team converts well, but the top of the funnel is thin.",
@@ -95,7 +95,7 @@ export const archerAiData = {
   faq: {
     title: "What to Know Before You Build an Outbound Engine",
     items: [
-      { q: "What is Archer AI?", a: "Archer AI is Impulse Digital's AI outbound agent, an AI-powered outbound intelligence engine. It detects buying signals, identifies decision-makers, and deploys personalised outreach to create better B2B sales conversations." },
+      { q: "What is Archer AI (AI Outbound Sales Agent)?", a: "Archer AI is Impulse Digital's AI outbound agent, an AI-powered outbound intelligence engine. It detects buying signals, identifies decision-makers, and deploys personalised outreach to create better B2B sales conversations." },
       { q: "What is an ICP Diagnostic?", a: "An ICP Diagnostic is a working session where we map your target industries, buyer titles, company profile, geography, offer, and timing signals. It helps determine whether outbound is the right growth channel for you." },
       { q: "How is Archer AI different from buying a lead list?", a: "A lead list is static. Archer AI works from live signals, enriched prospect context, verified contacts, and personalised outreach logic." },
       { q: "What channels does Archer AI use?", a: "Archer AI supports email and LinkedIn outreach, configured around your buyer behaviour and campaign strategy." },

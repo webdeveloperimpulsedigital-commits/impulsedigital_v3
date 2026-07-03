@@ -391,10 +391,28 @@
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation(?:/)?$"
     },
     {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/abu-dhabi",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/abu\\-dhabi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/abu\\-dhabi(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/airoli",
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/airoli(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/airoli(?:/)?$"
+    },
+    {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/ajman",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/ajman(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/ajman(?:/)?$"
+    },
+    {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/al-ain",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/al\\-ain(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/al\\-ain(?:/)?$"
     },
     {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/andheri",
@@ -421,10 +439,22 @@
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/borivali(?:/)?$"
     },
     {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/business-bay",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/business\\-bay(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/business\\-bay(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/dadar",
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/dadar(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/dadar(?:/)?$"
+    },
+    {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/deira",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/deira(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/deira(?:/)?$"
     },
     {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/ecommerce-seo",
@@ -437,6 +467,12 @@
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/enterprise\\-seo(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/enterprise\\-seo(?:/)?$"
+    },
+    {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/fujairah",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/fujairah(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/fujairah(?:/)?$"
     },
     {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/ghansoli",
@@ -535,16 +571,34 @@
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/panvel(?:/)?$"
     },
     {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/ras-al-khaimah",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/ras\\-al\\-khaimah(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/ras\\-al\\-khaimah(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/sanpada",
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$"
     },
     {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/sharjah",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/sharjah(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/sharjah(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/turbhe",
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/turbhe(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/turbhe(?:/)?$"
+    },
+    {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/uae",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/uae(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/uae(?:/)?$"
     },
     {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/vashi",
@@ -767,6 +821,12 @@
       "regex": "^/ae/growth\\-intelligence/market\\-intelligence(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/growth\\-intelligence/market\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/ae/growth-intelligence/social-intelligence",
+      "regex": "^/ae/growth\\-intelligence/social\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/growth\\-intelligence/social\\-intelligence(?:/)?$"
     },
     {
       "page": "/ae/privacy-policy",
@@ -1265,6 +1325,12 @@
       "regex": "^/growth\\-intelligence/market\\-intelligence(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/growth\\-intelligence/market\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/growth-intelligence/social-intelligence",
+      "regex": "^/growth\\-intelligence/social\\-intelligence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/growth\\-intelligence/social\\-intelligence(?:/)?$"
     },
     {
       "page": "/privacy-policy",

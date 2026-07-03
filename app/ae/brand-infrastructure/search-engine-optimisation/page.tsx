@@ -3,13 +3,13 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SearchEngineOptimisation from '@/components/pages/SearchEngineOptimisation';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
-  title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
-  description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
-  keywords: 'seo company in thane, seo agency in thane, best seo service,search engine optimisation, seo services, thane, impulse digital',
+  title: 'SEO Company in Dubai | Best SEO Agency | Impulse Digital',
+  description: 'Impulse Digital is the best SEO company in Dubai, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Dubai businesses.',
+  keywords: 'seo company in Dubai, seo agency in Dubai, best seo service,search engine optimisation, seo services, Dubai, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
-    description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
+    title: 'SEO Company in Dubai | Best SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is the best SEO company in Dubai, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Dubai businesses.',
     url: `${SITE_URL}/ae/brand-infrastructure/search-engine-optimisation/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
-    description: 'Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.',
+    title: 'SEO Company in Dubai | Best SEO Agency | Impulse Digital',
+    description: 'Impulse Digital is the best SEO company in Dubai, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Dubai businesses.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -30,10 +30,10 @@ export default function SearchEngineOptimisationPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/#service",
       "name": "Search Engine Optimisation Services",
-      "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/",
-      "description": "Impulse Digital is the best SEO company in Thane, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Thane businesses.",
+      "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/",
+      "description": "Impulse Digital is the best SEO company in Dubai, offering Technical SEO, Local SEO, B2B SEO, and eCommerce SEO services to improve rankings and drive organic growth for Dubai businesses.",
       "serviceType": [
         "Search Engine Optimisation",
         "Technical SEO",
@@ -47,16 +47,16 @@ export default function SearchEngineOptimisationPage() {
         "Enterprise SEO"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

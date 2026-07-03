@@ -1,8 +1,8 @@
 export const alwaysOnIntelligenceData = {
   hero: {
-    headlineParts: ["Never Meet the", "Problem Late."],
-    headlineAccent: "Problem Late.",
-    description: "Brand sentiment does not wait for the monthly review. A complaint spikes. A review pattern repeats. A competitor move gains traction. A campaign starts being read differently than intended. Impulse Digital builds always-on intelligence systems that help brands monitor conversations, sentiment, marketplace signals, reputation risks, and emerging opportunities before they turn into surprises.",
+    headlineParts: ["Social Intelligence Agency", "for Always-On Market Clarity"],
+    headlineAccent: "for Always-On Market Clarity",
+    description: "Brand sentiment does not wait for the monthly review. A complaint spikes. A review pattern repeats. A competitor move gains traction. A campaign starts being read differently than intended. Impulse Digital is a specialist social intelligence agency with 34 years of marketing experience and always-on intelligence programmes running across enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a social media intelligence company built for brands that cannot afford to discover a reputation risk in a quarterly report, we monitor conversations, sentiment, marketplace signals, and emerging opportunities before they turn into surprises.",
     buttons: [
       { text: "Build Your Intelligence System", link: "#connect", cursor: "BUILD" },
       { text: "See What You Can Track", link: "#use-cases", cursor: "EXPLORE" }
@@ -23,14 +23,14 @@ export const alwaysOnIntelligenceData = {
     outro: [
       "The issue is not that nothing is happening. The issue is knowing what matters early enough to act.",
       { text: "A dashboard that is checked once a week is not enough when the conversation can shift in a day.", className: "pivot" },
-      "Always-On Intelligence closes that gap. It helps your team see what is changing, what needs attention, and what should not be ignored."
+      "Social intelligence agency closes that gap. It helps your team see what is changing, what needs attention, and what should not be ignored."
     ]
   },
   vs: {
-    title: "Always-On Intelligence, in Plain English",
+    title: "Social Intelligence, in Plain English",
     leftLabel: "Monitoring",
     leftStrike: "tells you what happened.",
-    rightLabel: "Always-On Intelligence",
+    rightLabel: "Social Intelligence",
     rightText: "tells you ",
     rightHighlight: "what needs attention now",
     steps: [
@@ -43,7 +43,7 @@ export const alwaysOnIntelligenceData = {
     closing: "The output is not a passive report. It is an early-warning system for brand, digital, communications, e-commerce, and leadership teams."
   },
   uses: {
-    title: "Where Always-On Intelligence Creates Business Leverage",
+    title: "Where Social Intelligence Service Creates Business Leverage",
     cards: [
       {
         title: "Social Listening and Conversation Mapping",
@@ -66,9 +66,9 @@ export const alwaysOnIntelligenceData = {
         outcome: "Output: Live dashboards, custom alerts, priority signals, campaign trackers, and executive reporting views."
       },
       {
-        title: "Hybrid and Always-On Intelligence Programs",
+        title: "Hybrid and Social Intelligence Programs",
         body: "Build a continuous intelligence rhythm that combines live monitoring with regular deep dives. Useful when your brand needs everyday visibility plus sharper periodic interpretation.",
-        outcome: "Output: Always-on monitoring, monthly insight reports, quarterly deep dives, live alerts, and strategic recommendation decks."
+        outcome: "Output: Social monitoring, monthly insight reports, quarterly deep dives, live alerts, and strategic recommendation decks."
       }
     ]
   },
@@ -89,7 +89,7 @@ export const alwaysOnIntelligenceData = {
     ]
   },
   guardrails: {
-    title: "Use Always-On Intelligence<br/>Before",
+    title: "Use Social Intelligence<br/>Before",
     intro: "",
     rows: [
       { title: "A major campaign launch", desc: "" },
@@ -106,7 +106,7 @@ export const alwaysOnIntelligenceData = {
     punchlineLine2: "The risk is finding out too late."
   },
   process: {
-    title: "How We Build Always-On Intelligence",
+    title: "How We Build Social Intelligence",
     steps: [
       { num: "01", title: "Define What Matters", desc: "We identify the brands, products, competitors, campaigns, risks, and topics your team needs to monitor." },
       { num: "02", title: "Set the Intelligence Frame", desc: "We define what counts as signal, what counts as noise, and what needs escalation." },
@@ -117,7 +117,7 @@ export const alwaysOnIntelligenceData = {
     footer: "The aim is not to watch everything.\n\nThe aim is to know what matters before it becomes expensive."
   },
   fit: {
-    title: "Always-On Intelligence<br/>Is Right for You If",
+    title: "Social Intelligence Agency<br/>Is Right for You If",
     closer: "",
     list: [
       "Your brand has a large consumer base.",
@@ -142,8 +142,8 @@ export const alwaysOnIntelligenceData = {
   faq: {
     title: "What to Know Before You Build the System",
     items: [
-      { q: "What is Always-On Intelligence?", a: "It is a continuous monitoring system that tracks brand mentions, category movement, competitor activity, reviews, and reputation signals across digital platforms to help teams act early." },
-      { q: "How is this different from standard social listening?", a: "Standard listening often provides raw dashboard metrics. Always-On Intelligence filters out noise, connects multiple platforms (social, news, e-commerce), and adds human interpretation so the output is decision-ready." },
+      { q: "What is Social Intelligence Agency?", a: "It is a continuous monitoring system that tracks brand mentions, category movement, competitor activity, reviews, and reputation signals across digital platforms to help teams act early." },
+      { q: "How is this different from standard social listening?", a: "Standard listening often provides raw dashboard metrics. Social Intelligence agency filters out noise, connects multiple platforms (social, news, e-commerce), and adds human interpretation so the output is decision-ready." },
       { q: "What decisions can this support?", a: "It can support crisis management, campaign tracking, e-commerce optimisation, brand health monitoring, leadership reporting, and rapid response planning." },
       { q: "What is Reputation and Crisis Tracking?", a: "It is a specialized layer of monitoring designed to catch negative sentiment, complaint spikes, and risky conversations before they escalate into larger brand issues." },
       { q: "What is E-Commerce and Review Intelligence?", a: "It tracks product feedback, reviews, ratings, and sentiment across marketplaces, helping teams understand what drives or blocks conversion at the point of sale." },
@@ -155,8 +155,8 @@ export const alwaysOnIntelligenceData = {
   contactTitle: "Build Your Intelligence System.",
   whenToUseAfterGuardrails: true,
   seo: {
-    title: "Always-On Intelligence | Brand Monitoring Services | Impulse Digital",
-    description: "Impulse Digital's Always-On Intelligence tracks brand conversations, sentiment, reviews, and reputation signals continuously so your team acts early — not after the fact.",
-    canonical: "https://www.theimpulsedigital.com/growth-intelligence/always-on-intelligence/"
+    title: "Social Intelligence Agency | Brand Monitoring Services | Impulse Digital",
+    description: "Impulse Digital's Social Intelligence agency tracks brand conversations, sentiment, reviews, and reputation signals continuously so your team acts early not after the fact.",
+    canonical: "https://www.theimpulsedigital.com/ae/growth-intelligence/social-intelligence/"
   }
 };

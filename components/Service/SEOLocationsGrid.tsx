@@ -3,14 +3,19 @@
 
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from '@/components/RegionLink';
-import { seoLocations } from '../../data/seoLocationsList';
+import { seoLocations } from '@/data/seoLocationsList';
+import { aeSeoLocations } from '@/data/aeSeoLocationsList';
 
 export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ currentLocation }) => {
+  const pathname = usePathname() || '';
+  const isAe = pathname.startsWith('/ae');
   const [isOpen, setIsOpen] = useState(false);
   const [showAllLocations, setShowAllLocations] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const locationsToShow = seoLocations.filter(loc => loc.name !== currentLocation);
+  const listToUse = isAe ? aeSeoLocations : seoLocations;
+  const locationsToShow = listToUse.filter(loc => loc.name !== currentLocation);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -211,7 +216,7 @@ export const SEOLocationsGrid: React.FC<{ currentLocation?: string }> = ({ curre
             {locationsToShow.slice(0, showAllLocations ? undefined : 5).map((loc) => (
               <Link
                 key={loc.slug}
-                href={`/brand-infrastructure/search-engine-optimisation/${loc.slug}/`}
+                href={isAe ? `/ae/brand-infrastructure/search-engine-optimisation/${loc.slug}/` : `/brand-infrastructure/search-engine-optimisation/${loc.slug}/`}
                 className="loc-dropdown-item"
                 onClick={() => setIsOpen(false)}
               >

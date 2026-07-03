@@ -3,13 +3,13 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
-  title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-  description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
-  keywords: 'social media marketing agency in mumbai, social media marketing company in mumbai, smm agency in mumbai, smm company, social media management, social media agency, impulse digital, mumbai, navi mumbai, thane, india',
+  title: 'Social Media Marketing Agency in Dubai | Best SMM Company | Impulse Digital',
+  description: 'Impulse Digital is the best social media marketing agency in Dubai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+  keywords: 'social media marketing agency in Dubai, social media marketing company in Dubai, smm agency in Dubai, smm company, social media management, social media agency, impulse digital, Dubai, uae, united arab emirates',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-    description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+    title: 'Social Media Marketing Agency in Dubai | Best SMM Company | Impulse Digital',
+    description: 'Impulse Digital is the best social media marketing agency in Dubai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
     url: `${SITE_URL}/ae/brand-infrastructure/social-media-marketing/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-    description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+    title: 'Social Media Marketing Agency in Dubai | Best SMM Company | Impulse Digital',
+    description: 'Impulse Digital is the best social media marketing agency in Dubai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -30,10 +30,10 @@ export default function SocialMediaManagementPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/social-media-marketing/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/social-media-marketing/#service",
       "name": "Social Media Marketing Services",
-      "url": "https://www.theimpulsedigital.com/brand-infrastructure/social-media-marketing/",
-      "description": "Impulse Digital provides social media marketing services including social media strategy, content creation, campaign planning, community management, paid social campaigns, analytics, and platform-specific brand communication.",
+      "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/social-media-marketing/",
+      "description": "Impulse Digital is the best social media marketing agency in Dubai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.",
       "serviceType": [
         "Social Media Marketing",
         "Social Media Strategy",
@@ -44,16 +44,16 @@ export default function SocialMediaManagementPage() {
         "Brand Communication"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

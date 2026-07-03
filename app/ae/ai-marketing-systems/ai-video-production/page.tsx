@@ -5,7 +5,7 @@ import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'AI Video Production Agency & Services | Impulse Digital',
   description: 'Impulse Digital is an AI video production agency offering AI video production services for campaign films, product explainers, social media videos, training videos, multilingual content, and digital ads. Create faster, scalable, brand-ready videos with human creative direction and AI-enabled production.',
-  keywords: 'ai video production, ai cinematic production, ai video production agency, ai video production service, mumbai, india, impulse digital',
+  keywords: 'ai video production company, ai cinematic production, ai video production agency, ai video production service, dubai, uae, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
     title: 'AI Video Production Agency & Services | Impulse Digital',
@@ -30,9 +30,9 @@ export default function AIVideoProductionPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/ai-video-production/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/ai-video-production/#service",
       "name": "AI Video Production Services",
-      "url": "https://www.theimpulsedigital.com/ai-marketing-systems/ai-video-production/",
+      "url": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/ai-video-production/",
       "description": "Impulse Digital is an AI video production agency offering AI video production services for campaign films, product explainers, social media videos, training videos, multilingual content, and digital ads. Create faster, scalable, brand-ready videos with human creative direction and AI-enabled production.",
       "serviceType": [
         "AI Video Production",
@@ -43,16 +43,16 @@ export default function AIVideoProductionPage() {
         "Digital Video Content"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

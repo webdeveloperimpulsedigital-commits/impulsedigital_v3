@@ -3,13 +3,13 @@ import { SITE_URL } from '@/lib/siteUrl';
 import VideoProduction from '@/components/pages/VideoProduction';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
-  title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
-  description: 'Impulse Digital is a leading video production company in Mumbai offering creative video production services in Mumbai for brands, campaigns, and corporate storytelling with measurable impact.',
-  keywords: 'video production company in mumbai, video production agency in mumbai, video production services, thane, navi mumbai, india, impulse digital',
+  title: 'Video Production Company in Dubai | Production Agency | Impulse Digital',
+  description: 'Impulse Digital is a leading video production company in Dubai offering creative video production services in Dubai for brands, campaigns, and corporate storytelling with measurable impact.',
+  keywords: 'video production company in Dubai, video production agency in Dubai, video production services, thane, navi Dubai, uae, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
-    description: 'Impulse Digital is a leading video production company in Mumbai offering creative video production services in Mumbai for brands, campaigns, and corporate storytelling with measurable impact.',
+    title: 'Video Production Company in Dubai | Production Agency | Impulse Digital',
+    description: 'Impulse Digital is a leading video production company in Dubai offering creative video production services in Dubai for brands, campaigns, and corporate storytelling with measurable impact.',
     url: `${SITE_URL}/ae/brand-infrastructure/video-production/`,
     images: [{ url: `${SITE_URL}/ae/video-production.webp` }],
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
-    description: 'Impulse Digital is a leading video production company in Mumbai offering creative video production services in Mumbai for brands, campaigns, and corporate storytelling with measurable impact.',
+    title: 'Video Production Company in Dubai | Production Agency | Impulse Digital',
+    description: 'Impulse Digital is a leading video production company in Dubai offering creative video production services in Dubai for brands, campaigns, and corporate storytelling with measurable impact.',
     images: [`${SITE_URL}/ae/video-production.webp`],
     site: '@impulsedigi',
   },
@@ -30,9 +30,9 @@ export default function VideoProductionPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/video-production/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/video-production/#service",
       "name": "Video Production Services",
-      "url": "https://www.theimpulsedigital.com/brand-infrastructure/video-production/",
+      "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/video-production/",
       "description": "Impulse Digital provides video production services including brand films, corporate videos, product videos, explainer videos, testimonial videos, event videos, animation, motion graphics, and short-form video content.",
       "serviceType": [
         "Video Production",
@@ -47,16 +47,16 @@ export default function VideoProductionPage() {
         "Short-Form Video Content"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>
