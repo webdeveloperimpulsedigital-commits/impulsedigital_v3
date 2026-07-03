@@ -63,7 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: isAe 
       ? ['digital marketing agency in uae', 'digital marketing company', 'impulse digital']
       : ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
-    robots: isAe ? { index: false, follow: false } : { index: true, follow: true },
+    robots: { index: true, follow: true },
     alternates: { 
       canonical: canonicalUrl,
       languages: {

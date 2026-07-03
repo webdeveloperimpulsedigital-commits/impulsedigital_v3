@@ -1,6 +1,5 @@
 User-Agent: *
 Allow: /
-Disallow: /ae/
 Disallow: /thank-you/
 Disallow: /_next/
 
