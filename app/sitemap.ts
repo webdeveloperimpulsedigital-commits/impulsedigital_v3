@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/growth-intelligence/', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/customer-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/growth-intelligence/social-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     // AI Marketing Systems
     { url: '/ai-marketing-systems/', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -95,6 +95,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/brand-infrastructure/search-engine-optimisation/sanpada/', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/brand-infrastructure/search-engine-optimisation/turbhe/', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/brand-infrastructure/search-engine-optimisation/vashi/', priority: 0.6, changeFrequency: 'monthly' as const },
+    // AE SEO location pages
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/uae/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/abu-dhabi/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/sharjah/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/deira/', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/ajman/', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/al-ain/', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/fujairah/', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/business-bay/', priority: 0.6, changeFrequency: 'monthly' as const },
   ];
 
   const blogPosts = await getAllPostsForSitemap();

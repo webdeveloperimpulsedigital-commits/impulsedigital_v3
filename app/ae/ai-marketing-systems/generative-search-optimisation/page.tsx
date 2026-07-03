@@ -3,13 +3,13 @@ import { SITE_URL } from '@/lib/siteUrl';
 import GenerativeSearchOptimisation from '@/components/pages/GenerativeSearchOptimisation';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
-  title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
-  description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across India. As a trusted AI SEO agency in India, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
-  keywords: 'ai seo agency, ai seo service, ai seo company, aeo, geo, mumbai, india, impulse digital',
+  title: 'AI SEO Agency | Advanced AI SEO Service | Impulse Digital',
+  description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across UAE. As a trusted AI SEO agency in Dubai, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
+  keywords: 'ai seo agency, ai seo service, ai seo company, aeo, geo, dubai, uae, united arab emirates, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
-    description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across India. As a trusted AI SEO agency in India, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
+    title: 'AI SEO Agency | Advanced AI SEO Service | Impulse Digital',
+    description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across UAE. As a trusted AI SEO agency in Dubai, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
     url: `${SITE_URL}/ae/ai-marketing-systems/generative-search-optimisation/`,
     images: [{ url: `${SITE_URL}/ae/AI-SEO-Agency.png` }],
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
-    description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across India. As a trusted AI SEO agency in India, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
+    title: 'AI SEO Agency | Advanced AI SEO Service | Impulse Digital',
+    description: 'Impulse Digital is a specialist AI SEO service provider for enterprise brands across UAE. As a trusted AI SEO agency in Dubai, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.',
     images: [`${SITE_URL}/ae/AI-SEO-Agency.png`],
     site: '@impulsedigi',
   },
@@ -30,10 +30,10 @@ export default function GenerativeSearchOptimisationPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/ai-marketing-systems/generative-search-optimisation/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/generative-search-optimisation/#service",
       "name": "Generative Search Optimisation Services",
-      "url": "https://www.theimpulsedigital.com/ai-marketing-systems/generative-search-optimisation/",
-      "description": "Impulse Digital provides Generative Search Optimisation services to help brands improve visibility across AI search engines, answer engines, large language models, and generative discovery platforms.",
+      "url": "https://www.theimpulsedigital.com/ae/ai-marketing-systems/generative-search-optimisation/",
+      "description": "Impulse Digital is a specialist AI SEO service provider for enterprise brands across UAE. As a trusted AI SEO agency in Dubai, we offer Answer Engine, Generative Engine and Entity Optimisation. Talk to us.",
       "serviceType": [
         "Generative Search Optimisation",
         "GEO",
@@ -43,16 +43,16 @@ export default function GenerativeSearchOptimisationPage() {
         "Structured Data Optimisation"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

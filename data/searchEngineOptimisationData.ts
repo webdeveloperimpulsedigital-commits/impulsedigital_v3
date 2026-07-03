@@ -1,13 +1,12 @@
 export const searchEngineOptimisationData = {
   "hero": {
-    "headlineHtml": "Your Website Is Not<br> the First Impression.<br> <span style=\"color: var(--impulse-violet);\">Search Is.</span>",
+    "headlineHtml": "SEO Agency in Dubai<br> <span style=\"color: var(--impulse-violet);\">Built for Growth</span>",
     "headlineParts": [
-      "Your Website Is Not",
-      "the First Impression.",
-      "Search Is."
+      "SEO Agency in Dubai",
+      "Built for Growth"
     ],
-    "headlineAccent": "Search Is.",
-    "description": "<span class=\"seo-hero-lead\">Before a buyer reaches your website, search has already done the introduction. They have seen who appears, who sounds credible, who answers clearly, and who feels worth the click. Impulse Digital is the best SEO company in Thane, building search systems that help your brand get found, understood, and trusted when buyers are already looking.",
+    "headlineAccent": "Built for Growth",
+    "description": "<span class=\"seo-hero-lead\">Before a buyer reaches your website, search has already done the introduction. They have seen who appears, who sounds credible, who answers clearly, and who feels worth the click. Dubai's search landscape is one of the most competitive in the region, where enterprise brands, D2C businesses, and B2B organisations across every category are investing in visibility at the same time. As a specialist SEO agency in Dubai, Impulse Digital builds search systems that help your brand earn that visibility before the competition does. Our SEO services in Dubai are backed by 34 years of marketing experience and results including 737% organic traffic growth for Qure.ai.",
     "buttons": [
       {
         "text": "Find Your Search Gaps",
@@ -43,7 +42,7 @@ export const searchEngineOptimisationData = {
         "desc": "business growth for our clients after leveraging our expert SEO services."
       }
     ],
-    "footnote": "Search does not wait for the sales cycle to begin. It starts earlier. Before the enquiry. Before the call. Before the deck. Before the shortlist reaches your inbox. If your search presence is unclear, incomplete, or unconvincing, your sales team starts with a disadvantage they did not create. That is why the best SEO agency in Thane does not sit quietly inside monthly reports. It makes the first conversation easier before it even begins."
+    "footnote": "Search does not wait for the sales cycle to begin. It starts earlier. Before the enquiry. Before the call. Before the deck. Before the shortlist reaches your inbox. If your search presence is unclear, incomplete, or unconvincing, your sales team starts with a disadvantage they did not create. That is why the best SEO agency in Dubai does not sit quietly inside monthly reports. It makes the first conversation easier before it even begins."
   },
   "problem": {
     "title": "The Problem Is Not Traffic. It Is Doubt.",
@@ -96,7 +95,7 @@ export const searchEngineOptimisationData = {
     ]
   },
   "uses": {
-    "title": "Where SEO Creates Business Leverage",
+    "title": "Where SEO Services Create Business Leverage",
     "cards": [
       {
         "title": "Technical SEO",
@@ -199,7 +198,7 @@ export const searchEngineOptimisationData = {
     "footer": "The aim is not to make search look busy.\n\nThe aim is to make search carry more of the buyer journey."
   },
   "fit": {
-    "title": "Search Engine Optimisation Is Right for You If",
+    "title": "SEO Agency in Dubai Is Right for You If",
     "list": [
       "You do not want SEO reduced to keyword stuffing.",
       "Your website needs qualified traffic, not empty visits.",
@@ -239,12 +238,12 @@ export const searchEngineOptimisationData = {
         "a": "SEO includes the work needed to improve how your brand is found, understood, and trusted through search. This can include technical SEO, content strategy, on-page optimisation, local SEO, ecommerce SEO, B2B SEO, enterprise SEO, authority building, and AI search readiness."
       },
       {
-        "q": "What does an SEO company in Thane actually do for your business?",
-        "a": "An SEO company in Thane that is worth working with does more than improve rankings. It builds a search presence that moves buyers from looking to considering to enquiring. At Impulse Digital, this covers five interconnected areas. Technical SEO makes your website easier for search engines to crawl, read, and trust. Content and Search Strategy turns buyer questions into pages that help people decide. Local SEO helps nearby customers in Thane and the wider Mumbai metropolitan region find, trust, and contact your business. B2B SEO supports long buying cycles with search visibility that builds trust before the sales conversation begins. Enterprise SEO builds a search system that scales as your business grows. The output is not more activity in monthly reports. It is a search presence that makes your first sales conversation easier before it even begins."
+        "q": "What does an SEO company in Dubai actually do for your business?",
+        "a": "An SEO company in Dubai that is worth working with does more than improve rankings. It builds a search presence that moves buyers from looking to considering to enquiring. At Impulse Digital, this covers five interconnected areas. Technical SEO makes your website easier for search engines to crawl, read, and trust. Content and Search Strategy turns buyer questions into pages that help people decide. Local SEO helps nearby customers in Dubai and the wider Mumbai metropolitan region find, trust, and contact your business. B2B SEO supports long buying cycles with search visibility that builds trust before the sales conversation begins. Enterprise SEO builds a search system that scales as your business grows. The output is not more activity in monthly reports. It is a search presence that makes your first sales conversation easier before it even begins."
       },
       {
-        "q": "Why should a brand choose Impulse Digital as their SEO agency in Thane?",
-        "a": "Impulse Digital brings 34 years of brand and marketing experience to every SEO engagement, combined with a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, and Himalaya. We understand how enterprise buyers search, how local buyers decide, and how to build search systems that connect both. For Thane businesses specifically, we combine local search visibility with the kind of content authority and technical discipline that earns trust before a conversation begins."
+        "q": "Why should a brand choose Impulse Digital as their SEO agency in Dubai?",
+        "a": "Impulse Digital brings 34 years of brand and marketing experience to every SEO engagement, combined with a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, and Himalaya. We understand how enterprise buyers search, how local buyers decide, and how to build search systems that connect both. For Dubai businesses specifically, we combine local search visibility with the kind of content authority and technical discipline that earns trust before a conversation begins."
       },
       {
         "q": "How long does SEO take to work?",
@@ -275,8 +274,8 @@ export const searchEngineOptimisationData = {
         "a": "Yes. Search is becoming more answer-led, conversational, and context-heavy. Brands need clearer entities, stronger proof, better structure, and content that helps both people and AI systems understand what they do."
       },
       {
-        "q": "How is Impulse Digital different from other SEO agencies in Thane?",
-        "a": "Most SEO agencies in Thane deliver a monthly report of rankings, traffic numbers, and completed tasks. Impulse Digital is built differently. We connect five signals that most agencies treat as separate workstreams: search intent, technical clarity, content architecture, authority building, and the conversion path after a visitor lands. When these five signals are disconnected, SEO produces activity without business movement. When they are connected, search becomes a demand generation system that earns trust before a buyer ever fills a form. This is why we are consistently recognised as the best SEO agency in Thane for enterprise brands that need search to support revenue, not just appear in a monthly slide."
+        "q": "How is Impulse Digital different from other SEO agencies in Dubai?",
+        "a": "Most SEO agencies in Dubai deliver a monthly report of rankings, traffic numbers, and completed tasks. Impulse Digital is built differently. We connect five signals that most agencies treat as separate workstreams: search intent, technical clarity, content architecture, authority building, and the conversion path after a visitor lands. When these five signals are disconnected, SEO produces activity without business movement. When they are connected, search becomes a demand generation system that earns trust before a buyer ever fills a form. This is why we are consistently recognised as the best SEO agency in Dubai for enterprise brands that need search to support revenue, not just appear in a monthly slide."
       }
     ]
   }

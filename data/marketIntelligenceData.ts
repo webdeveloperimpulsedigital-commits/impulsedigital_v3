@@ -1,7 +1,7 @@
 export const marketIntelligenceData = {
   hero: {
-    headlineParts: ["Don't Let the Market", "Surprise You."],
-    headlineAccent: "Surprise You.",
+    headlineParts: ["Market & Competitive Intelligence", "Agency for Growth Decisions"],
+    headlineAccent: "Agency for Growth Decisions",
     description: "Competitors shift. Search behaviour changes. New signals appear before reports catch up. Impulse Digital is a trusted market intelligence company and competitive intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We help brands read the market early through competitive intelligence services that cover competitor communication analysis, category trend mapping, e-commerce benchmarking, and search intelligence studies, so positioning, content, and category decisions are made with sharper intelligence before the market moves.",
     buttons: [
       { text: "Map Your Market", link: "#connect", cursor: "MAP" },

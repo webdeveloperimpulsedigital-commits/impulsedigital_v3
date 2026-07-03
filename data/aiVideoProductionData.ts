@@ -1,8 +1,8 @@
 export const aiVideoProductionData = {
   hero: {
-    headlineParts: ["Imagine More.", "Produce Faster."],
-    headlineAccent: "Produce Faster.",
-    description: "Impulse Digital is an AI video production agency helping brands create campaign films, product explainers, social-first videos, training videos, multilingual content, and digital ad creatives faster. Our AI video production services combine human creative direction with AI-enabled tools to produce scalable, brand-ready videos without starting from scratch every time.",
+    headlineParts: ["AI Video Production Agency", "for Scalable Storytelling"],
+    headlineAccent: "for Scalable Storytelling",
+    description: "Impulse Digital is a specialist AI video production agency with 34 years of brand and marketing experience, delivering campaign films, product explainers, social-first videos, training content, multilingual assets, and digital ad creatives for enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a trusted AI video production company, we combine human creative direction with AI-enabled production tools, so brands can produce scalable, brand-ready video content without rebuilding from zero every time a brief changes.",
     buttons: [
       { text: "Start an AI Video Project", link: "#connect", cursor: "BUILD" },
       { text: "See What AI Video Can Do", link: "#process", cursor: "EXPLORE" }
@@ -45,7 +45,7 @@ export const aiVideoProductionData = {
     closing: "AI can generate visuals, avatars, voiceovers, edits, and variations. But taste still matters. So does context. Emotion. Pacing. Brand tone. Audience understanding.  Impulse Digital brings the creative direction that makes AI-led video feel intentional, useful, and brand-ready.  <span style=\"color: white; font-weight: 500;\">The goal is not AI-looking content. The goal is better video, made faster.</span>"
   },
   uses: {
-    title: "Where AI Video Creates Business Leverage",
+    title: "Where AI Video Production Services Create Business Leverage",
     cards: [
       {
         title: "Campaign and Brand Films",
@@ -100,7 +100,7 @@ export const aiVideoProductionData = {
     footer: "The aim is not to generate video and hope it works.\n\nThe aim is to make strong video ideas easier to produce and scale."
   },
   fit: {
-    title: "AI Video Production Is Right for You If",
+    title: "AI Video Production Company Is Right for You If",
     closer: "If your brand has more stories to tell, AI video can help you create more from every idea.",
     list: [
       "You need more video without turning every asset into a full shoot.",
@@ -133,7 +133,7 @@ export const aiVideoProductionData = {
       { q: "Will the video look obviously AI-generated?", a: "Not if it is directed properly. We focus on scripting, visual treatment, editing, sound, and brand checks so the output feels intentional." },
       { q: "Can one video become multiple formats?", a: "Yes. One video direction can be adapted into vertical cuts, teasers, short-form edits, ad versions, internal videos, and presentation-ready assets." },
       { q: "What do you need from us to start?", a: "We need the objective, audience, message, brand guidelines, references, timelines, platforms, and any mandatory product, legal, or compliance details." },
-      { q: "Is AI video right for every brand?", a: "AI video is right when the idea benefits from speed, scale, flexibility, multilingual adaptation, or visual imagination. It is not right when real people, live proof, or documentary credibility are essential." },
+      { q: "Is AI video right for every brand or company?", a: "AI video is right when the idea benefits from speed, scale, flexibility, multilingual adaptation, or visual imagination. It is not right when real people, live proof, or documentary credibility are essential." },
       { q: "How does Impulse Digital maintain quality in AI video production?", a: "Impulse Digital follows a structured process for AI video production. We begin with the brand objective, audience, message, script, and platform requirement. After that, we define the visual direction, generate or assemble video assets, edit the final output, review it for brand consistency, and optimise it for the required platform. This ensures the final video is strategic, useful, and professionally finished." }
     ]
   }

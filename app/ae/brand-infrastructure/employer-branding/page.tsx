@@ -30,9 +30,9 @@ export default function EmployerBrandingPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.theimpulsedigital.com/brand-infrastructure/employer-branding/#service",
+      "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/employer-branding/#service",
       "name": "Employer Branding Services",
-      "url": "https://www.theimpulsedigital.com/brand-infrastructure/employer-branding/",
+      "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/employer-branding/",
       "description": "Impulse Digital is a specialist employer branding agency and employee branding consulting firm helping enterprise brands build EVP, culture storytelling, and recruitment marketing. Talk to us.",
       "serviceType": [
         "Employer Branding",
@@ -44,16 +44,16 @@ export default function EmployerBrandingPage() {
         "Talent Attraction Strategy"
       ],
       "areaServed": [
-        "IN",
+        "AE",
         "US"
       ],
       "provider": {
         "@type": "Organization",
         "name": "Impulse Digital",
-        "url": "https://www.theimpulsedigital.com/"
+        "url": "https://www.theimpulsedigital.com/ae/"
       }
     }
-];
+  ];
 
   return (
     <>

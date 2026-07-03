@@ -1,8 +1,8 @@
 export const agenticAiData = {
   hero: {
-    headlineParts: ["AI That Follows", "Through."],
-    headlineAccent: "Through.",
-    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As an Agentic AI agency, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in when human judgment matters. Our Agentic AI services help sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into business movement.",
+    headlineParts: ["Agentic AI Agency", "for Marketing That Runs Itself"],
+    headlineAccent: "for Marketing That Runs Itself",
+    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As a specialist Agentic AI agency with 34 years of marketing and commercial operations experience, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in only when human judgment genuinely matters. Our Agentic AI services have been deployed across WhatsApp, email, voice, Instagram DM, SMS, and CRM workflows for enterprise and growth-stage brands, helping sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into measurable business movement.",
     buttons: [
       { text: "Build Your First AI Workflow", link: "#connect", cursor: "BUILD" },
       { text: "See Practical Use Cases", link: "#use-cases", cursor: "EXPLORE" }
@@ -56,7 +56,7 @@ export const agenticAiData = {
     closing: "AI should not replace the people who understand your business. It should remove the repetitive work that stops them from doing their best work. These Agentic AI services are designed for work that needs speed, consistency, context, and control."
   },
   uses: {
-    title: "Where Agentic AI Creates Business Leverage",
+    title: "Where Agentic AI Services Create Business Leverage",
     cards: [
       {
         title: "Sales Acceleration",
@@ -119,7 +119,7 @@ export const agenticAiData = {
     ]
   },
   fit: {
-    title: "Agentic AI Is Right for You If",
+    title: "Agentic AI Company Is Right for You If",
     closer: "If your business already has demand, data, or customer conversations, Agentic AI can help you make more of what you already have.",
     list: [
       "Leads are coming in, but follow-ups are not fast or consistent enough.",

@@ -1,11 +1,11 @@
 export const employerBrandingData = {
   "hero": {
-    "headlineHtml": "Talent Chooses the Story<br> <span style=\"color: var(--impulse-violet);\">Before the Offer.</span>",
+    "headlineHtml": "Employer Branding Agency That<br> <span style=\"color: var(--impulse-violet);\">Makes Talent Choose You</span>",
     "headlineParts": [
-      "Talent Chooses the Story",
-      "Before the Offer."
+      "Employer Branding Agency That",
+      "Makes Talent Choose You"
     ],
-    "headlineAccent": "Before the Offer.",
+    "headlineAccent": "Makes Talent Choose You",
     "description": "The best candidates are not only comparing salaries. They are reading your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever apply. Impulse Digital helps brands turn employee experience into a clear employer story, so the right people understand why your company is worth joining, staying with, and growing inside.",
     "buttons": [
       {
@@ -232,7 +232,7 @@ export const employerBrandingData = {
     "footer": "The aim is not to make the company look attractive.\n\nThe aim is to make the right talent understand why it is worth choosing."
   },
   "fit": {
-    "title": "Employer Branding Is Right for You If",
+    "title": "Employer Branding Agency Is Right for You If",
     "list": [
       "Your company is hiring, but not attracting enough of the right candidates.",
       "Your culture is strong, but hard to explain.",
@@ -294,7 +294,7 @@ export const employerBrandingData = {
       },
       {
         "q": "How do we get started with employer branding at Impulse Digital?",
-        "a": "The process starts with understanding where your employer brand currently stands and where the gap is. In the first conversation, we look at three things: how your company is perceived as an employer today, what your current employees would say about working there, and what your ideal candidates need to hear before they apply. From that, we build a scoped engagement that starts with the practice area that will have the most immediate impact, whether that is EVP development, Recruitment Marketing, Culture Storytelling, or Internal Brand Communication. As one of the best employer branding companies for enterprise brands in India, Impulse Digital brings 34 years of brand and communications expertise to every engagement. The first conversation is free. Reach out through our contact form or call us directly."
+        "a": "The process starts with understanding where your employer brand currently stands and where the gap is. In the first conversation, we look at three things: how your company is perceived as an employer today, what your current employees would say about working there, and what your ideal candidates need to hear before they apply. From that, we build a scoped engagement that starts with the practice area that will have the most immediate impact, whether that is EVP development, Recruitment Marketing, Culture Storytelling, or Internal Brand Communication. As one of the best employer branding companies for enterprise brands in UAE, Impulse Digital brings 34 years of brand and communications expertise to every engagement. The first conversation is free. Reach out through our contact form or call us directly."
       },
       {
         "q": "What is the difference between an employer branding agency and an employee branding agency?",

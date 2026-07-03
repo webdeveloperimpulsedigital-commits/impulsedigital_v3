@@ -1,12 +1,12 @@
 export const generativeSearchOptimisationData = {
   "hero": {
-    "headlineHtml": "You're Not Just Fighting<br> <span style=\"color: var(--impulse-violet);\">for Rank Anymore.</span>",
+    "headlineHtml": "AI SEO Agency for<br> <span style=\"color: var(--impulse-violet);\">Generative Search Optimisation</span>",
     "headlineParts": [
-      "You're Not Just Fighting",
-      "for Rank Anymore."
+      "AI SEO Agency for",
+      "Generative Search Optimisation"
     ],
     "headlineAccent": "for Rank Anymore.",
-    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital helps your brand build the signals AI systems need to understand, trust, and surface you in the moments that matter.",
+    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency that helps brands build the signals AI systems need to understand, trust, and surface them in the moments that matter most. Our AI SEO services go beyond traditional rankings into the entity clarity, structured content, and authority signals that determine whether ChatGPT, Gemini, Perplexity, and Google AI Overviews recommend your brand or recommend a competitor instead.",
     "buttons": [
       {
         "text": "Improve Your AI Search Visibility",
@@ -65,7 +65,7 @@ export const generativeSearchOptimisationData = {
     ]
   },
   "vs": {
-    "title": "AI Search Optimisation, in Plain English",
+    "title": "AI SEO, in Plain English",
     "leftLabel": "SEO",
     "leftStrike": "helps you appear.",
     "rightLabel": "AI SEO Service",
@@ -96,7 +96,7 @@ export const generativeSearchOptimisationData = {
     "closing": "This is not keyword stuffing for a new platform. It is search clarity for how people discover brands now."
   },
   "uses": {
-    "title": "Where AI Search Creates Business Leverage",
+    "title": "Where AI SEO Services Create Business Leverage",
     "cards": [
       {
         "title": "Answer Engine Optimisation",
@@ -126,7 +126,7 @@ export const generativeSearchOptimisationData = {
     "intro2": "Your buyer compares, questions, evaluates, and looks for proof before making a decision.",
     "systemsTitle": "We Make Your Expertise Easier to Find",
     "systemsParagraphs": [
-      "AI seo service helps to get visibility for your brand when the signals are scattered.",
+      "AI seo agency helps to get visibility for your brand when the signals are scattered.",
       "A blog says one thing. A service page says another. Schema is missing. Entities are unclear. Proof sits too deep. The brand exists online, but it is not easy to interpret."
     ],
     "closer": "We connect the signals that help your brand make sense.",
@@ -208,7 +208,7 @@ export const generativeSearchOptimisationData = {
     "footer": "The aim is not to satisfy algorithms alone.\n\nThe aim is to become easier for buyers and AI systems to understand."
   },
   "fit": {
-    "title": "AI Search Optimisation Is Right for You If",
+    "title": "AI SEO Agency Is Right for You If",
     "closer": "If buyers are asking questions your brand should be part of, AI Search Optimisation helps you become easier to find and recommend.",
     "list": [
       "Your buyers compare multiple options before speaking to sales.",
@@ -258,7 +258,7 @@ export const generativeSearchOptimisationData = {
       },
       {
         "q": "Can Impulse Digital improve visibility on ChatGPT, Gemini, and Perplexity for brands?",
-        "a": "Yes and this is a growing priority for Indian enterprise brands as buyer research behaviour shifts toward AI platforms. As a specialist AI SEO agency in India, Impulse Digital structures content, entity signals, proof assets, and authority indicators specifically so that AI systems can understand Indian brands and surface them in relevant AI-generated responses. The signals that drive visibility on ChatGPT, Gemini, and Perplexity are distinct from traditional Google ranking signals. Schema markup, Organisation and LocalBusiness structured data, third-party review and citation footprint, named expert profiles, and answer-ready FAQ architecture all contribute to how confidently an AI system recommends your brand. Impulse Digital has deployed these signals for enterprise brands across FMCG, healthcare, fintech, and manufacturing categories where AI-led shortlisting is measurably changing how buyers arrive at vendor decisions."
+        "a": "Yes and this is a growing priority for Dubai enterprise brands as buyer research behaviour shifts toward AI platforms. As a specialist AI SEO agency in Dubai, Impulse Digital structures content, entity signals, proof assets, and authority indicators specifically so that AI systems can understand Dubai brands and surface them in relevant AI-generated responses. The signals that drive visibility on ChatGPT, Gemini, and Perplexity are distinct from traditional Google ranking signals. Schema markup, Organisation and LocalBusiness structured data, third-party review and citation footprint, named expert profiles, and answer-ready FAQ architecture all contribute to how confidently an AI system recommends your brand. Impulse Digital has deployed these signals for enterprise brands across FMCG, healthcare, fintech, and manufacturing categories where AI-led shortlisting is measurably changing how buyers arrive at vendor decisions."
       },
       {
         "q": "What is entity optimisation and why does Google care about it?",

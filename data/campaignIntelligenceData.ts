@@ -1,7 +1,7 @@
 export const campaignIntelligenceData = {
   hero: {
-    headlineParts: ["Views Are Not", "Victory."],
-    headlineAccent: "Victory.",
+    headlineParts: ["Campaign Intelligence Agency for", "Decisions Beyond Vanity Metrics"],
+    headlineAccent: "Decisions Beyond Vanity Metrics",
     description: "A campaign can be watched, clicked, shared, and still leave nothing behind. Impulse Digital is a specialist performance intelligence agency that has tracked campaign recall, sentiment, influencer fit, and message resonance for enterprise brands including HUL, Tata Consumer Products, Mastercard, and Aditya Birla Group. We help brands understand what people remembered, what they felt, what moved them, and what the next campaign should do differently, so every post-campaign learning becomes a sharper brief, a better creator choice, and a stronger budget decision.",
     buttons: [
       { text: "Decode Campaign Impact", link: "#connect", cursor: "DECODE" },
@@ -69,7 +69,7 @@ export const campaignIntelligenceData = {
     closing: "The output is not a backward-looking report. It is decision-ready intelligence for the next brief, creator list, media conversation, and budget allocation."
   },
   uses: {
-    title: "Where Campaign Intelligence Creates Business Leverage",
+    title: "Where Campaign Intelligence Service Creates Business Leverage",
     cards: [
       {
         title: "Campaign Effectiveness Evaluation",

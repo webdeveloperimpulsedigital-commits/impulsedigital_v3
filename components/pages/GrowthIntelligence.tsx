@@ -39,9 +39,9 @@ const SERVICES = [
   {
     index: '04',
     label: 'Real-time market signal. Continuously.',
-    title: 'Always-On Intelligence',
+    title: 'Social Intelligence Agency',
     desc: 'Continuous brand monitoring and competitive tracking so your intelligence stays current — not updated once a quarter. Detect category shifts, sentiment drifts, and emerging competitor moves before they become problems.',
-    to: '/growth-intelligence/always-on-intelligence',
+    to: '/growth-intelligence/social-intelligence',
   },
 ];
 
