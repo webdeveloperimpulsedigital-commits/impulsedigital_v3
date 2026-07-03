@@ -5,13 +5,11 @@
 import React from 'react';
 
 import { ServiceTemplate } from '@/components/Service/ServiceTemplate';
-import { marketIntelligenceData } from '@/data/marketIntelligenceData';
-
-const MarketIntelligence: React.FC = () => {
+const MarketIntelligence: React.FC<{ data: any }> = ({ data }) => {
   return (
     <>
       
-      <ServiceTemplate data={marketIntelligenceData} />
+      <ServiceTemplate data={data} />
     </>
   );
 };

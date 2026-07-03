@@ -1,11 +1,10 @@
 export const consumerIntelligenceData = {
   hero: {
-    headlineHtml: '<span style="white-space: nowrap;">Consumer Intelligence Agency</span><br> <span style="color: var(--impulse-violet);">for Real Buyer Behaviour</span>',
-    headlineParts: ["Consumer Intelligence Agency", "for Real Buyer Behaviour"],
-    headlineAccent: "for Real Buyer Behaviour",
-    description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist consumer intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our consumer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
+    headlineParts: ["Stop Building for the", "Consumer You Imagine."],
+    headlineAccent: "Consumer You Imagine.",
+    description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist customer intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our customer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
     buttons: [
-      { text: "Decode Your Consumer", link: "#connect", cursor: "DECODE" },
+      { text: "Decode Your Customer", link: "#connect", cursor: "DECODE" },
       { text: "See Where It Helps", link: "#use-cases", cursor: "EXPLORE" }
     ]
   },
@@ -20,7 +19,7 @@ export const consumerIntelligenceData = {
     ],
     outro: [
       "The hard question is why.",
-      "Customer Intelligence service helps close the distance between what your dashboard shows and what your Customer actually thinks, feels, trusts, resists, and expects."
+      "Customer Intelligence helps close the distance between what your dashboard shows and what your Customer actually thinks, feels, trusts, resists, and expects."
     ]
   },
   vs: {
@@ -54,8 +53,8 @@ export const consumerIntelligenceData = {
       },
       {
         title: "Innovation Funnel Support",
-        body: "Find what consumers are beginning to expect before the category fully catches up. Useful when your team is shaping new products, claims, benefits, ingredients, formats, or category opportunities. It answers: What unmet needs are worth exploring? Which benefits or claims have real Customer pull? What expectations are emerging in the category? Which ideas deserve sharper validation?",
-        outcome: "What you get: Opportunity territories, consumer expectation maps, benefit and claim directions, product idea inputs, and innovation recommendation decks."
+        body: "Find what Customers are beginning to expect before the category fully catches up. Useful when your team is shaping new products, claims, benefits, ingredients, formats, or category opportunities. It answers: What unmet needs are worth exploring? Which benefits or claims have real Customer pull? What expectations are emerging in the category? Which ideas deserve sharper validation?",
+        outcome: "What you get: Opportunity territories, Customer expectation maps, benefit and claim directions, product idea inputs, and innovation recommendation decks."
       }
     ]
   },
@@ -63,7 +62,7 @@ export const consumerIntelligenceData = {
     customClass: "ci-when-to-use",
     title: "Use Customer Intelligence Consultant Before<br/>Assumption Becomes Strategy",
     paragraphs: [
-      "Consumer Intelligence is most useful when the decision is important and the Customer truth underneath it is still unclear."
+      "Customer Intelligence is most useful when the decision is important and the Customer truth underneath it is still unclear."
     ],
     closer: "The more expensive the decision, the more dangerous the assumption.",
     pillsHeading: "Use it before",
@@ -101,7 +100,7 @@ export const consumerIntelligenceData = {
     footer: "The aim is not to know more.\n\nThe aim is to decide better."
   },
   fit: {
-    title: "Consumer Intelligence Agency<br/>Is Right for You If",
+    title: "Customer Intelligence<br/>Is Right for You If",
     closer: "If the decision matters, the Customer truth underneath it matters more.",
     list: [
       "You have data, but not enough clarity on why Customers behave the way they do.",
@@ -116,11 +115,11 @@ export const consumerIntelligenceData = {
   finalCta: {
     headingFontSize: "clamp(2.8rem, 5vw, 5.5rem)",
     headingLineHeight: "1.1",
-    titleParts: ["Let Consumer Intelligence<br/>Shape Your<br/>", "Next Move."],
+    titleParts: ["Let Customer Intelligence<br/>Shape Your<br/>", "Next Move."],
     accent: "Next Move.",
     body: "Tell us what decision you are trying to make. We will help you understand what your Customer needs, resists, trusts, and expects before you make it.",
     buttons: [
-      { text: "Decode Your Consumer", link: "/contact-us/", cursor: "DECODE" },
+      { text: "Decode Your Customer", link: "/contact-us/", cursor: "DECODE" },
       { text: "Start a Conversation", link: "/contact-us/", cursor: "HI" }
     ],
     footnote: "No generic research dump. No insight theatre. Just sharper Customer understanding built for real brand, product, and growth decisions."
@@ -128,7 +127,7 @@ export const consumerIntelligenceData = {
   faq: {
     title: "What to Know Before You Study the Consumer",
     items: [
-      { q: "What is Customer Intelligence and how does Impulse Digital approach it?", a: "Customer Intelligence helps brands understand who their buyers are, what drives their choices, what holds them back, and what they expect from a category before it changes. At Impulse Digital, we approach this as a specialist consumer intelligence agency that works with enterprise brands including Amazon India, HUL, Tata Customer Products, Aditya Birla Group, and Himalaya. Every customer intelligence engagement is built to support a specific decision, not just to produce findings. The output is always action-ready: sharper brand strategy, more relevant messaging, better product decisions, and growth plans built around the real buyer rather than the assumed one." },
+      { q: "What is Customer Intelligence and how does Impulse Digital approach it?", a: "Customer Intelligence helps brands understand who their buyers are, what drives their choices, what holds them back, and what they expect from a category before it changes. At Impulse Digital, we approach this as a specialist customer intelligence agency that works with enterprise brands including Amazon India, HUL, Tata Customer Products, Aditya Birla Group, and Himalaya. Every customer intelligence engagement is built to support a specific decision, not just to produce findings. The output is always action-ready: sharper brand strategy, more relevant messaging, better product decisions, and growth plans built around the real buyer rather than the assumed one." },
       { q: "How is Customer Intelligence different from regular market research?", a: "Regular market research often stops at findings. A report is delivered, presented, filed, and referenced occasionally. Customer Intelligence is built to support active decisions. Impulse Digital combines customer inputs from qualitative and quantitative research with digital behavioural signals, category context, and strategic interpretation to produce recommendations your team can act on immediately. The difference shows up in the output format: instead of a findings deck that describes what customers said, you receive a decision framework that tells your brand, product, and marketing teams what to do next and why. For Tata Customer Products, this approach helped decode category transformation dynamics and map diaspora demand patterns directly into market launch strategy." },
       { q: "What decisions can Impulse Digital's Customer Intelligence service support?", a: "Impulse Digital's customer intelligence service is designed around the specific decisions enterprise brands face before committing budget, direction, or resources. These include brand relaunches where existing positioning needs validation or replacement, segmentation projects where the brand needs a clearer map of its most valuable buyer groups, campaign strategy decisions where messaging needs to be built around real triggers rather than assumed ones, product innovation where customer expectations and unmet needs need to be identified before development begins, pricing decisions where customer sensitivity and competitive perception data are required, and category entry assessments where the brand needs to understand whether an opportunity is real before investing. The scope of each engagement is defined by the decision it needs to serve, not by a standard research template." },
       { q: "What do Usage and Attitude Studies help with and what do you receive?", a: "Usage and Attitude Studies give brands a structured picture of how customers currently engage with a category: what they use, how often, why they choose specific products, what they associate with different brands, and where tensions and unmet needs exist. At Impulse Digital, U&A studies are designed to directly inform four types of decisions. Segmentation: identifying meaningfully different customer groups based on behaviour and attitude rather than demographics alone. Persona development: building buyer personas grounded in real data rather than assumption. Brand strategy: understanding what associations your brand holds and which ones are worth building or changing. Communication planning: mapping the beliefs and language your audience already uses so messaging connects rather than explains. Output includes a customer landscape report, segmentation framework, persona definitions, and strategic implications directly mapped to your team's current planning cycle." },

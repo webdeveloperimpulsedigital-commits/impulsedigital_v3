@@ -23,10 +23,10 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { generativeSearchOptimisationData as data } from '@/data/generativeSearchOptimisationData';
+import { data as data } from '@/data/data';
 
 
-const GenerativeSearchOptimisation: React.FC = () => {
+const GenerativeSearchOptimisation: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

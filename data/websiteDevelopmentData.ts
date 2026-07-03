@@ -1,12 +1,11 @@
 export const websiteDevelopmentData = {
   "hero": {
-    "headlineHtml": "Website Design & Development<br> <span style=\"color: var(--impulse-violet);\">Agency in Dubai Built to Convert</span>",
     "headlineParts": [
-      "Website Design & Development",
-      "Agency in Dubai Built to Convert"
+      "Look Good. Perform Well.",
+      "Still Lose the Buyer."
     ],
-    "headlineAccent": "Agency in Dubai Built to Convert",
-    "description": "Your visitor came with intent. Then the page took too long. The message felt unclear. The proof was buried. The next step was not obvious. Impulse Digital builds websites that turn interest into action, with strategy, UX, content structure, performance, and development working together.",
+    "headlineAccent": "Still Lose the Buyer.",
+    "description": "Your visitor came with intent. Then the page took too long. The message felt unclear. The proof was buried. The next step was not obvious. Impulse Digital, a website design company in Mumbai, builds websites that turn interest into action, with strategy, UX, content structure, performance, and development working together.",
     "buttons": [
       {
         "text": "Build a Website That Converts",
@@ -277,7 +276,7 @@ export const websiteDevelopmentData = {
     "items": [
       {
         "q": "What does Impulse Digital offer in website design & development services?",
-        "a": "As a full-service website development company in Dubai, we cover every phase of discovery, information architecture, design, development, content support, testing, launch, and post-launch maintenance. Each step is aligned to your goals such as brand credibility, performance, SEO readiness, and lead conversion. Our website design and development services ensure your digital presence is visually engaging and performance-driven."
+        "a": "As a full-service website development company in mumbai, we cover every phase of discovery, information architecture, design, development, content support, testing, launch, and post-launch maintenance. Each step is aligned to your goals such as brand credibility, performance, SEO readiness, and lead conversion. Our website design and development services ensure your digital presence is visually engaging and performance-driven."
       },
       {
         "q": "How do you decide on the right platform or CMS for our site?",
@@ -288,20 +287,20 @@ export const websiteDevelopmentData = {
         "a": "Performance is a core part of our web services. We optimize images and code, manage scripts efficiently, implement caching, and follow clean coding standards. Core Web Vitals are tracked during development and post-launch to ensure speed and responsiveness."
       },
       {
-        "q": "What types of websites does Impulse Digital build as a web development company in Dubai?",
-        "a": "As a web development company in Dubai, Impulse Digital builds six types of websites depending on what the business needs the site to do. Custom website design for brands that need a site that reflects their positioning rather than a template. E-commerce websites built for product discovery, trust, purchase, and repeat visits. Website redesigns for businesses that have evolved but whose site still reflects an older version of the brand. Landing pages for campaigns, launches, and lead generation that need a sharper destination than a generic homepage. Responsive web development for sites where mobile traffic is high but the experience is not clean enough to convert. And ongoing website maintenance and support for sites that need to stay fast, secure, and reliable after launch."
+        "q": "What types of websites does Impulse Digital build as a web development company in Mumbai?",
+        "a": "As a web development company in Mumbai, Impulse Digital builds six types of websites depending on what the business needs the site to do. Custom website design for brands that need a site that reflects their positioning rather than a template. E-commerce websites built for product discovery, trust, purchase, and repeat visits. Website redesigns for businesses that have evolved but whose site still reflects an older version of the brand. Landing pages for campaigns, launches, and lead generation that need a sharper destination than a generic homepage. Responsive web development for sites where mobile traffic is high but the experience is not clean enough to convert. And ongoing website maintenance and support for sites that need to stay fast, secure, and reliable after launch."
       },
       {
-        "q": "How is Impulse Digital different from other website design companies in Dubai?",
-        "a": "Most website design companies in Dubai treat design, content, UX, and development as separate deliverables. Impulse Digital treats them as one integrated system. A website that looks good but loses buyers at the third scroll is a design problem. A website that loads slowly on mobile and costs you 40% of your audience is a development problem. A website where the brand story feels unclear after 10 seconds is a content and strategy problem. We address all five layers in the same engagement, which is why our websites perform differently from ones built by teams that optimise for aesthetics alone."
+        "q": "How is Impulse Digital different from other website design companies in Mumbai?",
+        "a": "Most website design companies in Mumbai treat design, content, UX, and development as separate deliverables. Impulse Digital treats them as one integrated system. A website that looks good but loses buyers at the third scroll is a design problem. A website that loads slowly on mobile and costs you 40% of your audience is a development problem. A website where the brand story feels unclear after 10 seconds is a content and strategy problem. We address all five layers in the same engagement, which is why our websites perform differently from ones built by teams that optimise for aesthetics alone."
       },
       {
         "q": "Will the website be SEO-ready and mobile-optimised after development?",
-        "a": "Yes, and both are built into the process from the start rather than added as an afterthought at launch. Search readiness means the site is structured so pages can be found, indexed, and measured correctly. This covers URL structure, page speed, meta tags, heading hierarchy, internal linking, schema markup, and Google Analytics and Search Console setup. Mobile optimisation means 100% of websites are designed to be mobile-responsive across devices, because more than half of web traffic in UAE arrives on phones. A site that loses visitors due to slow mobile load times loses them permanently. The 3-second rule is real: mobile visits are significantly more likely to be abandoned if a page takes longer than 3 seconds to load. Both SEO readiness and mobile performance are non-negotiable outputs of every website we build."
+        "a": "Yes, and both are built into the process from the start rather than added as an afterthought at launch. Search readiness means the site is structured so pages can be found, indexed, and measured correctly. This covers URL structure, page speed, meta tags, heading hierarchy, internal linking, schema markup, and Google Analytics and Search Console setup. Mobile optimisation means 100% of websites are designed to be mobile-responsive across devices, because more than half of web traffic in India arrives on phones. A site that loses visitors due to slow mobile load times loses them permanently. The 3-second rule is real: mobile visits are significantly more likely to be abandoned if a page takes longer than 3 seconds to load. Both SEO readiness and mobile performance are non-negotiable outputs of every website we build."
       },
       {
-        "q": "How much does it cost to hire a website development company in Dubai?",
-        "a": "The cost of working with a website development company in Dubai varies significantly based on the scope of the engagement. A landing page for a campaign has a fundamentally different scope from a full e-commerce website with custom product journeys and checkout optimisation. At Impulse Digital, pricing is scoped around four variables: the type of website being built, the complexity of the user journey, the level of integration required (CMS, analytics, CRM, payment gateway), and whether ongoing support is included. We do not publish fixed rates because fixed rates produce fixed websites. Every proposal is built around what the site actually needs to do for your business. The conversation starts with your objectives, not a rate card."
+        "q": "How much does it cost to hire a website development company in Mumbai?",
+        "a": "The cost of working with a website development company in Mumbai varies significantly based on the scope of the engagement. A landing page for a campaign has a fundamentally different scope from a full e-commerce website with custom product journeys and checkout optimisation. At Impulse Digital, pricing is scoped around four variables: the type of website being built, the complexity of the user journey, the level of integration required (CMS, analytics, CRM, payment gateway), and whether ongoing support is included. We do not publish fixed rates because fixed rates produce fixed websites. Every proposal is built around what the site actually needs to do for your business. The conversation starts with your objectives, not a rate card."
       },
       {
         "q": "What is your approach to security and data protection?",

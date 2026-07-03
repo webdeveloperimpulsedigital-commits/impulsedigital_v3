@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import Home from '@/components/pages/Home';
+import { homeData } from '@/data/homeData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Mumbai | Impulse Digital',
@@ -128,7 +129,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <Home />
+      <Home data={homeData} />
     </>
   );
 

@@ -24,10 +24,6 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { agenticAiData } from '@/data/agenticAiData';
-
-
-
 const agenticChannels = [
   'WhatsApp',
   'Email',
@@ -39,7 +35,7 @@ const agenticChannels = [
   'CRM workflows'
 ];
 
-const AgenticAI: React.FC = () => {
+const AgenticAI: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useGsapSafeEffect((gsap, ScrollTrigger) => {
@@ -173,24 +169,24 @@ const AgenticAI: React.FC = () => {
     <main id="main-content">
 
       <ServiceHero
-        headlineParts={agenticAiData.hero.headlineParts}
-        headlineAccent={agenticAiData.hero.headlineAccent}
-        description={agenticAiData.hero.description}
-        buttons={agenticAiData.hero.buttons}
+        headlineParts={data.hero.headlineParts}
+        headlineAccent={data.hero.headlineAccent}
+        description={data.hero.description}
+        buttons={data.hero.buttons}
       />
 
       {/* STATS — Built to Reduce the Work That Slows Teams Down */}
-      <ServiceStats data={agenticAiData.stats} />
+      <ServiceStats data={data.stats} />
 
       <ServiceHandoff />
 
-      <ServiceProblem data={agenticAiData.problem} />
+      <ServiceProblem data={data.problem} />
       <ServiceHandoff />
 
-      <ServiceVs data={agenticAiData.vs} />
+      <ServiceVs data={data.vs} />
       <ServiceHandoff />
 
-      <ServiceUses data={agenticAiData.uses} />
+      <ServiceUses data={data.uses} />
       <ServiceHandoff />
 
       {/* CHANNELS — Built Across the Channels Your Customers Already Use */}
@@ -222,25 +218,25 @@ const AgenticAI: React.FC = () => {
 
       <ServiceHandoff />
 
-      <ServiceWhenToUse data={agenticAiData.whenToUse} />
+      <ServiceWhenToUse data={data.whenToUse} />
       <ServiceHandoff />
 
-      <ServiceGuardrails data={agenticAiData.guardrails} />
+      <ServiceGuardrails data={data.guardrails} />
       <ServiceHandoff />
 
-      <ServiceProcess data={agenticAiData.process} />
+      <ServiceProcess data={data.process} />
 
       <Logos title="Trusted by Teams That Expect Thinking Before Execution" />
 
       <Testimonials />
       <ServiceHandoff />
 
-      <ServiceFit data={agenticAiData.fit} />
+      <ServiceFit data={data.fit} />
       <ServiceHandoff />
 
-      <ServiceFinalCTA data={agenticAiData.finalCta} />
+      <ServiceFinalCTA data={data.finalCta} />
       <Contact title="Let’s give your team<br/>its time back." />
-      <ServiceFAQ data={agenticAiData.faq} />
+      <ServiceFAQ data={data.faq} />
     </main>
   );
 };

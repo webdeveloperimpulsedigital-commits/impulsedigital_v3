@@ -32,6 +32,9 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ headlineParts, headlineAccent
     }
   };
 
+  const longestPart = Math.max(...(headlineParts?.map(p => p.length) || [20]));
+  const scale = longestPart > 22 ? 22 / longestPart : 1;
+
   return (
     <section className="svc-hero-page" id="hero">
       <div className="svc-hero-page-content">
@@ -43,7 +46,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ headlineParts, headlineAccent
         ) : (
           <>
             <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>{headlineParts?.join(' ')}</h1>
-            <div className="svc-hero-headline hero-copy-reveal" aria-hidden="true">
+            <div className="svc-hero-headline hero-copy-reveal" aria-hidden="true" style={{ fontSize: scale < 1 ? `clamp(2rem, calc(7vw * ${scale}), calc(7.5rem * ${scale}))` : undefined }}>
               {headlineParts?.map((part, i) => (
                 <React.Fragment key={i}>
                   {part === headlineAccent ? (

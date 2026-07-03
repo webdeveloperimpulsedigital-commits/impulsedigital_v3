@@ -1,0 +1,174 @@
+export const videoProductionData = {
+  hero: {
+    headlineParts: ["Video Production Agency in Dubai", "That Thinks Brand-First"],
+    headlineAccent: "That Thinks Brand-First",
+    description: "A good video is not just watched. It makes something land. A product becomes easier to understand. A brand becomes easier to remember. A campaign becomes easier to care about. A story becomes easier to carry forward. Impulse Digital is a specialist video production company in Dubai offering campaign films, brand films, product videos, and social-first video content helping enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products create video that gives audiences a genuine reason to stop, feel, remember, and act.",
+    buttons: [
+      { text: "Build Video That Carries the Idea", link: "#connect", cursor: "BUILD" },
+      { text: "See the Stories We Built", link: "#process", cursor: "EXPLORE" }
+    ]
+  },
+  stats: {
+    title: "Video Moved From Campaign Asset to Daily Language",
+    metrics: [
+      { target: "500", suffix: "M", decimals: "0", desc: "Unique social media users in India. (Reuters)" },
+      { target: "588", suffix: "M", decimals: "0", desc: "Short-video consumers in India. (India Digital Summit)" },
+      { target: "20", suffix: "k+ Cr", decimals: "0", desc: "Spent on online video advertising in India in 2025. (exchange4media)" }
+    ],
+    footnote: "Video is no longer one format. It is a brand film. A DVC. A reel. A product story. A founder clip. A vertical edit. A motion-led explainer. An AI-built cinematic world. The question is not whether your brand needs video. The question is whether your video gives people a reason to remember you after it ends."
+  },
+  problem: {
+    title: "Brands Are Producing More. Audiences Are Remembering Less.",
+    intro: [
+      "Most brands are already making videos.",
+      "Reels. Product clips. Campaign films. Founder videos. Event edits. Explainers. Testimonials. Ads."
+    ],
+    pivot: "But more video does not automatically mean more attention.",
+    gaps: [
+      "A film can look expensive and still say nothing.",
+      "A reel can move fast and still leave no memory.",
+      "A brand video can be polished and still feel hollow.",
+      "A DVC can have production value and still miss the idea.",
+      "An AI film can look new and still feel empty."
+    ],
+    outro: [
+      "That is where video production breaks.",
+      "Not at the camera. At the thought."
+    ]
+  },
+  vs: {
+    title: "Video Production, in Plain English",
+    leftLabel: "A script",
+    leftStrike: "can explain the point.",
+    rightLabel: "A film",
+    rightText: "can make people ",
+    rightHighlight: "feel it",
+    steps: [
+      { num: "01", text: "A script can explain. A strong film makes the point land." },
+      { num: "02", text: "A shoot can capture footage. Direction gives every frame a reason." },
+      { num: "03", text: "An edit can arrange clips. Storytelling makes people stay." },
+      { num: "04", text: "A reel can chase attention. A content system builds recall." },
+      { num: "05", text: "AI can make production faster. Judgment decides whether it is worth watching." }
+    ],
+    closing: "The output is not just a video file. It is a brand story made easier to notice, understand, and remember."
+  },
+  uses: {
+    title: "Where Video Production Creates Business Leverage",
+    cards: [
+      {
+        title: "Brand Films",
+        body: "Tell the larger story behind the company, product, people, or belief. Useful when your brand needs to explain what it stands for, why it matters, and why the audience should care beyond the immediate offer.",
+        outcome: "Output: Brand film concept, script, storyboard, shoot plan, production, direction, edit, music, sound design, subtitles, and platform-ready versions."
+      },
+      {
+        title: "Digital Video Commercials (DVCs)",
+        body: "Create sharper campaign films built for digital attention and brand action. Useful when you need a launch, product push, campaign message, or performance-led creative to move across digital platforms with clarity.",
+        outcome: "Output: DVC concept, campaign route, scripting, production, edit, format adaptations, cutdowns, thumbnails, captions, and amplification-ready assets."
+      },
+      {
+        title: "Concept Videos",
+        body: "Turn abstract ideas into films people can understand quickly. Useful when the product, service, technology, or business story is difficult to explain through static content alone.",
+        outcome: "Output: Concept development, narrative structure, visual treatment, scripting, motion direction, shoot or AI production route, and final video assets."
+      },
+      {
+        title: "Social Media Video Content",
+        body: "Build regular video content that keeps the brand visible without reducing it to routine reels. Useful when your brand needs consistent reels, short-form edits, topical videos, product videos, explainers, and platform-first content.",
+        outcome: "Output: Video content calendar, reel concepts, scripts, shoot plans, edits, captions, subtitles, platform versions, and performance learning."
+      },
+      {
+        title: "Product and Service Videos",
+        body: "Make the value easier to see, understand, and believe. Useful when your product, process, service, or solution needs clearer explanation before the buyer can act.",
+        outcome: "Output: Product film, demo video, explainer route, use-case video, testimonial structure, voiceover, motion graphics, and conversion-focused edits."
+      },
+      {
+        title: "AI Cinematic Production",
+        body: "Use AI to create cinematic video possibilities faster, without lowering the creative standard. Useful when the idea needs scale, imagination, speed, impossible scenes, visual experimentation, or production efficiency.",
+        outcome: "Output: AI-led concept development, visual treatment, prompt direction, generated scenes, human-led creative supervision, edit, sound, voice, and final cinematic assets."
+      }
+    ]
+  },
+  whenToUse: {
+    title: "When the Message Is Too Important to Scroll Past",
+    paragraphs: [
+      "Video production matters when the message needs to be felt, not just seen.",
+      "The issue is not always production quality. Sometimes the video looks good. It just does not leave anything behind."
+    ],
+    closer: "Use it when:",
+    pillsHeading: "Video production company makes sense when:",
+    pills: [
+      "Your brand story needs more emotion.",
+      "Your product needs clearer explanation.",
+      "Your campaign needs a film that can travel.",
+      "Your social media needs stronger video content.",
+      "Your DVC needs to sell without feeling like a sales pitch.",
+      "Your service is complex and needs a sharper visual explanation.",
+      "Your audience needs to see the proof, not just read the claim.",
+      "Your brand wants to use AI video without making it feel like a gimmick.",
+      "Your leadership wants video to build recall, trust, and action."
+    ]
+  },
+  guardrails: {
+    title: "We Find the Thought<br/>Before the Frame",
+    intro: "Video becomes weak when production starts before the point is clear. The camera is ready. The crew is booked. The product is placed. The script is approved. The edit moves fast. The final file looks polished. But the audience still does not know what to feel, remember, or do.\nWe build the film around the thing that must land.",
+    rows: [
+      { title: "Core idea", desc: "What the video needs the audience to understand, feel, or remember." },
+      { title: "Audience tension", desc: "What the viewer already cares about, ignores, misunderstands, or needs to believe." },
+      { title: "Format logic", desc: "Whether the idea needs a brand film, DVC, concept video, reel, product video, testimonial, or AI cinematic route." },
+      { title: "Production treatment", desc: "How direction, visuals, pacing, sound, performance, graphics, and editing carry the idea." },
+      { title: "Platform behaviour", desc: "How the same idea needs to adapt across Instagram, YouTube, LinkedIn, paid media, websites, and sales journeys." },
+      { title: "Performance learning", desc: "What view time, retention, engagement, comments, clicks, and enquiries reveal about the next video." },
+      { title: "Creative judgment", desc: "So video production becomes storytelling with a business purpose, not footage arranged beautifully." }
+    ],
+    punchlineLine1: "Not more views alone.",
+    punchlineLine2: "More memory after the view."
+  },
+  process: {
+    title: "How We Turn a Thought Into a Film",
+    steps: [
+      { num: "01", title: "Find the Point", desc: "We begin with the business goal, audience, message, platform, and the one thing the video must make clear." },
+      { num: "02", title: "Build the Route", desc: "We develop the concept, script, storyboard, visual treatment, shoot plan, AI route if relevant, and approval flow." },
+      { num: "03", title: "Produce With Intent", desc: "We manage direction, shoot, remote capture, product setup, interview flow, or AI cinematic generation based on the chosen route." },
+      { num: "04", title: "Shape the Story", desc: "We edit for clarity, pacing, emotion, sound, music, motion graphics, subtitles, and platform behaviour." },
+      { num: "05", title: "Adapt and Improve", desc: "We create versions for different platforms, study response, and use performance learning to sharpen the next film or content cycle. The aim is not to make the video look busy. The aim is to make the idea harder to ignore." }
+    ]
+  },
+  fit: {
+    title: "Video Production Is Right for You If",
+    closer: "This is not for brands looking for footage without thought. It is for teams that want video to carry meaning, memory, and movement.",
+    list: [
+      "Your brand needs video that does more than fill a content calendar.",
+      "Your campaign needs a sharper film, DVC, or launch asset.",
+      "Your product or service needs better explanation.",
+      "Your social media needs stronger video-led storytelling.",
+      "Your leadership wants films that build recall, not just views.",
+      "Your brand wants AI cinematic production with human creative judgment.",
+      "Your team needs concepts, scripts, shoots, edits, cutdowns, and platform versions handled with clarity.",
+      "Your video content needs to work across brand, performance, social, website, and sales journeys."
+    ]
+  },
+  finalCta: {
+    titleParts: ["Let’s Turn Attention Into Memory"],
+    accent: "",
+    body: "Tell us what your audience needs to understand, feel, or act on. We will help shape the concept, script, production route, shoot, edit, AI cinematic layer if needed, and platform versions that make the idea travel.",
+    buttons: [
+      { text: "Build Video That Carries the Idea", link: "/contact-us/", cursor: "BUILD" },
+      { text: "Start a Conversation", link: "/contact-us/", cursor: "HI" }
+    ],
+    footnote: "No empty visuals. No production for production’s sake. No AI theatre. Just video built to make the story land."
+  },
+  faq: {
+    title: "What to Know Before You Produce Your Next Video",
+    items: [
+      { q: "What does video production include when working with Impulse Digital?", a: "Video production at Impulse Digital covers the full journey from thought to finished film. As a specialist video production company in Dubai, we handle concept development, scripting, storyboarding, shoot planning, filming, direction, editing, motion graphics, sound design, subtitles, format adaptation, AI cinematic production, and platform-ready delivery. Every element is managed as part of one integrated process not handed between disconnected teams. The starting point is always the business goal and the one thing the video needs to make clear. Production follows the thought, not the other way around." },
+      { q: "What types of videos can Impulse Digital create for enterprise brands?", a: "Impulse Digital creates brand films, digital video commercials (DVCs), concept videos, product and service explainers, testimonial films, campaign reels, social media video content, website videos, corporate communications films, and AI cinematic productions. We have produced video content for Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, Himalaya, Uppercase, and Croda across FMCG, healthcare, fintech, retail, and manufacturing categories. The format is always chosen after the business objective is clear. A brand film and a DVC solve different problems and are built differently. We identify which one you need before briefing any creative route." },
+      { q: "Are your video production services in Dubai limited to social media content?", a: "No. Social media video is one component of a broader capability. Impulse Digital's video production services in Dubai cover the full range of brand communication needs brand films, DVCs, concept videos, product stories, corporate films, campaign content, website videos, and AI cinematic productions. Social reels and short-form content are part of the social media video service specifically. The larger focus is video that carries a brand idea across platforms, campaigns, and buyer journeys not content produced to fill a posting calendar." },
+      { q: "Does Impulse Digital handle the script and creative concept or do we need to provide one?", a: "Both routes are available. If you have a brief or a rough direction, we build on it. If you are starting from scratch, we develop the concept, script, storyboard, visual treatment, shot list, and production plan before filming or editing begins. At Impulse Digital, the concept and scripting phase is where the most important work happens not the shoot. A film with the wrong thought, produced perfectly, still fails the audience. Our creative process begins with the business goal, the audience tension, and the one thing the video must make them feel, understand, or do. Everything else format, script, visual treatment follows from that." },
+      { q: "What kinds of shoots can Impulse Digital manage in Dubai and beyond?", a: "Impulse Digital manages product shoots, brand shoots, lifestyle shoots, interview and testimonial shoots, location shoots, corporate communication shoots, and content shoots with the required crew, equipment, location scouting, talent direction, and shoot planning. We have produced shoots for enterprise brands and categories where accuracy, brand safety, and production discipline are non-negotiable. For brands outside Dubai, we manage remote production coordination and have worked on shoots across India and internationally. The production management approach is the same regardless of scale: every frame has a reason before the shoot day begins." },
+      { q: "We already have footage from previous shoots. Can Impulse Digital work with what we have?", a: "Yes and this is more common than most brands expect. Brands often have raw footage, old campaign materials, testimonial recordings, or product shoots sitting unused because the edit or the story was never quite right. Impulse Digital can take existing footage and reshape it through editing, storytelling restructuring, sound design, music, motion graphics, subtitle integration, cutdown production, and platform adaptations. The test is not whether the footage is usable. It is whether there is a strong enough thought to build the edit around. If the footage can serve the business goal, we can find the film inside it." },
+      { q: "What exactly is AI Cinematic Production and when does it make sense to use it?", a: "AI Cinematic Production uses AI tools to generate scenes, visual worlds, cinematic shots, animated sequences, and concept-led films that would be impractical, too expensive, or impossible to capture through traditional production. At Impulse Digital, the creative direction, story, editorial judgment, and final quality control are always human-led. AI handles the execution of specific visual possibilities — not the idea behind them. It makes sense when the brand needs visual scale that a standard shoot cannot achieve, when the concept requires worlds or scenarios that do not physically exist, when production speed is a genuine constraint, or when the brand wants to explore visual experimentation without committing to a full traditional production budget. Uppercase's AI-led New Year campaign produced entirely by Impulse Digital using AI for script, visuals, voice, and edit delivered 5.49 million plays. That is the benchmark we hold AI cinematic work to." },
+      { q: "How does Impulse Digital tailor video content for different platforms?", a: "Platform adaptation is built into the production process from brief stage, not added as a final step. As a specialist video production agency in Dubai, Impulse Digital adapts pacing, aspect ratio (16:9 for YouTube, 9:16 for Reels and Stories, 1:1 for feed posts), hook structure, edit length, subtitle style, thumbnail design, caption treatment, and sound-off performance based on where the video will live. A 90-second brand film for YouTube requires a fundamentally different opening from a 15-second Instagram Reel for the same campaign. A LinkedIn video for a B2B audience needs different pacing and information density from a Facebook video for a consumer audience. Platform behaviour is one of the six pillars we build every video around alongside core idea, audience tension, format logic, production treatment, and performance learning." },
+      { q: "How does Impulse Digital measure whether a video is actually working?", a: "Video performance at Impulse Digital is measured against what the video was built to do not a generic set of vanity metrics. For brand films built to create recall, we track watch time, retention curves, completion rate, and brand sentiment signals in the period after the film launches. For DVCs and campaign videos built to drive action, we track click-through rate, conversion rate, cost-per-view, and enquiry volume attributed to the video. For social media video content, we track engagement rate, share rate, comment quality, and audience growth. The most important metric is what each video teaches the next one. Every performance report includes a specific recommendation for the next content cycle so the learning compounds rather than sitting in a slide that nobody reads again." },
+      { q: "Is video production the right investment for every brand at every stage?", a: "No — and we say this clearly before taking any brief. Video production is the right investment when the brand has a thought that genuinely needs to be seen, felt, and remembered — not just read or scanned. A product that is complex to explain in text becomes clear in 60 seconds of well-produced film. A brand story that lacks emotional resonance in static content can build genuine connection in a brand film. A campaign that needs to travel across platforms requires video that is built for each platform's specific behaviour. But if the goal is simply to produce more content without a clear message, video production will produce impressive-looking output with no business return. Impulse Digital's first question in every brief is not 'what type of video do you need?' It is 'what do you need the audience to understand, feel, or do after they watch it?' If that question has a clear answer, video production is the right investment." }
+    ]
+  }
+};

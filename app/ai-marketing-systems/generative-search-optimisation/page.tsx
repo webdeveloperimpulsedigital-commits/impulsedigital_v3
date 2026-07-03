@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import GenerativeSearchOptimisation from '@/components/pages/GenerativeSearchOptimisation';
+import { generativeSearchOptimisationData } from '@/data/generativeSearchOptimisationData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'AI SEO Agency in India | Advanced AI SEO Service | Impulse Digital',
@@ -60,7 +62,7 @@ export default function GenerativeSearchOptimisationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <GenerativeSearchOptimisation />
+      <GenerativeSearchOptimisation data={generativeSearchOptimisationData} />
     </>
   );
 

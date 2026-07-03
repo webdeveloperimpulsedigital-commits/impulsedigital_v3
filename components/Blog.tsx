@@ -4,19 +4,55 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Link from '@/components/RegionLink';
 
-const Blog: React.FC = () => {
+const Blog: React.FC<{ data?: any }> = ({ data }) => {
   const blogSliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [posts, setPosts] = useState<any[]>([]);
+
+  // Use data or fallback to defaults
+  const blogData = data || {
+    heading: "The read before the next decision.",
+    cta: "Go beyond the headline",
+    link: "/blog/",
+    fallbackPosts: [
+      {
+        id: 'fallback-1',
+        title: { rendered: 'Why Dashboarding is Not Intelligence' },
+        excerpt: { rendered: 'Most analytics tools tell you what happened. Intelligence tells you what to do next. There is a distance between the two that most marketing teams have learned to ignore.' },
+        slug: '',
+        isFallback: true,
+        categoryName: 'Growth Intelligence',
+        imageUrl: '/images/dashboard.webp',
+      },
+      {
+        id: 'fallback-2',
+        title: { rendered: 'Agentic Workflows for Enterprise Content' },
+        excerpt: { rendered: 'The shift is not from human to AI. It is from isolated tasks to coordinated systems. Here is what that looks like in a live marketing operation.' },
+        slug: '',
+        isFallback: true,
+        categoryName: 'AI Agency',
+        imageUrl: '/images/agency_office.webp',
+      },
+      {
+        id: 'fallback-3',
+        title: { rendered: 'Generative Search Optimisation in 2026' },
+        excerpt: { rendered: 'The page one that matters is no longer a list of blue links. Brands that are not optimised for AI-generated answers are already invisible to half their audience.' },
+        slug: '',
+        isFallback: true,
+        categoryName: 'Generative Search',
+        imageUrl: '/images/glass_shape.webp',
+      },
+    ]
+  };
 
   useEffect(() => {
     async function fetchPosts() {
       try {
         const res = await fetch('/api/blog-posts');
         if (res.ok) {
-          const data = await res.json();
-          if (Array.isArray(data) && data.length > 0) {
-            setPosts(data);
+          const apiData = await res.json();
+          if (Array.isArray(apiData) && apiData.length > 0) {
+            setPosts(apiData);
           }
         }
       } catch (err) {
@@ -76,35 +112,7 @@ const Blog: React.FC = () => {
     }
   };
 
-  const displayPosts = posts.length > 0 ? posts : [
-    {
-      id: 'fallback-1',
-      title: { rendered: 'Why Dashboarding is Not Intelligence' },
-      excerpt: { rendered: 'Most analytics tools tell you what happened. Intelligence tells you what to do next. There is a distance between the two that most marketing teams have learned to ignore.' },
-      slug: '',
-      isFallback: true,
-      categoryName: 'Growth Intelligence',
-      imageUrl: '/images/dashboard.webp',
-    },
-    {
-      id: 'fallback-2',
-      title: { rendered: 'Agentic Workflows for Enterprise Content' },
-      excerpt: { rendered: 'The shift is not from human to AI. It is from isolated tasks to coordinated systems. Here is what that looks like in a live marketing operation.' },
-      slug: '',
-      isFallback: true,
-      categoryName: 'AI Agency',
-      imageUrl: '/images/agency_office.webp',
-    },
-    {
-      id: 'fallback-3',
-      title: { rendered: 'Generative Search Optimisation in 2026' },
-      excerpt: { rendered: 'The page one that matters is no longer a list of blue links. Brands that are not optimised for AI-generated answers are already invisible to half their audience.' },
-      slug: '',
-      isFallback: true,
-      categoryName: 'Generative Search',
-      imageUrl: '/images/glass_shape.webp',
-    },
-  ];
+  const displayPosts = posts.length > 0 ? posts : blogData.fallbackPosts;
 
   const getPostData = (post: any) => {
     if (post.isFallback) {
@@ -113,7 +121,7 @@ const Blog: React.FC = () => {
         excerpt: post.excerpt.rendered,
         imageUrl: post.imageUrl,
         category: post.categoryName,
-        link: '/blog/',
+        link: blogData.link,
       };
     }
 
@@ -144,7 +152,10 @@ const Blog: React.FC = () => {
       category = post._embedded['wp:term'][0][0].name;
     }
 
-    const link = `/blog/${post.slug}/`;
+    // Determine the base link prefix depending on whether it's the AE version or not
+    const isAe = blogData.link.includes('/ae/');
+    const linkPrefix = isAe ? '/ae/blog/' : '/blog/';
+    const link = `${linkPrefix}${post.slug}/`;
 
     return { title, excerpt, imageUrl, category, link };
   };
@@ -168,8 +179,8 @@ const Blog: React.FC = () => {
       `}} />
       <div className="container">
         <div className="blog-header">
-          <h2 className="section-heading split-text" style={{ marginBottom: 0 }}>The read before the next decision.</h2>
-          <Link href="/blog/" className="btn" data-cursor="READ"><span className="btn-text">Go beyond the headline</span></Link>
+          <h2 className="section-heading split-text" style={{ marginBottom: 0 }}>{blogData.heading}</h2>
+          <Link href={blogData.link} className="btn" data-cursor="READ"><span className="btn-text">{blogData.cta}</span></Link>
         </div>
         <div className="blog-grid" ref={blogSliderRef} onScroll={handleScroll}>
           {displayPosts.map((post, index) => {

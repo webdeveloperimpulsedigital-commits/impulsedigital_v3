@@ -20,8 +20,6 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { archerAiData } from '@/data/archerAiData';
-
 const archerChannelSignals = [
   { text: 'Your referrals work, but do not scale.', left: '50%', top: '10%' },
   { text: 'Your closers convert, but the top of the funnel is thin.', left: '85%', top: '30%' },
@@ -31,7 +29,7 @@ const archerChannelSignals = [
   { text: 'Your next stage of growth needs a system, not just a network.', left: '15%', top: '30%' }
 ];
 
-const ArcherAI: React.FC = () => {
+const ArcherAI: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {
@@ -135,20 +133,20 @@ const ArcherAI: React.FC = () => {
   return (
     <main id="main-content">
       <ServiceHero 
-        headlineParts={archerAiData.hero.headlineParts}
-        headlineAccent={archerAiData.hero.headlineAccent}
-        description={archerAiData.hero.description}
-        buttons={archerAiData.hero.buttons}
+        headlineParts={data.hero.headlineParts}
+        headlineAccent={data.hero.headlineAccent}
+        description={data.hero.description}
+        buttons={data.hero.buttons}
       />
       <ServiceHandoff />
       
-      <ServiceProblem data={archerAiData.problem} />
+      <ServiceProblem data={data.problem} />
       <ServiceHandoff />
       
-      <ServiceVs data={archerAiData.vs} />
+      <ServiceVs data={data.vs} />
       <ServiceHandoff />
       
-      <ServiceUses data={archerAiData.uses} />
+      <ServiceUses data={data.uses} />
       <ServiceHandoff />
       
       {/* CHANNELS — Built for Businesses Where Every Conversation Counts */}
@@ -246,19 +244,19 @@ const ArcherAI: React.FC = () => {
 
       <ServiceHandoff />
       
-      <ServiceProcess data={archerAiData.process} />
+      <ServiceProcess data={data.process} />
       
       <Logos title="Trusted by Teams That Need Pipeline With Precision" />
       
       <Testimonials />
       <ServiceHandoff />
       
-      <ServiceFit data={archerAiData.fit} />
+      <ServiceFit data={data.fit} />
       <ServiceHandoff />
       
-      <ServiceFinalCTA data={archerAiData.finalCta} />
-      <Contact title={archerAiData.contactTitle} />
-      <ServiceFAQ data={archerAiData.faq} />
+      <ServiceFinalCTA data={data.finalCta} />
+      <Contact title={data.contactTitle} />
+      <ServiceFAQ data={data.faq} />
     </main>
   );
 };

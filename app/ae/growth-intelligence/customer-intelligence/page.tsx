@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ConsumerIntelligence from '@/components/pages/ConsumerIntelligence';
+import { consumerIntelligenceData } from '@/data/ae/consumerIntelligenceData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Consumer Intelligence Agency | Customer Intelligence Service | Impulse Digital',
@@ -59,7 +61,7 @@ export default function ConsumerIntelligencePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <ConsumerIntelligence />
+      <ConsumerIntelligence data={consumerIntelligenceData} />
     </>
   );
 

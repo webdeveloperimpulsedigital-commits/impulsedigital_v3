@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AIVideoProduction from '@/components/pages/AIVideoProduction';
+import { aiVideoProductionData } from '@/data/ae/aiVideoProductionData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'AI Video Production Agency & Services | Impulse Digital',
@@ -60,7 +62,7 @@ export default function AIVideoProductionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <AIVideoProduction />
+      <AIVideoProduction data={aiVideoProductionData} />
     </>
   );
 

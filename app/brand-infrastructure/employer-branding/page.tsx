@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import EmployerBranding from '@/components/pages/EmployerBranding';
+import { employerBrandingData } from '@/data/employerBrandingData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Employer Branding Agency & Employee Branding Consulting | Impulse',
@@ -61,7 +63,7 @@ export default function EmployerBrandingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <EmployerBranding />
+      <EmployerBranding data={employerBrandingData} />
     </>
   );
 

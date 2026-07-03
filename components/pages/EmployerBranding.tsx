@@ -24,10 +24,10 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { employerBrandingData as data } from '@/data/employerBrandingData';
+import { data as data } from '@/data/data';
 
 
-const EmployerBranding: React.FC = () => {
+const EmployerBranding: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AboutUs from '@/components/pages/AboutUs';
+import { aboutData } from '@/data/aboutData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'About Impulse Digital - Creative Digital Marketing Agency',
@@ -27,5 +28,5 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
     const schemas: any[] = [];
 
-  return <AboutUs />;
+  return <AboutUs data={aboutData} />;
 }
