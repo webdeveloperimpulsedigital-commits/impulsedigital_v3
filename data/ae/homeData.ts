@@ -1,7 +1,7 @@
 export const homeData = {
   hero: {
     headlineParts: [
-      "Your Dubai Data Knows.",
+      "Your Data Knows.",
       "Your Marketing",
     ],
     headlineAccent: "Should Too.",
