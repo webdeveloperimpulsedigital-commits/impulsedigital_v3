@@ -12,7 +12,7 @@ import Blog from '@/components/Blog';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 
-const Home: React.FC = () => {
+const Home: React.FC<{ data?: any }> = ({ data }) => {
   useEffect(() => {
     // Re-initialize GSAP DOM animations specifically for the Home page
     // when navigating back from a Service page
@@ -40,15 +40,15 @@ const Home: React.FC = () => {
   return (
     <main id="main-content">
       
-      <Hero />
-      <CaseStudies />
-      <Logos />
+      <Hero data={data?.hero} />
+      <CaseStudies data={data?.caseStudies} />
+      <Logos data={data?.logos} />
       <BrandFilm />
-      <Services />
-      <Testimonials />
-      <Blog />
-      <FAQ />
-      <Contact />
+      <Services data={data?.services} />
+      <Testimonials data={data?.testimonials} />
+      <Blog data={data?.blog} />
+      <FAQ heading={data?.faq?.heading} data={data?.faq?.items} />
+      <Contact title={data?.contact?.heading} />
     </main>
   );
 };

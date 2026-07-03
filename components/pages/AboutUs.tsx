@@ -11,7 +11,7 @@ import Link from '@/components/RegionLink';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 
-const AboutUs: React.FC = () => {
+const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
   useEffect(() => {
     document.body.classList.add('service-page', 'about-page');
 
@@ -30,6 +30,173 @@ const AboutUs: React.FC = () => {
       document.body.style.backgroundColor = '';
     };
   }, []);
+
+  // Use data or fallback to defaults
+  const aboutData = data || {
+    hero: {
+      headlineParts: ["Momentum for", "brands with appetite."],
+      tagline: "The best brands are never truly still.",
+      truths: [
+        "They question what has become routine.",
+        "They improve what is already working.",
+        "They move before marketing turns into maintenance."
+      ],
+      lede: "Impulse Digital helps such brands turn ambition into commercial momentum by bringing strategy, creativity, content, search, performance, technology, AI, and execution into formation."
+    },
+    drift: {
+      headlineParts: ["Marketing becomes maintenance quietly.", "It rarely fails all at once."],
+      routineGrid: [
+        "The calendar keeps<br/>moving.",
+        "Campaigns keep<br/>launching.",
+        "Reports keep<br/>getting made.",
+        "Meetings keep<br/>happening."
+      ],
+      pivotLoud: "But somewhere along the way, the work starts needing more explanation than it creates movement.",
+      pivotQuiet: "Leadership starts asking harder questions.",
+      questions: [
+        "What is this doing for the<br/>brand",
+        "What is this building over<br/>time",
+        "What is this helping us<br/>decide",
+        "What is this moving for the<br/>business"
+      ],
+      resist: "That is the drift <span className=\"accent\">Impulse exists to resist.</span>"
+    },
+    appetite: {
+      ghost: "APPETITE",
+      headlineL1: "Appetite is not <span className=\"strike\">size</span>.",
+      headlineL2: "It is willingness.",
+      rows: [
+        "A startup can have it.",
+        "A legacy business can have it.",
+        "A conglomerate can have it.",
+        "A founder-led company can have it."
+      ],
+      def: "Appetite is the willingness to move, question, improve, experiment, challenge default thinking, and expect more from marketing.",
+      close: [
+        "That is who we work best with.",
+        "Brands that do not want marketing to simply continue.",
+        "<span className=\"accent\">Brands that want it to create momentum.</span>"
+      ]
+    },
+    formation: {
+      heading: "Teams go further in formation.",
+      body: [
+        "A brand rarely moves because one channel performs in isolation.",
+        "Momentum is built when the thinking, the story, the search presence, the media, the website, the data, the technology, and the execution pull in the same direction.",
+        "That is why we do not treat strategy as a document and execution as a handoff.",
+        "The work has to move together.<em>Otherwise, it becomes activity.</em>"
+      ]
+    },
+    movement: {
+      heading: "The service is not the story.<br /><span className=\"accent\">The movement is.</span>",
+      tasks: [
+        "<strong>Brand strategy</strong>gives the work a commercial foundation.",
+        "<strong>Content</strong>builds authority, not just output.",
+        "<strong>Search</strong>compounds visibility that the brand owns.",
+        "<strong>Performance</strong>makes spend more accountable.",
+        "<strong>Social media</strong>builds relevance, not just a posting rhythm.",
+        "<strong>Websites</strong>become the place where intent either lands or leaks.",
+        "<strong>Analytics</strong>turns data into clearer decisions.",
+        "<strong>AI</strong>makes the work faster, sharper, and more scalable without lowering the bar."
+      ],
+      revealPre: "Used separately, these can become tasks.",
+      revealH: "Used with intent,\n<span className=\"accent-block\">they become momentum.</span>"
+    },
+    clarity: {
+      heading: "Less chasing.<br /><span className=\"accent\">More clarity.</span>",
+      subheading: "You get strategy before the work, not as a post-rationalisation after the work is questioned. You get content, campaigns, websites, search systems, and AI-enabled workflows built to perform, not just exist.",
+      panes: [
+        {
+          num: "01",
+          title: "Behind the scenes, there is process, data, automation, judgment, and senior thinking.",
+          items: [
+            "Process",
+            "Data",
+            "Automation",
+            "Judgment",
+            "Senior thinking"
+          ],
+          type: "behind"
+        },
+        {
+          num: "02",
+          title: "On the surface, it should feel simple.",
+          items: [
+            "You get fewer loose ends.",
+            "Fewer avoidable calls.",
+            "Fewer rounds caused by unclear thinking."
+          ],
+          type: "surface"
+        }
+      ],
+      stack: [
+        "The right work.",
+        "Moving in the right direction.",
+        "With fewer things falling through the cracks."
+      ]
+    },
+    senior: {
+      heading: "Senior thinking stays close to the work.",
+      subheading: "Impulse is not built on the idea that strategy happens once and execution figures itself out. The work often needs judgment.",
+      rows: [
+        { trigger: "A campaign", need: "may need a sharper thought." },
+        { trigger: "A website", need: "may need a clearer path." },
+        { trigger: "A search strategy", need: "may need stronger commercial context." },
+        { trigger: "An AI workflow", need: "may need a human filter." },
+        { trigger: "A client conversation", need: "may need more honesty than polish." }
+      ],
+      footLoud: "Not to slow the work down. <em>To keep it pointed in the right direction.</em>"
+    },
+    founders: {
+      heading: "Built by people who refuse to <em>simply continue.</em>",
+      list: [
+        {
+          id: "adwait",
+          name: "Adwait Joshi",
+          ghostName: "ADWAIT",
+          side: "left",
+          img: "/images/About%20Us/Adwait-cutout-v2.webp",
+          alt: "Adwait Joshi - Founder and CEO of Impulse Digital Marketing Agency",
+          headline: "Restless by design, particular by habit.",
+          body: "Somewhere between simplifying what’s complicated, complicating what’s too simple, and informally holding titles like fixer of things, questioner of norms, and quiet instigator at Impulse Digital."
+        },
+        {
+          id: "abhishek",
+          name: "Abhishek Arekar",
+          ghostName: "ABHISHEK",
+          side: "right",
+          img: "/images/About%20Us/Abhishek-cutout-v2.webp",
+          alt: "Abhishek Arekar - Co-Founder of Impulse Digital Marketing Agency",
+          headline: "The kind of person who can read a dashboard, a room, and a poorly explained problem with the same unsettling accuracy.",
+          body: "Somewhere in the background of every smooth process, sharper insight, and better decision at Impulse Digital."
+        }
+      ]
+    },
+    fit: {
+      heading: "Built for brands that <em style=\"font-style: italic; font-weight: 300; color: var(--impulse-violet)\">expect more.</em>",
+      warn: "We are not the right fit for teams looking for a vendor to simply fulfil briefs.",
+      yes: "Brands that want a partner who can think with them, build with them, challenge weak assumptions, and reduce the weight marketing places on their internal team.",
+      subheading: "The size of the brand matters less than the appetite behind it.",
+      attrs: [
+        "A sharper question.",
+        "A higher standard.",
+        "A willingness to improve.",
+        "A need for marketing to move the business, not just fill the calendar."
+      ],
+      close: "That is where Impulse fits best."
+    },
+    final: {
+      stack: [
+        "Move sharper.",
+        "Move together.",
+        "Move the business."
+      ],
+      cta: {
+        link: "/contact-us/",
+        text: "Start a conversation"
+      }
+    }
+  };
 
   useGsapSafeEffect((gsap, ScrollTrigger) => {
     const cleanups: (() => void)[] = [];
@@ -275,34 +442,25 @@ const AboutUs: React.FC = () => {
   return (
     <main id="main-content" className="about-page-container">
       
-
-
-
       {/* ============================================================
-         1. HERO — monumental headline + static 3-up "truths"
-         (no scrolling ticker — readable instantly).
+         1. HERO
          ============================================================ */}
       <section className="ab-section ab-hero" id="hero">
         <div className="ab-wrap-full">
           <div className="ab-hero-inner">
-            <h1 className="ab-hero-h hero-copy-reveal">Momentum for {' '}<br/><span style={{ color: 'var(--impulse-violet)' }}>brands with appetite.</span></h1>
-            <p className="ab-hero-tagline hero-copy-reveal">The best brands are never truly still.</p>
+            <h1 className="ab-hero-h hero-copy-reveal">{aboutData.hero.headlineParts[0]} {' '}<br/><span style={{ color: 'var(--impulse-violet)' }}>{aboutData.hero.headlineParts[1]}</span></h1>
+            <p className="ab-hero-tagline hero-copy-reveal">{aboutData.hero.tagline}</p>
 
             <div className="ab-hero-truths hero-copy-reveal">
-              <div className="ab-truth">
-                <p className="ab-truth-text">They question what has become routine.</p>
-              </div>
-              <div className="ab-truth">
-                <p className="ab-truth-text">They improve what is already working.</p>
-              </div>
-              <div className="ab-truth">
-                <p className="ab-truth-text">They move before marketing turns into maintenance.</p>
-              </div>
+              {aboutData.hero.truths.map((truth: string, idx: number) => (
+                <div key={idx} className="ab-truth">
+                  <p className="ab-truth-text">{truth}</p>
+                </div>
+              ))}
             </div>
 
             <div className="ab-hero-foot hero-copy-reveal">
-              <p className="ab-hero-lede">Impulse Digital helps such brands turn ambition into commercial momentum by bringing
-                strategy, creativity, content, search, performance, technology, AI, and execution into formation.</p>
+              <p className="ab-hero-lede">{aboutData.hero.lede}</p>
               <div className="ab-hero-cta-row">
                 <Link href="/contact-us/" className="btn" data-cursor="START">
                   <span className="btn-text">Start a conversation</span>
@@ -319,113 +477,83 @@ const AboutUs: React.FC = () => {
       </section>
 
       {/* ============================================================
-         2. DRIFT — billboard headline → static 2×2 "routine" grid
-         (no marquee) → asymmetric rhetorical question stack →
-         monumental resolution.
+         2. DRIFT
          ============================================================ */}
       <section className="ab-section ab-drift" id="think">
         <div className="ab-wrap-full">
 
           <div className="ab-drift-head">
             <h2 className="ab-drift-h split-text">
-              <span className="l1">Marketing becomes maintenance quietly.</span>
-              {/* <span className="l2">It rarely fails all at once.</span> */}
+              <span className="l1">{aboutData.drift.headlineParts[0]}</span>
+              {aboutData.drift.headlineParts[1] && <span className="l2">{aboutData.drift.headlineParts[1]}</span>}
             </h2>
           </div>
 
-          {/* Static 2×2 of routine phrases. Each tile feels operational
-             on the surface — the outlined type signals the hollowness. */}
           <div className="ab-routine-grid">
-            <div className="ab-routine-cell">
-              <span className="ab-routine-dot"></span>
-              <span className="ab-routine-text">The calendar keeps<br/>moving.</span>
-            </div>
-            <div className="ab-routine-cell">
-              <span className="ab-routine-dot"></span>
-              <span className="ab-routine-text">Campaigns keep<br/>launching.</span>
-            </div>
-            <div className="ab-routine-cell">
-              <span className="ab-routine-dot"></span>
-              <span className="ab-routine-text">Reports keep<br/>getting made.</span>
-            </div>
-            <div className="ab-routine-cell">
-              <span className="ab-routine-dot"></span>
-              <span className="ab-routine-text">Meetings keep<br/>happening.</span>
-            </div>
+            {aboutData.drift.routineGrid.map((routine: string, idx: number) => (
+              <div className="ab-routine-cell" key={idx}>
+                <span className="ab-routine-dot"></span>
+                <span className="ab-routine-text" dangerouslySetInnerHTML={{ __html: routine }} />
+              </div>
+            ))}
           </div>
 
           <div className="ab-drift-pivot">
-            <p className="loud">But somewhere along the way, the work starts needing more explanation than it creates
-              movement.</p>
-            <p>Leadership starts asking harder questions.</p>
+            <p className="loud">{aboutData.drift.pivotLoud}</p>
+            <p>{aboutData.drift.pivotQuiet}</p>
           </div>
 
-          {/* Rhetorical questions — alternating alignment so they read
-             as voices pressing in from different angles, not as FAQ
-             items. No numbers, no arrows, no hover transform. */}
           <div className="ab-drift-questions">
-            <p className="ab-drift-q" data-align="l">What is this doing for the<br/>brand<span className="q-mark">?</span></p>
-            <p className="ab-drift-q" data-align="r2">What is this building over<br/>time<span className="q-mark">?</span></p>
-            <p className="ab-drift-q" data-align="l2">What is this helping us<br/>decide<span className="q-mark">?</span></p>
-            <p className="ab-drift-q" data-align="r">What is this moving for the<br/>business<span className="q-mark">?</span></p>
+            {aboutData.drift.questions.map((question: string, idx: number) => {
+              const align = idx === 0 ? "l" : idx === 1 ? "r2" : idx === 2 ? "l2" : "r";
+              return (
+                <p className="ab-drift-q" data-align={align} key={idx} dangerouslySetInnerHTML={{ __html: question + '<span class="q-mark">?</span>' }} />
+              );
+            })}
           </div>
 
-          <p className="ab-drift-resist">That is the drift <span className="accent">Impulse exists to resist.</span></p>
+          <p className="ab-drift-resist" dangerouslySetInnerHTML={{ __html: aboutData.drift.resist }} />
         </div>
       </section>
 
       {/* ============================================================
-         3. APPETITE — ghost word + monumental rows
-         (hover changes color only — no horizontal motion).
+         3. APPETITE
          ============================================================ */}
       <section className="ab-section ab-appetite">
-        <div className="ab-appetite-ghost" aria-hidden="true">APPETITE</div>
+        <div className="ab-appetite-ghost" aria-hidden="true">{aboutData.appetite.ghost}</div>
         <div className="ab-wrap-full ab-appetite-inner">
           <div className="ab-appetite-head">
-            <span className="l1">Appetite is not <span className="strike">size</span>.</span>
-            <span className="l2">It is willingness.</span>
+            <span className="l1" dangerouslySetInnerHTML={{ __html: aboutData.appetite.headlineL1 }} />
+            <span className="l2">{aboutData.appetite.headlineL2}</span>
           </div>
 
           <div className="ab-appetite-list">
-            <div className="ab-appetite-row">
-              <span className="num">01</span>
-              <span className="text">A startup can have it.</span>
-            </div>
-            <div className="ab-appetite-row">
-              <span className="num">02</span>
-              <span className="text">A legacy business can have it.</span>
-            </div>
-            <div className="ab-appetite-row">
-              <span className="num">03</span>
-              <span className="text">A conglomerate can have it.</span>
-            </div>
-            <div className="ab-appetite-row">
-              <span className="num">04</span>
-              <span className="text">A founder-led company can have it.</span>
-            </div>
+            {aboutData.appetite.rows.map((row: string, idx: number) => (
+              <div className="ab-appetite-row" key={idx}>
+                <span className="num">{String(idx + 1).padStart(2, '0')}</span>
+                <span className="text">{row}</span>
+              </div>
+            ))}
           </div>
 
-          <p className="ab-appetite-def">Appetite is the willingness to move, question, improve, experiment, challenge default
-            thinking, and expect more from marketing.</p>
+          <p className="ab-appetite-def">{aboutData.appetite.def}</p>
 
           <div className="ab-appetite-close">
-            <p>That is who we work best with.</p>
-            <p>Brands that do not want marketing to simply continue.</p>
-            <p className="accent">Brands that want it to create momentum.</p>
+            {aboutData.appetite.close.map((closeLine: string, idx: number) => (
+              <p key={idx} dangerouslySetInnerHTML={{ __html: closeLine }} />
+            ))}
           </div>
         </div>
       </section>
 
       {/* ============================================================
-         4. FORMATION — HEADLINE LEADS, then the V-flock visual,
-         then the body. Tightened padding to remove the dead
-         space the user flagged above the headline.
+         4. FORMATION
          ============================================================ */}
       <section className="ab-section ab-formation">
         <div className="ab-wrap-narrow">
 
           <div className="ab-formation-head">
-            <h2 className="ab-formation-h split-text">Teams go further in formation.</h2>
+            <h2 className="ab-formation-h split-text">{aboutData.formation.heading}</h2>
           </div>
 
           <div className="ab-formation-stage" aria-hidden="true">
@@ -453,108 +581,71 @@ const AboutUs: React.FC = () => {
           </div>
 
           <div className="ab-formation-body">
-            <p>A brand rarely moves because one channel performs in isolation.</p>
-            <p>Momentum is built when the thinking, the story, the search presence, the media, the website, the data, the
-              technology, and the execution pull in the same direction.</p>
-            <p>That is why we do not treat strategy as a document and execution as a handoff.</p>
-            <p className="ab-formation-close">The work has to move together.<em>Otherwise, it becomes activity.</em></p>
+            {aboutData.formation.body.map((line: string, idx: number) => {
+              if (idx === aboutData.formation.body.length - 1) {
+                return <p className="ab-formation-close" key={idx} dangerouslySetInnerHTML={{ __html: line }} />
+              }
+              return <p key={idx} dangerouslySetInnerHTML={{ __html: line }} />
+            })}
           </div>
         </div>
       </section>
 
       {/* ============================================================
-         5. MOVEMENT — services rendered as a quiet itemised list
-         (intentionally task-like, NOT a hero service grid), with
-         a monumental punchline reveal underneath. The visual
-         hierarchy IS the build-up: small list → towering reveal.
+         5. MOVEMENT
          ============================================================ */}
       <section className="ab-section ab-movement" id="movement">
         <div className="ab-wrap-full">
           <div className="ab-movement-head">
-            <h2 className="ab-movement-h split-text">The service is not the story.<br /><span className="accent">The movement
-              is.</span></h2>
+            <h2 className="ab-movement-h split-text" dangerouslySetInnerHTML={{ __html: aboutData.movement.heading }} />
           </div>
 
           <div className="ab-movement-system">
             <div className="ab-tasks">
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Brand strategy</strong>gives the work a commercial foundation.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Content</strong>builds authority, not just output.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Search</strong>compounds visibility that the brand owns.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Performance</strong>makes spend more accountable.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Social media</strong>builds relevance, not just a posting rhythm.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Websites</strong>become the place where intent either lands or leaks.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>Analytics</strong>turns data into clearer decisions.</p>
-              </div>
-              <div className="ab-task">
-                <p className="ab-task-text"><strong>AI</strong>makes the work faster, sharper, and more scalable without
-                  lowering the bar.</p>
-              </div>
+              {aboutData.movement.tasks.map((task: string, idx: number) => (
+                <div className="ab-task" key={idx}>
+                  <p className="ab-task-text" dangerouslySetInnerHTML={{ __html: task }} />
+                </div>
+              ))}
             </div>
 
             <div className="ab-reveal">
-              <p className="ab-reveal-pre">Used separately, these can become tasks.</p>
-              <h3 className="ab-reveal-h">
-                Used with intent,
-                <span className="accent-block">they become momentum.</span>
-              </h3>
+              <p className="ab-reveal-pre">{aboutData.movement.revealPre}</p>
+              <h3 className="ab-reveal-h" dangerouslySetInnerHTML={{ __html: aboutData.movement.revealH }} />
             </div>
           </div>
         </div>
       </section>
 
       {/* ============================================================
-         6. CLARITY — Less chasing. More clarity.
+         6. CLARITY
          ============================================================ */}
       <section className="ab-section ab-clarity">
         <div className="ab-wrap-full">
 
           <div className="ab-clarity-head">
-            <h2 className="ab-clarity-h split-text">Less chasing.<br /><span className="accent">More clarity.</span></h2>
-            <p className="ab-clarity-h-sub">You get strategy before the work, not as a post-rationalisation after the work is
-              questioned. You get content, campaigns, websites, search systems, and AI-enabled workflows built to perform,
-              not just exist.</p>
+            <h2 className="ab-clarity-h split-text" dangerouslySetInnerHTML={{ __html: aboutData.clarity.heading }} />
+            <p className="ab-clarity-h-sub">{aboutData.clarity.subheading}</p>
           </div>
 
           <div className="ab-clarity-split">
-            <div className="ab-clarity-pane behind">
-              <span className="ab-clarity-pane-num">01</span>
-              <h3>Behind the scenes, there is process, data, automation, judgment, and senior thinking.</h3>
-              <ul>
-                <li>Process</li>
-                <li>Data</li>
-                <li>Automation</li>
-                <li>Judgment</li>
-                <li>Senior thinking</li>
-              </ul>
-            </div>
-            <div className="ab-clarity-pane surface">
-              <span className="ab-clarity-pane-num">02</span>
-              <h3>On the surface, it should feel simple.</h3>
-              <ul>
-                <li>You get fewer loose ends.</li>
-                <li>Fewer avoidable calls.</li>
-                <li>Fewer rounds caused by unclear thinking.</li>
-              </ul>
-            </div>
+            {aboutData.clarity.panes.map((pane: any, idx: number) => (
+              <div className={`ab-clarity-pane ${pane.type}`} key={idx}>
+                <span className="ab-clarity-pane-num">{pane.num}</span>
+                <h3>{pane.title}</h3>
+                <ul>
+                  {pane.items.map((item: string, i: number) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="ab-clarity-stack">
-            <span className="row">The right work.</span>
-            <span className="row">Moving in the right direction.</span>
-            <span className="row">With fewer things falling through the cracks.</span>
+            {aboutData.clarity.stack.map((item: string, idx: number) => (
+              <span className="row" key={idx}>{item}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -566,132 +657,69 @@ const AboutUs: React.FC = () => {
         <div className="ab-wrap-full">
 
           <div className="ab-senior-head">
-            <h2 className="ab-senior-h split-text">Senior thinking stays close to the work.</h2>
-            <p className="ab-senior-sub">Impulse is not built on the idea that strategy happens once and execution figures
-              itself out. The work often needs judgment.</p>
+            <h2 className="ab-senior-h split-text">{aboutData.senior.heading}</h2>
+            <p className="ab-senior-sub">{aboutData.senior.subheading}</p>
           </div>
 
           <div className="ab-senior-list">
-            <div className="ab-senior-row">
-              <div className="ab-senior-trigger">A campaign</div>
-              <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
-                <use href="#impulse-arrow" />
-              </svg></div>
-              <div className="ab-senior-need">may need a sharper thought.</div>
-            </div>
-            <div className="ab-senior-row">
-              <div className="ab-senior-trigger">A website</div>
-              <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
-                <use href="#impulse-arrow" />
-              </svg></div>
-              <div className="ab-senior-need">may need a clearer path.</div>
-            </div>
-            <div className="ab-senior-row">
-              <div className="ab-senior-trigger">A search strategy</div>
-              <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
-                <use href="#impulse-arrow" />
-              </svg></div>
-              <div className="ab-senior-need">may need stronger commercial context.</div>
-            </div>
-            <div className="ab-senior-row">
-              <div className="ab-senior-trigger">An AI workflow</div>
-              <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
-                <use href="#impulse-arrow" />
-              </svg></div>
-              <div className="ab-senior-need">may need a human filter.</div>
-            </div>
-            <div className="ab-senior-row">
-              <div className="ab-senior-trigger">A client conversation</div>
-              <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
-                <use href="#impulse-arrow" />
-              </svg></div>
-              <div className="ab-senior-need">may need more honesty than polish.</div>
-            </div>
+            {aboutData.senior.rows.map((row: any, idx: number) => (
+              <div className="ab-senior-row" key={idx}>
+                <div className="ab-senior-trigger">{row.trigger}</div>
+                <div className="ab-senior-arrow"><svg viewBox="0 0 24 24">
+                  <use href="#impulse-arrow" />
+                </svg></div>
+                <div className="ab-senior-need">{row.need}</div>
+              </div>
+            ))}
           </div>
 
           <div className="ab-senior-foot">
             <p>That is why senior thinking stays close.</p>
-            <p className="loud">Not to slow the work down. <em>To keep it pointed in the right direction.</em></p>
+            <p className="loud" dangerouslySetInnerHTML={{ __html: aboutData.senior.footLoud }} />
           </div>
         </div>
       </section>
 
       {/* ============================================================
-         8. FOUNDERS — cinematic full-bleed.
-         The transparent PNGs are cutouts already. The portraits
-         now sit against the Impulse brand mark instead of the
-         previous circular backdrop.
+         8. FOUNDERS
          ============================================================ */}
       <section className="ab-section ab-founders" id="founders">
         <div className="ab-wrap-full">
           <div className="ab-founders-intro">
-            <h2 className="ab-founders-h split-text">Built by people who refuse to <em>simply continue.</em></h2>
+            <h2 className="ab-founders-h split-text" dangerouslySetInnerHTML={{ __html: aboutData.founders.heading }} />
           </div>
         </div>
 
-        {/* ADWAIT — portrait left, copy right */}
-        <article className="ab-founder-section" data-side="left">
-          <span className="ab-founder-ghost-name" aria-hidden="true">ADWAIT</span>
+        {aboutData.founders.list.map((founder: any, idx: number) => (
+          <article className="ab-founder-section" data-side={founder.side} key={idx}>
+            <span className="ab-founder-ghost-name" aria-hidden="true">{founder.ghostName}</span>
 
-          <div className="ab-founder-grid">
-            <div className="ab-founder-portrait-wrap">
-              <div className="ab-founder-portrait-mark" aria-hidden="true">
-                <svg viewBox="801 344 274 272">
-                  <path className="ab-mark-glow ab-mark-glow-outer"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-glow ab-mark-glow-mid"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-glow ab-mark-glow-inner"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-fill"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                </svg>
+            <div className="ab-founder-grid">
+              <div className="ab-founder-portrait-wrap">
+                <div className="ab-founder-portrait-mark" aria-hidden="true">
+                  <svg viewBox="801 344 274 272">
+                    <path className="ab-mark-glow ab-mark-glow-outer"
+                      d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
+                    <path className="ab-mark-glow ab-mark-glow-mid"
+                      d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
+                    <path className="ab-mark-glow ab-mark-glow-inner"
+                      d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
+                    <path className="ab-mark-fill"
+                      d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
+                  </svg>
+                </div>
+                <div className="ab-founder-portrait" data-portrait>
+                  <img src={founder.img} alt={founder.alt} loading="lazy" decoding="async" />
+                </div>
               </div>
-              <div className="ab-founder-portrait" data-portrait>
-                <img src={`/images/About%20Us/Adwait-cutout-v2.webp`} alt="Adwait Joshi - Founder and CEO of Impulse Digital Marketing Agency" loading="lazy" decoding="async" />
-              </div>
-            </div>
-            <div className="ab-founder-copy-wrap">
-              <h3 className="ab-founder-name">Adwait Joshi</h3>
-              <p className="ab-founder-headline">Restless by design, particular by habit.</p>
-              <p className="ab-founder-body">Somewhere between simplifying what&rsquo;s complicated, complicating what&rsquo;s
-                too simple, and informally holding titles like fixer of things, questioner of norms, and quiet instigator
-                at Impulse Digital.</p>
-            </div>
-          </div>
-        </article>
-
-        {/* ABHISHEK — portrait right, copy left */}
-        <article className="ab-founder-section" data-side="right">
-          <span className="ab-founder-ghost-name" aria-hidden="true">ABHISHEK</span>
-
-          <div className="ab-founder-grid">
-            <div className="ab-founder-portrait-wrap">
-              <div className="ab-founder-portrait-mark" aria-hidden="true">
-                <svg viewBox="801 344 274 272">
-                  <path className="ab-mark-glow ab-mark-glow-outer"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-glow ab-mark-glow-mid"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-glow ab-mark-glow-inner"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                  <path className="ab-mark-fill"
-                    d="M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z" />
-                </svg>
-              </div>
-              <div className="ab-founder-portrait" data-portrait>
-                <img src={`/images/About%20Us/Abhishek-cutout-v2.webp`} alt="Abhishek Arekar - Co-Founder of Impulse Digital Marketing Agency" loading="lazy" decoding="async" />
+              <div className="ab-founder-copy-wrap">
+                <h3 className="ab-founder-name">{founder.name}</h3>
+                <p className="ab-founder-headline">{founder.headline}</p>
+                <p className="ab-founder-body">{founder.body}</p>
               </div>
             </div>
-            <div className="ab-founder-copy-wrap">
-              <h3 className="ab-founder-name">Abhishek Arekar</h3>
-              <p className="ab-founder-headline">The kind of person who can read a dashboard, a room, and a poorly explained
-                problem with the same unsettling accuracy.</p>
-              <p className="ab-founder-body">Somewhere in the background of every smooth process, sharper insight, and better
-                decision at Impulse Digital.</p>
-            </div>
-          </div>
-        </article>
+          </article>
+        ))}
       </section>
 
       {/* ============================================================
@@ -701,31 +729,27 @@ const AboutUs: React.FC = () => {
         <div className="ab-wrap-full">
 
           <div className="ab-fit-head">
-            <h2 className="ab-fit-h split-text">Built for brands that <em
-              style={{ fontStyle: "italic", fontWeight: 300, color: "var(--impulse-violet)" }}>expect more.</em></h2>
+            <h2 className="ab-fit-h split-text" dangerouslySetInnerHTML={{ __html: aboutData.fit.heading }} />
           </div>
 
           <div className="ab-fit-split">
             <div className="ab-fit-pane warn">
-              <p>We are not the right fit for teams looking for a vendor to simply fulfil briefs.</p>
+              <p>{aboutData.fit.warn}</p>
             </div>
             <div className="ab-fit-pane yes">
-              <p>Brands that want a partner who can think with them, build with them, challenge weak assumptions, and
-                reduce the weight marketing places on their internal team.</p>
+              <p>{aboutData.fit.yes}</p>
             </div>
           </div>
 
-          <p className="ab-clarity-h-sub" style={{ textAlign: "center", maxWidth: "880px", margin: "0 auto 4rem" }}>The size of the
-            brand matters less than the appetite behind it.</p>
+          <p className="ab-clarity-h-sub" style={{ textAlign: "center", maxWidth: "880px", margin: "0 auto 4rem" }}>{aboutData.fit.subheading}</p>
 
           <div className="ab-fit-attrs">
-            <div className="ab-fit-attr">A sharper question.</div>
-            <div className="ab-fit-attr">A higher standard.</div>
-            <div className="ab-fit-attr">A willingness to improve.</div>
-            <div className="ab-fit-attr">A need for marketing to move the business, not just fill the calendar.</div>
+            {aboutData.fit.attrs.map((attr: string, idx: number) => (
+              <div className="ab-fit-attr" key={idx}>{attr}</div>
+            ))}
           </div>
 
-          <p className="ab-fit-close">That is where Impulse fits best.</p>
+          <p className="ab-fit-close">{aboutData.fit.close}</p>
         </div>
       </section>
 
@@ -742,13 +766,13 @@ const AboutUs: React.FC = () => {
           <div className="ab-wrap-narrow">
             <div className="ab-final-card">
               <div className="ab-final-stack">
-                <div className="row">Move sharper.</div>
-                <div className="row">Move together.</div>
-                <div className="row">Move the business.</div>
+                {aboutData.final.stack.map((item: string, idx: number) => (
+                  <div className="row" key={idx}>{item}</div>
+                ))}
               </div>
               <div className="ab-final-cta-row">
-                <Link href="/contact-us/" className="btn" data-cursor="START">
-                  <span className="btn-text">Start a conversation</span>
+                <Link href={aboutData.final.cta.link} className="btn" data-cursor="START">
+                  <span className="btn-text">{aboutData.final.cta.text}</span>
                   <div className="btn-fill"></div>
                 </Link>
               </div>
@@ -757,11 +781,9 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-
-
-
     </main>
   );
 };
 
 export default AboutUs;
+

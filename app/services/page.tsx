@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ServicesIndex from '@/components/pages/ServicesIndex';
+import { servicesPageData } from '@/data/servicesPageData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Digital Marketing Services | Impulse Digital',
@@ -27,5 +28,5 @@ export const metadata: Metadata = {
 export default function ServicesIndexPage() {
     const schemas: any[] = [];
 
-  return <ServicesIndex />;
+  return <ServicesIndex data={servicesPageData} />;
 }

@@ -24,10 +24,10 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { socialMediaManagementData as data } from '@/data/socialMediaManagementData';
+import { data as data } from '@/data/data';
 
 
-const SocialMediaManagement: React.FC = () => {
+const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

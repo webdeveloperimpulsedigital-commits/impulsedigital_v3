@@ -1,11 +1,11 @@
 export const brandingData = {
   "hero": {
     "headlineParts": [
-      "Branding Agency in Dubai for",
-      "Market Perception & Strategic Identity"
+      "Forgotten Brands Don't",
+      "Get Chosen."
     ],
-    "headlineAccent": "Market Perception & Strategic Identity",
-    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Dubai with 34 years of marketing experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Dubai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
+    "headlineAccent": "Get Chosen.",
+    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Mumbai with 34 years of marketing experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Mumbai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
     "buttons": [
       {
         "text": "Build Your Brand System",
@@ -20,7 +20,7 @@ export const brandingData = {
     ]
   },
   "stats": {
-    "title": "Dubai's Branding Agency Built to Make Your Brand Easier to Recall",
+    "title": "Mumbai's Branding Agency Built to Make Your Brand Easier to Recall",
     "metrics": [
       {
         "target": 95,
@@ -100,7 +100,7 @@ export const brandingData = {
     ]
   },
   "uses": {
-    "title": "Where Branding Services Create Business Leverage",
+    "title": "Where Branding Creates Business Leverage",
     "cards": [
       {
         "title": "Brand Strategy and Identity",
@@ -225,7 +225,7 @@ export const brandingData = {
     "footer": "The aim is not to make the brand look designed.\n\nThe aim is to make the brand easier to recognise, remember, and trust."
   },
   "fit": {
-    "title": "Branding Agency Is Right for You If",
+    "title": "Branding Is Right for You If",
     "list": [
       "Your brand looks good, but does not feel distinctive enough.",
       "Your logo, design, and communication do not feel aligned.",
@@ -261,7 +261,7 @@ export const brandingData = {
     "items": [
       {
         "q": "What does Impulse Digital offer in branding services?",
-        "a": "As a branding agency in Dubai working across enterprise and growth-stage brands, Impulse Digital creates brand strategy, visual identity, logo systems, brand guidelines, lookbooks, packaging, collaterals, campaign design assets, and communication systems that help brands show up consistently. We have built brand systems for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group, across categories where consistency at scale is the hardest part of branding to get right."
+        "a": "As a branding agency in Mumbai working across enterprise and growth-stage brands, Impulse Digital creates brand strategy, visual identity, logo systems, brand guidelines, lookbooks, packaging, collaterals, campaign design assets, and communication systems that help brands show up consistently. We have built brand systems for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group, across categories where consistency at scale is the hardest part of branding to get right."
       },
       {
         "q": "How is branding different from logo design?",
@@ -289,7 +289,7 @@ export const brandingData = {
       },
       {
         "q": "How does Impulse Digital measure branding success?",
-        "a": "As a branding company in Dubai with 34 years of marketing experience, Impulse Digital evaluates branding through recognition, engagement, branded search volume, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required. We have tracked these signals for enterprise brands including Grasim Industries, where a single LinkedIn post reached 959,000 impressions with a 31% engagement rate, demonstrating measurable brand recall in action rather than as a theoretical metric."
+        "a": "As a branding company in Mumbai with 34 years of marketing experience, Impulse Digital evaluates branding through recognition, engagement, branded search volume, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required. We have tracked these signals for enterprise brands including Grasim Industries, where a single LinkedIn post reached 959,000 impressions with a 31% engagement rate, demonstrating measurable brand recall in action rather than as a theoretical metric."
       },
       {
         "q": "Who should be involved from our side?",

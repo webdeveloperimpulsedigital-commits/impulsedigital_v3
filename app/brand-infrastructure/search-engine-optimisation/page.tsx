@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SearchEngineOptimisation from '@/components/pages/SearchEngineOptimisation';
+import { searchEngineOptimisationData } from '@/data/searchEngineOptimisationData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'SEO Company in Thane | Best SEO Agency | Impulse Digital',
@@ -64,7 +66,7 @@ export default function SearchEngineOptimisationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <SearchEngineOptimisation />
+      <SearchEngineOptimisation data={searchEngineOptimisationData} />
     </>
   );
 

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import CampaignIntelligence from '@/components/pages/CampaignIntelligence';
+import { campaignIntelligenceData } from '@/data/ae/campaignIntelligenceData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Performance Intelligence Agency | Campaign Intelligence | Impulse Digital',
@@ -60,7 +62,7 @@ export default function CampaignIntelligencePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <CampaignIntelligence />
+      <CampaignIntelligence data={campaignIntelligenceData} />
     </>
   );
 

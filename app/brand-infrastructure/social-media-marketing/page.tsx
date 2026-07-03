@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
+import { socialMediaManagementData } from '@/data/socialMediaManagementData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
@@ -61,7 +63,7 @@ export default function SocialMediaManagementPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <SocialMediaManagement />
+      <SocialMediaManagement data={socialMediaManagementData} />
     </>
   );
 

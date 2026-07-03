@@ -5,13 +5,11 @@
 import React from 'react';
 
 import { ServiceTemplate } from '@/components/Service/ServiceTemplate';
-import { campaignIntelligenceData } from '@/data/campaignIntelligenceData';
-
-const CampaignIntelligence: React.FC = () => {
+const CampaignIntelligence: React.FC<{ data: any }> = ({ data }) => {
   return (
     <>
       
-      <ServiceTemplate data={campaignIntelligenceData} />
+      <ServiceTemplate data={data} />
     </>
   );
 };

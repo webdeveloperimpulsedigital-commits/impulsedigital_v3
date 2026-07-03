@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import VideoProduction from '@/components/pages/VideoProduction';
+import { videoProductionData } from '@/data/videoProductionData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Video Production Company in Mumbai | Production Agency | Impulse Digital',
@@ -64,7 +66,7 @@ export default function VideoProductionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <VideoProduction />
+      <VideoProduction data={videoProductionData} />
     </>
   );
 

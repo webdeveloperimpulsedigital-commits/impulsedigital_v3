@@ -24,7 +24,7 @@ import {
 
 import { SEOLocationsGrid } from '@/components/Service/SEOLocationsGrid';
 
-import { searchEngineOptimisationData as data } from '@/data/searchEngineOptimisationData';
+import { data as data } from '@/data/data';
 
 
 /** Helper: run `fn` as soon as window.gsap & window.ScrollTrigger are both loaded.
@@ -55,7 +55,7 @@ function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | voi
   };
 }
 
-const SearchEngineOptimisation: React.FC = () => {
+const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

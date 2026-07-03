@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import MarketIntelligence from '@/components/pages/MarketIntelligence';
+import { marketIntelligenceData } from '@/data/marketIntelligenceData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Market Intelligence Agency | Competitive Intelligence Services',
@@ -60,7 +62,7 @@ export default function MarketIntelligencePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <MarketIntelligence />
+      <MarketIntelligence data={marketIntelligenceData} />
     </>
   );
 

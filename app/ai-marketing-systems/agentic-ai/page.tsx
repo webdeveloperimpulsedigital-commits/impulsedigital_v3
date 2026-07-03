@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AgenticAI from '@/components/pages/AgenticAI';
+import { agenticAiData } from '@/data/agenticAiData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Agentic AI Agency | Agentic AI Services by Impulse Digital',
@@ -59,7 +61,7 @@ export default function AgenticAIPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <AgenticAI />
+      <AgenticAI data={agenticAiData} />
     </>
   );
 

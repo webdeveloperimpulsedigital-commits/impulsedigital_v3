@@ -23,7 +23,7 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { aiVideoProductionData as data } from '@/data/aiVideoProductionData';
+import { data as data } from '@/data/data';
 
 
 const aiVideoChannels = [
@@ -56,7 +56,7 @@ const aiVideoChannelPositions: ChannelPositionStyle[] = [
   { '--chip-left-desktop': '25%', '--chip-top-desktop': '12%' }
 ];
 
-const AIVideoProduction: React.FC = () => {
+const AIVideoProduction: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

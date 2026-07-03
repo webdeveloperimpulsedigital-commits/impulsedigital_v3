@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import WebsiteDevelopment from '@/components/pages/WebsiteDevelopment';
+import { websiteDevelopmentData } from '@/data/ae/websiteDevelopmentData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Website Design & Development Company in Dubai | Impulse Digital',
@@ -61,7 +63,7 @@ export default function WebsiteDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <WebsiteDevelopment />
+      <WebsiteDevelopment data={websiteDevelopmentData} />
     </>
   );
 

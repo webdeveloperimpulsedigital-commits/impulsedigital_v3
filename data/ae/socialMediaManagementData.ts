@@ -1,0 +1,296 @@
+export const socialMediaManagementData = {
+  "hero": {
+    "headlineParts": [
+      "Social Media Marketing",
+      "Agency in Dubai"
+    ],
+    "headlineAccent": "Agency in Dubai",
+    "description": "worth noticing, remembering, responding to, or sharing. Impulse Digital is the best social media marketing agency in Dubai, combining strategy, content creation, community management, paid amplification, and performance reporting to make your brand more relevant, consistent, and harder to ignore. As a trusted social media marketing company in Dubai with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Aditya Birla Group, and Tata Consumer Products, we build social systems that earn attention not just fill a calendar.",
+    "buttons": [
+      {
+        "text": "Build Social That Matters",
+        "link": "#connect",
+        "cursor": "BUILD"
+      },
+      {
+        "text": "See How We Manage Social",
+        "link": "#use-cases",
+        "cursor": "EXPLORE"
+      }
+    ]
+  },
+  "stats": {
+    "title": "Built for Brands That Take Social Seriously",
+    "metrics": [
+      {
+        "target": 12.5,
+        "suffix": "M",
+        "decimals": 0,
+        "desc": "Social media user identities in UAE."
+      },
+      {
+        "target": 4.5,
+        "suffix": " Hours",
+        "decimals": 1,
+        "desc": "Average daily time Emiratis spend on social media."
+      },
+      {
+        "target": 73,
+        "suffix": "%",
+        "decimals": 0,
+        "desc": "Consumers say they will buy from a competitor if a brand does not respond on social."
+      }
+    ],
+    "footnote": "Social is not where brands simply publish. It is where people judge relevance, responsiveness, taste, trust, and momentum."
+  },
+  "problem": {
+    "title": "The Problem Is Not Content. It Is Content Without a Point.",
+    "intro": [
+      "Most brands are active on social.",
+      "That does not mean they are meaningful on social."
+    ],
+    "pivot": "The feed is full.",
+    "gaps": [
+      "The posts are regular.",
+      "The designs look fine.",
+      "The captions sound familiar.",
+      "The reports show reach, likes, and impressions.",
+      "But the brand still feels replaceable."
+    ],
+    "outro": [
+      "That is what happens when social is treated like a deliverables list.",
+      "It should work as a relevance system."
+    ]
+  },
+  "vs": {
+    "title": "Social Media Marketing, in Plain English",
+    "leftLabel": "A calendar",
+    "leftStrike": "keeps you active.",
+    "rightLabel": "A social system",
+    "rightText": "keeps you ",
+    "rightHighlight": "relevant.",
+    "steps": [
+      {
+        "num": "01",
+        "text": "Build a clear point of view for the brand"
+      },
+      {
+        "num": "02",
+        "text": "Create content people can recognise, relate to, and remember"
+      },
+      {
+        "num": "03",
+        "text": "Manage conversations with speed and brand discipline"
+      },
+      {
+        "num": "04",
+        "text": "Use paid amplification where attention needs support"
+      },
+      {
+        "num": "05",
+        "text": "Turn monthly learning into sharper content and campaign decisions"
+      }
+    ],
+    "closing": "The output is not just posts. It is a managed social presence built to create relevance, trust, and demand over time."
+  },
+  "uses": {
+    "title": "Where Social Media Marketing Creates Business Leverage",
+    "cards": [
+      {
+        "title": "Strategy and Planning",
+        "body": "Define what your brand should say, who it should speak to, and how it should behave across platforms. Useful when your social presence feels active but directionless.",
+        "outcome": "Output: Social strategy, content pillars, platform priorities, monthly planning, campaign calendar, and brand voice direction."
+      },
+      {
+        "title": "Content Creation",
+        "body": "Create content that works as individual posts and as part of a larger brand world. Useful when your feed needs more than attractive design and generic captions.",
+        "outcome": "Output: Static posts, carousels, reels, scripts, captions, campaign assets, topical content, and platform-ready creative."
+      },
+      {
+        "title": "Account and Community Management",
+        "body": "Manage publishing, comments, mentions, DMs, and audience interactions with consistency and care. Useful when your audience expects responses, but your team cannot manage every conversation internally.",
+        "outcome": "Output: Publishing management, community response framework, engagement handling, escalation notes, and brand-safe interaction rules."
+      },
+      {
+        "title": "Paid Social Amplification",
+        "body": "Support important content, campaigns, launches, and conversion journeys with planned paid distribution. Useful when organic reach is not enough for the business objective.",
+        "outcome": "Output: Audience planning, campaign setup, creative testing, budget optimisation, performance tracking, and paid-social recommendations."
+      },
+      {
+        "title": "Analytics and Reporting",
+        "body": "Understand what is working, what is being ignored, and what should change next. Useful when reports need to move beyond vanity metrics into sharper content and campaign learning.",
+        "outcome": "Output: Monthly reports, content performance analysis, audience learning, campaign insights, and next-month recommendations."
+      },
+      {
+        "title": "Specialised Campaigns",
+        "body": "Build campaigns around launches, occasions, moments, and brand priorities. Useful when the brand needs to show up with a stronger point of view, not just routine content.",
+        "outcome": "Output: Campaign concepts, creative routes, content plans, platform adaptations, amplification ideas, and performance learning."
+      }
+    ]
+  },
+  "channels": {
+    "title": "When Your Social Needs More Than a Calendar",
+    "intro": "Social media marketing matters when the brand is ready to stop treating content as a monthly quota and that is exactly when choosing the right social media marketing agency in Dubai makes all the difference.",
+    "list": [
+      { "label": "Active, not distinctive", "pos": { "left": "18%", "top": "20%" } },
+      { "label": "Good-looking, not memorable", "pos": { "left": "50%", "top": "8%" } },
+      { "label": "Inconsistent brand voice", "pos": { "left": "82%", "top": "20%" } },
+      { "label": "Low-meaning engagement", "pos": { "left": "92%", "top": "50%" } },
+      { "label": "Sharper campaign thinking", "pos": { "left": "82%", "top": "80%" } },
+      { "label": "Faster community responses", "pos": { "left": "50%", "top": "92%" } },
+      { "label": "Relevance over visibility", "pos": { "left": "18%", "top": "80%" } },
+      { "label": "Tired of post packages", "pos": { "left": "8%", "top": "50%" } }
+    ]
+  },
+  "whenToUse": {
+    "title": "We Build Social Around Relevance, Not Routine",
+    "paragraphs": [
+      "Social becomes weak when it is built around frequency alone.",
+      "A stronger social presence needs strategy, taste, platform understanding, community response, campaign thinking, and performance learning to work together."
+    ],
+    "closer": "Not more posts. More reason to follow.",
+    "pillsHeading": "We build around:",
+    "pills": [
+      "Brand point of view: what your brand should be known for saying, showing, and standing behind",
+      "Platform behaviour: how the brand should adapt across Instagram, LinkedIn, Facebook, YouTube, and emerging formats",
+      "Creative consistency: how content feels recognisable without becoming repetitive",
+      "Community discipline: how the brand responds, engages, and escalates without losing voice",
+      "Performance learning: how every month improves the next one"
+    ]
+  },
+  "guardrails": {
+    "title": "Not More Posts. More Reason to Follow.",
+    "intro": "<p>Social becomes stronger when strategy, taste, platform behaviour, community response, and learning work together.</p><p class=\"pivot\">The goal is not to keep the feed busy. The goal is to make the brand worth paying attention to.</p><p style=\"margin-top: 1.5rem;\">We manage social around:</p>",
+    "rows": [
+      {
+        "title": "Brand point of view",
+        "desc": "what your brand should be known for saying, showing, and standing behind"
+      },
+      {
+        "title": "Platform behaviour",
+        "desc": "how the brand should adapt across Instagram, LinkedIn, Facebook, YouTube, and emerging formats"
+      },
+      {
+        "title": "Creative consistency",
+        "desc": "how content feels recognisable without becoming repetitive"
+      },
+      {
+        "title": "Community discipline",
+        "desc": "how the brand responds, engages, and escalates without losing voice"
+      },
+      {
+        "title": "Performance learning",
+        "desc": "how every month improves the next one"
+      }
+    ],
+    "punchlineLine1": "Posts matter.",
+    "punchlineLine2": "Relevance matters more."
+  },
+  "process": {
+    "title": "How We Manage Social",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Define the Role of Social",
+        "desc": "We begin by understanding what social needs to do for the brand: awareness, relevance, community, trust, demand, hiring, or campaign support."
+      },
+      {
+        "num": "02",
+        "title": "Build the Strategy",
+        "desc": "We define audience segments, platform priorities, content pillars, voice, campaign themes, and monthly planning logic."
+      },
+      {
+        "num": "03",
+        "title": "Create the Content System",
+        "desc": "We build static posts, carousels, videos, captions, reels, scripts, and platform-ready assets around the approved strategy."
+      },
+      {
+        "num": "04",
+        "title": "Manage and Amplify",
+        "desc": "We publish, monitor, respond, support campaigns, and use paid amplification where the objective demands it."
+      },
+      {
+        "num": "05",
+        "title": "Learn and Improve",
+        "desc": "We analyse performance, audience response, creative patterns, and campaign outcomes to sharpen the next cycle."
+      }
+    ],
+    "footer": "The aim is not to keep the feed busy.\n\nThe aim is to make the brand worth paying attention to."
+  },
+  "fit": {
+    "title": "Social Media Marketing Is Right for You If",
+    "list": [
+      "You do not want your social media reduced to a post count.",
+      "Your brand needs a clearer point of view.",
+      "Your feed looks active, but not memorable.",
+      "Your content calendar is regular, but not strategic enough.",
+      "Your audience expects better conversations and faster responses.",
+      "Your campaigns need sharper platform thinking.",
+      "Your leadership wants social to support brand relevance, not just monthly activity.",
+      "Your brand is ready for a partner that thinks before it posts."
+    ],
+    "closer": ""
+  },
+  "finalCta": {
+    "title": "Build a Feed Worth Returning To.",
+    "body": "Tell us what your brand needs social to do. We will help shape the strategy, content system, campaigns, and management rhythm that make your presence harder to ignore.",
+    "buttons": [
+      {
+        "text": "Build Social That Matters",
+        "link": "/contact-us/",
+        "cursor": "START"
+      },
+      {
+        "text": "Start a Conversation",
+        "link": "/contact-us/",
+        "cursor": "HI"
+      }
+    ],
+    "footnote": "No post-count thinking. No calendar dumping. Just social media management built around relevance, consistency, and brand value."
+  },
+  "faq": {
+    "title": "FAQ's Curious Much?",
+    "items": [
+      {
+        "q": "Why do I need a social media marketing agency in Dubai?",
+        "a": "A social media management agency brings strategy, consistency, and expertise to your brand's online presence. Instead of just posting randomly, an agency ensures that every piece of content aligns with your business goals, engages your target audience, and drives measurable results."
+      },
+      {
+        "q": "Why does my Dubai business need a social media marketing agency rather than handling it in-house?",
+        "a": "Most in-house teams in Dubai manage social media alongside five other responsibilities. The result is content that goes live on schedule but rarely goes anywhere. A specialist social media marketing agency in Dubai brings three things an in-house team stretched across multiple functions cannot consistently deliver: a dedicated creative system that produces content with a clear brand point of view, a community management discipline that responds to comments and messages within brand-safe parameters, and a performance learning loop that uses monthly data to make the next month's content sharper. Impulse Digital has built and managed social presence for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group brands where the cost of inconsistent social is not just missed engagement but missed commercial opportunity. We bring that standard of social discipline to every brand we manage."
+      },
+      {
+        "q": "How do you measure the success of a social media campaign?",
+        "a": "We track a variety of metrics depending on your objectives, including reach, engagement rate, website traffic from social channels, lead generation, and overall conversion rates. We provide regular reports to keep you informed of our progress and ROI."
+      },
+      {
+        "q": "Can you handle customer service and community management?",
+        "a": "Yes. Social media is a two-way conversation. We manage comments, respond to direct messages, and escalate critical customer service issues according to predefined brand guidelines to maintain a positive brand reputation."
+      },
+      {
+        "q": "How often will you post on my social media accounts?",
+        "a": "Posting frequency is tailored to your brand's strategy and the specific platform's best practices. Quality always trumps quantity; our goal is to maintain a consistent presence that keeps your audience engaged without overwhelming them."
+      },
+      {
+        "q": "We are on Instagram, LinkedIn, and Facebook but none of them are working well. Should we add more platforms or fix what we have?",
+        "a": "Almost always fix what you have first. The instinct to add platforms when existing ones underperform is one of the most common and expensive mistakes Dubai brands make on social. Adding a new platform adds production requirements, community management overhead, and strategic complexity without addressing why the existing platforms are not working. The root cause of underperformance on multiple platforms simultaneously is almost always one of three things: the content does not have a clear enough point of view to earn attention in a crowded feed, the posting frequency is optimised for activity rather than impact, or the content is not adapted to each platform's specific format and audience behaviour. Instagram content that works as a carousel performs differently as a reel. LinkedIn content that builds authority for a B2B audience reads differently from Facebook content targeting consumers. Impulse Digital's social strategy process audits each platform independently before recommending any changes to your platform mix."
+      },
+      {
+        "q": "What does an SMM agency in Dubai actually manage on a day-to-day basis?",
+        "a": "More than most brands realise before they start working with one. An SMM agency in Dubai managing a brand's social presence handles six interconnected workstreams simultaneously. Content planning: mapping monthly content pillars, campaign moments, and topical opportunities into a structured calendar. Creative production: briefing, designing, writing, and producing static posts, carousels, reels, and scripts across platform specifications. Publishing management: scheduling and posting across platforms at the right times for the right audiences. Community management: responding to comments, DMs, mentions, and brand tags with speed and brand voice consistency. Paid amplification: supporting high-priority content with targeted paid distribution. And performance reporting: analysing what worked, what was ignored, and what the next month's content and budget decisions should be based on. Impulse Digital manages all six as one integrated system not as separate services handed to different teams."
+      },
+      {
+        "q": "Do we need to run paid social ads if our organic social is already active?",
+        "a": "Organic and paid social solve different problems and the answer depends on what your social presence needs to do. Organic social builds sustained relevance it creates the brand associations, community relationships, and content archive that earns long-term audience trust. Paid social amplifies specific moments a product launch, a campaign, a seasonal opportunity, or a high performing piece of organic content that deserves a wider audience than the algorithm gave it. The mistake most Dubai brands make is treating paid social as a substitute for weak organic rather than an amplifier for strong organic. Paying to push content that does not earn attention organically wastes budget and rarely improves results. Impulse Digital's paid social practice is built on the principle that paid amplification should extend the reach of content that is already performing well organically not rescue content that was not working to begin with."
+      },
+      {
+        "q": "We need social media management but also SEO and performance marketing. Can one agency handle all three?",
+        "a": "Yes and for enterprise brands in Dubai, having all three managed by the same team produces significantly better results than splitting them across different agencies. When the best digital marketing company in Dubai manages social, SEO, and performance marketing as connected disciplines, three things happen that do not happen when they are managed separately. Content produced for social can be repurposed and optimised for SEO without a brief crossing between two agencies. Audience insights from paid performance campaigns inform social content strategy in real time rather than arriving in a quarterly review. And the brand voice remains consistent across every channel because the same strategic team is making decisions across all three. Impulse Digital operates across all three disciplines and our client results for Amazon India, HUL, Mastercard, and Tata Consumer Products are built on exactly this connected approach."
+      },
+      {
+        "q": "How do we evaluate whether Impulse Digital is the right SMM company in Dubai for our brand?",
+        "a": "Ask for category-specific proof before anything else. An SMM company in Dubai worth working with should be able to show you documented engagement and campaign results from brands in your category or a comparable one not just a logo slide of well-known clients. Impulse Digital publishes specific social results: 959,000 impressions and 31% engagement on a single LinkedIn post for Grasim Industries, 5.49 million plays for Uppercase's AI-led New Year campaign, and structured weekly social sentiment tracking for Tata Consumer Products' Agent Chings campaign. These are outcomes from brands in FMCG, manufacturing, and retail categories where social has to connect directly to commercial movement, not just awareness metrics. In our first conversation, we review your current social presence, identify specifically what is limiting performance, and recommend where to start at no cost and with no obligation. Reach out through our contact form or call us directly."
+      }
+    ]
+  }
+};

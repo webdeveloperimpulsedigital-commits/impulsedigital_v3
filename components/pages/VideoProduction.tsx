@@ -22,9 +22,7 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { videoProductionData } from '@/data/videoProductionData';
-
-const VideoProduction: React.FC = () => {
+const VideoProduction: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   return (
@@ -32,44 +30,44 @@ const VideoProduction: React.FC = () => {
 
 
       <ServiceHero
-        headlineParts={videoProductionData.hero.headlineParts}
-        headlineAccent={videoProductionData.hero.headlineAccent}
-        description={videoProductionData.hero.description}
-        buttons={videoProductionData.hero.buttons}
+        headlineParts={data.hero.headlineParts}
+        headlineAccent={data.hero.headlineAccent}
+        description={data.hero.description}
+        buttons={data.hero.buttons}
       />
 
-      <ServiceStats data={videoProductionData.stats} />
+      <ServiceStats data={data.stats} />
 
       <ServiceHandoff />
 
-      <ServiceProblem data={videoProductionData.problem} />
+      <ServiceProblem data={data.problem} />
       <ServiceHandoff />
 
-      <ServiceVs data={videoProductionData.vs} />
+      <ServiceVs data={data.vs} />
       <ServiceHandoff />
 
-      <ServiceUses data={videoProductionData.uses} />
+      <ServiceUses data={data.uses} />
       <ServiceHandoff />
 
-      <ServiceWhenToUse data={videoProductionData.whenToUse} />
+      <ServiceWhenToUse data={data.whenToUse} />
       <ServiceHandoff />
 
-      <ServiceGuardrails data={videoProductionData.guardrails} />
+      <ServiceGuardrails data={data.guardrails} />
       <ServiceHandoff />
 
-      <ServiceProcess data={videoProductionData.process} />
+      <ServiceProcess data={data.process} />
 
       <Logos title="Video Production Agency in Mumbai Trusted by Leading Enterprise Brands" />
 
       <Testimonials />
       <ServiceHandoff />
 
-      <ServiceFit data={videoProductionData.fit} />
+      <ServiceFit data={data.fit} />
       <ServiceHandoff />
 
-      <ServiceFinalCTA data={videoProductionData.finalCta} />
+      <ServiceFinalCTA data={data.finalCta} />
       <Contact title="Let’s turn the message<br/>into a memory." />
-      <ServiceFAQ data={videoProductionData.faq} />
+      <ServiceFAQ data={data.faq} />
     </main>
   );
 };

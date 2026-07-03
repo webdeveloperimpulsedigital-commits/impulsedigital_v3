@@ -24,10 +24,10 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { websiteDevelopmentData as data } from '@/data/websiteDevelopmentData';
+import { data as data } from '@/data/data';
 
 
-const WebsiteDevelopment: React.FC = () => {
+const WebsiteDevelopment: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {
