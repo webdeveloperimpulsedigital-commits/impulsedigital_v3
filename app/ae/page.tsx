@@ -48,11 +48,7 @@ export default function HomePage() {
       "areaServed": [
         {
           "@type": "Country",
-          "name": "India"
-        },
-        {
-          "@type": "City",
-          "name": "Thane"
+          "name": "UAE"
         },
         {
           "@type": "City",
@@ -60,7 +56,11 @@ export default function HomePage() {
         },
         {
           "@type": "City",
-          "name": "Pune"
+          "name": "Abu Dhabi"
+        },
+        {
+          "@type": "City",
+          "name": "Sharjah"
         }
       ],
       "sameAs": [
@@ -85,42 +85,42 @@ export default function HomePage() {
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://www.theimpulsedigital.com/#webpage",
-      "url": "https://www.theimpulsedigital.com/",
+      "@id": "https://www.theimpulsedigital.com/ae/#webpage",
+      "url": "https://www.theimpulsedigital.com/ae/",
       "name": "Impulse Digital: Best Digital Marketing Agency in Dubai",
       "description": "Impulse Digital is a digital marketing agency helping brands with social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation.",
       "isPartOf": {
-        "@id": "https://www.theimpulsedigital.com/#website"
+        "@id": "https://www.theimpulsedigital.com/ae/#website"
       },
       "about": {
-        "@id": "https://www.theimpulsedigital.com/#organization"
+        "@id": "https://www.theimpulsedigital.com/ae/#organization"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.theimpulsedigital.com/header-logo.png"
       },
       "publisher": {
-        "@id": "https://www.theimpulsedigital.com/#organization"
+        "@id": "https://www.theimpulsedigital.com/ae/#organization"
       }
     },
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "@id": "https://www.theimpulsedigital.com/#website",
-      "url": "https://www.theimpulsedigital.com/",
+      "@id": "https://www.theimpulsedigital.com/ae/#website",
+      "url": "https://www.theimpulsedigital.com/ae/",
       "name": "Impulse Digital",
       "alternateName": "Impulse Digital",
       "description": "Impulse Digital is a digital marketing agency offering social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
       "publisher": {
-        "@id": "https://www.theimpulsedigital.com/#organization"
+        "@id": "https://www.theimpulsedigital.com/ae/#organization"
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.theimpulsedigital.com/?s={search_term_string}",
+        "target": "https://www.theimpulsedigital.com/ae/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
-];
+  ];
 
   return (
     <>

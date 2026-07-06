@@ -3,7 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 
-import { FAQItem, defaultFaqs } from '@/lib/faqData';
+import { FAQItem, defaultFaqs, aeFaqs } from '@/lib/faqData';
 import { getFAQSchema } from '@/lib/schemaHelper';
 
 interface FAQProps {
@@ -12,11 +12,13 @@ interface FAQProps {
 
 
 
-const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
+const FAQ: React.FC<FAQProps> = ({ data }) => {
   const pathname = usePathname();
   const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
-  const displayData = data.map(item => {
+  const activeData = data || (isAe ? aeFaqs : defaultFaqs);
+
+  const displayData = activeData.map(item => {
     if (!isAe) return item;
     return {
       question: item.question.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
@@ -28,7 +30,7 @@ const FAQ: React.FC<FAQProps> = ({ data = defaultFaqs }) => {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema(data, isAe)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema(activeData, isAe)) }}
       />
       <section className="faq glass-panel">
       <div className="container">
