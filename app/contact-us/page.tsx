@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ContactUs from '@/components/pages/ContactUs';
+import { contactPageData } from '@/data/contactPageData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Contact Impulse Digital | Get in Touch',
@@ -27,5 +28,5 @@ export const metadata: Metadata = {
 export default function ContactUsPage() {
     const schemas: any[] = [];
 
-  return <ContactUs />;
+  return <ContactUs data={contactPageData} />;
 }

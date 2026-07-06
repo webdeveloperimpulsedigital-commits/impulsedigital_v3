@@ -5,37 +5,42 @@ import React, { useEffect, useRef } from 'react';
 
 interface LogosProps {
   title?: string | null;
+  data?: any;
 }
 
-const LOGOS = [
-  { src: 'aditya-birla-group.webp', alt: 'Aditya Birla Group', scale: 1.25 },
-  { src: 'Amazon.webp', alt: 'Amazon - Digital Marketing Client of Impulse Digital', scale: 1.25 },
-  { src: 'Unilever.avif', alt: 'Hindustan Unilever - FMCG Client of Impulse Digital', scale: 1.3, fixGrid: true },
-  { src: 'Himalaya.webp', alt: 'Himalaya' },
-  { src: 'hdfc-securities.webp', alt: 'HDFC Securities', scale: 1.3 },
-  { src: 'Mastercard.webp', alt: 'Mastercard', scale: 1.3 },
-  { src: 'Uppercase.webp', alt: 'Uppercase' },
-  { src: 'tata-consumer.webp', alt: 'Tata Consumer Products', scale: 1.5 },
-  { src: 'tata-soulfull.webp', alt: 'Tata Soulful', scale: 1.6, fixGrid: true },
-  { src: 'Bajaj.webp', alt: 'Bajaj Group', scale: 1.7, fixGrid: true },
-  { src: 'Dmart.svg', alt: 'Dmart - Retail Client of Impulse Digital', scale: 1.8 },
-  { src: 'Ola.webp', alt: 'Ola', fixGrid: true },
-  { src: 'Chings.webp', alt: 'Chings', scale: 1.7, fixGrid: true },
-  { src: 'More.webp', alt: 'More', scale: 1.7, fixGrid: true },
-  { src: 'abg-chemicals.webp', alt: 'Aditya Birla Chemicals', scale: 1.6, fixGrid: true },
-  { src: 'Almex.webp', alt: 'Hindalco Almex', scale: 1.6, fixGrid: true },
-  { src: 'Godrej.webp', alt: 'Godrej Construction', scale: 1.7, fixGrid: true },
-  { src: 'birla-cellulose.webp', alt: 'Birla Cellulose', scale: 1.8, fixGrid: true },
-  { src: 'ABPS.webp', alt: 'Aditya Birla Public Schools', scale: 1.8, fixGrid: true },
-  { src: 'TJSB.webp', alt: 'TJSB', scale: 1.7, fixGrid: true },
-  { src: 'Navyasa.webp', alt: 'Navyasa', scale: 1.7, fixGrid: true },
-  { src: 'Croda.webp', alt: 'Croda', scale: 1.8, fixGrid: true },
-  { src: 'Qure.webp', alt: 'Qure', scale: 2.0, fixGrid: true },
-  { src: 'Electromech.webp', alt: 'Electromech', scale: 2.0, fixGrid: true }
-];
-
-const Logos: React.FC<LogosProps> = ({ title }) => {
+const Logos: React.FC<LogosProps> = ({ title, data }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Use data or fallback to defaults
+  const logosData = data || {
+    heading: title || "Trusted by marketing teams at",
+    items: [
+      { src: 'aditya-birla-group.webp', alt: 'Aditya Birla Group', scale: 1.25 },
+      { src: 'Amazon.webp', alt: 'Amazon - Digital Marketing Client of Impulse Digital', scale: 1.25 },
+      { src: 'Unilever.avif', alt: 'Hindustan Unilever - FMCG Client of Impulse Digital', scale: 1.3, fixGrid: true },
+      { src: 'Himalaya.webp', alt: 'Himalaya' },
+      { src: 'hdfc-securities.webp', alt: 'HDFC Securities', scale: 1.3 },
+      { src: 'Mastercard.webp', alt: 'Mastercard', scale: 1.3 },
+      { src: 'Uppercase.webp', alt: 'Uppercase' },
+      { src: 'tata-consumer.webp', alt: 'Tata Consumer Products', scale: 1.5 },
+      { src: 'tata-soulfull.webp', alt: 'Tata Soulful', scale: 1.6, fixGrid: true },
+      { src: 'Bajaj.webp', alt: 'Bajaj Group', scale: 1.7, fixGrid: true },
+      { src: 'Dmart.svg', alt: 'Dmart - Retail Client of Impulse Digital', scale: 1.8 },
+      { src: 'Ola.webp', alt: 'Ola', fixGrid: true },
+      { src: 'Chings.webp', alt: 'Chings', scale: 1.7, fixGrid: true },
+      { src: 'More.webp', alt: 'More', scale: 1.7, fixGrid: true },
+      { src: 'abg-chemicals.webp', alt: 'Aditya Birla Chemicals', scale: 1.6, fixGrid: true },
+      { src: 'Almex.webp', alt: 'Hindalco Almex', scale: 1.6, fixGrid: true },
+      { src: 'Godrej.webp', alt: 'Godrej Construction', scale: 1.7, fixGrid: true },
+      { src: 'birla-cellulose.webp', alt: 'Birla Cellulose', scale: 1.8, fixGrid: true },
+      { src: 'ABPS.webp', alt: 'Aditya Birla Public Schools', scale: 1.8, fixGrid: true },
+      { src: 'TJSB.webp', alt: 'TJSB', scale: 1.7, fixGrid: true },
+      { src: 'Navyasa.webp', alt: 'Navyasa', scale: 1.7, fixGrid: true },
+      { src: 'Croda.webp', alt: 'Croda', scale: 1.8, fixGrid: true },
+      { src: 'Qure.webp', alt: 'Qure', scale: 2.0, fixGrid: true },
+      { src: 'Electromech.webp', alt: 'Electromech', scale: 2.0, fixGrid: true }
+    ]
+  };
 
   useEffect(() => {
     // Access CDN globals inside useEffect — safe because it only runs in the browser
@@ -132,7 +137,7 @@ const Logos: React.FC<LogosProps> = ({ title }) => {
       clearTimeout(timeout);
       if (ctx) ctx.revert();
     };
-  }, [title]);
+  }, [title, logosData]);
 
   return (
     <section className="logos" ref={sectionRef}>
@@ -142,12 +147,12 @@ const Logos: React.FC<LogosProps> = ({ title }) => {
         }
       `}</style>
       <div className="container">
-        <h2 className="section-heading text-center split-text" style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', color: 'var(--white)', marginBottom: '5rem' }} dangerouslySetInnerHTML={{ __html: title || 'Trusted by marketing teams at' }} />
+        <h2 className="section-heading text-center split-text" style={{ fontSize: 'clamp(2rem, 5vw, 5rem)', color: 'var(--white)', marginBottom: '5rem' }} dangerouslySetInnerHTML={{ __html: logosData.heading }} />
 
         <div className="logo-slider">
           <div className="logo-grid">
-            {[...LOGOS, ...LOGOS].map((logo, idx) => (
-              <div key={idx} className={`logo-card ${idx >= LOGOS.length ? 'logo-duplicate' : ''}`}>
+            {[...logosData.items, ...logosData.items].map((logo, idx) => (
+              <div key={idx} className={`logo-card ${idx >= logosData.items.length ? 'logo-duplicate' : ''}`}>
                 <div className="logo-pane">
                   <img
                     src={`/logos/${logo.src}`}

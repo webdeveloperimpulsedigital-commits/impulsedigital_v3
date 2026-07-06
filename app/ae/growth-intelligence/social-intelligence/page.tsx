@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AlwaysOnIntelligence from '@/components/pages/AlwaysOnIntelligence';
+import { alwaysOnIntelligenceData } from '@/data/ae/alwaysOnIntelligenceData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Social Intelligence Agency | Impulse Digital',
@@ -60,7 +62,7 @@ export default function SocialIntelligencePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <AlwaysOnIntelligence />
+      <AlwaysOnIntelligence data={alwaysOnIntelligenceData} />
     </>
   );
 

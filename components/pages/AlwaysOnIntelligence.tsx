@@ -5,13 +5,11 @@
 import React from 'react';
 
 import { ServiceTemplate } from '@/components/Service/ServiceTemplate';
-import { alwaysOnIntelligenceData } from '@/data/alwaysOnIntelligenceData';
-
-const AlwaysOnIntelligence: React.FC = () => {
+const AlwaysOnIntelligence: React.FC<{ data: any }> = ({ data }) => {
   return (
     <>
       
-      <ServiceTemplate data={alwaysOnIntelligenceData} />
+      <ServiceTemplate data={data} />
     </>
   );
 };

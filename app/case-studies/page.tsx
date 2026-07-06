@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import CaseStudies from '@/components/pages/CaseStudies';
+import { caseStudiesPageData } from '@/data/caseStudiesPageData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Digital Marketing Case Studies | Impulse Digital',
@@ -27,5 +28,5 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
     const schemas: any[] = [];
 
-  return <CaseStudies />;
+  return <CaseStudies data={caseStudiesPageData} />;
 }

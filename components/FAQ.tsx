@@ -7,12 +7,13 @@ import { FAQItem, defaultFaqs, aeFaqs } from '@/lib/faqData';
 import { getFAQSchema } from '@/lib/schemaHelper';
 
 interface FAQProps {
+  heading?: string;
   data?: FAQItem[];
 }
 
 
 
-const FAQ: React.FC<FAQProps> = ({ data }) => {
+const FAQ: React.FC<FAQProps> = ({ heading = "Questions we hear<br />from growth leaders.", data }) => {
   const pathname = usePathname();
   const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
 
@@ -34,7 +35,7 @@ const FAQ: React.FC<FAQProps> = ({ data }) => {
       />
       <section className="faq glass-panel">
       <div className="container">
-        <h2 className="section-heading split-text">Questions we hear<br />from growth leaders.</h2>
+        <h2 className="section-heading split-text" dangerouslySetInnerHTML={{ __html: heading }} />
         <div className="accordion">
           {displayData.map((item, index) => (
             <div className="acc-item" key={index}>

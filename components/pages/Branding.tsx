@@ -24,10 +24,10 @@ import {
   ServiceFAQ
 } from '@/components/Service/ServiceTemplate';
 
-import { brandingData as data } from '@/data/brandingData';
+import { data as data } from '@/data/data';
 
 
-const Branding: React.FC = () => {
+const Branding: React.FC<{ data: any }> = ({ data }) => {
   useServicePageBackground();
 
   useEffect(() => {

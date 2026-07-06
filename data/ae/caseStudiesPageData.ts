@@ -1,0 +1,162 @@
+export const caseStudiesPageData = {
+  hero: {
+    titleLine1: "The Work",
+    titleHighlight: "Behind the Numbers.",
+    description: "The final number is never the full story. The real story is what had to be questioned, rebuilt, sharpened and pushed before the result had a chance to happen."
+  },
+  cases: [
+    {
+      client: "Amazon India",
+      subNames: ["Amazon Unplugged", "Amazon India EVP Strategy", "Amazon People-Led Talent Marketing"],
+      subDescriptions: [
+        "Employer brand video series featuring leadership conversations, delivering 1.2M+ views and 9.5M+ impressions.",
+        "Employee-backed EVP development through immersion, primary research, and thematic focus group synthesis.",
+        "Keeping the employer brand alive between hiring moments through a structured, multi-channel communication engine."
+      ],
+      subSlugs: ["/case-studies/amazon-unplugged", "/case-studies/amazon-india-evp-strategy", "/case-studies/amazon-talent-communication-engine"],
+      title: "Employer Branding & EVP Strategy",
+      category: "Employer Branding",
+      description: "Employer brand video series, research-backed EVP development, and always-on talent communication engine.",
+      images: [
+        "/case studies/Written Content/Amazon Unplugged/Amazon Unplugged Title.webp",
+        "/case studies/Written Content/Amazon EVP/Amazon EVP Title.webp",
+        "/case studies/Written Content/Amazon Comms/Amazon Comms Title.webp"
+      ],
+      slug: "/case-studies/amazon-unplugged"
+    },
+    {
+      client: "Mastercard",
+      title: "Merchant Outreach",
+      category: "Outreach",
+      description: "90.9% merchant response rate through an AI-led WhatsApp cluster-head outreach strategy.",
+      images: ["/case studies/Written Content/Mastercard/Mastercard Title.webp"],
+      slug: "/case-studies/mastercard"
+    },
+    {
+      client: "HUL",
+      title: "Consumer Centricity",
+      category: "Growth Intelligence",
+      description: "Geo-targeted digital coupon campaign delivering 90% higher CTR and 12,548 landing page sessions.",
+      images: ["/case studies/Written Content/HUL 1/HUL 1 Title.webp"],
+      slug: "/case-studies/hul"
+    },
+    {
+      client: "Tata Consumer Products",
+      subNames: ["Shaking Things Up", "What Should Travel"],
+      subDescriptions: [
+        "A mature staple category began showing early signals of transformation, with consumers moving beyond price and habit toward health and premium cues.",
+        "Identifying which products had the strongest market readiness, portfolio fit, and repeatable demand potential for Australia and the US."
+      ],
+      subSlugs: ["/case-studies/shaking-things-up", "/case-studies/tcpl"],
+      title: "Category Growth & Market Expansion",
+      category: "Brand Research",
+      description: "Decoding category transformation for staple ingredients and mapping diaspora demand to market launch.",
+      images: [
+        "/images/case-study-image/salt/shaking-things-up.png",
+        "/images/case-study-image/tcpl/AUS_us.png"
+      ],
+      slug: "/case-studies/shaking-things-up"
+    },
+    {
+      client: "Aditya Birla Group",
+      subNames: ["Aditya Birla Group × KBC", "ABG × Brut India", "Fours for Good"],
+      subDescriptions: [
+        "A question on KBC became a child’s shot at education.",
+        "10 changemakers. 27M+ views. One purpose made human.",
+        "Every four became a chance for 200+ children to train like cricketers."
+      ],
+      subSlugs: ["/case-studies/abg-kbc", "/case-studies/abg-brut-india", "/case-studies/fours-for-good"],
+      title: "Brand Campaigns",
+      category: "Brand Campaigns",
+      description: "Three high-impact campaigns — a Brut India collaboration, cricket-driven social impact, and KBC-led purpose storytelling.",
+      images: [
+        "/case studies/Written Content/ABG x KBC/ABG x KBC Title.webp",
+        "/case studies/Written Content/ABG x Brut India/ABG Brut India Title.webp",
+        "/case studies/Written Content/Fours for good/Fours for good title.webp"
+      ],
+      slug: "/case-studies/abg-kbc"
+    },
+    {
+      client: "Tata Soulfull",
+      title: "The Next Bite",
+      category: "Brand Research",
+      description: "Decoding what drives trial, repeat purchase, and how the category could stretch from functional fuel to mainstream snacking.",
+      images: ["/images/case-study-image/tata-soulfull/Generated image 1.png"],
+      slug: "/case-studies/tata-soulfull"
+    },
+    {
+      client: "Ching's Secret",
+      subNames: ["The Chatpata Test (Ching's × Kurkure)", "The Reputation Radar (Food Pharmer)"],
+      subDescriptions: [
+        "Decoding public response across search and social, reading sentiment, flavour expectations, celebrity impact, and brand recall signals.",
+        "A command-center approach tracked sentiment, platform narratives, creator influence, and reputational risk signals."
+      ],
+      subSlugs: ["/case-studies/chings-kurkure", "/case-studies/chings-foodfarmer"],
+      title: "Consumer Response & Reputation",
+      category: "Brand Monitoring",
+      description: "Decoding public response to a major brand collaboration and monitoring consumer pulse to manage reputational risk.",
+      images: [
+        "/images/case-study-image/chings- kurkure/CHing+Kurkure.png",
+        "/images/case-study-image/chings-foodfarmer/Foodfarmer.png"
+      ],
+      slug: "/case-studies/chings-kurkure"
+    },
+    {
+      client: "Qure.ai",
+      title: "Healthcare AI SEO",
+      category: "SEO",
+      description: "Rebuilt Qure.ai’s US SEO structure from a one-page presence into a search-led system.",
+      images: ["/case studies/Written Content/Qure.ai/QureAI Title.webp"],
+      slug: "/case-studies/qure-ai"
+    },
+    {
+      client: "DMart",
+      title: "Digital Retail Transformation",
+      category: "Growth Intelligence",
+      description: "13.43 lakh unique reach and 53K clicks that drove measurable in-store footfall at scale.",
+      images: ["/case studies/Written Content/Dmart/Dmart Title.webp"],
+      slug: "/case-studies/dmart"
+    },
+    {
+      client: "ElectroMech",
+      title: "Website & SEO",
+      category: "Growth Intelligence",
+      description: "Rebuilding digital visibility to capture verified global B2B leads.",
+      images: ["/case studies/Written Content/ElectroMech/ElectroMech title.webp"],
+      slug: "/case-studies/electromech"
+    },
+    {
+      client: "Automag",
+      subNames: ["Automag India", "Automag × Bajaj Auto"],
+      subDescriptions: [
+        "45-50 qualified B2B leads a month from buyers already searching.",
+        "The system worked. The film made buyers understand what changed."
+      ],
+      subSlugs: ["/case-studies/automag-india", "/case-studies/automag-bajaj-auto"],
+      title: "SEO & Brand Film",
+      category: "SEO",
+      description: "B2B SEO that turned 1–2 leads a month into 45+, and a brand film for Bajaj Auto.",
+      images: [
+        "/case studies/Written Content/Automag India/Automag SEO/Automag Title.webp",
+        "/case studies/Written Content/Automag India/Automag x Bajaj Auto title.webp"
+      ],
+      slug: "/case-studies/automag-india"
+    },
+    {
+      client: "Uppercase",
+      title: "Sustainable Luggage",
+      category: "AI Marketing Systems",
+      description: "A complete brand film produced entirely with generative AI—script, visuals, voice, and edit.",
+      images: ["/case studies/Written Content/Uppercase/Uppercase Title.webp"],
+      slug: "/case-studies/uppercase"
+    },
+    {
+      client: "LG Hing",
+      title: "LG Hing Diwali Campaign",
+      category: "Purpose-Led Campaign",
+      description: "Celebrating the women who make Diwali feel alive for a heritage food brand.",
+      images: ["/case studies/Written Content/LG/LG title.webp"],
+      slug: "/case-studies/lg-hing"
+    }
+  ]
+};

@@ -1,0 +1,149 @@
+export const consumerIntelligenceData = {
+  hero: {
+    headlineHtml: '<span style="white-space: nowrap;">Consumer Intelligence Agency</span><br> <span style="color: var(--impulse-violet);">for Real Buyer Behaviour</span>',
+    headlineParts: ["Consumer Intelligence Agency", "for Real Buyer Behaviour"],
+    headlineAccent: "for Real Buyer Behaviour",
+    description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist consumer intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our consumer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
+    buttons: [
+      { text: "Decode Your Consumer", link: "#connect", cursor: "DECODE" },
+      { text: "See Where It Helps", link: "#use-cases", cursor: "EXPLORE" }
+    ]
+  },
+  problem: {
+    title: "The Problem Is Not Data.<br/>It Is Distance.",
+    intro: "Most teams already know what happened.",
+    gaps: [
+      "The product got trial, but not repeat.",
+      "The campaign got reach, but not preference.",
+      "The new variant created interest, but not adoption.",
+      "The brand stayed visible, but not chosen."
+    ],
+    outro: [
+      "The hard question is why.",
+      "Customer Intelligence service helps close the distance between what your dashboard shows and what your Customer actually thinks, feels, trusts, resists, and expects."
+    ]
+  },
+  vs: {
+    title: "Consumer Intelligence, in Plain English",
+    leftLabel: "Research",
+    leftStrike: "records the Customer.",
+    rightLabel: "Intelligence",
+    rightText: "reveals ",
+    rightHighlight: "the choice",
+    steps: [
+      { num: "01", text: "Understand who the Customer really is" },
+      { num: "02", text: "Decode what drives their decisions" },
+      { num: "03", text: "Find what blocks adoption" },
+      { num: "04", text: "Identify claims, benefits, and needs worth building around" },
+      { num: "05", text: "Turn Customer truth into sharper brand, product, and communication decisions" }
+    ],
+    closing: "The output is not a research dump. It is a decision tool for teams that need to act."
+  },
+  uses: {
+    title: "Where Consumer Intelligence Creates Business Leverage",
+    cards: [
+      {
+        title: "Usage and Attitude Studies",
+        body: "Understand how Customers think, behave, choose, and relate to your category. Useful when your team needs to move beyond demographic labels and understand what actually shapes Customer behaviour. It answers: Who are we really speaking to? What role does the category play in their life? What needs, habits, and attitudes shape choice? How should we segment or prioritise audiences?",
+        outcome: "What you get: Customer understanding deck, segmentation or persona framework, behaviour map, attitude map, and communication planning inputs."
+      },
+      {
+        title: "Trigger and Barrier Analysis",
+        body: "Find what moves Customers forward and what holds them back. Useful when interest exists, but adoption, conversion, or repeat is not moving the way it should. It answers: What makes a Customer consider us? What makes them hesitate? What emotional or functional trigger drives action? What belief, habit, price concern, trust gap, or product issue slows adoption?",
+        outcome: "What you get: Trigger and barrier framework, adoption friction map, messaging recommendations, funnel intervention inputs, and next-step recommendations."
+      },
+      {
+        title: "Innovation Funnel Support",
+        body: "Find what consumers are beginning to expect before the category fully catches up. Useful when your team is shaping new products, claims, benefits, ingredients, formats, or category opportunities. It answers: What unmet needs are worth exploring? Which benefits or claims have real Customer pull? What expectations are emerging in the category? Which ideas deserve sharper validation?",
+        outcome: "What you get: Opportunity territories, consumer expectation maps, benefit and claim directions, product idea inputs, and innovation recommendation decks."
+      }
+    ]
+  },
+  whenToUse: {
+    customClass: "ci-when-to-use",
+    title: "Use Customer Intelligence Consultant Before<br/>Assumption Becomes Strategy",
+    paragraphs: [
+      "Consumer Intelligence is most useful when the decision is important and the Customer truth underneath it is still unclear."
+    ],
+    closer: "The more expensive the decision, the more dangerous the assumption.",
+    pillsHeading: "Use it before",
+    pills: [
+      "A brand relaunch or repositioning",
+      "A new category or audience entry",
+      "A campaign strategy reset",
+      "A product, packaging, price, or claim change",
+      "A new product concept or innovation pipeline",
+      "A funnel fix when trial, adoption, or repeat is weak",
+      "A leadership decision that needs more than internal opinion"
+    ]
+  },
+  guardrails: {
+    title: "Impulse Digital Turns Signals<br/>Into Decisions",
+    intro: "Customer understanding becomes weak when it stays trapped in research language. We connect Customer inputs with digital signals, category context, search behaviour, social conversations, reviews, and market patterns. Then we turn that understanding into frameworks your team can use.",
+    rows: [
+      { title: "Consumer context", desc: "What people say, feel, need, avoid, and expect" },
+      { title: "Digital signals", desc: "What people search, review, discuss, compare, and question" },
+      { title: "Category understanding", desc: "What the market is already teaching us about choice and adoption" },
+      { title: "Strategic interpretation", desc: "So the output becomes direction, not documentation" }
+    ],
+    punchlineLine1: "Not more findings.",
+    punchlineLine2: "Better decisions."
+  },
+  process: {
+    title: "How We Build Consumer Intelligence",
+    steps: [
+      { num: "01", title: "Define the Decision", desc: "We start with the business decision your team needs to make, not the research method." },
+      { num: "02", title: "Frame the Right Questions", desc: "We identify what must be understood: motivations, behaviours, triggers, barriers, expectations, or innovation opportunities." },
+      { num: "03", title: "Gather the Signals", desc: "We combine relevant Customer inputs with digital and category signals to build a richer view." },
+      { num: "04", title: "Find the Meaning", desc: "We look for patterns, contradictions, tensions, and gaps that explain why Customers behave the way they do." },
+      { num: "05", title: "Build the Decision Framework", desc: "We turn the intelligence into clear recommendations, frameworks, and next steps your team can act on." }
+    ],
+    footer: "The aim is not to know more.\n\nThe aim is to decide better."
+  },
+  fit: {
+    title: "Consumer Intelligence Agency<br/>Is Right for You If",
+    closer: "If the decision matters, the Customer truth underneath it matters more.",
+    list: [
+      "You have data, but not enough clarity on why Customers behave the way they do.",
+      "Your campaign is visible, but not changing preference.",
+      "Your product is getting trial, but not enough repeat.",
+      "Your brand is preparing for a relaunch or repositioning.",
+      "You are entering a new category, audience, or market.",
+      "Your innovation pipeline needs sharper Customer-led direction.",
+      "Your team is making a major decision on assumptions that need to be tested."
+    ]
+  },
+  finalCta: {
+    headingFontSize: "clamp(2.8rem, 5vw, 5.5rem)",
+    headingLineHeight: "1.1",
+    titleParts: ["Let Consumer Intelligence<br/>Shape Your<br/>", "Next Move."],
+    accent: "Next Move.",
+    body: "Tell us what decision you are trying to make. We will help you understand what your Customer needs, resists, trusts, and expects before you make it.",
+    buttons: [
+      { text: "Decode Your Consumer", link: "/contact-us/", cursor: "DECODE" },
+      { text: "Start a Conversation", link: "/contact-us/", cursor: "HI" }
+    ],
+    footnote: "No generic research dump. No insight theatre. Just sharper Customer understanding built for real brand, product, and growth decisions."
+  },
+  faq: {
+    title: "What to Know Before You Study the Consumer",
+    items: [
+      { q: "What is Customer Intelligence and how does Impulse Digital approach it?", a: "Customer Intelligence helps brands understand who their buyers are, what drives their choices, what holds them back, and what they expect from a category before it changes. At Impulse Digital, we approach this as a specialist consumer intelligence agency that works with enterprise brands including Amazon India, HUL, Tata Customer Products, Aditya Birla Group, and Himalaya. Every customer intelligence engagement is built to support a specific decision, not just to produce findings. The output is always action-ready: sharper brand strategy, more relevant messaging, better product decisions, and growth plans built around the real buyer rather than the assumed one." },
+      { q: "How is Customer Intelligence different from regular market research?", a: "Regular market research often stops at findings. A report is delivered, presented, filed, and referenced occasionally. Customer Intelligence is built to support active decisions. Impulse Digital combines customer inputs from qualitative and quantitative research with digital behavioural signals, category context, and strategic interpretation to produce recommendations your team can act on immediately. The difference shows up in the output format: instead of a findings deck that describes what customers said, you receive a decision framework that tells your brand, product, and marketing teams what to do next and why. For Tata Customer Products, this approach helped decode category transformation dynamics and map diaspora demand patterns directly into market launch strategy." },
+      { q: "What decisions can Impulse Digital's Customer Intelligence service support?", a: "Impulse Digital's customer intelligence service is designed around the specific decisions enterprise brands face before committing budget, direction, or resources. These include brand relaunches where existing positioning needs validation or replacement, segmentation projects where the brand needs a clearer map of its most valuable buyer groups, campaign strategy decisions where messaging needs to be built around real triggers rather than assumed ones, product innovation where customer expectations and unmet needs need to be identified before development begins, pricing decisions where customer sensitivity and competitive perception data are required, and category entry assessments where the brand needs to understand whether an opportunity is real before investing. The scope of each engagement is defined by the decision it needs to serve, not by a standard research template." },
+      { q: "What do Usage and Attitude Studies help with and what do you receive?", a: "Usage and Attitude Studies give brands a structured picture of how customers currently engage with a category: what they use, how often, why they choose specific products, what they associate with different brands, and where tensions and unmet needs exist. At Impulse Digital, U&A studies are designed to directly inform four types of decisions. Segmentation: identifying meaningfully different customer groups based on behaviour and attitude rather than demographics alone. Persona development: building buyer personas grounded in real data rather than assumption. Brand strategy: understanding what associations your brand holds and which ones are worth building or changing. Communication planning: mapping the beliefs and language your audience already uses so messaging connects rather than explains. Output includes a customer landscape report, segmentation framework, persona definitions, and strategic implications directly mapped to your team's current planning cycle." },
+      { q: "What is Trigger and Barrier Analysis?", a: "It identifies what pushes Customers toward adoption and what stops them from moving ahead. This helps improve messaging, product design, pricing, funnel interventions, and conversion strategy." },
+      { q: "What is Innovation Funnel Support and how does Impulse Digital use it?", a: "Innovation Funnel Support helps brands identify and validate the customer opportunities that should feed their new product development pipeline. Impulse Digital uses this practice to answer three questions before any innovation investment is made. Where are the unmet or underserved needs in the category that your brand has the credibility and capability to address? Which emerging customer expectations, benefit territories, or ingredient or format trends are gaining momentum and have not yet been claimed by a competitor? And which ideas currently in your innovation pipeline have the strongest customer evidence behind them and which should be deprioritised before development costs accumulate? Output includes emerging opportunity territories, benefit and claim language sourced from customer vocabulary rather than internal briefing language, innovation prioritisation inputs, and a customer validation framework for testing early-stage concepts." },
+      { q: "What does Impulse Digital deliver at the end of a Customer Intelligence engagement?", a: "Working with Impulse Digital as your customer intelligence consultant, you receive decision-ready outputs structured around the specific problem the engagement was commissioned to solve. These include recommendation decks with clearly prioritised action points, persona frameworks built from real customer data and mapped to your brand's specific buyer landscape, trigger and barrier maps with intervention recommendations, opportunity territories with customer evidence and competitive context, and action point summaries that connect every insight to a specific decision your brand team, product team, or marketing leadership can act on. The exact output format depends on what your team needs to make the decision confidently. We do not deliver research for its own sake. We deliver the intelligence your team needs to move." },
+      { q: "Who should be involved from our side?", a: "Usually brand teams, Customer insights teams, product teams, innovation teams, marketing heads, and decision-makers who will use the intelligence in planning." },
+      { q: "When should we do this?", a: "Before a major decision. That could be before a relaunch, campaign reset, product launch, category entry, price change, or innovation pipeline review." }
+    ]
+  },
+  logosTitle: "Trusted by Teams That Need More Than Research",
+  contactTitle: "Decode Your Consumer.",
+  seo: {
+    title: "Customer Intelligence Services | Impulse Digital",
+    description: "Impulse Digital's Customer Intelligence service decodes Customer motivations, behaviour, triggers, and barriers to help brands build strategy around real buyers — not assumptions.",
+    canonical: "https://www.theimpulsedigital.com/growth-intelligence/customer-intelligence/"
+  }
+};

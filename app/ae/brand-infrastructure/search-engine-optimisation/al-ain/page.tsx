@@ -51,7 +51,28 @@ export default function SeoAlAinLocationPage() {
     }
   };
 
-  const schemas = [serviceSchema, getComplexFAQSchema(seoAlAinData, true)];
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Impulse Digital",
+    "telephone": "+97145276816",
+    "email": "collabs@theimpulsedigital.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Sheikh Mohammed Bin Rashid Boulevard",
+      "postOfficeBoxNumber": "P.O. Box 340733",
+      "addressLocality": "Downtown Dubai",
+      "addressRegion": "Dubai",
+      "postalCode": "340733",
+      "addressCountry": "AE"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Al Ain"
+    }
+  };
+
+  const schemas = [serviceSchema, getComplexFAQSchema(seoAlAinData, true), localBusinessSchema];
 
   return (
     <>

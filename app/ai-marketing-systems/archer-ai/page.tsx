@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ArcherAI from '@/components/pages/ArcherAI';
+import { archerAiData } from '@/data/archerAiData';
+;
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Archer AI: AI Outbound Sales Agent | Impulse Digital',
@@ -61,7 +63,7 @@ export default function ArcherAIPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
       />
-      <ArcherAI />
+      <ArcherAI data={archerAiData} />
     </>
   );
 

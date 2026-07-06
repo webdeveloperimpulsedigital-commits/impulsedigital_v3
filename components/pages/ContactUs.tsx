@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
-const ContactUs: React.FC = () => {
+const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
   const pathname = usePathname();
   const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
   useEffect(() => {
@@ -342,29 +342,36 @@ const ContactUs: React.FC = () => {
         </div>
         <div className="contact-hero-grid">
           <div className="contact-hero-copy">
-            <h1 className="contact-headline hero-copy-reveal">Bring Us the Problem You Can No Longer Ignore.</h1>
+            <h1 className="contact-headline hero-copy-reveal">{data?.hero?.headline || "Bring Us the Problem You Can No Longer Ignore."}</h1>
             <div className="contact-lede">
-              <p className="hero-copy-reveal">Most good conversations do not begin with a service name.</p>
-              <p className="hero-copy-reveal">They begin with a problem that has become too expensive to keep carrying.</p>
-              <p className="hero-copy-reveal">Tell us what that problem is. We will tell you if we are the right room for it.</p>
+              {(data?.hero?.lede || [
+                "Most good conversations do not begin with a service name.",
+                "They begin with a problem that has become too expensive to keep carrying.",
+                "Tell us what that problem is. We will tell you if we are the right room for it."
+              ]).map((line: string, i: number) => (
+                <p key={i} className="hero-copy-reveal">{line}</p>
+              ))}
             </div>
           </div>
 
           <div className="contact-filter-cards" id="warp-start">
-            <article className="contact-filter-card">
-              <h2>We Only Take Work We Can Do Justice To.</h2>
-              <p>We are not built to say yes to everything.</p>
-              <p>There is work we can do extremely well, and there is work someone else may be better suited for.</p>
-              <p>So we will look at what you share and respond honestly.</p>
-            </article>
-
-            <article className="contact-filter-card contact-filter-card-alert">
-              <h2>This Form Is Not for Job Applications.</h2>
-              <p>If you are applying for a role, do not use this form.</p>
-              <p>Applications sent here will not reach HR. They will not be reviewed. They will not be considered.</p>
-              <p>Please apply only through the Careers page or the hiring email mentioned there.</p>
-              <p>This form is for business enquiries only.</p>
-            </article>
+            {(data?.filterCards || [
+              {
+                title: "We Only Take Work We Can Do Justice To.",
+                paragraphs: ["We are not built to say yes to everything.", "There is work we can do extremely well, and there is work someone else may be better suited for.", "So we will look at what you share and respond honestly."],
+                isAlert: false
+              },
+              {
+                title: "This Form Is Not for Job Applications.",
+                paragraphs: ["If you are applying for a role, do not use this form.", "Applications sent here will not reach HR. They will not be reviewed. They will not be considered.", "Please apply only through the Careers page or the hiring email mentioned there.", "This form is for business enquiries only."],
+                isAlert: true
+              }
+            ]).map((card: any, idx: number) => (
+              <article key={idx} className={`contact-filter-card ${card.isAlert ? 'contact-filter-card-alert' : ''}`}>
+                <h2>{card.title}</h2>
+                {card.paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
+              </article>
+            ))}
           </div>
 
           <div className="contact-hero-right" id="contact-form">
@@ -392,31 +399,31 @@ const ContactUs: React.FC = () => {
 
               <div className="contact-form-grid">
                 <label>
-                  <span>Company name <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.companyLabel || "Company name"} <span style={{color: '#ff4d4d'}}>*</span></span>
                   <input type="text" id="Company" name="Company" autoComplete="organization" required />
                 </label>
                 <label>
-                  <span>Your name <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.nameLabel || "Your name"} <span style={{color: '#ff4d4d'}}>*</span></span>
                   <input type="text" id="Last_Name" name="Last Name" autoComplete="name" required />
                 </label>
                 <label>
-                  <span>Email <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.emailLabel || "Email"} <span style={{color: '#ff4d4d'}}>*</span></span>
                   <input type="email" id="Email" name="Email" autoComplete="email" required />
                 </label>
                 <label>
-                  <span>Phone number <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.phoneLabel || "Phone number"} <span style={{color: '#ff4d4d'}}>*</span></span>
                   <input type="tel" id="Phone" name="Phone" autoComplete="tel" required />
                 </label>
               </div>
               <label className="contact-message-field">
-                <span>Message</span>
-                <textarea id="Description" name="Description" rows={5} placeholder="What is the problem you want us to understand?"></textarea>
+                <span>{data?.form?.messageLabel || "Message"}</span>
+                <textarea id="Description" name="Description" rows={5} placeholder={data?.form?.messagePlaceholder || "What is the problem you want us to understand?"}></textarea>
               </label>
               <label className="contact-upload-field">
-                <span>Upload brief, RFQ, deck, or note, optional (Max 3 files, 20MB limit)</span>
+                <span>{data?.form?.uploadLabel || "Upload brief, RFQ, deck, or note, optional (Max 3 files, 20MB limit)"}</span>
                 <input type="file" name="theFile" id="theFile1132219000000597005" multiple />
-                <strong>Have a brief, RFQ, deck, or note? Attach it here.</strong>
-                <em>No brief yet? That is fine. The problem is enough.</em>
+                <strong>{data?.form?.uploadStrong || "Have a brief, RFQ, deck, or note? Attach it here."}</strong>
+                <em>{data?.form?.uploadEm || "No brief yet? That is fine. The problem is enough."}</em>
               </label>
 
               <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -427,7 +434,7 @@ const ContactUs: React.FC = () => {
               </div>
 
               <button type="submit" className="contact-submit">
-                <span>Start a Conversation</span>
+                <span>{data?.form?.submitText || "Start a Conversation"}</span>
                 <svg viewBox="801 344 274 272" aria-hidden="true">
                   <use href="#impulse-mark" />
                 </svg>
@@ -441,37 +448,37 @@ const ContactUs: React.FC = () => {
         <div className="container contact-location-grid">
           <div className="contact-info-row">
             <div className="contact-direct-copy">
-              <p className="contact-kicker">Prefer To Connect Directly?</p>
-              <p className="contact-address" style={{ marginBottom: '2rem' }}>For business enquiries, you can also reach us here.</p>
+              <p className="contact-kicker">{data?.directConnect?.kicker || "Prefer To Connect Directly?"}</p>
+              <p className="contact-address" style={{ marginBottom: '2rem' }}>{data?.directConnect?.address || "For business enquiries, you can also reach us here."}</p>
               <div className="contact-direct-links">
-                <a href="mailto:collabs@theimpulsedigital.com" className="contact-direct-link">
+                <a href={`mailto:${data?.directConnect?.email || "collabs@theimpulsedigital.com"}`} className="contact-direct-link">
                   <span className="contact-direct-label">Email</span>
-                  <span className="contact-direct-value">collabs@theimpulsedigital.com</span>
+                  <span className="contact-direct-value">{data?.directConnect?.email || "collabs@theimpulsedigital.com"}</span>
                 </a>
-                <a href={isAe ? "tel:+97145276816" : "tel:+919769285224"} className="contact-direct-link">
+                <a href={data?.directConnect?.phoneLink || (isAe ? "tel:+97145276816" : "tel:+919769285224")} className="contact-direct-link">
                   <span className="contact-direct-label">Phone</span>
-                  <span className="contact-direct-value">{isAe ? "+97145276816" : "+91-9769285224"}</span>
+                  <span className="contact-direct-value">{data?.directConnect?.phone || (isAe ? "+97145276816" : "+91-9769285224")}</span>
                 </a>
               </div>
             </div>
 
             <div className="contact-location-copy">
-              <p className="contact-kicker">Where You'll Find Us</p>
+              <p className="contact-kicker">{data?.location?.kicker || "Where You'll Find Us"}</p>
               <p className="contact-address">
-                {isAe ? (
+                {data?.location?.address || (isAe ? (
                   <>Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai</>
                 ) : (
                   <>Chirag Infotech, 304 - 305, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604, India</>
-                )}
+                ))}
               </p>
             </div>
           </div>
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
-              src={isAe 
+              src={data?.location?.mapSrc || (isAe 
                 ? "https://maps.google.com/maps?q=Regus%20Boulevard%20Tower%201,%20Boulevard%20Plaza%20Tower%201,%20Downtown%20Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30142.480967467654!2d72.953999!3d19.203494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9218eaaaaab%3A0xe087a0855822211d!2sImpulse%20Digital%20-%20%231%20Digital%20Marketing%20Agency%20in%20Mumbai!5e0!3m2!1sen!2sus!4v1779974855996!5m2!1sen!2sus"
-              }
+              )}
               width="100%" height="100%"
               style={{ border: 0, position: 'absolute', top: 0, left: 0, zIndex: 2 }}
               allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
