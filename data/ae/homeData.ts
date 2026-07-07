@@ -12,7 +12,7 @@ export const homeData = {
     }
   },
   caseStudies: {
-    heading: "Work that earned its numbers in the Middle East",
+    heading: "Work that earned its numbers",
     cta: "SEE THE WORK BEHIND THE NUMBERS",
     cases: [
       {
@@ -60,7 +60,7 @@ export const homeData = {
     ]
   },
   services: {
-    heading: "Three ways growth<br />leaders work with us in UAE.",
+    heading: "Three ways growth<br />leaders work with us.",
     items: [
       {
         link: "/ae/growth-intelligence/",
