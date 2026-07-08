@@ -46,7 +46,12 @@ function shouldProxyBinary(ct: string): boolean {
 }
 
 export async function proxy(request: NextRequest) {
-  const { pathname, search, origin } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
+
+  // Resolve the actual public origin dynamically using HTTP headers
+  const host = request.headers.get('x-forwarded-host') || request.headers.get('host') || 'www.theimpulsedigital.com';
+  const proto = request.headers.get('x-forwarded-proto') || 'https';
+  const publicOrigin = `${proto}://${host}`;
 
   // Add x-pathname header for all requests so layouts can detect the route
   const requestHeaders = new Headers(request.headers);
@@ -113,7 +118,7 @@ export async function proxy(request: NextRequest) {
     if (status >= 300 && status < 400) {
       const defaultLoc = isAeBlog ? '/ae/blog/' : '/blog/';
       const location    = wpResponse.headers.get('location') || defaultLoc;
-      const newLocation = rewriteUrls(location, isAeBlog, origin);
+      const newLocation = rewriteUrls(location, isAeBlog, publicOrigin);
       return NextResponse.redirect(newLocation, { status });
     }
 
@@ -139,7 +144,7 @@ export async function proxy(request: NextRequest) {
 
     // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
     const body      = await wpResponse.text();
-    const rewritten = rewriteUrls(body, isAeBlog, origin);
+    const rewritten = rewriteUrls(body, isAeBlog, publicOrigin);
     const isHtml = contentType.includes('text/html');
 
     return new NextResponse(rewritten, {
