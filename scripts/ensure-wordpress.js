@@ -202,3 +202,37 @@ function ensurePlaceholder() {
 }
 
 ensureWordPress();
+syncCss();
+
+/**
+ * Copy CSS files from app/styles/ → public/css/ and .next/standalone/public/css/
+ * so the standalone production server can serve them at /css/*.
+ */
+function syncCss() {
+  const srcStylesDir      = path.join(__dirname, '..', 'app', 'styles');
+  const destPublicCss     = path.join(__dirname, '..', 'public', 'css');
+  const destStandaloneCss = path.join(__dirname, '..', '.next', 'standalone', 'public', 'css');
+
+  if (!fs.existsSync(srcStylesDir)) {
+    log('⚠️  app/styles/ not found — skipping CSS sync.');
+    return;
+  }
+
+  log('');
+  log('══════════════════════════════════════════════════');
+  log('CSS sync: app/styles/ → public/css/ + standalone');
+  log('══════════════════════════════════════════════════');
+
+  [destPublicCss, destStandaloneCss].forEach((dest) => {
+    try {
+      fs.mkdirSync(dest, { recursive: true });
+      const files = fs.readdirSync(srcStylesDir).filter(f => f.endsWith('.css'));
+      files.forEach((file) => {
+        fs.copyFileSync(path.join(srcStylesDir, file), path.join(dest, file));
+      });
+      log(`   ✅ Copied ${files.length} CSS file(s) to ${dest}`);
+    } catch (e) {
+      log(`   ⚠️  CSS sync error for ${dest}: ${e.message}`);
+    }
+  });
+}

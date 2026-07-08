@@ -1,38 +1,25 @@
-/**
- * Transparent WordPress proxy middleware.
- *
- * Intercepts every /blog/* request BEFORE any Next.js page is rendered,
- * fetches the real WordPress page from impulsedigital.co.in/ID-web-blog/,
- * rewrites all internal WordPress URLs to theimpulsedigital.com/blog/,
- * and returns the WordPress HTML/CSS/JS directly to the browser.
- *
- * This gives the exact WordPress theme UI at theimpulsedigital.com/blog/,
- * with all links pointing to the correct domain.
- *
- * Requirements:
- *   - WordPress WP_HOME   = https://impulsedigital.co.in/ID-web-blog
- *   - WordPress WP_SITEURL = https://impulsedigital.co.in/ID-web-blog
- *   (If WP redirects to theimpulsedigital.com it creates a loop.)
- */
-
 import { NextRequest, NextResponse } from 'next/server';
 
 const WP_ORIGIN  = 'https://impulsedigital.co.in';
-const WP_PATH    = '/ID-web-blog';                          // install sub-path
-const SITE_BLOG  = 'https://www.theimpulsedigital.com/blog'; // public blog URL
+const WP_PATH    = '/ID-web-blog';   // India install sub-path
+const WP_PATH_AE   = '/ae/blog';     // AE install sub-path
 
-/** Replace every occurrence of the WordPress origin+path with our blog URL. */
-function rewriteUrls(text: string): string {
-  // Match both http and https, with or without trailing slash
-  return text
-    .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog\//g, `${SITE_BLOG}/`)
-    .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog/g,   SITE_BLOG);
+/** Replace every occurrence of the WordPress origin+path with our absolute blog URL. */
+function rewriteUrls(text: string, isAe: boolean, origin: string): string {
+  const siteBlog = `${origin}${isAe ? '/ae/blog' : '/blog'}`;
+  if (isAe) {
+    return text
+      .replace(/https?:\/\/impulsedigital\.co\.in\/ae\/blog\//g, `${siteBlog}/`)
+      .replace(/https?:\/\/impulsedigital\.co\.in\/ae\/blog/g,   siteBlog);
+  } else {
+    return text
+      .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog\//g, `${siteBlog}/`)
+      .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog/g,   siteBlog);
+  }
 }
 
 /**
  * Large binary types we REDIRECT (not proxy) to avoid buffering huge files.
- * Images are fine to redirect — no CORS restriction on <img> tags.
- * Fonts MUST be proxied — browsers block cross-origin fonts without CORS headers.
  */
 function shouldRedirectBinary(ct: string): boolean {
   return (
@@ -45,8 +32,7 @@ function shouldRedirectBinary(ct: string): boolean {
 }
 
 /**
- * Small binary types (fonts, wasm, etc.) that must be PROXIED
- * because browsers enforce CORS on them.
+ * Small binary types (fonts, wasm, etc.) that must be PROXIED.
  */
 function shouldProxyBinary(ct: string): boolean {
   return (
@@ -59,28 +45,36 @@ function shouldProxyBinary(ct: string): boolean {
   );
 }
 
-export async function middleware(request: NextRequest) {
-  const { pathname, search } = request.nextUrl;
+export async function proxy(request: NextRequest) {
+  const { pathname, search, origin } = request.nextUrl;
 
   // Add x-pathname header for all requests so layouts can detect the route
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
   
-  if (pathname.startsWith('/ae')) {
+  const isAeRoute = pathname.startsWith('/ae');
+  if (isAeRoute) {
     requestHeaders.set('x-region', 'ae');
   } else {
     requestHeaders.set('x-region', 'in');
   }
 
   // --- BLOG PROXY LOGIC ---
-  if (pathname.startsWith('/blog')) {
-    // Bypass proxy for custom blog sitemap route and its rewrite destination
-    if (
-      pathname === '/blog/sitemap_index.xml' ||
-      pathname === '/blog/sitemap_index.xml/' ||
-      pathname === '/blog/sitemap-index' ||
-      pathname === '/blog/sitemap-index/'
-    ) {
+  const isAeBlog = pathname.startsWith('/ae/blog');
+  const isInBlog = !isAeBlog && pathname.startsWith('/blog');
+
+  if (isAeBlog || isInBlog) {
+    const sitemapBypass = isAeBlog
+      ? (pathname === '/ae/blog/sitemap_index.xml' ||
+         pathname === '/ae/blog/sitemap_index.xml/' ||
+         pathname === '/ae/blog/sitemap-index' ||
+         pathname === '/ae/blog/sitemap-index/')
+      : (pathname === '/blog/sitemap_index.xml' ||
+         pathname === '/blog/sitemap_index.xml/' ||
+         pathname === '/blog/sitemap-index' ||
+         pathname === '/blog/sitemap-index/');
+
+    if (sitemapBypass) {
       return NextResponse.next({
         request: {
           headers: requestHeaders,
@@ -89,8 +83,9 @@ export async function middleware(request: NextRequest) {
     }
 
     // Build the equivalent WordPress URL
-    const wpPathname = pathname.replace(/^\/blog/, WP_PATH) || `${WP_PATH}/`;
-    const targetUrl  = `${WP_ORIGIN}${wpPathname}${search}`;
+    const targetUrl = isAeBlog
+      ? `${WP_ORIGIN}${pathname}${search}`
+      : `${WP_ORIGIN}${pathname.replace(/^\/blog/, WP_PATH) || `${WP_PATH}/`}${search}`;
 
     let wpResponse: Response;
     try {
@@ -116,8 +111,9 @@ export async function middleware(request: NextRequest) {
 
     // ── 3xx Redirects: rewrite Location header ─────────────────────────
     if (status >= 300 && status < 400) {
-      const location    = wpResponse.headers.get('location') || '/blog/';
-      const newLocation = rewriteUrls(location);
+      const defaultLoc = isAeBlog ? '/ae/blog/' : '/blog/';
+      const location    = wpResponse.headers.get('location') || defaultLoc;
+      const newLocation = rewriteUrls(location, isAeBlog, origin);
       return NextResponse.redirect(newLocation, { status });
     }
 
@@ -143,7 +139,7 @@ export async function middleware(request: NextRequest) {
 
     // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
     const body      = await wpResponse.text();
-    const rewritten = rewriteUrls(body);
+    const rewritten = rewriteUrls(body, isAeBlog, origin);
     const isHtml = contentType.includes('text/html');
 
     return new NextResponse(rewritten, {
