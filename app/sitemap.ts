@@ -1,23 +1,21 @@
 import { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
-import { getAllPostsForSitemap } from '@/lib/wordpress';
-import { getAllAePostsForSitemap } from '@/lib/wordpress-ae';
 
 /**
- * Auto-generated sitemap for all routes including dynamic blog posts.
+ * Auto-generated sitemap for all main website and UAE routes.
+ * Note: Blog URLs are excluded as they are handled separately by the Yoast SEO sitemap (/blog/sitemap_index.xml).
  * Next.js serves this at /sitemap.xml automatically.
  * 
  * To switch staging → production: change NEXT_PUBLIC_SITE_URL in Hostinger hPanel.
  * All sitemap URLs update automatically — no code changes needed.
  */
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes = [
     { url: '/', priority: 1.0, changeFrequency: 'weekly' as const },
     { url: '/about-us/', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/services/', priority: 0.9, changeFrequency: 'monthly' as const },
-    { url: '/blog/', priority: 0.8, changeFrequency: 'daily' as const },
     { url: '/case-studies/', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/careers/', priority: 0.7, changeFrequency: 'weekly' as const },
     { url: '/contact-us/', priority: 0.8, changeFrequency: 'monthly' as const },
@@ -27,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/social-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     // AI Marketing Systems
     { url: '/ai-marketing-systems/', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/ai-marketing-systems/archer-ai/', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -72,15 +71,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/ae/about-us/', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/ae/services/', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/ae/case-studies/', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/ae/blog/', priority: 0.8, changeFrequency: 'daily' as const },
     { url: '/ae/careers/', priority: 0.7, changeFrequency: 'weekly' as const },
     { url: '/ae/contact-us/', priority: 0.8, changeFrequency: 'monthly' as const },
+    // UAE Case Studies
+    { url: '/ae/case-studies/amazon-unplugged/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/amazon-india-evp-strategy/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/amazon-talent-communication-engine/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/uppercase/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/qure-ai/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/mastercard/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/lg-hing/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/hul/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/fours-for-good/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/electromech/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/dmart/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/abg-brut-india/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/abg-kbc/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/automag-bajaj-auto/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/automag-india/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/employer-branding/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/shaking-things-up/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/tata-soulfull/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/tcpl/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/chings-kurkure/', priority: 0.6, changeFrequency: 'yearly' as const },
+    { url: '/ae/case-studies/chings-foodfarmer/', priority: 0.6, changeFrequency: 'yearly' as const },
     // UAE Services
     { url: '/ae/growth-intelligence/', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/ae/growth-intelligence/customer-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/growth-intelligence/social-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/ai-marketing-systems/', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/ae/ai-marketing-systems/archer-ai/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/ai-marketing-systems/agentic-ai/', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -88,6 +109,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/ae/ai-marketing-systems/ai-video-production/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/brand-infrastructure/', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/ae/brand-infrastructure/search-engine-optimisation/', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/local-seo/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/ecommerce-seo/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/enterprise-seo/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/brand-infrastructure/search-engine-optimisation/b2b-seo/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/brand-infrastructure/social-media-marketing/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/brand-infrastructure/website-development/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/ae/brand-infrastructure/branding/', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -98,6 +123,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/digital-marketing-agency-in-thane/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/digital-marketing-agency-in-navi-mumbai/', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/digital-marketing-agency-in-pune/', priority: 0.7, changeFrequency: 'monthly' as const },
+    // UAE Location pages
+    { url: '/ae/digital-marketing-agency-in-uae/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/digital-marketing-agency-in-abu-dhabi/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/digital-marketing-agency-in-sharjah/', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/ae/digital-marketing-agency-in-ajman/', priority: 0.7, changeFrequency: 'monthly' as const },
     // SEO Location sub-pages
     { url: '/brand-infrastructure/search-engine-optimisation/airoli/', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/brand-infrastructure/search-engine-optimisation/andheri/', priority: 0.6, changeFrequency: 'monthly' as const },
@@ -134,33 +164,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/ae/brand-infrastructure/search-engine-optimisation/business-bay/', priority: 0.6, changeFrequency: 'monthly' as const },
   ];
 
-  const blogPosts = await getAllPostsForSitemap();
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}/`,
-    lastModified: post.date ? new Date(post.date) : now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
+  return staticRoutes.map((route) => ({
+    url: `${SITE_URL}${route.url}`,
+    lastModified: now,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
   }));
-
-  const aeBlogPosts = await getAllAePostsForSitemap();
-  const aeBlogRoutes = aeBlogPosts.map((post) => ({
-    url: `${SITE_URL}/ae/blog/${post.slug}/`,
-    lastModified: post.date ? new Date(post.date) : now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-
-
-  return [
-    ...staticRoutes.map((route) => ({
-      url: `${SITE_URL}${route.url}`,
-      lastModified: now,
-      changeFrequency: route.changeFrequency,
-      priority: route.priority,
-    })),
-
-    ...blogRoutes,
-    ...aeBlogRoutes,
-  ];
 }
