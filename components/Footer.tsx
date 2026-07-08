@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
           <div className="footer-col">
             <h4>Resources</h4>
             <ul>
-              <li><Link href="/blog/">Blog</Link></li>
+              <li><a href={isAe ? "/ae/blog/" : "/blog/"} style={{ textDecoration: 'none', color: 'inherit' }}>Blog</a></li>
               <li><Link href="/ppt/">PPT</Link></li>
             </ul>
           </div>
