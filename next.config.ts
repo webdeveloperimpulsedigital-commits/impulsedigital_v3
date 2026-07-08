@@ -214,6 +214,7 @@ const nextConfig: NextConfig = {
   // No proxy rewrite needed — all blog URLs stay on theimpulsedigital.com.
   async rewrites() {
     return [
+      // India blog sitemap
       {
         source: '/blog/sitemap_index.xml',
         destination: '/blog/sitemap-index/',
@@ -221,6 +222,15 @@ const nextConfig: NextConfig = {
       {
         source: '/blog/sitemap_index.xml/',
         destination: '/blog/sitemap-index/',
+      },
+      // AE blog sitemap
+      {
+        source: '/ae/blog/sitemap_index.xml',
+        destination: '/ae/blog/sitemap-index/',
+      },
+      {
+        source: '/ae/blog/sitemap_index.xml/',
+        destination: '/ae/blog/sitemap-index/',
       },
     ];
   },

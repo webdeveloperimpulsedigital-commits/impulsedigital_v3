@@ -48,7 +48,9 @@ const Blog: React.FC<{ data?: any }> = ({ data }) => {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const res = await fetch('/api/blog-posts');
+        const isAe = blogData.link.includes('/ae/');
+        const apiRoute = isAe ? '/api/ae-blog-posts' : '/api/blog-posts';
+        const res = await fetch(apiRoute);
         if (res.ok) {
           const apiData = await res.json();
           if (Array.isArray(apiData) && apiData.length > 0) {
@@ -60,7 +62,7 @@ const Blog: React.FC<{ data?: any }> = ({ data }) => {
       }
     }
     fetchPosts();
-  }, []);
+  }, [blogData.link]);
 
   const handleScroll = () => {
     if (blogSliderRef.current) {

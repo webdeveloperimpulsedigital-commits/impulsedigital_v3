@@ -1,7 +1,6 @@
-﻿
 @font-face {
     font-family: 'Satoshi';
-    src: url('../fonts/Satoshi-Light.woff2') format('woff2');
+    src: url('/fonts/Satoshi-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -9,7 +8,7 @@
 
 @font-face {
     font-family: 'Satoshi';
-    src: url('../fonts/Satoshi-Regular.woff2') format('woff2');
+    src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -17,7 +16,7 @@
 
 @font-face {
     font-family: 'Satoshi';
-    src: url('../fonts/Satoshi-Medium.woff2') format('woff2');
+    src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -25,7 +24,7 @@
 
 @font-face {
     font-family: 'Satoshi';
-    src: url('../fonts/Satoshi-Bold.woff2') format('woff2');
+    src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -33,7 +32,7 @@
 
 @font-face {
     font-family: 'Satoshi';
-    src: url('../fonts/Satoshi-Black.woff2') format('woff2');
+    src: url('/fonts/Satoshi-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -5193,6 +5192,7 @@ button,
     border: 1px solid transparent;
     background: linear-gradient(135deg, rgba(138, 92, 246, 0.3), transparent, rgba(138, 92, 246, 0.1)) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     opacity: 0;
@@ -6117,6 +6117,7 @@ button,
     margin-bottom: 1.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -9116,7 +9117,7 @@ button,
         /* Disable compositor layer promotion on mobile â€” each will-change element
            costs GPU memory, and multiple hero lines + cosmos cards exhaust it */
         will-change: auto;
-        animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) 0.45s forwards;
+        animation: mobileHeroCopyFailOpen 0.72s cubic-bezier(0.2, 0.75, 0.2, 1) calc(0.45s + var(--hero-copy-delay, 0ms)) forwards;
     }
 
     .hero-copy-reveal.hero-copy-reveal-active {
@@ -9316,11 +9317,6 @@ button,
 .work-list-separator.active {
     transform: scaleX(1);
 }
-
-
-
-.svc-vs-statement,
-.svc-vs-statement-loud {}
 
 .gso-page .gso-understanding {
     padding-bottom: 8rem;
@@ -9887,8 +9883,6 @@ button,
         font-size: 0.85rem !important;
     }
 }
-}
-
 .svc-systems-intro .closer {
     color: var(--white);
     font-weight: 500;
@@ -13419,6 +13413,7 @@ iframe[src*='zohopublic'] {
     .cosmos-section {
         overflow: clip;
         -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 
     .cosmos-wrapper {
@@ -13479,7 +13474,6 @@ iframe[src*='zohopublic'] {
 
     }
 }
-}
 .visually-hidden {
     position: absolute !important;
     width: 1px !important;
@@ -13496,4 +13490,10 @@ iframe[src*='zohopublic'] {
 body[data-impulse-route="/blog"],
 body[data-impulse-route="/blog/"] {
     background-color: #000000 !important;
+}
+
+/* Fix CSS Stacking Context so main content drops downs overlap the footer */
+#main-content {
+    position: relative;
+    z-index: 11;
 }

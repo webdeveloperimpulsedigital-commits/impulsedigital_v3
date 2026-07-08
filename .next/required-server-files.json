@@ -332,6 +332,14 @@
         {
           "source": "/blog/sitemap_index.xml/",
           "destination": "/blog/sitemap-index/"
+        },
+        {
+          "source": "/ae/blog/sitemap_index.xml",
+          "destination": "/ae/blog/sitemap-index/"
+        },
+        {
+          "source": "/ae/blog/sitemap_index.xml/",
+          "destination": "/ae/blog/sitemap-index/"
         }
       ],
       "fallback": []

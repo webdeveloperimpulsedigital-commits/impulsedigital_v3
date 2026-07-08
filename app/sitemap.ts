@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import { getAllPostsForSitemap } from '@/lib/wordpress';
+import { getAllAePostsForSitemap } from '@/lib/wordpress-ae';
 
 /**
  * Auto-generated sitemap for all routes including dynamic blog posts.
@@ -71,6 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: '/ae/about-us/', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/ae/services/', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/ae/case-studies/', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/ae/blog/', priority: 0.8, changeFrequency: 'daily' as const },
     { url: '/ae/careers/', priority: 0.7, changeFrequency: 'weekly' as const },
     { url: '/ae/contact-us/', priority: 0.8, changeFrequency: 'monthly' as const },
     // UAE Services
@@ -140,6 +142,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const aeBlogPosts = await getAllAePostsForSitemap();
+  const aeBlogRoutes = aeBlogPosts.map((post) => ({
+    url: `${SITE_URL}/ae/blog/${post.slug}/`,
+    lastModified: post.date ? new Date(post.date) : now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
 
 
   return [
@@ -151,5 +161,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
 
     ...blogRoutes,
+    ...aeBlogRoutes,
   ];
 }

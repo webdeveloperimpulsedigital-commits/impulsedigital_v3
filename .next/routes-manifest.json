@@ -263,11 +263,29 @@
         "source": "/blog/sitemap_index.xml/",
         "destination": "/blog/sitemap-index/",
         "regex": "^/blog/sitemap_index\\.xml/(?:/)?$"
+      },
+      {
+        "source": "/ae/blog/sitemap_index.xml",
+        "destination": "/ae/blog/sitemap-index/",
+        "regex": "^/ae/blog/sitemap_index\\.xml(?:/)?$"
+      },
+      {
+        "source": "/ae/blog/sitemap_index.xml/",
+        "destination": "/ae/blog/sitemap-index/",
+        "regex": "^/ae/blog/sitemap_index\\.xml/(?:/)?$"
       }
     ],
     "fallback": []
   },
   "dynamicRoutes": [
+    {
+      "page": "/ae/blog/[slug]",
+      "regex": "^/ae/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/ae/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
     {
       "page": "/ae/ppt/[[...category]]",
       "regex": "^/ae/ppt(?:/(.+?))?(?:/)?$",
@@ -365,6 +383,12 @@
       "regex": "^/ae/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/ai\\-marketing\\-systems/generative\\-search\\-optimisation(?:/)?$"
+    },
+    {
+      "page": "/ae/blog",
+      "regex": "^/ae/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/blog(?:/)?$"
     },
     {
       "page": "/ae/brand-infrastructure",
@@ -755,6 +779,12 @@
       "regex": "^/api/admin/chats(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/admin/chats(?:/)?$"
+    },
+    {
+      "page": "/api/ae-blog-posts",
+      "regex": "^/api/ae\\-blog\\-posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/ae\\-blog\\-posts(?:/)?$"
     },
     {
       "page": "/api/blog-posts",
