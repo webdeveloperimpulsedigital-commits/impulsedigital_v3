@@ -3,6 +3,7 @@
 
 
 import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export interface ZohoFormConfig {
   formId: string;
@@ -24,7 +25,9 @@ interface DownloadCaseStudyFormProps {
   zoho: ZohoFormConfig;
 }
 
-const DownloadCaseStudyForm: React.FC<DownloadCaseStudyFormProps> = ({ ctaText, zoho }) => {
+const DownloadCaseStudyForm: React.FC<DownloadCaseStudyFormProps> = ({ ctaText, pdfLink, zoho }) => {
+  const pathname = usePathname();
+  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
   const formName = `WebToLeads${zoho.formId}`;
 
   useEffect(() => {
@@ -183,7 +186,7 @@ const DownloadCaseStudyForm: React.FC<DownloadCaseStudyFormProps> = ({ ctaText, 
           type="text"
           style={{ display: 'none' }}
           name="returnURL"
-          defaultValue="https://www.theimpulsedigital.com/thank-you/"
+          defaultValue={isAe ? "https://www.theimpulsedigital.com/ae/thank-you/" : "https://www.theimpulsedigital.com/thank-you/"}
           readOnly
         />
         {/* Do not remove these two */}
