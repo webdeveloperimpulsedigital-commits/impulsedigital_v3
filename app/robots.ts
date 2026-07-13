@@ -11,10 +11,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/thank-you/', '/_next/'],
+
       },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [
+      `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/blog/sitemap_index.xml`,
+      `${SITE_URL}/ae/blog/sitemap_index.xml`,
+    ],
     host: SITE_URL,
   };
 }

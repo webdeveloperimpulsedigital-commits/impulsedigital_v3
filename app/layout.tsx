@@ -27,30 +27,58 @@ export async function generateMetadata(): Promise<Metadata> {
     : pathname;
   const normalizedBasePath = basePath || '/';
 
-  let inBasePath = normalizedBasePath;
-  let aeBasePath = normalizedBasePath;
+  // Strict Location Mapping for Hreflang Alternates
+  const exactLocationMap: Record<string, string> = {
+    '/digital-marketing-agency-in-india/': '/digital-marketing-agency-in-uae/',
+    '/digital-marketing-agency-in-thane/': '/digital-marketing-agency-in-sharjah/',
+    '/digital-marketing-agency-in-navi-mumbai/': '/digital-marketing-agency-in-abu-dhabi/',
+    '/digital-marketing-agency-in-pune/': '/digital-marketing-agency-in-ajman/',
+    '/brand-infrastructure/search-engine-optimisation/mumbai/': '/brand-infrastructure/search-engine-optimisation/uae/',
+    '/brand-infrastructure/search-engine-optimisation/navi-mumbai/': '/brand-infrastructure/search-engine-optimisation/abu-dhabi/',
+    '/brand-infrastructure/search-engine-optimisation/thane/': '/brand-infrastructure/search-engine-optimisation/sharjah/',
+    '/brand-infrastructure/search-engine-optimisation/andheri/': '/brand-infrastructure/search-engine-optimisation/deira/',
+    '/brand-infrastructure/search-engine-optimisation/ghansoli/': '/brand-infrastructure/search-engine-optimisation/ajman/',
+    '/brand-infrastructure/search-engine-optimisation/vashi/': '/brand-infrastructure/search-engine-optimisation/al-ain/',
+    '/brand-infrastructure/search-engine-optimisation/borivali/': '/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/',
+    '/brand-infrastructure/search-engine-optimisation/malad/': '/brand-infrastructure/search-engine-optimisation/fujairah/',
+    '/brand-infrastructure/search-engine-optimisation/mansarovar/': '/brand-infrastructure/search-engine-optimisation/business-bay/',
+  };
 
-  // Custom routing for regional pages
-  if (normalizedBasePath === '/digital-marketing-agency-in-india/') {
-    aeBasePath = '/digital-marketing-agency-in-uae/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-uae/') {
-    inBasePath = '/digital-marketing-agency-in-india/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-thane/') {
-    aeBasePath = '/digital-marketing-agency-in-abu-dhabi/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-abu-dhabi/') {
-    inBasePath = '/digital-marketing-agency-in-thane/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-navi-mumbai/') {
-    aeBasePath = '/digital-marketing-agency-in-sharjah/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-sharjah/') {
-    inBasePath = '/digital-marketing-agency-in-navi-mumbai/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-pune/') {
-    aeBasePath = '/digital-marketing-agency-in-ajman/';
-  } else if (normalizedBasePath === '/digital-marketing-agency-in-ajman/') {
-    inBasePath = '/digital-marketing-agency-in-pune/';
+  const reverseLocationMap = Object.fromEntries(
+    Object.entries(exactLocationMap).map(([inPath, aePath]) => [aePath, inPath])
+  );
+
+  let inBasePath: string | null = normalizedBasePath;
+  let aeBasePath: string | null = normalizedBasePath;
+
+  const isLocationPage = 
+    normalizedBasePath.startsWith('/digital-marketing-agency-in-') ||
+    (normalizedBasePath.startsWith('/brand-infrastructure/search-engine-optimisation/') && normalizedBasePath !== '/brand-infrastructure/search-engine-optimisation/');
+
+  if (isLocationPage) {
+    if (isAe) {
+      aeBasePath = normalizedBasePath;
+      inBasePath = reverseLocationMap[normalizedBasePath] || null; // null if no exact equivalent in IN
+    } else {
+      inBasePath = normalizedBasePath;
+      aeBasePath = exactLocationMap[normalizedBasePath] || null; // null if no exact equivalent in AE
+    }
   }
 
-  const inUrl = `${SITE_URL}${inBasePath === '/' ? '' : inBasePath}`;
-  const aeUrl = `${SITE_URL}/ae${aeBasePath === '/' ? '' : aeBasePath}`;
+  const inUrl = inBasePath ? `${SITE_URL}${inBasePath === '/' ? '' : inBasePath}` : null;
+  const aeUrl = aeBasePath ? `${SITE_URL}/ae${aeBasePath === '/' ? '' : aeBasePath}` : null;
+
+  const languages: Record<string, string> = {};
+  if (inUrl) {
+    languages['en-IN'] = inUrl;
+    languages['x-default'] = inUrl;
+  }
+  if (aeUrl) {
+    languages['en-AE'] = aeUrl;
+    if (!inUrl) {
+      languages['x-default'] = aeUrl;
+    }
+  }
 
   return {
     title: {
@@ -66,11 +94,7 @@ export async function generateMetadata(): Promise<Metadata> {
     robots: { index: true, follow: true },
     alternates: { 
       canonical: canonicalUrl,
-      languages: {
-        'en-IN': inUrl,
-        'en-AE': aeUrl,
-        'x-default': inUrl,
-      }
+      ...(Object.keys(languages).length > 0 ? { languages } : {})
     },
     openGraph: {
       type: 'website',

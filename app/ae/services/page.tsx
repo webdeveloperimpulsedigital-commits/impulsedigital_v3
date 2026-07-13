@@ -6,7 +6,7 @@ import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Digital Marketing Services | Impulse Digital',
   description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
-  keywords: 'digital marketing services, marketing services mumbai, impulse digital services',
+  keywords: 'digital marketing services, marketing services dubai, impulse digital services',
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Digital Marketing Services | Impulse Digital',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesIndexPage() {
-    const schemas: any[] = [];
+  const schemas: any[] = [];
 
   return <ServicesIndex data={servicesPageData} />;
 }

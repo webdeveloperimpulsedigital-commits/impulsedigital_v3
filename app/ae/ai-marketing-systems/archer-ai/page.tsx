@@ -7,7 +7,7 @@ import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Archer AI: AI Outbound Sales Agent | Impulse Digital',
   description: 'Meet Archer AI, an AI outbound sales agent built by Impulse Digital. We build AI outbound agents that turn live market signals into qualified conversations.',
-  keywords: 'archer ai, ai outbound sales agent, ai outbound agent, b2b outbound ai, mumbai, thane, navi mumbai, india, impulse digital',
+  keywords: 'archer ai, ai outbound sales agent, ai outbound agent, b2b outbound ai, dubai, abu dhabi, ajman, sharjah, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Archer AI: AI Outbound Sales Agent | Impulse Digital',
