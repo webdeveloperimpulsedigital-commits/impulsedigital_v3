@@ -3,6 +3,12 @@ module.exports=[72123,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d(
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
                   gtag('config', 'G-69R7Z1PMXQ');
+                `}}),(0,b.jsx)("script",{dangerouslySetInnerHTML:{__html:`
+                  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-5Z8KMKBC');
                 `}})]}),(0,b.jsx)("link",{rel:"icon",type:"image/png",href:"/favicon.png"}),(0,b.jsx)("link",{rel:"preload",href:"/fonts/Satoshi-Bold.woff2",as:"font",type:"font/woff2",crossOrigin:"anonymous"}),(0,b.jsx)("link",{rel:"preload",href:"/fonts/Satoshi-Regular.woff2",as:"font",type:"font/woff2",crossOrigin:"anonymous"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://fonts.googleapis.com"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://fonts.gstatic.com",crossOrigin:"anonymous"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://www.googletagmanager.com"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://www.google-analytics.com"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://cdnjs.cloudflare.com",crossOrigin:"anonymous"}),(0,b.jsx)("link",{rel:"preconnect",href:"https://unpkg.com",crossOrigin:"anonymous"}),(0,b.jsx)("link",{rel:"stylesheet",href:"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"}),(0,b.jsx)("link",{rel:"preload",href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",as:"style",media:"print"}),(0,b.jsx)("link",{rel:"stylesheet",href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",media:"print"}),(0,b.jsx)("noscript",{children:(0,b.jsx)("link",{rel:"stylesheet",href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"})}),"ae"!==d&&(0,b.jsxs)(b.Fragment,{children:[(0,b.jsx)("script",{async:!0,src:"https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"}),(0,b.jsx)("script",{dangerouslySetInnerHTML:{__html:`
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
@@ -13,8 +19,8 @@ module.exports=[72123,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d(
                   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                  })(window,document,'script','dataLayer','GTM-5Z8KMKBC');
-                `}})]})]}),(0,b.jsxs)("body",{children:["ae"!==d&&(0,b.jsx)("noscript",{children:(0,b.jsx)("iframe",{src:"https://www.googletagmanager.com/ns.html?id=GTM-5Z8KMKBC",height:"0",width:"0",style:{display:"none",visibility:"hidden"}})}),(0,b.jsx)(c.default,{id:"block-zoho-salesiq",strategy:"beforeInteractive",dangerouslySetInnerHTML:{__html:`(function(){
+                  })(window,document,'script','dataLayer','GTM-M4TW43X3');
+                `}})]})]}),(0,b.jsxs)("body",{children:["ae"===d&&(0,b.jsx)("noscript",{children:(0,b.jsx)("iframe",{src:"https://www.googletagmanager.com/ns.html?id=GTM-5Z8KMKBC",height:"0",width:"0",style:{display:"none",visibility:"hidden"}})}),"ae"!==d&&(0,b.jsx)("noscript",{children:(0,b.jsx)("iframe",{src:"https://www.googletagmanager.com/ns.html?id=GTM-M4TW43X3",height:"0",width:"0",style:{display:"none",visibility:"hidden"}})}),(0,b.jsx)(c.default,{id:"block-zoho-salesiq",strategy:"beforeInteractive",dangerouslySetInnerHTML:{__html:`(function(){
   function removeZoho(node){
     if(!node||!node.parentNode)return;
     var src=node.src||'';
