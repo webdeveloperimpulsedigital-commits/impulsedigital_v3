@@ -11,6 +11,7 @@
   "/ae/ai-marketing-systems/page": "/ae/ai-marketing-systems",
   "/ae/blog/[slug]/page": "/ae/blog/[slug]",
   "/ae/blog/page": "/ae/blog",
+  "/ae/blog/sitemap-index/route": "/ae/blog/sitemap-index",
   "/ae/brand-infrastructure/branding/page": "/ae/brand-infrastructure/branding",
   "/ae/brand-infrastructure/employer-branding/page": "/ae/brand-infrastructure/employer-branding",
   "/ae/brand-infrastructure/page": "/ae/brand-infrastructure",

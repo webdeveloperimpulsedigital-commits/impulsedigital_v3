@@ -11,6 +11,7 @@
   "/ae/ai-marketing-systems/page": "app/ae/ai-marketing-systems/page.js",
   "/ae/blog/[slug]/page": "app/ae/blog/[slug]/page.js",
   "/ae/blog/page": "app/ae/blog/page.js",
+  "/ae/blog/sitemap-index/route": "app/ae/blog/sitemap-index/route.js",
   "/ae/brand-infrastructure/branding/page": "app/ae/brand-infrastructure/branding/page.js",
   "/ae/brand-infrastructure/employer-branding/page": "app/ae/brand-infrastructure/employer-branding/page.js",
   "/ae/brand-infrastructure/page": "app/ae/brand-infrastructure/page.js",

@@ -391,6 +391,12 @@
       "namedRegex": "^/ae/blog(?:/)?$"
     },
     {
+      "page": "/ae/blog/sitemap-index",
+      "regex": "^/ae/blog/sitemap\\-index(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/blog/sitemap\\-index(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure",
       "regex": "^/ae/brand\\-infrastructure(?:/)?$",
       "routeKeys": {},
