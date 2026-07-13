@@ -105,6 +105,22 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <head>
+        {region === 'ae' && (
+          <>
+            {/* Google tag (gtag.js) */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-69R7Z1PMXQ"></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-69R7Z1PMXQ');
+                `,
+              }}
+            />
+          </>
+        )}
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/favicon.png" />
 
