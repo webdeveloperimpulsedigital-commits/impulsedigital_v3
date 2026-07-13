@@ -81,6 +81,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ── Growth Intelligence ────────────────────────────────────────────────
+      {
+        source: '/services/performance-marketing',
+        destination: '/growth-intelligence/campaign-intelligence/',
+        permanent: true,
+      },
+      {
+        source: '/services/performance-marketing/',
+        destination: '/growth-intelligence/campaign-intelligence/',
+        permanent: true,
+      },
+
       // ── AI Marketing Systems ───────────────────────────────────────────────
       {
         source: '/services/agentic-ai',
@@ -174,6 +186,16 @@ const nextConfig: NextConfig = {
       {
         source: '/services/social-media-management/',
         destination: '/brand-infrastructure/social-media-marketing/',
+        permanent: true,
+      },
+      {
+        source: '/services/social-media-video-production',
+        destination: '/brand-infrastructure/video-production/',
+        permanent: true,
+      },
+      {
+        source: '/services/social-media-video-production/',
+        destination: '/brand-infrastructure/video-production/',
         permanent: true,
       },
       {

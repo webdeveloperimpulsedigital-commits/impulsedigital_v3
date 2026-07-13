@@ -1,10 +1,10 @@
 export const homeData = {
   hero: {
     headlineParts: [
-      "Your Data Knows.",
-      "Your Marketing",
+      "Data-Led Digital",
+      "Marketing Agency",
     ],
-    headlineAccent: "Should Too.",
+    headlineAccent: "in Dubai",
     description: "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.",
     cta: {
       text: "FIND THE DECISIONS INSIDE YOUR DATA",

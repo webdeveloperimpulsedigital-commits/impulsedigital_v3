@@ -52,6 +52,18 @@
       "regex": "^(?!/_next)/blogs(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
     },
     {
+      "source": "/services/performance-marketing",
+      "destination": "/growth-intelligence/campaign-intelligence/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/performance-marketing(?:/)?$"
+    },
+    {
+      "source": "/services/performance-marketing/",
+      "destination": "/growth-intelligence/campaign-intelligence/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/performance-marketing/(?:/)?$"
+    },
+    {
       "source": "/services/agentic-ai",
       "destination": "/ai-marketing-systems/agentic-ai/",
       "statusCode": 308,
@@ -158,6 +170,18 @@
       "destination": "/brand-infrastructure/social-media-marketing/",
       "statusCode": 308,
       "regex": "^(?!/_next)/services/social-media-management/(?:/)?$"
+    },
+    {
+      "source": "/services/social-media-video-production",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-video-production(?:/)?$"
+    },
+    {
+      "source": "/services/social-media-video-production/",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-video-production/(?:/)?$"
     },
     {
       "source": "/services/video-production",

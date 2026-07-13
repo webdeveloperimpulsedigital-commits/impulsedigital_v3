@@ -366,6 +366,16 @@
         "permanent": true
       },
       {
+        "source": "/services/performance-marketing",
+        "destination": "/growth-intelligence/campaign-intelligence/",
+        "permanent": true
+      },
+      {
+        "source": "/services/performance-marketing/",
+        "destination": "/growth-intelligence/campaign-intelligence/",
+        "permanent": true
+      },
+      {
         "source": "/services/agentic-ai",
         "destination": "/ai-marketing-systems/agentic-ai/",
         "permanent": true
@@ -453,6 +463,16 @@
       {
         "source": "/services/social-media-management/",
         "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/services/social-media-video-production",
+        "destination": "/brand-infrastructure/video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/services/social-media-video-production/",
+        "destination": "/brand-infrastructure/video-production/",
         "permanent": true
       },
       {

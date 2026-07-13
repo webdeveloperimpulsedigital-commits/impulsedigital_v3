@@ -6,12 +6,12 @@ import { campaignIntelligenceData } from '@/data/ae/campaignIntelligenceData';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Performance Intelligence Agency | Campaign Intelligence | Impulse Digital',
-  description: 'Impulse Digital is a specialist campaign & performance intelligence agency in Dubai, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Trusted by HUL, Tata and Mastercard. Talk to us.',
-  keywords: 'campaign intelligence, performance intelligence agency, campaign analytics, company, services, mumbai, thane, india',
+  description: 'Impulse Digital is a specialist campaign & performance intelligence agency in Dubai, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Talk to us.',
+  keywords: 'campaign intelligence, performance intelligence agency, campaign analytics, company, services, dubai, abu dhabi, ajman, sharjah, uae',
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Performance Intelligence Agency | Campaign Intelligence | Impulse Digital',
-    description: 'Impulse Digital is a specialist campaign & performance intelligence agency in Dubai, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Trusted by HUL, Tata and Mastercard. Talk to us.',
+    description: 'Impulse Digital is a specialist campaign & performance intelligence agency in Dubai, helping brands decode campaign recall, sentiment, influencer fit, and next-brief decisions. Talk to us.',
     url: `${SITE_URL}/ae/growth-intelligence/campaign-intelligence/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',

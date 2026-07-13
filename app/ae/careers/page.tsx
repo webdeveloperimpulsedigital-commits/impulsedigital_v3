@@ -4,12 +4,12 @@ import Careers from '@/components/pages/Careers';
 import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Careers at Impulse Digital | Join Our Team',
-  description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
-  keywords: 'careers impulse digital, digital marketing jobs mumbai, marketing agency careers',
+  description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Dubai. Join a team that values creativity, strategy, and commercial impact.',
+  keywords: 'careers impulse digital, digital marketing jobs Dubai, marketing agency careers',
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Careers at Impulse Digital | Join Our Team',
-    description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
+    description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Dubai. Join a team that values creativity, strategy, and commercial impact.',
     url: `${SITE_URL}/ae/careers/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Careers at Impulse Digital | Join Our Team',
-    description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Mumbai. Join a team that values creativity, strategy, and commercial impact.',
+    description: 'Explore career opportunities at Impulse Digital, a leading digital marketing agency in Dubai. Join a team that values creativity, strategy, and commercial impact.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
 export default function CareersPage() {
-    const schemas: any[] = [];
+  const schemas: any[] = [];
 
   return <Careers />;
 }
