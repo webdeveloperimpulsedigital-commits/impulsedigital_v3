@@ -96,8 +96,8 @@ export const caseStudiesPageData = {
       category: "Brand Monitoring",
       description: "Decoding public response to a major brand collaboration and monitoring consumer pulse to manage reputational risk.",
       images: [
-        "/images/case-study-image/chings- kurkure/CHing+Kurkure.png",
-        "/images/case-study-image/chings-foodfarmer/Foodfarmer.png"
+        "/images/case-study-image/chings- kurkure/CHing+Kurkure.webp",
+        "/images/case-study-image/chings-foodfarmer/Foodfarmer.webp"
       ],
       slug: "/case-studies/chings-kurkure"
     },
