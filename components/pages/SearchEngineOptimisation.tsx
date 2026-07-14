@@ -30,12 +30,12 @@ import { data as data } from '@/data/data';
 /** Helper: run `fn` as soon as window.gsap & window.ScrollTrigger are both loaded.
  *  Returns a cleanup function that cancels the poll if the component unmounts first. */
 function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | void, timeoutMs = 8000): () => void {
-  if (typeof window === 'undefined') return () => {};
+  if (typeof window === 'undefined') return () => { };
   const w = window as any;
   // Already loaded → run immediately
   if (w.gsap && w.ScrollTrigger) {
     const cleanup = fn(w.gsap, w.ScrollTrigger);
-    return cleanup || (() => {});
+    return cleanup || (() => { });
   }
   let cancelled = false;
   let cleanupFn: (() => void) | void;
@@ -60,7 +60,7 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
 
   useEffect(() => {
     document.body.classList.add('seo-page');
-    
+
     // Channels orbit animation
     const stage = document.getElementById('channels-stage');
     const linesSvg = document.getElementById('channels-orbit-lines');
@@ -71,7 +71,7 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
     let convergenceActive = false;
     let measureTimeout1: any, measureTimeout2: any;
     let sectionObs: IntersectionObserver | null = null;
-    let measureFn: () => void = () => {};
+    let measureFn: () => void = () => { };
 
     const isMobileChannels = window.matchMedia('(max-width: 768px)').matches;
 
@@ -193,8 +193,8 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
 
   return (
     <main id="main-content">
-      
-      <ServiceHero 
+
+      <ServiceHero
         headlineParts={data.hero.headlineParts}
         headlineAccent={data.hero.headlineAccent}
         description={data.hero.description}
@@ -203,16 +203,16 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
 
       {data.stats && <ServiceStats data={data.stats} />}
       <ServiceHandoff />
-      
+
       {data.problem && <ServiceProblem data={data.problem} />}
       <ServiceHandoff />
-      
+
       {data.vs && <ServiceVs data={data.vs} />}
       <ServiceHandoff />
-      
+
       {data.uses && <ServiceUses data={data.uses} />}
       <ServiceHandoff />
-      
+
       {/* CHANNELS */}
       {data.channels && (
         <section className="svc-channels has-mobile-signal">
@@ -245,20 +245,20 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
       )}
 
       <ServiceHandoff />
-      
+
       {data.whenToUse && <ServiceWhenToUse data={data.whenToUse} />}
       <ServiceHandoff />
 
       {data.process && <ServiceProcess data={data.process} />}
-      
+
       <Logos title="Trusted by Brands That Know Traffic Is Not the Prize" />
-      
+
       <Testimonials />
       <ServiceHandoff />
-      
+
       {data.fit && <ServiceFit data={data.fit} />}
       <ServiceHandoff />
-      
+
       {data.finalCta && <ServiceFinalCTA data={data.finalCta} />}
       <Contact />
       {data.faq && data.faq.items.length > 0 && (
@@ -267,7 +267,7 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
           <ServiceFAQ data={data.faq} />
         </>
       )}
-      
+
       <ServiceHandoff />
       <SEOLocationsGrid />
     </main>

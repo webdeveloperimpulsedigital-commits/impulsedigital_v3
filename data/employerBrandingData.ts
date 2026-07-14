@@ -1,8 +1,8 @@
 export const employerBrandingData = {
   "hero": {
     "headlineParts": [
-      "Why Should the Best Talent",
-      "Work Here?"
+      "Talent Chooses the Story",
+      "Before the Offer."
     ],
     "headlineAccent": "Before the Offer.",
     "description": "The best candidates are not only comparing salaries. They are reading your culture, your leaders, your people, your purpose, and the way your workplace shows up before they ever apply. Impulse Digital is a specialist employer branding agency offering employer branding consulting for enterprise brands, helping you turn employee experience into a clear employer story so the right talent understands why your company is worth joining, staying with, and growing inside.",
