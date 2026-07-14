@@ -15,7 +15,8 @@
     "pagespeed-mcp-server": "^2.0.1",
     "pdfjs-dist": "^6.0.227",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@types/node": "^20",
