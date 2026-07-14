@@ -1,10 +1,10 @@
 export const homeData = {
   hero: {
     headlineParts: [
-      "Your Data Knows.",
-      "Your Marketing",
+      "A Digital Marketing",
+      "Agency That Turns",
     ],
-    headlineAccent: "Should Too.",
+    headlineAccent: "Data Into Direction",
     description: "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.",
     cta: {
       text: "FIND THE DECISIONS INSIDE YOUR DATA",
@@ -170,7 +170,7 @@ export const homeData = {
     ]
   },
   logos: {
-    heading: "Trusted by marketing teams at",
+    heading: "A Digital Marketing Agency in Mumbai, Seen Through Its Clients",
     items: [
       { src: 'aditya-birla-group.webp', alt: 'Aditya Birla Group', scale: 1.25 },
       { src: 'Amazon.webp', alt: 'Amazon - Digital Marketing Client of Impulse Digital', scale: 1.25 },
