@@ -1,6 +1,6 @@
 export const generativeSearchOptimisationData = {
   "hero": {
-    "headlineHtml": "AI SEO Agency<br> For <span style=\"color: var(--impulse-violet);\">Generative Search.</span>",
+    "headlineHtml": "You're Not Just Fighting<br> <span style=\"color: var(--impulse-violet);\">for Rank Anymore.</span>",
     "headlineParts": [
       "You're Not Just Fighting",
       "for Rank Anymore."
