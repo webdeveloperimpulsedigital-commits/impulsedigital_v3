@@ -31,7 +31,7 @@ export const homeData = {
       },
       {
         link: "/case-studies/shaking-things-up/",
-        imgSrc: "/images/case-study-image/salt/tata-cunsumer.png",
+        imgSrc: "/images/case-study-image/salt/tata-cunsumer.webp",
         imgAlt: "Tata Consumer Products Case Study",
         client: "Tata Consumer Products",
         desc: "Decoding category transformation for staple ingredients and mapping diaspora demand to market launch."

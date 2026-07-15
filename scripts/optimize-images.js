@@ -8,7 +8,11 @@ const publicDir = path.join(workspaceDir, 'public');
 // PNG files to convert to WebP (from Option A)
 const pngsToWebp = [
   'images/case-study-image/chings- kurkure/CHing+Kurkure.png',
-  'images/case-study-image/chings-foodfarmer/Foodfarmer.png'
+  'images/case-study-image/chings-foodfarmer/Foodfarmer.png',
+  'images/case-study-image/salt/tata-cunsumer.png',
+  'images/case-study-image/salt/shaking-things-up.png',
+  'images/case-study-image/tata-soulfull/Generated image 1.png',
+  'images/case-study-image/tcpl/AUS_us.png'
 ];
 
 async function optimizeImage(filePath, relPath) {
@@ -18,7 +22,7 @@ async function optimizeImage(filePath, relPath) {
   
   // Decide target dimensions and settings based on path
   const isLogo = relPath.startsWith('logos/');
-  const maxDimension = isLogo ? 300 : 1200;
+  const maxDimension = isLogo ? 150 : 1200;
   
   // 1. Special Case: Convert selected PNGs to WebP
   if (pngsToWebp.includes(relPath)) {
@@ -28,10 +32,10 @@ async function optimizeImage(filePath, relPath) {
       const inputBuffer = fs.readFileSync(filePath);
       await sharp(inputBuffer)
         .resize({ width: 1200, fit: 'inside', withoutEnlargement: true })
-        .webp({ quality: 82 })
+        .webp({ quality: 75 })
         .toFile(targetWebpPath);
       
-      // Delete the original PNG file (we can do this safely as it's not locked)
+      // Delete the original PNG file
       fs.unlinkSync(filePath);
       const newStat = fs.statSync(targetWebpPath);
       console.log(`  -> Saved as WebP: ${(newStat.size / 1024).toFixed(1)} KB (Saved: ${(100 - (newStat.size / stat.size) * 100).toFixed(1)}%)`);
@@ -60,13 +64,13 @@ async function optimizeImage(filePath, relPath) {
     
     // Configure compression formats
     if (ext === '.webp') {
-      pipeline = pipeline.webp({ quality: isLogo ? 80 : 82 });
+      pipeline = pipeline.webp({ quality: 75 });
     } else if (ext === '.avif') {
-      pipeline = pipeline.avif({ quality: isLogo ? 80 : 82 });
+      pipeline = pipeline.avif({ quality: 75 });
     } else if (ext === '.png') {
-      pipeline = pipeline.png({ compressionLevel: 9, quality: 75 });
+      pipeline = pipeline.png({ compressionLevel: 9, quality: 70 });
     } else if (ext === '.jpg' || ext === '.jpeg') {
-      pipeline = pipeline.jpeg({ quality: 82 });
+      pipeline = pipeline.jpeg({ quality: 75 });
     } else {
       return; // Skip unsupported formats
     }

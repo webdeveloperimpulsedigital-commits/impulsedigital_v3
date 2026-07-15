@@ -24,7 +24,7 @@ const SaltCaseStudy: React.FC = () => {
       </section>
       <div className="cs-feature-wrapper">
         <div className="cs-feature-image">
-          <img src={`${base}images/case-study-image/salt/shaking-things-up.png`} alt="Shaking Things Up - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+          <img src={`${base}images/case-study-image/salt/shaking-things-up.webp`} alt="Shaking Things Up - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
         </div>
       </div>
       <section className="cs-intro-block" id="warp-start" style={{ paddingBottom: '4rem', maxWidth: '1000px', margin: '0 auto' }}>

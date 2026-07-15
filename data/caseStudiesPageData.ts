@@ -52,8 +52,8 @@ export const caseStudiesPageData = {
       category: "Brand Research",
       description: "Decoding category transformation for staple ingredients and mapping diaspora demand to market launch.",
       images: [
-        "/images/case-study-image/salt/shaking-things-up.png",
-        "/images/case-study-image/tcpl/AUS_us.png"
+        "/images/case-study-image/salt/shaking-things-up.webp",
+        "/images/case-study-image/tcpl/AUS_us.webp"
       ],
       slug: "/case-studies/shaking-things-up"
     },
@@ -81,7 +81,7 @@ export const caseStudiesPageData = {
       title: "The Next Bite",
       category: "Brand Research",
       description: "Decoding what drives trial, repeat purchase, and how the category could stretch from functional fuel to mainstream snacking.",
-      images: ["/images/case-study-image/tata-soulfull/Generated image 1.png"],
+      images: ["/images/case-study-image/tata-soulfull/Generated image 1.webp"],
       slug: "/case-studies/tata-soulfull"
     },
     {
