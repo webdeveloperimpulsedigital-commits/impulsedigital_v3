@@ -1,10 +1,10 @@
 export const homeData = {
   hero: {
     headlineParts: [
-      "Your Data Knows.",
-      "Your Marketing",
+      "A Digital Marketing",
+      "Agency That Turns",
     ],
-    headlineAccent: "Should Too.",
+    headlineAccent: "Data Into Direction",
     description: "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.",
     cta: {
       text: "FIND THE DECISIONS INSIDE YOUR DATA",
@@ -31,7 +31,7 @@ export const homeData = {
       },
       {
         link: "/case-studies/shaking-things-up/",
-        imgSrc: "/images/case-study-image/salt/tata-cunsumer.png",
+        imgSrc: "/images/case-study-image/salt/tata-cunsumer.webp",
         imgAlt: "Tata Consumer Products Case Study",
         client: "Tata Consumer Products",
         desc: "Decoding category transformation for staple ingredients and mapping diaspora demand to market launch."
@@ -123,7 +123,7 @@ export const homeData = {
     ]
   },
   testimonials: {
-    heading: "What Good Work Leaves Behind",
+    heading: "A Digital Marketing Agency in Mumbai, Seen Through Its Clients",
     items: [
       {
         quote: "\"I have worked with Impulse Digital team across different organizations and different kinds of business problems over the years. What I have always valued is that they do not look at a brief as just a task to complete. They try to understand what the brand needs, what the business is trying to achieve, and then come back with ideas that are practical, sharp, and executable.<br /><br />From campaigns and creative work to tech-led implementation, the team has shown strong range, ownership, and consistency. Impulse Digital has been a partner I have gone back to across organizations because they bring both thinking and execution to the table.\"",
