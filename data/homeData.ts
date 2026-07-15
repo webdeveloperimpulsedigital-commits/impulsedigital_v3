@@ -123,7 +123,7 @@ export const homeData = {
     ]
   },
   testimonials: {
-    heading: "A Digital Marketing Agency in Mumbai, Seen Through Its Clients",
+    heading: "A Digital Marketing Agency in Mumbai,<br />Seen Through Its Clients",
     items: [
       {
         quote: "\"I have worked with Impulse Digital team across different organizations and different kinds of business problems over the years. What I have always valued is that they do not look at a brief as just a task to complete. They try to understand what the brand needs, what the business is trying to achieve, and then come back with ideas that are practical, sharp, and executable.<br /><br />From campaigns and creative work to tech-led implementation, the team has shown strong range, ownership, and consistency. Impulse Digital has been a partner I have gone back to across organizations because they bring both thinking and execution to the table.\"",

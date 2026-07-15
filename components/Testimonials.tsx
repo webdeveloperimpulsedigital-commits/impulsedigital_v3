@@ -163,7 +163,7 @@ const Testimonials: React.FC<{ data?: any }> = ({ data }) => {
   return (
     <section className="testimonials glass-panel" ref={sectionRef}>
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <h2 className="section-heading split-text">{testimonialsData.heading}</h2>
+        <h2 className="section-heading split-text" dangerouslySetInnerHTML={{ __html: testimonialsData.heading }} />
         <div className="testimonial-grid" ref={sliderRef} onScroll={handleScroll}>
           {testimonialsData.items.map((item: any, idx: number) => (
             <div className="test-card-col" key={idx}>

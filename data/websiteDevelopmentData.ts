@@ -1,7 +1,7 @@
 export const websiteDevelopmentData = {
   "hero": {
     "headlineParts": [
-      "Look Good. Perform Well.",
+      "A Pretty Website Can",
       "Still Lose the Buyer."
     ],
     "headlineAccent": "Still Lose the Buyer.",

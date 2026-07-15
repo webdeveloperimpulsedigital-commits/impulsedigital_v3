@@ -13,7 +13,7 @@ const Logos: React.FC<LogosProps> = ({ title, data }) => {
 
   // Use data or fallback to defaults
   const logosData = data || {
-    heading: title || "Trusted by marketing teams at",
+    heading: title || "A Digital Marketing Agency in Mumbai, Seen Through Its Clients",
     items: [
       { src: 'aditya-birla-group.webp', alt: 'Aditya Birla Group', scale: 1.25 },
       { src: 'Amazon.webp', alt: 'Amazon - Digital Marketing Client of Impulse Digital', scale: 1.25 },
