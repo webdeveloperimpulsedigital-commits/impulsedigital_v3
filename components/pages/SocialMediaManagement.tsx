@@ -224,7 +224,7 @@ const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
       
       <Logos title="Trusted by Teams That See Social as a Growth Lever" />
       
-      <Testimonials />
+      <Testimonials data={data.testimonials} />
       <ServiceHandoff />
       
       {data.fit && <ServiceFit data={data.fit} />}
