@@ -1,4 +1,5 @@
 export const socialMediaManagementData = {
+  "location": "",
   "hero": {
     "headlineParts": [
       "Your Feed Should Not",

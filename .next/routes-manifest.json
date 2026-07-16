@@ -1029,16 +1029,40 @@
       "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing(?:/)?$"
     },
     {
+      "page": "/brand-infrastructure/social-media-marketing/andheri",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/andheri(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/andheri(?:/)?$"
+    },
+    {
+      "page": "/brand-infrastructure/social-media-marketing/malad",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/malad(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/malad(?:/)?$"
+    },
+    {
       "page": "/brand-infrastructure/social-media-marketing/mumbai",
       "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/mumbai(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/mumbai(?:/)?$"
     },
     {
+      "page": "/brand-infrastructure/social-media-marketing/navi-mumbai",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/navi\\-mumbai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/navi\\-mumbai(?:/)?$"
+    },
+    {
       "page": "/brand-infrastructure/social-media-marketing/thane",
       "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/thane(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/thane(?:/)?$"
+    },
+    {
+      "page": "/brand-infrastructure/social-media-marketing/vashi",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/vashi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/vashi(?:/)?$"
     },
     {
       "page": "/brand-infrastructure/video-production",

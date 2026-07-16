@@ -1,11 +1,12 @@
 export const socialMediaMumbaiData = {
+  "location": "Mumbai",
   "hero": {
     "headlineParts": [
       "Social Media Marketing",
       "Agency in Mumbai."
     ],
     "headlineAccent": "Agency in Mumbai.",
-    "description": "Marketing without appetite becomes maintenance. Most corporate brands in this city treat social media as a monthly checklist. That is an invisible drain on commercial growth. Impulse Digital is a strategic social media marketing agency in Mumbai. We build digital ecosystems that earn consumer attention and command market trust. Your social presence must move the business forward, not merely keep a calendar active. Partner with a team that values business logic over vanity metrics.",
+    "description": "Most corporate marketing decisions rely on habit instead of hard data. Publishing content just to keep a calendar active is an invisible drain on growth. Impulse Digital operates as a strategic social media marketing agency in Mumbai. We engineer responsive digital frameworks designed to convert attention into commercial leverage. We back our strategy with verified numbers, delivering 12,548+ conversion journeys for HUL and 101 merchant queries for Mastercard. Your channels must actively move the business forward. Partner with a team that prioritizes business logic over vanity metrics.",
     "buttons": [
       {
         "text": "Start a Conversation",
@@ -44,7 +45,7 @@ export const socialMediaMumbaiData = {
     "footnote": "Social is not where brands simply publish. It is where people judge relevance, responsiveness, taste, trust, and momentum."
   },
   "problem": {
-    "title": "Visibility Does Not Equal Market Relevance.",
+    "title": "Routine Maintenance Is a Quiet Failure.",
     "intro": [
       "The digital feed is saturated.",
       "Most enterprise brands publish consistently, yet their market presence remains entirely forgettable."
@@ -58,7 +59,7 @@ export const socialMediaMumbaiData = {
     ]
   },
   "vs": {
-    "title": "Social Media Management, in Plain English",
+    "title": "Digital Infrastructure Built for Commerce.",
     "leftLabel": "A calendar",
     "leftStrike": "keeps you active.",
     "rightLabel": "A social system",
@@ -89,7 +90,7 @@ export const socialMediaMumbaiData = {
     "closing": "The objective is never the raw volume of monthly posts. The objective is an authoritative market presence that builds consumer trust over time."
   },
   "uses": {
-    "title": "Transforming Channels Into Growth Levers.",
+    "title": "Six Disciplines of Digital Leverage.",
     "cards": [
       {
         "title": "Strategy and Architecture",
@@ -124,7 +125,7 @@ export const socialMediaMumbaiData = {
     ]
   },
   "channels": {
-    "title": "Recognising the Need for Strategic Execution.",
+    "title": "Knowing When Execution Requires Strategy.",
     "intro": "It is time to transition when your brand is ready to stop treating content as a deliverables list.",
     "list": [
       { "label": "Routine activity", "pos": { "left": "18%", "top": "20%" } },
@@ -138,7 +139,7 @@ export const socialMediaMumbaiData = {
     ]
   },
   "whenToUse": {
-    "title": "Engineering Connection Over Publishing Volume.",
+    "title": "Prioritizing Connection Over Volume.",
     "paragraphs": [
       "Digital authority degrades when it relies entirely on publishing frequency.",
       "A highly effective social presence demands a synthesis of platform behaviour, community discipline, and performance learning."
@@ -169,7 +170,7 @@ export const socialMediaMumbaiData = {
     ]
   },
   "guardrails": {
-    "title": "Engineering Connection Over Publishing Volume.",
+    "title": "Prioritizing Connection Over Volume.",
     "intro": "<p>Digital authority degrades when it relies entirely on publishing frequency.</p><p class=\"pivot\">A highly effective social presence demands a synthesis of platform behaviour, community discipline, and performance learning.</p><p style=\"margin-top: 1.5rem;\">We build around:</p>",
     "rows": [
       {
@@ -197,7 +198,7 @@ export const socialMediaMumbaiData = {
     "punchlineLine2": "Strategic relevance converts."
   },
   "process": {
-    "title": "How Our SMM Agency in Mumbai Constructs Your Growth Infrastructure.",
+    "title": "Assembling Your Growth Engine.",
     "steps": [
       {
         "num": "01",
@@ -228,7 +229,7 @@ export const socialMediaMumbaiData = {
     "footer": "Execution is expected.\n\nStrategic relevance converts."
   },
   "fit": {
-    "title": "This Partnership Aligns With Your Goals If:",
+    "title": "This Partnership Makes Sense If:",
     "list": [
       "You refuse to reduce your digital strategy to a standard monthly post count.",
       "Your enterprise requires a definitive and authoritative market voice.",
@@ -239,8 +240,11 @@ export const socialMediaMumbaiData = {
     ],
     "closer": ""
   },
+  "testimonials": {
+    "heading": "A Social Media Agency in Mumbai,<br/>Seen Through Its Clients"
+  },
   "finalCta": {
-    "title": "Let’s build social worth following.",
+    "title": "Let's build social worth following.",
     "body": "Tell us what your brand needs social to do. We will help shape the strategy, content system, campaigns, and management rhythm that make your presence harder to ignore.",
     "buttons": [
       {
@@ -260,28 +264,28 @@ export const socialMediaMumbaiData = {
     "title": "FAQ's Curious Much?",
     "items": [
       {
-        "q": "Why should an enterprise partner with a specialized social media marketing agency in Mumbai?",
-        "a": "Most internal marketing teams manage social channels as a secondary operational task. Partnering with a dedicated social media marketing agency in Mumbai brings focused strategic rigor to your digital presence. We align platform behavior directly with your commercial objectives. This ensures your brand generates measurable business momentum rather than simply posting to keep a calendar active."
+        "q": "Why should we partner with a specialized social media marketing agency in Mumbai?",
+        "a": "Enlisting a professional social media marketing agency in Mumbai injects strategic rigor into your enterprise presence. We ensure your cross-platform assets align with commercial goals to generate measurable business leverage. We prove this focus by delivering concrete outcomes, such as a 737% increase in organic traffic for Qure.ai."
       },
       {
-        "q": "How do we evaluate the right social media agency in Mumbai for our corporate brand?",
-        "a": "Look for business accountability before evaluating creative output. The right social media agency in Mumbai will diagnose your current digital footprint and explain exactly why your existing content fails to capture market attention. Demand category-specific proof. A strategic partner must demonstrate how they connect audience engagement directly to brand relevance and pipeline growth."
+        "q": "How can we identify the best social media marketing agency in Mumbai for our business requirements?",
+        "a": "Prioritize verifiable case studies over generic promises. The ideal partner must demonstrate documented audience engagement data and clear commercial momentum, proving they understand how to tie creative execution directly to business logic."
       },
       {
-        "q": "What exactly does a strategic social media marketing company in Mumbai manage daily?",
-        "a": "We execute across multiple connected disciplines simultaneously. A strategic social media marketing company in Mumbai handles audience mapping, visual asset production, rapid community response, and targeted paid amplification. Every operational cycle is then refined by analyzing behavioral data to ensure the next creative sprint performs stronger than the last."
+        "q": "What operational areas does a corporate social media marketing company in Mumbai handle daily?",
+        "a": "We manage multiple connected workflows simultaneously. A corporate social media marketing company in Mumbai handles comprehensive market research, visual asset production, copywriting, platform distribution, and real-time community monitoring to ensure your digital ecosystem stays ahead of market shifts."
       },
       {
-        "q": "Do we need SEO if we already invest in social media marketing services in Mumbai?",
-        "a": "Search and social solve different commercial problems. However, consolidating your SEO and social media marketing services in Mumbai under one strategic digital growth partner eliminates execution friction. Insights gathered from social performance immediately inform search strategies, and high-performing social assets are repurposed to capture high-intent search traffic efficiently."
+        "q": "Are social media marketing services in Mumbai enough on their own?",
+        "a": "Coordinating social media marketing services in Mumbai alongside search infrastructure eliminates communication friction. Insights from active social testing instantly shape your search engine strategy, while social assets can be repurposed to build organic keyword authority."
       },
       {
-        "q": "How does a professional smm agency in Mumbai differentiate between organic and paid execution?",
-        "a": "Organic distribution builds sustained narrative authority and long-term consumer trust. Paid distribution acts as a tactical amplifier. A professional smm agency in Mumbai uses targeted paid media specifically to scale high-performing organic assets. This bypasses algorithmic friction and accelerates direct customer acquisition without wasting media spend on unproven creative."
+        "q": "How does a high-performing smm agency in mumbai differentiate between organic and paid execution?",
+        "a": "Organic social establishes long-term narrative authority and market trust. A professional smm agency in mumbai leverages targeted paid distribution specifically to amplify high-performing assets, capture broad audience segment interest, and accelerate direct customer acquisition pathways."
       },
       {
-        "q": "How does a social media management company in Mumbai measure actual success?",
-        "a": "We discard generic vanity metrics. A true social media management company in Mumbai tracks structural business return. We measure exact audience engagement, brand sentiment shifts, and direct website traffic. We operate on a simple principle: if the digital execution does not move the business forward, it is merely marketing maintenance."
+        "q": "Why outsource to a social media management company in Mumbai instead of scaling an in-house team?",
+        "a": "Internal marketing teams frequently divide their bandwidth across multiple corporate tasks. A dedicated social media management company in Mumbai introduces a specialized creative system and an agile analytics loop that standard internal structures cannot replicate consistently."
       }
     ]
   }

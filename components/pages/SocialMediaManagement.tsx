@@ -10,6 +10,7 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import MobileSignalRail from '@/components/Service/MobileSignalRail';
 import { useServicePageBackground } from '@/hooks/useServicePageBackground';
+import { SocialLocationsGrid } from '@/components/Service/SocialLocationsGrid';
 
 import {
   ServiceStats,
@@ -238,6 +239,9 @@ const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
           <ServiceFAQ data={data.faq} />
         </>
       )}
+
+      <ServiceHandoff />
+      <SocialLocationsGrid currentLocation={data.location} />
     </main>
   );
 };
