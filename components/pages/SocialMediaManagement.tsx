@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import ServiceHero from '@/components/Service/ServiceHero';
 import ServiceHandoff from '@/components/Service/ServiceHandoff';
@@ -29,6 +30,8 @@ import { data as data } from '@/data/data';
 
 
 const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
+  const pathname = usePathname() || '';
+  const isAe = pathname.startsWith('/ae');
   useServicePageBackground();
 
   useEffect(() => {
@@ -240,8 +243,12 @@ const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
         </>
       )}
 
-      <ServiceHandoff />
-      <SocialLocationsGrid currentLocation={data.location} />
+      {!isAe && (
+        <>
+          <ServiceHandoff />
+          <SocialLocationsGrid currentLocation={data.location} />
+        </>
+      )}
     </main>
   );
 };
