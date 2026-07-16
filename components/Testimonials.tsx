@@ -9,9 +9,9 @@ const Testimonials: React.FC<{ data?: any }> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Use data or fallback to defaults
-  const testimonialsData = data || {
-    heading: "What Good Work Leaves Behind",
-    items: [
+  const testimonialsData = {
+    heading: data?.heading || "What Good Work Leaves Behind",
+    items: data?.items || [
       {
         quote: "\"I have worked with Impulse Digital team across different organizations and different kinds of business problems over the years. What I have always valued is that they do not look at a brief as just a task to complete. They try to understand what the brand needs, what the business is trying to achieve, and then come back with ideas that are practical, sharp, and executable.<br /><br />From campaigns and creative work to tech-led implementation, the team has shown strong range, ownership, and consistency. Impulse Digital has been a partner I have gone back to across organizations because they bring both thinking and execution to the table.\"",
         authorImg: "/images/Sairam%20Krishnamurthy.webp",

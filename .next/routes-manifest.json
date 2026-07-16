@@ -1029,6 +1029,18 @@
       "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing(?:/)?$"
     },
     {
+      "page": "/brand-infrastructure/social-media-marketing/mumbai",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/mumbai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/mumbai(?:/)?$"
+    },
+    {
+      "page": "/brand-infrastructure/social-media-marketing/thane",
+      "regex": "^/brand\\-infrastructure/social\\-media\\-marketing/thane(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/social\\-media\\-marketing/thane(?:/)?$"
+    },
+    {
       "page": "/brand-infrastructure/video-production",
       "regex": "^/brand\\-infrastructure/video\\-production(?:/)?$",
       "routeKeys": {},

@@ -52,6 +52,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/brand-infrastructure/search-engine-optimisation/enterprise-seo/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/brand-infrastructure/search-engine-optimisation/b2b-seo/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/brand-infrastructure/social-media-marketing/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
+    { url: '/brand-infrastructure/social-media-marketing/mumbai/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
+    { url: '/brand-infrastructure/social-media-marketing/thane/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/brand-infrastructure/website-development/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/brand-infrastructure/branding/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/brand-infrastructure/employer-branding/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
