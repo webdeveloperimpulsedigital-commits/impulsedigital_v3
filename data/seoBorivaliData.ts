@@ -1,12 +1,11 @@
 export const seoBorivaliData = {
   "location": "Borivali",
   "hero": {
-    "title": "#1 SEO Agency in Borivali",
-    "headline": "#1 SEO Agency in Borivali",
+    "title": "Best SEO Agency in Borivali",
+    "headline": "Best SEO Agency in Borivali",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "If you're looking to improve your online presence, working with the right SEO partner can make a noticeable difference. It’s not just about ranking higher; it’s about showing up when your potential customers are actively searching. At Impulse Digital, we work closely with businesses in Borivali to build SEO strategies that bring in relevant traffic and support real business growth.",
-      "As an experienced SEO agency in Borivali, we focus on creating long-term visibility rather than quick, short-lived results. Whether you’re a local business or a growing brand, our approach is designed to help you stay competitive in an increasingly digital-first market."
+      "Borivali is one of Mumbai's largest residential catchments, with retail corridors along the Link Road and S.V. Road, a growing base of D2C brands running from local offices, and thousands of service businesses competing for the same nearby customers. When those customers search, they pick from what appears first. Being good at what you do is not visible unless search makes it visible. As a trusted SEO company in Borivali, Impulse Digital brings 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase within 5 months for ElectroMech. As a specialist SEO agency in Borivali, we build visibility that compounds over time rather than spiking and fading."
     ]
   },
   "services": {
@@ -191,13 +190,13 @@ export const seoBorivaliData = {
       {
         "question": "How do you build an SEO strategy?",
         "answer": [
-          "We start by understanding your business and market, then create a plan that improves visibility, traffic quality, and conversions."
+          "It depends on what kind of Borivali business you are. A Link Road retailer needs local visibility and map pack presence. A D2C brand needs category and product page authority. A service business needs trust content that converts research into enquiries. We diagnose your current rankings, your competitors, and your buyer behaviour first, then build the plan around that, not a template."
         ]
       },
       {
         "question": "When can I expect to see results?",
         "answer": [
-          "SEO takes time, but most businesses begin to see improvements within a few months, with stronger results building over time."
+          "Local SEO improvements typically show within 4 to 8 weeks. For Vendiman, a majority of targeted queries ranked on page one within two months of a structured foundation build. Competitive category keywords take longer, usually 6 to 12 months of consistent work."
         ]
       },
       {
@@ -215,7 +214,7 @@ export const seoBorivaliData = {
       {
         "question": "How do I know if I am working with the best SEO agency in Borivali for my category?",
         "answer": [
-          "Ask three questions. Can they show case study data from your category, not just claims? Do they audit your site before proposing a programme? And do they measure success in leads and revenue, not just rankings? The best SEO agency in Borivali answers all three with specific evidence. Impulse Digital publishes its results 737% traffic growth for Qure.ai, 101 merchant queries for Mastercard because accountability is how trust is built."
+          "AAsk three questions. Can they show case study data from your category, not just claims? Do they audit your site before proposing a programme? And do they measure success in leads and revenue, not just rankings? The best SEO agency in Borivali answers all three with specific evidence. Impulse Digital publishes its SEO results, 737% organic traffic growth for Qure.ai, 3,500% impression growth for ElectroMech, and organic leads growing from 1 to 2 a month to 20 to 25 for Shree Rubber Works, because accountability is how trust is built."
         ]
       },
       {
@@ -227,7 +226,7 @@ export const seoBorivaliData = {
       {
         "question": "What is the first step to starting an SEO engagement with Impulse Digital in Borivali?",
         "answer": [
-          "A diagnostic conversation not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point for your business: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Borivali with 34 years of experience and results for Amazon India, HUL, and Mastercard, the first conversation is free. Reach out through our contact form or call us directly."
+          "A diagnostic conversation, not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Borivali with 34 years of experience and SEO results including 737% organic growth for Qure.ai, the first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]
