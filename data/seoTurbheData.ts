@@ -5,7 +5,7 @@ export const seoTurbheData = {
     "headline": "Best SEO Agency in Turbhe",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "Turbhe sits inside Navi Mumbai's industrial and warehousing belt, a few minutes from the Thane-Belapur Road corridor, which means a meaningful share of businesses here are not selling to walk-in customers at all, they are selling to other businesses that found them through a search, a directory, or a referral that led back to a search anyway. That distinction matters more than most local SEO advice accounts for. A manufacturing unit or a logistics provider in Turbhe does not need the same visibility strategy as a retail storefront. It needs to show up when a procurement manager in a different city is comparing three or four suppliers before ever making a call. As a trusted SEO company in Turbhe, Impulse Digital has built this kind of B2B-first search presence before, with results including 3,500% impression growth in 5 months for ElectroMech, an industrial manufacturer whose buyers research the same way. As a specialist SEO agency in Turbhe, we build for the buyer who is comparing, not just browsing."
+      "Turbhe sits inside Navi Mumbai's industrial and warehousing belt, minutes from the Thane-Belapur Road corridor. Many businesses here are not selling to walk-in customers at all. They are selling to other businesses, and their buyer is a procurement manager in another city comparing three or four suppliers before making a single call. As a trusted SEO company in Turbhe, Impulse Digital has built exactly this kind of B2B-first search presence: a 3,500% impression increase within 5 months for ElectroMech, an industrial manufacturer whose buyers research the same way, with quality leads arriving from India and overseas. As a specialist SEO agency in Turbhe, we build for the buyer who is comparing, not just browsing."
     ]
   },
   "services": {
@@ -184,7 +184,7 @@ export const seoTurbheData = {
       {
         "question": "How do you decide the SEO strategy?",
         "answer": [
-          "It depends on your business, your competition, and your current position. There’s no fixed formula. We first understand your situation and then create a plan that fits your goals."
+          "It depends on your business, your competition, and your current position. There is no fixed formula. We first understand your situation and then create a plan that fits your goals."
         ]
       },
       {
@@ -202,7 +202,7 @@ export const seoTurbheData = {
       {
         "question": "How do you measure success?",
         "answer": [
-          "We look at rankings, traffic, and most importantly, whether you’re getting more inquiries or leads. The goal is to connect SEO performance with actual business results."
+          "We look at rankings, traffic, and most importantly, whether you are getting more enquiries or leads. The goal is to connect SEO performance with actual business results."
         ]
       },
       {
@@ -214,7 +214,7 @@ export const seoTurbheData = {
       {
         "question": "What happens after we reach out about SEO for our Turbhe business?",
         "answer": [
-          "We look at what you already have before recommending anything new. Most Turbhe businesses we speak to have some web presence, just not one built for how their actual buyers search. We will tell you honestly whether SEO is the right investment for your stage, and if it is not yet, we will say so. Reach out through our contact form, the first conversation is free."
+          "We look at what you already have before recommending anything new. Most Turbhe businesses we speak to have some web presence, just not one built for how their actual buyers search. We will tell you honestly whether SEO is the right investment for your stage, and if it is not yet, we will say so. Reach out through our contact form."
         ]
       }
     ]

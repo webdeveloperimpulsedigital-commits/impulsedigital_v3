@@ -1,11 +1,11 @@
 export const seoKhargharData = {
   "location": "Kharghar",
   "hero": {
-    "title": "SEO Agency in Kharghar",
+    "title": "#1 SEO Agency in Kharghar",
     "headline": "#1 SEO Agency in Kharghar",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "Kharghar is one of Navi Mumbai's most rapidly developing commercial nodes, with a growing mix of IT firms, residential services, retail businesses, and professional service providers all competing for the same local buyer. When a buyer in Kharghar searches for what you offer, they scan the first few results, pick what looks credible, and move on. Businesses that do not appear at that moment lose the enquiry before they know it existed.<br> Impulse Digital is a trusted SEO company in Kharghar with 34 years of marketing experience and documented results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We build search systems that help Kharghar businesses get found consistently by the right buyers and convert that visibility into enquiries, calls, and measurable growth."
+      "Every agency pitching Kharghar businesses says the same three things: more traffic, more leads, page one rankings. Almost none of them show receipts. So here are ours: 737% organic traffic growth for Qure.ai, a healthcare AI company whose buyers research exactly like Kharghar's IT and professional services clientele. Impressions up 3,500% in five months for ElectroMech, an industrial manufacturer selling to procurement teams. Organic leads up from 1 to 2 a month to 20 to 25 for Shree Rubber Works, a Navi Mumbai B2B business a few nodes away.If your Kharghar business sells to buyers who compare before they call, that is the kind of SEO company in Kharghar you need one measured on outcomes, not activity."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoKhargharData = {
       {
         "question": "Why should I choose Impulse Digital for SEO services in Kharghar over other agencies?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Kharghar, Impulse Digital brings 34 years of marketing experience and documented results that most agencies cannot match: 737% organic traffic growth for Qure.ai in a competitive healthcare B2B market, 12,548 conversion journeys for HUL through search-integrated campaigns, and top-10 keyword rankings for 90% of targeted terms for Vendiman within three months. Every engagement starts with a diagnostic of your current search position, your competition, and your specific buyer behaviour in Kharghar, not with a package recommendation. The goal is a search presence that earns trust before a buyer contacts you, not activity that fills a monthly report."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Kharghar, Impulse Digital brings 34 years of marketing experience and documented results that most agencies cannot match: documented results that most agencies cannot match: 737% organic traffic growth for Qure.ai in a competitive healthcare B2B market, a 3,500% impression increase within 5 months for ElectroMech with major keywords in the top 10, and a majority of targeted queries ranked on page one within two months for Vendiman. Every engagement starts with a diagnostic of your current search position, your competition, and your specific buyer behaviour in Kharghar, not with a package recommendation. The goal is a search presence that earns trust before a buyer contacts you, not activity that fills a monthly report."
         ]
       },
       {
@@ -196,7 +196,7 @@ export const seoKhargharData = {
       {
         "question": "Do you only work with local businesses?",
         "answer": [
-          "No, we serve businesses across industries and can enhance local visibility if it’s a priority for you. It depends on where your customers are and how they search."
+          "No. We work across industries and scales. For Kharghar businesses serving nearby customers, Local SEO and Google Business Profile visibility lead the programme. For IT firms and professional services near the CBD Belapur belt targeting buyers across Navi Mumbai and beyond, B2B SEO and content authority carry more weight. The mix follows where your customers actually are."
         ]
       },
       {
@@ -214,7 +214,7 @@ export const seoKhargharData = {
       {
         "question": "What is the first step to starting an SEO programme with Impulse Digital in Kharghar?",
         "answer": [
-          "The first step is a diagnostic conversation, not a proposal. We look at three things before recommending any programme. Where your business currently ranks and which searches in Kharghar you are missing. Where your technical health is creating barriers to indexation and visibility. And where your content gaps are costing you consideration from buyers who are already searching for what you offer. From that diagnostic, we build a scoped recommendation starting with the highest-impact area for your specific business: Local SEO for businesses targeting nearby Kharghar customers, Technical SEO for sites with structural barriers, B2B SEO for professional services targeting enterprise buyers, or a full Content and Search Strategy for businesses building category authority. As a trusted SEO company in Kharghar backed by 34 years of marketing experience and documented results for Amazon India, HUL, Mastercard, and Tata Consumer Products, Impulse Digital brings the same rigour to every engagement regardless of business size or budget. The first conversation is free. Reach out through our contact form or call us directly."
+          "The first step is a diagnostic conversation, not a proposal. We look at three things before recommending any programme. Where your business currently ranks and which searches in Kharghar you are missing. Where your technical health is creating barriers to indexation and visibility. And where your content gaps are costing you consideration from buyers who are already searching for what you offer. From that diagnostic, we build a scoped recommendation starting with the highest-impact area for your specific business: Local SEO for businesses targeting nearby Kharghar customers, Technical SEO for sites with structural barriers, B2B SEO for professional services targeting enterprise buyers, or a full Content and Search Strategy for businesses building category authority. As a trusted SEO company in Kharghar backed by 34 years of marketing experience and SEO results including 737% organic traffic growth for Qure.ai and organic leads growing from 1 to 2 a month to 20 to 25 for Shree Rubber Works, Impulse Digital brings the same rigour to every engagement regardless of business size or budget. The first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]

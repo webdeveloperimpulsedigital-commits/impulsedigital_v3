@@ -4,14 +4,15 @@ import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
 import { socialMediaManagementData } from '@/data/socialMediaManagementData';
 ;
 import { getFAQSchema } from "@/lib/schemaHelper";
+
 export const metadata: Metadata = {
-  title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-  description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
-  keywords: 'social media marketing agency in mumbai, social media marketing company in mumbai, smm agency in mumbai, smm company, social media management, social media agency, impulse digital, mumbai, navi mumbai, thane, india',
+  title: 'Social Media Marketing Agency in India | Best SMM Company | Impulse Digital',
+  description: 'Impulse Digital is the best social media marketing agency in India and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+  keywords: 'social media marketing agency in india, social media marketing company in india, smm agency in india, smm company, social media management, social media agency, impulse digital, india',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-    description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+    title: 'Social Media Marketing Agency in India | Best SMM Company | Impulse Digital',
+    description: 'Impulse Digital is the best social media marketing agency in India and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
     url: `${SITE_URL}/brand-infrastructure/social-media-marketing/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Social Media Marketing Agency in Mumbai | Best SMM Company | Impulse Digital',
-    description: 'Impulse Digital is the best social media marketing agency in Mumbai and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
+    title: 'Social Media Marketing Agency in India | Best SMM Company | Impulse Digital',
+    description: 'Impulse Digital is the best social media marketing agency in India and a trusted SMM agency for enterprise brands. We are offering content creation, community management, paid social, and social media strategy.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
