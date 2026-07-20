@@ -37,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/growth-intelligence/social-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
-    { url: '/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     // AI Marketing Systems
     { url: '/ai-marketing-systems/', priority: 0.8, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ai-marketing-systems/archer-ai/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
@@ -119,7 +118,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/ae/growth-intelligence/market-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ae/growth-intelligence/social-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ae/growth-intelligence/campaign-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
-    { url: '/ae/growth-intelligence/always-on-intelligence/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ae/ai-marketing-systems/', priority: 0.8, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ae/ai-marketing-systems/archer-ai/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },
     { url: '/ae/ai-marketing-systems/agentic-ai/', priority: 0.7, changeFrequency: 'monthly' as const, lastModified: SERVICE_PAGES_UPDATED },

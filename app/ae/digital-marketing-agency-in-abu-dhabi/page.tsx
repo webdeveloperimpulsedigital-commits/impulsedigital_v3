@@ -69,7 +69,7 @@ export default function AbuDhabiLocationPage() {
           "itemListElement": [
             {"@type": "Service", "name": "Customer Intelligence"},
             {"@type": "Service", "name": "Market and Competitive Intelligence"},
-            {"@type": "Service", "name": "Always-On Intelligence"},
+            {"@type": "Service", "name": "Social Intelligence"},
             {"@type": "Service", "name": "Campaign and Performance Intelligence"},
             {"@type": "Service", "name": "Archer AI"},
             {"@type": "Service", "name": "Agentic AI"},

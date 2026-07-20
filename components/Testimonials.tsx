@@ -27,7 +27,7 @@ const Testimonials: React.FC<{ data?: any }> = ({ data }) => {
         authorCompany: "Grasim Industries Limited | Pulp and Fibre"
       },
       {
-        quote: "\"Impulse Digital has been a dependable partner for our social listening and category landscape needs. What stands out is their agility and flexibility, they consistently deliver high-quality outputs, often within tight timelines. They’ve also played a key role in tracking and tracking our main campaign last year - Agent Chings - where their structured weekly updates on social presence, growth, and sentiment were particularly useful. Their approach is practical, client-centric, and focused on delivering actionable insights. Overall, they are reliable and easy to work with.\"",
+        quote: "\"Impulse Digital has been a dependable partner for our social listening and category landscape needs. What stands out is their agility and flexibility, they consistently deliver high-quality outputs, often within tight timelines. They’ve also played a key role in tracking and evaluating our main campaign last year - Agent Chings - where their structured weekly updates on social presence, growth, and sentiment were particularly useful. Their approach is practical, client-centric, and focused on delivering actionable insights. Overall, they are reliable and easy to work with.\"",
         authorImg: "/images/Pratik%20Shetty.webp",
         authorName: "Pratik Shetty",
         authorRole: "Senior Manager, Consumer Insights",
