@@ -15,7 +15,7 @@ export const uaeLocationFaqs: FAQItem[] = [
   },
   {
     "question": "What digital marketing services in UAE does Impulse Digital provide under one engagement? ",
-    "answer": "Our digital marketing services in UAE span three integrated pillars. Growth Intelligence covers Consumer Intelligence, Market and Competitive Intelligence, Always-On Intelligence, and Campaign and Performance Intelligence. AI Marketing Systems covers Archer AI, Agentic AI, AI Video Production, and Generative Search Optimisation. Brand Infrastructure covers Search Engine Optimisation, Social Media Marketing, Video Production, Website Development, Brand Identity, and Employer Branding. You can engage one pillar or all three depending on your current priorities."
+    "answer": "Our digital marketing services in UAE span three integrated pillars. Growth Intelligence covers Consumer Intelligence, Market and Competitive Intelligence, Social Intelligence, and Campaign and Performance Intelligence. AI Marketing Systems covers Archer AI, Agentic AI, AI Video Production, and Generative Search Optimisation. Brand Infrastructure covers Search Engine Optimisation, Social Media Marketing, Video Production, Website Development, Brand Identity, and Employer Branding. You can engage one pillar or all three depending on your current priorities."
   },
   {
     "question": "How is a digital marketing company in UAE like Impulse Digital different from a generic agency?",

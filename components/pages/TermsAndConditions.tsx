@@ -14,7 +14,7 @@ export default function TermsAndConditions() {
     <main style={{ paddingTop: '150px', paddingBottom: '100px', color: '#fff', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto', lineHeight: '1.8' }}>
         <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '3rem', color: '#fff', fontWeight: 700 }}>Terms and Conditions</h1>
-        
+
         <h2 style={{ fontSize: '2rem', marginTop: '3rem', marginBottom: '1rem', color: '#fff', fontWeight: 600 }}>AGREEMENT TO TERMS</h2>
         <p style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem' }}>
           These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Impulse Digital ("Company", "we", "us", or "our"), concerning your access to and use of the https://www.theimpulsedigital.com/ website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site"). You agree that by accessing the Site, you have read, understood, and agreed to be bound by all of these Terms of Use. If you do not agree with all of these Terms of Use, then you are expressly prohibited from using the Site and you must discontinue use immediately.
@@ -135,7 +135,7 @@ export default function TermsAndConditions() {
         <p style={{ marginBottom: '1.5rem', color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem' }}>
           {isAe ? (
             <>
-              <strong style={{ color: '#fff' }}>Impulse Digital Pvt. Ltd.</strong><br />
+              <strong style={{ color: '#fff' }}>Impulse Digital</strong><br />
               Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown, Dubai<br />
               Phone: +971 45 276 816<br />
             </>

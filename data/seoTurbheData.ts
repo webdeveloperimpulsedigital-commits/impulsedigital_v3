@@ -196,7 +196,7 @@ export const seoTurbheData = {
       {
         "question": "Do you only work with local businesses?",
         "answer": [
-          "No, we work with different types of businesses, but we do help improve local visibility if that’s important for you. It depends on where your customers are and how they search."
+          "No, we work with different types of businesses, but we do help improve local visibility if that is important for you. It depends on where your customers are and how they search."
         ]
       },
       {

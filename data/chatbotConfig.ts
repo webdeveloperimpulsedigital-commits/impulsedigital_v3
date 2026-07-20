@@ -19,7 +19,7 @@ export const chatbotConfig: ChatbotConfig = {
       items: [
         "Consumer Intelligence",
         "Market and Competitive Intelligence",
-        "Always-On Intelligence",
+        "Social Intelligence",
         "Campaign and Performance Intelligence"
       ]
     },
@@ -69,7 +69,7 @@ THE IMPULSE DIGITAL KNOWLEDGE BASE
 - Growth Intelligence:
   - Consumer Intelligence: Usage/Attitude studies, trigger/barrier analysis, innovation funnel support. Decoding real buyers instead of convenient personas.
   - Market and Competitive Intelligence: Competitor moves, positioning gaps, category trends.
-  - Always-On Intelligence: Continuous tracking of trends, social pulse, and sentiment.
+  - Social Intelligence: Continuous tracking of trends, social pulse, and sentiment.
   - Campaign and Performance Intelligence: Funnel clarity, lead quality tracking, budget decisions, conversion analysis.
 - AI Marketing Systems:
   - Archer AI: Dedicated AI solutions for automation.

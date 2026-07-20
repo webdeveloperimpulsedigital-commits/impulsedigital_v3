@@ -2,7 +2,7 @@ export const alwaysOnIntelligenceData = {
   hero: {
     headlineParts: ["Social Intelligence Agency", "for Always-On Market Clarity"],
     headlineAccent: "for Always-On Market Clarity",
-    description: "Brand sentiment does not wait for the monthly review. A complaint spikes. A review pattern repeats. A competitor move gains traction. A campaign starts being read differently than intended. Impulse Digital is a specialist social intelligence agency with 34 years of marketing experience and always-on intelligence programmes running across enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a social media intelligence company built for brands that cannot afford to discover a reputation risk in a quarterly report, we monitor conversations, sentiment, marketplace signals, and emerging opportunities before they turn into surprises.",
+    description: "Brand sentiment does not wait for the monthly review. A complaint spikes. A review pattern repeats. A competitor move gains traction. A campaign starts being read differently than intended. Impulse Digital is a specialist social intelligence agency with 34 years of marketing experience and social intelligence programmes running across enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a social media intelligence company built for brands that cannot afford to discover a reputation risk in a quarterly report, we monitor conversations, sentiment, marketplace signals, and emerging opportunities before they turn into surprises.",
     buttons: [
       { text: "Build Your Intelligence System", link: "#connect", cursor: "BUILD" },
       { text: "See What You Can Track", link: "#use-cases", cursor: "EXPLORE" }
