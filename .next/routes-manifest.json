@@ -28,6 +28,342 @@
       "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
     },
     {
+      "source": "/services/social-media-marketing",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-marketing(?:/)?$"
+    },
+    {
+      "source": "/services/social-media-marketing/",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/social-media-marketing/(?:/)?$"
+    },
+    {
+      "source": "/social-media-marketing",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/social-media-marketing(?:/)?$"
+    },
+    {
+      "source": "/social-media-marketing/",
+      "destination": "/brand-infrastructure/social-media-marketing/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/social-media-marketing/(?:/)?$"
+    },
+    {
+      "source": "/employer-branding-agency",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/employer-branding-agency(?:/)?$"
+    },
+    {
+      "source": "/employer-branding-agency/",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/employer-branding-agency/(?:/)?$"
+    },
+    {
+      "source": "/career",
+      "destination": "/careers/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/career(?:/)?$"
+    },
+    {
+      "source": "/career/",
+      "destination": "/careers/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/career/(?:/)?$"
+    },
+    {
+      "source": "/social-media-video-production",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/social-media-video-production(?:/)?$"
+    },
+    {
+      "source": "/social-media-video-production/",
+      "destination": "/brand-infrastructure/video-production/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/social-media-video-production/(?:/)?$"
+    },
+    {
+      "source": "/local-seo-service",
+      "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/local-seo-service(?:/)?$"
+    },
+    {
+      "source": "/local-seo-service/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/local-seo-service/(?:/)?$"
+    },
+    {
+      "source": "/search-engine-optimization",
+      "destination": "/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/search-engine-optimization(?:/)?$"
+    },
+    {
+      "source": "/search-engine-optimization/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/search-engine-optimization/(?:/)?$"
+    },
+    {
+      "source": "/digital-marketing-services",
+      "destination": "/digital-marketing-agency-in-india/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/digital-marketing-services(?:/)?$"
+    },
+    {
+      "source": "/digital-marketing-services/",
+      "destination": "/digital-marketing-agency-in-india/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/digital-marketing-services/(?:/)?$"
+    },
+    {
+      "source": "/services/branding-creative-services",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/branding-creative-services(?:/)?$"
+    },
+    {
+      "source": "/services/branding-creative-services/",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/branding-creative-services/(?:/)?$"
+    },
+    {
+      "source": "/branding-creative-services",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/branding-creative-services(?:/)?$"
+    },
+    {
+      "source": "/branding-creative-services/",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/branding-creative-services/(?:/)?$"
+    },
+    {
+      "source": "/enterprise-seo-service",
+      "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/enterprise-seo-service(?:/)?$"
+    },
+    {
+      "source": "/enterprise-seo-service/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/enterprise-seo-service/(?:/)?$"
+    },
+    {
+      "source": "/b2b-seo-service",
+      "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/b2b-seo-service(?:/)?$"
+    },
+    {
+      "source": "/b2b-seo-service/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/b2b-seo-service/(?:/)?$"
+    },
+    {
+      "source": "/clients-works",
+      "destination": "/case-studies/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/clients-works(?:/)?$"
+    },
+    {
+      "source": "/clients-works/",
+      "destination": "/case-studies/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/clients-works/(?:/)?$"
+    },
+    {
+      "source": "/website-development",
+      "destination": "/brand-infrastructure/website-development/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/website-development(?:/)?$"
+    },
+    {
+      "source": "/website-development/",
+      "destination": "/brand-infrastructure/website-development/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/website-development/(?:/)?$"
+    },
+    {
+      "source": "/ecommerce-seo-service",
+      "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ecommerce-seo-service(?:/)?$"
+    },
+    {
+      "source": "/ecommerce-seo-service/",
+      "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ecommerce-seo-service/(?:/)?$"
+    },
+    {
+      "source": "/agentic-ai",
+      "destination": "/ai-marketing-systems/agentic-ai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/agentic-ai(?:/)?$"
+    },
+    {
+      "source": "/agentic-ai/",
+      "destination": "/ai-marketing-systems/agentic-ai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/agentic-ai/(?:/)?$"
+    },
+    {
+      "source": "/case-studies-dmart",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-dmart(?:/)?$"
+    },
+    {
+      "source": "/case-studies-dmart/",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-dmart/(?:/)?$"
+    },
+    {
+      "source": "/casestudies/d-mart",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/d-mart(?:/)?$"
+    },
+    {
+      "source": "/casestudies/d-mart/",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/d-mart/(?:/)?$"
+    },
+    {
+      "source": "/dmart",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/dmart(?:/)?$"
+    },
+    {
+      "source": "/dmart/",
+      "destination": "/case-studies/dmart/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/dmart/(?:/)?$"
+    },
+    {
+      "source": "/case-studies-hul",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-hul(?:/)?$"
+    },
+    {
+      "source": "/case-studies-hul/",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-hul/(?:/)?$"
+    },
+    {
+      "source": "/hul_new",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/hul_new(?:/)?$"
+    },
+    {
+      "source": "/hul_new/",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/hul_new/(?:/)?$"
+    },
+    {
+      "source": "/hul",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/hul(?:/)?$"
+    },
+    {
+      "source": "/hul/",
+      "destination": "/case-studies/hul/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/hul/(?:/)?$"
+    },
+    {
+      "source": "/case-studies-mastercard",
+      "destination": "/case-studies/mastercard/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-mastercard(?:/)?$"
+    },
+    {
+      "source": "/case-studies-mastercard/",
+      "destination": "/case-studies/mastercard/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-mastercard/(?:/)?$"
+    },
+    {
+      "source": "/casestudies/mastercard",
+      "destination": "/case-studies/mastercard/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/mastercard(?:/)?$"
+    },
+    {
+      "source": "/casestudies/mastercard/",
+      "destination": "/case-studies/mastercard/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/mastercard/(?:/)?$"
+    },
+    {
+      "source": "/casestudies/fourseforgood",
+      "destination": "/case-studies/fours-for-good/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/fourseforgood(?:/)?$"
+    },
+    {
+      "source": "/casestudies/fourseforgood/",
+      "destination": "/case-studies/fours-for-good/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/fourseforgood/(?:/)?$"
+    },
+    {
+      "source": "/casestudies/crafting-the-employer-value-proposition-for-amazon-india",
+      "destination": "/case-studies/amazon-india-evp-strategy/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/crafting-the-employer-value-proposition-for-amazon-india(?:/)?$"
+    },
+    {
+      "source": "/casestudies/crafting-the-employer-value-proposition-for-amazon-india/",
+      "destination": "/case-studies/amazon-india-evp-strategy/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/crafting-the-employer-value-proposition-for-amazon-india/(?:/)?$"
+    },
+    {
+      "source": "/case-studies-emech",
+      "destination": "/case-studies/electromech/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-emech(?:/)?$"
+    },
+    {
+      "source": "/case-studies-emech/",
+      "destination": "/case-studies/electromech/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-emech/(?:/)?$"
+    },
+    {
+      "source": "/casestudies/electromech",
+      "destination": "/case-studies/electromech/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/electromech(?:/)?$"
+    },
+    {
+      "source": "/casestudies/electromech/",
+      "destination": "/case-studies/electromech/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies/electromech/(?:/)?$"
+    },
+    {
       "source": "/local seo",
       "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
       "statusCode": 308,

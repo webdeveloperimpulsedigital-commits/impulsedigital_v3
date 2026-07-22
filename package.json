@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
+    "test:seo": "node --test tests/seo/*.test.mjs",
     "start": "next start",
     "postinstall": "node scripts/ensure-wordpress.js",
     "postbuild": "node scripts/ensure-wordpress.js"

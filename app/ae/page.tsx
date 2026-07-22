@@ -94,14 +94,14 @@ export default function HomePage() {
         "@id": "https://www.theimpulsedigital.com/ae/#website"
       },
       "about": {
-        "@id": "https://www.theimpulsedigital.com/ae/#organization"
+        "@id": "https://www.theimpulsedigital.com/#organization"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://www.theimpulsedigital.com/header-logo.png"
       },
       "publisher": {
-        "@id": "https://www.theimpulsedigital.com/ae/#organization"
+        "@id": "https://www.theimpulsedigital.com/#organization"
       }
     },
     {
@@ -113,7 +113,7 @@ export default function HomePage() {
       "alternateName": "Impulse Digital",
       "description": "Impulse Digital is a digital marketing agency offering social media, performance marketing, content, website development, branding, Agentic AI, AI video production, and generative search optimisation services.",
       "publisher": {
-        "@id": "https://www.theimpulsedigital.com/ae/#organization"
+        "@id": "https://www.theimpulsedigital.com/#organization"
       },
       "potentialAction": {
         "@type": "SearchAction",

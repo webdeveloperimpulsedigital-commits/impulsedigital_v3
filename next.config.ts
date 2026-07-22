@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import { highConfidenceRedirects } from './seo/registries/redirects.mjs';
 
 const nextConfig: NextConfig = {
   // Output standalone build for Hostinger Passenger Node.js compatibility
@@ -52,6 +53,8 @@ const nextConfig: NextConfig = {
   // Redirect legacy URL variants
   async redirects() {
     return [
+      ...highConfidenceRedirects,
+
       // ── Space-encoded legacy URLs ──────────────────────────────────────────
       {
         source: '/local seo',
@@ -254,4 +257,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

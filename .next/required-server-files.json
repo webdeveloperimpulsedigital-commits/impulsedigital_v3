@@ -346,6 +346,286 @@
     },
     "_originalRedirects": [
       {
+        "source": "/services/social-media-marketing",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/services/social-media-marketing/",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/social-media-marketing",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/social-media-marketing/",
+        "destination": "/brand-infrastructure/social-media-marketing/",
+        "permanent": true
+      },
+      {
+        "source": "/employer-branding-agency",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/employer-branding-agency/",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/career",
+        "destination": "/careers/",
+        "permanent": true
+      },
+      {
+        "source": "/career/",
+        "destination": "/careers/",
+        "permanent": true
+      },
+      {
+        "source": "/social-media-video-production",
+        "destination": "/brand-infrastructure/video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/social-media-video-production/",
+        "destination": "/brand-infrastructure/video-production/",
+        "permanent": true
+      },
+      {
+        "source": "/local-seo-service",
+        "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/local-seo-service/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/search-engine-optimization",
+        "destination": "/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/search-engine-optimization/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/digital-marketing-services",
+        "destination": "/digital-marketing-agency-in-india/",
+        "permanent": true
+      },
+      {
+        "source": "/digital-marketing-services/",
+        "destination": "/digital-marketing-agency-in-india/",
+        "permanent": true
+      },
+      {
+        "source": "/services/branding-creative-services",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/services/branding-creative-services/",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/branding-creative-services",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/branding-creative-services/",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/enterprise-seo-service",
+        "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/enterprise-seo-service/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/enterprise-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/b2b-seo-service",
+        "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/b2b-seo-service/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/b2b-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/clients-works",
+        "destination": "/case-studies/",
+        "permanent": true
+      },
+      {
+        "source": "/clients-works/",
+        "destination": "/case-studies/",
+        "permanent": true
+      },
+      {
+        "source": "/website-development",
+        "destination": "/brand-infrastructure/website-development/",
+        "permanent": true
+      },
+      {
+        "source": "/website-development/",
+        "destination": "/brand-infrastructure/website-development/",
+        "permanent": true
+      },
+      {
+        "source": "/ecommerce-seo-service",
+        "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/ecommerce-seo-service/",
+        "destination": "/brand-infrastructure/search-engine-optimisation/ecommerce-seo/",
+        "permanent": true
+      },
+      {
+        "source": "/agentic-ai",
+        "destination": "/ai-marketing-systems/agentic-ai/",
+        "permanent": true
+      },
+      {
+        "source": "/agentic-ai/",
+        "destination": "/ai-marketing-systems/agentic-ai/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-dmart",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-dmart/",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/d-mart",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/d-mart/",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/dmart",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/dmart/",
+        "destination": "/case-studies/dmart/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-hul",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-hul/",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/hul_new",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/hul_new/",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/hul",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/hul/",
+        "destination": "/case-studies/hul/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-mastercard",
+        "destination": "/case-studies/mastercard/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-mastercard/",
+        "destination": "/case-studies/mastercard/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/mastercard",
+        "destination": "/case-studies/mastercard/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/mastercard/",
+        "destination": "/case-studies/mastercard/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/fourseforgood",
+        "destination": "/case-studies/fours-for-good/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/fourseforgood/",
+        "destination": "/case-studies/fours-for-good/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/crafting-the-employer-value-proposition-for-amazon-india",
+        "destination": "/case-studies/amazon-india-evp-strategy/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/crafting-the-employer-value-proposition-for-amazon-india/",
+        "destination": "/case-studies/amazon-india-evp-strategy/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-emech",
+        "destination": "/case-studies/electromech/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-emech/",
+        "destination": "/case-studies/electromech/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/electromech",
+        "destination": "/case-studies/electromech/",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/electromech/",
+        "destination": "/case-studies/electromech/",
+        "permanent": true
+      },
+      {
         "source": "/local seo",
         "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
         "permanent": true

@@ -27,27 +27,6 @@ export async function generateMetadata(): Promise<Metadata> {
     : pathname;
   const normalizedBasePath = basePath || '/';
 
-  // Strict Location Mapping for Hreflang Alternates
-  const exactLocationMap: Record<string, string> = {
-    '/digital-marketing-agency-in-india/': '/digital-marketing-agency-in-uae/',
-    '/digital-marketing-agency-in-thane/': '/digital-marketing-agency-in-sharjah/',
-    '/digital-marketing-agency-in-navi-mumbai/': '/digital-marketing-agency-in-abu-dhabi/',
-    '/digital-marketing-agency-in-pune/': '/digital-marketing-agency-in-ajman/',
-    '/brand-infrastructure/search-engine-optimisation/mumbai/': '/brand-infrastructure/search-engine-optimisation/uae/',
-    '/brand-infrastructure/search-engine-optimisation/navi-mumbai/': '/brand-infrastructure/search-engine-optimisation/abu-dhabi/',
-    '/brand-infrastructure/search-engine-optimisation/thane/': '/brand-infrastructure/search-engine-optimisation/sharjah/',
-    '/brand-infrastructure/search-engine-optimisation/andheri/': '/brand-infrastructure/search-engine-optimisation/deira/',
-    '/brand-infrastructure/search-engine-optimisation/ghansoli/': '/brand-infrastructure/search-engine-optimisation/ajman/',
-    '/brand-infrastructure/search-engine-optimisation/vashi/': '/brand-infrastructure/search-engine-optimisation/al-ain/',
-    '/brand-infrastructure/search-engine-optimisation/borivali/': '/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/',
-    '/brand-infrastructure/search-engine-optimisation/malad/': '/brand-infrastructure/search-engine-optimisation/fujairah/',
-    '/brand-infrastructure/search-engine-optimisation/mansarovar/': '/brand-infrastructure/search-engine-optimisation/business-bay/',
-  };
-
-  const reverseLocationMap = Object.fromEntries(
-    Object.entries(exactLocationMap).map(([inPath, aePath]) => [aePath, inPath])
-  );
-
   let inBasePath: string | null = normalizedBasePath;
   let aeBasePath: string | null = normalizedBasePath;
 
@@ -58,10 +37,10 @@ export async function generateMetadata(): Promise<Metadata> {
   if (isLocationPage) {
     if (isAe) {
       aeBasePath = normalizedBasePath;
-      inBasePath = reverseLocationMap[normalizedBasePath] || null; // null if no exact equivalent in IN
+      inBasePath = null;
     } else {
       inBasePath = normalizedBasePath;
-      aeBasePath = exactLocationMap[normalizedBasePath] || null; // null if no exact equivalent in AE
+      aeBasePath = null;
     }
   }
 
@@ -71,13 +50,12 @@ export async function generateMetadata(): Promise<Metadata> {
   const languages: Record<string, string> = {};
   if (inUrl) {
     languages['en-IN'] = inUrl;
-    languages['x-default'] = inUrl;
   }
   if (aeUrl) {
     languages['en-AE'] = aeUrl;
-    if (!inUrl) {
-      languages['x-default'] = aeUrl;
-    }
+  }
+  if (inUrl && aeUrl) {
+    languages['x-default'] = inUrl;
   }
 
   return {
