@@ -95,6 +95,7 @@ export async function proxy(request: NextRequest) {
     let wpResponse: Response;
     try {
       wpResponse = await fetch(targetUrl, {
+        method: request.method,
         headers: {
           'User-Agent':      request.headers.get('user-agent')       || 'Mozilla/5.0',
           'Accept':          request.headers.get('accept')           || 'text/html,*/*',
@@ -120,6 +121,21 @@ export async function proxy(request: NextRequest) {
       const location    = wpResponse.headers.get('location') || defaultLoc;
       const newLocation = rewriteUrls(location, isAeBlog, publicOrigin);
       return NextResponse.redirect(newLocation, { status });
+    }
+
+    // HEAD responses must not contain a body. Preserve the upstream status and
+    // relevant headers without attempting to read or rewrite the response body.
+    if (request.method === 'HEAD') {
+      return new NextResponse(null, {
+        status,
+        headers: {
+          'Content-Type': contentType || 'text/plain; charset=utf-8',
+          'x-pathname': pathname,
+          'Cache-Control': contentType.includes('text/html')
+            ? 'no-store, must-revalidate'
+            : wpResponse.headers.get('cache-control') || 'public, max-age=86400',
+        },
+      });
     }
 
     // ── Large binary assets (images / video / audio / pdf): redirect ────

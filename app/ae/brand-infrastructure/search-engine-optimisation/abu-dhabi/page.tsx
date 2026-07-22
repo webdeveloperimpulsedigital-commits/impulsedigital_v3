@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAbuDhabiLocation from '@/components/pages/seo-locations/SeoAbuDhabiLocation';
-import { getComplexFAQSchema } from "@/lib/schemaHelper";
-import { seoAbuDhabiData } from "@/data/seoAbuDhabiData";
 
 export const metadata: Metadata = {
   title: 'SEO Agency in Abu Dhabi | Best SEO Company in Abu Dhabi | Impulse Digital',
@@ -51,28 +49,7 @@ export default function SeoAbuDhabiLocationPage() {
     }
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Impulse Digital",
-    "telephone": "+97145276816",
-    "email": "collabs@theimpulsedigital.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Sheikh Mohammed Bin Rashid Boulevard",
-      "postOfficeBoxNumber": "P.O. Box 340733",
-      "addressLocality": "Downtown Dubai",
-      "addressRegion": "Dubai",
-      "postalCode": "340733",
-      "addressCountry": "AE"
-    },
-    "areaServed": {
-      "@type": "Place",
-      "name": "Abu Dhabi"
-    }
-  };
-
-  const schemas = [serviceSchema, getComplexFAQSchema(seoAbuDhabiData, true), localBusinessSchema];
+  const schemas = [serviceSchema];
 
   return (
     <>

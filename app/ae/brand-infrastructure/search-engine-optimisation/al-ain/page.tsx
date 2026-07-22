@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAlAinLocation from '@/components/pages/seo-locations/SeoAlAinLocation';
-import { getComplexFAQSchema } from "@/lib/schemaHelper";
-import { seoAlAinData } from "@/data/seoAlAinData";
 
 export const metadata: Metadata = {
   title: 'SEO Agency in Al Ain | Best SEO Company in Al Ain | Impulse Digital',
@@ -51,28 +49,7 @@ export default function SeoAlAinLocationPage() {
     }
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Impulse Digital",
-    "telephone": "+97145276816",
-    "email": "collabs@theimpulsedigital.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Sheikh Mohammed Bin Rashid Boulevard",
-      "postOfficeBoxNumber": "P.O. Box 340733",
-      "addressLocality": "Downtown Dubai",
-      "addressRegion": "Dubai",
-      "postalCode": "340733",
-      "addressCountry": "AE"
-    },
-    "areaServed": {
-      "@type": "Place",
-      "name": "Al Ain"
-    }
-  };
-
-  const schemas = [serviceSchema, getComplexFAQSchema(seoAlAinData, true), localBusinessSchema];
+  const schemas = [serviceSchema];
 
   return (
     <>

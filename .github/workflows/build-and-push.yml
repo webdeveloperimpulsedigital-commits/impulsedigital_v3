@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run SEO regression tests
+        run: npm run test:seo
+
       - name: Build the project
         run: npm run build
 
