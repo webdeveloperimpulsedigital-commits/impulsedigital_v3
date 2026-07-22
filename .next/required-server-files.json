@@ -187,7 +187,6 @@
       "imgOptTimeoutInSeconds": 7,
       "imgOptMaxInputPixels": 268402689,
       "imgOptSequentialRead": null,
-      "imgOptSkipMetadata": null,
       "isrFlushToDisk": true,
       "workerThreads": false,
       "optimizeCss": false,
@@ -790,6 +789,7 @@
   "appDir": "/home/runner/work/impulsedigital_v3/impulsedigital_v3",
   "relativeAppDir": "",
   "files": [
+    ".next/package.json",
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",
     ".next/build-manifest.json",

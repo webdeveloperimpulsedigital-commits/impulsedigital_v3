@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "image-size": "^2.0.2",
-    "next": "16.2.6",
-    "pagespeed-mcp-server": "^2.0.1",
+    "next": "16.2.11",
     "pdfjs-dist": "^6.0.227",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -28,6 +27,8 @@
   },
   "overrides": {
     "undici": "^7.28.0",
-    "hono": "^4.12.25"
+    "hono": "^4.12.25",
+    "postcss": "^8.5.10",
+    "sharp": "^0.35.3"
   }
 }
