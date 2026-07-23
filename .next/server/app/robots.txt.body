@@ -1,5 +1,9 @@
 User-Agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /test-chatbot/
+Disallow: /ae/test-chatbot/
 
 Host: https://www.theimpulsedigital.com
 Sitemap: https://www.theimpulsedigital.com/sitemap.xml

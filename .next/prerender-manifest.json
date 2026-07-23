@@ -84,11 +84,68 @@
       ]
     }
   },
-  "dynamicRoutes": {},
+  "dynamicRoutes": {
+    "/ae/blog/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/ae/blog/([^/]+?)(?:/)?$",
+      "dataRoute": "/ae/blog/[slug].rsc",
+      "fallback": null,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/ae/blog/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/blog/([^/]+?)(?:/)?$",
+      "dataRoute": "/blog/[slug].rsc",
+      "fallback": null,
+      "fallbackRootParams": [],
+      "fallbackRouteParams": [],
+      "dataRouteRegex": "^/blog/([^/]+?)\\.rsc$",
+      "prefetchDataRoute": null,
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "97e30bf64e7f352446e228faf815710a",
-    "previewModeSigningKey": "a6497eca6f8c6b73775e06565b2d10e743ebe1ab0e451a9f4bd93ce1c2618d40",
-    "previewModeEncryptionKey": "271e3d13dc9f44827784e1271d2bedcf458211a4faa4cdf417a40e5982ee9fed"
+    "previewModeId": "5af4cde304cefcb6625af23cb673ff3c",
+    "previewModeSigningKey": "bde85b0a4a44b5969106504768bef26f7ce013a5c1d5552b0b7f88bc2d371bd3",
+    "previewModeEncryptionKey": "b2c6aaa9fdcd44d989febf6c8d4a9f6a131fed819ad9e1ccc03edb86db7a7c6c"
   }
 }
