@@ -671,8 +671,8 @@ My Details:
         <iframe name="zoho-submit-iframe" style={{ display: 'none' }}></iframe>
         <form
           ref={zohoFormRef}
-          id="webform1132219000000597005"
-          name="WebToLeads1132219000000597005"
+          id="chatbot-zoho-lead-form"
+          name="ChatbotWebToLeads1132219000000597005"
           action="https://crm.zoho.in/crm/WebToLeadForm"
           method="POST"
           target="zoho-submit-iframe"
@@ -680,20 +680,20 @@ My Details:
           acceptCharset="UTF-8"
         >
           <input type="text" style={{display:'none'}} name="xnQsjsdp" value="3fdab897f0bcfb046c089a96653ff3ce3e052ac4ee2710bf1975f74e718c56f5" readOnly />
-          <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+          <input type="hidden" name="zc_gad" id="chatbot-zc-gad" value="" />
           <input type="text" style={{display:'none'}} name="xmIwtLD" value="73b678a6bc6723d2f2228f3b5916f3593bf43d1fbc528d305c97cc00bea7dec6afe8822544be20609bd9f6ee44997ec6" readOnly />
           <input type="text" style={{display:'none'}} name="actionType" value="TGVhZHM=" readOnly />
           <input type="text" style={{display:'none'}} name="returnURL" value={(pathname === '/ae' || (pathname && pathname.startsWith('/ae/'))) ? "https://www.theimpulsedigital.com/ae/thank-you/" : "https://www.theimpulsedigital.com/thank-you/"} readOnly />
           <input type="hidden" name="Lead Source" value="Website Contact Us" />
-          <input type="text" style={{display:'none'}} id="ldeskuid" name="ldeskuid" readOnly />
-          <input type="text" style={{display:'none'}} id="LDTuvid" name="LDTuvid" readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-ldeskuid" name="ldeskuid" readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-LDTuvid" name="LDTuvid" readOnly />
           <input type="text" style={{display: 'none'}} name="aG9uZXlwb3Q" value="" readOnly />
           
-          <input type="text" style={{display:'none'}} id="Last_Name" name="Last Name" readOnly />
-          <input type="text" style={{display:'none'}} id="Company" name="Company" readOnly />
-          <input type="text" style={{display:'none'}} id="Email" name="Email" readOnly />
-          <input type="text" style={{display:'none'}} id="Phone" name="Phone" readOnly />
-          <textarea id="Description" name="Description" style={{ display: 'none' }} readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-Last_Name" name="Last Name" readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-Company" name="Company" readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-Email" name="Email" readOnly />
+          <input type="text" style={{display:'none'}} id="chatbot-Phone" name="Phone" readOnly />
+          <textarea id="chatbot-Description" name="Description" style={{ display: 'none' }} readOnly />
         </form>
       </div>
     </>

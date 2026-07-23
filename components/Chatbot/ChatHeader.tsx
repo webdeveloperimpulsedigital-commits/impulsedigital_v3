@@ -16,6 +16,8 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ handleToggle }) => {
             src="/images/About Us/avtar.webp"
             alt="Adwait AI"
             className={styles.headerAvatarImg}
+            width="128"
+            height="128"
           />
         </div>
         <div className={styles.titleContainer}>

@@ -33,7 +33,7 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             alt="Amazon India Talent Communication Engine - Impulse Digital Marketing Case Study"
             fetchPriority="high"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
       </div>
 
@@ -185,7 +185,7 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             alt="Amazon Powering Prime Day Campaign Spotlight - Impulse Digital Marketing Case Study"
             loading="lazy"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
         <div className="cs-proof-copy">
           <span className="workstream-tag">Campaign Highlight</span>

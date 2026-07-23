@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { FAQItem, defaultFaqs, aeFaqs } from '@/lib/faqData';
 import { getFAQSchema } from '@/lib/schemaHelper';
+import JsonLd from '@/components/JsonLd';
 
 interface FAQProps {
   heading?: string;
@@ -15,7 +16,7 @@ interface FAQProps {
 
 const FAQ: React.FC<FAQProps> = ({ heading = "Questions we hear<br />from growth leaders.", data }) => {
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   const activeData = data || (isAe ? aeFaqs : defaultFaqs);
 
@@ -29,10 +30,7 @@ const FAQ: React.FC<FAQProps> = ({ heading = "Questions we hear<br />from growth
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQSchema(activeData, isAe)) }}
-      />
+      <JsonLd data={getFAQSchema(activeData, isAe)} id="faq-schema" />
       <section className="faq glass-panel">
       <div className="container">
         <h2 className="section-heading split-text" dangerouslySetInnerHTML={{ __html: heading }} />

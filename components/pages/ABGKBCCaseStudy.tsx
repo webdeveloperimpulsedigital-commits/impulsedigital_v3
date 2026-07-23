@@ -25,7 +25,7 @@ const ABGKBCCaseStudy: React.FC = () => {
       </section>
       <div className="cs-feature-wrapper">
         <div className="cs-feature-image">
-          <img src={`${base}case studies/Written Content/ABG x KBC/ABG x KBC Title.webp`} alt="ABG A Force for Good x KBC campaign - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+          <img src={`${base}case studies/Written Content/ABG x KBC/ABG x KBC Title.webp`} alt="ABG A Force for Good x KBC campaign - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async"  width={1200} height={800} />
         </div>
       </div>
       <section className="cs-intro-block" id="warp-start">
@@ -84,7 +84,7 @@ const ABGKBCCaseStudy: React.FC = () => {
       </section>
       <section className="cs-proof-module">
         <div className="cs-proof-media gsap-fade-up">
-          <img src={`${base}case studies/Written Content/ABG x KBC/Supporting 1.webp`} alt="ABG x KBC campaign visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async" />
+          <img src={`${base}case studies/Written Content/ABG x KBC/Supporting 1.webp`} alt="ABG x KBC campaign visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async"  width={1200} height={643} />
         </div>
         <div className="cs-proof-copy">
           <h2 className="cs-proof-title split-text">KBC made the purpose easier to understand in one viewing moment.</h2>

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { SEOLocationsGrid } from './SEOLocationsGrid';
 import ServiceHandoff from './ServiceHandoff';
 import { getComplexFAQSchema } from '@/lib/schemaHelper';
+import JsonLd from '@/components/JsonLd';
 
 interface SEOData {
   location: string;
@@ -48,7 +49,7 @@ function whenGsapReady(fn: (gsap: any, ScrollTrigger: any) => (() => void) | voi
 const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   useEffect(() => {
     const cancel = whenGsapReady((gsap, ScrollTrigger) => {
@@ -222,9 +223,9 @@ const SEOLocationTemplate: React.FC<{ data: SEOData }> = ({ data }) => {
       {/* Premium FAQ */}
       {data.faq && data.faq.items && data.faq.items.length > 0 && (
         <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(getComplexFAQSchema({ faq: data.faq }, isAe)) }}
+          <JsonLd
+            data={getComplexFAQSchema({ faq: data.faq }, isAe)}
+            id="seo-location-faq-schema"
           />
           <ServiceHandoff />
           <section className="faq glass-panel" id="faq">

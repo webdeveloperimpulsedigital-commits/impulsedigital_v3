@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import NaviMumbaiLocation from '@/components/pages/NaviMumbaiLocation';
-import { getFAQSchema } from "@/lib/schemaHelper";
-import { naviMumbaiLocationFaqs } from "@/lib/data/seoLocations/naviMumbaiLocationFaqs";
+import JsonLd from "@/components/JsonLd";
+import { buildServicePageGraph } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: 'Best Digital Marketing Agency in Navi Mumbai | Impulse Digital',
@@ -27,14 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function NaviMumbaiLocationPage() {
-    const schemas = [getFAQSchema(naviMumbaiLocationFaqs, false)];
+  const schema = buildServicePageGraph({
+    path: "/digital-marketing-agency-in-navi-mumbai/",
+    name: "Best Digital Marketing Agency in Navi Mumbai | Impulse Digital",
+    description: "Impulse Digital is best digital marketing agency in Navi Mumbai, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Navi Mumbai.",
+    market: "in",
+    areaServed: "Navi Mumbai",
+  });
 
   return (
-        <>
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
-          
-          <NaviMumbaiLocation />
-        </>
-      );
-
+    <>
+      <JsonLd data={schema} id="service-page-schema" />
+      <NaviMumbaiLocation />
+    </>
+  );
 }

@@ -27,6 +27,9 @@ jobs:
       - name: Run SEO regression tests
         run: npm run test:seo
 
+      - name: Run TypeScript checks
+        run: npm run typecheck
+
       - name: Build the project
         run: npm run build
 

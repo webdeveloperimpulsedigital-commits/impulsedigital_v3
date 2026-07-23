@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ThaneLocation from '@/components/pages/ThaneLocation';
-import { getFAQSchema } from "@/lib/schemaHelper";
-import { thaneLocationFaqs } from "@/lib/data/seoLocations/thaneLocationFaqs";
+import JsonLd from "@/components/JsonLd";
+import { buildServicePageGraph } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: 'Digital Marketing Agency in Thane | Impulse Digital',
@@ -27,14 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function ThaneLocationPage() {
-    const schemas = [getFAQSchema(thaneLocationFaqs, false)];
+  const schema = buildServicePageGraph({
+    path: "/digital-marketing-agency-in-thane/",
+    name: "Digital Marketing Agency in Thane | Impulse Digital",
+    description: "Impulse Digital is a leading digital marketing agency in Thane offering SEO, social media, content, and performance marketing solutions for businesses in Thane.",
+    market: "in",
+    areaServed: "Thane",
+  });
 
   return (
-        <>
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }} />
-          
-          <ThaneLocation />
-        </>
-      );
-
+    <>
+      <JsonLd data={schema} id="service-page-schema" />
+      <ThaneLocation />
+    </>
+  );
 }

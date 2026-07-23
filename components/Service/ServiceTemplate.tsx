@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from '@/components/RegionLink';
 import { getServiceFAQSchema } from '@/lib/schemaHelper';
+import JsonLd from '@/components/JsonLd';
 import ServiceHero from './ServiceHero';
 import ServiceHandoff from './ServiceHandoff';
 import Logos from '../Logos';
@@ -556,7 +557,7 @@ export const ServiceTextList: React.FC<{ data: any }> = ({ data }) => {
 export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -569,10 +570,7 @@ export const ServiceFAQ: React.FC<{ data: any }> = ({ data }) => {
   return (
     <>
       {data && data.items && data.items.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceFAQSchema(data, isAe)) }}
-        />
+        <JsonLd data={getServiceFAQSchema(data, isAe)} id="service-faq-schema" />
       )}
       <section className="faq glass-panel" id="faq">
       <div className="container">

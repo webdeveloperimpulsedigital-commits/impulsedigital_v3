@@ -4,6 +4,7 @@
 
 import React, { useLayoutEffect } from 'react';
 import { startHeroCopyReveal } from '../../utils/heroCopyReveal';
+import RegionLink from '@/components/RegionLink';
 
 interface ServiceHeroProps {
   headlineParts?: string[];
@@ -63,7 +64,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ headlineParts, headlineAccent
         <p className="svc-hero-page-desc hero-copy-reveal" dangerouslySetInnerHTML={{ __html: description }} />
         <div className="svc-hero-cta-row">
           {buttons.map((btn, idx) => (
-            <a 
+            <RegionLink
               key={idx} 
               href={btn.link} 
               className="btn hero-copy-reveal"
@@ -73,7 +74,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({ headlineParts, headlineAccent
             >
               <span className="btn-text" dangerouslySetInnerHTML={{ __html: btn.text }} />
               <div className="btn-fill"></div>
-            </a>
+            </RegionLink>
           ))}
         </div>
       </div>

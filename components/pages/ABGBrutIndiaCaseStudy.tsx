@@ -29,7 +29,7 @@ const ABGBrutIndiaCaseStudy: React.FC = () => {
 
       <div className="cs-feature-wrapper">
         <div className="cs-feature-image">
-          <img src={`${base}case studies/Written Content/ABG x Brut India/ABG Brut India Title.webp`} alt="ABG x Brut India Force for Good campaign - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+          <img src={`${base}case studies/Written Content/ABG x Brut India/ABG Brut India Title.webp`} alt="ABG x Brut India Force for Good campaign - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async"  width={1200} height={675} />
         </div>
       </div>
 
@@ -96,7 +96,7 @@ const ABGBrutIndiaCaseStudy: React.FC = () => {
 
       <section className="cs-proof-module">
         <div className="cs-proof-media gsap-fade-up">
-          <img src={`${base}case studies/Written Content/ABG x Brut India/Supporting 1.webp`} alt="ABG x Brut India storytelling visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async" />
+          <img src={`${base}case studies/Written Content/ABG x Brut India/Supporting 1.webp`} alt="ABG x Brut India storytelling visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async"  width={1200} height={600} />
         </div>
         <div className="cs-proof-copy">
           <h2 className="cs-proof-title split-text">Real people made the purpose easier to feel.</h2>
@@ -138,7 +138,7 @@ const ABGBrutIndiaCaseStudy: React.FC = () => {
           <p className="cs-proof-text split-text">Long and short-format storytelling helped the campaign hold depth while still moving across social platforms with scale.</p>
         </div>
         <div className="cs-proof-media gsap-fade-up">
-          <img src={`${base}case studies/Written Content/ABG x Brut India/Supporting 2.webp`} alt="ABG x Brut India amplification visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async" />
+          <img src={`${base}case studies/Written Content/ABG x Brut India/Supporting 2.webp`} alt="ABG x Brut India amplification visual - Impulse Digital Marketing Case Study" loading="lazy" decoding="async"  width={1200} height={722} />
         </div>
       </section>
 

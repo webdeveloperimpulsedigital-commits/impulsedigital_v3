@@ -27,7 +27,7 @@ interface DownloadCaseStudyFormProps {
 
 const DownloadCaseStudyForm: React.FC<DownloadCaseStudyFormProps> = ({ ctaText, pdfLink, zoho }) => {
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
   const formName = `WebToLeads${zoho.formId}`;
 
   useEffect(() => {

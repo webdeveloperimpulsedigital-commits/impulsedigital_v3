@@ -7,7 +7,7 @@ import Link from '@/components/RegionLink';
 
 export default function TermsAndConditions() {
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
   useServicePageBackground();
 
   return (

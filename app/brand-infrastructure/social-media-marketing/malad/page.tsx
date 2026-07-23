@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
 import { socialMediaMaladData } from '@/data/socialMediaMaladData';
-import { getServiceFAQSchema } from "@/lib/schemaHelper";
 
 export const metadata: Metadata = {
   title: 'Social Media Agency in Malad | Impulse Digital',
@@ -62,8 +61,7 @@ export default function SocialMediaMaladLocationPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-    getServiceFAQSchema(socialMediaMaladData.faq, false)
+    }
   ];
 
   return (

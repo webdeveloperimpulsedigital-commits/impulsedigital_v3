@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   if (pathname && pathname.startsWith('/admin')) {
     return null;
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-grid">
           <div className="footer-col">
-            <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital Logo" className="footer-logo" loading="lazy" decoding="async" />
+            <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital Logo" className="footer-logo" width="1152" height="1152" loading="lazy" decoding="async" />
 
             <div className="footer-socials">
               <a href="https://www.facebook.com/theimpulsedigital/" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fab fa-facebook-f"></i></a>

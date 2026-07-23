@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SocialMediaManagement from '@/components/pages/SocialMediaManagement';
 import { socialMediaAndheriData } from '@/data/socialMediaAndheriData';
-import { getServiceFAQSchema } from "@/lib/schemaHelper";
 
 export const metadata: Metadata = {
   title: 'Social Media Marketing Agency in Andheri | Impulse Digital',
@@ -62,8 +61,7 @@ export default function SocialMediaAndheriLocationPage() {
         "name": "Impulse Digital",
         "url": "https://www.theimpulsedigital.com/"
       }
-    },
-    getServiceFAQSchema(socialMediaAndheriData.faq, false)
+    }
   ];
 
   return (

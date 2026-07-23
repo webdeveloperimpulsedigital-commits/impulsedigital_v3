@@ -194,7 +194,7 @@ const Blog: React.FC<{ data?: any }> = ({ data }) => {
                 href={link}
                 className={`blog-card home-blog-card ${isFeatured ? 'blog-card--featured' : ''}`}
               >
-                <img src={imageUrl} alt={title} className="blog-card-img" />
+                <img src={imageUrl} alt={title} className="blog-card-img" width="1200" height="675" loading="lazy" decoding="async" />
                 <div className="blog-card-inner">
                   <div className="blog-card-top">
                     <span className="blog-category">{category}</span>

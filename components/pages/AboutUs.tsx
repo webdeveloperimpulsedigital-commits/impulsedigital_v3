@@ -156,6 +156,8 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
           ghostName: "ADWAIT",
           side: "left",
           img: "/images/About%20Us/Adwait-cutout-v2.webp",
+          width: 1024,
+          height: 1536,
           alt: "Adwait Joshi - Founder and CEO of Impulse Digital Marketing Agency",
           headline: "Restless by design, particular by habit.",
           body: "Somewhere between simplifying what’s complicated, complicating what’s too simple, and informally holding titles like fixer of things, questioner of norms, and quiet instigator at Impulse Digital."
@@ -166,6 +168,8 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
           ghostName: "ABHISHEK",
           side: "right",
           img: "/images/About%20Us/Abhishek-cutout-v2.webp",
+          width: 1086,
+          height: 1448,
           alt: "Abhishek Arekar - Co-Founder of Impulse Digital Marketing Agency",
           headline: "The kind of person who can read a dashboard, a room, and a poorly explained problem with the same unsettling accuracy.",
           body: "Somewhere in the background of every smooth process, sharper insight, and better decision at Impulse Digital."
@@ -709,7 +713,7 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
                   </svg>
                 </div>
                 <div className="ab-founder-portrait" data-portrait>
-                  <img src={founder.img} alt={founder.alt} loading="lazy" decoding="async" />
+                  <img src={founder.img} alt={founder.alt} width={founder.width} height={founder.height} loading="lazy" decoding="async" />
                 </div>
               </div>
               <div className="ab-founder-copy-wrap">
@@ -786,4 +790,3 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
 };
 
 export default AboutUs;
-

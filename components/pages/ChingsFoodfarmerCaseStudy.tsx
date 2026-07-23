@@ -24,7 +24,7 @@ const ChingsFoodfarmerCaseStudy: React.FC = () => {
       </section>
       <div className="cs-feature-wrapper">
         <div className="cs-feature-image">
-          <img src={`${base}images/case-study-image/chings-foodfarmer/Foodfarmer.webp`} alt="Ching's Reputation Radar - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async" />
+          <img src={`${base}images/case-study-image/chings-foodfarmer/Foodfarmer.webp`} alt="Ching's Reputation Radar - Impulse Digital Marketing Case Study" fetchPriority="high" decoding="async"  width={1200} height={675} />
         </div>
       </div>
       <section className="cs-intro-block" id="warp-start" style={{ paddingBottom: '4rem', maxWidth: '1000px', margin: '0 auto' }}>

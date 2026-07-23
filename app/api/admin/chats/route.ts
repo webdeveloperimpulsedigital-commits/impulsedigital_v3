@@ -1,11 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { listChatSessions, getStorageDiagnostics } from '@/lib/chatStorage';
-import adminConfig from '@/config/admin.json';
+
+function credentialsMatch(received: string, expected: string): boolean {
+  const receivedBuffer = Buffer.from(received);
+  const expectedBuffer = Buffer.from(expected);
+
+  return (
+    receivedBuffer.length === expectedBuffer.length &&
+    timingSafeEqual(receivedBuffer, expectedBuffer)
+  );
+}
 
 export async function GET(req: NextRequest) {
   try {
-    // Read password from JSON config with fallback to env variable (immune to dotenv # and $ parsing issues)
-    const expectedPassword = adminConfig?.password || process.env.ADMIN_PASSWORD;
+    const expectedPassword = process.env.ADMIN_PASSWORD;
+    if (!expectedPassword) {
+      console.error('[API/admin/chats] ADMIN_PASSWORD is not configured.');
+      return NextResponse.json({ error: 'Service unavailable' }, { status: 503 });
+    }
 
     // Try reading from Authorization header (Bearer token)
     const authHeader = req.headers.get('authorization');
@@ -14,12 +27,13 @@ export async function GET(req: NextRequest) {
       passwordHeader = authHeader.substring(7);
     }
 
-    // Fallback to custom header or query parameter
+    // Fallback to a custom header. Never accept credentials in query strings,
+    // where they can leak into browser history, analytics, and proxy logs.
     if (!passwordHeader) {
-      passwordHeader = req.headers.get('x-admin-password') || req.nextUrl.searchParams.get('password') || '';
+      passwordHeader = req.headers.get('x-admin-password') || '';
     }
 
-    if (passwordHeader !== expectedPassword) {
+    if (!credentialsMatch(passwordHeader, expectedPassword)) {
       console.warn('[API/admin/chats] Unauthorized: Password mismatch.');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }

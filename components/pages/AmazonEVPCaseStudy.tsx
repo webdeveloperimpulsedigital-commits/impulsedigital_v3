@@ -33,7 +33,7 @@ const AmazonEVPCaseStudy: React.FC = () => {
             alt="Amazon India EVP Strategy - Impulse Digital Marketing Case Study"
             fetchPriority="high"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
       </div>
 
@@ -120,7 +120,7 @@ const AmazonEVPCaseStudy: React.FC = () => {
             alt="Amazon India EVP Strategy qualitative research and focus groups - Impulse Digital Marketing Case Study"
             loading="lazy"
             decoding="async"
-          />
+           width={1200} height={709} />
         </div>
         <div className="cs-proof-copy">
           <h2 className="cs-proof-title split-text">Grounded in employee understanding.</h2>

@@ -88,15 +88,18 @@ export default function ClientProviders() {
   useLayoutEffect(() => {
     if (typeof window === 'undefined') return;
 
-    document.body.dataset.impulseRoute = pathname;
+    const activePathname = pathname || '/';
+    document.body.dataset.impulseRoute = activePathname;
 
     const background = (window as any).impulseBackground;
     if (background?.resetForRoute) {
-      background.resetForRoute(pathname);
+      background.resetForRoute(activePathname);
     }
 
     window.dispatchEvent(
-      new CustomEvent('impulse:route-change', { detail: { pathname } })
+      new CustomEvent('impulse:route-change', {
+        detail: { pathname: activePathname },
+      })
     );
   }, [pathname]);
 

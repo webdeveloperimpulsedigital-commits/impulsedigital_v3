@@ -7,6 +7,8 @@ import Background from '@/components/Background';
 import ClientProviders from '@/components/ClientProviders';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import InteractionLoader from '@/components/InteractionLoader';
+import WebVitals from '@/components/WebVitals';
+import { getAlternates, getPageRecord } from '@/seo/registries/pages';
 import './globals.css';
 import './styles/resources.css';
 
@@ -19,44 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const isAe = region === 'ae';
 
   const baseUrl = isAe ? `${SITE_URL}/ae` : SITE_URL;
-  const canonicalUrl = `${SITE_URL}${pathname === '/' ? '' : pathname}`;
-
-  // Dynamically build cross-region URLs for hreflang tags
-  const basePath = pathname.startsWith('/ae') 
-    ? pathname.replace(/^\/ae/, '') 
-    : pathname;
-  const normalizedBasePath = basePath || '/';
-
-  let inBasePath: string | null = normalizedBasePath;
-  let aeBasePath: string | null = normalizedBasePath;
-
-  const isLocationPage = 
-    normalizedBasePath.startsWith('/digital-marketing-agency-in-') ||
-    (normalizedBasePath.startsWith('/brand-infrastructure/search-engine-optimisation/') && normalizedBasePath !== '/brand-infrastructure/search-engine-optimisation/');
-
-  if (isLocationPage) {
-    if (isAe) {
-      aeBasePath = normalizedBasePath;
-      inBasePath = null;
-    } else {
-      inBasePath = normalizedBasePath;
-      aeBasePath = null;
-    }
-  }
-
-  const inUrl = inBasePath ? `${SITE_URL}${inBasePath === '/' ? '' : inBasePath}` : null;
-  const aeUrl = aeBasePath ? `${SITE_URL}/ae${aeBasePath === '/' ? '' : aeBasePath}` : null;
-
-  const languages: Record<string, string> = {};
-  if (inUrl) {
-    languages['en-IN'] = inUrl;
-  }
-  if (aeUrl) {
-    languages['en-AE'] = aeUrl;
-  }
-  if (inUrl && aeUrl) {
-    languages['x-default'] = inUrl;
-  }
+  const pageRecord = getPageRecord(pathname);
+  const alternates = getAlternates(pathname);
+  const isNoindex = pageRecord?.state === 'noindex';
 
   return {
     title: {
@@ -69,11 +36,17 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: isAe 
       ? ['digital marketing agency in uae', 'digital marketing company', 'impulse digital']
       : ['digital marketing agency in mumbai', 'digital marketing company', 'impulse digital'],
-    robots: { index: true, follow: true },
-    alternates: { 
-      canonical: canonicalUrl,
-      ...(Object.keys(languages).length > 0 ? { languages } : {})
-    },
+    robots: isNoindex
+      ? { index: false, follow: false, nocache: true }
+      : { index: true, follow: true },
+    ...(alternates.canonical
+      ? {
+          alternates: {
+            canonical: alternates.canonical,
+            ...(alternates.languages ? { languages: alternates.languages } : {}),
+          },
+        }
+      : {}),
     openGraph: {
       type: 'website',
       siteName: 'Impulse Digital',
@@ -81,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: isAe 
         ? 'Impulse Digital is a top digital marketing agency in UAE helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.'
         : 'Impulse Digital is a top digital marketing agency in Mumbai helping brands with SEO, social media, performance marketing, content, website development, branding, Agentic AI, and AI video production.',
-      url: baseUrl,
+      url: alternates.canonical || baseUrl,
       images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     },
     twitter: {
@@ -153,6 +126,13 @@ export default async function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/Satoshi-Black.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         {/* Preconnect for Google Fonts & Tag Manager/Analytics */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -163,7 +143,7 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional"
         />
 
 
@@ -301,6 +281,7 @@ export default async function RootLayout({
 
         {/* Client-side providers: scroll restoration, route animation */}
         <ClientProviders />
+        <WebVitals />
 
         {/* 3D Background, cursor, noise overlay */}
         <Background />

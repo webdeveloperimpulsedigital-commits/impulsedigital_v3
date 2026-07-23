@@ -120,7 +120,7 @@ const AutomagIndiaCaseStudy: React.FC = () => {
 
       <div className="cs-feature-wrapper">
         <div className="cs-feature-image">
-          <img src={`${base}case studies/Written Content/Automag India/Automag SEO/Automag Title.webp`} alt="Automag India B2B SEO case study" fetchPriority="high" decoding="async" />
+          <img src={`${base}case studies/Written Content/Automag India/Automag SEO/Automag Title.webp`} alt="Automag India B2B SEO case study" fetchPriority="high" decoding="async"  width={1200} height={801} />
         </div>
       </div>
 
@@ -274,7 +274,14 @@ const AutomagIndiaCaseStudy: React.FC = () => {
         >
           {[1,2,3,4,5,6,7].map(n => (
             <div key={n} className="cs-search-card gsap-fade-up">
-              <img src={`${base}case studies/Written Content/Automag India/Automag SEO/automag images upscaled/Supporting ${n}.webp`} alt={`Automag ranking proof ${n}`} loading="lazy" decoding="async" />
+              <img
+                src={`${base}case studies/Written Content/Automag India/Automag SEO/automag images upscaled/Supporting ${n}.webp`}
+                alt={`Automag ranking proof ${n}`}
+                width={1200}
+                height={[296, 228, 326, 265, 244, 280, 244][n - 1]}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           ))}
         </div>

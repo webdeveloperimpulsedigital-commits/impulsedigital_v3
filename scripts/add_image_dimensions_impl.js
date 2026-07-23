@@ -31,31 +31,36 @@ for (const file of files) {
       return match;
     }
 
-    const srcMatch = attrs.match(/src=\{?["'`]?([^"'`{}]+)["'`]?\}?/);
+    const literalMatch = attrs.match(/src=["']([^"']+)["']/);
+    const expressionStringMatch = attrs.match(/src=\{["']([^"']+)["']\}/);
+    const baseTemplateMatch = attrs.match(/src=\{`\$\{base\}([^`$]+)`\}/);
+    const srcMatch = literalMatch || expressionStringMatch || baseTemplateMatch;
     if (!srcMatch) return match;
 
-    let src = srcMatch[1];
-    if (src.includes('${base}')) {
-        src = src.replace('${base}', '/');
-    }
+    let src = baseTemplateMatch ? `/${srcMatch[1]}` : srcMatch[1];
     if (!src.startsWith('/')) {
         return match;
     }
 
-    src = decodeURIComponent(src);
+    try {
+      src = decodeURIComponent(src);
+    } catch {
+      return match;
+    }
     const imagePath = path.join(publicDir, src);
     
     if (fs.existsSync(imagePath)) {
         try {
-            const dimensions = sizeOf(imagePath);
-            let newAttrs = attrs;
+            const dimensions = sizeOf(fs.readFileSync(imagePath));
+            const selfClosing = /\/\s*$/.test(attrs);
+            let newAttrs = attrs.replace(/\/\s*$/, '');
             if (!newAttrs.includes('width=')) {
                 newAttrs += ` width={${dimensions.width}}`;
             }
             if (!newAttrs.includes('height=')) {
                 newAttrs += ` height={${dimensions.height}}`;
             }
-            return `<img${newAttrs}>`;
+            return `<img${newAttrs}${selfClosing ? ' /' : ''}>`;
         } catch (e) {
             console.error(`Error reading dimensions for ${imagePath}:`, e.message);
         }

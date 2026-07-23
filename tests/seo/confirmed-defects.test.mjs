@@ -45,7 +45,9 @@ test('regional links do not route one city to a different city', async () => {
 test('UAE homepage graph references the stable root organization ID', async () => {
   const source = await read('app/ae/page.tsx');
   assert.doesNotMatch(source, /https:\/\/www\.theimpulsedigital\.com\/ae\/#organization/);
-  assert.match(source, /https:\/\/www\.theimpulsedigital\.com\/#organization/);
+  assert.match(source, /buildHomeGraph\(['"]ae['"]\)/);
+  const entities = await read('seo/registries/entities.ts');
+  assert.match(entities, /organization:\s*`\$\{SITE_URL\}\/#organization`/);
 });
 
 test('blog proxy explicitly preserves the incoming request method', async () => {

@@ -1,22 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rewriteBlogText, rewriteBlogUrls } from '@/lib/blogProxySeo';
 
 const WP_ORIGIN  = 'https://impulsedigital.co.in';
 const WP_PATH    = '/ID-web-blog';   // India install sub-path
 const WP_PATH_AE   = '/ae/blog';     // AE install sub-path
-
-/** Replace every occurrence of the WordPress origin+path with our absolute blog URL. */
-function rewriteUrls(text: string, isAe: boolean, origin: string): string {
-  const siteBlog = `${origin}${isAe ? '/ae/blog' : '/blog'}`;
-  if (isAe) {
-    return text
-      .replace(/https?:\/\/impulsedigital\.co\.in\/ae\/blog\//g, `${siteBlog}/`)
-      .replace(/https?:\/\/impulsedigital\.co\.in\/ae\/blog/g,   siteBlog);
-  } else {
-    return text
-      .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog\//g, `${siteBlog}/`)
-      .replace(/https?:\/\/impulsedigital\.co\.in\/ID-web-blog/g,   siteBlog);
-  }
-}
 
 /**
  * Large binary types we REDIRECT (not proxy) to avoid buffering huge files.
@@ -99,7 +86,8 @@ export async function proxy(request: NextRequest) {
         headers: {
           'User-Agent':      request.headers.get('user-agent')       || 'Mozilla/5.0',
           'Accept':          request.headers.get('accept')           || 'text/html,*/*',
-          'Accept-Language': request.headers.get('accept-language')  || 'en-US,en;q=0.9',
+          'Accept-Language': request.headers.get('accept-language')
+            || (isAeBlog ? 'en-AE,en;q=0.9' : 'en-IN,en;q=0.9'),
           'Accept-Encoding': 'identity',
         },
         redirect: 'manual',
@@ -119,7 +107,7 @@ export async function proxy(request: NextRequest) {
     if (status >= 300 && status < 400) {
       const defaultLoc = isAeBlog ? '/ae/blog/' : '/blog/';
       const location    = wpResponse.headers.get('location') || defaultLoc;
-      const newLocation = rewriteUrls(location, isAeBlog, publicOrigin);
+      const newLocation = rewriteBlogUrls(location, isAeBlog, publicOrigin);
       return NextResponse.redirect(newLocation, { status });
     }
 
@@ -160,7 +148,12 @@ export async function proxy(request: NextRequest) {
 
     // ── Text content (HTML / CSS / JS): rewrite URLs and return ─────────
     const body      = await wpResponse.text();
-    const rewritten = rewriteUrls(body, isAeBlog, publicOrigin);
+    const rewritten = rewriteBlogText(
+      body,
+      isAeBlog,
+      publicOrigin,
+      contentType,
+    );
     const isHtml = contentType.includes('text/html');
 
     return new NextResponse(rewritten, {

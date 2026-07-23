@@ -30,8 +30,65 @@ const nextConfig: NextConfig = {
         headers: [
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
-          { key: 'X-XSS-Protection', value: '1; mode=block' },
+          { key: 'X-XSS-Protection', value: '0' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Strict-Transport-Security', value: 'max-age=31536000' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+          {
+            key: 'Content-Security-Policy-Report-Only',
+            value: [
+              "default-src 'self'",
+              "base-uri 'self'",
+              "object-src 'none'",
+              "frame-ancestors 'self'",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+              "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",
+              "img-src 'self' data: blob: https:",
+              "media-src 'self' blob: https:",
+              "connect-src 'self' https: wss:",
+              "frame-src 'self' https://www.googletagmanager.com https://*.hotjar.com https://*.hotjar.io",
+              "worker-src 'self' blob:",
+            ].join('; '),
+          },
+        ],
+      },
+      {
+        source: '/admin/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+          { key: 'Cache-Control', value: 'private, no-store' },
+        ],
+      },
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+          { key: 'Cache-Control', value: 'private, no-store' },
+        ],
+      },
+      {
+        source: '/test-chatbot',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+        ],
+      },
+      {
+        source: '/ae/test-chatbot',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+        ],
+      },
+      {
+        source: '/sitemap.xml',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400' },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400' },
         ],
       },
 

@@ -9,7 +9,7 @@ import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
 const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
   useEffect(() => {
     document.body.classList.add('service-page', 'contact-page');
 

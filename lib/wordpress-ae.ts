@@ -118,10 +118,10 @@ export async function getAllAePostSlugs(): Promise<string[]> {
 
 /** Fetch all AE post slugs and dates for sitemap generation. */
 export async function getAllAePostsForSitemap(): Promise<
-  Array<{ slug: string; date: string }>
+  Array<{ slug: string; modified: string }>
 > {
   try {
-    const query = '_fields=slug,date&per_page=100&status=publish';
+    const query = '_fields=slug,modified&per_page=100&status=publish';
     const res = await fetchFromAeWp('/posts', query);
     
     if (!res.ok) return [];

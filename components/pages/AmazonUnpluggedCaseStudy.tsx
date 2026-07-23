@@ -33,7 +33,7 @@ const AmazonUnpluggedCaseStudy: React.FC = () => {
             alt="Amazon Unplugged Employer Brand Video Series - Impulse Digital Marketing Case Study"
             fetchPriority="high"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
       </div>
 
@@ -123,7 +123,7 @@ const AmazonUnpluggedCaseStudy: React.FC = () => {
             alt="Amazon Unplugged video podcast episodes production proof - Impulse Digital Marketing Case Study"
             loading="lazy"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
         <div className="cs-proof-copy">
           <h2 className="cs-proof-title split-text">A video-led concept built to humanize the brand.</h2>
@@ -251,7 +251,7 @@ const AmazonUnpluggedCaseStudy: React.FC = () => {
             alt="Amazon Unplugged interview set with Rajiv Sharma and Deepti Verma - Impulse Digital Marketing Case Study"
             loading="lazy"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
       </section>
 
@@ -279,7 +279,7 @@ const AmazonUnpluggedCaseStudy: React.FC = () => {
             alt="Amazon Unplugged video content on social platform with engagement details - Impulse Digital Marketing Case Study"
             loading="lazy"
             decoding="async"
-          />
+           width={1200} height={675} />
         </div>
         <div className="cs-proof-copy">
           <h2 className="cs-proof-title split-text">A strong message distributed across global channels.</h2>

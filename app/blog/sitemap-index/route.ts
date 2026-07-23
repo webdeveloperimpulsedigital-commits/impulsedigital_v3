@@ -5,30 +5,26 @@ import { getAllPostsForSitemap } from '@/lib/wordpress';
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  console.log("GET sitemap route handler invoked...");
   try {
-    console.log("Fetching posts for sitemap...");
     const posts = await getAllPostsForSitemap();
-    console.log(`Fetched ${posts.length} posts for sitemap.`);
-    const now = new Date().toISOString();
+    const hubLastModified = posts.reduce(
+      (latest, post) => post.modified > latest ? post.modified : latest,
+      '2026-07-13',
+    );
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>${SITE_URL}/blog/</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <lastmod>${new Date(hubLastModified).toISOString()}</lastmod>
   </url>`;
 
     posts.forEach((post) => {
-      const date = post.date ? new Date(post.date).toISOString() : now;
+      const date = new Date(post.modified).toISOString();
       xml += `
   <url>
-    <loc>${SITE_URL}/blog/${post.slug}/</loc>
+    <loc>${SITE_URL}/blog/${encodeURIComponent(post.slug)}/</loc>
     <lastmod>${date}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>`;
     });
 

@@ -28,7 +28,11 @@ export interface ChatSession {
   }[];
 }
 
-const STORAGE_DIR = process.env.CHAT_STORAGE_DIR || path.join(process.cwd(), 'storage', 'chats');
+// CHAT_STORAGE_DIR is a runtime-owned persistent volume. The static /tmp
+// fallback keeps local/preview instances functional without making Turbopack
+// trace the project root as a dynamic filesystem dependency.
+const STORAGE_DIR =
+  process.env.CHAT_STORAGE_DIR || '/tmp/impulse-chat-storage';
 
 /**
  * Saves or updates a chat session JSON file on the local filesystem.
@@ -47,17 +51,23 @@ export async function saveChatSession(
     }
 
     // Ensure the directory exists
-    if (!fs.existsSync(STORAGE_DIR)) {
-      fs.mkdirSync(STORAGE_DIR, { recursive: true });
+    if (!fs.existsSync(/*turbopackIgnore: true*/ STORAGE_DIR)) {
+      fs.mkdirSync(/*turbopackIgnore: true*/ STORAGE_DIR, { recursive: true });
     }
 
-    const filePath = path.join(STORAGE_DIR, `${sessionId}.json`);
+    const filePath = path.join(
+      /*turbopackIgnore: true*/ STORAGE_DIR,
+      `${sessionId}.json`,
+    );
     
     // Check if we already have an existing file to load existing data
     let existingData: Partial<ChatSession> = {};
-    if (fs.existsSync(filePath)) {
+    if (fs.existsSync(/*turbopackIgnore: true*/ filePath)) {
       try {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const fileContent = fs.readFileSync(
+          /*turbopackIgnore: true*/ filePath,
+          'utf8',
+        );
         existingData = JSON.parse(fileContent);
       } catch (e) {
         // Ignore
@@ -128,7 +138,11 @@ export async function saveChatSession(
       sessionData.leadInfo = mergedLeadInfo;
     }
 
-    fs.writeFileSync(filePath, JSON.stringify(sessionData, null, 2), 'utf8');
+    fs.writeFileSync(
+      /*turbopackIgnore: true*/ filePath,
+      JSON.stringify(sessionData, null, 2),
+      'utf8',
+    );
     console.log('[chatStorage] Successfully wrote chat session file to:', filePath);
     return true;
   } catch (error) {
@@ -142,11 +156,17 @@ export async function saveChatSession(
  */
 export async function getChatSession(sessionId: string): Promise<ChatSession | null> {
   try {
-    const filePath = path.join(STORAGE_DIR, `${sessionId}.json`);
-    if (!fs.existsSync(filePath)) {
+    const filePath = path.join(
+      /*turbopackIgnore: true*/ STORAGE_DIR,
+      `${sessionId}.json`,
+    );
+    if (!fs.existsSync(/*turbopackIgnore: true*/ filePath)) {
       return null;
     }
-    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const fileContent = fs.readFileSync(
+      /*turbopackIgnore: true*/ filePath,
+      'utf8',
+    );
     return JSON.parse(fileContent) as ChatSession;
   } catch (error) {
     console.error(`Failed to read chat session ${sessionId}:`, error);
@@ -160,19 +180,25 @@ export async function getChatSession(sessionId: string): Promise<ChatSession | n
 export async function listChatSessions(): Promise<ChatSession[]> {
   console.log('[chatStorage] listChatSessions called');
   try {
-    if (!fs.existsSync(STORAGE_DIR)) {
+    if (!fs.existsSync(/*turbopackIgnore: true*/ STORAGE_DIR)) {
       console.log('[chatStorage] Storage directory does not exist:', STORAGE_DIR);
       return [];
     }
 
-    const files = fs.readdirSync(STORAGE_DIR);
+    const files = fs.readdirSync(/*turbopackIgnore: true*/ STORAGE_DIR);
     const sessions: ChatSession[] = [];
 
     for (const file of files) {
       if (file.endsWith('.json')) {
         try {
-          const filePath = path.join(STORAGE_DIR, file);
-          const fileContent = fs.readFileSync(filePath, 'utf8');
+          const filePath = path.join(
+            /*turbopackIgnore: true*/ STORAGE_DIR,
+            file,
+          );
+          const fileContent = fs.readFileSync(
+            /*turbopackIgnore: true*/ filePath,
+            'utf8',
+          );
           const parsed = JSON.parse(fileContent) as ChatSession;
           sessions.push(parsed);
         } catch (e) {
@@ -198,14 +224,17 @@ export async function getStorageDiagnostics() {
   let writeError = '';
 
   try {
-    exists = fs.existsSync(resolvedPath);
+    exists = fs.existsSync(/*turbopackIgnore: true*/ resolvedPath);
     if (!exists) {
-      fs.mkdirSync(resolvedPath, { recursive: true });
-      exists = fs.existsSync(resolvedPath);
+      fs.mkdirSync(/*turbopackIgnore: true*/ resolvedPath, { recursive: true });
+      exists = fs.existsSync(/*turbopackIgnore: true*/ resolvedPath);
     }
-    const testFile = path.join(resolvedPath, '.write_test');
-    fs.writeFileSync(testFile, 'test', 'utf8');
-    fs.unlinkSync(testFile);
+    const testFile = path.join(
+      /*turbopackIgnore: true*/ resolvedPath,
+      '.write_test',
+    );
+    fs.writeFileSync(/*turbopackIgnore: true*/ testFile, 'test', 'utf8');
+    fs.unlinkSync(/*turbopackIgnore: true*/ testFile);
     isWritable = true;
   } catch (err: any) {
     writeError = err.message || String(err);

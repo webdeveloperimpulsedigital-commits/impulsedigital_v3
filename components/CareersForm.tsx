@@ -12,7 +12,7 @@ interface CareersFormProps {
 const CareersForm: React.FC<CareersFormProps> = ({ title }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   useEffect(() => {
     if (formRef.current) {

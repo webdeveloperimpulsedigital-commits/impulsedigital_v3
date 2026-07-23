@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ThankYou from '@/components/pages/ThankYou';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Thank You | Impulse Digital',
   description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',
 
   robots: { index: false, follow: false },
+  alternates: {},
   openGraph: {
     title: 'Thank You | Impulse Digital',
     description: 'Thank you for reaching out to Impulse Digital. Our team will get back to you shortly.',
@@ -25,7 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function ThankYouPage() {
-    const schemas: any[] = [];
-
   return <ThankYou />;
 }

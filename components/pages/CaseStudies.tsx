@@ -17,7 +17,7 @@ const CaseStudyRow = ({ study, isReady }: { study: any, isReady: boolean }) => {
   const scrollTimeoutRef = useRef<number | null>(null);
   const router = useRouter();
   const pathname = usePathname();
-  const isAe = pathname === '/ae' || (pathname && pathname.startsWith('/ae/'));
+  const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
 
   const handleHover = (index: number) => {
     setActiveIndex(index);
@@ -186,6 +186,10 @@ const CaseStudyRow = ({ study, isReady }: { study: any, isReady: boolean }) => {
                   className="work-list-slide"
                   src={`${"/"}${img.replace(/^\//, '')}`}
                   alt={`${slideTitle} Digital Marketing Campaign Case Study by Impulse Digital`}
+                  width="1600"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div style={{
                   position: 'absolute',

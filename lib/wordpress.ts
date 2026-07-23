@@ -90,10 +90,10 @@ export async function getAllPostSlugs(): Promise<string[]> {
 }
 
 /** Fetch all post slugs and modification dates for sitemap generation. */
-export async function getAllPostsForSitemap(): Promise<Array<{ slug: string; date: string }>> {
+export async function getAllPostsForSitemap(): Promise<Array<{ slug: string; modified: string }>> {
   try {
     const res = await fetch(
-      `${WP_API}/posts?_fields=slug,date&per_page=100&status=publish`,
+      `${WP_API}/posts?_fields=slug,modified&per_page=100&status=publish`,
       { 
         next: { revalidate: 3600 },
         signal: AbortSignal.timeout(6000)
