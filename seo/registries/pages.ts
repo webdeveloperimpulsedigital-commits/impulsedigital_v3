@@ -26,6 +26,7 @@ const UPDATED = {
   service: '2026-07-13',
   caseStudy: '2026-06-01',
   location: '2026-07-01',
+  locationCurrent: '2026-07-24',
   legal: '2026-07-13',
 } as const;
 
@@ -104,6 +105,7 @@ const indiaCommercialLocations = [
 
 const uaeCommercialLocations = [
   'uae',
+  'dubai',
   'abu-dhabi',
   'sharjah',
   'ajman',
@@ -127,6 +129,7 @@ const indiaSeoLocations = [
   'mira-road',
   'mulund',
   'mumbai',
+  'thane',
   'navi-mumbai',
   'nerul',
   'panvel',
@@ -136,15 +139,13 @@ const indiaSeoLocations = [
 ] as const;
 
 const uaeSeoLocations = [
-  'uae',
+  'dubai',
   'abu-dhabi',
   'sharjah',
-  'deira',
   'ajman',
   'al-ain',
   'ras-al-khaimah',
   'fujairah',
-  'business-bay',
 ] as const;
 
 const toAe = (path: string) => path === '/' ? '/ae/' : `/ae${path}`;
@@ -155,9 +156,13 @@ const pairedRecords = (
   lastModified: string,
 ): PageRecord[] => paths.flatMap((path) => {
   const aePath = toAe(path);
+  const recordLastModified =
+    path === '/brand-infrastructure/search-engine-optimisation/'
+      ? UPDATED.locationCurrent
+      : lastModified;
   return [
-    { path, market: 'in', state: 'public', pageClass, lastModified, equivalentPath: aePath },
-    { path: aePath, market: 'ae', state: 'public', pageClass, lastModified, equivalentPath: path },
+    { path, market: 'in', state: 'public', pageClass, lastModified: recordLastModified, equivalentPath: aePath },
+    { path: aePath, market: 'ae', state: 'public', pageClass, lastModified: recordLastModified, equivalentPath: path },
   ];
 });
 
@@ -196,7 +201,7 @@ const publicPages: PageRecord[] = [
     market: 'ae',
     state: 'public',
     pageClass: 'commercial-location',
-    lastModified: UPDATED.location,
+    lastModified: UPDATED.locationCurrent,
     ...(slug === 'uae'
       ? { equivalentPath: '/digital-marketing-agency-in-india/' }
       : {}),
@@ -206,14 +211,14 @@ const publicPages: PageRecord[] = [
     market: 'in',
     state: 'public',
     pageClass: 'seo-location',
-    lastModified: UPDATED.location,
+    lastModified: slug === 'thane' ? UPDATED.locationCurrent : UPDATED.location,
   })),
   ...uaeSeoLocations.map((slug): PageRecord => ({
     path: `/ae/brand-infrastructure/search-engine-optimisation/${slug}/`,
     market: 'ae',
     state: 'public',
     pageClass: 'seo-location',
-    lastModified: UPDATED.location,
+    lastModified: UPDATED.locationCurrent,
   })),
 ];
 

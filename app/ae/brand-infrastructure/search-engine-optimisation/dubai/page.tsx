@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SearchEngineOptimisation from '@/components/pages/SearchEngineOptimisation';
-import { searchEngineOptimisationData } from '@/data/ae/searchEngineOptimisationData';
+import { searchEngineOptimisationDubaiData } from '@/data/ae/searchEngineOptimisationDubaiData';
 import JsonLd from '@/components/JsonLd';
 import { buildServicePageGraph } from '@/lib/structuredData';
 
-const title = 'SEO Services in UAE | Impulse Digital';
-const description = 'SEO services across the UAE covering technical SEO, content planning, local visibility, ecommerce SEO, B2B SEO, and measurable organic search programmes.';
+const path = '/ae/brand-infrastructure/search-engine-optimisation/dubai/';
+const title = 'SEO Agency in Dubai | SEO Services | Impulse Digital';
+const description = 'SEO services in Dubai covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.';
 
 export const metadata: Metadata = {
   title,
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: `${SITE_URL}/ae/brand-infrastructure/search-engine-optimisation/`,
-    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
+    url: `${SITE_URL}${path}`,
+    images: [{ url: `${SITE_URL}/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
@@ -24,24 +25,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
+    images: [`${SITE_URL}/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
-export default function SearchEngineOptimisationPage() {
+export default function DubaiSeoPage() {
   const schema = buildServicePageGraph({
-    path: '/ae/brand-infrastructure/search-engine-optimisation/',
+    path,
     name: title,
     description,
     market: 'ae',
-    areaServed: 'UAE',
+    areaServed: 'Dubai',
   });
 
   return (
     <>
       <JsonLd data={schema} id="service-page-schema" />
-      <SearchEngineOptimisation data={searchEngineOptimisationData} />
+      <SearchEngineOptimisation data={searchEngineOptimisationDubaiData} />
     </>
   );
 }

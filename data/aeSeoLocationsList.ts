@@ -1,9 +1,9 @@
 export const aeSeoLocations = [
   {
-    "name": "UAE",
-    "slug": "uae",
-    "compName": "SeoUaeLocation",
-    "varName": "seoUaeData"
+    "name": "Dubai",
+    "slug": "dubai",
+    "compName": "SearchEngineOptimisation",
+    "varName": "searchEngineOptimisationDubaiData"
   },
   {
     "name": "Abu Dhabi",
@@ -16,12 +16,6 @@ export const aeSeoLocations = [
     "slug": "sharjah",
     "compName": "SeoSharjahLocation",
     "varName": "seoSharjahData"
-  },
-  {
-    "name": "Deira",
-    "slug": "deira",
-    "compName": "SeoDeiraLocation",
-    "varName": "seoDeiraData"
   },
   {
     "name": "Ajman",
@@ -46,11 +40,5 @@ export const aeSeoLocations = [
     "slug": "fujairah",
     "compName": "SeoFujairahLocation",
     "varName": "seoFujairahData"
-  },
-  {
-    "name": "Business Bay",
-    "slug": "business-bay",
-    "compName": "SeoBusinessBayLocation",
-    "varName": "seoBusinessBayData"
   }
 ];

@@ -102,6 +102,12 @@ export const seoLocations = [
     "varName": "seoMumbaiData"
   },
   {
+    "name": "Thane",
+    "slug": "thane",
+    "compName": "SeoThaneLocation",
+    "varName": "searchEngineOptimisationThaneData"
+  },
+  {
     "name": "Navi Mumbai",
     "slug": "navi-mumbai",
     "compName": "SeoNaviMumbaiLocation",

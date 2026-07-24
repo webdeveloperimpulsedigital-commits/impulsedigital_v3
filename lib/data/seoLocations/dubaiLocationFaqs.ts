@@ -1,3 +1,3 @@
 import { buildCommercialLocationFaqs } from '@/lib/data/seoLocations/buildCommercialLocationFaqs';
 
-export const uaeLocationFaqs = buildCommercialLocationFaqs('UAE', 12);
+export const dubaiLocationFaqs = buildCommercialLocationFaqs('Dubai', 12);

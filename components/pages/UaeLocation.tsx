@@ -37,7 +37,7 @@ const UaeLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in UAE`;
-  const description = `We help businesses boost their online presence and growth with expert SEO, social media, and paid media strategies. We proudly offer top-tier 360° digital marketing services in UAE as well as globally. Our dedicated team works as an extension of your brand, helping you uncover your unique voice, refine your messaging, and build genuine connections with your audience. What sets us apart as a leading digital marketing agency in UAE? It's our ability to combine creativity, strategy, and a client-centric approach to deliver results you can depend on. As a trusted digital marketing company in UAE with 34 years of marketing experience, we have delivered measurable results for Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, and Himalaya. We bring that same strategic depth to every engagement we take on.`;
+  const description = `Impulse Digital helps organisations plan and run connected digital marketing across the UAE. Our work can combine Growth Intelligence, AI Marketing Systems, and Brand Infrastructure so research, campaigns, search, social, websites, and measurement support the same business objective. We define the market, audience, responsibilities, and success measures before execution, then use evidence from the programme to decide what should improve next.`;
 
   return (
     <main id="main-content">

@@ -4,14 +4,16 @@ import SharjahLocation from '@/components/pages/SharjahLocation';
 import JsonLd from "@/components/JsonLd";
 import { buildServicePageGraph } from "@/lib/structuredData";
 
+const title = 'Digital Marketing Agency in Sharjah | Impulse Digital';
+const description = 'Digital marketing services for Sharjah connecting audience intelligence, campaigns, SEO, social media, websites, brand systems, and measurable execution.';
+
 export const metadata: Metadata = {
-  title: 'Best Digital Marketing Agency in Sharjah | Impulse Digital',
-  description: 'Impulse Digital is best digital marketing agency in Sharjah, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Sharjah.',
-  keywords: 'digital marketing agency in sharjah, digital marketing sharjah, seo sharjah',
+  title,
+  description,
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Best Digital Marketing Agency in Sharjah | Impulse Digital',
-    description: 'Impulse Digital is best digital marketing agency in Sharjah, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Sharjah.',
+    title,
+    description,
     url: `${SITE_URL}/ae/digital-marketing-agency-in-sharjah/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -19,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Digital Marketing Agency in Sharjah | Impulse Digital',
-    description: 'Impulse Digital is best digital marketing agency in Sharjah, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Sharjah.',
+    title,
+    description,
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
 export default function SharjahLocationPage() {
   const schema = buildServicePageGraph({
     path: "/ae/digital-marketing-agency-in-sharjah/",
-    name: "Best Digital Marketing Agency in Sharjah | Impulse Digital",
-    description: "Impulse Digital is best digital marketing agency in Sharjah, combining growth intelligence, ai marketing systems, and brand infrastructure to deliver measurable results for enterprise companies in Sharjah.",
+    name: title,
+    description,
     market: "ae",
     areaServed: "Sharjah",
   });

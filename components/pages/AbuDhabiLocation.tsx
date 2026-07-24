@@ -37,8 +37,7 @@ const AbuDhabiLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in Abu Dhabi`;
-  const description = `The world has gone digital, and your brand needs more than a presence, it needs a strategy that delivers. At Impulse Digital, we are more than a digital marketing agency in Abu Dhabi. We are growth partners who combine data-driven intelligence, AI-powered systems, and proven brand execution to help businesses boost visibility, increase engagement, and win online. We believe in long-term partnerships built on deep industry understanding not one-time transactions. Every strategy we build is designed to deliver measurable results, not just digital noise.
-<br>Choose Impulse Digital - your trusted digital marketing company in Abu Dhabi.`;
+  const description = `Impulse Digital supports organisations targeting Abu Dhabi with research-led digital strategy, marketing systems, and brand execution. The engagement can connect customer and market intelligence with campaigns, SEO, social media, websites, content, and measurement. Each programme is scoped around the audience, category, operating constraints, and agreed business outcomes rather than a standard channel package.`;
 
   return (
     <main id="main-content">

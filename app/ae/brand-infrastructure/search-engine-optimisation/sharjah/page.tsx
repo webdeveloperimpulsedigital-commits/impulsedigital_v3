@@ -3,13 +3,12 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoSharjahLocation from '@/components/pages/seo-locations/SeoSharjahLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Sharjah | Best SEO Company in Sharjah | Impulse Digital',
-  description: 'Impulse Digital is a top SEO agency in Sharjah with transparent SEO strategies and proven results across Sharjah and Northern Emirates. Talk to us.',
-  keywords: 'seo agency in sharjah, seo company in sharjah, SEO services in sharjah, best seo agency sharjah, uae, impulse digital',
+  title: 'SEO Agency in Sharjah | SEO Services | Impulse Digital',
+  description: 'SEO services in Sharjah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'SEO Agency in Sharjah | Best SEO Company in Sharjah | Impulse Digital',
-    description: 'Impulse Digital is a top SEO agency in Sharjah with transparent SEO strategies and proven results across Sharjah and Northern Emirates. Talk to us.',
+    title: 'SEO Agency in Sharjah | SEO Services | Impulse Digital',
+    description: 'SEO services in Sharjah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
     url: `${SITE_URL}/ae/brand-infrastructure/search-engine-optimisation/sharjah/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -17,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Sharjah | Best SEO Company in Sharjah | Impulse Digital',
-    description: 'Impulse Digital is a top SEO agency in Sharjah with transparent SEO strategies and proven results across Sharjah and Northern Emirates. Talk to us.',
+    title: 'SEO Agency in Sharjah | SEO Services | Impulse Digital',
+    description: 'SEO services in Sharjah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -31,7 +30,7 @@ export default function SeoSharjahLocationPage() {
     "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/sharjah/#service",
     "name": "SEO Services in Sharjah",
     "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/sharjah/",
-    "description": "Impulse Digital is a top SEO agency in Sharjah with transparent SEO strategies and proven results across Sharjah and Northern Emirates.",
+    "description": "SEO services in Sharjah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.",
     "serviceType": [
       "Search Engine Optimisation",
       "Technical SEO",

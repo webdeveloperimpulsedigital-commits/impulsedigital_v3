@@ -19,6 +19,9 @@ const redirectPairs = [
   ['/website-development', '/brand-infrastructure/website-development/'],
   ['/ecommerce-seo-service', '/brand-infrastructure/search-engine-optimisation/ecommerce-seo/'],
   ['/agentic-ai', '/ai-marketing-systems/agentic-ai/'],
+  ['/ae/brand-infrastructure/search-engine-optimisation/uae', '/ae/brand-infrastructure/search-engine-optimisation/'],
+  ['/ae/brand-infrastructure/search-engine-optimisation/deira', '/ae/brand-infrastructure/search-engine-optimisation/dubai/'],
+  ['/ae/brand-infrastructure/search-engine-optimisation/business-bay', '/ae/brand-infrastructure/search-engine-optimisation/dubai/'],
   ['/case-studies-dmart', '/case-studies/dmart/'],
   ['/casestudies/d-mart', '/case-studies/dmart/'],
   ['/dmart', '/case-studies/dmart/'],
@@ -38,4 +41,3 @@ export const highConfidenceRedirects = redirectPairs.flatMap(([source, destinati
   if (source.endsWith('/')) return [rule];
   return [rule, { ...rule, source: `${source}/` }];
 });
-

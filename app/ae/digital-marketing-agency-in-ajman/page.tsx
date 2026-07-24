@@ -4,14 +4,16 @@ import AjmanLocation from '@/components/pages/AjmanLocation';
 import JsonLd from "@/components/JsonLd";
 import { buildServicePageGraph } from "@/lib/structuredData";
 
+const title = 'Digital Marketing Agency in Ajman | Impulse Digital';
+const description = 'Digital marketing services for Ajman connecting audience intelligence, campaigns, SEO, social media, websites, brand systems, and measurable execution.';
+
 export const metadata: Metadata = {
-  title: 'Best Digital Marketing Agency in Ajman | Impulse Digital',
-  description: 'Impulse Digital is the best digital marketing company in Ajman, combining Growth Intelligence, AI Marketing Systems, and Brand Infrastructure to deliver measurable results for enterprise companies in Ajman.',
-  keywords: 'digital marketing agency in ajman, digital marketing company in ajman, impulse digital',
+  title,
+  description,
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Best Digital Marketing Agency in Ajman | Impulse Digital',
-    description: 'Impulse Digital is the best digital marketing company in Ajman, combining Growth Intelligence, AI Marketing Systems, and Brand Infrastructure to deliver measurable results for enterprise companies in Ajman.',
+    title,
+    description,
     url: `${SITE_URL}/ae/digital-marketing-agency-in-ajman/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -19,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Digital Marketing Agency in Ajman | Impulse Digital',
-    description: 'Impulse Digital is the best digital marketing company in Ajman, combining Growth Intelligence, AI Marketing Systems, and Brand Infrastructure to deliver measurable results for enterprise companies in Ajman.',
+    title,
+    description,
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
 export default function AjmanLocationPage() {
   const schema = buildServicePageGraph({
     path: "/ae/digital-marketing-agency-in-ajman/",
-    name: "Best Digital Marketing Agency in Ajman | Impulse Digital",
-    description: "Impulse Digital is the best digital marketing company in Ajman, combining Growth Intelligence, AI Marketing Systems, and Brand Infrastructure to deliver measurable results for enterprise companies in Ajman.",
+    name: title,
+    description,
     market: "ae",
     areaServed: "Ajman",
   });

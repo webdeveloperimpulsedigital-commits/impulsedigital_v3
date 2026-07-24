@@ -3,13 +3,12 @@ import { SITE_URL } from '@/lib/siteUrl';
 import SeoRasAlKhaimahLocation from '@/components/pages/seo-locations/SeoRasAlKhaimahLocation';
 
 export const metadata: Metadata = {
-  title: 'SEO Agency in Ras Al Khaimah | Best SEO Company in Ras Al Khaimah | Impulse Digital',
-  description: 'Impulse Digital is a top SEO agency in Ras Al Khaimah with transparent SEO strategies and proven results across Ras Al Khaimah and RAK Free Zone. Talk to us.',
-  keywords: 'seo agency in ras al khaimah, seo company in ras al khaimah, SEO services in ras al khaimah, best seo agency ras al khaimah, uae, impulse digital',
+  title: 'SEO Agency in Ras Al Khaimah | SEO Services | Impulse Digital',
+  description: 'SEO services in Ras Al Khaimah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'SEO Agency in Ras Al Khaimah | Best SEO Company in Ras Al Khaimah | Impulse Digital',
-    description: 'Impulse Digital is a top SEO agency in Ras Al Khaimah with transparent SEO strategies and proven results across Ras Al Khaimah and RAK Free Zone. Talk to us.',
+    title: 'SEO Agency in Ras Al Khaimah | SEO Services | Impulse Digital',
+    description: 'SEO services in Ras Al Khaimah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
     url: `${SITE_URL}/ae/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -17,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Ras Al Khaimah | Best SEO Company in Ras Al Khaimah | Impulse Digital',
-    description: 'Impulse Digital is a top SEO agency in Ras Al Khaimah with transparent SEO strategies and proven results across Ras Al Khaimah and RAK Free Zone. Talk to us.',
+    title: 'SEO Agency in Ras Al Khaimah | SEO Services | Impulse Digital',
+    description: 'SEO services in Ras Al Khaimah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.',
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
@@ -31,7 +30,7 @@ export default function SeoRasAlKhaimahLocationPage() {
     "@id": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/#service",
     "name": "SEO Services in Ras Al Khaimah",
     "url": "https://www.theimpulsedigital.com/ae/brand-infrastructure/search-engine-optimisation/ras-al-khaimah/",
-    "description": "Impulse Digital is a top SEO agency in Ras Al Khaimah with transparent SEO strategies and proven results across Ras Al Khaimah and RAK Free Zone.",
+    "description": "SEO services in Ras Al Khaimah covering technical SEO, local search, content planning, ecommerce SEO, B2B SEO, and measurable organic search improvement.",
     "serviceType": [
       "Search Engine Optimisation",
       "Technical SEO",

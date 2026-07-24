@@ -37,7 +37,7 @@ const AjmanLocation: React.FC = () => {
   }, []);
 
   const headline = `Digital Marketing Agency in Ajman`;
-  const description = `Impulse Digital is the best digital marketing agency in Ajman for enterprise brands that want growth backed by data, not guesswork. We operate across three integrated service pillars: Growth Intelligence for consumer and market insights, AI Marketing Systems for autonomous campaign execution, and Brand Infrastructure for SEO, Social Media Marketing, Website Development, and Brand Identity. As a trusted digital marketing company in Ajman, we have delivered measurable results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We bring that same strategic depth to every engagement, regardless of your size or stage.`;
+  const description = `Impulse Digital supports organisations targeting Ajman with digital strategy and execution tied to a clear business objective. The scope can connect audience and competitor intelligence with campaigns, AI-enabled workflows, SEO, social media, websites, and brand systems. We document the market assumptions, responsibilities, and measurement plan so activity can be reviewed against evidence rather than inflated promises.`;
 
   return (
     <main id="main-content">

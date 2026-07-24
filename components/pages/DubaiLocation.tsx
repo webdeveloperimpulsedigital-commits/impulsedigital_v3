@@ -10,17 +10,16 @@ import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
-import { sharjahLocationFaqs } from "@/lib/data/seoLocations/sharjahLocationFaqs";
+import { dubaiLocationFaqs } from '@/lib/data/seoLocations/dubaiLocationFaqs';
 
-const SharjahLocation: React.FC = () => {
+const DubaiLocation: React.FC = () => {
   useEffect(() => {
     document.body.classList.add('service-page');
 
-    // Re-initialize GSAP DOM animations specifically for the page
     if (typeof window !== 'undefined' && (window as any).initHomeDOMAnimations) {
       setTimeout(() => {
         (window as any).initHomeDOMAnimations();
-      }, 100); // Slight delay to ensure DOM is fully painted
+      }, 100);
     }
 
     return () => {
@@ -36,31 +35,29 @@ const SharjahLocation: React.FC = () => {
     };
   }, []);
 
-  const headline = `Digital Marketing Agency in Sharjah`;
-  const description = `Impulse Digital helps organisations reach and serve Sharjah audiences through connected digital planning and execution. Depending on the business need, the programme can combine market intelligence, AI-enabled marketing operations, campaigns, SEO, social media, websites, and brand systems. Local relevance is based on audience and category evidence, while measurement is agreed before channel work begins.`;
+  const headline = 'Digital Marketing Agency in Dubai';
+  const description = 'Impulse Digital helps organisations targeting Dubai connect market intelligence, marketing systems, and brand execution in one measurable programme. The scope can include audience and competitor research, campaigns, SEO, social media, websites, content, and AI-enabled workflows. Strategy is shaped around Dubai’s category, audience, language, and channel conditions without inventing local proof or relying on guaranteed outcomes.';
 
   return (
     <main id="main-content">
-
-
       <ServiceHero
         headlineParts={[headline]}
-        headlineAccent="Sharjah"
+        headlineAccent="Dubai"
         description={description}
         buttons={[
-          { text: "Connect Now", link: "/contact-us/", cursor: "GO" }
+          { text: 'Connect Now', link: '/contact-us/', cursor: 'GO' }
         ]}
       />
 
       <CaseStudies />
-      <Logos title={`Trusted by Teams in Sharjah & Beyond`} />
+      <Logos title="Trusted by Teams in Dubai & Beyond" />
       <BrandFilm />
       <Services />
       <Testimonials />
-      <FAQ data={sharjahLocationFaqs} />
+      <FAQ data={dubaiLocationFaqs} />
       <Contact />
     </main>
   );
 };
 
-export default SharjahLocation;
+export default DubaiLocation;
