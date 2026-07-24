@@ -505,6 +505,36 @@
         "permanent": true
       },
       {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/uae",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/uae/",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/deira",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/deira/",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/business-bay",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/brand-infrastructure/search-engine-optimisation/business-bay/",
+        "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+        "permanent": true
+      },
+      {
         "source": "/case-studies-dmart",
         "destination": "/case-studies/dmart/",
         "permanent": true

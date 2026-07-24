@@ -220,6 +220,42 @@
       "regex": "^(?!/_next)/agentic-ai/(?:/)?$"
     },
     {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/uae",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/uae(?:/)?$"
+    },
+    {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/uae/",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/uae/(?:/)?$"
+    },
+    {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/deira",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/deira(?:/)?$"
+    },
+    {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/deira/",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/deira/(?:/)?$"
+    },
+    {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/business-bay",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/business-bay(?:/)?$"
+    },
+    {
+      "source": "/ae/brand-infrastructure/search-engine-optimisation/business-bay/",
+      "destination": "/ae/brand-infrastructure/search-engine-optimisation/dubai/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/brand-infrastructure/search-engine-optimisation/business-bay/(?:/)?$"
+    },
+    {
       "source": "/case-studies-dmart",
       "destination": "/case-studies/dmart/",
       "statusCode": 308,
@@ -887,6 +923,12 @@
       "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/deira(?:/)?$"
     },
     {
+      "page": "/ae/brand-infrastructure/search-engine-optimisation/dubai",
+      "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/dubai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/dubai(?:/)?$"
+    },
+    {
       "page": "/ae/brand-infrastructure/search-engine-optimisation/ecommerce-seo",
       "regex": "^/ae/brand\\-infrastructure/search\\-engine\\-optimisation/ecommerce\\-seo(?:/)?$",
       "routeKeys": {},
@@ -1101,6 +1143,12 @@
       "regex": "^/ae/digital\\-marketing\\-agency\\-in\\-ajman(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/digital\\-marketing\\-agency\\-in\\-ajman(?:/)?$"
+    },
+    {
+      "page": "/ae/digital-marketing-agency-in-dubai",
+      "regex": "^/ae/digital\\-marketing\\-agency\\-in\\-dubai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/digital\\-marketing\\-agency\\-in\\-dubai(?:/)?$"
     },
     {
       "page": "/ae/digital-marketing-agency-in-sharjah",
@@ -1419,6 +1467,12 @@
       "regex": "^/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/brand\\-infrastructure/search\\-engine\\-optimisation/sanpada(?:/)?$"
+    },
+    {
+      "page": "/brand-infrastructure/search-engine-optimisation/thane",
+      "regex": "^/brand\\-infrastructure/search\\-engine\\-optimisation/thane(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/brand\\-infrastructure/search\\-engine\\-optimisation/thane(?:/)?$"
     },
     {
       "page": "/brand-infrastructure/search-engine-optimisation/turbhe",
