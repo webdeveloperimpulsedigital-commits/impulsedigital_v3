@@ -41,7 +41,7 @@ const nextConfig: NextConfig = {
               "base-uri 'self'",
               "object-src 'none'",
               "frame-ancestors 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://www.clarity.ms https://*.clarity.ms",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
               "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",
               "img-src 'self' data: blob: https:",
