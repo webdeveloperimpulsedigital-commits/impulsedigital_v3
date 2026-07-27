@@ -157,7 +157,7 @@ export function buildHomeGraph(market: Market): Record<string, unknown> {
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
         name: isAe
-          ? 'Impulse Digital: Best Digital Marketing Agency in Dubai'
+          ? 'Impulse Digital: Best Digital Marketing Agency in UAE'
           : 'Impulse Digital: Best Digital Marketing Agency in Mumbai',
         inLanguage: isAe ? 'en-AE' : 'en-IN',
         isPartOf: { '@id': ENTITY_IDS.website },

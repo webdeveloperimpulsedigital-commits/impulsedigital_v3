@@ -29,7 +29,7 @@ test('publication registry has unique, real and sitemap-safe paths', async () =>
   const { PAGE_REGISTRY, SITEMAP_PAGES } = await pageRegistryModule;
   const paths = PAGE_REGISTRY.map(({ path }) => path);
   assert.equal(new Set(paths).size, paths.length);
-  assert.ok(SITEMAP_PAGES.length >= 146);
+  assert.ok(SITEMAP_PAGES.length >= 145);
 
   for (const page of SITEMAP_PAGES) {
     assert.equal(page.state, 'public', page.path);
@@ -75,7 +75,7 @@ test('market switching uses equivalents and market-safe fallbacks', async () => 
   );
   assert.equal(
     getMarketDestination('/digital-marketing-agency-in-thane/', 'ae'),
-    '/ae/digital-marketing-agency-in-uae/',
+    '/ae/',
   );
   assert.equal(
     getMarketDestination(
@@ -143,7 +143,6 @@ test('one visible component owns FAQ schema on commercial and social location pa
     'app/digital-marketing-agency-in-thane/page.tsx',
     'app/digital-marketing-agency-in-navi-mumbai/page.tsx',
     'app/digital-marketing-agency-in-pune/page.tsx',
-    'app/ae/digital-marketing-agency-in-uae/page.tsx',
     'app/ae/digital-marketing-agency-in-abu-dhabi/page.tsx',
     'app/ae/digital-marketing-agency-in-sharjah/page.tsx',
     'app/ae/digital-marketing-agency-in-ajman/page.tsx',

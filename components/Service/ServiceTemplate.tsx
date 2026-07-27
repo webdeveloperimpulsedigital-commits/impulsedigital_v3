@@ -179,13 +179,13 @@ export const ServiceVs: React.FC<{ data: any }> = ({ data }) => {
         <div className="svc-vs-stack">
           <div className="svc-vs-line plain-english-copy line-quiet">
             <div className="svc-vs-label">{data.leftLabel}</div>
-            <div className="svc-vs-statement">
+            <div className="svc-vs-statement" style={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
               <span className="plain-english-mark plain-english-mark--strike svc-vs-strike">{data.leftStrike}</span>
             </div>
           </div>
           <div className="svc-vs-line plain-english-copy">
             <div className="svc-vs-label">{data.rightLabel}</div>
-            <div className="svc-vs-statement-loud">
+            <div className="svc-vs-statement-loud" style={{ whiteSpace: 'normal', wordBreak: 'break-word' }}>
               <span dangerouslySetInnerHTML={{ __html: data.rightText }} /><span className="plain-english-mark plain-english-mark--highlight svc-vs-highlight" dangerouslySetInnerHTML={{ __html: data.rightHighlight }} />.
             </div>
           </div>

@@ -67,18 +67,18 @@ const Footer: React.FC = () => {
             <h4>Resources</h4>
             <ul>
               <li><a href={isAe ? "/ae/blog/" : "/blog/"} style={{ textDecoration: 'none', color: 'inherit' }}>Blog</a></li>
-              <li><Link href="/ppt/">PPT</Link></li>
+              <li><Link href={isAe ? "/ae/ppt/" : "/ppt/"}>PPT</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>Locations</h4>
             <ul>
-              <li><Link href={isAe ? "/digital-marketing-agency-in-uae/" : "/digital-marketing-agency-in-india/"}>{isAe ? 'UAE' : 'India'}</Link></li>
+              <li><Link href={isAe ? "/ae/" : "/digital-marketing-agency-in-india/"}>{isAe ? 'UAE' : 'India'}</Link></li>
               {isAe && <li><Link href="/ae/digital-marketing-agency-in-dubai/">Dubai</Link></li>}
-              <li><Link href={isAe ? "/digital-marketing-agency-in-abu-dhabi/" : "/digital-marketing-agency-in-thane/"}>{isAe ? 'Abu Dhabi' : 'Thane'}</Link></li>
-              <li><Link href={isAe ? "/digital-marketing-agency-in-sharjah/" : "/digital-marketing-agency-in-navi-mumbai/"}>{isAe ? 'Sharjah' : 'Navi Mumbai'}</Link></li>
-              <li><Link href={isAe ? "/digital-marketing-agency-in-ajman/" : "/digital-marketing-agency-in-pune/"}>{isAe ? 'Ajman' : 'Pune'}</Link></li>
+              <li><Link href={isAe ? "/ae/digital-marketing-agency-in-abu-dhabi/" : "/digital-marketing-agency-in-thane/"}>{isAe ? 'Abu Dhabi' : 'Thane'}</Link></li>
+              <li><Link href={isAe ? "/ae/digital-marketing-agency-in-sharjah/" : "/digital-marketing-agency-in-navi-mumbai/"}>{isAe ? 'Sharjah' : 'Navi Mumbai'}</Link></li>
+              <li><Link href={isAe ? "/ae/digital-marketing-agency-in-ajman/" : "/digital-marketing-agency-in-pune/"}>{isAe ? 'Ajman' : 'Pune'}</Link></li>
             </ul>
           </div>
 

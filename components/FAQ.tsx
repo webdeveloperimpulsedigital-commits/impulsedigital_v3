@@ -23,8 +23,8 @@ const FAQ: React.FC<FAQProps> = ({ heading = "Questions we hear<br />from growth
   const displayData = activeData.map(item => {
     if (!isAe) return item;
     return {
-      question: item.question.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
-      answer: item.answer.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),
+      question: item.question.replace(/\bMumbai\b/g, 'UAE').replace(/\bmumbai\b/g, 'UAE'),
+      answer: item.answer.replace(/\bMumbai\b/g, 'UAE').replace(/\bmumbai\b/g, 'UAE'),
     };
   });
 

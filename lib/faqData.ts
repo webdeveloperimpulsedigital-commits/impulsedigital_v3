@@ -48,24 +48,24 @@ export const defaultFaqs: FAQItem[] = [
 
 export const aeFaqs: FAQItem[] = [
   {
-    question: "How do I choose the right digital marketing agency in Dubai for my business?",
+    question: "How do I choose the right digital marketing agency in UAE for my business?",
     answer: "The decision should start with how well the digital marketing agency understands your category, your data environment, and the specific growth levers available to you. Look for a partner that diagnoses before it prescribes. At Impulse Digital, every engagement begins with a strategic audit: understanding your current campaign architecture, identifying where decisions are being made without evidence, and defining measurable outcomes before any execution begins."
   },
   {
-    question: "What are the benefits of hiring a digital marketing company in Dubai to grow your business?",
-    answer: "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. What separates the best digital marketing company in Dubai from the rest is exactly this: a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
+    question: "What are the benefits of hiring a digital marketing company in UAE to grow your business?",
+    answer: "The right partner gives you access to strategic depth, analytical infrastructure, and execution capability that would take 18 to 24 months to build in-house. What separates the best digital marketing company in UAE from the rest is exactly this: a team that has operated inside the marketing environments of Amazon India, HUL, Mastercard, and Aditya Birla Group, bringing pattern recognition from enterprise-scale campaigns directly into your growth strategy."
   },
   {
-    question: "What is the role of a result-oriented digital marketing agency in Dubai in elevating your business?",
-    answer: "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, one of the few digital marketing companies in Dubai that defines KPIs at the business level rather than the channel level, the question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
+    question: "What is the role of a result-oriented digital marketing agency in UAE in elevating your business?",
+    answer: "A results-oriented digital marketing agency ties every channel, every campaign, and every creative decision back to a business outcome that your leadership team cares about. At Impulse Digital, one of the few digital marketing companies in UAE that defines KPIs at the business level rather than the channel level, the question is never \"did impressions go up?\" It is \"did the right decisions get made faster?\""
   },
   {
     question: "What are the top services a digital marketing agency should offer for your business?",
     answer: "The capabilities matter less than how they are integrated. A fragmented approach to digital marketing creates activity without direction. Impulse Digital organises capability into three layers: Growth Intelligence (analytics, campaign intelligence, competitive sensing), AI Agency (agentic AI, cinematic AI production, Generative Search Optimisation), and Performance Studios (social media marketing, performance marketing, content, web development, branding). Intelligence leads. AI differentiates. Execution scales."
   },
   {
-    question: "What are the advantages of hiring a leading digital marketing agency in Dubai?",
-    answer: "A proven digital marketing agency in Dubai brings tested frameworks, specialised teams, enterprise-grade analytical tools, and the pattern recognition that comes from working across categories and scales. With Impulse Digital, you also get direct access to the founding team, and the agility of a focused operation with the client portfolio of a much larger agency."
+    question: "What are the advantages of hiring a leading digital marketing agency in UAE?",
+    answer: "A proven digital marketing agency in UAE brings tested frameworks, specialised teams, enterprise-grade analytical tools, and the pattern recognition that comes from working across categories and scales. With Impulse Digital, you also get direct access to the founding team, and the agility of a focused operation with the client portfolio of a much larger agency."
   },
   {
     question: "Can I expect instant results after hiring an agency?",
@@ -76,8 +76,8 @@ export const aeFaqs: FAQItem[] = [
     answer: "Measurement is not optional; it is the starting point. Impulse Digital implements proper tracking infrastructure, defines conversion events tied to revenue, and builds attribution models that your team can interrogate independently. Every engagement includes regular performance reviews with full transparency. No vanity metrics. No dashboards designed to look impressive without being useful."
   },
   {
-    question: "What is the budget to hire a digital marketing agency in Dubai for my business?",
-    answer: "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. What most digital marketing companies in Dubai will not tell you upfront is that pricing should reflect the decision value being unlocked, not a fixed rate card. At Impulse Digital, the conversation starts with what you are trying to solve."
+    question: "What is the budget to hire a digital marketing agency in UAE for my business?",
+    answer: "The scope of a growth intelligence engagement varies based on the complexity of your data environment, the number of digital marketing channels in play, and the strategic depth of the mandate. What most digital marketing companies in UAE will not tell you upfront is that pricing should reflect the decision value being unlocked, not a fixed rate card. At Impulse Digital, the conversation starts with what you are trying to solve."
   },
   {
     question: "Before signing up with an agency, should I consider geographic factors like location?",

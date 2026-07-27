@@ -6,13 +6,13 @@ import { homeData } from '@/data/ae/homeData';
 import { buildHomeGraph } from '@/lib/structuredData';
 
 export const metadata: Metadata = {
-  title: 'Best Digital Marketing Agency in Dubai | Impulse Digital',
-  description: 'Impulse Digital is a top digital marketing agency in Dubai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
-  keywords: 'digital marketing agency in dubai, digital marketing company, impulse digital',
+  title: 'Best Digital Marketing Agency in UAE | Impulse Digital',
+  description: 'Impulse Digital is a top digital marketing agency in UAE that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
+  keywords: 'digital marketing agency in uae, digital marketing company, impulse digital',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Best Digital Marketing Agency in Dubai | Impulse Digital',
-    description: 'Impulse Digital is a top digital marketing agency in Dubai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
+    title: 'Best Digital Marketing Agency in UAE | Impulse Digital',
+    description: 'Impulse Digital is a top digital marketing agency in UAE that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
     url: `${SITE_URL}/ae/`,
     images: [{ url: `${SITE_URL}/ImpulseDigital_Logo.svg` }],
     type: 'website',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Digital Marketing Agency in Dubai | Impulse Digital',
-    description: 'Impulse Digital is a top digital marketing agency in Dubai that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
+    title: 'Best Digital Marketing Agency in UAE | Impulse Digital',
+    description: 'Impulse Digital is a top digital marketing agency in UAE that helps businesses expand their reach in the digital space with strategy, performance marketing, SEO, social media, content, and creative solutions for brands like Amazon, HUL, OLA, Dmart, HDFC and more.',
     images: [`${SITE_URL}/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },

@@ -4,7 +4,7 @@ export const homeData = {
       "Data-Led Digital",
       "Marketing Agency",
     ],
-    headlineAccent: "in Dubai",
+    headlineAccent: "in UAE",
     description: "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.",
     cta: {
       text: "FIND THE DECISIONS INSIDE YOUR DATA",

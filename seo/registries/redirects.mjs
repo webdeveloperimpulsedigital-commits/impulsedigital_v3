@@ -19,6 +19,7 @@ const redirectPairs = [
   ['/website-development', '/brand-infrastructure/website-development/'],
   ['/ecommerce-seo-service', '/brand-infrastructure/search-engine-optimisation/ecommerce-seo/'],
   ['/agentic-ai', '/ai-marketing-systems/agentic-ai/'],
+  ['/ae/digital-marketing-agency-in-uae', '/ae/'],
   ['/ae/brand-infrastructure/search-engine-optimisation/uae', '/ae/brand-infrastructure/search-engine-optimisation/'],
   ['/ae/brand-infrastructure/search-engine-optimisation/deira', '/ae/brand-infrastructure/search-engine-optimisation/dubai/'],
   ['/ae/brand-infrastructure/search-engine-optimisation/business-bay', '/ae/brand-infrastructure/search-engine-optimisation/dubai/'],

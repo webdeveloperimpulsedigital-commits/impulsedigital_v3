@@ -104,7 +104,6 @@ const indiaCommercialLocations = [
 ] as const;
 
 const uaeCommercialLocations = [
-  'uae',
   'dubai',
   'abu-dhabi',
   'sharjah',
@@ -192,9 +191,6 @@ const publicPages: PageRecord[] = [
     state: 'public',
     pageClass: 'commercial-location',
     lastModified: UPDATED.location,
-    ...(slug === 'india'
-      ? { equivalentPath: '/ae/digital-marketing-agency-in-uae/' }
-      : {}),
   })),
   ...uaeCommercialLocations.map((slug): PageRecord => ({
     path: `/ae/digital-marketing-agency-in-${slug}/`,
@@ -202,9 +198,6 @@ const publicPages: PageRecord[] = [
     state: 'public',
     pageClass: 'commercial-location',
     lastModified: UPDATED.locationCurrent,
-    ...(slug === 'uae'
-      ? { equivalentPath: '/digital-marketing-agency-in-india/' }
-      : {}),
   })),
   ...indiaSeoLocations.map((slug): PageRecord => ({
     path: `/brand-infrastructure/search-engine-optimisation/${slug}/`,
@@ -330,8 +323,12 @@ export function getMarketDestination(pathname: string, targetMarket: Market): st
   }
 
   if (targetMarket === 'ae') {
+    const aeCandidate = `/ae${normalized}`;
+    if (getPageRecord(aeCandidate)?.state === 'public') {
+      return aeCandidate;
+    }
     if (normalized.startsWith('/digital-marketing-agency-in-')) {
-      return '/ae/digital-marketing-agency-in-uae/';
+      return '/ae/';
     }
     if (normalized.startsWith('/brand-infrastructure/search-engine-optimisation/')) {
       return '/ae/brand-infrastructure/search-engine-optimisation/';
