@@ -505,6 +505,16 @@
         "permanent": true
       },
       {
+        "source": "/ae/digital-marketing-agency-in-uae",
+        "destination": "/ae/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/digital-marketing-agency-in-uae/",
+        "destination": "/ae/",
+        "permanent": true
+      },
+      {
         "source": "/ae/brand-infrastructure/search-engine-optimisation/uae",
         "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
         "permanent": true

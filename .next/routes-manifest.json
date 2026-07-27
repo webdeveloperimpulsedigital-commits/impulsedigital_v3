@@ -220,6 +220,18 @@
       "regex": "^(?!/_next)/agentic-ai/(?:/)?$"
     },
     {
+      "source": "/ae/digital-marketing-agency-in-uae",
+      "destination": "/ae/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/digital-marketing-agency-in-uae(?:/)?$"
+    },
+    {
+      "source": "/ae/digital-marketing-agency-in-uae/",
+      "destination": "/ae/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/digital-marketing-agency-in-uae/(?:/)?$"
+    },
+    {
       "source": "/ae/brand-infrastructure/search-engine-optimisation/uae",
       "destination": "/ae/brand-infrastructure/search-engine-optimisation/",
       "statusCode": 308,
@@ -1155,12 +1167,6 @@
       "regex": "^/ae/digital\\-marketing\\-agency\\-in\\-sharjah(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/digital\\-marketing\\-agency\\-in\\-sharjah(?:/)?$"
-    },
-    {
-      "page": "/ae/digital-marketing-agency-in-uae",
-      "regex": "^/ae/digital\\-marketing\\-agency\\-in\\-uae(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/ae/digital\\-marketing\\-agency\\-in\\-uae(?:/)?$"
     },
     {
       "page": "/ae/growth-intelligence",
