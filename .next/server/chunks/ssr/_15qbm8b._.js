@@ -60,6 +60,12 @@ module.exports=[72123,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(11857);a.n(d(
                   r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                   a.appendChild(r);
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            `}}),(0,b.jsx)(c.default,{id:"microsoft-clarity",strategy:"afterInteractive",dangerouslySetInnerHTML:{__html:`
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "xsz8wxw6mn");
             `}}),(0,b.jsx)(h.default,{}),(0,b.jsx)(k.default,{}),(0,b.jsx)(g.default,{}),(0,b.jsx)(e.default,{}),a,(0,b.jsx)(f.default,{}),(0,b.jsx)(i.default,{}),(0,b.jsx)(j.default,{})]})]})}a.s(["default",0,o,"generateMetadata",0,n])},70864,a=>{a.n(a.i(33290))}];
 
 //# sourceMappingURL=_15qbm8b._.js.map
