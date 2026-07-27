@@ -2,14 +2,39 @@ import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { listChatSessions, getStorageDiagnostics } from '@/lib/chatStorage';
 
-function credentialsMatch(received: string, expected: string): boolean {
-  const receivedBuffer = Buffer.from(received);
-  const expectedBuffer = Buffer.from(expected);
+function normalizePassword(pwd: string): string {
+  let normalized = pwd.trim();
+  // Strip surrounding double quotes
+  if (normalized.startsWith('"') && normalized.endsWith('"')) {
+    normalized = normalized.slice(1, -1);
+  }
+  // Strip surrounding single quotes
+  else if (normalized.startsWith("'") && normalized.endsWith("'")) {
+    normalized = normalized.slice(1, -1);
+  }
+  // Unescape backslash-escaped characters (like \$)
+  normalized = normalized.replace(/\\(.)/g, '$1');
+  return normalized;
+}
 
-  return (
-    receivedBuffer.length === expectedBuffer.length &&
-    timingSafeEqual(receivedBuffer, expectedBuffer)
-  );
+function compareStringsTimingSafe(a: string, b: string): boolean {
+  const aBuffer = Buffer.from(a);
+  const bBuffer = Buffer.from(b);
+  if (aBuffer.length !== bBuffer.length) {
+    return false;
+  }
+  return timingSafeEqual(aBuffer, bBuffer);
+}
+
+function credentialsMatch(received: string, expected: string): boolean {
+  // Check against raw value
+  const matchRaw = compareStringsTimingSafe(received, expected);
+  
+  // Check against normalized value
+  const normalizedExpected = normalizePassword(expected);
+  const matchNormalized = compareStringsTimingSafe(received, normalizedExpected);
+
+  return matchRaw || matchNormalized;
 }
 
 export async function GET(req: NextRequest) {
