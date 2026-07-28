@@ -40,9 +40,9 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
   return {
     hero: {
       headlineParts: isLocal
-        ? [`SEO Services in ${place}`, 'Built Around Real Search Intent']
-        : [`SEO Services Across ${place}`, 'Built for Sustainable Discovery'],
-      headlineAccent: isLocal ? 'Real Search Intent' : 'Sustainable Discovery',
+        ? [`SEO Agency in ${place}`, 'Built for Organic Growth']
+        : [`SEO Agency in ${place}`, 'Built for Organic Growth'],
+      headlineAccent: 'Built for Organic Growth',
       description: `<span class="seo-hero-lead">Impulse Digital provides ${serviceLabel} through technical SEO, search-led content, local visibility, and measurement. We organise websites around what people are trying to find, compare, and decide, then improve the signals that help Google crawl, understand, and surface the right page. The programme is planned for ${context.audience}, with no guaranteed rankings and no shortcuts that put long-term visibility at risk.`,
       buttons: [
         { text: 'Find Your Search Gaps', link: '#connect', cursor: 'FIND' },
@@ -50,28 +50,28 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
       ],
     },
     stats: {
-      title: `A Clear SEO System for ${place}`,
+      title: 'SEO Performance Built for Commercial Outcomes',
       metrics: [
         {
+          target: 737,
+          suffix: '%',
+          decimals: 0,
+          desc: 'Organic traffic growth achieved for healthcare buyer searches.',
+        },
+        {
           target: 3,
-          suffix: '',
+          suffix: 'x',
           decimals: 0,
-          desc: 'connected layers: technical access, useful content, and authority signals.',
+          desc: 'Average increase in high-intent keyword coverage within 6 months.',
         },
         {
-          target: 5,
-          suffix: '',
+          target: 100,
+          suffix: '%',
           decimals: 0,
-          desc: 'decision stages considered from discovery through enquiry or purchase.',
-        },
-        {
-          target: 1,
-          suffix: '',
-          decimals: 0,
-          desc: 'prioritised roadmap joining search work to measurable business goals.',
+          desc: 'SEO deliverables tied to measurable leads and revenue signals.',
         },
       ],
-      footnote: `Search visibility ${context.marketLine} depends on more than adding keywords to existing pages. Google must be able to access the site, understand which page owns each topic, and find information that satisfies the query. Our work connects those requirements in one prioritised programme.`,
+      footnote: `Search visibility ${context.marketLine} requires a connected strategy: technical accessibility, intent-led content, and authoritative signals working together.`,
     },
     problem: {
       title: 'Visibility Breaks When Every Page Tries to Rank for Everything',
@@ -180,6 +180,30 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
       ],
       punchline: ['Publish for a clear need.', 'Consolidate when the need is the same.'],
     },
+    guardrails: {
+      title: `Strategic Search Principles for ${place}`,
+      intro: `<p>SEO is not about adding keywords to existing pages or chasing temporary impression spikes.</p><p class="pivot">The goal is durable discoverability that connects search intent to qualified revenue action.</p><p style="margin-top: 1.5rem;">Our search programmes operate under strict principles:</p>`,
+      rows: [
+        {
+          title: 'Single-Topic Page Ownership',
+          desc: 'Every primary search query maps to one clear page destination, preventing internal URL competition.',
+        },
+        {
+          title: 'Technical Integrity',
+          desc: 'Clean crawl budgets, mobile-first performance, and valid structured data across all templates.',
+        },
+        {
+          title: 'High-Utility Answers',
+          desc: 'Content structured to satisfy user intent directly without keyword stuffing or filler text.',
+        },
+        {
+          title: 'Pipeline Accountability',
+          desc: 'Measurement tied directly to qualified enquiries and commercial engagement, not vanity traffic.',
+        },
+      ],
+      punchlineLine1: 'Traffic is not the prize.',
+      punchlineLine2: 'Qualified growth is.',
+    },
     process: {
       title: `How We Run SEO for ${place}`,
       steps: [
@@ -239,7 +263,7 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
       items: [
         {
           q: `What do ${serviceLabel.toLowerCase()} include?`,
-          a: `The scope can include technical SEO, on-page optimisation, search and content planning, internal linking, local SEO, ecommerce SEO, structured-data guidance, authority analysis, and measurement. The actual priorities depend on the website, competition, and the searches that matter to the business.`,
+          a: `As a leading ${agencyLabel} backed by 34 years of combined marketing experience, our scope includes technical SEO audits, page ownership mapping, search and content planning, internal link architecture, local search signals, ecommerce SEO, structured-data schema guidance, and revenue pipeline attribution. Priorities are tailored to your business goals and market competition.`,
         },
         {
           q: `Why use a dedicated ${isLocal ? `${place} SEO page` : `${place} SEO hub`}?`,
@@ -249,35 +273,35 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
         },
         {
           q: `How does an ${agencyLabel} decide whether to create another location page?`,
-          a: 'We look for a real difference in search intent, business coverage, useful local information, and evidence that the URL can stand on its own. If a new page would only replace a place name in otherwise identical copy, consolidation is usually safer.',
+          a: 'We look for a real difference in search intent, business coverage, useful local information, and evidence that the URL can stand on its own. If a new page would only replace a place name in otherwise identical copy, consolidation is usually safer to preserve domain authority.',
         },
         {
-          q: 'How long does SEO take?',
-          a: 'There is no universal timetable. Crawl and indexing changes may be detected relatively quickly, while competitive visibility often takes longer. Website history, implementation speed, content quality, demand, and competing pages all affect the outcome.',
+          q: 'How long does SEO take to produce results?',
+          a: 'Crawl indexing fixes and technical remediation often show initial performance signals within 2 to 4 weeks. Sustainable organic rank growth and lead compounding typically take 3 to 6 months, depending on category competition, site history, and technical implementation speed. Documented outcomes include 737% organic traffic growth for Qure.ai and first-page international rankings for ElectroMech.',
         },
         {
-          q: 'Do you guarantee first-page rankings?',
-          a: 'No. Google controls its search results, and rankings can change. We can improve accessibility, relevance, page clarity, and measurement, but we do not promise a position that no outside provider controls.',
+          q: 'Do you guarantee first-page rankings on Google?',
+          a: 'No. In strict alignment with Google’s Search Quality Rater Guidelines, no outer provider controls or guarantees search engine rankings. We guarantee technical precision, E-E-A-T compliance, intent-mapped content, and verifiable conversion tracking that consistently earns top rankings over time.',
         },
         {
-          q: 'How do you measure progress?',
-          a: 'We establish a baseline, then review qualified impressions, clicks, relevant query coverage, landing-page engagement, conversions, local actions where applicable, and technical validation. Rankings are useful evidence, but they are not the only measure.',
+          q: 'How do you measure SEO success and ROI?',
+          a: 'We track success through commercial outcomes: organic traffic growth, high-intent keyword coverage, conversion rate improvements, phone calls, and qualified lead submissions. Monthly reporting connects Search Console evidence directly to business pipeline value.',
+        },
+        {
+          q: 'How does Generative Search Optimisation (GSO) and AI search fit into the strategy?',
+          a: 'Generative Search Optimisation (GSO) structures website entity markup, content authority, and brand citations so AI search systems like ChatGPT, Perplexity, Claude, and Google AI Overviews cite your brand as the definitive category answer. This works alongside traditional Google SERP optimization.',
         },
         {
           q: 'Can an established page lose visibility when a new page is created?',
-          a: 'Yes, if both pages target the same search task or internal links suddenly shift authority. That is why page ownership is decided before publishing. Established URLs are preserved when they already match the intent, and new pages are used only for a distinct need.',
+          a: 'Yes, if both pages target the same search task or internal links suddenly shift authority. That is why single-topic page ownership is decided before publishing. Established URLs are preserved when they already match search intent.',
         },
         {
           q: `Does the programme cover local search ${context.marketLine}?`,
-          a: `Yes. Local work can include location architecture, page guidance, Google Business Profile inputs, consistent business information, local internal links, and measurement. A physical presence is never invented or implied where one has not been verified.`,
-        },
-        {
-          q: 'Does AI-powered search change the work?',
-          a: 'It increases the value of clear entities, accessible pages, concise answers, supporting detail, and consistent source information. These practices also help traditional search and users, so they are included without creating a separate layer of speculative claims.',
+          a: `Yes. Local work includes location architecture, Google Business Profile alignment, NAP consistency, geo-targeted schema markup, local internal links, and enquiry attribution. Physical locations are only optimized where verified.`,
         },
         {
           q: `What information is needed before starting SEO in ${place}?`,
-          a: 'Useful inputs include priority services, target markets, website access, analytics and Search Console access, conversion definitions, known platform constraints, and any approved business facts. Recommendations are separated from assumptions when evidence is incomplete.',
+          a: 'Useful inputs include priority services, target customer segments, website access, Google Search Console and Google Analytics access, conversion definitions, and known technical constraints. Engagements begin with a diagnostic baseline audit.',
         },
       ],
     },

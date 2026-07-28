@@ -17,6 +17,7 @@ import {
   ServiceVs,
   ServiceUses,
   ServiceWhenToUse,
+  ServiceGuardrails,
   ServiceProcess,
   ServiceFit,
   ServiceFinalCTA,
@@ -172,6 +173,8 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
         buttons={data.hero.buttons}
       />
 
+      <ServiceHandoff />
+
       {data.stats && <ServiceStats data={data.stats} />}
       <ServiceHandoff />
 
@@ -219,6 +222,13 @@ const SearchEngineOptimisation: React.FC<{ data: any }> = ({ data }) => {
 
       {data.whenToUse && <ServiceWhenToUse data={data.whenToUse} />}
       <ServiceHandoff />
+
+      {data.guardrails && (
+        <>
+          <ServiceGuardrails data={data.guardrails} />
+          <ServiceHandoff />
+        </>
+      )}
 
       {data.process && <ServiceProcess data={data.process} />}
 
