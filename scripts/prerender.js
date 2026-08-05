@@ -71,7 +71,6 @@ const routes = [
   '/case-studies/abg-kbc/',
   '/case-studies/automag-bajaj-auto/',
   '/case-studies/automag-india/',
-  '/case-studies/employer-branding/',
   '/case-studies/shaking-things-up/',
   '/case-studies/tata-soulfull/',
   '/case-studies/tcpl/',

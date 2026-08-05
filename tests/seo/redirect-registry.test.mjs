@@ -7,6 +7,7 @@ const required = new Map([
   ['/services/social-media-marketing', '/brand-infrastructure/social-media-marketing/'],
   ['/social-media-marketing', '/brand-infrastructure/social-media-marketing/'],
   ['/employer-branding-agency', '/brand-infrastructure/employer-branding/'],
+  ['/case-studies/employer-branding', '/brand-infrastructure/employer-branding/'],
   ['/career', '/careers/'],
   ['/social-media-video-production', '/brand-infrastructure/video-production/'],
   ['/local-seo-service', '/brand-infrastructure/search-engine-optimisation/local-seo/'],

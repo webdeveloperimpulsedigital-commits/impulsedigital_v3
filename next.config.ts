@@ -283,6 +283,26 @@ const nextConfig: NextConfig = {
         destination: '/brand-infrastructure/employer-branding/',
         permanent: true,
       },
+      {
+        source: '/case-studies/employer-branding',
+        destination: '/brand-infrastructure/employer-branding/',
+        permanent: true,
+      },
+      {
+        source: '/case-studies/employer-branding/',
+        destination: '/brand-infrastructure/employer-branding/',
+        permanent: true,
+      },
+      {
+        source: '/ae/case-studies/employer-branding',
+        destination: '/ae/brand-infrastructure/employer-branding/',
+        permanent: true,
+      },
+      {
+        source: '/ae/case-studies/employer-branding/',
+        destination: '/ae/brand-infrastructure/employer-branding/',
+        permanent: true,
+      },
     ];
   },
 

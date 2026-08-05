@@ -79,7 +79,6 @@ const caseStudies = [
   'abg-kbc',
   'automag-bajaj-auto',
   'automag-india',
-  'employer-branding',
   'shaking-things-up',
   'tata-soulfull',
   'tcpl',
