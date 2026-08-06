@@ -375,6 +375,26 @@
         "permanent": true
       },
       {
+        "source": "/case-studies/employer-branding",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies/employer-branding/",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/case-studies/employer-branding",
+        "destination": "/ae/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/case-studies/employer-branding/",
+        "destination": "/ae/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
         "source": "/career",
         "destination": "/careers/",
         "permanent": true
@@ -822,6 +842,26 @@
       {
         "source": "/services/employer-branding-agency/",
         "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies/employer-branding",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies/employer-branding/",
+        "destination": "/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/case-studies/employer-branding",
+        "destination": "/ae/brand-infrastructure/employer-branding/",
+        "permanent": true
+      },
+      {
+        "source": "/ae/case-studies/employer-branding/",
+        "destination": "/ae/brand-infrastructure/employer-branding/",
         "permanent": true
       }
     ]

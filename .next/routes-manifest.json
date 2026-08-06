@@ -64,6 +64,30 @@
       "regex": "^(?!/_next)/employer-branding-agency/(?:/)?$"
     },
     {
+      "source": "/case-studies/employer-branding",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies/employer-branding(?:/)?$"
+    },
+    {
+      "source": "/case-studies/employer-branding/",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies/employer-branding/(?:/)?$"
+    },
+    {
+      "source": "/ae/case-studies/employer-branding",
+      "destination": "/ae/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/case-studies/employer-branding(?:/)?$"
+    },
+    {
+      "source": "/ae/case-studies/employer-branding/",
+      "destination": "/ae/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/case-studies/employer-branding/(?:/)?$"
+    },
+    {
       "source": "/career",
       "destination": "/careers/",
       "statusCode": 308,
@@ -602,6 +626,30 @@
       "destination": "/brand-infrastructure/employer-branding/",
       "statusCode": 308,
       "regex": "^(?!/_next)/services/employer-branding-agency/(?:/)?$"
+    },
+    {
+      "source": "/case-studies/employer-branding",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies/employer-branding(?:/)?$"
+    },
+    {
+      "source": "/case-studies/employer-branding/",
+      "destination": "/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies/employer-branding/(?:/)?$"
+    },
+    {
+      "source": "/ae/case-studies/employer-branding",
+      "destination": "/ae/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/case-studies/employer-branding(?:/)?$"
+    },
+    {
+      "source": "/ae/case-studies/employer-branding/",
+      "destination": "/ae/brand-infrastructure/employer-branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ae/case-studies/employer-branding/(?:/)?$"
     }
   ],
   "headers": [
@@ -1077,12 +1125,6 @@
       "regex": "^/ae/case\\-studies/electromech(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/case\\-studies/electromech(?:/)?$"
-    },
-    {
-      "page": "/ae/case-studies/employer-branding",
-      "regex": "^/ae/case\\-studies/employer\\-branding(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/ae/case\\-studies/employer\\-branding(?:/)?$"
     },
     {
       "page": "/ae/case-studies/fours-for-good",
@@ -1623,12 +1665,6 @@
       "regex": "^/case\\-studies/electromech(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/case\\-studies/electromech(?:/)?$"
-    },
-    {
-      "page": "/case-studies/employer-branding",
-      "regex": "^/case\\-studies/employer\\-branding(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/case\\-studies/employer\\-branding(?:/)?$"
     },
     {
       "page": "/case-studies/fours-for-good",
