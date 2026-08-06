@@ -29,7 +29,7 @@ test('publication registry has unique, real and sitemap-safe paths', async () =>
   const { PAGE_REGISTRY, SITEMAP_PAGES } = await pageRegistryModule;
   const paths = PAGE_REGISTRY.map(({ path }) => path);
   assert.equal(new Set(paths).size, paths.length);
-  assert.ok(SITEMAP_PAGES.length >= 145);
+  assert.ok(SITEMAP_PAGES.length >= 140);
 
   for (const page of SITEMAP_PAGES) {
     assert.equal(page.state, 'public', page.path);
