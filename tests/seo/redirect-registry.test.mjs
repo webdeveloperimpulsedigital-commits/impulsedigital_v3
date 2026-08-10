@@ -33,16 +33,15 @@ const required = new Map([
   ['/casestudies/crafting-the-employer-value-proposition-for-amazon-india', '/case-studies/amazon-india-evp-strategy/'],
   ['/case-studies-emech', '/case-studies/electromech/'],
   ['/casestudies/electromech', '/case-studies/electromech/'],
+  ['/slideshare-ppt', '/ppt/'],
+  ['/resources/slideshare-ppt', '/ppt/'],
+  ['/online-paid-advertising', '/growth-intelligence/campaign-intelligence/'],
+  ['/services/content-writing-services', '/brand-infrastructure/branding/'],
+  ['/content-marketing-services', '/brand-infrastructure/branding/'],
+  ['/case-studies-vendiman', '/case-studies/'],
 ]);
 
-const decisionGated = [
-  '/online-paid-advertising',
-  '/services/content-writing-services',
-  '/content-marketing-services',
-  '/slideshare-ppt',
-  '/resources/slideshare-ppt',
-  '/case-studies-vendiman',
-];
+const decisionGated = [];
 
 test('redirect registry contains every approved high-confidence mapping', () => {
   const actual = new Map(highConfidenceRedirects.map(({ source, destination }) => [source, destination]));

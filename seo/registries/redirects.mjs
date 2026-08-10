@@ -37,6 +37,12 @@ const redirectPairs = [
   ['/casestudies/crafting-the-employer-value-proposition-for-amazon-india', '/case-studies/amazon-india-evp-strategy/'],
   ['/case-studies-emech', '/case-studies/electromech/'],
   ['/casestudies/electromech', '/case-studies/electromech/'],
+  ['/slideshare-ppt', '/ppt/'],
+  ['/resources/slideshare-ppt', '/ppt/'],
+  ['/online-paid-advertising', '/growth-intelligence/campaign-intelligence/'],
+  ['/services/content-writing-services', '/brand-infrastructure/branding/'],
+  ['/content-marketing-services', '/brand-infrastructure/branding/'],
+  ['/case-studies-vendiman', '/case-studies/'],
 ];
 
 export const highConfidenceRedirects = redirectPairs.flatMap(([source, destination]) => {
