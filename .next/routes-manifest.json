@@ -436,6 +436,78 @@
       "regex": "^(?!/_next)/casestudies/electromech/(?:/)?$"
     },
     {
+      "source": "/slideshare-ppt",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slideshare-ppt(?:/)?$"
+    },
+    {
+      "source": "/slideshare-ppt/",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slideshare-ppt/(?:/)?$"
+    },
+    {
+      "source": "/resources/slideshare-ppt",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/resources/slideshare-ppt(?:/)?$"
+    },
+    {
+      "source": "/resources/slideshare-ppt/",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/resources/slideshare-ppt/(?:/)?$"
+    },
+    {
+      "source": "/online-paid-advertising",
+      "destination": "/growth-intelligence/campaign-intelligence/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/online-paid-advertising(?:/)?$"
+    },
+    {
+      "source": "/online-paid-advertising/",
+      "destination": "/growth-intelligence/campaign-intelligence/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/online-paid-advertising/(?:/)?$"
+    },
+    {
+      "source": "/services/content-writing-services",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/content-writing-services(?:/)?$"
+    },
+    {
+      "source": "/services/content-writing-services/",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/services/content-writing-services/(?:/)?$"
+    },
+    {
+      "source": "/content-marketing-services",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/content-marketing-services(?:/)?$"
+    },
+    {
+      "source": "/content-marketing-services/",
+      "destination": "/brand-infrastructure/branding/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/content-marketing-services/(?:/)?$"
+    },
+    {
+      "source": "/case-studies-vendiman",
+      "destination": "/case-studies/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-vendiman(?:/)?$"
+    },
+    {
+      "source": "/case-studies-vendiman/",
+      "destination": "/case-studies/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/case-studies-vendiman/(?:/)?$"
+    },
+    {
       "source": "/local seo",
       "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
       "statusCode": 308,

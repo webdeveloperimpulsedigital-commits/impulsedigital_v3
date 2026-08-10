@@ -685,6 +685,66 @@
         "permanent": true
       },
       {
+        "source": "/slideshare-ppt",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
+        "source": "/slideshare-ppt/",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
+        "source": "/resources/slideshare-ppt",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
+        "source": "/resources/slideshare-ppt/",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
+        "source": "/online-paid-advertising",
+        "destination": "/growth-intelligence/campaign-intelligence/",
+        "permanent": true
+      },
+      {
+        "source": "/online-paid-advertising/",
+        "destination": "/growth-intelligence/campaign-intelligence/",
+        "permanent": true
+      },
+      {
+        "source": "/services/content-writing-services",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/services/content-writing-services/",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/content-marketing-services",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/content-marketing-services/",
+        "destination": "/brand-infrastructure/branding/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-vendiman",
+        "destination": "/case-studies/",
+        "permanent": true
+      },
+      {
+        "source": "/case-studies-vendiman/",
+        "destination": "/case-studies/",
+        "permanent": true
+      },
+      {
         "source": "/local seo",
         "destination": "/brand-infrastructure/search-engine-optimisation/local-seo/",
         "permanent": true
