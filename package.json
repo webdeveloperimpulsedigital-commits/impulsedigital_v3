@@ -14,9 +14,8 @@
     "postbuild": "node scripts/ensure-wordpress.js"
   },
   "dependencies": {
-    "image-size": "^2.0.2",
     "next": "16.2.11",
-    "pdfjs-dist": "^6.0.227",
+    "pdfjs-dist": "^6.2.108",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sharp": "^0.35.3"
@@ -32,6 +31,7 @@
     "undici": "^7.28.0",
     "hono": "^4.12.25",
     "postcss": "^8.5.23",
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "nanoid": "^3.3.18"
   }
 }
