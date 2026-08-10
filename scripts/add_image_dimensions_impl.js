@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const sizeOfPkg = require('image-size');
-const sizeOf = sizeOfPkg.imageSize || sizeOfPkg.default || sizeOfPkg;
+const sharp = require('sharp');
 
 const pagesDir = path.join(__dirname, '../components/pages');
 const publicDir = path.join(__dirname, '../public');
@@ -19,58 +18,66 @@ function findTsxFiles(dir, fileList = []) {
   return fileList;
 }
 
-const files = findTsxFiles(pagesDir);
+async function processFiles() {
+  const files = findTsxFiles(pagesDir);
 
-for (const file of files) {
-  let content = fs.readFileSync(file, 'utf8');
-  
-  const imgRegex = /<img([^>]+)>/g;
-  
-  content = content.replace(imgRegex, (match, attrs) => {
-    if (attrs.includes('width=') && attrs.includes('height=')) {
-      return match;
-    }
+  for (const file of files) {
+    let content = fs.readFileSync(file, 'utf8');
+    const imgMatches = Array.from(content.matchAll(/<img([^>]+)>/g));
+    let modified = false;
 
-    const literalMatch = attrs.match(/src=["']([^"']+)["']/);
-    const expressionStringMatch = attrs.match(/src=\{["']([^"']+)["']\}/);
-    const baseTemplateMatch = attrs.match(/src=\{`\$\{base\}([^`$]+)`\}/);
-    const srcMatch = literalMatch || expressionStringMatch || baseTemplateMatch;
-    if (!srcMatch) return match;
+    for (const match of imgMatches) {
+      const fullMatch = match[0];
+      const attrs = match[1];
 
-    let src = baseTemplateMatch ? `/${srcMatch[1]}` : srcMatch[1];
-    if (!src.startsWith('/')) {
-        return match;
-    }
+      if (attrs.includes('width=') && attrs.includes('height=')) {
+        continue;
+      }
 
-    try {
-      src = decodeURIComponent(src);
-    } catch {
-      return match;
-    }
-    const imagePath = path.join(publicDir, src);
-    
-    if (fs.existsSync(imagePath)) {
+      const literalMatch = attrs.match(/src=["']([^"']+)["']/);
+      const expressionStringMatch = attrs.match(/src=\{["']([^"']+)["']\}/);
+      const baseTemplateMatch = attrs.match(/src=\{`\$\{base\}([^`$]+)`\}/);
+      const srcMatch = literalMatch || expressionStringMatch || baseTemplateMatch;
+      if (!srcMatch) continue;
+
+      let src = baseTemplateMatch ? `/${srcMatch[1]}` : srcMatch[1];
+      if (!src.startsWith('/')) continue;
+
+      try {
+        src = decodeURIComponent(src);
+      } catch {
+        continue;
+      }
+      const imagePath = path.join(publicDir, src);
+
+      if (fs.existsSync(imagePath)) {
         try {
-            const dimensions = sizeOf(fs.readFileSync(imagePath));
+          const metadata = await sharp(imagePath).metadata();
+          if (metadata.width && metadata.height) {
             const selfClosing = /\/\s*$/.test(attrs);
             let newAttrs = attrs.replace(/\/\s*$/, '');
             if (!newAttrs.includes('width=')) {
-                newAttrs += ` width={${dimensions.width}}`;
+              newAttrs += ` width={${metadata.width}}`;
             }
             if (!newAttrs.includes('height=')) {
-                newAttrs += ` height={${dimensions.height}}`;
+              newAttrs += ` height={${metadata.height}}`;
             }
-            return `<img${newAttrs}${selfClosing ? ' /' : ''}>`;
+            const newTag = `<img${newAttrs}${selfClosing ? ' /' : ''}>`;
+            content = content.replace(fullMatch, newTag);
+            modified = true;
+          }
         } catch (e) {
-            console.error(`Error reading dimensions for ${imagePath}:`, e.message);
+          console.error(`Error reading dimensions for ${imagePath}:`, e.message);
         }
+      }
     }
-    
-    return match;
-  });
 
-  if (content !== fs.readFileSync(file, 'utf8')) {
-    fs.writeFileSync(file, content);
-    console.log(`Updated ${file}`);
+    if (modified) {
+      fs.writeFileSync(file, content);
+      console.log(`Updated ${file}`);
+    }
   }
 }
+
+processFiles().catch(console.error);
+
