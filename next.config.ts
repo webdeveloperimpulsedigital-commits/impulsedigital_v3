@@ -124,6 +124,32 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ── Slideshare PDF Redirection (Main website only) ──────────────────────
+      {
+        source: '/slideshare/:path*',
+        destination: '/ppt/:path*',
+        permanent: true,
+      },
+
+      // ── Dynamic Case Study Redirection (Main website only) ─────────────
+      {
+        source: '/casestudies/:slug*',
+        destination: '/case-studies/:slug*',
+        permanent: true,
+      },
+
+      // ── Legacy WordPress Blog URL Redirection (Main website only) ───────
+      {
+        source: '/ID-web-blog',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/ID-web-blog/:path*',
+        destination: '/blog/:path*',
+        permanent: true,
+      },
+
       // ── Blog URL rename: /blogs/ → /blog/ ─────────────────────────────────
       {
         source: '/blogs',
