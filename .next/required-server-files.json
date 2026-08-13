@@ -755,6 +755,26 @@
         "permanent": true
       },
       {
+        "source": "/slideshare/:path*",
+        "destination": "/ppt/:path*",
+        "permanent": true
+      },
+      {
+        "source": "/casestudies/:slug*",
+        "destination": "/case-studies/:slug*",
+        "permanent": true
+      },
+      {
+        "source": "/ID-web-blog",
+        "destination": "/blog/",
+        "permanent": true
+      },
+      {
+        "source": "/ID-web-blog/:path*",
+        "destination": "/blog/:path*",
+        "permanent": true
+      },
+      {
         "source": "/blogs",
         "destination": "/blog/",
         "permanent": true

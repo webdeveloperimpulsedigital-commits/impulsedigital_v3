@@ -520,6 +520,30 @@
       "regex": "^(?!/_next)/local%20seo(?:/)?$"
     },
     {
+      "source": "/slideshare/:path*",
+      "destination": "/ppt/:path*",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slideshare(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
+      "source": "/casestudies/:slug*",
+      "destination": "/case-studies/:slug*",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/casestudies(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
+      "source": "/ID-web-blog",
+      "destination": "/blog/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ID-web-blog(?:/)?$"
+    },
+    {
+      "source": "/ID-web-blog/:path*",
+      "destination": "/blog/:path*",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/ID-web-blog(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
       "source": "/blogs",
       "destination": "/blog/",
       "statusCode": 308,
