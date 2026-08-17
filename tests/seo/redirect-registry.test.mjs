@@ -66,3 +66,43 @@ test('decision-gated URLs are absent from automatic redirects', () => {
   for (const source of decisionGated) assert.equal(sources.has(source), false, source);
 });
 
+test('next.config.ts contains dynamic 301 redirects for /slideshare/, /casestudies/ and /ID-web-blog/ scoped to main site', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const ts = (await import('typescript')).default;
+  const root = new URL('../../', import.meta.url);
+  const redirectsMjsHref = new URL('../../seo/registries/redirects.mjs', import.meta.url).href;
+  const rawSource = await readFile(new URL('next.config.ts', root), 'utf8');
+  const source = rawSource.replace('./seo/registries/redirects.mjs', redirectsMjsHref);
+  const output = ts.transpileModule(source, {
+    compilerOptions: { module: ts.ModuleKind.ES2022, target: ts.ScriptTarget.ES2022 },
+  }).outputText;
+  const nextConfigModule = await import(`data:text/javascript;base64,${Buffer.from(output).toString('base64')}`);
+  const redirects = await nextConfigModule.default.redirects();
+
+  const slideshareRule = redirects.find(r => r.source === '/slideshare/:path*');
+  assert.ok(slideshareRule, 'Missing /slideshare/:path* redirect rule');
+  assert.equal(slideshareRule.destination, '/ppt/:path*');
+  assert.equal(slideshareRule.permanent, true);
+
+  const caseStudyRule = redirects.find(r => r.source === '/casestudies/:slug*');
+  assert.ok(caseStudyRule, 'Missing /casestudies/:slug* redirect rule');
+  assert.equal(caseStudyRule.destination, '/case-studies/:slug*');
+  assert.equal(caseStudyRule.permanent, true);
+
+  const blogRootRule = redirects.find(r => r.source === '/ID-web-blog');
+  assert.ok(blogRootRule, 'Missing /ID-web-blog redirect rule');
+  assert.equal(blogRootRule.destination, '/blog/');
+  assert.equal(blogRootRule.permanent, true);
+
+  const blogPathRule = redirects.find(r => r.source === '/ID-web-blog/:path*');
+  assert.ok(blogPathRule, 'Missing /ID-web-blog/:path* redirect rule');
+  assert.equal(blogPathRule.destination, '/blog/:path*');
+  assert.equal(blogPathRule.permanent, true);
+
+  // Assert none of these new rules target or modify /ae/ routes
+  for (const rule of [slideshareRule, caseStudyRule, blogRootRule, blogPathRule]) {
+    assert.equal(rule.source.startsWith('/ae'), false, `Rule source ${rule.source} should not touch /ae`);
+  }
+});
+
+
