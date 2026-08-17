@@ -124,6 +124,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ── Slideshare path redirect ────────────────────────────────
+      {
+        source: '/slide-share-ppt/slideshare/:path*',
+        destination: '/slide-share-ppt/:path*',
+        permanent: true,
+      },
+
       // ── Blog URL rename: /blogs/ → /blog/ ─────────────────────────────────
       {
         source: '/blogs',
