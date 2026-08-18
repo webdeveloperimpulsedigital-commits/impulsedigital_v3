@@ -6,7 +6,7 @@ export const searchEngineOptimisationThaneData = {
       "Built for Organic Growth"
     ],
     headlineAccent: "Built for Organic Growth",
-    description: "Thane and the Mumbai Metropolitan Region are a competitive search market where generic SEO tactics no longer deliver rankings. As an SEO company in Thane working with growth and enterprise brands, Impulse Digital builds search systems across four layers: technical health, intent-mapped content, local Thane signals, and Generative Search Optimisation. The result is high-intent organic visibility that drives qualified inquiries, not vanity impressions. Brands searching for an SEO agency in Thane usually have the same problem: rankings that do not convert. The work starts with what your search data shows, backed by a team with 34 years of combined marketing experience and results like 737% organic traffic growth for Qure.ai and first-page international rankings for ElectroMech.",
+    description: "As a leading SEO company in Thane, Impulse Digital builds search systems that turn organic search intent into qualified leads. We integrate technical health, intent-mapped content, local signals, and Generative Search Optimisation (GSO) to drive measurable ROI. Partner with an SEO agency in Thane backed by 34 years of marketing expertise and proven outcomes like 737% organic traffic growth.",
     buttons: [
       {
         text: "Audit Your Thane Search Gaps",
