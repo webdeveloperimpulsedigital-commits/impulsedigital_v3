@@ -124,6 +124,28 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // ── Main-site legacy route families ──────────────────────────────────
+      {
+        source: '/slideshare/:path*',
+        destination: '/ppt/:path*',
+        permanent: true,
+      },
+      {
+        source: '/casestudies/:slug*',
+        destination: '/case-studies/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/ID-web-blog',
+        destination: '/blog/',
+        permanent: true,
+      },
+      {
+        source: '/ID-web-blog/:path*',
+        destination: '/blog/:path*',
+        permanent: true,
+      },
+
       // ── Slideshare path redirect ────────────────────────────────
       {
         source: '/slide-share-ppt/slideshare/:path*',
