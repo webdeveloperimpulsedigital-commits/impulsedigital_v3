@@ -386,9 +386,17 @@
 
 
         // SplitType
-        const splitTexts = document.querySelectorAll('.split-text');
+        const splitTexts = document.querySelectorAll('.split-text:not(.split-done)');
         splitTexts.forEach(text => {
-            const split = new SplitType(text, { types: 'lines, words' });
+            text.classList.add('split-done');
+            let split;
+            try {
+                split = new SplitType(text, { types: 'lines, words' });
+            } catch (error) {
+                text.classList.remove('split-done');
+                console.error('SplitType initialization failed:', error);
+                return;
+            }
             if (split.lines) {
                 split.lines.forEach(line => {
                     const wrapper = document.createElement('div');
@@ -415,16 +423,17 @@
             }
 
             const preExistingHomeTriggers = new Set(ScrollTrigger.getAll());
+            const domCleanups = [];
+            const refreshTimeoutIds = [];
 
             // ==========================================
             // CASE STUDIES: Center-to-Sides Cosmos Zoom
             // ==========================================
             const cosmosSection = document.getElementById('cases-pin');
             const cosmosCards = gsap.utils.toArray('.cosmos-card');
+            const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
 
-            if (cosmosCards.length > 0) {
-                const isMobileDevice = window.innerWidth <= 768 || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-
+            if (cosmosSection && cosmosCards.length > 0) {
                 // iOS Safari detection — needed for ScrollTrigger pin fix
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                     (navigator.maxTouchPoints > 0 && /Macintosh/.test(navigator.userAgent));
@@ -502,6 +511,9 @@
                     scrollTrigger: {
                         trigger: cosmosSection,
                         pin: true,
+                        // Desktop scroll space is reserved in the initial layout by
+                        // .cosmos-scroll-shell, preventing late pin-spacer layout shifts.
+                        pinSpacing: isMobileDevice,
                         // Mobile native scrolling requires fixed pinning to avoid jitter
                         pinType: 'fixed',
                         anticipatePin: isMobileDevice ? 0 : 1,
@@ -564,14 +576,17 @@
             const accItems = document.querySelectorAll('.acc-item');
             accItems.forEach(item => {
                 const header = item.querySelector('.acc-header');
-                header.addEventListener('click', () => {
-                    const content = item.querySelector('.acc-content');
+                const content = item.querySelector('.acc-content');
+                if (!header || !content) return;
+
+                const handleAccordionClick = () => {
                     const isActive = item.classList.contains('active');
 
                     // Close all
                     accItems.forEach(acc => {
                         acc.classList.remove('active');
-                        acc.querySelector('.acc-content').style.maxHeight = null;
+                        const accContent = acc.querySelector('.acc-content');
+                        if (accContent) accContent.style.maxHeight = null;
                     });
 
                     // Open clicked if it wasn't active
@@ -581,32 +596,39 @@
                     }
 
                     // Refresh ScrollTrigger since layout heights changed
-                    setTimeout(() => { ScrollTrigger.refresh(); }, 600);
-                });
+                    refreshTimeoutIds.push(setTimeout(() => { ScrollTrigger.refresh(); }, 600));
+                };
+
+                header.addEventListener('click', handleAccordionClick);
+                domCleanups.push(() => header.removeEventListener('click', handleAccordionClick));
             });
 
             // Logos Grid Reveal - Using more robust autoAlpha and section trigger
-            gsap.to(".logo-card", {
-                scrollTrigger: {
-                    trigger: ".logos",
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
-                },
-                autoAlpha: 1,
-                y: 0,
-                scale: 1,
-                stagger: 0.03,
-                duration: 1,
-                ease: "power3.out"
-            });
+            const logosSection = document.querySelector('.logos');
+            const logoCards = logosSection ? logosSection.querySelectorAll('.logo-card') : [];
+            if (logosSection && logoCards.length) {
+                gsap.to(logoCards, {
+                    scrollTrigger: {
+                        trigger: logosSection,
+                        start: "top 75%",
+                        toggleActions: "play none none reverse"
+                    },
+                    autoAlpha: 1,
+                    y: 0,
+                    scale: 1,
+                    stagger: 0.03,
+                    duration: 1,
+                    ease: "power3.out"
+                });
+            }
 
             // Spotlight Glow Pointer Tracking (Extreme GSAP-Smoothed Effect)
-            document.querySelectorAll('.logo-card').forEach(card => {
+            logoCards.forEach(card => {
                 let rect = null;
-                card.addEventListener('mouseenter', () => {
+                const handleLogoEnter = () => {
                     rect = card.getBoundingClientRect();
-                });
-                card.addEventListener('mousemove', (e) => {
+                };
+                const handleLogoMove = (e) => {
                     if (!rect) rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
@@ -619,19 +641,28 @@
                         ease: 'power2.out',
                         overwrite: 'auto'
                     });
-                });
-                card.addEventListener('mouseleave', () => {
+                };
+                const handleLogoLeave = () => {
                     rect = null;
+                };
+
+                card.addEventListener('mouseenter', handleLogoEnter);
+                card.addEventListener('mousemove', handleLogoMove);
+                card.addEventListener('mouseleave', handleLogoLeave);
+                domCleanups.push(() => {
+                    card.removeEventListener('mouseenter', handleLogoEnter);
+                    card.removeEventListener('mousemove', handleLogoMove);
+                    card.removeEventListener('mouseleave', handleLogoLeave);
                 });
             });
 
             // Custom Testimonial Interaction (Guaranteed Snap-Back)
             document.querySelectorAll('.test-card').forEach(card => {
                 let rect = null;
-                card.addEventListener('mouseenter', () => {
+                const handleTestimonialEnter = () => {
                     rect = card.getBoundingClientRect();
-                });
-                card.addEventListener('mousemove', (e) => {
+                };
+                const handleTestimonialMove = (e) => {
                     if (!rect) rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
@@ -647,9 +678,9 @@
                         ease: 'power2.out',
                         overwrite: true
                     });
-                });
+                };
 
-                card.addEventListener('mouseleave', () => {
+                const handleTestimonialLeave = () => {
                     rect = null;
                     gsap.to(card, {
                         rotateX: 0,
@@ -658,6 +689,15 @@
                         ease: 'power3.out',
                         overwrite: true
                     });
+                };
+
+                card.addEventListener('mouseenter', handleTestimonialEnter);
+                card.addEventListener('mousemove', handleTestimonialMove);
+                card.addEventListener('mouseleave', handleTestimonialLeave);
+                domCleanups.push(() => {
+                    card.removeEventListener('mouseenter', handleTestimonialEnter);
+                    card.removeEventListener('mousemove', handleTestimonialMove);
+                    card.removeEventListener('mouseleave', handleTestimonialLeave);
                 });
             });
 
@@ -748,10 +788,12 @@
                 });
             }
 
-            setTimeout(() => { ScrollTrigger.refresh(); }, 500);
+            refreshTimeoutIds.push(setTimeout(() => { ScrollTrigger.refresh(); }, 500));
 
             const ownedHomeTriggers = ScrollTrigger.getAll().filter((trigger) => !preExistingHomeTriggers.has(trigger));
             window.cleanupHomeDOMAnimations = () => {
+                domCleanups.forEach((cleanup) => cleanup());
+                refreshTimeoutIds.forEach((timeoutId) => clearTimeout(timeoutId));
                 ownedHomeTriggers.forEach((trigger) => trigger.kill());
                 gsap.killTweensOf([particlesMaterial, tunnelMat]);
                 setCaseStudyWarpActive(false);

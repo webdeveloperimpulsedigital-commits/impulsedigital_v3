@@ -544,6 +544,12 @@
       "regex": "^(?!/_next)/ID-web-blog(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
     },
     {
+      "source": "/slide-share-ppt/slideshare/:path*",
+      "destination": "/slide-share-ppt/:path*",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slide-share-ppt/slideshare(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
       "source": "/blogs",
       "destination": "/blog/",
       "statusCode": 308,
@@ -925,12 +931,12 @@
       "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
     },
     {
-      "page": "/ppt/[[...category]]",
-      "regex": "^/ppt(?:/(.+?))?(?:/)?$",
+      "page": "/ppt/[category]",
+      "regex": "^/ppt/([^/]+?)(?:/)?$",
       "routeKeys": {
         "nxtPcategory": "nxtPcategory"
       },
-      "namedRegex": "^/ppt(?:/(?<nxtPcategory>.+?))?(?:/)?$"
+      "namedRegex": "^/ppt/(?<nxtPcategory>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -1875,6 +1881,12 @@
       "regex": "^/growth\\-intelligence/social\\-intelligence(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/growth\\-intelligence/social\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/ppt",
+      "regex": "^/ppt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ppt(?:/)?$"
     },
     {
       "page": "/privacy-policy",

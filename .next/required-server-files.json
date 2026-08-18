@@ -775,6 +775,11 @@
         "permanent": true
       },
       {
+        "source": "/slide-share-ppt/slideshare/:path*",
+        "destination": "/slide-share-ppt/:path*",
+        "permanent": true
+      },
+      {
         "source": "/blogs",
         "destination": "/blog/",
         "permanent": true

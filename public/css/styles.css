@@ -555,6 +555,24 @@ nav.scrolled {
 }
 
 /* Cosmos Zoom Case Studies */
+.cosmos-scroll-shell {
+    position: relative;
+    min-height: 100vh;
+}
+
+@media (min-width: 769px) {
+    .cosmos-scroll-shell {
+        height: calc(100vh + var(--cosmos-scroll-distance, 0px));
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmos-scroll-shell {
+        height: auto;
+        min-height: 0;
+    }
+}
+
 .cosmos-section {
     height: 100vh;
     position: relative;

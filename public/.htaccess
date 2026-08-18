@@ -39,6 +39,7 @@ Options +FollowSymLinks +SymLinksIfOwnerMatch
   RewriteRule ^(?:services/performance-marketing|online-paid-advertising)/?$ https://www.theimpulsedigital.com/growth-intelligence/campaign-intelligence/ [NC,R=301,L]
   RewriteRule ^(?:services/content-writing-services|content-marketing-services)/?$ https://www.theimpulsedigital.com/services/ [NC,R=301,L]
   RewriteRule ^(?:services/)?branding-creative-services/?$ https://www.theimpulsedigital.com/brand-infrastructure/branding/ [NC,R=301,L]
+  RewriteRule ^slide-share-ppt/slideshare/slideshare/(.*)$ https://www.theimpulsedigital.com/slide-share-ppt/slideshare/$1 [NC,R=301,L]
 
   # --------------------------------
   # 3. ADD TRAILING SLASH IF MISSING (FOR CANONICAL SEO & STATIC DIRECTORIES)
