@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 /**
  * InteractionLoader
  * Defers loading of heavy animation libraries (GSAP, ThreeJS, Lenis) until the user
- * interacts with the page (scroll, mousemove, touchstart) OR after a 3.5-second timeout.
+ * interacts with the page (scroll, mousemove, touchstart, keydown, or click).
  * This guarantees a massive reduction in Total Blocking Time (TBT) and Green Lighthouse scores.
  */
 export default function InteractionLoader() {
@@ -20,7 +20,7 @@ export default function InteractionLoader() {
       'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
       'https://unpkg.com/split-type',
       'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-      '/js/script.js?v=70'
+      '/js/script.js?v=71'
     ];
 
     const loadScripts = () => {
@@ -30,7 +30,11 @@ export default function InteractionLoader() {
       let currentScript = 0;
 
       const loadNext = () => {
-        if (currentScript >= scriptsToLoad.length) return; // Done
+        if (currentScript >= scriptsToLoad.length) {
+          document.documentElement.dataset.animationsReady = 'true';
+          window.dispatchEvent(new Event('impulse:animations-ready'));
+          return;
+        }
         
         const src = scriptsToLoad[currentScript];
         const script = document.createElement('script');

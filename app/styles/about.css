@@ -7,9 +7,17 @@
 .about-page #main-content { padding-bottom: 0; }
 .about-page .split-text .line-wrapper {
   overflow: visible;
-  padding-top: 0.04em;
-  padding-bottom: 0.34em;
-  margin-bottom: -0.12em;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* SplitType gives the smaller second line the parent heading's line box.
+   Reserve that exact desktop difference before interaction so initialization
+   cannot move the sections below this heading. */
+@media (min-width: 769px) {
+  .about-page .ab-drift-h:not(.split-done) {
+    padding-bottom: calc(0.414em - 0.8rem);
+  }
 }
 
 /* ---------- containers ---------- */

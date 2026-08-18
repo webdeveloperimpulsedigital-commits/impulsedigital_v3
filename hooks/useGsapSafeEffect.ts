@@ -5,9 +5,9 @@ import { useEffect } from 'react';
 /**
  * Custom hook to safely initialize GSAP/ScrollTrigger/SplitType animations.
  * Because these scripts are deferred via InteractionLoader to optimize performance,
- * they may not be loaded when the component mounts. This hook polls until they are
- * ready on window before invoking the callback, preventing "window.gsap is not defined"
- * type errors on direct page reloads.
+ * they may not be loaded when the component mounts. InteractionLoader emits a readiness
+ * event after its ordered script queue completes, so effects can initialize without
+ * background polling or an arbitrary timeout.
  */
 export function useGsapSafeEffect(
   callback: (gsap: any, ScrollTrigger: any, SplitType?: any) => void | (() => void),
@@ -17,8 +17,6 @@ export function useGsapSafeEffect(
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let checkInterval: NodeJS.Timeout;
-    let timeoutId: NodeJS.Timeout;
     let cleanupFn: (() => void) | void;
     let initialized = false;
 
@@ -38,20 +36,10 @@ export function useGsapSafeEffect(
     // Try immediate execution
     init();
 
-    if (!initialized) {
-      checkInterval = setInterval(() => {
-        init();
-      }, 100);
-
-      // 15 seconds timeout fallback to prevent memory leaks
-      timeoutId = setTimeout(() => {
-        clearInterval(checkInterval);
-      }, 15000);
-    }
+    window.addEventListener('impulse:animations-ready', init);
 
     return () => {
-      if (checkInterval) clearInterval(checkInterval);
-      if (timeoutId) clearTimeout(timeoutId);
+      window.removeEventListener('impulse:animations-ready', init);
       if (cleanupFn) cleanupFn();
     };
   }, dependencies);

@@ -88,12 +88,13 @@ const Testimonials: React.FC<{ data?: any }> = ({ data }) => {
       }
 
       // Testimonials Cards Reveal
-      const cards = gsap.utils.toArray('.test-card-col');
+      const section = sectionRef.current;
+      const cards = section ? gsap.utils.toArray(section.querySelectorAll('.test-card-col')) : [];
       if (cards.length) {
         gsap.set(cards, { autoAlpha: 0, y: 40 });
         gsap.to(cards, {
           scrollTrigger: {
-            trigger: ".testimonials",
+            trigger: section,
             start: "top 75%",
             toggleActions: "play none none reverse"
           },
