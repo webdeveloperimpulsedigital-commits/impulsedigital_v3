@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directoryPath = path.join(__dirname, 'public', 'slide-share-ppt');
+const directoryPath = path.join(__dirname, 'public', 'ppt');
 const outputPath = path.join(__dirname, 'data', 'slidesharePpts.ts');
 
 const IMAGES = [
@@ -55,7 +55,7 @@ fs.readdir(directoryPath, (err, files) => {
         title: title,
         category: category,
         image: image,
-        url: `/slide-share-ppt/${file}`
+        url: `/ppt/${file}`
       });
     }
   });

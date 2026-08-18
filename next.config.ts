@@ -148,8 +148,8 @@ const nextConfig: NextConfig = {
 
       // ── Slideshare path redirect ────────────────────────────────
       {
-        source: '/slide-share-ppt/slideshare/:path*',
-        destination: '/slide-share-ppt/:path*',
+        source: '/slide-share-ppt/:path*',
+        destination: '/ppt/:path*',
         permanent: true,
       },
 

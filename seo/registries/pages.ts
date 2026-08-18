@@ -37,6 +37,7 @@ const sharedCore = [
   '/case-studies/',
   '/careers/',
   '/contact-us/',
+  '/ppt/',
 ] as const;
 
 const sharedServices = [

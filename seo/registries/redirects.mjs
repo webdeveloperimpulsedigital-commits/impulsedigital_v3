@@ -38,6 +38,7 @@ const redirectPairs = [
   ['/case-studies-emech', '/case-studies/electromech/'],
   ['/casestudies/electromech', '/case-studies/electromech/'],
   ['/slideshare-ppt', '/ppt/'],
+  ['/slide-share-ppt', '/ppt/'],
   ['/resources/slideshare-ppt', '/ppt/'],
   ['/online-paid-advertising', '/growth-intelligence/campaign-intelligence/'],
   ['/services/content-writing-services', '/brand-infrastructure/branding/'],
