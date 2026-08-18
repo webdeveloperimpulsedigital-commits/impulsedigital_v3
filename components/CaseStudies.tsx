@@ -55,26 +55,33 @@ const CaseStudies: React.FC<{ data?: any }> = ({ data }) => {
     ]
   };
 
+  const desktopScrollDistance = caseStudiesData.cases.length * 1080;
+
   return (
-    <section className="cosmos-section" id="cases-pin">
-      <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingTop: '8rem' }}>
-        <h2 className="section-heading split-text">{caseStudiesData.heading}</h2>
-      </div>
-      <div className="cosmos-wrapper">
-        {caseStudiesData.cases.map((caseItem: any, idx: number) => (
-          <Link key={idx} href={caseItem.link} className="cosmos-card" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <img src={caseItem.imgSrc} className="hs-card-img" alt={caseItem.imgAlt} loading="lazy" decoding="async" width="600" height="400" />
-            <div className="hs-card-inner">
-              <h3 className="hs-client">{caseItem.client}</h3>
-              <p className="hs-desc">{caseItem.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-      <div className="cosmos-cta" style={{ position: 'absolute', bottom: '12vh', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
-        <Link href="/case-studies/" className="btn" data-cursor="EXPLORE">{caseStudiesData.cta}</Link>
-      </div>
-    </section>
+    <div
+      className="cosmos-scroll-shell"
+      style={{ '--cosmos-scroll-distance': `${desktopScrollDistance}px` } as React.CSSProperties}
+    >
+      <section className="cosmos-section" id="cases-pin">
+        <div className="container" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingTop: '8rem' }}>
+          <h2 className="section-heading split-text">{caseStudiesData.heading}</h2>
+        </div>
+        <div className="cosmos-wrapper">
+          {caseStudiesData.cases.map((caseItem: any, idx: number) => (
+            <Link key={idx} href={caseItem.link} className="cosmos-card" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <img src={caseItem.imgSrc} className="hs-card-img" alt={caseItem.imgAlt} loading="lazy" decoding="async" width="600" height="400" />
+              <div className="hs-card-inner">
+                <h3 className="hs-client">{caseItem.client}</h3>
+                <p className="hs-desc">{caseItem.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="cosmos-cta" style={{ position: 'absolute', bottom: '12vh', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+          <Link href="/case-studies/" className="btn" data-cursor="EXPLORE">{caseStudiesData.cta}</Link>
+        </div>
+      </section>
+    </div>
   );
 };
 
