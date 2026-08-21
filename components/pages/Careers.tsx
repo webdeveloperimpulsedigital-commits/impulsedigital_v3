@@ -854,25 +854,25 @@ const Careers: React.FC = () => {
 
             <div className="car-life-gallery" aria-label="Life at Impulse Digital">
               <figure className="car-life-img car-life-img-1">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 10_17_32 AM (2).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-1.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-2">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 10_17_35 AM (5).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-2.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-3">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 10_17_37 AM (9).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-3.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-4">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 10_17_38 AM (10).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-4.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-5">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 11_16_44 AM (5).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-5.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-6">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 11_16_44 AM (6).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-6.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
               <figure className="car-life-img car-life-img-7">
-                <img src="/images/Career Images/ChatGPT Image May 16, 2026, 11_16_44 AM (7).webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
+                <img src="/images/careers/career-life-7.webp" alt="Impulse Digital Team Collaborating at Mumbai Office - Digital Marketing Agency" loading="lazy" decoding="async"  width={1200} height={675} />
               </figure>
             </div>
           </div>
