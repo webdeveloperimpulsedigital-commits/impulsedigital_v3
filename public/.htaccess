@@ -68,6 +68,11 @@ Options +FollowSymLinks +SymLinksIfOwnerMatch
 
 
   # --------------------------------
+  # 5b. SERVE AE PPT PDF DIRECTLY FROM PPT FOLDER
+  # --------------------------------
+  RewriteRule ^ae/ppt/(.+\.pdf)$ /ppt/$1 [L,NC]
+
+
   # --------------------------------
   # 6. PASS NON-STATIC REQUESTS TO NEXT.JS
   # --------------------------------

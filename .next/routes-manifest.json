@@ -448,6 +448,18 @@
       "regex": "^(?!/_next)/slideshare-ppt/(?:/)?$"
     },
     {
+      "source": "/slide-share-ppt",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slide-share-ppt(?:/)?$"
+    },
+    {
+      "source": "/slide-share-ppt/",
+      "destination": "/ppt/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/slide-share-ppt/(?:/)?$"
+    },
+    {
       "source": "/resources/slideshare-ppt",
       "destination": "/ppt/",
       "statusCode": 308,
@@ -544,10 +556,10 @@
       "regex": "^(?!/_next)/ID-web-blog(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
     },
     {
-      "source": "/slide-share-ppt/slideshare/:path*",
-      "destination": "/slide-share-ppt/:path*",
+      "source": "/slide-share-ppt/:path*",
+      "destination": "/ppt/:path*",
       "statusCode": 308,
-      "regex": "^(?!/_next)/slide-share-ppt/slideshare(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+      "regex": "^(?!/_next)/slide-share-ppt(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
     },
     {
       "source": "/blogs",
@@ -883,6 +895,11 @@
     "beforeFiles": [],
     "afterFiles": [
       {
+        "source": "/ae/ppt/:file(.+\\.pdf)",
+        "destination": "/ppt/:file",
+        "regex": "^/ae/ppt(?:/(.+\\.pdf))(?:/)?$"
+      },
+      {
         "source": "/blog/sitemap_index.xml",
         "destination": "/blog/sitemap-index/",
         "regex": "^/blog/sitemap_index\\.xml(?:/)?$"
@@ -915,12 +932,12 @@
       "namedRegex": "^/ae/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
     },
     {
-      "page": "/ae/ppt/[[...category]]",
-      "regex": "^/ae/ppt(?:/(.+?))?(?:/)?$",
+      "page": "/ae/ppt/[category]",
+      "regex": "^/ae/ppt/([^/]+?)(?:/)?$",
       "routeKeys": {
         "nxtPcategory": "nxtPcategory"
       },
-      "namedRegex": "^/ae/ppt(?:/(?<nxtPcategory>.+?))?(?:/)?$"
+      "namedRegex": "^/ae/ppt/(?<nxtPcategory>[^/]+?)(?:/)?$"
     },
     {
       "page": "/blog/[slug]",
@@ -1341,6 +1358,12 @@
       "regex": "^/ae/growth\\-intelligence/social\\-intelligence(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ae/growth\\-intelligence/social\\-intelligence(?:/)?$"
+    },
+    {
+      "page": "/ae/ppt",
+      "regex": "^/ae/ppt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ae/ppt(?:/)?$"
     },
     {
       "page": "/ae/privacy-policy",

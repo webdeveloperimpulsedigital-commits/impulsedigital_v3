@@ -325,6 +325,10 @@
       "beforeFiles": [],
       "afterFiles": [
         {
+          "source": "/ae/ppt/:file(.+\\.pdf)",
+          "destination": "/ppt/:file"
+        },
+        {
           "source": "/blog/sitemap_index.xml",
           "destination": "/blog/sitemap-index/"
         },
@@ -695,6 +699,16 @@
         "permanent": true
       },
       {
+        "source": "/slide-share-ppt",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
+        "source": "/slide-share-ppt/",
+        "destination": "/ppt/",
+        "permanent": true
+      },
+      {
         "source": "/resources/slideshare-ppt",
         "destination": "/ppt/",
         "permanent": true
@@ -775,8 +789,8 @@
         "permanent": true
       },
       {
-        "source": "/slide-share-ppt/slideshare/:path*",
-        "destination": "/slide-share-ppt/:path*",
+        "source": "/slide-share-ppt/:path*",
+        "destination": "/ppt/:path*",
         "permanent": true
       },
       {
