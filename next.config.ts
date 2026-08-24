@@ -340,6 +340,11 @@ const nextConfig: NextConfig = {
   // No proxy rewrite needed — all blog URLs stay on theimpulsedigital.com.
   async rewrites() {
     return [
+      // AE PPT PDF direct serving rewrite
+      {
+        source: '/ae/ppt/:file(.+\\.pdf)',
+        destination: '/ppt/:file',
+      },
       // India blog sitemap
       {
         source: '/blog/sitemap_index.xml',
