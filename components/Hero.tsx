@@ -18,6 +18,7 @@ const Hero: React.FC<{ data?: any }> = ({ data }) => {
   // Use data or fallback to defaults
   const headlineParts = data?.headlineParts || ["A Digital Marketing", "Agency That Turns"];
   const headlineAccent = data?.headlineAccent || "Data Into Direction";
+  const headlineAccentLink = data?.headlineAccentLink;
   const description = data?.description || "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.";
   const cta = data?.cta || { text: "FIND THE DECISIONS INSIDE YOUR DATA", link: "/contact-us/" };
 
@@ -30,9 +31,20 @@ const Hero: React.FC<{ data?: any }> = ({ data }) => {
               {part}
             </span>
           ))}
-          <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem', '--hero-copy-delay': '0ms' } as React.CSSProperties}>
-            {headlineAccent}
-          </span>
+          {headlineAccentLink ? (
+            <Link
+              href={headlineAccentLink}
+              className="hero-headline title-large text-violet hero-copy-reveal"
+              data-cursor="START"
+              style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem', '--hero-copy-delay': '0ms' } as React.CSSProperties}
+            >
+              {headlineAccent}
+            </Link>
+          ) : (
+            <span className="hero-headline title-large text-violet hero-copy-reveal" style={{ display: 'block', marginTop: '0', marginBottom: '1.5rem', '--hero-copy-delay': '0ms' } as React.CSSProperties}>
+              {headlineAccent}
+            </span>
+          )}
         </h1>
 
         <div className="hero-bottom" style={{ marginTop: '1rem' }}>
