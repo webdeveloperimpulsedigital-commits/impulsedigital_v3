@@ -19,7 +19,7 @@ const Hero: React.FC<{ data?: any }> = ({ data }) => {
   const headlineParts = data?.headlineParts || ["A Digital Marketing", "Agency That Turns"];
   const headlineAccent = data?.headlineAccent || "Data Into Direction";
   const description = data?.description || "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.";
-  const cta = data?.cta || { text: "FIND THE DECISIONS INSIDE YOUR DATA", link: "/growth-intelligence/" };
+  const cta = data?.cta || { text: "FIND THE DECISIONS INSIDE YOUR DATA", link: "/contact-us/" };
 
   return (
     <section className="hero" id="hero">

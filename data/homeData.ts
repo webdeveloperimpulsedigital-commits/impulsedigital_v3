@@ -8,7 +8,7 @@ export const homeData = {
     description: "Impulse Digital helps enterprise teams turn scattered marketing data into AI-native growth intelligence they can actually act on.",
     cta: {
       text: "FIND THE DECISIONS INSIDE YOUR DATA",
-      link: "/growth-intelligence/"
+      link: "/contact-us/"
     }
   },
   caseStudies: {
