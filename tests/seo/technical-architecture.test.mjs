@@ -29,7 +29,7 @@ test('publication registry has unique, real and sitemap-safe paths', async () =>
   const { PAGE_REGISTRY, SITEMAP_PAGES } = await pageRegistryModule;
   const paths = PAGE_REGISTRY.map(({ path }) => path);
   assert.equal(new Set(paths).size, paths.length);
-  assert.ok(SITEMAP_PAGES.length >= 140);
+  assert.ok(SITEMAP_PAGES.length >= 120);
 
   for (const page of SITEMAP_PAGES) {
     assert.equal(page.state, 'public', page.path);
@@ -53,9 +53,19 @@ test('hreflang is reciprocal and only emitted for registered equivalents', async
     assert.ok(alternates.canonical, page.path);
     assert.equal('x-default' in (alternates.languages || {}), false, page.path);
 
+    if (page.canonicalPath) {
+      assert.equal(alternates.canonical, `https://www.theimpulsedigital.com${page.canonicalPath}`);
+      assert.equal(alternates.languages, undefined, page.path);
+      continue;
+    }
+
     if (page.equivalentPath) {
       const peer = getPageRecord(page.equivalentPath);
       assert.equal(peer?.equivalentPath, page.path, page.path);
+      if (peer?.canonicalPath) {
+        assert.equal(alternates.languages, undefined, page.path);
+        continue;
+      }
       assert.ok(alternates.languages['en-IN'], page.path);
       assert.ok(alternates.languages['en-AE'], page.path);
     } else {
@@ -65,6 +75,53 @@ test('hreflang is reciprocal and only emitted for registered equivalents', async
 
   const abuDhabi = getAlternates('/ae/digital-marketing-agency-in-abu-dhabi/');
   assert.deepEqual(Object.keys(abuDhabi.languages), ['en-AE']);
+});
+
+test('confirmed UAE content duplicates consolidate without redirects or noindex', async () => {
+  const { PAGE_REGISTRY, SITEMAP_PAGES, getAlternates } = await pageRegistryModule;
+  const duplicates = PAGE_REGISTRY.filter(({ canonicalPath }) => canonicalPath);
+  const sitemapPaths = new Set(SITEMAP_PAGES.map(({ path }) => path));
+
+  assert.equal(duplicates.length, 19);
+  for (const page of duplicates) {
+    assert.equal(page.market, 'ae', page.path);
+    assert.equal(page.state, 'public', page.path);
+    assert.equal(sitemapPaths.has(page.path), false, page.path);
+    const alternates = getAlternates(page.path);
+    assert.equal(
+      alternates.canonical,
+      `https://www.theimpulsedigital.com${page.canonicalPath}`,
+      page.path,
+    );
+    assert.equal(alternates.languages, undefined, page.path);
+  }
+});
+
+test('UAE SEO conversion routes stay inside the UAE journey', async () => {
+  for (const path of [
+    'data/ae/searchEngineOptimisationData.ts',
+    'data/ae/searchEngineOptimisationDubaiData.ts',
+    'data/ae/b2bSEOData.ts',
+  ]) {
+    const source = await read(path);
+    assert.doesNotMatch(source, /link:\s*["']\/contact-us\//, path);
+    assert.match(source, /link:\s*["']\/ae\/contact-us\//, path);
+  }
+});
+
+test('lead analytics requires a recent same-tab submission and excludes non-production traffic', async () => {
+  const analytics = await read('lib/leadAnalytics.ts');
+  const layout = await read('app/layout.tsx');
+  const contact = await read('components/Contact.tsx');
+
+  assert.match(analytics, /sessionStorage\.setItem\(SUBMISSION_KEY/);
+  assert.match(analytics, /sessionStorage\.removeItem\(SUBMISSION_KEY\)/);
+  assert.match(analytics, /MAX_SUBMISSION_AGE_MS/);
+  assert.match(analytics, /submission\.region !== expectedRegion/);
+  assert.match(analytics, /lead_form_success/);
+  assert.match(layout, /!pathname\.startsWith\('\/admin\/'\)/);
+  assert.match(layout, /hostname === 'www\.theimpulsedigital\.com'/);
+  assert.match(contact, /markLeadFormAttempt/);
 });
 
 test('market switching uses equivalents and market-safe fallbacks', async () => {
@@ -95,6 +152,11 @@ test('market selector click cannot close a menu already opened by hover', async 
   );
   assert.match(navbar, /aria-expanded=\{isRegionDropdownOpen\}/);
   assert.match(navbar, /role="menuitem"/);
+});
+
+test('UAE subpages retain UAE navigation identity', async () => {
+  const navbar = await read('components/Navbar.tsx');
+  assert.match(navbar, /pathname\?\.startsWith\('\/ae\/'\)/);
 });
 
 test('sitemap and root metadata are driven by the publication registry', async () => {

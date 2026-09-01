@@ -1,66 +1,42 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import GrowthIntelligence from '@/components/pages/GrowthIntelligence';
-import { getFAQSchema } from "@/lib/schemaHelper";
+import { growthIntelligenceHubData } from '@/data/ae/serviceHubData';
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
+
+const path = '/ae/growth-intelligence/';
+const title = 'Growth Intelligence Services in UAE | Impulse Digital';
+const description = 'Growth intelligence services for UAE organisations covering customer, market, campaign and social intelligence for clearer regional decisions.';
+
 export const metadata: Metadata = {
-  title: 'Growth Intelligence Services | Impulse Digital',
-  description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
-  keywords: 'growth intelligence, data-driven marketing, brand intelligence',
+  title,
+  description,
+  keywords: 'growth intelligence UAE, customer intelligence UAE, market intelligence UAE, campaign intelligence UAE',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Growth Intelligence Services | Impulse Digital',
-    description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
-    url: `${SITE_URL}/ae/growth-intelligence/`,
+    title,
+    description,
+    url: `${SITE_URL}${path}`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Growth Intelligence Services | Impulse Digital',
-    description: 'Impulse Digital\'s Growth Intelligence division helps brands use data, insights, and intelligence to drive smarter growth across all marketing channels.',
+    title,
+    description,
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
 export default function GrowthIntelligencePage() {
-
-      const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://www.theimpulsedigital.com/growth-intelligence/#service",
-        "name": "Growth Intelligence Services",
-        "url": "https://www.theimpulsedigital.com/growth-intelligence/",
-        "description": "Impulse Digital provides Growth Intelligence services that help brands make sharper marketing, consumer, market, campaign, and performance decisions through data-backed insights.",
-        "serviceType": [
-          "Growth Intelligence",
-          "Consumer Intelligence",
-          "Market Intelligence",
-          "Campaign Intelligence",
-          "Performance Intelligence"
-        ],
-        "areaServed": [
-          "IN",
-          "US"
-        ],
-        "provider": {
-          "@type": "Organization",
-          "name": "Impulse Digital",
-          "url": "https://www.theimpulsedigital.com/"
-        }
-      }
-    ];
-
-      return (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-          />
-          <GrowthIntelligence />
-        </>
-      );
-        
+  const schema = buildServicePageGraph({ path, name: title, description, market: 'ae', areaServed: 'UAE' });
+  return (
+    <>
+      <JsonLd data={schema} id="growth-intelligence-uae-schema" />
+      <GrowthIntelligence data={growthIntelligenceHubData} />
+    </>
+  );
 }

@@ -194,8 +194,8 @@ export const searchEngineOptimisationDubaiData = {
     title: "Ready to Turn Search Intent Into Growth in Dubai?",
     body: "Let's review your current search visibility, identify technical gaps, and build an organic strategy designed to capture decision-makers across Dubai.",
     buttons: [
-      { text: "AUDIT YOUR SEARCH GAPS", link: "/contact-us/", cursor: "AUDIT", primary: true },
-      { text: "START A CONVERSATION", link: "/contact-us/", cursor: "HI", primary: false }
+      { text: "AUDIT YOUR SEARCH GAPS", link: "/ae/contact-us/", cursor: "AUDIT", primary: true },
+      { text: "START A CONVERSATION", link: "/ae/contact-us/", cursor: "HI", primary: false }
     ],
     footnote: "Clear strategy. Technical precision. Transparent reporting. Sustainable organic growth."
   },

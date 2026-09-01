@@ -21,10 +21,10 @@ import {
   ServiceTextList
 } from '@/components/Service/ServiceTemplate';
 
-import { b2bSEOData as data } from '@/data/b2bSEOData';
+import { b2bSEOData } from '@/data/b2bSEOData';
 
 
-const B2BSEO: React.FC = () => {
+const B2BSEO: React.FC<any> = ({ data = b2bSEOData }) => {
   useEffect(() => {
     // We use the 'seo-page' class to share the same styling as standard SEO
     document.body.classList.add('service-page', 'seo-page');

@@ -1,32 +1,42 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ServicesIndex from '@/components/pages/ServicesIndex';
-import { servicesPageData } from '@/data/ae/servicesPageData';
-import { getFAQSchema } from "@/lib/schemaHelper";
+import { servicesPageData, servicesPageHero } from '@/data/ae/servicesPageData';
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
+
+const path = '/ae/services/';
+const title = 'Digital Marketing Services in UAE | Impulse Digital';
+const description = 'Digital marketing services for UAE organisations across growth intelligence, AI marketing systems, SEO, websites, social media, branding and video.';
+
 export const metadata: Metadata = {
-  title: 'Digital Marketing Services | Impulse Digital',
-  description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
-  keywords: 'digital marketing services, marketing services dubai, impulse digital services',
+  title,
+  description,
+  keywords: 'digital marketing services UAE, marketing services Dubai, SEO services UAE, AI marketing UAE',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Digital Marketing Services | Impulse Digital',
-    description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
-    url: `${SITE_URL}/ae/services/`,
+    title,
+    description,
+    url: `${SITE_URL}${path}`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Digital Marketing Services | Impulse Digital',
-    description: 'Explore Impulse Digital\'s full range of digital marketing services: SEO, social media, branding, website development, AI marketing, video production, and growth intelligence.',
+    title,
+    description,
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
 export default function ServicesIndexPage() {
-  const schemas: any[] = [];
-
-  return <ServicesIndex data={servicesPageData} />;
+  const schema = buildServicePageGraph({ path, name: title, description, market: 'ae', areaServed: 'UAE' });
+  return (
+    <>
+      <JsonLd data={schema} id="services-uae-schema" />
+      <ServicesIndex data={servicesPageData} hero={servicesPageHero} />
+    </>
+  );
 }
