@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 import { startHeroCopyReveal } from '@/utils/heroCopyReveal';
 
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LdaK0osAAAAADC8CEqZGlK1VgN2CkYB-iRXfn3y';
+
 const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
   const pathname = usePathname();
   const isAe = pathname === '/ae' || Boolean(pathname?.startsWith('/ae/'));
@@ -126,48 +128,13 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
   }, []);
 
   useEffect(() => {
-    (window as any).rccallback1132219000000597005 = () => {
-      const recap = document.getElementById('recap1132219000000597005');
-      if (recap) {
-        recap.setAttribute('captcha-verified', 'true');
-      }
-      const recapErr = document.getElementById('recapErr1132219000000597005');
-      if (recapErr) {
-        recapErr.style.visibility = 'hidden';
-      }
-    };
-
-    const renderCaptcha = () => {
-      const grecaptcha = (window as any).grecaptcha;
-      if (grecaptcha && grecaptcha.render) {
-        const container = document.getElementById('recap1132219000000597005');
-        if (container && container.innerHTML === '') {
-          try {
-            grecaptcha.render('recap1132219000000597005', {
-              sitekey: '6LdaK0osAAAAADC8CEqZGlK1VgN2CkYB-iRXfn3y',
-              theme: 'dark',
-              callback: 'rccallback1132219000000597005'
-            });
-          } catch (e) {
-            console.error('Error rendering recaptcha:', e);
-          }
-        }
-      }
-    };
-
-    (window as any).onloadRecaptchaCallback = () => {
-      renderCaptcha();
-    };
-
-    if (!(window as any).grecaptcha) {
+    if (!document.getElementById('recaptcha-v3-script')) {
       const script = document.createElement('script');
-      script.id = 'recaptcha-key-script';
-      script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit';
+      script.id = 'recaptcha-v3-script';
+      script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
       script.async = true;
       script.defer = true;
       document.body.appendChild(script);
-    } else {
-      renderCaptcha();
     }
 
     if (!document.getElementById('zsiqscript')) {
@@ -201,14 +168,10 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       s.defer = true;
       document.body.appendChild(s);
     }
-
-    return () => {
-      delete (window as any).rccallback1132219000000597005;
-      delete (window as any).onloadRecaptchaCallback;
-    };
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const form = e.currentTarget;
     const company = form.elements.namedItem('Company') as HTMLInputElement;
     const name = form.elements.namedItem('Last Name') as HTMLInputElement;
@@ -218,25 +181,21 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
     if (!company || company.value.trim().length === 0) {
       alert('Company cannot be empty');
       company?.focus();
-      e.preventDefault();
       return;
     }
     if (!name || name.value.trim().length === 0) {
       alert('Name cannot be empty');
       name?.focus();
-      e.preventDefault();
       return;
     }
     if (!email || email.value.trim().length === 0) {
       alert('Email cannot be empty');
       email?.focus();
-      e.preventDefault();
       return;
     }
     if (!phone || phone.value.trim().length === 0) {
       alert('Phone cannot be empty');
       phone?.focus();
-      e.preventDefault();
       return;
     }
 
@@ -245,7 +204,6 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       if (uploadedFiles.files.length > 3) {
         alert('You can upload a maximum of three files at a time.');
         uploadedFiles.focus();
-        e.preventDefault();
         return;
       }
       let totalFileSize = 0;
@@ -255,7 +213,6 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       if (totalFileSize > 20971520) {
         alert('Total file(s) size should not exceed 20MB.');
         uploadedFiles.focus();
-        e.preventDefault();
         return;
       }
     }
@@ -290,19 +247,8 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
         alert('Please enter a valid email address.');
         email.focus();
-        e.preventDefault();
         return;
       }
-    }
-
-    const recap = document.getElementById('recap1132219000000597005');
-    if (recap && recap.getAttribute('captcha-verified') === 'false') {
-      const recapErr = document.getElementById('recapErr1132219000000597005');
-      if (recapErr) {
-        recapErr.style.visibility = 'visible';
-      }
-      e.preventDefault();
-      return;
     }
 
     const urlparams = new URLSearchParams(window.location.search);
@@ -318,6 +264,36 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
     const submitBtn = form.querySelector('.contact-submit') as HTMLButtonElement;
     if (submitBtn) {
       submitBtn.setAttribute('disabled', 'true');
+    }
+
+    const submitWithToken = (token?: string) => {
+      let captchaInput = form.elements.namedItem('g-recaptcha-response') as HTMLInputElement;
+      if (!captchaInput) {
+        captchaInput = document.createElement('input');
+        captchaInput.type = 'hidden';
+        captchaInput.name = 'g-recaptcha-response';
+        captchaInput.id = 'g-recaptcha-response';
+        form.appendChild(captchaInput);
+      }
+      if (token) {
+        captchaInput.value = token;
+      }
+      form.submit();
+    };
+
+    const grecaptcha = (window as any).grecaptcha;
+    if (grecaptcha && typeof grecaptcha.ready === 'function') {
+      grecaptcha.ready(async () => {
+        try {
+          const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
+          submitWithToken(token);
+        } catch (error) {
+          console.error('reCAPTCHA v3 execution failed:', error);
+          submitWithToken();
+        }
+      });
+    } else {
+      submitWithToken();
     }
   };
 
@@ -419,19 +395,8 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
                 <span>{data?.form?.messageLabel || "Message"}</span>
                 <textarea id="Description" name="Description" rows={5} placeholder={data?.form?.messagePlaceholder || "What is the problem you want us to understand?"}></textarea>
               </label>
-              <label className="contact-upload-field">
-                <span>{data?.form?.uploadLabel || "Upload brief, RFQ, deck, or note, optional (Max 3 files, 20MB limit)"}</span>
-                <input type="file" name="theFile" id="theFile1132219000000597005" multiple />
-                <strong>{data?.form?.uploadStrong || "Have a brief, RFQ, deck, or note? Attach it here."}</strong>
-                <em>{data?.form?.uploadEm || "No brief yet? That is fine. The problem is enough."}</em>
-              </label>
 
-              <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <div id="recap1132219000000597005" {...{ 'captcha-verified': 'false' }}></div>
-                <div id="recapErr1132219000000597005" style={{ fontSize: '12px', color: '#ff4d4d', minHeight: '1.2em', visibility: 'hidden' }}>
-                  Captcha validation failed. If you are not a robot then please try again.
-                </div>
-              </div>
+              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
 
               <button type="submit" className="contact-submit">
                 <span>{data?.form?.submitText || "Start a Conversation"}</span>
@@ -439,6 +404,12 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
                   <use href="#impulse-mark" />
                 </svg>
               </button>
+
+              <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', marginTop: '0.75rem', lineHeight: '1.4' }}>
+                This site is protected by reCAPTCHA and the Google{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255, 255, 255, 0.65)', textDecoration: 'underline' }}>Privacy Policy</a> and{' '}
+                <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255, 255, 255, 0.65)', textDecoration: 'underline' }}>Terms of Service</a> apply.
+              </p>
             </form>
           </div>
         </div>
