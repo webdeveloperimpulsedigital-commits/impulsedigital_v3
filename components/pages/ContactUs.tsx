@@ -74,7 +74,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
         ty = ((event.clientY - rect.top) / rect.height) - 0.5;
       };
       hero.addEventListener('mousemove', moveHandler as EventListener);
-      
+
       const tickerHandler = () => {
         cx += (tx - cx) * 0.08;
         cy += (ty - cy) * 0.08;
@@ -143,7 +143,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       $zoho.salesiq = $zoho.salesiq || {
         widgetcode: 'siqe8e2de51a58ff011f46d1d5718469d24fb1812f710b8e38bd932663adc239364',
         values: {},
-        ready: function() {
+        ready: function () {
           try {
             if ($zoho.salesiq && $zoho.salesiq.floatbutton) {
               $zoho.salesiq.floatbutton.visible('hide');
@@ -299,7 +299,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
 
   return (
     <main id="main-content" className="contact-page-wrapper">
-      
+
 
       <svg width="0" height="0" aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>
         <defs>
@@ -351,7 +351,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
           </div>
 
           <div className="contact-hero-right" id="contact-form">
-            <form 
+            <form
               id="webform1132219000000597005"
               name="WebToLeads1132219000000597005"
               action="https://crm.zoho.in/crm/WebToLeadForm"
@@ -361,33 +361,33 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
               className="contact-shell-form hero-copy-reveal"
               encType="multipart/form-data"
             >
-              <input type="text" style={{display:'none'}} name="xnQsjsdp" value="3fdab897f0bcfb046c089a96653ff3ce3e052ac4ee2710bf1975f74e718c56f5" readOnly />
+              <input type="text" style={{ display: 'none' }} name="xnQsjsdp" value="3fdab897f0bcfb046c089a96653ff3ce3e052ac4ee2710bf1975f74e718c56f5" readOnly />
               <input type="hidden" name="zc_gad" id="zc_gad" value="" />
-              <input type="text" style={{display:'none'}} name="xmIwtLD" value="73b678a6bc6723d2f2228f3b5916f3593bf43d1fbc528d305c97cc00bea7dec6afe8822544be20609bd9f6ee44997ec6" readOnly />
-              <input type="text" style={{display:'none'}} name="actionType" value="TGVhZHM=" readOnly />
-              <input type="text" style={{display:'none'}} name="returnURL" value={isAe ? "https://www.theimpulsedigital.com/ae/thank-you/" : "https://www.theimpulsedigital.com/thank-you/"} readOnly />
+              <input type="text" style={{ display: 'none' }} name="xmIwtLD" value="73b678a6bc6723d2f2228f3b5916f3593bf43d1fbc528d305c97cc00bea7dec6afe8822544be20609bd9f6ee44997ec6" readOnly />
+              <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
+              <input type="text" style={{ display: 'none' }} name="returnURL" value={isAe ? "https://www.theimpulsedigital.com/ae/thank-you/" : "https://www.theimpulsedigital.com/thank-you/"} readOnly />
               <input type="hidden" name="Lead Source" value="Website Contact Us" />
               {/* Do not remove this code. */}
-              <input type="text" style={{display:'none'}} id="ldeskuid" name="ldeskuid" readOnly />
-              <input type="text" style={{display:'none'}} id="LDTuvid" name="LDTuvid" readOnly />
+              <input type="text" style={{ display: 'none' }} id="ldeskuid" name="ldeskuid" readOnly />
+              <input type="text" style={{ display: 'none' }} id="LDTuvid" name="LDTuvid" readOnly />
               {/* Do not remove this code. */}
-              <input type="text" style={{display: 'none'}} name="aG9uZXlwb3Q" value="" readOnly />
+              <input type="text" style={{ display: 'none' }} name="aG9uZXlwb3Q" value="" readOnly />
 
               <div className="contact-form-grid">
                 <label>
-                  <span>{data?.form?.companyLabel || "Company name"} <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.companyLabel || "Company name"} <span style={{ color: '#ff4d4d' }}>*</span></span>
                   <input type="text" id="Company" name="Company" autoComplete="organization" required />
                 </label>
                 <label>
-                  <span>{data?.form?.nameLabel || "Your name"} <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.nameLabel || "Your name"} <span style={{ color: '#ff4d4d' }}>*</span></span>
                   <input type="text" id="Last_Name" name="Last Name" autoComplete="name" required />
                 </label>
                 <label>
-                  <span>{data?.form?.emailLabel || "Email"} <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.emailLabel || "Email"} <span style={{ color: '#ff4d4d' }}>*</span></span>
                   <input type="email" id="Email" name="Email" autoComplete="email" required />
                 </label>
                 <label>
-                  <span>{data?.form?.phoneLabel || "Phone number"} <span style={{color: '#ff4d4d'}}>*</span></span>
+                  <span>{data?.form?.phoneLabel || "Phone number"} <span style={{ color: '#ff4d4d' }}>*</span></span>
                   <input type="tel" id="Phone" name="Phone" autoComplete="tel" required />
                 </label>
               </div>
@@ -400,9 +400,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
 
               <button type="submit" className="contact-submit">
                 <span>{data?.form?.submitText || "Start a Conversation"}</span>
-                <svg viewBox="801 344 274 272" aria-hidden="true">
-                  <use href="#impulse-mark" />
-                </svg>
+
               </button>
 
               <p style={{ fontSize: '11px', color: 'rgba(255, 255, 255, 0.45)', marginTop: '0.75rem', lineHeight: '1.4' }}>
@@ -467,7 +465,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
 
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
-              src={data?.location?.mapSrc || (isAe 
+              src={data?.location?.mapSrc || (isAe
                 ? "https://maps.google.com/maps?q=Regus%20Boulevard%20Tower%201,%20Boulevard%20Plaza%20Tower%201,%20Downtown%20Dubai,%20UAE&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 : "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30142.480967467654!2d72.953999!3d19.203494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9218eaaaaab%3A0xe087a0855822211d!2sImpulse%20Digital%20-%20%231%20Digital%20Marketing%20Agency%20in%20Mumbai!5e0!3m2!1sen!2sus!4v1779974855996!5m2!1sen!2sus"
               )}
