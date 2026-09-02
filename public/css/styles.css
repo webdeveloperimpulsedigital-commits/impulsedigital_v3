@@ -12434,9 +12434,12 @@ button,
         font-size: 0.9rem;
     }
 
-    .contact-page-wrapper .contact-filter,
-    .contact-page-wrapper .contact-location {
+    .contact-page-wrapper .contact-filter {
         padding: 5rem 0;
+    }
+
+    .contact-page-wrapper .contact-location {
+        padding: 1.5rem 0 4rem;
     }
 
     .contact-page-wrapper .contact-filter-card {
@@ -12471,6 +12474,54 @@ button,
         overflow-wrap: anywhere;
     }
 }
+
+.contact-filter-cards-mobile {
+    display: none !important;
+}
+
+.contact-filter-cards-desktop {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .contact-page .contact-lede,
+    .contact-page-wrapper .contact-lede {
+        display: none !important;
+    }
+
+    .contact-filter-cards-desktop {
+        display: none !important;
+    }
+
+    .contact-filter-cards-mobile {
+        display: flex !important;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 1.5rem 0 2.5rem;
+        padding-bottom: 0;
+    }
+
+    .contact-filter-cards-mobile .contact-filter-card {
+        min-height: auto;
+    }
+
+    .contact-page .contact-hero,
+    .contact-page-wrapper .contact-hero {
+        padding-bottom: 2rem;
+    }
+
+    .contact-page .contact-location,
+    .contact-page-wrapper .contact-location {
+        padding-top: 1.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .contact-page .contact-hero-grid,
+    .contact-page-wrapper .contact-hero-grid {
+        gap: 1.5rem;
+    }
+}
+
 
 
 /* Mobile Signal Pipeline (GSO Page Mobile View Animation) */

@@ -97,6 +97,46 @@ const indexablePages = [
     lang: 'en-AE',
     alternates: ['en-IN', 'en-AE'],
   },
+  { path: '/growth-intelligence/', lang: 'en-IN', alternates: ['en-IN', 'en-AE'] },
+  { path: '/ae/growth-intelligence/', lang: 'en-AE', alternates: ['en-IN', 'en-AE'] },
+  { path: '/services/', lang: 'en-IN', alternates: ['en-IN', 'en-AE'] },
+  { path: '/ae/services/', lang: 'en-AE', alternates: ['en-IN', 'en-AE'] },
+  { path: '/brand-infrastructure/', lang: 'en-IN', alternates: ['en-IN', 'en-AE'] },
+  { path: '/ae/brand-infrastructure/', lang: 'en-AE', alternates: ['en-IN', 'en-AE'] },
+  { path: '/ai-marketing-systems/', lang: 'en-IN', alternates: ['en-IN', 'en-AE'] },
+  { path: '/ae/ai-marketing-systems/', lang: 'en-AE', alternates: ['en-IN', 'en-AE'] },
+  {
+    path: '/brand-infrastructure/search-engine-optimisation/b2b-seo/',
+    lang: 'en-IN',
+    alternates: ['en-IN', 'en-AE'],
+  },
+  {
+    path: '/ae/brand-infrastructure/search-engine-optimisation/b2b-seo/',
+    lang: 'en-AE',
+    alternates: ['en-IN', 'en-AE'],
+  },
+];
+
+const canonicalDuplicatePages = [
+  ['/ae/about-us/', '/about-us/'],
+  ['/ae/careers/', '/careers/'],
+  ['/ae/privacy-policy/', '/privacy-policy/'],
+  ['/ae/case-studies/', '/case-studies/'],
+  ['/ae/case-studies/amazon-india-evp-strategy/', '/case-studies/amazon-india-evp-strategy/'],
+  ['/ae/case-studies/qure-ai/', '/case-studies/qure-ai/'],
+  ['/ae/case-studies/abg-brut-india/', '/case-studies/abg-brut-india/'],
+  ['/ae/case-studies/electromech/', '/case-studies/electromech/'],
+  ['/ae/case-studies/fours-for-good/', '/case-studies/fours-for-good/'],
+  ['/ae/case-studies/shaking-things-up/', '/case-studies/shaking-things-up/'],
+  ['/ae/case-studies/automag-india/', '/case-studies/automag-india/'],
+  ['/ae/case-studies/abg-kbc/', '/case-studies/abg-kbc/'],
+  ['/ae/case-studies/chings-foodfarmer/', '/case-studies/chings-foodfarmer/'],
+  ['/ae/case-studies/uppercase/', '/case-studies/uppercase/'],
+  ['/ae/case-studies/tcpl/', '/case-studies/tcpl/'],
+  ['/ae/case-studies/amazon-talent-communication-engine/', '/case-studies/amazon-talent-communication-engine/'],
+  ['/ae/case-studies/amazon-unplugged/', '/case-studies/amazon-unplugged/'],
+  ['/ae/case-studies/automag-bajaj-auto/', '/case-studies/automag-bajaj-auto/'],
+  ['/ae/case-studies/dmart/', '/case-studies/dmart/'],
 ];
 
 for (const page of indexablePages) {
@@ -132,6 +172,21 @@ for (const page of indexablePages) {
   });
   check(`${page.path} JSON-LD is syntactically valid`, () => {
     for (const block of jsonLdBlocks(html)) JSON.parse(block);
+  });
+}
+
+for (const [duplicatePath, canonicalPath] of canonicalDuplicatePages) {
+  const response = await request(duplicatePath);
+  const html = await response.text();
+  check(`${duplicatePath} remains accessible`, () => assert.equal(response.status, 200));
+  check(`${duplicatePath} consolidates to its India canonical`, () => {
+    assert.equal(headValue(html, 'rel', 'canonical', 'href'), canonicalFor(canonicalPath));
+  });
+  check(`${duplicatePath} is absent from hreflang clusters`, () => {
+    assert.equal(headTags(html).some((tag) => /\bhreflang=/i.test(tag)), false);
+  });
+  check(`${duplicatePath} is not noindex`, () => {
+    assert.doesNotMatch(headValue(html, 'name', 'robots') || '', /\bnoindex\b/i);
   });
 }
 
@@ -215,7 +270,7 @@ for (const pathname of ['/thank-you/', '/ae/thank-you/']) {
     assert.match(response.headers.get('content-type') || '', /xml/i);
   });
   check('main sitemap has a substantial unique URL set', () => {
-    assert.ok(urls.length >= 146, `found ${urls.length}`);
+    assert.ok(urls.length >= 126, `found ${urls.length}`);
     assert.equal(new Set(urls).size, urls.length);
   });
   check('main sitemap contains only canonical HTTPS URLs', () => {
@@ -227,6 +282,27 @@ for (const pathname of ['/thank-you/', '/ae/thank-you/']) {
       assert.ok(url === canonicalOrigin || url.endsWith('/'), url);
       assert.doesNotMatch(url, /\/(?:admin|api|thank-you|test-chatbot)(?:\/|$)/);
     }
+    for (const [duplicatePath] of canonicalDuplicatePages) {
+      assert.equal(urls.includes(canonicalFor(duplicatePath)), false, duplicatePath);
+    }
+  });
+}
+
+{
+  const homepage = await (await request('/')).text();
+  const admin = await (await request('/admin/chats/')).text();
+  const analyticsIds = /G-(?:EFFQ2YYFN8|69R7Z1PMXQ)|GTM-(?:M4TW43X3|5Z8KMKBC)|xsz8wxw6mn/;
+  if (['127.0.0.1', 'localhost'].includes(baseUrl.hostname)) {
+    check('local builds do not initialise production analytics', () => {
+      assert.doesNotMatch(homepage, analyticsIds);
+    });
+  } else {
+    check('production homepage initialises the regional analytics stack', () => {
+      assert.match(homepage, analyticsIds);
+    });
+  }
+  check('admin routes do not initialise production analytics', () => {
+    assert.doesNotMatch(admin, analyticsIds);
   });
 }
 

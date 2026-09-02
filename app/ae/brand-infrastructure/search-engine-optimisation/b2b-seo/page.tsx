@@ -1,67 +1,42 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import B2BSEO from '@/components/pages/B2BSEO';
-import { getFAQSchema } from "@/lib/schemaHelper";
+import { b2bSEOUaeData } from '@/data/ae/b2bSEOData';
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
+
+const path = '/ae/brand-infrastructure/search-engine-optimisation/b2b-seo/';
+const title = 'B2B SEO Services in UAE | Impulse Digital';
+const description = 'B2B SEO services for UAE organisations covering regional search intent, technical SEO, decision-stage content and verified lead measurement.';
+
 export const metadata: Metadata = {
-  title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
-  description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
-  keywords: 'b2b seo, b2b seo agency, b2b search engine optimisation',
+  title,
+  description,
+  keywords: 'B2B SEO UAE, B2B SEO agency UAE, B2B search engine optimisation Dubai',
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
-    description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
-    url: `${SITE_URL}/ae/brand-infrastructure/search-engine-optimisation/b2b-seo/`,
+    title,
+    description,
+    url: `${SITE_URL}${path}`,
     images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'B2B SEO Services | B2B Search Engine Optimisation | Impulse Digital',
-    description: 'Impulse Digital\'s B2B SEO services help business-to-business companies rank for high-intent commercial keywords and generate qualified leads through organic search.',
+    title,
+    description,
     images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
 export default function B2BSEOPage() {
-
-      const schemas = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/b2b-seo/#service",
-        "name": "B2B SEO Services",
-        "url": "https://www.theimpulsedigital.com/brand-infrastructure/search-engine-optimisation/b2b-seo/",
-        "description": "Impulse Digital provides B2B SEO services focused on improving search visibility, qualified lead generation, industry authority, technical optimisation, and content strategy for business-to-business brands.",
-        "serviceType": [
-          "B2B SEO",
-          "Lead Generation SEO",
-          "Technical SEO",
-          "B2B Content SEO",
-          "Authority Building",
-          "Search Strategy"
-        ],
-        "areaServed": [
-          "IN",
-          "US"
-        ],
-        "provider": {
-          "@type": "Organization",
-          "name": "Impulse Digital",
-          "url": "https://www.theimpulsedigital.com/"
-        }
-      }
-    ];
-
-      return (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
-          />
-          <B2BSEO />
-        </>
-      );
-        
+  const schema = buildServicePageGraph({ path, name: title, description, market: 'ae', areaServed: 'UAE' });
+  return (
+    <>
+      <JsonLd data={schema} id="b2b-seo-uae-schema" />
+      <B2BSEO data={b2bSEOUaeData} />
+    </>
+  );
 }

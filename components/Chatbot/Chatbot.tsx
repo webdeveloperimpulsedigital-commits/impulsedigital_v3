@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import ChatHeader from './ChatHeader';
 import ChatMessages from './ChatMessages';
 import ChatInput from './ChatInput';
+import { fireLeadEvent, markLeadFormAttempt } from '@/lib/leadAnalytics';
 
 
 interface Message {
@@ -117,6 +118,7 @@ export default function Chatbot() {
         }
         captchaInput.value = token;
 
+        markLeadFormAttempt(pathname || window.location.pathname, 'chatbot');
         form.submit();
         console.log('Zoho CRM lead submission triggered natively via hidden iframe with Captcha token.');
       }
@@ -394,6 +396,9 @@ export default function Chatbot() {
   }, [showCaptcha, captchaVerified]);
 
   const handleToggle = () => {
+    if (!isOpen) {
+      fireLeadEvent('chat_open', { cta_page: pathname || window.location.pathname });
+    }
     setIsOpen(!isOpen);
   };
 

@@ -19,6 +19,7 @@ export interface PageRecord {
   pageClass: PageClass;
   lastModified: string;
   equivalentPath?: string;
+  canonicalPath?: string;
 }
 
 const UPDATED = {
@@ -27,6 +28,7 @@ const UPDATED = {
   caseStudy: '2026-06-01',
   location: '2026-07-01',
   locationCurrent: '2026-07-24',
+  currentRelease: '2026-09-01',
   legal: '2026-07-13',
 } as const;
 
@@ -86,6 +88,39 @@ const caseStudies = [
   'chings-kurkure',
   'chings-foodfarmer',
 ] as const;
+
+// These UAE routes intentionally reuse the India page content. Google already
+// consolidates them to the India URLs, so the registry makes that relationship
+// explicit without redirecting, deleting or noindexing the UAE browsing routes.
+const uaeCanonicalDuplicates = new Set([
+  '/ae/about-us/',
+  '/ae/careers/',
+  '/ae/privacy-policy/',
+  '/ae/case-studies/',
+  '/ae/case-studies/amazon-india-evp-strategy/',
+  '/ae/case-studies/qure-ai/',
+  '/ae/case-studies/abg-brut-india/',
+  '/ae/case-studies/electromech/',
+  '/ae/case-studies/fours-for-good/',
+  '/ae/case-studies/shaking-things-up/',
+  '/ae/case-studies/automag-india/',
+  '/ae/case-studies/abg-kbc/',
+  '/ae/case-studies/chings-foodfarmer/',
+  '/ae/case-studies/uppercase/',
+  '/ae/case-studies/tcpl/',
+  '/ae/case-studies/amazon-talent-communication-engine/',
+  '/ae/case-studies/amazon-unplugged/',
+  '/ae/case-studies/automag-bajaj-auto/',
+  '/ae/case-studies/dmart/',
+]);
+
+const uaeContentRefreshes = new Set([
+  '/ae/growth-intelligence/',
+  '/ae/services/',
+  '/ae/brand-infrastructure/',
+  '/ae/ai-marketing-systems/',
+  '/ae/brand-infrastructure/search-engine-optimisation/b2b-seo/',
+]);
 
 const indiaSocialLocations = [
   'mumbai',
@@ -161,7 +196,17 @@ const pairedRecords = (
       : lastModified;
   return [
     { path, market: 'in', state: 'public', pageClass, lastModified: recordLastModified, equivalentPath: aePath },
-    { path: aePath, market: 'ae', state: 'public', pageClass, lastModified: recordLastModified, equivalentPath: path },
+    {
+      path: aePath,
+      market: 'ae',
+      state: 'public',
+      pageClass,
+      lastModified: uaeCanonicalDuplicates.has(aePath) || uaeContentRefreshes.has(aePath)
+        ? UPDATED.currentRelease
+        : recordLastModified,
+      equivalentPath: path,
+      ...(uaeCanonicalDuplicates.has(aePath) ? { canonicalPath: path } : {}),
+    },
   ];
 });
 
@@ -264,7 +309,7 @@ export function getPageRecord(pathname: string): PageRecord | undefined {
 }
 
 export function isSitemapEligible(page: PageRecord): boolean {
-  return page.state === 'public';
+  return page.state === 'public' && !page.canonicalPath;
 }
 
 export const SITEMAP_PAGES = PAGE_REGISTRY.filter(isSitemapEligible);
@@ -280,6 +325,10 @@ export function getAlternates(pathname: string): {
 } {
   const page = getPageRecord(pathname);
   if (!page || page.state !== 'public') return {};
+
+  if (page.canonicalPath) {
+    return { canonical: absoluteUrl(page.canonicalPath) };
+  }
 
   const canonical = absoluteUrl(page.path);
   if (!page.equivalentPath) {
@@ -299,6 +348,13 @@ export function getAlternates(pathname: string): {
         [page.market === 'ae' ? 'en-AE' : 'en-IN']: canonical,
       },
     };
+  }
+
+  // A canonical duplicate is not a valid hreflang destination. Keep the
+  // canonical page self-canonical, but do not advertise the duplicate as a
+  // regional alternate.
+  if (equivalent.canonicalPath) {
+    return { canonical };
   }
 
   return {

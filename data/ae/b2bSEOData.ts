@@ -1,0 +1,153 @@
+import { b2bSEOData } from '@/data/b2bSEOData';
+
+export const b2bSEOUaeData = {
+  ...b2bSEOData,
+  hero: {
+    headlineParts: ['B2B SEO in UAE', 'Built Around the', 'Buyer Committee.'],
+    headlineAccent: 'Buyer Committee.',
+    description: '<span class="seo-hero-lead">UAE B2B buyers often research across commercial, technical and regional requirements before contacting sales.</span> Impulse Digital structures search journeys that help those stakeholders find the right service page, understand the offer and move from comparison to a qualified conversation.',
+    buttons: [
+      { text: 'Find Your UAE Search Gaps', link: '#connect', cursor: 'FIND' },
+      { text: 'See the B2B SEO Process', link: '#process', cursor: 'SEE' },
+    ],
+  },
+  stats: {
+    ...b2bSEOData.stats,
+    title: 'B2B Search Measured Beyond Traffic',
+    metrics: [
+      { ...b2bSEOData.stats.metrics[0], desc: 'organic visits generated across documented B2B search work.' },
+      { ...b2bSEOData.stats.metrics[1], desc: 'reported return on investment across B2B SEO engagements.' },
+      { ...b2bSEOData.stats.metrics[2], desc: 'reported business growth after B2B search became an acquisition channel.' },
+    ],
+    footnote: 'For UAE programmes, the reporting layer separates discovery traffic from decision-stage visits, enquiries and lead quality.',
+  },
+  problem: {
+    title: 'UAE Search Demand Can Be Visible and Still Miss the Buyer.',
+    intro: [
+      'A regional decision-maker may search by service, industry, Emirate, specification or business problem.',
+      'A global page can look relevant while leaving the local buying context unanswered.',
+    ],
+    pivot: 'That gap turns discovery into uncertainty.',
+    gaps: [
+      'A UAE page repeats global copy without explaining its regional role.',
+      'Dubai and country pages compete for the same search intent.',
+      'Commercial and technical stakeholders land on one generic answer.',
+      'Proof exists, but the path from service to relevant case study is unclear.',
+      'Contact routes move UAE visitors into the wrong regional journey.',
+      'Reporting counts sessions without separating useful enquiries from noise.',
+    ],
+    outro: [
+      'The remedy is not a larger set of near-duplicate location pages.',
+      'It is one clear page role for each search need and a journey that supports the regional buying decision.',
+    ],
+  },
+  vs: {
+    title: 'B2B SEO for the UAE, in Plain English',
+    leftLabel: 'Regional duplication',
+    leftStrike: 'changes the place name and repeats the same answer.',
+    rightLabel: 'Regional B2B SEO',
+    rightText: 'defines what the UAE buyer needs to ',
+    rightHighlight: 'understand next',
+    closing: 'The purpose is qualified visibility for the search tasks that genuinely need a UAE answer.',
+    steps: [
+      { num: '01', text: 'Separate UAE-wide, Emirate-level and non-geographic service intent.' },
+      { num: '02', text: 'Map business, technical and procurement questions to the right page.' },
+      { num: '03', text: 'Keep one canonical owner for each topic to prevent regional cannibalisation.' },
+      { num: '04', text: 'Connect useful service detail, proof and contact routes within the UAE journey.' },
+      { num: '05', text: 'Measure qualified actions separately from raw organic visits.' },
+    ],
+  },
+  uses: {
+    title: 'Where UAE B2B SEO Creates Leverage',
+    cards: [
+      { title: 'Regional Intent Mapping', body: 'Distinguish searches that need a UAE, Dubai, Abu Dhabi or global answer before creating or changing pages.', outcome: 'Output: intent map, page ownership rules, canonical decisions and priority query groups.' },
+      { title: 'Decision-Stage Service Content', body: 'Build pages that answer commercial, operational and technical questions for buyers evaluating a regional partner.', outcome: 'Output: service-page briefs, stakeholder questions, proof links and enquiry-path recommendations.' },
+      { title: 'Technical and International SEO', body: 'Keep crawl, indexation, canonical and hreflang signals aligned across India and UAE sections of the website.', outcome: 'Output: technical findings, regional URL rules, schema inputs and validation checks.' },
+      { title: 'Industry and Account Discovery', body: 'Organise useful content around the industries, problems and service requirements that named accounts research.', outcome: 'Output: industry clusters, account-relevant themes, internal links and decision-stage content ideas.' },
+      { title: 'Lead Quality Measurement', body: 'Track how organic visitors move from a regional landing page to form, phone, email or chat actions without counting direct thank-you visits as leads.', outcome: 'Output: funnel events, regional attribution fields and lead-quality reporting inputs.' },
+      { title: 'UAE and GCC Expansion', body: 'Create new market pages only when the audience, offer and search task can be maintained as genuinely distinct.', outcome: 'Output: expansion criteria, localisation requirements and consolidation safeguards.' },
+    ],
+  },
+  channels: {
+    title: 'When the UAE Buyer Is Still Building the Shortlist',
+    intro: 'Use B2B SEO when regional discovery happens before a sales conversation.\nIt is especially useful when:',
+    list: [
+      'Different stakeholders search for different aspects of the same service.',
+      'UAE and global pages currently compete for similar queries.',
+      'The sales cycle needs education before an enquiry is realistic.',
+      'Dubai demand must be distinguished from wider UAE demand.',
+      'Service pages need clearer links to proof and expertise.',
+      'Organic reporting does not yet show regional lead quality.',
+      'Technical buyers need more detail than a campaign landing page provides.',
+      'The website must support both local and cross-border buying journeys.',
+    ],
+    outro: 'The search programme should make the next decision easier.\nIt should not create another regional page simply to occupy a URL.',
+  },
+  whenToUse: {
+    title: 'We Connect Regional Intent to One Clear Page Owner',
+    paragraphs: [
+      'International SEO becomes unstable when equivalent pages claim different regions but provide the same answer.',
+      'We first decide whether the query needs a UAE-specific response. If it does, the page receives distinct content, regional links and aligned schema. If it does not, canonical signals consolidate the duplication.',
+    ],
+    closer: 'That discipline protects existing equity while giving genuinely regional pages a clear reason to rank.',
+    pillsHeading: 'We connect:',
+    pills: [
+      { label: 'Search geography', desc: 'Whether the need is UAE-wide, Emirate-level or non-geographic.' },
+      { label: 'Stakeholder intent', desc: 'What commercial, technical and procurement roles need to learn.' },
+      { label: 'Page ownership', desc: 'Which single URL should rank for each search task.' },
+      { label: 'Regional proof paths', desc: 'How buyers reach relevant capability and case-study information.' },
+      { label: 'Canonical signals', desc: 'How duplicate and independent market pages are distinguished.' },
+      { label: 'Conversion routes', desc: 'How UAE visitors reach the correct form, phone and thank-you journey.' },
+      { label: 'Measurement', desc: 'How qualified regional actions are separated from general traffic.' },
+    ],
+    punchline: ['One intent.', 'One page owner.'],
+  },
+  process: {
+    title: 'How We Build B2B SEO for UAE Markets',
+    steps: [
+      { num: '1.', title: 'Define the Regional Search Role', desc: 'Review UAE queries, current rankings, competitors, existing page equity and the commercial purpose of each regional URL.' },
+      { num: '2.', title: 'Map Stakeholders and Decisions', desc: 'Identify the questions different buyer roles ask before a service reaches the shortlist.' },
+      { num: '3.', title: 'Align the Technical Signals', desc: 'Correct canonicals, hreflang, sitemap entries, schema and internal links so Google receives one coherent regional model.' },
+      { num: '4.', title: 'Write the UAE Answer', desc: 'Refresh only the copy needed to explain the service, market role, decision criteria and next step for UAE buyers.' },
+      { num: '5.', title: 'Validate Search and Lead Movement', desc: 'Track indexation, query movement and verified conversion actions, then refine from current Search Console and lead data.' },
+    ],
+    footer: 'The objective is not more regional URLs.\n\nIt is a cleaner path from UAE search intent to a qualified conversation.',
+  },
+  fit: {
+    title: 'UAE B2B SEO Is a Good Fit If',
+    list: [
+      'Your buyers research before they contact a supplier.',
+      'Your UAE and global pages are too similar.',
+      'Dubai and country-level pages need clearer ownership.',
+      'Several stakeholders influence the final shortlist.',
+      'Your services require explanation before a buyer can enquire.',
+      'Organic traffic is not yet connected to verified lead actions.',
+      'Your regional internal links send visitors into the wrong market journey.',
+      'You want to expand without creating thin location pages.',
+      'Existing ranking equity must be protected while regional signals improve.',
+    ],
+    closer: 'This is for teams that need regional search clarity.\nIt is not a reason to duplicate every global page under a UAE path.',
+  },
+  finalCta: {
+    title: 'Find the Gaps in Your UAE Search Journey.',
+    body: 'Tell us which services, industries and markets your buyers research. We will help identify where page ownership, regional content, technical signals or conversion routes need to become clearer.',
+    buttons: [
+      { text: 'Audit Your UAE Search Gaps', link: '/ae/contact-us/', cursor: 'FIND', primary: false },
+      { text: 'Start a Conversation', link: '/ae/contact-us/', cursor: 'TALK', primary: false },
+    ],
+    footnote: 'No duplicate city pages. No ranking guarantees. Clear regional roles, useful content and measurable lead paths.',
+  },
+  faq: {
+    title: 'What to Know About B2B SEO in the UAE',
+    items: [
+      { q: 'What is B2B SEO for the UAE?', a: 'It is the work of making a B2B company discoverable for relevant UAE searches while giving commercial, technical and procurement stakeholders enough information to evaluate the next step.' },
+      { q: 'Do UAE and global service pages need different content?', a: 'Only when they serve different search needs. A UAE page should explain a genuine regional role. If it repeats the global answer, consolidation is usually safer than forcing both pages to compete.' },
+      { q: 'Should Dubai have a separate page from the UAE?', a: 'A separate Dubai page is useful when the query has distinct city-level intent and the page can answer it clearly. Otherwise, one UAE page should own the broader topic.' },
+      { q: 'How do canonicals and hreflang work together?', a: 'A canonical identifies the preferred version of duplicate or highly similar content. Hreflang connects distinct, indexable regional equivalents. A non-canonical duplicate should not be advertised as an hreflang alternative.' },
+      { q: 'What content supports a long B2B buying journey?', a: 'Service detail, industry context, decision criteria, technical explanations, case studies, comparison material and clear contact routes can support different stakeholders before they enquire.' },
+      { q: 'How is UAE B2B SEO measured?', a: 'Measurement should separate visibility and traffic from qualified actions such as form attempts, verified submissions, phone clicks, email clicks and chat openings.' },
+      { q: 'Can the programme support GCC expansion?', a: 'Yes, when each new market has a real business role, maintained information and distinct search demand. Expansion should follow evidence rather than a location-page template.' },
+      { q: 'Do you guarantee first-page rankings?', a: 'No. Rankings depend on Google and competing websites. The controllable work is technical clarity, useful content, coherent regional signals and ongoing measurement.' },
+    ],
+  },
+};

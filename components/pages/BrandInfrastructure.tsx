@@ -14,7 +14,7 @@ const MARK =
   'M1014.2,569.56c1.74-38.31.87-92.29-14.17-126.43-4.45-10.09-11.39-18.02-21.2-22.92-19.98-9.99-55.06-15.74-77.2-15.78l-54.99-.1c-11.88-.02-22.87-4.01-24.19-14.77-1.4-11.46,9.4-19.23,20.5-20.7,37.6-5.01,74.9-7.39,112.77-5.34,18.7,1.01,36.2,3.78,53.65,9.6,17.16,5.73,29.66,17.62,35.66,34.79s8.71,34.06,9.87,52.44c2.45,39.04-.02,77.43-5.33,116.08-1.52,11.09-10.07,21.87-21.85,19.47-10.45-2.12-14.04-14.54-13.51-26.33Z';
 
 /* ── Services ─────────────────────────────────────────── */
-const SERVICES = [
+const DEFAULT_SERVICES = [
   {
     index: '01',
     label: 'Dominate traditional search.',
@@ -90,7 +90,13 @@ const SERVICES = [
 /* ══════════════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════════════ */
-const BrandInfrastructure: React.FC = () => {
+const BrandInfrastructure: React.FC<any> = ({ data }) => {
+  const content = data || {
+    titleLine1: 'Brand',
+    titleLine2: 'Infrastructure.',
+    description: 'Architect authoritative digital footprints that dominate search and command absolute trust.',
+    services: DEFAULT_SERVICES,
+  };
   const pageRef = useRef<HTMLElement>(null);
   useServicePageBackground('.gi2-split');
 
@@ -179,14 +185,14 @@ const BrandInfrastructure: React.FC = () => {
       <section className="gi2-split" id="warp-start">
         {/* Left: Sticky Title */}
         <div className="gi2-split-left">
-          <h1 className="gi2-main-title">Brand{' '}<br />Infrastructure.</h1>
-          <p className="gi2-main-desc">Architect authoritative digital footprints that dominate search and command absolute trust.</p>
+          <h1 className="gi2-main-title">{content.titleLine1}{' '}<br />{content.titleLine2}</h1>
+          <p className="gi2-main-desc">{content.description}</p>
         </div>
 
         {/* Right: Scrolling List */}
         <div className="gi2-split-right">
           <div className="gi2-list">
-            {SERVICES.map((svc, i) => (
+            {content.services.map((svc, i) => (
               <Link
                 key={i}
                 href={svc.to}

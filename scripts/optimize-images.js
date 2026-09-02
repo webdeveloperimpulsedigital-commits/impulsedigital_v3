@@ -7,7 +7,7 @@ const publicDir = path.join(workspaceDir, 'public');
 
 // PNG files to convert to WebP (from Option A)
 const pngsToWebp = [
-  'images/case-study-image/chings- kurkure/CHing+Kurkure.png',
+  'images/case-study-image/chings-kurkure/chings-kurkure.png',
   'images/case-study-image/chings-foodfarmer/Foodfarmer.png',
   'images/case-study-image/salt/tata-cunsumer.png',
   'images/case-study-image/salt/shaking-things-up.png',

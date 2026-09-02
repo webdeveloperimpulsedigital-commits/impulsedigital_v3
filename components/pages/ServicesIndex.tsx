@@ -15,9 +15,14 @@ import { useGsapSafeEffect } from '@/hooks/useGsapSafeEffect';
 interface ServicesIndexProps {
   categoryFilter?: string;
   data?: any;
+  hero?: {
+    titleBefore: string;
+    titleAccent: string;
+    description: string;
+  };
 }
 
-const ServicesIndex: React.FC<ServicesIndexProps> = ({ categoryFilter, data }) => {
+const ServicesIndex: React.FC<ServicesIndexProps> = ({ categoryFilter, data, hero }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const displayData = categoryFilter 
@@ -156,15 +161,15 @@ const ServicesIndex: React.FC<ServicesIndexProps> = ({ categoryFilter, data }) =
                 </>
               ) : (
                 <>
-                  Beyond <br className="aww3-mobile-break" />
-                  <span style={{ color: '#aa3bff' }}>Execution.</span>
+                  {hero?.titleBefore || 'Beyond'} <br className="aww3-mobile-break" />
+                  <span style={{ color: '#aa3bff' }}>{hero?.titleAccent || 'Execution.'}</span>
                 </>
               )}
             </h1>
             <p className="aww3-hero-desc hero-copy-reveal">
               {categoryFilter 
                 ? displayData[0]?.description
-                : "We architect intelligent growth systems. Explore our comprehensive suite of AI-native marketing, search dominance, and elite brand infrastructure."}
+                : (hero?.description || "We architect intelligent growth systems. Explore our comprehensive suite of AI-native marketing, search dominance, and elite brand infrastructure.")}
             </p>
           </div>
         </div>

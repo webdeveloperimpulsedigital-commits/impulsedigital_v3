@@ -8,6 +8,7 @@ import ClientProviders from '@/components/ClientProviders';
 import ChatbotWrapper from '@/components/Chatbot/ChatbotWrapper';
 import InteractionLoader from '@/components/InteractionLoader';
 import WebVitals from '@/components/WebVitals';
+import LeadAnalytics from '@/components/LeadAnalytics';
 import { getAlternates, getPageRecord } from '@/seo/registries/pages';
 import './globals.css';
 import './styles/resources.css';
@@ -75,12 +76,18 @@ export default async function RootLayout({
 }) {
   const headersList = await headers();
   const region = headersList.get('x-region') || 'in';
+  const pathname = headersList.get('x-pathname') || '/';
+  const hostname = (headersList.get('host') || '').split(':', 1)[0].toLowerCase();
   const lang = region === 'ae' ? 'en-AE' : 'en-IN';
+  const analyticsEnabled = (
+    hostname === 'www.theimpulsedigital.com'
+    || hostname === 'theimpulsedigital.com'
+  ) && !pathname.startsWith('/admin/');
 
   return (
     <html lang={lang}>
       <head>
-        {region === 'ae' && (
+        {analyticsEnabled && region === 'ae' && (
           <>
             {/* Google tag (gtag.js) */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-69R7Z1PMXQ"></script>
@@ -170,7 +177,7 @@ export default async function RootLayout({
         </noscript>
 
         {/* Google Analytics directly in head for SEO verification (India only) */}
-        {region !== 'ae' && (
+        {analyticsEnabled && region !== 'ae' && (
           <>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFFQ2YYFN8"></script>
             <script
@@ -200,7 +207,7 @@ export default async function RootLayout({
       </head>
       <body>
         {/* Google Tag Manager (noscript) for AE only */}
-        {region === 'ae' && (
+        {analyticsEnabled && region === 'ae' && (
           <noscript>
             <iframe 
               src="https://www.googletagmanager.com/ns.html?id=GTM-5Z8KMKBC"
@@ -211,7 +218,7 @@ export default async function RootLayout({
           </noscript>
         )}
         {/* Google Tag Manager (noscript) for India only */}
-        {region !== 'ae' && (
+        {analyticsEnabled && region !== 'ae' && (
           <noscript>
             <iframe 
               src="https://www.googletagmanager.com/ns.html?id=GTM-M4TW43X3"
@@ -263,19 +270,24 @@ export default async function RootLayout({
 
 
         {/* Microsoft Clarity Tracking Code */}
-        <Script
-          id="microsoft-clarity"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "xsz8wxw6mn");
-            `,
-          }}
-        />
+        {analyticsEnabled && (
+          <>
+            <Script
+              id="microsoft-clarity"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function(c,l,a,r,i,t,y){
+                      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                  })(window, document, "clarity", "script", "xsz8wxw6mn");
+                `,
+              }}
+            />
+            <LeadAnalytics />
+          </>
+        )}
 
         {/* Client-side providers: scroll restoration, route animation */}
         <ClientProviders />

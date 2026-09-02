@@ -330,7 +330,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
             </div>
           </div>
 
-          <div className="contact-filter-cards" id="warp-start">
+          <div className="contact-filter-cards contact-filter-cards-desktop" id="warp-start">
             {(data?.filterCards || [
               {
                 title: "We Only Take Work We Can Do Justice To.",
@@ -444,6 +444,27 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
               </p>
             </div>
           </div>
+
+          <div className="contact-filter-cards contact-filter-cards-mobile">
+            {(data?.filterCards || [
+              {
+                title: "We Only Take Work We Can Do Justice To.",
+                paragraphs: ["We are not built to say yes to everything.", "There is work we can do extremely well, and there is work someone else may be better suited for.", "So we will look at what you share and respond honestly."],
+                isAlert: false
+              },
+              {
+                title: "This Form Is Not for Job Applications.",
+                paragraphs: ["If you are applying for a role, do not use this form.", "Applications sent here will not reach HR. They will not be reviewed. They will not be considered.", "Please apply only through the Careers page or the hiring email mentioned there.", "This form is for business enquiries only."],
+                isAlert: true
+              }
+            ]).map((card: any, idx: number) => (
+              <article key={idx} className={`contact-filter-card ${card.isAlert ? 'contact-filter-card-alert' : ''}`}>
+                <h2>{card.title}</h2>
+                {card.paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
+              </article>
+            ))}
+          </div>
+
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
               src={data?.location?.mapSrc || (isAe 

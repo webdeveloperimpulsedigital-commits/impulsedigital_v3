@@ -4,6 +4,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
+import { markLeadFormAttempt } from '@/lib/leadAnalytics';
 
 interface ContactProps {
   title?: string;
@@ -222,6 +223,8 @@ const Contact: React.FC<ContactProps> = ({ title }) => {
       smarturlfield.setAttribute('name', 'service');
       form.appendChild(smarturlfield);
     }
+
+    markLeadFormAttempt(pathname || window.location.pathname);
 
     const submitBtn = form.querySelector('.contact-submit') as HTMLButtonElement;
     if (submitBtn) {
