@@ -155,11 +155,20 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       }
     };
 
-    (window as any).onloadRecaptchaCallback = () => {
-      renderCaptcha();
+    const tryRender = () => {
+      const grecaptcha = (window as any).grecaptcha;
+      if (grecaptcha && grecaptcha.ready) {
+        grecaptcha.ready(renderCaptcha);
+      } else if (grecaptcha && grecaptcha.render) {
+        renderCaptcha();
+      }
     };
 
-    if (!(window as any).grecaptcha) {
+    (window as any).onloadRecaptchaCallback = () => {
+      tryRender();
+    };
+
+    if (!(window as any).grecaptcha && !document.getElementById('recaptcha-key-script')) {
       const script = document.createElement('script');
       script.id = 'recaptcha-key-script';
       script.src = 'https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit';
@@ -167,8 +176,10 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
       script.defer = true;
       document.body.appendChild(script);
     } else {
-      renderCaptcha();
+      tryRender();
     }
+
+    const captchaRetryTimer = setTimeout(tryRender, 600);
 
     if (!document.getElementById('zsiqscript')) {
       const $zoho = (window as any).$zoho || {};
@@ -203,6 +214,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
     }
 
     return () => {
+      clearTimeout(captchaRetryTimer);
       delete (window as any).rccallback1132219000000597005;
       delete (window as any).onloadRecaptchaCallback;
     };
@@ -354,7 +366,7 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
             </div>
           </div>
 
-          <div className="contact-filter-cards" id="warp-start">
+          <div className="contact-filter-cards contact-filter-cards-desktop" id="warp-start">
             {(data?.filterCards || [
               {
                 title: "We Only Take Work We Can Do Justice To.",
@@ -419,12 +431,13 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
                 <span>{data?.form?.messageLabel || "Message"}</span>
                 <textarea id="Description" name="Description" rows={5} placeholder={data?.form?.messagePlaceholder || "What is the problem you want us to understand?"}></textarea>
               </label>
-              <label className="contact-upload-field">
+              {/* Hidden for now: File Upload Field */}
+              {/* <label className="contact-upload-field">
                 <span>{data?.form?.uploadLabel || "Upload brief, RFQ, deck, or note, optional (Max 3 files, 20MB limit)"}</span>
                 <input type="file" name="theFile" id="theFile1132219000000597005" multiple />
                 <strong>{data?.form?.uploadStrong || "Have a brief, RFQ, deck, or note? Attach it here."}</strong>
                 <em>{data?.form?.uploadEm || "No brief yet? That is fine. The problem is enough."}</em>
-              </label>
+              </label> */}
 
               <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div id="recap1132219000000597005" {...{ 'captcha-verified': 'false' }}></div>
@@ -473,6 +486,27 @@ const ContactUs: React.FC<{ data?: any }> = ({ data }) => {
               </p>
             </div>
           </div>
+
+          <div className="contact-filter-cards contact-filter-cards-mobile">
+            {(data?.filterCards || [
+              {
+                title: "We Only Take Work We Can Do Justice To.",
+                paragraphs: ["We are not built to say yes to everything.", "There is work we can do extremely well, and there is work someone else may be better suited for.", "So we will look at what you share and respond honestly."],
+                isAlert: false
+              },
+              {
+                title: "This Form Is Not for Job Applications.",
+                paragraphs: ["If you are applying for a role, do not use this form.", "Applications sent here will not reach HR. They will not be reviewed. They will not be considered.", "Please apply only through the Careers page or the hiring email mentioned there.", "This form is for business enquiries only."],
+                isAlert: true
+              }
+            ]).map((card: any, idx: number) => (
+              <article key={idx} className={`contact-filter-card ${card.isAlert ? 'contact-filter-card-alert' : ''}`}>
+                <h2>{card.title}</h2>
+                {card.paragraphs.map((p: string, i: number) => <p key={i}>{p}</p>)}
+              </article>
+            ))}
+          </div>
+
           <div className="contact-map-shell" aria-label="Map embed placeholder">
             <iframe
               src={data?.location?.mapSrc || (isAe 
