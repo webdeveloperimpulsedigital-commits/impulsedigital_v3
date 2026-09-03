@@ -112,6 +112,8 @@ const uaeCanonicalDuplicates = new Set([
   '/ae/case-studies/amazon-unplugged/',
   '/ae/case-studies/automag-bajaj-auto/',
   '/ae/case-studies/dmart/',
+  '/ae/case-studies/mastercard/',
+  '/ae/case-studies/hul/',
 ]);
 
 const uaeContentRefreshes = new Set([

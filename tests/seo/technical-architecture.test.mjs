@@ -82,7 +82,7 @@ test('confirmed UAE content duplicates consolidate without redirects or noindex'
   const duplicates = PAGE_REGISTRY.filter(({ canonicalPath }) => canonicalPath);
   const sitemapPaths = new Set(SITEMAP_PAGES.map(({ path }) => path));
 
-  assert.equal(duplicates.length, 19);
+  assert.equal(duplicates.length, 21);
   for (const page of duplicates) {
     assert.equal(page.market, 'ae', page.path);
     assert.equal(page.state, 'public', page.path);
