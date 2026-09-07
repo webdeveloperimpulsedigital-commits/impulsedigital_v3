@@ -1,5 +1,5 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/ae/case-studies/automag-bajaj-auto/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__1r58tx4._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1op-8m3._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0upre5m.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0nll4m4._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0mbvfee._.js")

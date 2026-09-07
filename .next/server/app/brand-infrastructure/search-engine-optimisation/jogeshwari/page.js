@@ -1,5 +1,5 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/brand-infrastructure/search-engine-optimisation/jogeshwari/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__0msqimr._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__06fafv-._.js")
 R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_09-dowi.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0nll4m4._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0mbvfee._.js")
