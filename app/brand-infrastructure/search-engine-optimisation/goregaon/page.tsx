@@ -1,33 +1,51 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGoregaonLocation from '@/components/pages/seo-locations/SeoGoregaonLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
-import { seoGoregaonData } from "@/data/seoGoregaonData";
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
+
+const path = '/brand-infrastructure/search-engine-optimisation/goregaon/';
+const title = 'SEO Company in Goregaon | Top SEO Agency & Services | Impulse Digital';
+const description = 'Partner with Impulse Digital, a premier SEO company in Goregaon. Our expert SEO agency delivers revenue-driven SEO services for local, B2B & enterprise brands. Get a free audit!';
 
 export const metadata: Metadata = {
-  title: 'SEO Company in Goregaon | Best SEO Services | Impulse Digital',
-  description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
-  keywords: 'seo agency in goregaon, seo company in goregaon, seo services, local seo goregaon, impulse digital',
+  title,
+  description,
+  keywords: 'seo company in goregaon, seo agency in goregaon, seo service in goregaon, seo services in goregaon, local seo goregaon, impulse digital',
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: `${SITE_URL}${path}`,
+  },
   openGraph: {
-    title: 'SEO Agency in Goregaon | Impulse Digital',
-    description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
-    url: `${SITE_URL}/brand-infrastructure/search-engine-optimisation/goregaon/`,
-    images: [{ url: `https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg` }],
+    title,
+    description,
+    url: `${SITE_URL}${path}`,
+    images: [{ url: `${SITE_URL}/ImpulseDigital_Logo.svg` }],
     type: 'website',
     siteName: 'Impulse Digital',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SEO Agency in Goregaon | Impulse Digital',
-    description: 'Stop losing Goregaon customers to competitors who rank higher. Impulse Digital is a specialist SEO company in Goregaon with 34 years of experience and a free first audit. Talk to us.',
-    images: [`https://www.theimpulsedigital.com/ImpulseDigital_Logo.svg`],
+    title,
+    description,
+    images: [`${SITE_URL}/ImpulseDigital_Logo.svg`],
     site: '@impulsedigi',
   },
 };
 
 export default function SeoGoregaonLocationPage() {
-    const schemas = [getComplexFAQSchema(seoGoregaonData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path,
+    name: 'SEO Services in Goregaon | Impulse Digital',
+    description: 'Comprehensive SEO services in Goregaon covering local search, technical SEO, B2B search marketing, Generative AI search optimization, and enterprise organic growth.',
+    market: 'in',
+    areaServed: 'Goregaon, Mumbai',
+  });
 
-  return <SeoGoregaonLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoGoregaonLocation />
+    </>
+  );
 }
