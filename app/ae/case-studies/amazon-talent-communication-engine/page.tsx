@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AmazonTalentCommunicationCaseStudy from '@/components/pages/AmazonTalentCommunicationCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Amazon Talent Communication Case Study | Employer Branding by Impulse Digital',
   description: 'See how Impulse Digital supported Amazon’s employer branding engine across Prime Day storytelling, employee advocacy, social media, job boards, and internal referral campaigns.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonTalentCommunicationPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/amazon-talent-communication-engine/',
+    name: "Amazon Talent Communication Case Study | Employer Branding by Impulse Digital",
+    description: "See how Impulse Digital supported Amazon’s employer branding engine across Prime Day storytelling, employee advocacy, social media, job boards, and internal referral campaigns.",
+    market: 'ae',
+  });
 
-  return <AmazonTalentCommunicationCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <AmazonTalentCommunicationCaseStudy />
+    </>
+  );
 }

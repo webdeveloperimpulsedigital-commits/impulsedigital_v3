@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AmazonUnpluggedCaseStudy from '@/components/pages/AmazonUnpluggedCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Amazon Unplugged Case Study | Employer Brand Video Series by Impulse Digital',
   description: 'See how Impulse Digital helped build Amazon Unplugged, a 6-part employer brand video series featuring senior leadership conversations, with 1.2M+ views and 9.5M+ impressions.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonUnpluggedPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/case-studies/amazon-unplugged/',
+    name: "Amazon Unplugged Case Study | Employer Brand Video Series by Impulse Digital",
+    description: "See how Impulse Digital helped build Amazon Unplugged, a 6-part employer brand video series featuring senior leadership conversations, with 1.2M+ views and 9.5M+ impressions.",
+    market: 'in',
+  });
 
-  return <AmazonUnpluggedCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <AmazonUnpluggedCaseStudy />
+    </>
+  );
 }

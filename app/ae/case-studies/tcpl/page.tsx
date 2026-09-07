@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import TcplCaseStudy from '@/components/pages/TcplCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'TCPL Case Study | Impulse Digital',
   description: 'How Impulse Digital helped TCPL execute effective digital marketing campaigns that drove brand awareness and consumer engagement.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function TcplCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/tcpl/',
+    name: "TCPL Case Study | Impulse Digital",
+    description: "How Impulse Digital helped TCPL execute effective digital marketing campaigns that drove brand awareness and consumer engagement.",
+    market: 'ae',
+  });
 
-  return <TcplCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <TcplCaseStudy />
+    </>
+  );
 }

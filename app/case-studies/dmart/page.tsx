@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import DMartCaseStudy from '@/components/pages/DMartCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'DMart Case Study | Impulse Digital',
   description: 'How Impulse Digital supported DMart\'s digital marketing efforts, building online presence and driving consumer engagement for India\'s largest retail chain.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function DMartCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/case-studies/dmart/',
+    name: "DMart Case Study | Impulse Digital",
+    description: "How Impulse Digital supported DMart\\",
+    market: 'in',
+  });
 
-  return <DMartCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <DMartCaseStudy />
+    </>
+  );
 }

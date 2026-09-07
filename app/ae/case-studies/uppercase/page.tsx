@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import UppercaseCaseStudy from '@/components/pages/UppercaseCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Uppercase Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Uppercase build digital brand presence and drive growth through strategic digital marketing and content.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function UppercaseCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/uppercase/',
+    name: "Uppercase Case Study | Impulse Digital",
+    description: "How Impulse Digital helped Uppercase build digital brand presence and drive growth through strategic digital marketing and content.",
+    market: 'ae',
+  });
 
-  return <UppercaseCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <UppercaseCaseStudy />
+    </>
+  );
 }

@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKoparkhairaneLocation from '@/components/pages/seo-locations/SeoKoparkhairaneLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoKoparkhairaneData } from "@/data/seoKoparkhairaneData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKoparkhairaneLocationPage() {
-    const schemas = [getComplexFAQSchema(seoKoparkhairaneData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/koparkhairane/',
+    name: 'SEO Services in Koparkhairane | Impulse Digital',
+    description: 'Comprehensive SEO services in Koparkhairane covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Koparkhairane, Mumbai',
+  });
 
-  return <SeoKoparkhairaneLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoKoparkhairaneLocation />
+    </>
+  );
 }

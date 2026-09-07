@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AutomagBajajAutoCaseStudy from '@/components/pages/AutomagBajajAutoCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Automag Bajaj Auto Case Study | Impulse Digital',
   description: 'How Impulse Digital and Automag partnered with Bajaj Auto to execute high-impact digital campaigns that drove brand engagement and sales.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function AutomagBajajAutoCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/automag-bajaj-auto/',
+    name: "Automag Bajaj Auto Case Study | Impulse Digital",
+    description: "How Impulse Digital and Automag partnered with Bajaj Auto to execute high-impact digital campaigns that drove brand engagement and sales.",
+    market: 'ae',
+  });
 
-  return <AutomagBajajAutoCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <AutomagBajajAutoCaseStudy />
+    </>
+  );
 }

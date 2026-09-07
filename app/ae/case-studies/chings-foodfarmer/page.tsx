@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ChingsFoodfarmerCaseStudy from '@/components/pages/ChingsFoodfarmerCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Chings Foodfarmer Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Chings Foodfarmer connect with food lovers through creative digital storytelling and targeted social media marketing.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function ChingsFoodfarmerCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/chings-foodfarmer/',
+    name: "Chings Foodfarmer Case Study | Impulse Digital",
+    description: "How Impulse Digital helped Chings Foodfarmer connect with food lovers through creative digital storytelling and targeted social media marketing.",
+    market: 'ae',
+  });
 
-  return <ChingsFoodfarmerCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <ChingsFoodfarmerCaseStudy />
+    </>
+  );
 }

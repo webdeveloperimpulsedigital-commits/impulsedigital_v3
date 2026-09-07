@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoNerulLocation from '@/components/pages/seo-locations/SeoNerulLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoNerulData } from "@/data/seoNerulData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoNerulLocationPage() {
-    const schemas = [getComplexFAQSchema(seoNerulData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/nerul/',
+    name: 'SEO Services in Nerul | Impulse Digital',
+    description: 'Comprehensive SEO services in Nerul covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Nerul, Mumbai',
+  });
 
-  return <SeoNerulLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoNerulLocation />
+    </>
+  );
 }

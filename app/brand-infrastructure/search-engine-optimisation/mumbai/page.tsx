@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMumbaiLocation from '@/components/pages/seo-locations/SeoMumbaiLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoMumbaiData } from "@/data/seoMumbaiData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMumbaiLocationPage() {
-    const schemas = [getComplexFAQSchema(seoMumbaiData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/mumbai/',
+    name: 'SEO Services in Mumbai | Impulse Digital',
+    description: 'Comprehensive SEO services in Mumbai covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Mumbai',
+  });
 
-  return <SeoMumbaiLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoMumbaiLocation />
+    </>
+  );
 }

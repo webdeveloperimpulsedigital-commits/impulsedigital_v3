@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoSanpadaLocation from '@/components/pages/seo-locations/SeoSanpadaLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoSanpadaData } from "@/data/seoSanpadaData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoSanpadaLocationPage() {
-    const schemas = [getComplexFAQSchema(seoSanpadaData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/sanpada/',
+    name: 'SEO Services in Sanpada | Impulse Digital',
+    description: 'Comprehensive SEO services in Sanpada covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Sanpada, Mumbai',
+  });
 
-  return <SeoSanpadaLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoSanpadaLocation />
+    </>
+  );
 }

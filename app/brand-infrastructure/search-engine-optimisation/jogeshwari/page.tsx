@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoJogeshwariLocation from '@/components/pages/seo-locations/SeoJogeshwariLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoJogeshwariData } from "@/data/seoJogeshwariData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoJogeshwariLocationPage() {
-    const schemas = [getComplexFAQSchema(seoJogeshwariData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/jogeshwari/',
+    name: 'SEO Services in Jogeshwari | Impulse Digital',
+    description: 'Comprehensive SEO services in Jogeshwari covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Jogeshwari, Mumbai',
+  });
 
-  return <SeoJogeshwariLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoJogeshwariLocation />
+    </>
+  );
 }

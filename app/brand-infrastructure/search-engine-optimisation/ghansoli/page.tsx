@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGhansoliLocation from '@/components/pages/seo-locations/SeoGhansoliLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoGhansoliData } from "@/data/seoGhansoliData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoGhansoliLocationPage() {
-    const schemas = [getComplexFAQSchema(seoGhansoliData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/ghansoli/',
+    name: 'SEO Services in Ghansoli | Impulse Digital',
+    description: 'Comprehensive SEO services in Ghansoli covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Ghansoli, Mumbai',
+  });
 
-  return <SeoGhansoliLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoGhansoliLocation />
+    </>
+  );
 }

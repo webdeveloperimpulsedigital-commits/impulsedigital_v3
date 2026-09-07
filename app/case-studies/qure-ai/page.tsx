@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import QureAICaseStudy from '@/components/pages/QureAICaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Qure.ai Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Qure.ai expand their digital presence and reach healthcare decision-makers through targeted digital marketing.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function QureAICaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/case-studies/qure-ai/',
+    name: "Qure.ai Case Study | Impulse Digital",
+    description: "How Impulse Digital helped Qure.ai expand their digital presence and reach healthcare decision-makers through targeted digital marketing.",
+    market: 'in',
+  });
 
-  return <QureAICaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <QureAICaseStudy />
+    </>
+  );
 }

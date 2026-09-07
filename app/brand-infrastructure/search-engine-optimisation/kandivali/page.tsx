@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKandivaliLocation from '@/components/pages/seo-locations/SeoKandivaliLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoKandivaliData } from "@/data/seoKandivaliData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKandivaliLocationPage() {
-    const schemas = [getComplexFAQSchema(seoKandivaliData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/kandivali/',
+    name: 'SEO Services in Kandivali | Impulse Digital',
+    description: 'Comprehensive SEO services in Kandivali covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Kandivali, Mumbai',
+  });
 
-  return <SeoKandivaliLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoKandivaliLocation />
+    </>
+  );
 }

@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoDadarLocation from '@/components/pages/seo-locations/SeoDadarLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoDadarData } from "@/data/seoDadarData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoDadarLocationPage() {
-    const schemas = [getComplexFAQSchema(seoDadarData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/dadar/',
+    name: 'SEO Services in Dadar | Impulse Digital',
+    description: 'Comprehensive SEO services in Dadar covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Dadar, Mumbai',
+  });
 
-  return <SeoDadarLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoDadarLocation />
+    </>
+  );
 }

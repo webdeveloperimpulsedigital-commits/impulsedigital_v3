@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import FoursForGoodCaseStudy from '@/components/pages/FoursForGoodCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Fours For Good Case Study | Impulse Digital',
   description: 'How Impulse Digital helped Fours For Good build brand awareness and community engagement through strategic digital marketing.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function FoursForGoodCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/fours-for-good/',
+    name: "Fours For Good Case Study | Impulse Digital",
+    description: "How Impulse Digital helped Fours For Good build brand awareness and community engagement through strategic digital marketing.",
+    market: 'ae',
+  });
 
-  return <FoursForGoodCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <FoursForGoodCaseStudy />
+    </>
+  );
 }

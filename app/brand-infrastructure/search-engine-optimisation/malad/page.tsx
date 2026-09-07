@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMaladLocation from '@/components/pages/seo-locations/SeoMaladLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoMaladData } from "@/data/seoMaladData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMaladLocationPage() {
-    const schemas = [getComplexFAQSchema(seoMaladData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/malad/',
+    name: 'SEO Services in Malad | Impulse Digital',
+    description: 'Comprehensive SEO services in Malad covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Malad, Mumbai',
+  });
 
-  return <SeoMaladLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoMaladLocation />
+    </>
+  );
 }

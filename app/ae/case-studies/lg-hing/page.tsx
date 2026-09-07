@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import LGHingCaseStudy from '@/components/pages/LGHingCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'LG Hing Case Study | Impulse Digital',
   description: 'How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function LGHingCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/lg-hing/',
+    name: "LG Hing Case Study | Impulse Digital",
+    description: "How Impulse Digital created impactful digital marketing solutions for LG Hing, building brand awareness and driving consumer engagement.",
+    market: 'ae',
+  });
 
-  return <LGHingCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <LGHingCaseStudy />
+    </>
+  );
 }

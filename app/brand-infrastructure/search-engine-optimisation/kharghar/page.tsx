@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoKhargharLocation from '@/components/pages/seo-locations/SeoKhargharLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoKhargharData } from "@/data/seoKhargharData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoKhargharLocationPage() {
-    const schemas = [getComplexFAQSchema(seoKhargharData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/kharghar/',
+    name: 'SEO Services in Kharghar | Impulse Digital',
+    description: 'Comprehensive SEO services in Kharghar covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Kharghar, Mumbai',
+  });
 
-  return <SeoKhargharLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoKhargharLocation />
+    </>
+  );
 }

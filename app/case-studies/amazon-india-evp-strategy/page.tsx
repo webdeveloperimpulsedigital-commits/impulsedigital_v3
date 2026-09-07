@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AmazonEVPCaseStudy from '@/components/pages/AmazonEVPCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Amazon India EVP Strategy Case Study | Employer Branding by Impulse Digital',
   description: 'See how Impulse Digital supported Amazon India’s EVP development through employee research, focus group discussions, thematic synthesis, and employer brand messaging clarity.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonEVPPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/case-studies/amazon-india-evp-strategy/',
+    name: "Amazon India EVP Strategy Case Study | Employer Branding by Impulse Digital",
+    description: "See how Impulse Digital supported Amazon India’s EVP development through employee research, focus group discussions, thematic synthesis, and employer brand messaging clarity.",
+    market: 'in',
+  });
 
-  return <AmazonEVPCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <AmazonEVPCaseStudy />
+    </>
+  );
 }

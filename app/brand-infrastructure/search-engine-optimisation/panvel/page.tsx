@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoPanvelLocation from '@/components/pages/seo-locations/SeoPanvelLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoPanvelData } from "@/data/seoPanvelData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoPanvelLocationPage() {
-    const schemas = [getComplexFAQSchema(seoPanvelData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/panvel/',
+    name: 'SEO Services in Panvel | Impulse Digital',
+    description: 'Comprehensive SEO services in Panvel covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Panvel, Mumbai',
+  });
 
-  return <SeoPanvelLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoPanvelLocation />
+    </>
+  );
 }

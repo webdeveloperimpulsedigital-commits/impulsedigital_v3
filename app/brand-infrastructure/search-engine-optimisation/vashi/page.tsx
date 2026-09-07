@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoVashiLocation from '@/components/pages/seo-locations/SeoVashiLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoVashiData } from "@/data/seoVashiData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoVashiLocationPage() {
-    const schemas = [getComplexFAQSchema(seoVashiData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/vashi/',
+    name: 'SEO Services in Vashi | Impulse Digital',
+    description: 'Comprehensive SEO services in Vashi covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Vashi, Mumbai',
+  });
 
-  return <SeoVashiLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoVashiLocation />
+    </>
+  );
 }

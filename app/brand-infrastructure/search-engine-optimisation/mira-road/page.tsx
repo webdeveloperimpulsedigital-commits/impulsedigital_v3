@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMiraRoadLocation from '@/components/pages/seo-locations/SeoMiraRoadLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoMiraRoadData } from "@/data/seoMiraRoadData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMiraRoadLocationPage() {
-    const schemas = [getComplexFAQSchema(seoMiraRoadData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/mira-road/',
+    name: 'SEO Services in Mira Road | Impulse Digital',
+    description: 'Comprehensive SEO services in Mira Road covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Mira Road, Mumbai',
+  });
 
-  return <SeoMiraRoadLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoMiraRoadLocation />
+    </>
+  );
 }

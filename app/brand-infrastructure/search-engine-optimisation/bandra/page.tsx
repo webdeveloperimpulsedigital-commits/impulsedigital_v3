@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoBandraLocation from '@/components/pages/seo-locations/SeoBandraLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoBandraData } from "@/data/seoBandraData";
 
 export const metadata: Metadata = {
@@ -26,7 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoBandraLocationPage() {
-    const schemas = [getComplexFAQSchema(seoBandraData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/bandra/',
+    name: 'SEO Services in Bandra | Impulse Digital',
+    description: 'Comprehensive SEO services in Bandra covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Bandra, Mumbai',
+  });
 
-  return <SeoBandraLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoBandraLocation />
+    </>
+  );
 }

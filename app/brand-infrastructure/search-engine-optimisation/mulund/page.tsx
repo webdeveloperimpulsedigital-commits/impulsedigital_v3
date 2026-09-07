@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMulundLocation from '@/components/pages/seo-locations/SeoMulundLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoMulundData } from "@/data/seoMulundData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMulundLocationPage() {
-    const schemas = [getComplexFAQSchema(seoMulundData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/mulund/',
+    name: 'SEO Services in Mulund | Impulse Digital',
+    description: 'Comprehensive SEO services in Mulund covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Mulund, Mumbai',
+  });
 
-  return <SeoMulundLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoMulundLocation />
+    </>
+  );
 }

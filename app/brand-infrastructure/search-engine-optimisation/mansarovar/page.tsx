@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoMansarovarLocation from '@/components/pages/seo-locations/SeoMansarovarLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoMansarovarData } from "@/data/seoMansarovarData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoMansarovarLocationPage() {
-    const schemas = [getComplexFAQSchema(seoMansarovarData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/mansarovar/',
+    name: 'SEO Services in Mansarovar | Impulse Digital',
+    description: 'Comprehensive SEO services in Mansarovar covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Mansarovar, Mumbai',
+  });
 
-  return <SeoMansarovarLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoMansarovarLocation />
+    </>
+  );
 }

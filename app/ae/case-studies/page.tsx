@@ -1,8 +1,9 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import CaseStudies from '@/components/pages/CaseStudies';
 import { caseStudiesPageData } from '@/data/ae/caseStudiesPageData';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Digital Marketing Case Studies | Impulse Digital',
   description: 'Browse Impulse Digital\'s case studies showcasing successful digital marketing campaigns, SEO wins, branding projects, and measurable results for leading brands.',
@@ -26,7 +27,18 @@ export const metadata: Metadata = {
 };
 
 export default function CaseStudiesPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/',
+    name: "Digital Marketing Case Studies | Impulse Digital",
+    description: "Browse Impulse Digital\\",
+    market: 'ae',
+    isIndex: true,
+  });
 
-  return <CaseStudies data={caseStudiesPageData} />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-index-schema" />
+      <CaseStudies data={caseStudiesPageData} />
+    </>
+  );
 }

@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoGhatkoparLocation from '@/components/pages/seo-locations/SeoGhatkoparLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoGhatkoparData } from "@/data/seoGhatkoparData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoGhatkoparLocationPage() {
-    const schemas = [getComplexFAQSchema(seoGhatkoparData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/ghatkopar/',
+    name: 'SEO Services in Ghatkopar | Impulse Digital',
+    description: 'Comprehensive SEO services in Ghatkopar covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Ghatkopar, Mumbai',
+  });
 
-  return <SeoGhatkoparLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoGhatkoparLocation />
+    </>
+  );
 }

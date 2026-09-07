@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoNaviMumbaiLocation from '@/components/pages/seo-locations/SeoNaviMumbaiLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoNaviMumbaiData } from "@/data/seoNaviMumbaiData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoNaviMumbaiLocationPage() {
-    const schemas = [getComplexFAQSchema(seoNaviMumbaiData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/navi-mumbai/',
+    name: 'SEO Services in Navi Mumbai | Impulse Digital',
+    description: 'Comprehensive SEO services in Navi Mumbai covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Navi Mumbai',
+  });
 
-  return <SeoNaviMumbaiLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoNaviMumbaiLocation />
+    </>
+  );
 }

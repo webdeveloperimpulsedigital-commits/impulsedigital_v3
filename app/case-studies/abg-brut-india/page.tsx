@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import ABGBrutIndiaCaseStudy from '@/components/pages/ABGBrutIndiaCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'ABG Brut India Case Study | Impulse Digital',
   description: 'How Impulse Digital helped ABG Brut India build digital brand presence and drive consumer engagement through creative digital marketing campaigns.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function ABGBrutIndiaCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/case-studies/abg-brut-india/',
+    name: "ABG Brut India Case Study | Impulse Digital",
+    description: "How Impulse Digital helped ABG Brut India build digital brand presence and drive consumer engagement through creative digital marketing campaigns.",
+    market: 'in',
+  });
 
-  return <ABGBrutIndiaCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <ABGBrutIndiaCaseStudy />
+    </>
+  );
 }

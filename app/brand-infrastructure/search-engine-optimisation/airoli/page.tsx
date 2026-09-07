@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildServicePageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SeoAiroliLocation from '@/components/pages/seo-locations/SeoAiroliLocation';
-import { getFAQSchema, getComplexFAQSchema } from "@/lib/schemaHelper";
 import { seoAiroliData } from "@/data/seoAiroliData";
 
 export const metadata: Metadata = {
@@ -27,7 +28,18 @@ export const metadata: Metadata = {
 };
 
 export default function SeoAiroliLocationPage() {
-    const schemas = [getComplexFAQSchema(seoAiroliData, false)];
+  const serviceSchema = buildServicePageGraph({
+    path: '/brand-infrastructure/search-engine-optimisation/airoli/',
+    name: 'SEO Services in Airoli | Impulse Digital',
+    description: 'Comprehensive SEO services in Airoli covering local search, technical SEO, B2B search marketing, and organic growth.',
+    market: 'in',
+    areaServed: 'Airoli, Mumbai',
+  });
 
-  return <SeoAiroliLocation />;
+  return (
+    <>
+      <JsonLd data={serviceSchema} id="service-page-schema" />
+      <SeoAiroliLocation />
+    </>
+  );
 }

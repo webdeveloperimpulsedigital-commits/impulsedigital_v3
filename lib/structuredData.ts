@@ -69,6 +69,83 @@ export function buildServicePageGraph({
   };
 }
 
+export function buildCaseStudyPageGraph({
+  path,
+  name,
+  description,
+  market,
+  isIndex = false,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  market: Market;
+  isIndex?: boolean;
+}): Record<string, unknown> {
+  const url = absoluteUrl(path);
+  const homeName = market === 'ae' ? 'Impulse Digital UAE' : 'Impulse Digital India';
+  const homeUrl = absoluteUrl(market === 'ae' ? '/ae/' : '/');
+  const caseStudiesUrl = absoluteUrl(market === 'ae' ? '/ae/case-studies/' : '/case-studies/');
+
+  const breadcrumbItems = isIndex
+    ? [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: homeName,
+          item: homeUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Case Studies',
+          item: caseStudiesUrl,
+        },
+      ]
+    : [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: homeName,
+          item: homeUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Case Studies',
+          item: caseStudiesUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name,
+          item: url,
+        },
+      ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url,
+        name,
+        description,
+        inLanguage: market === 'ae' ? 'en-AE' : 'en-IN',
+        isPartOf: { '@id': ENTITY_IDS.website },
+        about: ORGANIZATION_REFERENCE,
+        breadcrumb: { '@id': `${url}#breadcrumb` },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: breadcrumbItems,
+      },
+    ],
+  };
+}
+
 export function buildHomeGraph(market: Market): Record<string, unknown> {
   const isAe = market === 'ae';
   const pageUrl = absoluteUrl(isAe ? '/ae/' : '/');

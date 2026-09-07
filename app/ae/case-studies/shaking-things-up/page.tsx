@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import SaltCaseStudy from '@/components/pages/SaltCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Salt Case Study | Shaking Things Up | Impulse Digital',
   description: 'How Impulse Digital helped a challenger salt brand shake things up through creative storytelling and strategic digital marketing.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function SaltCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/shaking-things-up/',
+    name: "Salt Case Study | Shaking Things Up | Impulse Digital",
+    description: "How Impulse Digital helped a challenger salt brand shake things up through creative storytelling and strategic digital marketing.",
+    market: 'ae',
+  });
 
-  return <SaltCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <SaltCaseStudy />
+    </>
+  );
 }

@@ -1,7 +1,8 @@
+import JsonLd from '@/components/JsonLd';
+import { buildCaseStudyPageGraph } from '@/lib/structuredData';
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import MastercardCaseStudy from '@/components/pages/MastercardCaseStudy';
-import { getFAQSchema } from "@/lib/schemaHelper";
 export const metadata: Metadata = {
   title: 'Mastercard Case Study | Impulse Digital',
   description: 'How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.',
@@ -25,7 +26,17 @@ export const metadata: Metadata = {
 };
 
 export default function MastercardCaseStudyPage() {
-    const schemas: any[] = [];
+  const schema = buildCaseStudyPageGraph({
+    path: '/ae/case-studies/mastercard/',
+    name: "Mastercard Case Study | Impulse Digital",
+    description: "How Impulse Digital delivered impactful digital marketing campaigns for Mastercard, driving brand engagement and measurable results.",
+    market: 'ae',
+  });
 
-  return <MastercardCaseStudy />;
+  return (
+    <>
+      <JsonLd data={schema} id="case-study-schema" />
+      <MastercardCaseStudy />
+    </>
+  );
 }
