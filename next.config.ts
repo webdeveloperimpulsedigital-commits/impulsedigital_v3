@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   // Output standalone build for Hostinger Passenger Node.js compatibility
   output: 'standalone',
 
+  // Limit build workers so Hostinger container doesn't hit thread/process limit (OS error 11)
+  experimental: {
+    cpus: 4,
+  },
+
   // Preserve existing URL structure — all routes have trailing slashes
   trailingSlash: true,
 
