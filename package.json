@@ -14,19 +14,18 @@
     "postbuild": "node scripts/ensure-wordpress.js"
   },
   "dependencies": {
-    "next": "16.4.2",
-    "pdfjs-dist": "^6.2.108",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "sharp": "^0.35.5"
-  },
-  "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "jimp": "^1.6.1",
+    "next": "16.4.2",
+    "pdfjs-dist": "^6.2.108",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "^0.35.5",
     "typescript": "^5"
   },
+  "devDependencies": {},
   "overrides": {
     "undici": "^7.28.0",
     "hono": "^4.12.25",
