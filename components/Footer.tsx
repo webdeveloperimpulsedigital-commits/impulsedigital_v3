@@ -46,11 +46,11 @@ const Footer: React.FC = () => {
             <img src="/ImpulseDigital_Logo.svg" alt="Impulse Digital Logo" className="footer-logo" width="1152" height="1152" loading="lazy" decoding="async" />
 
             <div className="footer-socials">
-              <a href="https://www.facebook.com/theimpulsedigital/" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://x.com/impulsedigi" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.instagram.com/_impulse_digital/" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fab fa-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/impulse-digital-marketing-mumbai/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fab fa-linkedin-in"></i></a>
-              <a href="https://www.youtube.com/channel/UCzQglQAeXGI99Z-LZI9jBkw" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.facebook.com/theimpulsedigital/" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/impulsedigi" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW" aria-label="X (Twitter)"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/_impulse_digital/" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/impulse-digital-marketing-mumbai/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.youtube.com/channel/UCzQglQAeXGI99Z-LZI9jBkw" target="_blank" rel="noopener noreferrer" className="social-icon" data-cursor="FOLLOW" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
 
