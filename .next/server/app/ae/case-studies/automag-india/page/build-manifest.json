@@ -6,12 +6,17 @@
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/2-ndo0lbpp9_x.js",
-    "static/chunks/07-hzktxqjvzd.js",
-    "static/chunks/14podnilsu8gn.js",
-    "static/chunks/348h4edv0a6o3.js",
-    "static/chunks/turbopack-3xtqsnghr9il0.js"
+    "static/chunks/1kexj4s7oxhs2.js",
+    "static/chunks/1-nqmp1rl8kqt.js",
+    "static/chunks/0psvc2-xx4oyr.js",
+    "static/chunks/3newvyc2_lhav.js",
+    "static/chunks/turbopack-3-ry682tkyiqk.js"
   ],
   "pages": {},
-  "ampFirstPages": []
+  "ampFirstPages": [],
+  "rootMainFilesTree": {},
+  "pagesChunkGroupBootstrapParams": {
+    "/ae/case-studies/automag-india/page": {"otherChunks":["static/chunks/1kexj4s7oxhs2.js","static/chunks/1-nqmp1rl8kqt.js","static/chunks/0psvc2-xx4oyr.js","static/chunks/3newvyc2_lhav.js"],"runtimeModuleIds":[94553]}
+  },
+  "chunkLoadingGlobal": "TURBOPACK"
 }

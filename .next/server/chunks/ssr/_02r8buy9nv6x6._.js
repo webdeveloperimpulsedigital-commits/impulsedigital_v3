@@ -1,0 +1,3 @@
+module.exports=[[66188,a=>{var b=a.i(7997),c=a.i(9921);a.s(["default",0,function(){return(0,b.jsx)(c.default,{})},"metadata",0,{title:"Page Not Found | Impulse Digital",robots:{index:!1,follow:!1,nocache:!0},alternates:{}}])},42307,a=>{let b=(0,a.i(11857).registerClientReference)(function(){throw Error("Attempted to call the default export of [project]/components/pages/NotFound.tsx from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/components/pages/NotFound.tsx","default");a.s(["default",0,b])},9921,a=>{var b=a.i(42307);a.n(b)}],2894,function(a){a.n(a.i(66188))}];
+
+//# sourceMappingURL=_02r8buy9nv6x6._.js.map
