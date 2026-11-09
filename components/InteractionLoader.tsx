@@ -20,7 +20,7 @@ export default function InteractionLoader() {
       'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js',
       'https://unpkg.com/split-type',
       'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
-      '/js/script.js?v=71'
+      '/js/script.js?v=72'
     ];
 
     const loadScripts = () => {

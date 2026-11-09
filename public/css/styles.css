@@ -584,6 +584,13 @@ nav.scrolled {
     background: transparent;
 }
 
+@media (min-width: 769px) {
+    .cosmos-section {
+        position: sticky;
+        top: 0;
+    }
+}
+
 .cosmos-wrapper {
     position: absolute;
     top: 0;

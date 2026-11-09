@@ -506,17 +506,17 @@
                     );
                 }
 
-                // Pin the section for the 3D fly-through (both mobile and desktop)
+                // Drive the 3D fly-through through the reserved scroll distance.
                 const tl = gsap.timeline({
                     scrollTrigger: {
-                        trigger: cosmosSection,
-                        pin: true,
-                        // Desktop scroll space is reserved in the initial layout by
-                        // .cosmos-scroll-shell, preventing late pin-spacer layout shifts.
+                        // Desktop uses the shell's pre-reserved scroll distance and CSS
+                        // sticky positioning. GSAP's fixed pin caused a layout shift
+                        // when it released the section at the end of the fly-through.
+                        trigger: isMobileDevice ? cosmosSection : cosmosSection.parentElement,
+                        pin: isMobileDevice,
                         pinSpacing: isMobileDevice,
-                        // Mobile native scrolling requires fixed pinning to avoid jitter
-                        pinType: 'fixed',
-                        anticipatePin: isMobileDevice ? 0 : 1,
+                        pinType: isMobileDevice ? 'fixed' : undefined,
+                        anticipatePin: 0,
                         invalidateOnRefresh: true,
                         scrub: isMobileDevice ? true : 0.7,
                         start: 'top top',
