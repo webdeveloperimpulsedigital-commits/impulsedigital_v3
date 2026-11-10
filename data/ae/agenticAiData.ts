@@ -2,7 +2,7 @@ export const agenticAiData = {
   hero: {
     headlineParts: ["Agentic AI Agency", "for Marketing That Runs Itself"],
     headlineAccent: "for Marketing That Runs Itself",
-    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As a specialist Agentic AI agency with 34 years of marketing and commercial operations experience, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in only when human judgment genuinely matters. Our Agentic AI services have been deployed across WhatsApp, email, voice, Instagram DM, SMS, and CRM workflows for enterprise and growth-stage brands, helping sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into measurable business movement.",
+    description: "Leads come in. Customers ask questions. Teams get busy. Follow-ups slip. As a specialist Agentic AI agency with 34 years of combined senior-team experience, Impulse Digital builds AI agents that respond, qualify, follow up, update your systems, and bring your team in only when human judgment genuinely matters. Our Agentic AI services have been deployed across WhatsApp, email, voice, Instagram DM, SMS, and CRM workflows for enterprise and growth-stage brands, helping sales, marketing, support, and operations teams reduce repetitive work, act faster, and turn more conversations into measurable business movement.",
     buttons: [
       { text: "Build Your First AI Workflow", link: "#connect", cursor: "BUILD" },
       { text: "See Practical Use Cases", link: "#use-cases", cursor: "EXPLORE" }

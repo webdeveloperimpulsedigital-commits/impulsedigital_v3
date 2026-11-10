@@ -6,7 +6,7 @@ export const socialMediaVashiData = {
       "Agency in Vashi."
     ],
     "headlineAccent": "Agency in Vashi.",
-    "description": "Being visible is no longer a competitive advantage. Most corporate marketing budgets fund activity rather than outcomes. Impulse Digital operates as a strategic social media agency in Vashi. We abandon the standard publishing calendar to build digital infrastructure that actively shapes consumer demand. We back our execution with hard commercial reality. Our systems generated 53,000 clicks for DMart and secured a 31% engagement rate on a single post for Grasim Industries. Stop funding maintenance. Start funding momentum.",
+    "description": "Being visible is no longer a competitive advantage. Most corporate marketing budgets fund activity rather than outcomes. Impulse Digital operates as a strategic social media agency in Vashi. We build digital infrastructure that actively shapes consumer demand. Our systems generated 53,000 clicks for DMart. A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics. Source: LinkedIn native analytics. Stop funding maintenance. Start funding momentum.",
     "buttons": [
       {
         "text": "Start a Conversation",

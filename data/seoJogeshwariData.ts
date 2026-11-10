@@ -5,7 +5,7 @@ export const seoJogeshwariData = {
     "headline": "#1 SEO Agency in Jogeshwari",
     "subHeadline": "SEO – Helping your business get noticed in a way that actually lasts",
     "description": [
-      "Jogeshwari sits between Andheri's commercial density and Goregaon's film-and-media belt, with its own mix of businesses along S.V. Road and the Western Express Highway: coaching classes, clinics, family-run retail, and service providers all serving the same nearby customers. When those customers search, they choose from the first few results. Proximity does not help a business that search cannot see. As a trusted SEO company in Jogeshwari, Impulse Digital brings 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase within 5 months for ElectroMech. As a specialist SEO agency in Jogeshwari, we build visibility that keeps compounding, not a spike that fades when the report is filed."
+      "Jogeshwari sits between Andheri's commercial density and Goregaon's film-and-media belt, with its own mix of businesses along S.V. Road and the Western Express Highway: coaching classes, clinics, family-run retail, and service providers all serving the same nearby customers. When those customers search, they choose from the first few results. Proximity does not help a business that search cannot see. As a trusted SEO company in Jogeshwari, Impulse Digital brings 34 years of combined senior-team experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase within 5 months for ElectroMech. As a specialist SEO agency in Jogeshwari, we build visibility that keeps compounding, not a spike that fades when the report is filed."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoJogeshwariData = {
       {
         "question": "Why should I choose Impulse Digital's SEO services in Jogeshwari?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Jogeshwari, we bring 34 years of marketing experience and documented SEO results: 737% organic traffic growth for Qure.ai, 3,500% impression growth in 5 months for ElectroMech, and organic leads growing from 1 to 2 a month to 20 to 25 for Shree Rubber Works."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Jogeshwari, we bring 34 years of combined senior-team experience and documented SEO results: 737% organic traffic growth for Qure.ai, 3,500% impression growth in 5 months for ElectroMech, and organic leads growing from 1 to 2 a month to 20 to 25 for Shree Rubber Works."
         ]
       },
       {
@@ -226,7 +226,7 @@ export const seoJogeshwariData = {
       {
         "question": "What does the first month of working with Impulse Digital as an SEO agency in Jogeshwari look like?",
         "answer": [
-          "A diagnostic conversation, not a proposal. We review where you rank, what is blocking visibility, and which content gaps are costing you enquiries. As a trusted SEO company in Jogeshwari backed by 34 years of experience and SEO results including 737% organic growth for Qure.ai."
+          "A diagnostic conversation, not a proposal. We review where you rank, what is blocking visibility, and which content gaps are costing you enquiries. As a trusted SEO company in Jogeshwari backed by 34 years of combined senior-team experience and SEO results including 737% organic growth for Qure.ai."
         ]
       }
     ]

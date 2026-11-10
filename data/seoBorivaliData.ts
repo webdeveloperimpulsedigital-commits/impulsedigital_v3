@@ -5,7 +5,7 @@ export const seoBorivaliData = {
     "headline": "Best SEO Agency in Borivali",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "Borivali is one of Mumbai's largest residential catchments, with retail corridors along the Link Road and S.V. Road, a growing base of D2C brands running from local offices, and thousands of service businesses competing for the same nearby customers. When those customers search, they pick from what appears first. Being good at what you do is not visible unless search makes it visible. As a trusted SEO company in Borivali, Impulse Digital brings 34 years of marketing experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase within 5 months for ElectroMech. As a specialist SEO agency in Borivali, we build visibility that compounds over time rather than spiking and fading."
+      "Borivali is one of Mumbai's largest residential catchments, with retail corridors along the Link Road and S.V. Road, a growing base of D2C brands running from local offices, and thousands of service businesses competing for the same nearby customers. When those customers search, they pick from what appears first. Being good at what you do is not visible unless search makes it visible. As a trusted SEO company in Borivali, Impulse Digital brings 34 years of combined senior-team experience and documented results, including 737% organic traffic growth for Qure.ai and a 3,500% impression increase within 5 months for ElectroMech. As a specialist SEO agency in Borivali, we build visibility that compounds over time rather than spiking and fading."
     ]
   },
   "services": {
@@ -226,7 +226,7 @@ export const seoBorivaliData = {
       {
         "question": "What is the first step to starting an SEO engagement with Impulse Digital in Borivali?",
         "answer": [
-          "A diagnostic conversation, not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Borivali with 34 years of experience and SEO results including 737% organic growth for Qure.ai, the first conversation is free. Reach out through our contact form or call us directly."
+          "A diagnostic conversation, not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Borivali with 34 years of combined senior-team experience and SEO results including 737% organic growth for Qure.ai, the first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]

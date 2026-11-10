@@ -2,7 +2,7 @@ export const archerAiData = {
   hero: {
     headlineParts: ["AI Outbound Sales Agent", "Built to Find Buyers Faster"],
     headlineAccent: "Built to Find Buyers Faster",
-    description: "Your next customer may not be searching for you yet. But they may already be hiring, expanding, launching, raising, entering a new market, or showing signals that point to need. Archer AI, your AI outbound sales agent, reads those signals, finds the decision-makers, and turns live market movement into personalised outbound conversations, built on 34 years of B2B marketing experience and deployed for brands competing in categories where the right buyer is harder to find than the right message.",
+    description: "Your next customer may not be searching for you yet. But they may already be hiring, expanding, launching, raising, entering a new market, or showing signals that point to need. Archer AI, your AI outbound sales agent, reads those signals, finds the decision-makers, and turns live market movement into personalised outbound conversations, built on 34 years of combined senior-team experience and deployed for brands competing in categories where the right buyer is harder to find than the right message.",
     buttons: [
       { text: "Apply for an ICP Diagnostic", link: "#connect", cursor: "APPLY" },
       { text: "See How Archer AI Works", link: "#process", cursor: "EXPLORE" }

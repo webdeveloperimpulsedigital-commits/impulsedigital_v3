@@ -5,7 +5,7 @@ export const seoMansarovarData = {
     "headline": "Best SEO Company in Mansarovar",
     "subHeadline": "SEO – Helping your business stand out in a crowded digital space",
     "description": [
-      "Mansarovar businesses now compete in a market where most customers research online before making a choice. Whether a service or a product, most journeys begin with a quick search. People do not go too far beyond the first few options. They click on what looks relevant and credible, then move on. If your business is not visible at that stage, you could be missing out on customers who never knew to look further. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of marketing experience and documented results for HUL, Mastercard, and Qure.ai. We help businesses build consistent visibility that works steadily over time, not just in short bursts."
+      "Mansarovar businesses now compete in a market where most customers research online before making a choice. Whether a service or a product, most journeys begin with a quick search. People do not go too far beyond the first few options. They click on what looks relevant and credible, then move on. If your business is not visible at that stage, you could be missing out on customers who never knew to look further. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of combined senior-team experience and documented results for HUL, Mastercard, and Qure.ai. We help businesses build consistent visibility that works steadily over time, not just in short bursts."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoMansarovarData = {
       {
         "question": "Why should I choose Impulse Digital as my SEO company in Mansarovar?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of marketing experience and documented SEO results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. Every engagement starts with a diagnostic of your current search position, not a package recommendation."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Mansarovar, Impulse Digital brings 34 years of combined senior-team experience and documented SEO results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. Every engagement starts with a diagnostic of your current search position, not a package recommendation."
         ]
       },
       {

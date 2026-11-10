@@ -5,7 +5,7 @@ export const brandingData = {
       "Market Perception & Strategic Identity"
     ],
     "headlineAccent": "Market Perception & Strategic Identity",
-    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Dubai with 34 years of marketing experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Dubai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
+    "description": "People do not choose brands they cannot place. They choose the ones that mean something, look familiar, feel distinct, and show up consistently when the decision is being made. Impulse Digital is a trusted branding agency in Dubai with 34 years of combined senior-team experience, building brand identity systems for enterprise brands including Amazon India, HUL, Mastercard, and Tata Consumer Products. As a branding company in Dubai, we make your business easier to recognise, remember, and choose across every touchpoint, not just on launch day, but every day after.",
     "buttons": [
       {
         "text": "Build Your Brand System",
@@ -289,7 +289,7 @@ export const brandingData = {
       },
       {
         "q": "How does Impulse Digital measure branding success?",
-        "a": "As a branding company in Dubai with 34 years of marketing experience, Impulse Digital evaluates branding through recognition, engagement, branded search volume, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required. We have tracked these signals for enterprise brands including Grasim Industries, where a single LinkedIn post reached 959,000 impressions with a 31% engagement rate, demonstrating measurable brand recall in action rather than as a theoretical metric."
+        "a": "As a branding company in Dubai with 34 years of combined senior-team experience, Impulse Digital evaluates branding through recognition, engagement, branded search volume, consistency across touchpoints, conversion movement on key pages, and audience recall where measurement is required. A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics. Source: LinkedIn native analytics."
       },
       {
         "q": "Who should be involved from our side?",

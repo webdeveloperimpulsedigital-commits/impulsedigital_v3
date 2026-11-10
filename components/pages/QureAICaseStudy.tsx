@@ -137,7 +137,8 @@ const QureAICaseStudy: React.FC = () => {
           <div className="cs-split-left"><h2 className="cs-h2 split-text">Business impact</h2></div>
           <div className="cs-split-right">
             <p className="cs-p split-text">The rebuild helped Qure.ai turn organic search into measurable business movement.</p>
-            <p className="cs-p highlight split-text">20 organic leads were generated in one month.<br />31% of website sessions came from organic search.<br />42% organic engagement rate showed that users from search were meaningfully engaging.</p>
+            <p className="cs-p highlight split-text">Across Qure.ai’s US healthcare search mandate, organic traffic increased by 737%.<br />20 organic leads were generated in one month.<br />31% of website sessions came from organic search.<br />42% organic engagement rate showed that users from search were meaningfully engaging.</p>
+            <p className="proof-source-note">Source: GA4 and campaign reporting reviewed by Impulse Digital. Underlying client analytics are private.</p>
             <p className="cs-p split-text">High-value diagnostic AI keywords moved to Page 1. Several priority keywords entered the Top 10.</p>
             <p className="cs-p split-text">The important point is not only that rankings improved. The website began attracting relevant healthcare buyers and turning that search interest into enquiries.</p>
           </div>

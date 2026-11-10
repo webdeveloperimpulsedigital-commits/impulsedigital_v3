@@ -216,7 +216,7 @@ export const searchEngineOptimisationData = {
       },
       {
         q: "Why should I choose Impulse Digital as my SEO company in UAE?",
-        a: "Impulse Digital runs SEO mandates across India, the US, and the UAE, backed by 34 years of combined marketing experience across enterprise brands. That track record includes 737% organic traffic growth for Qure.ai on its US healthcare search mandate, and first-page international rankings for ElectroMech within six months. The same search methodology (technical health, intent-mapped content, authority signals, and Generative Search Optimisation) is what now supports enterprise brands building search visibility across the Emirates."
+        a: "Impulse Digital runs SEO mandates across India, the US, and the UAE, backed by 34 years of combined senior-team experience across enterprise brands. That track record includes 737% organic traffic growth for Qure.ai on its US healthcare search mandate, and first-page international rankings for ElectroMech within six months. The same search methodology (technical health, intent-mapped content, authority signals, and Generative Search Optimisation) is what now supports enterprise brands building search visibility across the Emirates."
       },
       {
         q: "How much do SEO services in UAE cost?",

@@ -58,7 +58,7 @@ export default function PPTGalleryClient() {
       p1: 'Platforms change faster than most strategy decks can keep up with. Every social media PPT in this library comes directly from active campaign work, not a textbook framework, covering what is actually working on Instagram, YouTube, Facebook, and WhatsApp Business right now, not what worked two algorithm updates ago.',
       p2: (
         <>
-          This is also where the proof lives. The same strategic thinking behind these decks helped a single LinkedIn post for Grasim Industries (Aditya Birla Group) reach 959,000 impressions and a 31% engagement rate. <Link href="https://www.theimpulsedigital.com/case-studies/" style={{ color: '#fff', textDecoration: 'underline' }}>Read the full case study</Link> to see exactly how that result was built, then download the deck covering the same approach for your own campaign.
+          A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics. <small className="proof-source-note">Source: LinkedIn native analytics.</small> Download the deck covering the same strategic approach for your own campaign.
         </>
       )
     },
@@ -80,7 +80,7 @@ export default function PPTGalleryClient() {
     'Website Design Development PPT': {
       h1: 'Web Design and Development PPT: Presentations and Strategy Decks',
       p1: 'Every other category in this library is about earning attention, on social, in search, through content, or as a candidate. A web design and development PPT belongs to a different job entirely, what happens once that attention actually arrives. A slow page or a confusing layout can undo months of work from every other channel in a single visit.',
-      p2: 'That difference is why these decks focus on structure before style, page speed, user journeys, and conversion paths that hold up under real traffic, not a portfolio screenshot. Our own e-commerce clients have seen a 30% or higher increase in sales within six months of a redesigned website launch, the kind of result that only shows up when design and development decisions are made together. Download the frameworks covering UX strategy, responsive development, CMS structure, and conversion-focused design, and apply them before your next redesign, not after it underperforms.'
+      p2: 'That difference is why these decks focus on structure before style, page speed, user journeys, and conversion paths that hold up under real traffic, not a portfolio screenshot. In selected ecommerce website-redesign engagements, clients have recorded sales growth of 30% or more within six months. Source: Client ecommerce reporting reviewed by Impulse Digital; underlying analytics are private. Download the frameworks covering UX strategy, responsive development, CMS structure, and conversion-focused design, and apply them before your next redesign, not after it underperforms.'
     }
   };
 

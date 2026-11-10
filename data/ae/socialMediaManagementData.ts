@@ -5,7 +5,7 @@ export const socialMediaManagementData = {
       "Agency in Dubai"
     ],
     "headlineAccent": "Agency in Dubai",
-    "description": "worth noticing, remembering, responding to, or sharing. Impulse Digital is the best social media marketing agency in Dubai, combining strategy, content creation, community management, paid amplification, and performance reporting to make your brand more relevant, consistent, and harder to ignore. As a trusted social media marketing company in Dubai with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Aditya Birla Group, and Tata Consumer Products, we build social systems that earn attention not just fill a calendar.",
+    "description": "worth noticing, remembering, responding to, or sharing. Impulse Digital is the best social media marketing agency in Dubai, combining strategy, content creation, community management, paid amplification, and performance reporting to make your brand more relevant, consistent, and harder to ignore. As a trusted social media marketing company in Dubai with 34 years of combined senior-team experience and a client base that includes Amazon India, HUL, Mastercard, Aditya Birla Group, and Tata Consumer Products, we build social systems that earn attention not just fill a calendar.",
     "buttons": [
       {
         "text": "Build Social That Matters",
@@ -42,6 +42,11 @@ export const socialMediaManagementData = {
       }
     ],
     "footnote": "Social is not where brands simply publish. It is where people judge relevance, responsiveness, taste, trust, and momentum."
+  },
+  "proofCitation": {
+    "title": "Grasim Industries: one post, measurable attention",
+    "statement": "A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics.",
+    "source": "Source: LinkedIn native analytics."
   },
   "problem": {
     "title": "The Problem Is Not Content. It Is Content Without a Point.",
@@ -289,7 +294,7 @@ export const socialMediaManagementData = {
       },
       {
         "q": "How do we evaluate whether Impulse Digital is the right SMM company in Dubai for our brand?",
-        "a": "Ask for category-specific proof before anything else. An SMM company in Dubai worth working with should be able to show you documented engagement and campaign results from brands in your category or a comparable one not just a logo slide of well-known clients. Impulse Digital publishes specific social results: 959,000 impressions and 31% engagement on a single LinkedIn post for Grasim Industries, 5.49 million plays for Uppercase's AI-led New Year campaign, and structured weekly social sentiment tracking for Tata Consumer Products' Agent Chings campaign. These are outcomes from brands in FMCG, manufacturing, and retail categories where social has to connect directly to commercial movement, not just awareness metrics. In our first conversation, we review your current social presence, identify specifically what is limiting performance, and recommend where to start at no cost and with no obligation. Reach out through our contact form or call us directly."
+        "a": "Ask for category-specific proof before anything else. An SMM company in Dubai worth working with should be able to show you documented engagement and campaign results from brands in your category or a comparable one not just a logo slide of well-known clients. A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics. Source: LinkedIn native analytics. Impulse Digital also publishes 5.49 million plays for Uppercase's AI-led New Year campaign and structured weekly social sentiment tracking for Tata Consumer Products' Agent Chings campaign. These are outcomes from brands in FMCG, manufacturing, and retail categories where social has to connect directly to commercial movement, not just awareness metrics. In our first conversation, we review your current social presence, identify specifically what is limiting performance, and recommend where to start at no cost and with no obligation. Reach out through our contact form or call us directly."
       }
     ]
   }

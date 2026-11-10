@@ -263,7 +263,7 @@ export function buildSeoLandingData({ market, place, scope }: SeoLandingOptions)
       items: [
         {
           q: `What do ${serviceLabel.toLowerCase()} include?`,
-          a: `As a leading ${agencyLabel} backed by 34 years of combined marketing experience, our scope includes technical SEO audits, page ownership mapping, search and content planning, internal link architecture, local search signals, ecommerce SEO, structured-data schema guidance, and revenue pipeline attribution. Priorities are tailored to your business goals and market competition.`,
+          a: `As a leading ${agencyLabel} backed by 34 years of combined senior-team experience, our scope includes technical SEO audits, page ownership mapping, search and content planning, internal link architecture, local search signals, ecommerce SEO, structured-data schema guidance, and revenue pipeline attribution. Priorities are tailored to your business goals and market competition.`,
         },
         {
           q: `Why use a dedicated ${isLocal ? `${place} SEO page` : `${place} SEO hub`}?`,

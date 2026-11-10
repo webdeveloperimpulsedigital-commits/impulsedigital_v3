@@ -2,7 +2,7 @@ export const consumerIntelligenceData = {
   hero: {
     headlineParts: ["Stop Building for the", "Consumer You Imagine."],
     headlineAccent: "Consumer You Imagine.",
-    description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist customer intelligence agency with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our customer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
+    description: "Averages do not buy. Segments do not hesitate. Personas do not choose. People do. Impulse Digital is a specialist customer intelligence agency with 34 years of combined senior-team experience and a client base that includes Amazon India, HUL, Mastercard, Tata Customer Products, and Aditya Birla Group. We help brands understand the motivations, fears, habits, triggers, and expectations behind real Customer behaviour, so strategy, messaging, and product decisions are built for the actual buyer, not the convenient assumption. Our customer intelligence services cover usage and attitude studies, trigger and barrier analysis, and innovation funnel support.",
     buttons: [
       { text: "Decode Your Customer", link: "#connect", cursor: "DECODE" },
       { text: "See Where It Helps", link: "#use-cases", cursor: "EXPLORE" }

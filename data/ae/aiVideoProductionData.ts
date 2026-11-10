@@ -2,7 +2,7 @@ export const aiVideoProductionData = {
   hero: {
     headlineParts: ["AI Video Production Agency", "for Scalable Storytelling"],
     headlineAccent: "for Scalable Storytelling",
-    description: "Impulse Digital is a specialist AI video production agency with 34 years of brand and marketing experience, delivering campaign films, product explainers, social-first videos, training content, multilingual assets, and digital ad creatives for enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a trusted AI video production company, we combine human creative direction with AI-enabled production tools, so brands can produce scalable, brand-ready video content without rebuilding from zero every time a brief changes.",
+    description: "Impulse Digital is a specialist AI video production agency with 34 years of combined senior-team experience, delivering campaign films, product explainers, social-first videos, training content, multilingual assets, and digital ad creatives for enterprise brands including Amazon India, HUL, Tata Consumer Products, and Aditya Birla Group. As a trusted AI video production company, we combine human creative direction with AI-enabled production tools, so brands can produce scalable, brand-ready video content without rebuilding from zero every time a brief changes.",
     buttons: [
       { text: "Start an AI Video Project", link: "#connect", cursor: "BUILD" },
       { text: "See What AI Video Can Do", link: "#process", cursor: "EXPLORE" }

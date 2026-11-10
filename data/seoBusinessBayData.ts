@@ -5,7 +5,7 @@ export const seoBusinessBayData = {
     "headline": "Best SEO Agency in Business Bay",
     "subHeadline": "SEO - Turning your website into the first place your customers find and trust in Business Bay",
     "description": [
-      "If your business wants consistent visibility on Google, choosing the right SEO agency in Business Bay can define how quickly and effectively you scale online across Business Bay and Downtown Dubai. At Impulse Digital, we deliver structured, research-driven SEO strategies tailored for Business Bay businesses competing in fast-moving markets, backed by 34 years of marketing experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech, and a majority of targeted queries ranked on page one within two months for Vendiman. Whether you are a growing startup, an established enterprise, or an ecommerce brand, our SEO company in Business Bay builds systems for long-term search visibility that supports real revenue growth, not just rankings."
+      "If your business wants consistent visibility on Google, choosing the right SEO agency in Business Bay can define how quickly and effectively you scale online across Business Bay and Downtown Dubai. At Impulse Digital, we deliver structured, research-driven SEO strategies tailored for Business Bay businesses competing in fast-moving markets, backed by 34 years of combined senior-team experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech, and a majority of targeted queries ranked on page one within two months for Vendiman. Whether you are a growing startup, an established enterprise, or an ecommerce brand, our SEO company in Business Bay builds systems for long-term search visibility that supports real revenue growth, not just rankings."
     ]
   },
   "services": {
@@ -238,7 +238,7 @@ export const seoBusinessBayData = {
       {
         "question": "What makes Impulse Digital a top SEO agency in Business Bay compared to smaller providers?",
         "answer": [
-          "Scale of experience and depth of proof. 34 years of marketing experience, a client roster spanning Amazon India, HUL, Mastercard, and Tata Consumer Products, and SEO-specific results including 737% organic growth for Qure.ai and 3,500% impression growth for ElectroMech. Smaller SEO service providers can match enthusiasm. Few can match a track record this verifiable."
+          "Scale of experience and depth of proof. 34 years of combined senior-team experience, a client roster spanning Amazon India, HUL, Mastercard, and Tata Consumer Products, and SEO-specific results including 737% organic growth for Qure.ai and 3,500% impression growth for ElectroMech. Smaller SEO service providers can match enthusiasm. Few can match a track record this verifiable."
         ]
       }
     ]

@@ -13578,3 +13578,35 @@ body[data-impulse-route="/blog/"] {
     position: relative;
     z-index: 11;
 }
+/* Citation-ready proof passages used across service pages. */
+.svc-proof-citation {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.svc-proof-citation .container {
+  max-width: 1080px;
+}
+
+.svc-proof-citation-label {
+  margin: 0 0 1rem;
+  color: var(--impulse-violet);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.svc-proof-citation-statement {
+  max-width: 920px;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.25rem, 2.3vw, 2rem);
+  line-height: 1.45;
+}
+
+.proof-source-note {
+  max-width: 920px;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}

@@ -123,26 +123,49 @@ export function buildCaseStudyPageGraph({
         },
       ];
 
+  const pageNode: Record<string, unknown> = {
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name,
+    description,
+    inLanguage: market === 'ae' ? 'en-AE' : 'en-IN',
+    isPartOf: { '@id': ENTITY_IDS.website },
+    about: ORGANIZATION_REFERENCE,
+    breadcrumb: { '@id': `${url}#breadcrumb` },
+  };
+
+  if (!isIndex) {
+    pageNode.mainEntity = { '@id': `${url}#case-study` };
+  }
+
+  const graph: Record<string, unknown>[] = [
+    pageNode,
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${url}#breadcrumb`,
+      itemListElement: breadcrumbItems,
+    },
+  ];
+
+  if (!isIndex) {
+    graph.push({
+      '@type': 'Article',
+      '@id': `${url}#case-study`,
+      url,
+      headline: name,
+      description,
+      articleSection: 'Case Studies',
+      inLanguage: market === 'ae' ? 'en-AE' : 'en-IN',
+      mainEntityOfPage: { '@id': `${url}#webpage` },
+      author: ORGANIZATION_REFERENCE,
+      publisher: ORGANIZATION_REFERENCE,
+    });
+  }
+
   return {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebPage',
-        '@id': `${url}#webpage`,
-        url,
-        name,
-        description,
-        inLanguage: market === 'ae' ? 'en-AE' : 'en-IN',
-        isPartOf: { '@id': ENTITY_IDS.website },
-        about: ORGANIZATION_REFERENCE,
-        breadcrumb: { '@id': `${url}#breadcrumb` },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${url}#breadcrumb`,
-        itemListElement: breadcrumbItems,
-      },
-    ],
+    '@graph': graph,
   };
 }
 

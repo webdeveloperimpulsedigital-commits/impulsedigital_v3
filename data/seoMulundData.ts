@@ -178,7 +178,7 @@ export const seoMulundData = {
       {
         "question": "Why should I choose your SEO services in Mulund?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. Our SEO services in Mulund are built on 34 years of marketing experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. The idea is to make your business easier to find and trust, not just easier to see for a few weeks."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. Our SEO services in Mulund are built on 34 years of combined senior-team experience and documented results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works. The idea is to make your business easier to find and trust, not just easier to see for a few weeks."
         ]
       },
       {
@@ -226,7 +226,7 @@ export const seoMulundData = {
       {
         "question": "What is the first step to starting an SEO programme in Mulund?",
         "answer": [
-          "A diagnostic conversation, not a proposal. As a trusted SEO company in Mulund backed by 34 years of experience and results including 737% organic traffic growth for Qure.ai and first-page rankings for 90% of targeted keywords for Vendiman, the first conversation is free."
+          "A diagnostic conversation, not a proposal. As a trusted SEO company in Mulund backed by 34 years of combined senior-team experience and results including 737% organic traffic growth for Qure.ai and first-page rankings for 90% of targeted keywords for Vendiman, the first conversation is free."
         ]
       }
     ]

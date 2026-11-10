@@ -6,7 +6,7 @@ export const seoGoregaonData = {
     "subHeadline": "Targeted SEO Services in Goregaon to Capture High-Intent Commercial Demand",
     "description": [
       "Goregaon is home to Mumbai's major corporate parks, media houses, and exhibition centres. With heavy commercial density across Nirlon Knowledge Park, NESCO, and Oberoi Commerz, visibility on Google directly determines which businesses win client enquiries.",
-      "Impulse Digital is a practical SEO company in Goregaon focused on qualified search leads, not vanity metrics. Bringing 34 years of marketing experience, our team combines local map rankings, B2B search architecture, and technical Core Web Vitals optimisation. As an SEO agency in Goregaon with verified results (including 737% organic traffic growth for Qure.ai and 12,548 tracked customer journeys for HUL), we build search rankings that support your sales pipeline month after month."
+      "Impulse Digital is a practical SEO company in Goregaon focused on qualified search leads, not vanity metrics. Bringing 34 years of combined senior-team experience, our team combines local map rankings, B2B search architecture, and technical Core Web Vitals optimisation. As an SEO agency in Goregaon with verified results (including 737% organic traffic growth for Qure.ai and 12,548 tracked customer journeys for HUL), we build search rankings that support your sales pipeline month after month."
     ]
   },
   "services": {
@@ -193,7 +193,7 @@ export const seoGoregaonData = {
       {
         "question": "Why should I choose Impulse Digital as our SEO company in Goregaon?",
         "answer": [
-          "Impulse Digital offers an unmatched blend of 34 years of marketing acumen and modern, data-backed technical SEO execution. We don't just deliver ranking reports; we drive measurable commercial outcomes. With proven case studies including 737% organic growth for Qure.ai and over 12,000 verified conversion journeys for HUL, our SEO services in Goregaon are tailored to turn local and enterprise search into a primary customer acquisition engine."
+          "Impulse Digital offers an unmatched blend of 34 years of combined senior-team experience and modern, data-backed technical SEO execution. We don't just deliver ranking reports; we drive measurable commercial outcomes. With proven case studies including 737% organic growth for Qure.ai and over 12,000 verified conversion journeys for HUL, our SEO services in Goregaon are tailored to turn local and enterprise search into a primary customer acquisition engine."
         ]
       },
       {

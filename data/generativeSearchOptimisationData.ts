@@ -6,7 +6,7 @@ export const generativeSearchOptimisationData = {
       "for Rank Anymore."
     ],
     "headlineAccent": "",
-    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency in India helping enterprise brands build the signals that AI systems Google AI Overviews, ChatGPT, Perplexity, and Gemini need to understand, trust, and surface your brand in the moments that matter most. With 34 years of marketing experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, we build AI SEO services that go beyond traditional rankings into genuine AI-led recommendation and discovery.",
+    "description": "Ranking gets you seen. Recommendation gets you considered. Impulse Digital is a specialist AI SEO agency in India helping enterprise brands build the signals that AI systems Google AI Overviews, ChatGPT, Perplexity, and Gemini need to understand, trust, and surface your brand in the moments that matter most. With 34 years of combined senior-team experience and results for Amazon India, HUL, Mastercard, and Tata Consumer Products, we build AI SEO services that go beyond traditional rankings into genuine AI-led recommendation and discovery.",
     "buttons": [
       {
         "text": "Improve Your AI Search Visibility",

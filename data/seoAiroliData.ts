@@ -222,7 +222,7 @@ export const seoAiroliData = {
       {
         "question": "What is the first step to starting an SEO engagement with Impulse Digital in Airoli?",
         "answer": [
-          "A diagnostic conversation not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point for your business: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Airoli with 34 years of experience and results for Amazon India, HUL, and Mastercard, the first conversation is free. Reach out through our contact form or call us directly."
+          "A diagnostic conversation not a proposal. We look at where you currently rank, where technical issues are blocking visibility, and where content gaps are costing you buyer consideration. From that, we recommend the highest-impact starting point for your business: Local SEO, technical audit, B2B SEO, or a full content programme. As a trusted SEO company in Airoli with 34 years of combined senior-team experience and results for Amazon India, HUL, and Mastercard, the first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]

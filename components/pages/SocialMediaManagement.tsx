@@ -180,6 +180,18 @@ const SocialMediaManagement: React.FC<{ data: any }> = ({ data }) => {
 
       {data.stats && <ServiceStats data={data.stats} />}
       <ServiceHandoff />
+
+      {data.proofCitation && (
+        <section className="svc-proof-citation" aria-labelledby="social-proof-title">
+          <div className="container">
+            <p className="svc-proof-citation-label">Documented campaign result</p>
+            <h2 className="svc-h2" id="social-proof-title">{data.proofCitation.title}</h2>
+            <p className="svc-proof-citation-statement">{data.proofCitation.statement}</p>
+            <p className="proof-source-note">{data.proofCitation.source}</p>
+          </div>
+        </section>
+      )}
+      {data.proofCitation && <ServiceHandoff />}
       
       {data.problem && <ServiceProblem data={data.problem} />}
       <ServiceHandoff />

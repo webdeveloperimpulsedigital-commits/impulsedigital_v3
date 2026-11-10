@@ -1,5 +1,7 @@
 import { FAQItem } from './faqData';
 
+const stripHtml = (value: string) => value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+
 export function getFAQSchema(faqs: FAQItem[], isAe: boolean | string = false) {
   const displayData = faqs.map(item => {
     if (!isAe) return item;
@@ -60,7 +62,7 @@ export function getServiceFAQSchema(faqData: any, isAe: boolean | string = false
   const items = faqData.items;
   
   const displayData = items.map((item: any) => {
-    let answerText = Array.isArray(item.a) ? item.a.join(' ') : item.a;
+    let answerText = stripHtml(Array.isArray(item.a) ? item.a.join(' ') : item.a);
     if (isAe) {
       return {
         question: item.q.replace(/\bMumbai\b/g, 'Dubai').replace(/\bmumbai\b/g, 'dubai'),

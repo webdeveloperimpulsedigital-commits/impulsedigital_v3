@@ -5,7 +5,7 @@ export const seoGhansoliData = {
     "headline": "Best SEO Agency in Ghansoli",
     "subHeadline": "SEO – Helping your business get discovered, trusted, and chosen",
     "description": [
-      "In Ghansoli, most buying decisions begin with a search. A buyer types, scans the first few results, and contacts whoever feels credible and relevant. Businesses that do not appear at that moment lose the opportunity before they know it existed.<br> Impulse Digital is a trusted SEO agency in Ghansoli with 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We help Ghansoli businesses show up consistently for the right searches, build credibility with buyers before first contact, and turn search visibility into enquiries that grow over time."
+      "In Ghansoli, most buying decisions begin with a search. A buyer types, scans the first few results, and contacts whoever feels credible and relevant. Businesses that do not appear at that moment lose the opportunity before they know it existed.<br> Impulse Digital is a trusted SEO agency in Ghansoli with 34 years of combined senior-team experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We help Ghansoli businesses show up consistently for the right searches, build credibility with buyers before first contact, and turn search visibility into enquiries that grow over time."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoGhansoliData = {
       {
         "question": "Why should I choose Impulse Digital for SEO services in Ghansoli?",
         "answer": [
-          "Because Impulse Digital delivers SEO services in Ghansoli backed by 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We do not apply generic packages to Ghansoli businesses. Every engagement starts with a diagnostic of your current search position, your competition, and your buyers' search behaviour before we recommend anything. The output is a search presence that earns trust before a buyer contacts you not a spike that disappears in 60 days."
+          "Because Impulse Digital delivers SEO services in Ghansoli backed by 34 years of combined senior-team experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We do not apply generic packages to Ghansoli businesses. Every engagement starts with a diagnostic of your current search position, your competition, and your buyers' search behaviour before we recommend anything. The output is a search presence that earns trust before a buyer contacts you not a spike that disappears in 60 days."
         ]
       },
       {
@@ -202,7 +202,7 @@ export const seoGhansoliData = {
       {
         "question": "What happens to my search presence if Ghansoli’s digital landscape changes?",
         "answer": [
-          "Because Impulse Digital delivers SEO services in Ghansoli backed by 34 years of marketing experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We do not apply generic packages to Ghansoli businesses. Every engagement starts with a diagnostic of your current search position, your competition, and your buyers' search behaviour before we recommend anything. The output is a search presence that earns trust before a buyer contacts you not a spike that disappears in 60 days."
+          "Because Impulse Digital delivers SEO services in Ghansoli backed by 34 years of combined senior-team experience and a client base that includes Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We do not apply generic packages to Ghansoli businesses. Every engagement starts with a diagnostic of your current search position, your competition, and your buyers' search behaviour before we recommend anything. The output is a search presence that earns trust before a buyer contacts you not a spike that disappears in 60 days."
         ]
       },
       {
@@ -214,7 +214,7 @@ export const seoGhansoliData = {
       {
         "question": "What makes Impulse Digital the best SEO agency in Ghansoli for B2B businesses?",
         "answer": [
-          "Three things separate Impulse Digital from other SEO agencies in Ghansoli. First, enterprise-grade client proof: our SEO work delivered 737% organic traffic growth for Qure.ai, a healthcare AI company competing in a highly specialised B2B search market. For HUL, our campaign-linked SEO and content work produced 12,548 measurable conversion journeys. These are published case studies with specific numbers, not portfolio claims. Second, depth of experience: 34 years of brand and marketing expertise across India's most competitive categories gives our team a pattern library that newer agencies cannot replicate. Third, commercial accountability: as the best SEO agency in Ghansoli for enterprise and growth-stage businesses, every engagement is measured in enquiries and revenue movement, not just rankings. If an SEO agency cannot connect their work to your pipeline, they are optimising for their report, not your growth."
+          "Three things separate Impulse Digital from other SEO agencies in Ghansoli. First, enterprise-grade client proof: our SEO work delivered 737% organic traffic growth for Qure.ai, a healthcare AI company competing in a highly specialised B2B search market. For HUL, our campaign-linked SEO and content work produced 12,548 measurable conversion journeys. These are published case studies with specific numbers, not portfolio claims. Second, depth of experience: 34 years of combined senior-team experience across India's most competitive categories gives our team a pattern library that newer agencies cannot replicate. Third, commercial accountability: as the best SEO agency in Ghansoli for enterprise and growth-stage businesses, every engagement is measured in enquiries and revenue movement, not just rankings. If an SEO agency cannot connect their work to your pipeline, they are optimising for their report, not your growth."
         ]
       },
       {
@@ -226,7 +226,7 @@ export const seoGhansoliData = {
       {
         "question": "How do we start working with Impulse Digital as our SEO agency in Ghansoli?",
         "answer": [
-          "The process starts with a diagnostic conversation, not a proposal. We look at where your search presence currently stands, where technical issues are blocking visibility, and where content gaps are costing you consideration from buyers already searching for what you offer in Ghansoli. From that, we build a scoped recommendation starting with the highest-impact area for your specific business Local SEO, Technical SEO, B2B SEO, or a full Content and Search Strategy programme. As a trusted SEO agency in Ghansoli with 34 years of experience and documented results for Amazon India, HUL, and Mastercard, Impulse Digital brings the same rigour to every engagement regardless of scale. The first conversation is free. Reach out through our contact form or call us directly."
+          "The process starts with a diagnostic conversation, not a proposal. We look at where your search presence currently stands, where technical issues are blocking visibility, and where content gaps are costing you consideration from buyers already searching for what you offer in Ghansoli. From that, we build a scoped recommendation starting with the highest-impact area for your specific business Local SEO, Technical SEO, B2B SEO, or a full Content and Search Strategy programme. As a trusted SEO agency in Ghansoli with 34 years of combined senior-team experience and documented results for Amazon India, HUL, and Mastercard, Impulse Digital brings the same rigour to every engagement regardless of scale. The first conversation is free. Reach out through our contact form or call us directly."
         ]
       }
     ]

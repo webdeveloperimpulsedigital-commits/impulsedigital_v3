@@ -275,7 +275,7 @@ export const socialMediaMaladData = {
       },
       {
         "q": "How do you prove the commercial value of your social campaigns?",
-        "a": "We discard superficial vanity metrics instantly. We track structural returns, measuring exact audience engagement, direct website sessions, and verified pipeline quality. For instance, our strategic execution generated a 31% engagement rate on a single post for Grasim Industries."
+        "a": "We track exact audience engagement, direct website sessions, and verified pipeline quality. A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics. Source: LinkedIn native analytics."
       },
       {
         "q": "Do we need SEO alongside your digital channel management?",

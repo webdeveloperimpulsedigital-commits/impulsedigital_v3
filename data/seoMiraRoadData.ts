@@ -5,7 +5,7 @@ export const seoMiraRoadData = {
     "headline": "Best SEO Company in Mira Road",
     "subHeadline": "SEO – Helping your business get discovered, trusted, and chosen",
     "description": [
-      "Mira Road is one of Mumbai's fastest-growing residential and commercial suburbs, where most buying decisions now start with a search. Whether a service or a product, the journey usually begins online. People do not look too far. They click on what feels relevant and trustworthy, then move on. If your business is not visible at that moment, you are losing the enquiry before you know it existed. As a trusted SEO company in Mira Road, Impulse Digital brings 34 years of marketing experience and delivers SEO services in Mira Road built on a track record that includes 737% organic traffic growth for Qure.ai. We help businesses show up consistently, not just once, but in a way that keeps bringing enquiries over time."
+      "Mira Road is one of Mumbai's fastest-growing residential and commercial suburbs, where most buying decisions now start with a search. Whether a service or a product, the journey usually begins online. People do not look too far. They click on what feels relevant and trustworthy, then move on. If your business is not visible at that moment, you are losing the enquiry before you know it existed. As a trusted SEO company in Mira Road, Impulse Digital brings 34 years of combined senior-team experience and delivers SEO services in Mira Road built on a track record that includes 737% organic traffic growth for Qure.ai. We help businesses show up consistently, not just once, but in a way that keeps bringing enquiries over time."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoMiraRoadData = {
       {
         "question": "Why should I choose Impulse Digital as my SEO company in Mira Road?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Mira Road, Impulse Digital brings 34 years of marketing experience and documented SEO results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Mira Road, Impulse Digital brings 34 years of combined senior-team experience and documented SEO results: 737% organic traffic growth for Qure.ai, a 3,500% increase in impressions in 5 months for ElectroMech with major keywords ranking in the top 10, and organic leads growing from 1 to 2 a month to 20 to 25 quality B2B leads consistently for Shree Rubber Works."
         ]
       },
       {
@@ -214,7 +214,7 @@ export const seoMiraRoadData = {
       {
         "question": "What is the first step to starting an SEO programme in Mira Road?",
         "answer": [
-          "A diagnostic conversation, not a proposal. As a trusted SEO company in Mira Road backed by 34 years of marketing experience and results including 737% organic traffic growth for Qure.ai and first-page rankings for 90% of targeted keywords for Vendiman, the first conversation is free."
+          "A diagnostic conversation, not a proposal. As a trusted SEO company in Mira Road backed by 34 years of combined senior-team experience and results including 737% organic traffic growth for Qure.ai and first-page rankings for 90% of targeted keywords for Vendiman, the first conversation is free."
         ]
       }
     ]

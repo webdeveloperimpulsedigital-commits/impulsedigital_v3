@@ -123,7 +123,8 @@ const ElectroMechCaseStudy: React.FC = () => {
           <div className="cs-split-left"><h2 className="cs-h2 split-text">Business<br />impact</h2></div>
           <div className="cs-split-right">
             <p className="cs-p split-text">The numbers showed movement where it mattered.</p>
-            <p className="cs-p highlight split-text">Verified leads grew 20x.<br />First-page rankings increased by 200%.<br />Social engagement increased by 300%.</p>
+            <p className="cs-p highlight split-text">Across the measured five-month period, Google Search impressions increased by 3,500%.<br />Verified leads grew 20x.<br />First-page rankings increased by 200%.<br />Social engagement increased by 300%.</p>
+            <p className="proof-source-note">Source: Google Search Console and campaign reporting reviewed by Impulse Digital. Underlying client analytics are private.</p>
             <p className="cs-p split-text">These numbers are not just marketing wins. They show that the digital system started doing what it was meant to do.</p>
             <p className="cs-p split-text">Help the right buyers find ElectroMech, understand its capability, and take the next step.</p>
           </div>

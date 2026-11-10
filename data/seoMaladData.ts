@@ -5,7 +5,7 @@ export const seoMaladData = {
     "headline": "#1 SEO Company in Malad",
     "subHeadline": "SEO – Helping your business get discovered by the right audience",
     "description": [
-      "Malad is one of Mumbai's busiest western suburb commercial corridors, where most customers now research online before contacting a business. Being good at what you do is not always enough. People need to find you first, and that almost always starts with a search. Users do not spend much time exploring. They click on what shows up early and feels relevant, then move on. If your business is not appearing at that moment, you are losing the enquiry before you know it existed. As a trusted SEO company in Malad, Impulse Digital brings 34 years of marketing experience and documented results for HUL, Mastercard, and Qure.ai. We are widely regarded as offering the best SEO in Malad because we focus on visibility that keeps working over time, not just once."
+      "Malad is one of Mumbai's busiest western suburb commercial corridors, where most customers now research online before contacting a business. Being good at what you do is not always enough. People need to find you first, and that almost always starts with a search. Users do not spend much time exploring. They click on what shows up early and feels relevant, then move on. If your business is not appearing at that moment, you are losing the enquiry before you know it existed. As a trusted SEO company in Malad, Impulse Digital brings 34 years of combined senior-team experience and documented results for HUL, Mastercard, and Qure.ai. We are widely regarded as offering the best SEO in Malad because we focus on visibility that keeps working over time, not just once."
     ]
   },
   "services": {
@@ -178,7 +178,7 @@ export const seoMaladData = {
       {
         "question": "Why should I choose Impulse Digital as best SEO company in Malad?",
         "answer": [
-          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Malad, Impulse Digital brings 34 years of marketing experience and documented results that most agencies cannot match: 737% organic traffic growth for Qure.ai. Every engagement starts with a diagnostic of your current search position and your specific buyer behaviour in Malad, not a package recommendation."
+          "Because the difference between an agency that keeps you visible and one that keeps you busy is measurable. As a trusted SEO company in Malad, Impulse Digital brings 34 years of combined senior-team experience and documented results that most agencies cannot match: 737% organic traffic growth for Qure.ai. Every engagement starts with a diagnostic of your current search position and your specific buyer behaviour in Malad, not a package recommendation."
         ]
       },
       {
@@ -221,7 +221,7 @@ export const seoMaladData = {
       {
         "question": "What is the first step to starting an SEO programme in Malad?",
         "answer": [
-          "A diagnostic conversation, not a proposal. We review where you rank, what is blocking visibility, and which content gaps are costing you consideration. As a trusted SEO company in Malad backed by 34 years of experience and results for Hem Incense, Automag India, and ElectroMech, the first conversation is free."
+          "A diagnostic conversation, not a proposal. We review where you rank, what is blocking visibility, and which content gaps are costing you consideration. As a trusted SEO company in Malad backed by 34 years of combined senior-team experience and results for Hem Incense, Automag India, and ElectroMech, the first conversation is free."
         ]
       }
     ]

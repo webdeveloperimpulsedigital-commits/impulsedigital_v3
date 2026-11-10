@@ -3,6 +3,14 @@
    All .cs-* classes used across every case study component
    ============================================================ */
 
+.cs-split-right .proof-source-note {
+  max-width: 760px;
+  margin-top: 1.25rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 /* Redesigned Hero Section */
 .cs-hero {
   position: relative;

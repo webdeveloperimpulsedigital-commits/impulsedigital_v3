@@ -6,7 +6,7 @@ export const searchEngineOptimisationThaneData = {
       "Built for Organic Growth"
     ],
     headlineAccent: "Built for Organic Growth",
-    description: "As a leading SEO company in Thane, Impulse Digital builds search systems that turn organic search intent into qualified leads. We integrate technical health, intent-mapped content, local signals, and Generative Search Optimisation (GSO) to drive measurable ROI. Partner with an SEO agency in Thane backed by 34 years of marketing expertise and proven outcomes like 737% organic traffic growth.",
+    description: "As a leading SEO company in Thane, Impulse Digital builds search systems that turn organic search intent into qualified leads. We integrate technical health, intent-mapped content, local signals, and Generative Search Optimisation (GSO) to drive measurable ROI. Partner with an SEO agency in Thane backed by 34 years of combined senior-team experience and proven outcomes like 737% organic traffic growth.",
     buttons: [
       {
         text: "Audit Your Thane Search Gaps",
@@ -204,7 +204,7 @@ export const searchEngineOptimisationThaneData = {
     items: [
       {
         q: "What makes Impulse Digital a trusted SEO company in Thane?",
-        a: "As an SEO company in Thane backed by 34 years of combined marketing experience across enterprise brands, Impulse Digital works from your site's actual search data rather than fixed generic templates. We build organic growth across technical health, intent-mapped content, local signals across Thane and the Mumbai Metropolitan Region (MMR), and Generative Search Optimisation (GSO). Our mandates have delivered proven results, including 737% organic traffic growth for Qure.ai on its healthcare mandate and first-page international rankings for ElectroMech."
+        a: "As an SEO company in Thane backed by 34 years of combined senior-team experience across enterprise brands, Impulse Digital works from your site's actual search data rather than fixed generic templates. We build organic growth across technical health, intent-mapped content, local signals across Thane and the Mumbai Metropolitan Region (MMR), and Generative Search Optimisation (GSO). Our mandates have delivered proven results, including 737% organic traffic growth for Qure.ai on its healthcare mandate and first-page international rankings for ElectroMech."
       },
       {
         q: "What do comprehensive SEO services in Thane include?",

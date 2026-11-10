@@ -5,7 +5,7 @@ export const seoKandivaliData = {
     "headline": "#1 SEO Company in Kandivali",
     "subHeadline": "SEO – Helping your business get noticed without overcomplicating things",
     "description": [
-      "Kandivali is one of Mumbai's most established residential and commercial suburbs, home to a dense mix of retail businesses, manufacturer and educational services, IT firms, and a growing number of professional service providers competing for the same local buyer. When someone in Kandivali searches for what you offer, they scan the first few results, pick what looks credible, and contact that business. The ones that do not appear at that moment lose the enquiry before they know it existed. <br> Impulse Digital is a specialist SEO company in Kandivali with 34 years of marketing experience and documented results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We build search systems that help Kandivali businesses get found consistently by the right buyers and convert that visibility into enquiries, calls, and measurable business growth."
+      "Kandivali is one of Mumbai's most established residential and commercial suburbs, home to a dense mix of retail businesses, manufacturer and educational services, IT firms, and a growing number of professional service providers competing for the same local buyer. When someone in Kandivali searches for what you offer, they scan the first few results, pick what looks credible, and contact that business. The ones that do not appear at that moment lose the enquiry before they know it existed. <br> Impulse Digital is a specialist SEO company in Kandivali with 34 years of combined senior-team experience and documented results for Amazon India, HUL, Mastercard, Tata Consumer Products, and Aditya Birla Group. We build search systems that help Kandivali businesses get found consistently by the right buyers and convert that visibility into enquiries, calls, and measurable business growth."
     ]
   },
   "services": {
@@ -181,7 +181,7 @@ export const seoKandivaliData = {
       {
         "question": "Why should I choose Impulse Digital's SEO services in Kandivali?",
         "answer": [
-          "We focus on what actually brings results, like better visibility, relevant traffic, and real inquiries. No unnecessary complexity. With over 34 years of marketing experience and clients like Amazon, HUL, and Mastercard, Impulse Digital brings proven expertise to every SEO strategy."
+          "We focus on what actually brings results, like better visibility, relevant traffic, and real inquiries. No unnecessary complexity. With over 34 years of combined senior-team experience and clients like Amazon, HUL, and Mastercard, Impulse Digital brings proven expertise to every SEO strategy."
         ]
       },
       {
@@ -193,7 +193,7 @@ export const seoKandivaliData = {
       {
         "question": "How does Impulse Digital approach SEO differently from other SEO companies in Kandivali?",
         "answer": [
-          "Most SEO companies in Kandivali begin with keyword research and a content plan. Impulse Digital begins with a commercial diagnostic understanding what your business needs search to do before deciding how to build it. There is a meaningful difference between a Kandivali coaching centre that needs to rank for parents searching nearby on a phone and a Kandivali IT firm that needs to build credibility with procurement decision-makers researching vendors across Mumbai. Applying the same keyword and content approach to both produces poor returns for both. As a specialist SEO company in Kandivali with 34 years of marketing experience and a client base spanning FMCG, healthcare, fintech, and manufacturing Impulse Digital maps your specific commercial problem first then builds the search system that solves it."
+          "Most SEO companies in Kandivali begin with keyword research and a content plan. Impulse Digital begins with a commercial diagnostic understanding what your business needs search to do before deciding how to build it. There is a meaningful difference between a Kandivali coaching centre that needs to rank for parents searching nearby on a phone and a Kandivali IT firm that needs to build credibility with procurement decision-makers researching vendors across Mumbai. Applying the same keyword and content approach to both produces poor returns for both. As a specialist SEO company in Kandivali with 34 years of combined senior-team experience and a client base spanning FMCG, healthcare, fintech, and manufacturing Impulse Digital maps your specific commercial problem first then builds the search system that solves it."
         ]
       },
       {

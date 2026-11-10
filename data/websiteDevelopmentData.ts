@@ -29,10 +29,10 @@ export const websiteDevelopmentData = {
         "desc": "Websites designed to be mobile-responsive across devices."
       },
       {
-        "target": 75,
-        "suffix": "%",
+        "target": 30,
+        "suffix": "%+",
         "decimals": 0,
-        "desc": "E-commerce clients seeing a 30%+ sales increase within 6 months after a redesigned website launch."
+        "desc": "In selected ecommerce website-redesign engagements, clients have recorded sales growth of 30% or more within six months."
       },
       {
         "target": 53,
@@ -41,7 +41,7 @@ export const websiteDevelopmentData = {
         "desc": "Mobile visits are likely to be abandoned if a page takes longer than 3 seconds to load."
       }
     ],
-    "footnote": "A good website does not just look current. It makes your brand easier to understand, your journey easier to follow, and your next action easier to take."
+    "footnote": "Source for the ecommerce result: client reporting reviewed by Impulse Digital; underlying analytics are private. A good website does not just look current. It makes your brand easier to understand, your journey easier to follow, and your next action easier to take."
   },
   "problem": {
     "title": "The Problem Is Not the Website. It Is the Friction Inside It.",
