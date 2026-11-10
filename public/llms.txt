@@ -8,7 +8,7 @@ The agency is led by founder and CEO Adwait Joshi and co-founder Abhishek Arekar
 
 ## Evidence and Measurement
 
-Impulse Digital publishes campaign outcomes drawn from native platform analytics, Google Analytics 4, Google Search Console and client campaign reporting reviewed by the agency. Some underlying dashboards remain private because they contain confidential client data; the public pages state the result, context and source without exposing that private information.
+Impulse Digital publishes campaign outcomes drawn directly from native platform analytics, Google Analytics 4, Google Search Console and client ecommerce analytics. Some underlying dashboards remain private because they contain confidential client data; the public pages state the result, context and source without exposing that private information.
 
 - [Qure.ai search case study](https://www.theimpulsedigital.com/case-studies/qure-ai/): 737% organic traffic growth across the US healthcare search mandate, alongside 20 organic leads in one month, a 31% organic-session share and a 42% organic engagement rate.
 - [ElectroMech search case study](https://www.theimpulsedigital.com/case-studies/electromech/): 3,500% Google Search impression growth across five months, alongside 20x verified-lead growth and a 200% increase in first-page rankings.

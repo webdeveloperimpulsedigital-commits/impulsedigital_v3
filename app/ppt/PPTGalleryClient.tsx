@@ -80,7 +80,7 @@ export default function PPTGalleryClient() {
     'Website Design Development PPT': {
       h1: 'Web Design and Development PPT: Presentations and Strategy Decks',
       p1: 'Every other category in this library is about earning attention, on social, in search, through content, or as a candidate. A web design and development PPT belongs to a different job entirely, what happens once that attention actually arrives. A slow page or a confusing layout can undo months of work from every other channel in a single visit.',
-      p2: 'That difference is why these decks focus on structure before style, page speed, user journeys, and conversion paths that hold up under real traffic, not a portfolio screenshot. In selected ecommerce website-redesign engagements, clients have recorded sales growth of 30% or more within six months. Source: Client ecommerce reporting reviewed by Impulse Digital; underlying analytics are private. Download the frameworks covering UX strategy, responsive development, CMS structure, and conversion-focused design, and apply them before your next redesign, not after it underperforms.'
+      p2: 'That difference is why these decks focus on structure before style, page speed, user journeys, and conversion paths that hold up under real traffic, not a portfolio screenshot. In selected ecommerce website-redesign engagements, clients have recorded sales growth of 30% or more within six months. Source: Client ecommerce analytics; underlying client dashboards are private. Download the frameworks covering UX strategy, responsive development, CMS structure, and conversion-focused design, and apply them before your next redesign, not after it underperforms.'
     }
   };
 

@@ -67,11 +67,24 @@ test('Qure.ai and ElectroMech proof pages state results and private-source conte
   ]);
 
   assert.match(qure, /organic traffic increased by 737%/);
-  assert.match(qure, /GA4 and campaign reporting reviewed by Impulse Digital/);
+  assert.match(qure, /Independent platform analytics from Google Analytics 4/);
   assert.match(electromech, /Google Search impressions increased by 3,500%/);
-  assert.match(electromech, /Google Search Console and campaign reporting reviewed by Impulse Digital/);
+  assert.match(electromech, /Independent platform analytics from Google Search Console/);
   assert.match(qure, /Underlying client analytics are private/);
   assert.match(electromech, /Underlying client analytics are private/);
+});
+
+test('public proof never uses self-review language as source attribution', async () => {
+  const files = [
+    ...await sourceFiles('app'),
+    ...await sourceFiles('components'),
+    ...await sourceFiles('data'),
+    'public/llms.txt',
+  ];
+
+  for (const file of files) {
+    assert.doesNotMatch(await read(file), /reviewed by Impulse Digital/i, file);
+  }
 });
 
 test('individual case studies publish Article schema with Impulse as author and publisher', async () => {

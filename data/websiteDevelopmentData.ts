@@ -41,7 +41,7 @@ export const websiteDevelopmentData = {
         "desc": "Mobile visits are likely to be abandoned if a page takes longer than 3 seconds to load."
       }
     ],
-    "footnote": "Source for the ecommerce result: client reporting reviewed by Impulse Digital; underlying analytics are private. A good website does not just look current. It makes your brand easier to understand, your journey easier to follow, and your next action easier to take."
+    "footnote": "Source for the ecommerce result: client ecommerce analytics; underlying client dashboards are private. A good website does not just look current. It makes your brand easier to understand, your journey easier to follow, and your next action easier to take."
   },
   "problem": {
     "title": "The Problem Is Not the Website. It Is the Friction Inside It.",
