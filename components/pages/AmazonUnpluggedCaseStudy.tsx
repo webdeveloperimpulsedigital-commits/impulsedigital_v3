@@ -52,27 +52,27 @@ const AmazonUnpluggedCaseStudy: React.FC = () => {
         <h2 className="cs-results-title split-text">The Outcome</h2>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="6">0</span>
+            <span className="counter" data-target="6">6</span>
           </div>
           <div className="cs-result-label">video podcast episodes</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="1.2">0</span>
+            <span className="counter" data-target="1.2">1.2</span>
             <span className="cs-result-suffix">M+</span>
           </div>
           <div className="cs-result-label">views</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="9.5">0</span>
+            <span className="counter" data-target="9.5">9.5</span>
             <span className="cs-result-suffix">M+</span>
           </div>
           <div className="cs-result-label">impressions</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="10">0</span>
+            <span className="counter" data-target="10">10</span>
             <span className="cs-result-suffix">K+</span>
           </div>
           <div className="cs-result-label">engagement</div>

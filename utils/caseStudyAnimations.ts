@@ -111,13 +111,22 @@ export function initCaseStudyAnimations(): () => void {
 
       // Counter animations
       document.querySelectorAll('.counter').forEach((counter: Element, index: number) => {
+        const el = counter as HTMLElement;
+        const targetText = el.getAttribute('data-target') || el.textContent || '0';
+
+        // Keep the real proof value in the server-rendered HTML for crawlers and
+        // reduced-motion users. JavaScript resets it only when an animation will run.
+        if (!motionAllowed) {
+          el.textContent = targetText;
+          return;
+        }
+        el.textContent = '0';
+
         ScrollTrigger.create({
           trigger: '.cs-results-module',
           start: 'top 80%',
           once: true,
           onEnter: () => {
-            const el = counter as HTMLElement;
-            const targetText = el.getAttribute('data-target') || '0';
             const target = parseFloat(targetText);
             const decimals = targetText.includes('.') ? targetText.split('.')[1].length : 0;
             const state = { value: 0 };

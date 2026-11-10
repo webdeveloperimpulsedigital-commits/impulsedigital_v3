@@ -35,10 +35,10 @@ const DMartCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="13.43">0</span><span className="cs-result-suffix">L</span></div><div className="cs-result-label">unique reach across Pune</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="53">0</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">unique landing page clicks</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="55">0</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">post engagements</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="70">0</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">video views</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="13.43">13.43</span><span className="cs-result-suffix">L</span></div><div className="cs-result-label">unique reach across Pune</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="53">53</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">unique landing page clicks</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="55">55</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">post engagements</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="70">70</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">video views</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Campaign built around 13 DMart locations in Pune</span></div>
       </section>
       <section className="cs-section">

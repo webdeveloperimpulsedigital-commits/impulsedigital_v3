@@ -35,9 +35,9 @@ const LGHingCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="5">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">sales increase within 24 hours</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="507">0</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">impressions during peak festive season</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="4.5">0</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">engagements</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="5">5</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">sales increase within 24 hours</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="507">507</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">impressions during peak festive season</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="4.5">4.5</span><span className="cs-result-suffix">K</span></div><div className="cs-result-label">engagements</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="cs-result-word">1894</span></div><div className="cs-result-label">brand heritage carried into the Diwali narrative</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Stronger positive reflection among target audiences</span></div>
       </section>

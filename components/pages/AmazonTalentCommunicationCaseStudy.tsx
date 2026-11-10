@@ -61,21 +61,21 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             <div className="card-metrics">
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="75">0</span>
+                  <span className="counter" data-target="75">75</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Organic Views</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="10">0</span>
+                  <span className="counter" data-target="10">10</span>
                   <span className="cs-result-suffix">X</span>
                 </div>
                 <div className="metric-label">Advocacy Engagement Multiplier</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="2.4">0</span>
+                  <span className="counter" data-target="2.4">2.4</span>
                   <span className="cs-result-suffix">X</span>
                 </div>
                 <div className="metric-label">Social Media Engagement Rate</div>
@@ -92,21 +92,21 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             <div className="card-metrics">
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="2.1">0</span>
+                  <span className="counter" data-target="2.1">2.1</span>
                   <span className="cs-result-suffix">M+</span>
                 </div>
                 <div className="metric-label">Impressions</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="67">0</span>
+                  <span className="counter" data-target="67">67</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Engagement Generated</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="5">0</span>
+                  <span className="counter" data-target="5">5</span>
                   <span className="cs-result-suffix">-digit ROI ($)</span>
                 </div>
                 <div className="metric-label">Measured via EveryoneSocial</div>
@@ -123,21 +123,21 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             <div className="card-metrics">
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="2">0</span>
+                  <span className="counter" data-target="2">2</span>
                   <span className="cs-result-suffix">M+</span>
                 </div>
                 <div className="metric-label">Views & Impressions</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="23">0</span>
+                  <span className="counter" data-target="23">23</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Organic Engagements</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="10">0</span>
+                  <span className="counter" data-target="10">10</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Followers Gained</div>
@@ -154,21 +154,21 @@ const AmazonTalentCommunicationCaseStudy: React.FC = () => {
             <div className="card-metrics">
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="2.4">0</span>
+                  <span className="counter" data-target="2.4">2.4</span>
                   <span className="cs-result-suffix">M+</span>
                 </div>
                 <div className="metric-label">Platform Search Impressions</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="400">0</span>
+                  <span className="counter" data-target="400">400</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Candidate Interaction</div>
               </div>
               <div className="metric-row">
                 <div className="metric-value">
-                  <span className="counter" data-target="60">0</span>
+                  <span className="counter" data-target="60">60</span>
                   <span className="cs-result-suffix">K+</span>
                 </div>
                 <div className="metric-label">Career Follower Growth</div>

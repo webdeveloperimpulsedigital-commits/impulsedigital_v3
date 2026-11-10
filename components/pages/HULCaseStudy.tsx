@@ -35,10 +35,10 @@ const HULCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="90">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">higher CTR against benchmark</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="41.8">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in clicks</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="79.7">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">impression growth</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="12548">0</span><span className="cs-result-suffix">+</span></div><div className="cs-result-label">landing page sessions</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="90">90</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">higher CTR against benchmark</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="41.8">41.8</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in clicks</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="79.7">79.7</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">impression growth</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="12548">12548</span><span className="cs-result-suffix">+</span></div><div className="cs-result-label">landing page sessions</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Campaign executed across Pune and Delhi</span></div>
       </section>
       <section className="cs-section">

@@ -35,9 +35,9 @@ const ElectroMechCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="20">0</span><span className="cs-result-suffix">x</span></div><div className="cs-result-label">growth in verified leads</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="200">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in first-page rankings</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="300">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in social engagement</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="20">20</span><span className="cs-result-suffix">x</span></div><div className="cs-result-label">growth in verified leads</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="200">200</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in first-page rankings</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="300">300</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">increase in social engagement</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span>SEO</span></div><div className="cs-result-label">website and social system</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Clearer structure across regions, verticals, and business lines</span></div>
       </section>

@@ -35,9 +35,9 @@ const QureAICaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="20">0</span></div><div className="cs-result-label">organic leads in one month</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="31">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">sessions from organic search</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="42">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">organic engagement rate</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="20">20</span></div><div className="cs-result-label">organic leads in one month</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="31">31</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">sessions from organic search</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="42">42</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">organic engagement rate</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span>46</span><span className="cs-result-suffix">to 49</span></div><div className="cs-result-label">Domain Authority improved</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>High-value diagnostic AI keywords moved to Page 1</span></div>
       </section>

@@ -35,9 +35,9 @@ const UppercaseCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="5.49">0</span><span className="cs-result-suffix">M</span></div><div className="cs-result-label">plays</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="868">0</span><span className="cs-result-suffix">K+</span></div><div className="cs-result-label">views</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="100">0</span><span className="cs-result-suffix">K+</span></div><div className="cs-result-label">likes</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="5.49">5.49</span><span className="cs-result-suffix">M</span></div><div className="cs-result-label">plays</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="868">868</span><span className="cs-result-suffix">K+</span></div><div className="cs-result-label">views</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="100">100</span><span className="cs-result-suffix">K+</span></div><div className="cs-result-label">likes</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span>AI</span></div><div className="cs-result-label">led social film</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Created for a crowded New Year content window</span></div>
       </section>

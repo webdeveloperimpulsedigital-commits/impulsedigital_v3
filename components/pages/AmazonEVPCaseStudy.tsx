@@ -52,25 +52,25 @@ const AmazonEVPCaseStudy: React.FC = () => {
         <h2 className="cs-results-title split-text">Research and Strategy Snapshot</h2>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="25">0</span>
+            <span className="counter" data-target="25">25</span>
           </div>
           <div className="cs-result-label">employees included across Tech, Non-Tech, and Operations</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="4">0</span>
+            <span className="counter" data-target="4">4</span>
           </div>
           <div className="cs-result-label">focus groups conducted</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="60">0</span>
+            <span className="counter" data-target="60">60</span>
           </div>
           <div className="cs-result-label">minute moderated sessions</div>
         </div>
         <div className="cs-result-item gsap-fade-up">
           <div className="cs-result-number">
-            <span className="counter" data-target="3">0</span>
+            <span className="counter" data-target="3">3</span>
           </div>
           <div className="cs-result-label">EVP directions developed</div>
         </div>

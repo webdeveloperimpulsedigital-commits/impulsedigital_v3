@@ -132,10 +132,10 @@ const AutomagIndiaCaseStudy: React.FC = () => {
 
       <section className="cs-results-module automag-results">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="45">0</span><span className="cs-result-suffix">+</span></div><div className="cs-result-label">leads a month</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="2400">0</span><span className="cs-result-suffix">%+</span></div><div className="cs-result-label">growth in lead volume</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="48">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">organic traffic increase in 90 days</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="4">0</span></div><div className="cs-result-label">months to consistent qualified leads</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="45">45</span><span className="cs-result-suffix">+</span></div><div className="cs-result-label">leads a month</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="2400">2400</span><span className="cs-result-suffix">%+</span></div><div className="cs-result-label">growth in lead volume</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="48">48</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">organic traffic increase in 90 days</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="4">4</span></div><div className="cs-result-label">months to consistent qualified leads</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>High-intent money keywords started appearing on page one</span></div>
       </section>
 

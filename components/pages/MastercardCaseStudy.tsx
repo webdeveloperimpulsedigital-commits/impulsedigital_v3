@@ -35,8 +35,8 @@ const MastercardCaseStudy: React.FC = () => {
       </section>
       <section className="cs-results-module">
         <h2 className="cs-results-title split-text">The Outcome</h2>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="101">0</span></div><div className="cs-result-label">merchant queries received</div></div>
-        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="90.9">0</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">response rate</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="101">101</span></div><div className="cs-result-label">merchant queries received</div></div>
+        <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="counter" data-target="90.9">90.9</span><span className="cs-result-suffix">%</span></div><div className="cs-result-label">response rate</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span>24/7</span></div><div className="cs-result-label">monitoring for real-time query handling</div></div>
         <div className="cs-result-item gsap-fade-up"><div className="cs-result-number"><span className="cs-result-word">WhatsApp</span></div><div className="cs-result-label">used as the direct response channel</div></div>
         <div className="cs-result-banner gsap-fade-up"><span>Video content built around real cluster-head testimonials</span></div>
