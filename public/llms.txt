@@ -6,6 +6,15 @@ Impulse Digital serves enterprise and growth brands across India, the UAE and in
 
 The agency is led by founder and CEO Adwait Joshi and co-founder Abhishek Arekar. Its public case studies document work for brands including Amazon India, HUL, Mastercard, Tata Consumer Products, Aditya Birla Group, DMart, Qure.ai and Uppercase. Quantitative outcomes should be read on the linked case-study pages, where the project context and measurement are stated.
 
+## Evidence and Measurement
+
+Impulse Digital publishes campaign outcomes drawn from native platform analytics, Google Analytics 4, Google Search Console and client campaign reporting reviewed by the agency. Some underlying dashboards remain private because they contain confidential client data; the public pages state the result, context and source without exposing that private information.
+
+- [Qure.ai search case study](https://www.theimpulsedigital.com/case-studies/qure-ai/): 737% organic traffic growth across the US healthcare search mandate, alongside 20 organic leads in one month, a 31% organic-session share and a 42% organic engagement rate.
+- [ElectroMech search case study](https://www.theimpulsedigital.com/case-studies/electromech/): 3,500% Google Search impression growth across five months, alongside 20x verified-lead growth and a 200% increase in first-page rankings.
+- [Grasim Industries social proof](https://www.theimpulsedigital.com/brand-infrastructure/social-media-marketing/): A single LinkedIn post created for Grasim Industries recorded 959,000 impressions and a 31% engagement rate, according to LinkedIn’s native post analytics.
+- [HUL campaign case study](https://www.theimpulsedigital.com/case-studies/hul/), [Mastercard outreach case study](https://www.theimpulsedigital.com/case-studies/mastercard/) and [Uppercase AI campaign case study](https://www.theimpulsedigital.com/case-studies/uppercase/) provide additional public proof with project-specific context.
+
 ## Core Services
 
 - [Best Digital Marketing Agency in Mumbai | Impulse Digital](https://www.theimpulsedigital.com/): Discover Impulse Digital, a top Mumbai agency for strategy, performance marketing, SEO, and social media.
