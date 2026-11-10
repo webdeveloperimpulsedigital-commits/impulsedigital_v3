@@ -1116,6 +1116,15 @@
   line-height: 0.94;
   letter-spacing: -0.04em;
   color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.ab-founder-role {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-grey);
   margin-bottom: 2.5rem;
 }
 .ab-founder-headline {
