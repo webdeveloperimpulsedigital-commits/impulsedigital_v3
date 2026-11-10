@@ -49,7 +49,7 @@ export const homeData = {
         imgSrc: "/case studies/Written Content/Qure.ai/QureAI Title.webp",
         imgAlt: "Qure.ai Healthcare AI SEO Traffic Case Study",
         client: "Qure.ai",
-        desc: "737% increase in organic traffic from healthcare buyers who search with intent."
+        desc: "20 organic leads in one month after rebuilding the US search foundation."
       },
       {
         link: "/case-studies/uppercase/",

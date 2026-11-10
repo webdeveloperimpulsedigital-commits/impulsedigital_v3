@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/siteUrl';
 import AboutUs from '@/components/pages/AboutUs';
+import JsonLd from '@/components/JsonLd';
 import { aboutData } from '@/data/ae/aboutData';
-import { getFAQSchema } from "@/lib/schemaHelper";
+import { buildAboutGraph } from '@/lib/structuredData';
 
 export const metadata: Metadata = {
   title: 'About Impulse Digital - Creative Digital Marketing Agency',
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutUsPage() {
-    const schemas: any[] = [];
-
-  return <AboutUs data={aboutData} />;
+  return (
+    <>
+      <JsonLd data={buildAboutGraph('ae')} id="about-entity-graph" />
+      <AboutUs data={aboutData} />
+    </>
+  );
 }

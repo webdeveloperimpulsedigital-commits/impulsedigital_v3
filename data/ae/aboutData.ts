@@ -119,6 +119,7 @@ export const aboutData = {
       {
         id: "adwait",
         name: "Adwait Joshi",
+        role: "Founder and CEO",
         ghostName: "ADWAIT",
         side: "left",
         img: "/images/About%20Us/Adwait-cutout-v2.webp",
@@ -129,6 +130,7 @@ export const aboutData = {
       {
         id: "abhishek",
         name: "Abhishek Arekar",
+        role: "Co-Founder",
         ghostName: "ABHISHEK",
         side: "right",
         img: "/images/About%20Us/Abhishek-cutout-v2.webp",

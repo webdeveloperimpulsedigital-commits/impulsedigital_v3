@@ -1,4 +1,4 @@
-import { ENTITY_IDS, ORGANIZATION_REFERENCE } from '@/seo/registries/entities';
+import { ENTITY_FACTS, ENTITY_IDS, ORGANIZATION_REFERENCE } from '@/seo/registries/entities';
 import { absoluteUrl, type Market } from '@/seo/registries/pages';
 import { SITE_URL } from '@/lib/siteUrl';
 
@@ -150,25 +150,26 @@ export function buildHomeGraph(market: Market): Record<string, unknown> {
   const isAe = market === 'ae';
   const pageUrl = absoluteUrl(isAe ? '/ae/' : '/');
   const presenceId = isAe ? ENTITY_IDS.uaePresence : ENTITY_IDS.indiaPresence;
-  const logo = `${SITE_URL}/ImpulseDigital_Logo.svg`;
+  const logo = ENTITY_FACTS.organization.logo;
+  const marketFacts = isAe ? ENTITY_FACTS.presences.uae : ENTITY_FACTS.presences.india;
 
   const presence = isAe
     ? {
         '@type': 'ProfessionalService',
         '@id': presenceId,
-        name: 'Impulse Digital UAE',
+        name: marketFacts.name,
         url: pageUrl,
         image: logo,
-        telephone: '+97145276816',
-        email: 'collabs@theimpulsedigital.com',
+        telephone: marketFacts.telephone,
+        email: ENTITY_FACTS.organization.email,
         parentOrganization: ORGANIZATION_REFERENCE,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Regus Boulevard Tower 1, 9th Floor, Boulevard Plaza Tower 1, Shk. Mohammed Bin Rashid Blvd., P.O Box 340733 Downtown',
-          addressLocality: 'Dubai',
-          addressRegion: 'Dubai',
-          postalCode: '340733',
-          addressCountry: 'AE',
+          streetAddress: marketFacts.streetAddress,
+          addressLocality: marketFacts.addressLocality,
+          addressRegion: marketFacts.addressRegion,
+          postalCode: marketFacts.postalCode,
+          addressCountry: marketFacts.addressCountry,
         },
         areaServed: [
           { '@type': 'Country', name: 'United Arab Emirates' },
@@ -180,19 +181,19 @@ export function buildHomeGraph(market: Market): Record<string, unknown> {
     : {
         '@type': 'ProfessionalService',
         '@id': presenceId,
-        name: 'Impulse Digital India',
+        name: marketFacts.name,
         url: pageUrl,
         image: logo,
-        telephone: '+91-9769285224',
-        email: 'collabs@theimpulsedigital.com',
+        telephone: marketFacts.telephone,
+        email: ENTITY_FACTS.organization.email,
         parentOrganization: ORGANIZATION_REFERENCE,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: '304 - 305, Chirag Infotech, Road No. 16/Z, Ambica Nagar, Wagle Industrial Estate',
-          addressLocality: 'Thane',
-          addressRegion: 'Maharashtra',
-          postalCode: '400604',
-          addressCountry: 'IN',
+          streetAddress: marketFacts.streetAddress,
+          addressLocality: marketFacts.addressLocality,
+          addressRegion: marketFacts.addressRegion,
+          postalCode: marketFacts.postalCode,
+          addressCountry: marketFacts.addressCountry,
         },
         areaServed: [
           { '@type': 'Country', name: 'India' },
@@ -208,19 +209,21 @@ export function buildHomeGraph(market: Market): Record<string, unknown> {
       {
         '@type': 'Organization',
         '@id': ENTITY_IDS.organization,
-        name: 'Impulse Digital',
-        url: `${SITE_URL}/`,
+        name: ENTITY_FACTS.organization.name,
+        url: ENTITY_FACTS.organization.url,
         logo,
         image: logo,
-        email: 'collabs@theimpulsedigital.com',
-        sameAs: [
-          'https://www.facebook.com/theimpulsedigital',
-          'https://twitter.com/impulsedigi',
-          'https://www.instagram.com/_impulse_digital/',
-          'https://www.linkedin.com/company/impulse-digital-marketing-mumbai',
-          'https://www.youtube.com/channel/UCzQglQAeXGI99Z-LZI9jBkw',
+        description: ENTITY_FACTS.organization.description,
+        foundingDate: ENTITY_FACTS.organization.foundingDate,
+        email: ENTITY_FACTS.organization.email,
+        founder: [
+          { '@id': ENTITY_IDS.adwaitJoshi },
+          { '@id': ENTITY_IDS.abhishekArekar },
         ],
+        sameAs: ENTITY_FACTS.organization.sameAs,
       },
+      buildPersonNode(ENTITY_FACTS.people.adwaitJoshi),
+      buildPersonNode(ENTITY_FACTS.people.abhishekArekar),
       presence,
       {
         '@type': 'WebSite',
@@ -245,6 +248,56 @@ export function buildHomeGraph(market: Market): Record<string, unknown> {
         },
         publisher: ORGANIZATION_REFERENCE,
       },
+    ],
+  };
+}
+
+function buildPersonNode(person: {
+  id: string;
+  name: string;
+  jobTitle: string;
+  image: string;
+}): Record<string, unknown> {
+  return {
+    '@type': 'Person',
+    '@id': person.id,
+    name: person.name,
+    jobTitle: person.jobTitle,
+    image: person.image,
+    worksFor: ORGANIZATION_REFERENCE,
+  };
+}
+
+export function buildAboutGraph(market: Market): Record<string, unknown> {
+  const isAe = market === 'ae';
+  const pageUrl = absoluteUrl(isAe ? '/ae/about-us/' : '/about-us/');
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'AboutPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: 'About Impulse Digital',
+        inLanguage: isAe ? 'en-AE' : 'en-IN',
+        isPartOf: { '@id': ENTITY_IDS.website },
+        about: ORGANIZATION_REFERENCE,
+        mainEntity: ORGANIZATION_REFERENCE,
+      },
+      {
+        '@type': 'Organization',
+        '@id': ENTITY_IDS.organization,
+        name: ENTITY_FACTS.organization.name,
+        url: ENTITY_FACTS.organization.url,
+        foundingDate: ENTITY_FACTS.organization.foundingDate,
+        founder: [
+          { '@id': ENTITY_IDS.adwaitJoshi },
+          { '@id': ENTITY_IDS.abhishekArekar },
+        ],
+      },
+      buildPersonNode(ENTITY_FACTS.people.adwaitJoshi),
+      buildPersonNode(ENTITY_FACTS.people.abhishekArekar),
     ],
   };
 }

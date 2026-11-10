@@ -153,6 +153,7 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
         {
           id: "adwait",
           name: "Adwait Joshi",
+          role: "Founder and CEO",
           ghostName: "ADWAIT",
           side: "left",
           img: "/images/About%20Us/Adwait-cutout-v2.webp",
@@ -165,6 +166,7 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
         {
           id: "abhishek",
           name: "Abhishek Arekar",
+          role: "Co-Founder",
           ghostName: "ABHISHEK",
           side: "right",
           img: "/images/About%20Us/Abhishek-cutout-v2.webp",
@@ -718,6 +720,7 @@ const AboutUs: React.FC<{ data?: any }> = ({ data }) => {
               </div>
               <div className="ab-founder-copy-wrap">
                 <h3 className="ab-founder-name">{founder.name}</h3>
+                <p className="ab-founder-role">{founder.role}</p>
                 <p className="ab-founder-headline">{founder.headline}</p>
                 <p className="ab-founder-body">{founder.body}</p>
               </div>
